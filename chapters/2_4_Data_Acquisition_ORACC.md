@@ -2,71 +2,51 @@
 
 ## 2.4 Data Acquisition: [ORACC](http://oracc.org)
 
-[ORACC](http://oracc.org) (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. Currently it counts some 30 independent projects, some with one or more subprojects. Most of these projects are corpus-based and incude editions and translation of cuneiform texts with linked local glossaries. [ORACC](http://oracc.org) was created by Steve Tinney (University of Pennsylvania) in 2006.
+[ORACC](http://oracc.org) (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. Currently it counts some 30 independent projects, some with one or more subprojects. Corpus-based projects include editions and translations of cuneiform texts with linked local glossaries. [ORACC](http://oracc.org) was created by Steve Tinney (University of Pennsylvania) in 2006.
 
-ORACC](http://oracc.org) data are made available as open data in JSON format under the [CC0](https://creativecommons.org/publicdomain/zero/1.0/) license (public domain). JSON (JavaScript Object Notation) is a file format that is used widely for exchanging data. The file format is simple and straightforward, but allows for complex representations of data in a hierarchical format (not unlike XML). The structure of JSON files is very easy to read and parse in Python and in many other programming languages.
+[ORACC](http://oracc.org) data are made available as open data in JSON format under the [CC0](https://creativecommons.org/publicdomain/zero/1.0/) license (public domain). JSON (JavaScript Object Notation) is a file format that is used widely for exchanging data between programs or between web sites. The file format is simple and straightforward, but allows for complex representations of data in a hierarchical format (not unlike XML). The structure of JSON files is very easy to read and parse in Python and in many other programming languages.
 
-A typical [ORACC](http://oracc.org) JSON file may start like this (abbreviated):
+The sections that follow explain how the [ORACC](http://oracc.org) JSON is parsed and how the data can be reformatted in various ways. This is rather technical in nature and perhaps not a very interesting place to start (there are no research results to be reported or evaluated at the end). Proper data acquisition is foundational for all computational research. *What* data are collected (transliteration, transcription, or a series of lemmas) and in what *format* they are collected (word-by-word, line-by-line, or text-by text) depends on the research question and therefore the acquisition techniques discussed below are flexible and allow the user to adjust the code to her or his needs. The analytical chapters (Chapter 3-6) will provide the data in the required format and thus the present section is not necessary to follow along. If you wish to devise your own research project - and format the data accordingly - a deeper understanding of the JSON format and the techniques of parsing the data are required.
 
-```json
-{
-"type": "catalogue",
-"project": "dcclt",
-"source": "http://oracc.org/dcclt",
-"license": "This data is released under the CC0 license",
-"license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
-"more-info": "http://oracc.org/doc/opendata/",
-"UTC-timestamp": "2017-06-21T22:02:40",
-"members": {"P000001": {
-  		"project": "dcclt",
-  		"author": "Englund, Robert K. &amp; Nissen, Hans J.",
-  		"collection": "Vorderasiatisches Museum, Berlin, Germany",
-  		"designation": "W 06435,a",
-  		"excavation_no": "W 06435,a",
-  		"id_text": "P000001",
-  		"museum_no": "VAT 01533",
-  		"period": "Uruk III",
-  		"primary_publication": "ATU 3, pl. 011, W 6435,a",
-  		"provenience": "Uruk",
-  		"publication_date": "1993",
-  		"publication_history": "ATU 1, 594",
-  		"subgenre": "Archaic Lu A",
- 					}, ...
-				}
-}		
-```
-A JSON object contains names and values, such as `"type":"catalogue", "project": "dcclt"`. The name is separated from its value by a colon; the name/value pairs are separated from each other by commas. 
+### 2.4.1 The JSON Data Format
 
-The most important key here is `members`. The value of this key is the entire set of text IDs in the [DCCLT](http://oracc.org/dcclt) corpus. Each of the member nodes (text IDs) includes the actual catalog information. Shown here is an abbreviated version of the catalog data of the Archaic Lu A exemplar [P000001](http://oracc.org/dcclt/P000001), more commonly known under its museum number VAT 1533 or its excavation number W 6435,a.
+JSON is recognized as a lightweight but very versatile data structure in particular for exchanging data between programs and web sites. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in traditional databases. We will see that [ORACC](http://oracc.org) JSON documents make extensive use of this feature. The two features mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Java, Python, and R. 
 
-### 2.4.1 JSON Data Format
-
-The catalog data displayed above was originally entered in Filemaker, then exported to XML for use by the [ORACC](http://oracc.org) software tools. One could easily transform either of those formats into `.txt` or `.csv` files, which are easier to read for the human eye. Why, then, produce JSON files? JSON is recognized as a lightweight but very versatile data structure in particular for exchanging data between programs and web sites. Databases (and `.csv` files) need a fixed number of fields; name/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in traditional databases. We will see that [ORACC](http://oracc.org) JSON documents make extensive use of this feature. The two features mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Java, Python, and R. 
-
-The contents of a valid JSON file are always wrapped in curly brackets, defining it as a JSON object. JSON objects consist entirely of `"name" : "value"` pairs, as in:
+The contents of a valid JSON file are always wrapped in curly brackets, defining it as a dictionary. Dictionaries (and JSON objects) consist entirely of `"key" : "value"` pairs, as in:
 
 ```json
-{"sex": "male", "name": "John"}
+{"id_text": "P334930", "designation": "SAA 03, 001"}
 ```
 
-In a `"name" : "value"` pair, names are always strings. Values may be string, number, array, boolean (true or false), or another JSON object. A JSON array is wrapped in square brackets and may look like this:
+In a `"key" : "value"` pair, keys are always strings. Values may be string, number, list, boolean (true or false), or another dictionary. A list is wrapped in square brackets and may look like this:
 
 ```json
-["Johan", "Johnny"]
+["ABRT 1 32", "SAA 03, 001"]
 ```
 
-An array cannot stand by itself, but is included as a value in a `"name" : "value"` pair as follows:
+A dictionary is wrapped in curly brackets and consists, again, of `key`: `value` pairs..
+
+Lists and dictionaries do not stand by themselves, but are included as a value in `"key" : "value"` pairs as follows:
+
 ```json
-{
-"sex": "male",
-"name": "John",
-"nicknames": ["Johan", "Johnny"]
+{"members": {
+		"P334930": {
+			"id_text": "P334930",
+			"designation": "SAA 03, 001",
+			"publications": ["ABRT 1 32", "SAA 03, 001"]
+		},
+		"P334929": {
+			"id_text": "P334929",
+			"designation": "SAA 03, 002",
+			"publications": ["ABRT 1 29", "SAA03, 002"]
+		}
+	}
 }
 ```
 
-An array is thus a way to give multiple values to the same name. In the example here the values inside the array are strings (surrounded by quotation marks), but they may be of any data type, including arrays or JSON objects. This allows for very complex trees with a minimal arsenal of data structures.
+The value of the key `members` is a dictionary (surrounded by curly brackets) with length of 2. Each element in the dictionary is again a dictionary (surrounded by curly brackets and consisting of `key` : `value` pairs). The key `publications` has a list as its value. A list is thus a way to give multiple values to the same key. In `publications`  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.
 
-For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. 
+For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. To avoid confusion, we use the Python vocabulary here (key, list, dictionary), even when talking about the JSON  structure.
 
 | JSON   | Python     | Surrounded by | Defined as                             |
 | ------ | ---------- | ------------- | -------------------------------------- |
@@ -100,7 +80,7 @@ cat = json.loads(st)
 
 The command `ZipFile` from the `zipfile` library reads in the entire `zip` file. The `read()` command from that same package extracts one particular file from the `zip` and the command `loads()` from the `json` library turns a JSON object into a Python object.
 
-The variable `cat` will now contain the entire `catalogue.json` object from the [DCCLT](http://oracc.org/dcclt) project. We can now treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas Dataframe for ease of viewing and manipulation.
+The variable `cat` will now contain the entire `catalogue.json` object from the [DCCLT](http://oracc.org/dcclt) project. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas Dataframe for ease of viewing and manipulation.
 
 ``` python
 import Pandas as pd	
@@ -152,11 +132,11 @@ The structure of the JSON file, however, is much more complex, because of the hi
 					word
 						sign
 
-How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC](http://oracc.org) JSON potentially also has information about sentences or other discourse units, which may or may not align with the structure of the object in columns and lines.	
+How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC](http://oracc.org) JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object in columns and lines.	
 
 The JSON tree for a text edition consists of a hierarchy of three types of nodes: `c` for a Chunk of text (a word, a line, a sentence, or an entire text); `d` for Discontinuity (beginning of a line, a column, or a surface; breakage; or a ruling on the tablet); and `l` for Lemma, containing all the lemmatization data, including data on the graphemes that write the word.
 
-The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (beginning omitted): 
+The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (beginning of the file omitted): 
 
 ```json
 {"cdl": [
@@ -219,9 +199,9 @@ The structure may be illustrated with the beginning of [P251867](http://oracc.or
                   },
 ```
 
-The first `cdl` node contains an array of three objects: two `d` nodes (discontinuities) for the text object and the obverse, respectively, and a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key that indicates a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text. The lowest node in this tree is called `gdl` (for [Grapheme Description Language](http://http://oracc.museum.upenn.edu/ns/gdl/1.0/)), which identifies the graphemes (cuneiform signs) of which each word is composed, with information on the  reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes. 
+The first `cdl` node contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). The dictionary contains a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list a list as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text. The lowest node in this tree is called `gdl` (for [Grapheme Description Language](http://http://oracc.museum.upenn.edu/ns/gdl/1.0/)), which identifies the graphemes (cuneiform signs) of which each word is composed, with information on the  reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC](http://oracc.org) projects the `gdl` node will include the cuneiform sign itself). 
 
-At any level in the tree the key `cdl` (for Chunk Discontinuity Lemma) thus has as its value a list (or array in JSON speak). The list contains a sequence of JSON objects, each of which is a `c`, `d`, or `l` node. Each `c` node (Chunk) may contain another `cdl` key, which again contains an array – etc. The `l` nodes contain a key `f` which has as its value a JSON object (dictionary) that contains all the lemmatization data. In order to pull out the lemmatization data, therefore, we need to iterate through all the `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
+At any level in the tree the key `cdl` (for Chunk Discontinuity Lemma) thus has as its value a list. The list contains a sequence of dictionaries, each of which is a `c`, `d`, or `l` node. Each `c` node (Chunk) may contain another `cdl` key, which again contains an list – etc. The `l` nodes contain a key `f` which has as its value a dictionary that contains all the lemmatization data. In order to pull out the lemmatization data, therefore, we need to iterate through all the `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
 
 A straightforward way of doing this is by defining a recursive function, that is, a function that calls itself to recursively inspect the value of successive layers of `cdl` keys until one encounters an `f` key. The contents of the `f` key are then added to a list. In its most basic form that function looks like this:
 
@@ -235,7 +215,7 @@ def parsejson(text):
 	return 
 ```
 
-For the `parsejson()` function to run properly we need to first define `lemm_l` as an empty list. Then the function is called with the argument `text`, which contains the contents of the entire JSON object, as retrieved above. The function modifies the list, adding a new row with lemmatization data (one word at a time) each time it encounters an `f` key.
+For the `parsejson()` function to run properly we need to first define `lemm_l` as an empty list. Then the function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function modifies the list, adding a new row with lemmatization data (one word at a time) each time it encounters an `f` key.
 
 ```python
 lemm_l = []
@@ -254,7 +234,7 @@ The list `lemm_l` now contains all the lemmatization data of [P251867](http://or
 
 ### 2.4.5 Enhancing `parsejson()`
 
-The function `parsejson()` can easily be enhanced to do a variety of things. 
+The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are captured in the JSON files. The function can easily be enhanced to do a variety of things. 
 
 #### 2.4.5.1 Sentences
 
@@ -291,7 +271,7 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
                       "f": {
 ```
 
-A subdivision of the sentence is the phrase. Phrases and sentences have their own ID code. Obviously, such demarcations are only present in the JSON if the project editor (in this Gabor Zolyomi) of [ETCSRI](http://oracc.org/etcsri) has added them in the source files. In order to make the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in a dictionary (called `parameters`), and add that ID to each word in the list of lemmas:
+A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this Gábor Zólyomi of [ETCSRI](http://oracc.org/etcsri)) has added them in the source files. In order to make the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in a dictionary (called `parameters`), and add that ID to each word in the list of lemmas:
 
 ```python
 def parsejson(text, parameters):  # this version captures text and sentence IDs
@@ -303,6 +283,7 @@ def parsejson(text, parameters):  # this version captures text and sentence IDs
 		if "f" in JSONobject:
 			lemma = JSONobject["f"]
 			lemma["sentence_id"] = parameters["sentence"]
+            lemma["id_text"] = parameters["textid"]
 			lemm_l.append(lemma)
 	return 
 ```
@@ -317,7 +298,7 @@ text = json.loads(st)
 parsejson(text)
 ```
 
-The initial value of the key `sentence` in the `parameters` dictionary is `None`, but when the `parsejson()` function encounters a node`type` with value `sentence` it changes the value of that key to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into field `sentence_id` of every every row in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
+The initial value of the key `sentence` in the `parameters` dictionary is `None`, but when the `parsejson()` function encounters a node`type` with value `sentence` it changes the value of that key to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
 
 Each row (word) in the list `lemm_l` will now have a field `sentence_id`that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
 
@@ -334,7 +315,7 @@ def parsejson(text, parameters):  # this version captures line IDs
 			parameters["label"] = JSONobject["label"]
 		if "f" in JSONobject:
 			lemma = JSONobject["f"]
-			lemma["id_text"] = parameters["id_text"]
+			lemma["id_text"] = parameters["textid"]
 			lemma["label"] = parameters["label"]
 			lemma["id_word"] = JSONobject["ref"]
 			lemm_l.append(JSONobject[lemma])
@@ -351,7 +332,7 @@ text = json.loads(st)
 parsejson(text, parameters)
 ```
 
-The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. They can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
+The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
 
 #### 2.4.5.3 Select a Section
 
@@ -364,20 +345,17 @@ def parsejson(text, parameters):  # this version captures the lemmatization of a
 			parsejson(JSONobject, parameters)
 		if "label" in JSONobject:
 			parameters["label"] = JSONobject["label"]
-         if parameters["label"] == labels["startlabel"]:
+        if parameters["label"] == labels["startlabel"]:
 			parameters["keep"] = True
-         if parameters["label"] == parameters["endlabel"]:
-			parameters["keep"] = False
-         if parameters["keep"] == True or parameters["label"] == parameters["endlabel"]: 
-         # the "or" statement makes sure that 
-         # the line corresponding to "endlabel"
-         # is included
-			if "f" in JSONobject:							
+        if parameters["keep"] == True: 
+         	if "f" in JSONobject:							
 				lemma = JSONobject["f"]						
 				lemma["id_text"] = parameters["id_text"]
 				lemma["label"] = parameters["label"]
 				lemma["id_word"] = JSONobject["ref"]
 				lemm_l.append(JSONobject[lemma])
+        if parameters["label"] == parameters["endlabel"]:
+			parameters["keep"] = False
 	return 
 ```
 
@@ -409,13 +387,13 @@ The JSON files for individual text editions include other data types that may be
 
 #### 2.4.6.1 Phrasal Semantic Units (Compound Verbs, etc.)
 
-In addition to words, [ORACC](http://oracc.org) recognizes Phrasal Semantic Units (PSUs), including idiomatic expressions, (Sumerian) Compound Verbs, multi-word proper nouns, etc. A PSU consists of multiple words, which are each lemmatized independently but are also indexed as a compound (and listed in the glossary).
+In addition to words, [ORACC](http://oracc.org) recognizes Phrasal Semantic Units ([PSU](http://oracc.museum.upenn.edu/doc/help/lemmatising/psus/index.html)s), including idiomatic expressions, (Sumerian) Compound Verbs, multi-word proper nouns, etc. A PSU consists of multiple words, which are each lemmatized independently but are also indexed as a compound (and listed in the glossary).
 
 In the JSON text edition files the PSUs are listed at the end under the node `linkbase` with references to where the expression appears in the text.
 
 #### 2.4.6.2 Broken Lines
 
-[ORACC](http://oracc.org) editions include information such as "10 lines broken", or "rest of column missing". Such comments may follow a restricted vocabulary and are preserved in `d` (Discontinuity) nodes. The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"`(a string) if the remark follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
+[ORACC](http://oracc.org) editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes. The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"`(a string) if the remark follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
 
 ```JSON
 {
@@ -459,7 +437,7 @@ words
 
 #### 2.4.7.1 Remove Spaces and Commas from Guide Word
 
-The column `gw` in the Pandas DataFrame just created includes bare-bones translations of individual words, such as "king" (for Sumerian lugal) or "(a kind of clamp)" for Akkadian *abāru*. Akkadian Guide Words are derived from the first meaning in the *Concise Dictionary of Akkadian* (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for [ORACC lemmatization](http://oracc.org/doc/help/languages/akkadian/index.html). The proper Guide Word for Akkadian *abāru*, for instance, is `(a kind of clamp)`. 
+The column `gw` (Guide Word) in the Pandas DataFrame just created includes bare-bones translations of individual words, such as "king" (for Sumerian lugal) or "(a kind of clamp)" for Akkadian *abāru*. Strictly speaking, Guide Words are not translations but disambiguators - disambiguating between potential homonyms. Akkadian Guide Words are derived from the first meaning in the *Concise Dictionary of Akkadian* (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for [ORACC lemmatization](http://oracc.org/doc/help/languages/akkadian/index.html). The proper Guide Word for Akkadian *abāru*, for instance, is `(a kind of clamp)`. 
 
 For text analysis purposes it is important to remove all commas and spaces from Guide Word and Sense, because they may be interpreted by computational text analysis tools as word dividers.
 
@@ -501,6 +479,10 @@ The code checks to see if the field Citation Form has content. If so, the field 
 
 The word-by-word representation in the DataFrame `words` is usually not what we want. For most projects we may want the data either line-by-line, or document-by-document. In Pandas the `groupby()` and `agg()`(aggregate) functions are used for that purpose. The `groupby()` function takes as its argument the field or fields by which to group the data. If multiple fields are used, they are given in a list. The `agg()` function takes a dictionary as its argument, in which one may indicate for each field how it is to be aggregated. The example below has only one such function: `' '.join` will join all entries that belong to the same line in the column `lemma` with a space in between.
 
+# TODO
+
+discuss how to create a proper `id_line` field.
+
 ```python
 words = words.groupby(["id_text", "id_line", "label"]).agg({"lemma": ' '.join})
 words
@@ -518,8 +500,12 @@ The [Open Data](http://oracc.org/doc/opendata/index.html) page in ORACC explains
 
 ### 2.5.1 `metadata.json`
 
-The file `metadata.json` (available at `http://oracc.org/[PROJECT]/metadata.json`) provides information about composite texts (which witnesses belong to which composite text) and about formats: `atf` (in transliteration), `lem` (files with lemmatization) and `tr-en` (files with English translation). In projects that work with other translation languages one may find `tr-de` (for German), `tr-hun`(for Hungarian), etc. This may be useful, for instance, if you intent to parse all the files of a project that have lemmatization, but ignore those that do not. One may pull out the list `formats["lem"]` to get all the relevant text IDs.
+The file `metadata.json` provides information about composite texts (which witnesses belong to which composite text) and about formats: `atf` (available in transliteration), `lem` (files with lemmatization) and `tr-en` (files with English translation). In projects that work with other translation languages one may find `tr-de` (for German), `tr-hun`(for Hungarian), etc. This may be useful, for instance, if you intent to parse all the files of a project that have lemmatization, but ignore those that do not. One may pull out the list `formats["lem"]` to get all the relevant text IDs.
 
 ### 2.5.2 Indexes and Glossary
 
 The Index and Glossary JSON files reproduce the indexes used by the [ORACC Search](http://oracc.org/doc/search/searchingcorpora/index.html) and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for `lugal` and `dalla` in the same text), a feature that is not currently available in standard [ORACC](http://oracc.org) search. The Index and Glossary data allow one to build URLs that point directly to a [text](http://oracc.org/dcclt/Q000039), a [line](http://oracc.org/dcclt/Q000039.399), a [word](http://oracc.org/dcclt/Q000039.399.1), or even a [pair of words](http://oracc.org/blms/P274260.10.2,P274260.10.1203003) (here a Sumerian/Akkadian equivalence in an interlinear bilingual).
+
+# TODO
+
+the above references to line, word, and pair of words do not seem to work currently.
