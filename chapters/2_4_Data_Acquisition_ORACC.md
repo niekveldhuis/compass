@@ -437,22 +437,15 @@ words
 
 #### 2.4.7.1 Remove Spaces and Commas from Guide Word
 
-The column `gw` (Guide Word) in the Pandas DataFrame just created includes bare-bones translations of individual words, such as "king" (for Sumerian lugal) or "(a kind of clamp)" for Akkadian *abāru*. Strictly speaking, Guide Words are not translations but disambiguators - disambiguating between potential homonyms. Akkadian Guide Words are derived from the first meaning in the *Concise Dictionary of Akkadian* (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for [ORACC lemmatization](http://oracc.org/doc/help/languages/akkadian/index.html). The proper Guide Word for Akkadian *abāru*, for instance, is `(a kind of clamp)`. 
+The column `gw` (Guide Word) in the Pandas DataFrame just created includes bare-bones translations of individual words, such as "king" (for Sumerian lugal) or "(a kind of clamp)" for Akkadian *abāru*. Strictly speaking, Guide Words are not translations but disambiguators - disambiguating between potential homonyms. Akkadian Guide Words are derived from the first meaning in the *Concise Dictionary of Akkadian* (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for [ORACC lemmatization](http://oracc.org/doc/help/languages/akkadian/index.html). 
 
-For text analysis purposes it is important to remove all commas and spaces from Guide Word and Sense, because they may be interpreted by computational text analysis tools as word dividers.
+The presence of spaces in Guide Words may cause trouble in a variety of computational methods, because such methods will interpret the space a a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as a new field. 
 
-# TODO
-
-check 
-
-```python  
-words['gw'] = words['gw'].str.replace(' ', '-')
-```
-etc. Use `.str` or not?
+For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The Pandas `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, the `replace()` replaces a full string; we need to set `regex = True` to replace a partial string.
 
 ```python
-words['gw'] = [x.replace(' ', '-') for x in words['gw']]
-words['gw'] = [x.replace(',', '') for x in words['gw']]
+findreplace = {' ' : '-', ',' : ''}
+words = words.replace({'gw' : findreplace, 'sense' : findreplace}, regex=True)
 ```
 
 Now the Guide Word for *abāru* has become `(a-kind-of-clamp)`. If the field Sense is relevant for your project you will want to do the same there.
@@ -475,23 +468,46 @@ words["lemma"] = words.apply(lambda r: (r['form'] + '[NA]NA')
 
 The code checks to see if the field Citation Form has content. If so, the field `lemma` is created by adding Citation Form, Guide Word, and Part of Speech (with `[`and `]`as dividers). If not, then `lemma` is identical with the form (the raw transliteration) followed by [NA]NA (Guide Word and Part of Speech unknown).
 
-#### 2.4.7.3 Arrange by Line or by Document
+#### 2.4.7.3  Create `id_line`
 
-The word-by-word representation in the DataFrame `words` is usually not what we want. For most projects we may want the data either line-by-line, or document-by-document. In Pandas the `groupby()` and `agg()`(aggregate) functions are used for that purpose. The `groupby()` function takes as its argument the field or fields by which to group the data. If multiple fields are used, they are given in a list. The `agg()` function takes a dictionary as its argument, in which one may indicate for each field how it is to be aggregated. The example below has only one such function: `' '.join` will join all entries that belong to the same line in the column `lemma` with a space in between.
-
-# TODO
-
-discuss how to create a proper `id_line` field.
+In order to arrange the data in line-by-line format we need a we need to create an `id_line` field. The `id_word` field created by the extended parser (see 2.4.5.2) has the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). We can split this field, indicating that the dot is the separator, as follow:
 
 ```python
-words = words.groupby(["id_text", "id_line", "label"]).agg({"lemma": ' '.join})
-words
+ids = id_word.split(".")
 ```
 
-If necessary one may specify multiple such functions for multiple columns, for instance:
+The variable `ids` is now a list that holds the three elements; in our example above:
 
 ```python
-words = words.groupby(["id_text", "id_line", "label"]).agg({"lemma": ' '.join, "base": ' '.join})
+['P338628', '4', '1']
+```
+
+The second element (`ids[1]`) is the one we need (`'4'`). Note that this `'4'`is a string (between quotation marks), not a number. We need to change the data type into integer in order to arrange the lines properly (as string `'4'` comes between `'40'` and `'39'`). We can create the proper `id_line` field with a list comprehension as follows:
+
+```python
+words['id_line'] = [int(wordid.split('.')[1]) for wordid in words['id_word']]
+```
+
+
+
+#### 2.4.7.4 Arrange by Line or by Document
+
+The word-by-word representation in the DataFrame `words` is usually not what we want. For most projects we may want the data either line-by-line, or document-by-document. In Pandas the `groupby()` and `agg()`(aggregate) functions are used for that purpose. The `groupby()` function takes as its argument the field or fields by which to group the data. If multiple fields are used, they are given in a list. The `agg()` function takes a dictionary as its argument, in which one may indicate for each field how it is to be aggregated. The example below has only one such function: `' '.join` will join all entries that belong to the same line in the column `lemma` with a space in between. Arranging the data by document:
+
+```python
+docs = words.groupby("id_text").agg({"lemma": ' '.join})
+```
+
+Arranging line-by-line:
+
+```python
+lines = words.groupby(["id_text", "id_line", "label"]).agg({"lemma": ' '.join})
+```
+
+If necessary one may specify multiple aggregate functions for multiple columns, for instance:
+
+```python
+lines = words.groupby(["id_text", "id_line", "label"]).agg({"lemma": ' '.join, "base": ' '.join})
 ```
 
 ## 2.5 Other [ORACC](http://oracc.org) JSON files
@@ -504,8 +520,4 @@ The file `metadata.json` provides information about composite texts (which witne
 
 ### 2.5.2 Indexes and Glossary
 
-The Index and Glossary JSON files reproduce the indexes used by the [ORACC Search](http://oracc.org/doc/search/searchingcorpora/index.html) and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for `lugal` and `dalla` in the same text), a feature that is not currently available in standard [ORACC](http://oracc.org) search. The Index and Glossary data allow one to build URLs that point directly to a [text](http://oracc.org/dcclt/Q000039), a [line](http://oracc.org/dcclt/Q000039.399), a [word](http://oracc.org/dcclt/Q000039.399.1), or even a [pair of words](http://oracc.org/blms/P274260.10.2,P274260.10.1203003) (here a Sumerian/Akkadian equivalence in an interlinear bilingual).
-
-# TODO
-
-the above references to line, word, and pair of words do not seem to work currently.
+The Index and Glossary JSON files reproduce the indexes used by the [ORACC Search](http://oracc.org/doc/search/searchingcorpora/index.html) and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for `lugal` and `dalla` in the same text), a feature that is not currently available in standard [ORACC](http://oracc.org) search. 
