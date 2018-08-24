@@ -1,0 +1,369 @@
+<TEI.2 id="c.4.23.1">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A hymn to Ninkasi (Ninkasi A) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b308">Krecher 1996a</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b601">Civil 1964</xref><biblScope type="contents">composite text, translation, commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">AO 5385 (TCL 15 20)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">Ni 4569 iii 24'ff. (ISET 1 60f.)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">VAT 6705 (VAS 10 156)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>21.vii.1999-27.vii.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>22.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>22.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>22.xii.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>22.xii.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c4231.1" corresp="t4231.p1">
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="zal-le" lemma="zal" pos="V" label="to pass">zal-le</w>
+<w form="u3-tud-da" lemma="tud" pos="V" label="to give birth">u3-tud-da</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4231.2" corresp="t4231.p1">
+<w form="&d;nin-hur-saj-ja2-ke4" lemma="nin-hur-saj-ja2" pos="N" type="DN" label="Nin&h;ursa&g;a" det="&d;">&d;nin-hur-saj-ja2-ke4</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="zid-de3-ec" lemma="zid" pos="AJ" label="right">zid-de3-<supplied/>ec</w>
+<w form="dug4-ga" lemma="dug4" pos="V" label="to say">dug4-ga</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4231.3" corresp="t4231.p1">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="zal-le" lemma="zal" pos="V" label="to pass">zal-le</w>
+<w form="u3-tud-da" lemma="tud" pos="V" label="to give birth">u3-tud-da</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4231.4" corresp="t4231.p1">
+<w form="&d;nin-hur-saj-ja2-ke4" lemma="nin-hur-saj-ja2" pos="N" type="DN" label="Nin&h;ursa&g;a" det="&d;">&d;nin-hur-saj-ja2-ke4</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="zid-de3-ec" lemma="zid" pos="AJ" label="right">zid-de3-ec</w>
+<w form="dug4-ga" lemma="dug4" pos="V" label="to say">dug4-ga</w>
+</l>
+<l n="5" id="c4231.5" corresp="t4231.p2">
+<w form="iri-zu" lemma="iri" pos="N" label="town">iri-zu</w>
+<w form="lal3-har-re" lemma="lal3-har" pos="N" label="wax">lal3-har-re</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="us2-sa" lemma="us2" pos="V" label="to be adjacent">us2-sa</w>
+</l>
+<l n="6" id="c4231.6" corresp="t4231.p2">
+<w form="bad3" lemma="bad3" pos="N" label="wall">bad3</w>
+<w form="gal-bi" lemma="gal" pos="V" label="to be big">gal-bi</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="mu-ra-an-du7-du7" lemma="du7" pos="V" label="to be perfect" form-type="RR">mu-ra-an-du7-du7</w>
+</l>
+<l n="7" id="c4231.7" corresp="t4231.p2">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="iri-zu" lemma="iri" pos="N" label="town">iri-zu</w>
+<w form="lal3-har-re" lemma="lal3-har" pos="N" label="wax">lal3-har-re</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="us2-sa" lemma="us2" pos="V" label="to be adjacent">us2-sa</w>
+</l>
+<l n="8" id="c4231.8" corresp="t4231.p2">
+<w form="bad3" lemma="bad3" pos="N" label="wall">bad3</w>
+<w form="gal-bi" lemma="gal" pos="V" label="to be big">gal-bi</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="mu-ra-an-du7-du7" lemma="du7" pos="V" label="to be perfect" form-type="RR">mu-ra-an-du7-du7</w>
+</l>
+<l n="9" id="c4231.9" corresp="t4231.p3">
+<w form="a-a-zu" lemma="a-a" pos="N" label="father">a-a-zu</w>
+<w form="&d;en-ki" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-ki</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="&d;nu-dim2-mud-e" lemma="nu-dim2-mud" pos="N" type="DN" label="Nudimmud" det="&d;">&d;nu-dim2-mud-e</w>
+</l>
+<l n="10" id="c4231.10" corresp="t4231.p3">
+<w form="ama-zu" lemma="ama" pos="N" label="mother">ama-zu</w>
+<w form="&d;nin-ti" lemma="nin-ti" pos="N" type="DN" label="Ninti" det="&d;">&d;nin-ti</w>
+<w form="nin" lemma="nin" pos="N" label="lady">nin</w>
+<w form="abzu-a" lemma="abzu" pos="N" label="underground water">abzu-a</w>
+</l>
+<l n="11" id="c4231.11" corresp="t4231.p3">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="a-a-zu" lemma="a-a" pos="N" label="father">a-a-zu</w>
+<w form="&d;en-ki" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-ki</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="&d;nu-dim2-mud-e" lemma="nu-dim2-mud" pos="N" type="DN" label="Nudimmud" det="&d;">&d;nu-dim2-mud-e</w>
+</l>
+<l n="12" id="c4231.12" corresp="t4231.p3">
+<w form="ama-zu" lemma="ama" pos="N" label="mother">ama-zu</w>
+<w form="&d;nin-ti" lemma="nin-ti" pos="N" type="DN" label="Ninti" det="&d;">&d;nin-ti</w>
+<w form="nin" lemma="nin" pos="N" label="lady">nin</w>
+<w form="abzu-a" lemma="abzu" pos="N" label="underground water">abzu-a</w>
+</l>
+<l n="13" id="c4231.13" corresp="t4231.p4">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="nij2-silaj" lemma="nij2-silaj" pos="N" label="dough">nij2-silaj</w>
+<w form="&jic;mar" lemma="mar" pos="N" label="spade" det="&jic;">&jic;mar</w>
+<w form="mah-a" lemma="mah" pos="V" label="to be majestic">mah-a</w>
+<w form="du8-a-zu" lemma="du8" pos="V" label="to spread">du8-a-zu</w>
+</l>
+<l n="14" id="c4231.14" corresp="t4231.p4">
+<w form="cim-lal3-ta" lemma="cim-lal3" pos="N" label="sweet aromatic">cim-lal3-ta</w>
+<w form="ub4-ba" lemma="ub4" pos="N" label="pit">ub4-ba</w>
+<w form="bappir2" lemma="bappir" pos="N" label="beer bread">bappir2</w>
+<w form="hi-hi-a" lemma="hi" pos="V" label="to mix up" form-type="RR">hi-hi-a</w>
+</l>
+<l n="15" id="c4231.15" corresp="t4231.p4">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="nij2-silaj" lemma="nij2-silaj" pos="N" label="dough">nij2-silaj</w>
+<w form="&jic;mar" lemma="mar" pos="N" label="spade" det="&jic;">&jic;mar</w>
+<w form="mah-a" lemma="mah" pos="V" label="to be majestic">mah-a</w>
+<w form="du8-a-zu" lemma="du8" pos="V" label="to spread">du8-a-zu</w>
+</l>
+<l n="16" id="c4231.16" corresp="t4231.p4">
+<w form="cim-lal3-ta" lemma="cim-lal3" pos="N" label="sweet aromatic">cim-lal3-ta</w>
+<w form="ub4-ba" lemma="ub4" pos="N" label="pit">ub4-ba</w>
+<w form="bappir2" lemma="bappir" pos="N" label="beer bread">bappir2</w>
+<w form="hi-hi-a" lemma="hi" pos="V" label="to mix up" form-type="RR">hi-hi-a</w>
+</l>
+<l n="17" id="c4231.17" corresp="t4231.p5">
+<w form="bappir2" lemma="bappir" pos="N" label="beer bread">bappir2</w>
+<w form="udun-mah-e" lemma="udun-mah" pos="N" label="type of oven">udun-mah-e</w>
+<w form="du8-a-zu" lemma="du8" pos="V" label="to spread">du8-a-zu</w>
+</l>
+<l n="18" id="c4231.18" corresp="t4231.p5">
+<w form="zar" lemma="zar" pos="N" label="sheaf">zar</w>
+<w form="gu2-nida-am3" lemma="gu2-nida" pos="N" label="hulled barley">gu2-nida-am3</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="sa2-sa2-am3" lemma="sa2" pos="V" label="to equal" form-type="RR">sa2-sa2-am3</w>
+</phr>
+</l>
+<l n="19" id="c4231.19" corresp="t4231.p5">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="bappir2" lemma="bappir" pos="N" label="beer bread">bappir2</w>
+<w form="udun-mah-e" lemma="udun-mah" pos="N" label="type of oven">udun-mah-e</w>
+<w form="du8-a-zu" lemma="du8" pos="V" label="to spread">du8-a-zu</w>
+</l>
+<l n="20" id="c4231.20" corresp="t4231.p5">
+<w form="zar" lemma="zar" pos="N" label="sheaf">zar</w>
+<w form="gu2-nida-am3" lemma="gu2-nida" pos="N" label="hulled barley">gu2-nida-am3</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="sa2-sa2-am3" lemma="sa2" pos="V" label="to equal" form-type="RR">sa2-sa2-am3</w>
+</phr>
+</l>
+<l n="21" id="c4231.21" corresp="t4231.p6">
+<w form="munu4" lemma="munu4" pos="N" label="malt">munu4</w>
+<w form="sahar" lemma="sahar" pos="N" label="earth">sahar</w>
+<w form="jar-ra" lemma="jar" pos="V" label="to place">jar-ra</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="sig9-ga-zu" lemma="sig9" pos="V" label="to put">sig9-ga-zu</w>
+</l>
+<l n="22" id="c4231.22" corresp="t4231.p6">
+<w form="ur" lemma="ur" pos="N" label="dog">ur</w>
+<w form="me-me" lemma="me" pos="N" label="essence" form-type="RR">me-me</w>
+<w form="nam" lemma="nam2" pos="N" label="lord">nam</w>
+<w form="gam-gam-ma-am3" lemma="gam" pos="V" label="to bow down" form-type="RR">gam-gam-ma-am3</w>
+</l>
+<l n="23" id="c4231.23" corresp="t4231.p6">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="munu4" lemma="munu4" pos="N" label="malt">munu4</w>
+<w form="sahar" lemma="sahar" pos="N" label="earth">sahar</w>
+<w form="jar-ra" lemma="jar" pos="V" label="to place">jar-ra</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="sig9-ga-zu" lemma="sig9" pos="V" label="to put">sig9-ga-zu</w>
+</l>
+<l n="24" id="c4231.24" corresp="t4231.p6">
+<w form="ur" lemma="ur" pos="N" label="dog">ur</w>
+<w form="me-me" lemma="me" pos="N" label="essence" form-type="RR">me-me</w>
+<w form="nam" lemma="nam2" pos="N" label="lord">nam</w>
+<w form="gam-gam-ma-am3" lemma="gam" pos="V" label="to bow down" form-type="RR">gam-gam-ma-am3</w>
+</l>
+<l n="25" id="c4231.25" corresp="t4231.p7">
+<w form="sumun2" lemma="sumun2" pos="N" label="beer mash">sumun2</w>
+<w form="dug-a" lemma="dug" pos="N" label="pot">dug-a</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="jar-ra-zu" lemma="jar" pos="V" label="to place">jar-ra-zu</w>
+</l>
+<l n="26" id="c4231.26" corresp="t4231.p7">
+<w form="i-zi" lemma="i-zi" pos="N" label="wave">i-zi</w>
+<w form="zi-zi-dam" lemma="zig3" pos="V" label="to rise" form-type="rr">zi-zi-dam</w>
+<w form="i-zi" lemma="i-zi" pos="N" label="wave">i-zi</w>
+<w form="ja2-ja2-dam" lemma="jar" pos="V" label="to place" form-type="rr">ja2-ja2-dam</w>
+</l>
+<l n="27" id="c4231.27" corresp="t4231.p7">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="sumun2" lemma="sumun2" pos="N" label="beer mash">sumun2</w>
+<w form="dug-a" lemma="dug" pos="N" label="pot">dug-a</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="jar-ra-zu" lemma="jar" pos="V" label="to place">jar-ra-zu</w>
+</l>
+<l n="28" id="c4231.28" corresp="t4231.p7">
+<w form="i-zi" lemma="i-zi" pos="N" label="wave">i-zi</w>
+<w form="zi-zi-dam" lemma="zig3" pos="V" label="to rise" form-type="rr">zi-zi-dam</w>
+<w form="i-zi" lemma="i-zi" pos="N" label="wave">i-zi</w>
+<w form="ja2-ja2-dam" lemma="jar" pos="V" label="to place" form-type="rr">ja2-ja2-dam</w>
+</l>
+<l n="29" id="c4231.29" corresp="t4231.p8">
+<w form="titab" lemma="titab" pos="N" label="beer mash">titab</w>
+<w form="&gi;kid-mah-a" lemma="kid-mah" pos="N" label="type of mat" det="&gi;">&gi;kid-mah-a</w>
+<w form="barag2-ga-zu" lemma="barag2" pos="V" label="to spread out">barag2-ga-zu</w>
+</l>
+<l n="30" id="c4231.30" corresp="t4231.p8">
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="sed8" lemma="sed4" pos="V" label="to be cold">sed8</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<w form="dib-ba-a" lemma="dib" pos="V" label="to pass">dib-ba-a</w>
+</l>
+<l n="31" id="c4231.31" corresp="t4231.p8">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="titab" lemma="titab" pos="N" label="beer mash">titab</w>
+<w form="&gi;kid-mah-a" lemma="kid-mah" pos="N" label="type of mat" det="&gi;">&gi;kid-mah-a</w>
+<w form="barag2-ga-zu" lemma="barag2" pos="V" label="to spread out">barag2-ga-zu</w>
+</l>
+<l n="32" id="c4231.32" corresp="t4231.p8">
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="sed8" lemma="sed4" pos="V" label="to be cold">sed8</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<w form="dib-ba-a" lemma="dib" pos="V" label="to pass">dib-ba-a</w>
+</l>
+<l n="33" id="c4231.33" corresp="t4231.p9">
+<w form="&kac;dida" lemma="dida" pos="N" label="beer (ingredient)" det="&kac;">&kac;dida</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="tab-ba" lemma="tab" pos="V" label="to be parallel">tab-ba</w>
+<w form="jal2-la-zu" lemma="jal2" pos="V" label="to be (located)">jal2-la-zu</w>
+</l>
+<l n="34" id="c4231.34" corresp="t4231.p9">
+<w form="lal3" lemma="lal3" pos="N" label="syrup">lal3</w>
+<w form="jectin" lemma="jectin" pos="N" label="grape (wine)">jectin</w>
+<w form="tec2-ba" lemma="tec2" pos="N" label="unity">tec2-ba</w>
+<w form="sur-ra-a" lemma="sur" pos="V" label="to drip">sur-ra-a</w>
+</l>
+<l n="35" id="c4231.35" corresp="t4231.p9">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="&kac;dida" lemma="dida" pos="N" label="beer (ingredient)" det="&kac;">&kac;dida</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="tab-ba" lemma="tab" pos="V" label="to be parallel">tab-ba</w>
+<w form="jal2-la-zu" lemma="jal2" pos="V" label="to be (located)">jal2-la-zu</w>
+</l>
+<l n="36" id="c4231.36" corresp="t4231.p9">
+<w form="lal3" lemma="lal3" pos="N" label="syrup">lal3</w>
+<w form="jectin" lemma="jectin" pos="N" label="grape (wine)">jectin</w>
+<w form="tec2-ba" lemma="tec2" pos="N" label="unity">tec2-ba</w>
+<w form="sur-ra-a" lemma="sur" pos="V" label="to drip">sur-ra-a</w>
+</l>
+<l n="37" id="c4231.37" corresp="t4231.p10">
+<supplied/>
+<w form="JAR" lemma="JAR" label="&G;AR">JAR</w>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="38" id="c4231.38" corresp="t4231.p10">
+<supplied/>
+<w form="&kac;dida" lemma="dida" pos="N" label="beer (ingredient)" det="&kac;">&kac;dida</w>
+<w form="dug-ce3" lemma="dug" pos="N" label="pot">dug-ce3</w>
+<w form="mi-ni-in-X" lemma="X" label="X">mi-ni-in-X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="39" id="c4231.39" corresp="t4231.p10">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="JAR" lemma="JAR" label="&G;AR">JAR</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="40" id="c4231.40" corresp="t4231.p10">
+<w form="&kac;dida" lemma="dida" pos="N" label="beer (ingredient)" det="&kac;">&kac;dida</w>
+<w form="dug-ce3" lemma="dug" pos="N" label="pot">dug-ce3</w>
+<w form="mi-ni-in-X" lemma="X" label="X">mi-ni-in-X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="41" id="c4231.41" corresp="t4231.p11">
+<w form="&dug;nij2-dur2-buru3-e" lemma="nij2-dur2-buru3" pos="N" label="fermenting vat" det="&dug;">&dug;nij2-dur2-buru3-e</w>
+<w form="gu3" lemma="gu3" pos="N" label="voice">gu3</w>
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="di-dam" lemma="dug4" pos="V" label="to say" form-type="nfi">di-dam</w>
+</l>
+<l n="42" id="c4231.42" corresp="t4231.p11">
+<w form="lahtan" lemma="lahtan" pos="N" label="vat">lahtan</w>
+<w form="mah-a" lemma="mah" pos="V" label="to be majestic">mah-a</w>
+<w form="mi-ni-in-si-sa2-am3" lemma="si-sa2" pos="V" label="to make straight">mi-ni-in-si-sa2-am3</w>
+</l>
+<l n="43" id="c4231.43" corresp="t4231.p11">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="&dug;nij2-dur2-buru3-e" lemma="nij2-dur2-buru3" pos="N" label="fermenting vat" det="&dug;">&dug;nij2-dur2-buru3-e</w>
+<w form="gu3" lemma="gu3" pos="N" label="voice">gu3</w>
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="di-dam" lemma="dug4" pos="V" label="to say" form-type="nfi">di-dam</w>
+</l>
+<l n="44" id="c4231.44" corresp="t4231.p11">
+<w form="lahtan" lemma="lahtan" pos="N" label="vat">lahtan</w>
+<w form="mah-a" lemma="mah" pos="V" label="to be majestic">mah-a</w>
+<w form="mi-ni-in-si-sa2-am3" lemma="si-sa2" pos="V" label="to make straight">mi-ni-in-si-sa2-am3</w>
+</l>
+<l n="45" id="c4231.45" corresp="t4231.p12">
+<w form="kac" lemma="kac" pos="N" label="beer">kac</w>
+<w form="si-im" lemma="sim" pos="V" label="to filter">si-im</w>
+<w form="&dug;lahtan-na" lemma="lahtan" pos="N" label="vat" bound="L,ak" det="&dug;">&dug;lahtan-na</w>
+<w form="de2-a-zu" lemma="de2" pos="V" label="to pour">de2-a-zu</w>
+</l>
+<l n="46" id="c4231.46" corresp="t4231.p12">
+<w form="&id2;idigna" lemma="idigna" pos="N" type="WN" label="Tigris" det="&id2;">&id2;idigna</w>
+<w form="&id2;buranun-na" lemma="buranuna" pos="N" type="WN" label="Euphrates" det="&id2;">&id2;buranun-na</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="sig10-ga-am3" lemma="sig10" pos="V" label="to place">sig10-ga-am3</w>
+</l>
+<l n="47" id="c4231.47" corresp="t4231.p12">
+<w form="&d;nin-ka-si" lemma="nin-ka-si" pos="N" type="DN" label="Ninkasi" det="&d;">&d;nin-ka-si</w>
+<w form="kac" lemma="kac" pos="N" label="beer">kac</w>
+<w form="si-im" lemma="sim" pos="V" label="to filter">si-im</w>
+<w form="&dug;lahtan-na" lemma="lahtan" pos="N" label="vat" bound="L,ak" det="&dug;">&dug;lahtan-na</w>
+<w form="de2-a-zu" lemma="de2" pos="V" label="to pour">de2-a-zu</w>
+</l>
+<l n="48" id="c4231.48" corresp="t4231.p12">
+<w form="&id2;idigna" lemma="idigna" pos="N" type="WN" label="Tigris" det="&id2;">&id2;idigna</w>
+<w form="&id2;buranun-na" lemma="buranuna" pos="N" type="WN" label="Euphrates" det="&id2;">&id2;buranun-na</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="sig10-ga-am3" lemma="sig10" pos="V" label="to place">sig10-ga-am3</w>
+</l>
+</body>
+</text>
+</TEI.2>

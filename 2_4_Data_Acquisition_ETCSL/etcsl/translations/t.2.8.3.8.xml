@@ -1,0 +1,68 @@
+<TEI.2 id="t.2.8.3.8">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A hymn to Enlil for Samsu-iluna (Samsu-iluna H) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>26.iii.1999-01.iv.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>translation</item></change>
+<change><date>27.iv.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>06.v.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>29.x.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>07.i.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>07.i.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t2838.p1" n="1-2" corresp="c2838.1">&X;&X; offerings &X;&X;, he brought (?) them into <w type="TN">E-kur</w>.</p>
+<p id="t2838.p2" n="3-8" corresp="c2838.3">In the <w type="TN">E-kur</w>, the house of <w type="DN">Enlil</w>, <w type="RN"><w type="DN">Samsu</w>-il&umacr;na</w>, the mighty king 
+<addSpan to="t2838.v1"/>whose &X;&X; awesomeness covers all people
+<anchor id="t2838.v1"/>
+<addSpan to="t2838.v2"/><note id="t2838.n1" target="t2838.v1">an Akkadian gloss has:</note> whose splendour covers all people
+<anchor id="t2838.v2"/>
+<addSpan to="t2838.v3"/><gap extent="1 line unclear"/>
+<anchor id="t2838.v3"/>
+<addSpan to="t2838.v4"/><note id="t2838.n2" target="t2838.v3">an Akkadian gloss has:</note> reach &X;&X;
+<anchor id="t2838.v4"/>
+<gap extent="3 lines fragmentary"/></p>
+<altGrp><alt targType="addSpan" targets="t2838.v1 t2838.v2"/><alt targType="addSpan" targets="t2838.v3 t2838.v4"/></altGrp>
+<p id="t2838.p3" n="9-13" corresp="c2838.9">
+<addSpan to="t2838.v5"/><gap extent="1 line fragmentary"/>
+<anchor id="t2838.v5"/>
+<addSpan to="t2838.v6"/><note id="t2838.n3" target="t2838.v5">an Akkadian gloss has:</note> by saving &X;&X;.
+<anchor id="t2838.v6"/> The foreign lands &X;&X; 
+<addSpan to="t2838.v7"/>has wisely (?) made decisions (?)
+<anchor id="t2838.v7"/>
+<addSpan to="t2838.v8"/><note id="t2838.n4" target="t2838.v7">an Akkadian gloss has:</note> &X;&X;; who has inflicted defeat &X;&X; on all hostile lands
+<anchor id="t2838.v8"/>. 
+<addSpan to="t2838.v9"/><w type="RN"><w type="DN">Samsu</w>-il&umacr;na</w>, the good hero, lordly one of his Land
+<anchor id="t2838.v9"/>
+<addSpan to="t2838.v10"/><note id="t2838.n5" target="t2838.v9">an Akkadian gloss has:</note> <w type="RN"><w type="DN">Samsu</w>-il&umacr;na</w>, the good hero, lordly one of his land
+<anchor id="t2838.v10"/>! O <w type="RN"><w type="DN">Samsu</w>-il&umacr;na</w>, it is sweet to praise you!</p>
+<altGrp><alt targType="addSpan" targets="t2838.v5 t2838.v6"/><alt targType="addSpan" targets="t2838.v7 t2838.v8"/><alt targType="addSpan" targets="t2838.v9 t2838.v10"/></altGrp></body>
+</text>
+</TEI.2>

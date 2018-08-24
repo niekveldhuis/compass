@@ -1,0 +1,17 @@
+<!-- Modifications of the TEI.2 DTD   -->
+<!-- FOR THE NEW CONTENT MODELS, SEE etcsl-extensions.dtd -->
+<!-- Jarle Ebeling, 2003-11-05 -->
+
+<!--  The following elements are revised -->
+<!ENTITY % w 'IGNORE' >
+<!ENTITY % phr 'IGNORE' >
+<!ENTITY % q 'IGNORE' >
+<!ENTITY % lg 'IGNORE' >
+<!ENTITY % gloss 'IGNORE' >
+<!ENTITY % term 'IGNORE' >
+<!ENTITY % trailer 'IGNORE' >
+<!ENTITY % listBibl 'IGNORE' >
+<!ENTITY % biblStruct 'IGNORE' >
+
+<!-- Elements to globally include -->
+<!ENTITY % x.Incl 'damageEnd | suppliedEnd | corrEnd | unclearEnd |' >

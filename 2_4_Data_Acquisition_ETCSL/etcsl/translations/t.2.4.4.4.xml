@@ -1,0 +1,74 @@
+<TEI.2 id="t.2.4.4.4">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">tigi</foreign> (?) to Ninurta for &C;u-Suen (&C;u-Suen D) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>22.ii.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>16.vi.2000-25.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>06.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>15.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>15.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<lg n="A" type="barsud">
+<p id="t2444.p1" n="1-4" corresp="c2444.A.1">Ancient warrior, greatly respected and forceful, with the strength of a full-grown lion! <w type="DN">Ninurta</w>, &X;&X; flood, great lion, fierce opponent in battle! Mighty one, who &X;&X; the enemy peoples, destroyer of cities, who turns the settlements into dust! <w type="DN">Ninurta</w>, great wild bull, a battering ram who &X;&X; great walls!</p>
+<trailer place="rubric" type="barsud">
+<p id="t2444.p2" n="5" corresp="c2444.A.5"><foreign lang="sux">Barsud</foreign>.</p>
+</trailer></lg><lg n="B" type="cagbatuku">
+<p id="t2444.p3" n="6-14" corresp="c2444.B.6">A flood which frightens the rebel lands, without rival! <w type="DN">Ninurta</w>, deathly hush, 
+<addSpan to="t2444.v1"/>&X;&X; bolt of lightning (?), &X;&X;
+<anchor id="t2444.v1"/>
+<addSpan to="t2444.v2"/><note id="t2444.n1" lang="eng" target="t2444.v1">the other ms. has instead:</note> imbued with fearsomeness, &X;&X;, &X;&X; the enemy
+<anchor id="t2444.v2"/>. You have made the name of King <w type="RN">&C;u-<w type="DN">Suen</w></w> known among the widespread people. When he directs big bulls and big sheep to the main courtyard of your <w type="TN">E-&c;u-me-&c;a</w>, the holy residence, the <w type="TN">Igi-&c;u-galam</w> in which the fates are determined, may he greet (?) you from its holy royal offering place, may <w type="RN">&C;u-<w type="DN">Suen</w></w> greet (?) you from there. &X;&X; <w type="DN">Ninurta</w> &X;&X; long life &X;&X;. &X;&X; long life &X;&X; for <w type="RN">&C;u-<w type="DN">Suen</w></w>.</p>
+<altGrp><alt targType="addSpan" targets="t2444.v1 t2444.v2"/></altGrp><trailer place="rubric" type="cagbatuku">
+<p id="t2444.p4" n="15" corresp="c2444.B.15"><foreign lang="sux">&C;agbatuku</foreign>.</p>
+</trailer></lg><lg n="C" type="barsud">
+<p id="t2444.p5" n="16-20" corresp="c2444.C.16"><gap extent="2 lines fragmentary"/>
+<w type="DN">Ninurta</w>, firstborn son of <w type="DN">Enlil</w>, &X;&X; fearsomeness.
+<gap extent="2 lines fragmentary"/></p>
+<trailer place="rubric" type="barsud">
+<p id="t2444.p6" n="21" corresp="c2444.C.21">2nd <foreign lang="sux">barsud</foreign>.</p>
+</trailer></lg><lg n="D" type="sa-gida">
+<p id="t2444.p7" n="22-28" corresp="c2444.D.22"><gap extent="2 lines fragmentary"/>
+&X;&X; raging &X;&X; horizon &X;&X;. <w type="DN">Ninurta</w>, the strong one, the august provider, born of <w type="DN">Ninlil</w>! &X;&X; deathly hush &X;&X; <w type="RN">&C;u-<w type="DN">Suen</w></w> who is always at <w type="DN">Enlil's</w> service. <w type="DN">Ninurta</w>, may you be his great wall, may you look on him favourably; may you be <w type="RN">&C;u-<w type="DN">Suen's</w></w> great wall, may you look on him favourably.</p>
+<trailer place="rubric" type="sa-gida">
+<p id="t2444.p8" n="29" corresp="c2444.D.29"><foreign lang="sux">Sa-gida</foreign>.</p>
+</trailer></lg><lg n="E" type="jicgijal">
+<p id="t2444.p9" n="30" corresp="c2444.E.30"><w type="DN">Ninurta</w>, may you be the aid of my <w type="RN">&C;u-<w type="DN">Suen's</w></w> weapons.</p>
+<trailer place="rubric" type="jicgijal">
+<p id="t2444.p10" n="31" corresp="c2444.E.31">Its <foreign lang="sux">&g;i&c;gi&g;al</foreign>.</p>
+</trailer></lg><lg n="F" type="sa-jara">
+<p id="t2444.p11" n="32-43" corresp="c2444.F.32">&X;&X; who moves fast into the heart of the mountains! <w type="DN">Ninurta</w>, massive stormwind over the rebel lands, devastating the people! Counsellor, who controls perfectly the divine powers of the <w type="TN">E-kur</w>, support of his father! <w type="DN">Ninurta</w>, &X;&X; who moves fast into the heart of the mountains! <w type="DN">Ninurta</w>, massive stormwind over the rebel lands, devastating the people! Counsellor, who controls perfectly the divine powers of the <w type="TN">E-kur</w>, support of his father! My king, the great strength of <w type="DN">Enlil</w>, from whose grasp no foreign country can escape! For <w type="RN">&C;u-<w type="DN">Suen</w></w> &X;&X;, given great strength by Father <w type="DN">Enlil</w> -- you, <w type="DN">Ninurta</w>, will destroy myriads in the battle and the fray. <w type="DN">Ninurta</w>, the great strength of <w type="DN">Enlil</w>, from whose grasp no foreign country can escape! For <w type="RN">&C;u-<w type="DN">Suen</w></w> &X;&X;, given great strength by Father <w type="DN">Enlil</w> -- you, <w type="DN">Ninurta</w>, will destroy myriads in the battle and the fray.</p>
+<p id="t2444.p12" n="44-62" corresp="c2444.F.44">My king, you alone perform the ancient rites, a truly immense task. <w type="DN">Ninurta</w>, yellow evening light that casts fear over the Land, like holy <w type="DN">Ura&c;</w>, a fearsome dragon brandishing a terrible torch! <w type="DN">Ninurta</w>, you alone perform the ancient rites, a truly immense task. <w type="DN">Ninurta</w>, yellow evening light that casts fear over the Land, like holy <w type="DN">Ura&c;</w>, a fearsome dragon raising a terrible torch! My king, grandiloquent great warrior, confident in his strength! And may you, <w type="RN">&C;u-<w type="DN">Suen</w></w>, put your trust in him, in Lord <w type="DN">Ninurta</w>. May <w type="RN">&C;u-<w type="DN">Suen</w></w>, the king whom <w type="DN">Enlil</w> has appointed for you, be your constable. <w type="DN">Ninurta</w>, grandiloquent great warrior, confident in his strength! And may you, <w type="RN">&C;u-<w type="DN">Suen</w></w>, put your trust in him, in Lord <w type="DN">Ninurta</w>. May <w type="RN">&C;u-<w type="DN">Suen</w></w>, the king whom <w type="DN">Enlil</w> has appointed for you, be your constable. &X;&X; of <foreign lang="sux">nir</foreign> stone, &X;&X; holy and fearsome &X;&X;, a truly immense task. Like &X;&X; your august strength, he has written your name on it. &X;&X; will be the guardian of his life forever. <w type="RN">&C;u-<w type="DN">Suen</w></w>! Holy and fearsome, a truly immense task. Like &X;&X; your august strength, he has written your name on it. &X;&X; will be the guardian of his life forever.
+<gap extent="1 line missing"/></p>
+<trailer place="rubric" type="sa-jara">
+<p id="t2444.p13" n="63" corresp="c2444.F.63"><foreign lang="sux">Sa-&g;ara</foreign>.</p>
+</trailer></lg></body>
+</text>
+</TEI.2>

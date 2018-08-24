@@ -1,0 +1,161 @@
+<TEI.2 id="c.0.2.12">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>OB catalogue at Yale (Y2) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b654">Hallo 1982</xref><biblScope type="contents">commentary, handcopy, score transliteration</biblScope></bibl>
+<bibl><xref from="b544">Veldhuis 1997</xref><biblScope type="contents">score transliteration</biblScope><note>Segment B</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">YBC 16317 (JCS 34 p. 82)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>30.v.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>typing, standardisation</item></change>
+<change><date>26.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>31.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>18.viii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>25.viii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>28.ix.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>links updated</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<div1 type="segment" n="A">
+<l n="1" id="c0212.A.1">
+<supplied/>
+<w form="lugal-me-en" lemma="lugal" pos="N" label="king">lugal-me<suppliedEnd/>-<damage/>en</w>
+<damageEnd/>
+<note id="c0212.n1" lang="eng" target="c0212.A.1"><xref doc="c.2.4.2.01">&C;ulgi A, 2.4.2.01</xref></note>
+</l>
+<l n="2" id="c0212.A.2">
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="dug4" lemma="dug4" pos="V" label="to say">dug4</w>
+<note id="c0212.n2" lang="eng" target="c0212.A.2"><xref doc="c.2.5.5.1">Lipit-E&c;tar A, 2.5.5.1</xref></note>
+</l>
+<l n="3" id="c0212.A.3">
+<w form="en-e" lemma="en" pos="N" label="lord">en-e</w>
+<w form="nij2" lemma="nij2-du7" pos="N" label="propriety">nij2</w>
+<note id="c0212.n3" lang="eng" target="c0212.A.3"><xref doc="c.5.5.4">The song of the hoe, 5.5.4</xref></note>
+</l>
+<l n="4" id="c0212.A.4">
+<w form="nin" lemma="nin" pos="N" label="lady">nin</w>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<note id="c0212.n4" lang="eng" target="c0212.A.4"><xref doc="c.4.07.2">Inana B, 4.07.2</xref></note>
+</l>
+<l n="5" id="c0212.A.5">
+<w form="bur-cu" lemma="bur-cu-um" pos="N" label="old woman">bur-cu</w>
+<note id="c0212.n5" lang="eng" target="c0212.A.5">I&c;bi-Erra E, 2.5.1.5</note>
+</l>
+<l n="6" id="c0212.A.6">
+<damage/>
+<w form="dumu" lemma="dumu" pos="N" label="child">dumu</w>
+<damageEnd/>
+<w form="e2" lemma="e2-dub-ba-a" pos="N" label="scribal school">e2</w>
+<note id="c0212.n6" lang="eng" target="c0212.A.6">five compositions are known with this incipit: E-dub-ba-a A, 5.1.1; E-dub-ba-a C, 5.1.3; E-dub-ba-a E, 5.1.5; Dialogue 1, 5.4.01; Dialogue 3, 5.4.03</note>
+</l>
+<l n="7" id="c0212.A.7">
+<w form="dumu" lemma="dumu" pos="N" label="child">dumu</w>
+<w form="e2" lemma="e2-dub-ba-a" pos="N" label="scribal school">e2</w>
+<note id="c0212.n7" lang="eng" target="c0212.A.7">five compositions are known with this incipit: E-dub-ba-a A, 5.1.1; E-dub-ba-a C, 5.1.3; E-dub-ba-a E, 5.1.5; Dialogue 1, 5.4.01; Dialogue 3, 5.4.03</note>
+</l>
+<l n="8" id="c0212.A.8">
+<w form="dumu" lemma="dumu" pos="N" label="child">dumu</w>
+<w form="e2" lemma="e2-dub-ba-a" pos="N" label="scribal school">e2</w>
+<note id="c0212.n8" lang="eng" target="c0212.A.8">five compositions are known with this incipit: E-dub-ba-a A, 5.1.1; E-dub-ba-a C, 5.1.3; E-dub-ba-a E, 5.1.5; Dialogue 1, 5.4.01; Dialogue 3, 5.4.03</note>
+</l>
+<l n="9" id="c0212.A.9">
+<w form="NAM" lemma="NAM" label="NAM"><unclear cert="qry">NAM</unclear></w>
+</l>
+<l n="10" id="c0212.A.10">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;<unclear cert="qry">inana</unclear></w>
+</l>
+<l n="11" id="c0212.A.11">
+<w form="cag4-ga" lemma="cag4" pos="N" label="heart">cag4-<unclear cert="qry">ga</unclear></w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+</l>
+<l n="12" id="c0212.A.12">
+<w form="in-nin" lemma="in-nin" pos="N" label="mistress">in-nin</w>
+</l>
+<l n="13" id="c0212.A.13">
+<damage/>
+<w form="u6" lemma="e2-u6-nir" pos="N" type="TN" label="E-unir">u6</w>
+<damageEnd/>
+<note id="c0212.n9" lang="eng" target="c0212.A.13"><xref doc="c.4.80.1">The Temple hymns, 4.80.1</xref></note>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="B">
+<l n="1" id="c0212.B.1">
+<w form="DIC" lemma="DIC" label="DI&C;">DIC</w>
+<w form="a" lemma="a-a" pos="N" label="type of scribal exercise">a</w>
+</l>
+<l n="2" id="c0212.B.2">
+<w form="DIC" lemma="DIC" label="DI&C;">DIC</w>
+<w form="an" lemma="an" pos="N" type="DN" label="An">an</w>
+</l>
+<l n="3" id="c0212.B.3">
+<w form="&jic;tackarin" lemma="tackarin" pos="N" label="box tree" det="&jic;">&jic;tackarin</w>
+</l>
+<l n="4" id="c0212.B.4">
+<w form="&gi;gacam" lemma="gacam" pos="N" label="type of reed" det="&gi;">&gi;gacam</w>
+</l>
+<l n="5" id="c0212.B.5">
+<w form="udu" lemma="udu" pos="N" label="sheep">udu</w>
+</l>
+<l n="6" id="c0212.B.6">
+<w form="&na4;ka-gen6-na" lemma="ka-gen6-na" pos="N" label="type of stone" det="&na4;">&na4;ka-gen6-na</w>
+</l>
+<l n="7" id="c0212.B.7">
+<w form="ZI" lemma="ZI" label="ZI"><unclear cert="qry">ZI</unclear></w>
+<w form="DU8" lemma="DU8" label="DU&s8;"><unclear cert="qry">DU8</unclear></w>
+</l>
+<l n="8" id="c0212.B.8">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="9" id="c0212.B.9">
+<damage/>
+<w form="NE" lemma="NE" label="NE"><unclear cert="qry">NE</unclear></w>
+<damageEnd/>
+<w form="BI" lemma="BI" label="BI">BI</w>
+</l>
+<l n="10" id="c0212.B.10">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="11" id="c0212.B.11">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+</body>
+</text>
+</TEI.2>

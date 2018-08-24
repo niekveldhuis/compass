@@ -1,0 +1,329 @@
+<TEI.2 id="c.3.3.22">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Letter from X to the god Nanna -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Senior Editor</resp></respStmt>
+<respStmt><name>Jon Taylor</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2002</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b731">Sullivan 1979</xref><biblScope type="page">134-137</biblScope><biblScope type="contents">score transliteration, translation</biblScope><note>bilingual</note></bibl>
+<bibl><xref from="b506">Sj&ouml;berg 1960</xref><biblScope type="page">104-107</biblScope><biblScope type="contents">score transliteration, translation, commentary</biblScope></bibl>
+<bibl><xref from="b752">Cavigneaux 1996</xref><biblScope type="contents">translation, handcopy, commentary, score transliteration</biblScope><note>no. 113</note></bibl>
+<bibl><xref from="b863">Falkenstein 1959</xref><biblScope type="contents">handcopy, translation, score transliteration, commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">W 17259w (AnBi 12 69ff.) bil.</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>12.ii.2002</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>typing</item></change>
+<change><date>28.iii.2002-02.iv.2002</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>18.vi.2002</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>02.xi.2002</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>04.xi.2002</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c3322.1" corresp="t3322.p1">
+<w form="&d;nanna" lemma="nanna" pos="N" type="DN" label="Nanna" det="&d;">&d;nanna</w>
+<w form="dumu-saj" lemma="dumu-saj" pos="N" label="first-born (child)">dumu-saj</w>
+<w form="&d;en-lil2-la2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-la2</w>
+<w form="cudu3-de3" lemma="cudu3" pos="N" label="prayer">cudu3-de3</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="aj2-ra" lemma="aj2" pos="V" label="to measure">aj2-ra</w>
+</l>
+<l n="2" id="c3322.2" corresp="t3322.p1">
+<w form="u3-na-a-dug4" lemma="dug4" pos="V" label="to say">u3-na-a-dug4</w>
+</l>
+<l n="3" id="c3322.3" corresp="t3322.p1">
+<term id="c3322.t1">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="iti6" lemma="itid" pos="N" label="moon(light)">iti6</w>
+<w form="dajal" lemma="dajal" pos="V" label="to be wide">dajal</w>
+<w form="bur2" lemma="bur2" pos="V" label="to release">bur2</w>
+<w form="men" lemma="men" pos="N" label="diadem">men</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="urac-a" lemma="urac" pos="N" label="earth">urac-a</w>
+</term>
+<gloss lang="akk" target="c3322.t1">
+a-na
+be-lim
+ca
+&s;i2-it
+wa-ar-hi-cu
+ra-bi-ic
+cu-pa-ru-ru
+a-ge-e
+ca-me-e
+u3
+er-&s;e-tim
+</gloss>
+</l>
+<l n="4" id="c3322.4" corresp="t3322.p1">
+<term id="c3322.t2">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="til3-til3" lemma="til3" pos="V" label="to live" form-type="RR">til3-til3</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="aj2-me-en" lemma="aj2" pos="V" label="to measure">aj2-me-en</w>
+<w form="a-a" lemma="a-a" pos="N" label="father">a-a</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="gig2-ga" lemma="gig2" pos="V" label="to be black">gig2-ga</w>
+</term>
+<gloss lang="akk" target="c3322.t2">
+be-lum
+ra-bu-u2
+ca
+a-we-lam
+bu-lu-&t;u2
+i-ra-mu
+a-bi
+&s;a-<damage/>al<damageEnd/>-ma-<corr resp="scrOm"/>at<corrEnd/>
+qa2-<corr resp="scrOm"/>qa2<corrEnd/>-di-im
+</gloss>
+</l>
+<l n="5" id="c3322.5" corresp="t3322.p1">
+<term id="c3322.t3">
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="cag4-la2" lemma="cag4-la2" pos="N" label="mercy">cag4-la2</w>
+<w form="sug4" lemma="sug4" pos="V" label="to be full"><corr sic="BU">sug4</corr></w>
+<w form="si-il" lemma="si-il" pos="V" label="to split apart">si-<corr sic="GI4">il</corr></w>
+<w form="u3" lemma="u3" pos="C" label="and">u3</w>
+<w form="du8" lemma="du8" pos="V" label="to spread">du8</w>
+<w form="mu-un-zu-a" lemma="zu" pos="V" label="to know">mu-un-zu-<unclear cert="cor">a</unclear></w>
+</term>
+<gloss lang="akk" target="c3322.t3">
+a-na
+car-ri-im
+re-me-ni-im
+<unclear cert="cor">ca</unclear>
+<damage/>
+<unclear cert="qry">ru</unclear>-<unclear cert="qry">ma</unclear><damageEnd/>-am
+u3
+pa-<damage/>&t;a-ra-am
+<damageEnd/>
+mu-<unclear cert="cor">du</unclear>-u2
+</gloss>
+</l>
+<l n="6" id="c3322.6" corresp="t3322.p1">
+<term id="c3322.t4">
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<w form="arhuc" lemma="arhuc" pos="N" label="compassion">arhuc</w>
+<w form="sud" lemma="sud" pos="V" label="to be distant">sud</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="gur-ru" lemma="gur" pos="V" label="to turn">gur-ru</w>
+<w form="a-ra-zu-e" lemma="a-ra-zu" pos="N" label="supplication">a-ra-zu-<damage/>e</w>
+<damageEnd/>
+<w form="jic" lemma="jic" pos="N" label="tree">jic</w>
+<w form="tuku" lemma="tuku" pos="V" label="to have">tuku</w>
+</term>
+<gloss lang="akk" target="c3322.t4">
+a-na
+i-lim
+re-me-ni-im
+ta-a-a-ri-im
+ce-mi
+te-es3-li-tim
+</gloss>
+</l>
+<l n="7" id="c3322.7" corresp="t3322.p1">
+<w form="u3-ne-de3-tah" lemma="tah" pos="V" label="to add">u3-ne-de3-tah</w>
+</l>
+<l n="8" id="c3322.8" corresp="t3322.p2">
+<term id="c3322.t5">
+<w form="nam-en-na" lemma="nam-en" pos="N" label="high (priestly) office">nam-en-na</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="du7" lemma="du7" pos="V" label="to be perfect">du7</w>
+<w form="aga" lemma="aga" pos="N" label="crown">aga</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<damage/>
+<w form="gur3-ru-me-en" lemma="guru3" pos="V" label="to bear">gur3-ru<damageEnd/>-me-en</w>
+</term>
+<gloss lang="akk" target="c3322.t5">
+be-lu-tam
+cu-uk-lu-lu
+a-ga-am
+ki-nam
+na-cu-u2
+</gloss>
+</l>
+<l n="9" id="c3322.9" corresp="t3322.p2">
+<term id="c3322.t6">
+<w form="muc3-me" lemma="muc3-me" pos="N" label="countenance">muc3-me</w>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<w form="ulutim2-ta" lemma="ulutim2" pos="N" label="form">ulutim2-ta</w>
+<w form="nir-ra" lemma="nir" pos="N" label="authority">nir-ra</w>
+<w form="alan" lemma="alan" pos="N" label="statue">alan</w>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="du8-du8" lemma="du8" pos="V" label="to spread" form-type="RR">du8-du8</w>
+</term>
+<gloss lang="akk" target="c3322.t6">
+zi-mu
+ru-cu-<damage/>tum
+<damageEnd/>
+bu-na-nu
+tu-ru-&s;u2-tum
+la-nu-um
+el-lum
+<damage/>
+<unclear cert="qry">ca</unclear>
+<damageEnd/>
+<supplied/>
+&X;<suppliedEnd/>-du-<unclear cert="cor">u2</unclear>
+</gloss>
+</l>
+<l n="10" id="c3322.10" corresp="t3322.p2">
+<w form="nam-mah-zu" lemma="nam-mah" pos="N" label="majesty">nam-mah-zu</w>
+<w form="kur-kur-ra" lemma="kur" pos="N" label="(mountain) land" form-type="RR">kur-kur-ra</w>
+<w form="dul-la" lemma="dul" pos="V" label="to cover (together)">dul-la</w>
+</l>
+<l n="11" id="c3322.11" corresp="t3322.p2">
+<w form="me-lem4-zu" lemma="me-lem4" pos="N" label="(awesome) radiance">me-lem4-zu</w>
+<term id="c3322.t7">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="kug-ga" lemma="kug" pos="AJ" label="shining">kug-ga</w>
+<w form="cu2-a" lemma="cu2" pos="V" label="to cover">cu2-a</w>
+</term>
+<gloss lang="akk" target="c3322.t7">
+ca-me-e
+el-lu-tim
+sa3-<damage/>ah<damageEnd/>-pu
+</gloss>
+</l>
+<l n="12" id="c3322.12" corresp="t3322.p2">
+<term id="c3322.t8">
+<damage/>
+<w form="ni2" lemma="ni2" pos="N" label="fear(someness)">ni2</w>
+<w form="gal-zu" lemma="gal" pos="V" label="to be big">gal<damageEnd/>-zu</w>
+<w form="su" lemma="su" pos="N" label="flesh">su</w>
+<w form="zig3" lemma="zig3" pos="V" label="to rise">zig3</w>
+<w form="im-du8-du8" lemma="du8" pos="V" label="to spread" form-type="RR">im-du8-du8</w>
+</term>
+<gloss lang="akk" target="c3322.t8">
+<supplied/>
+&X;
+<suppliedEnd/>
+X
+X
+ca-lu-ma-tam
+ma-lu
+</gloss>
+</l>
+<l n="13" id="c3322.13" corresp="t3322.p2">
+<term id="c3322.t9">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<damage/>
+<w form="kalam-e" lemma="kalam" pos="N" label="the Land">kalam<damageEnd/>-e</w>
+<w form="zag" lemma="zag" pos="N" label="side">zag</w>
+<w form="dib" lemma="dib" pos="V" label="to pass">dib</w>
+</term>
+<gloss lang="akk" target="c3322.t9">
+<supplied/>
+&X;
+<suppliedEnd/>
+i-na
+ma-tim
+cu-tu-uq
+</gloss>
+</l>
+<l n="14" id="c3322.14" corresp="t3322.p2">
+<term id="c3322.t10">
+<supplied/>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="e3-ta" lemma="e3" pos="V" label="to go out or in">e3-ta</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="cu2-uc-e" lemma="cu2" pos="V" label="to cover">cu2<suppliedEnd/>-<damage/>uc<damageEnd/>-e</w>
+<w form="za-e" lemma="za" pos="PD" type="personal" label="you (sg.)">za-<damage/>e</w>
+<damageEnd/>
+<w form="mah-me-en" lemma="mah" pos="V" label="to be majestic">mah-me-en</w>
+</term>
+<gloss lang="akk" target="c3322.t10">
+<supplied/>
+i-na
+&s;i2-it
+ca-am<suppliedEnd/>-<damage/>ci
+<damageEnd/>
+u3
+e-re-eb
+<supplied/>
+ca-am<suppliedEnd/>-ci
+at-ta-ma
+&s;i-ra-a-ti
+</gloss>
+</l>
+<l n="15" id="c3322.15" corresp="t3322.p2">
+<term id="c3322.t11">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<damage/>
+<w form="an-cag4-ta" lemma="an-cag4" pos="N" label="interior of heaven">an-cag4-<unclear cert="cor">ta</unclear></w>
+<w form="ma-ra-an-cum2" lemma="cum2" pos="V" label="to give">ma-ra<damageEnd/>-an-cum2</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<damage/>
+<w form="cu-zu-uc" lemma="cu" pos="N" label="hand">cu-zu-uc</w>
+<damageEnd/>
+<w form="mu-un-jar" lemma="jar" pos="V" label="to place">mu-un-jar</w>
+</term>
+<gloss lang="akk" target="c3322.t11">
+<supplied/>
+&X;
+id<suppliedEnd/>-di-kum
+ca-me-e
+i-na
+qa2-<damage/>ti<damageEnd/>-<supplied/>ka
+(&X;)
+<suppliedEnd/>
+</gloss>
+</l>
+<l n="16" id="c3322.16" corresp="t3322.p2">
+<term id="c3322.t12">
+<supplied/>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki-bi-ta" lemma="ki" pos="N" label="place">ki<suppliedEnd/>-bi-ta</w>
+<w form="lugal-bi" lemma="lugal" pos="N" label="king">lugal-bi</w>
+<w form="za-e-me-en" lemma="za" pos="PD" type="personal" label="you (sg.)">za-e-me-en</w>
+<w form="nam-bi" lemma="nam" pos="N" label="destiny">nam-bi</w>
+<w form="i3-tar-re" lemma="tar" pos="V" label="to cut">i3-<damage/>tar-re</w>
+<damageEnd/>
+</term>
+<gloss lang="akk" target="c3322.t12">
+ca-me-e
+u3
+er-&s;e-tam
+be-el-cu-nu
+at-ta-ma
+ci-ma-ti-cu-nu
+ta-ci-a-am
+</gloss>
+</l>
+</body>
+</text>
+</TEI.2>

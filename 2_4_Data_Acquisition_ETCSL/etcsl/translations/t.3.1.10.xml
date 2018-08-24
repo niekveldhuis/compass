@@ -1,0 +1,61 @@
+<TEI.2 id="t.3.1.10">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Letter from &C;ulgi to Puzur-&C;ulgi about waterways -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Estehr Fl&uuml;ckiger-Hawker</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2001</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>26.iv.2001-27.iv.2001</date><respStmt><name>EFH</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>28.vii.2001</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>03.viii.2001</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>14.ix.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>14.ix.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t3110.p1" n="1-2" corresp="c3110.1">Say to <w type="PN">Puzur-<w type="RN">&C;ulgi</w></w>, commander of the fortress <w type="GN">Igi-&h;ursa&g;a</w>: this is what <w type="RN">&C;ulgi</w>, your lord, says:</p>
+<p id="t3110.p2" n="3-5" corresp="c3110.3">
+<addSpan to="t3110.v1"/>Where
+<anchor id="t3110.v1"/>
+<addSpan to="t3110.v2"/><note id="t3110.n1" lang="eng" target="t3110.v1">1 ms. has instead:</note> when
+<anchor id="t3110.v2"/> I had built the great fortress <w type="GN">Igi-&h;ursa&g;a</w>, the &X;&X; not come out. The &X;&X; cannot drink water, 
+<addSpan to="t3110.v3"/>because of a breach (?) in (?) the <w type="WN">Tigris</w> and <w type="WN">Euphrates</w>
+<anchor id="t3110.v3"/>
+<addSpan to="t3110.v4"/><note id="t3110.n2" lang="eng" target="t3110.v3">1 ms. has instead:</note> &X;&X; together with the <w type="WN">Euphrates</w>
+<anchor id="t3110.v4"/>.</p>
+<altGrp><alt targType="addSpan" targets="t3110.v1 t3110.v2"/><alt targType="addSpan" targets="t3110.v3 t3110.v4"/></altGrp>
+<p id="t3110.p3" n="6-9" corresp="c3110.6">In order that &X;&X; should lie down, in order that &X;&X; should be absolutely clean, in order that &X;&X; should be put (?) &X;&X;,
+<gap extent="1 line missing"/></p>
+<p id="t3110.p4" n="10-14" corresp="c3110.10">I will make &X;&X; change &X;&X;. After sending you back &X;&X;, I (?) instructed you &X;&X;. I (?) have built there (?) &X;&X;. They returned (?) &X;&X;.</p>
+<p id="t3110.p5" n="15-16" corresp="c3110.15">May &X;&X; be taken up. May he rebuild &X;&X;.</p>
+<p id="t3110.p6" n="17-22" corresp="c3110.17">&X;&X; is sending to me &X;&X;. I will ask you (?) &X;&X;. &X;&X; of <w type="GN">Zimudar</w> shall indeed come to you &X;&X;.
+<gap extent="1 line fragmentary"/>
+&X;&X; was taken (?).</p>
+<p id="t3110.p7" n="23-28" corresp="c3110.23">&X;&X; be sent. I (?) know very well &X;&X;. &X;&X; abandon you (?). Should &X;&X; take &X;&X;, you both &X;&X;. It is urgent!</p>
+</body>
+</text>
+</TEI.2>

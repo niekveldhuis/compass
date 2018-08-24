@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>ETCSL Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="keywords" content="ETCSL, Sumerian literature, Sumerian language"/>
+<meta name="description" content="The Electronic Text Corpus of Sumerian Literature, Oriental Institute, University of Oxford"/>
+<meta name="author" content="Jarle Ebeling and Graham Cunningham"/>
+<style>
+body
+{
+	font-family: sans-serif, serif;
+	font-size: 100%;
+}
+
+h3
+{
+	margin-top: 4px;
+	margin-bottom: 2px;
+}
+
+h4
+{
+	margin-top: 4px;
+	margin-bottom: 2px;
+	font-size: 90%;
+	font-style: italic;
+}
+
+p
+{
+	margin-top: 2pt;
+	margin-bottom: 3pt;
+}
+
+p.smaller
+{
+	font-family: sans-serif, serif;
+	font-size: 80%;
+	margin: 3px;
+}
+
+p.biblio
+{
+	font-family: sans-serif, serif;
+	font-size: 90%;
+	text-indent: -10px;
+	margin: 5px;
+}
+
+pre
+{
+	font-size: 12px;
+}
+
+span.utf8
+{
+	font-family: sans-serif, serif;
+	font-size: 100%;
+}
+
+span.emesal {
+ font-size: medium;
+ font-weight: normal;
+ color: #993399;
+ }
+
+span.proper {
+ font-size: medium;
+ font-weight: normal;
+ color: #008000;
+ }
+
+span.signname {
+ font-size: 70%;
+}
+
+span.signname2 {
+ font-family: sans-serif, serif;
+ font-size: 80%;
+}
+
+tr.blue {
+ background-color: #99CCFF;
+ }
+
+td.variant {
+ font-size: medium;
+ font-weight: normal;
+ }
+
+td.variant0 {
+ font-size: medium;
+ font-weight: normal;
+ }
+
+td.variant1 {
+ font-size: medium;
+ font-weight: normal;
+ color: #009900;
+ }
+
+td.variant2 {
+ font-size: medium;
+ font-weight: normal;
+ color: #339999;
+ }
+
+td.variant3 {
+ font-size: medium;
+ font-weight: normal;
+ color: #6600CC;
+ }
+ 
+td.variant4 {
+ font-size: medium;
+ font-weight: normal;
+ color: #999900;
+ }
+
+td.smaller
+{
+	font-size: 80%;
+}
+
+hr {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+form
+{
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+}
+</style>
+</head>
+<body>
+<table width="100%" cellpadding="4" cellspacing="4"><tr>
+<td align="left" valign="bottom" width="25%"><font color="black" size="+4">ETCSL</font><font color="#666666" size="+3">Manual</font></td></tr></table>
+<h2 align="center">Contents</h2>
+<ul>
+  <li><a href="#introduction"><b>1 Introduction</b></a>
+  	<ul>
+   		<li><a href="#background">1.1 About the corpus</a></li>
+   		<li><a href="#uses">1.2 Transliteration and translation</a></li>
+   	 	<li><a href="#availability">1.3 Availability</a></li>
+   		<li><a href="#credits">1.4 Acknowledgements</a><br/><br/></li>
+  	</ul>
+  </li>
+  <li><a href="#coding"><b>2 Coding</b></a>
+  	<ul>
+		<li><a href="#generalprinciples">2.1 General principles</a></li>
+    	<li><a href="#cuneiform">2.2 Transliterating cuneiform writing</a></li>
+    	<li><a href="#structure">2.3 The overall structure of the corpus</a></li>
+    	<li><a href="#headers">2.4 The &lt;teiHeader&gt;</a></li>
+	 	<li><a href="#structureforming">2.5 Text units</a>
+	 		<ul>
+     			<li><a href="#text">2.5.1 The &lt;text&gt;, &lt;body&gt;, &lt;div1&gt;, &lt;lg&gt;, &lt;trailer&gt; and &lt;head&gt; tags</a></li>
+     			<li><a href="#addspan">2.5.2 The &lt;addSpan/&gt;, &lt;anchor/&gt;, &lt;altGrp&gt;, &lt;alt/&gt;, &lt;linkGrp&gt; and &lt;link/&gt; tags</a></li>
+     			<li><a href="#line">2.5.3 The &lt;l&gt; and &lt;p&gt; tags</a></li>
+     			<li><a href="#w">2.5.4 The &lt;w&gt; tag</a></li>
+			 </ul>
+	 	</li>
+	 	<li><a href="#editorial">2.6 Editorial principles</a>
+	 		<ul>
+     			<li><a href="#damage">2.6.1 The &lt;damage/&gt; and &lt;damageEnd/&gt; tags</a></li>
+     			<li><a href="#supplied">2.6.2 The &lt;supplied/&gt; and &lt;suppliedEnd/&gt; tags</a></li>
+    			<li><a href="#corr">2.6.3 The &lt;corr&gt;, &lt;corr/&gt; and &lt;corrEnd/&gt; tags</a></li>
+     			<li><a href="#unclear">2.6.4 The &lt;unclear&gt; tag</a></li>
+     			<li><a href="#foreign">2.6.5 The &lt;foreign&gt; tag</a></li>
+     			<li><a href="#distinct">2.6.6 The &lt;distinct&gt; tag</a></li>
+     			<li><a href="#termgloss">2.6.7 The &lt;term&gt; and &lt;gloss&gt; tags</a></li>
+     			<li><a href="#xref">2.6.8 The &lt;ref&gt;, &lt;xref&gt; and &lt;ptr&gt; tags</a></li>
+	 		</ul>
+	 	</li>
+	 	<li><a href="#other">2.7 Other elements</a>
+	 		<ul>
+     			<li><a href="#note">2.7.1 The &lt;note&gt; tag</a></li>
+     			<li><a href="#gap">2.7.2 The &lt;gap/&gt; tag</a></li>
+     			<li><a href="#q">2.7.2 The &lt;q&gt; tag</a></li>
+			</ul>
+		</li>
+	 	<li><a href="#char">2.8 Special characters and entities</a><br/><br/></li>
+  	</ul>
+  </li>
+</ul>
+<hr/>
+<p><b><a name="introduction">1 Introduction</a></b></p>
+<p><b><a name="background">1.1 About the corpus</a></b></p>
+<p>The Electronic Text Corpus of Sumerian Literature (ETCSL) consists of 394 literary compositions in transliterated Sumerian and their English translations. The sources for the compositions date to the late third and early second millennia BCE and come from ancient Mesopotamia (modern Iraq).</p>
+<p>Some of the compositions have only one source; others have many, from which a modern edition, referred to as a composite text, has been compiled. The primary sources are clay tablets, which are often broken or damaged in some way. Thus, the compositions are in many cases incompletely preserved, and there may be several lacunae of varying size in a particular composite text.</p>
+<p>Many of the sources come from a school setting and were written by apprentice scribes who may not have been fluent in the Sumerian language. All of these factors represent a great challenge not only to the modern scholars editing the compositions, but also to the encoding framework.</p>
+<p>The compositions are divided into seven categories: ancient literary catalogues (not translated), narrative and mythological compositions, royal praise poetry and compositions with a historical background, literary letters and letter-prayers, hymns and cult songs, other literature, and proverb collections. The categories are numbered 0&ndash;6 and the numbers form part of the corpus file names.</p>
+<p>The corpus is encoded according to the TEI guidelines and the corpus files are in ASCII format.</p>
+<p><b><a name="uses">1.2 Transliteration and translation</a></b></p>
+<p>The Sumerian sources have been transliterated using Roman characters, with a few additional characters and symbols (see <a href="#char">2.8</a>). To achieve a fluent English prose translation, several lines of transliterated Sumerian usually correspond to one English paragraph, as shown next. The <i>id</i> and <i>corresp</i> attributes of the &lt;l&gt; and &lt;p&gt; tags link the transliteration and translation.</p>
+<table width="90%" cellpadding="4" cellspacing="4" border="1">
+<tr><td valign="top" width="55%">&lt;l n="11" id="c111.11" corresp="t111.p3"&gt;<br/>
+dilmun&ki;-a uga&mucen; gu3-gu3 nu-mu-ni-be2&lt;/l&gt;<br/>
+&lt;l n="12" id="c111.12" corresp="t111.p3"&gt;<br/>
+dar&mucen;-e gu3 dar&mucen;-re nu-mu-ni-ib-be2&lt;/l&gt;<br/>
+&lt;l n="13" id="c111.13" corresp="t111.p3"&gt;<br/>
+ur-gu-la saj jic nu-ub-ra-ra&lt;/l&gt;<br/>
+&lt;l n="14" id="c111.14" corresp="t111.p3"&gt;<br/>
+ur-bar-ra-ke4 sila4 nu-ub-kar-re&lt;/l&gt;<br/>
+&lt;l n="15" id="c111.15" corresp="t111.p3"&gt;<br/>
+ur-gir15 mac2 gam-gam nu-ub-zu&lt;/l&gt;<br/>
+&lt;l n="16" id="c111.16" corresp="t111.p3"&gt;<br/>
+cah2 ce gu7-gu7-e nu-ub-zu&lt;/l&gt;</td>
+<td valign="middle" width="45%">&lt;p id="t111.p3" n="11-16" corresp="c111.11"&gt;In &lt;w type="GN"&gt;Dilmun&lt;/w&gt; the raven was not yet cawing, the partridge not cackling. The lion did not slay, the wolf was not carrying off lambs, the dog had not been taught to make kids curl up, the pig had not learned that grain was to be eaten.&lt;/p&gt;</td></tr></table>
+<p><b><a name="availability">1.3 Availability</a></b></p>
+<p>The corpus is freely available on the Internet and the XML source files can be downloaded from the <a href="http://ota.ox.ac.uk/">Oxford Text Archive</a>. When referring to or citing the corpus, please use the following form of citation:</p>
+<blockquote>Black, J.A., Cunningham, G., Ebeling, J., Fl&uuml;ckiger-Hawker, E., Robson, E., Taylor, J., and Z&oacute;lyomi, G., <i>The Electronic Text Corpus of Sumerian Literature</i> (http://etcsl.orinst.ox.ac.uk/), Oxford 1998&ndash;2006.</blockquote>
+<p><b><a name="credits">1.4 Acknowledgements</a></b></p>
+<p>The ETCSL project would like to thank Miguel Civil and Steve Tinney, whose contributions were fundamental to the shape and success of the project. Miguel's unpublished catalogue of Sumerian literature, the product of decades of brilliant and painstaking work, lies at the heart of the corpus. Steve's wisdom and expertise were crucial throughout, from the earliest planning stages to the final lemmatisation.</p>
+<p>We are also extremely grateful to all those who have contributed source material to the project: Bendt Alster, Antoine Cavigneaux, Miguel Civil, Gertrud Farber, Andrew George, Geerd Haayer, Bram Jagersma, Joachim Krecher, Marie-Christine Ludwig, Piotr Michalowski, Martha Roth, Yitschak Sefati, Steve Tinney, Herman Vanstiphout, Niek Veldhuis, Konrad Volk, Christopher Walker, Claus Wilcke, and Annette Zgoll. Many other colleagues have given helpful advice, in particular Pascal Attinger, Cale Johnson, Alan Millard, and Nicholas Postgate. Four research students made essential contributions to the project: Ronan Head, Anne L&ouml;hnert, Naoko Ohgama, and Faimon Roberts.</p>
+<hr/>
+<p><b><a name="coding">2 Coding</a></b></p>
+<p><b><a name="generalprinciples">2.1 General principles</a></b></p>
+<p>The ETCSL is in broad agreement with version P4 of the TEI guidelines (<a href="http://www.tei-c.org/Guidelines2/index.html">http://www.tei-c.org/Guidelines2/index.html</a>). In the few cases where the coding of the ETCSL differs from the guidelines, this has been done for practical as well as historical reasons. The modifications have been incorporated into the TEI DTD according to the procedure described in chapter 29 of the guidelines, <i>Modifying and Customizing the TEI DTD</i>.</p>
+<p>In principle, any tag, including its attributes, of the following TEI tag sets can be used in an ETCSL document: TEI.corpus, TEI.prose, TEI.XML, TEI.analysis, TEI.linking and TEI.transcr. The provision is that they do not clash with the ETCSL-specific modifications.</p>
+<p><b><a name="cuneiform">2.2 Transliterating cuneiform writing</a></b></p>
+<p>The cuneiform sign inventory consists of more than 500 signs, encoding values which usually have the form V, CV or VC; CVC sequences are often written CV-VC.</p>
+<p>A sign can be used logographically or phonographically. For example, used logographically the sign 'A' has the value 'a' and a meaning 'water'; used phonographically it has the same value but may encode the locative case marker or an interjection meaning 'Alas!'.</p>
+<p>In addition, the same sign was often used to encode words of a similar meaning and/or of a similar sound. Consequently one sign can have more than one value. The sign 'IM', for example, can be read 'i&scaron;kur' (the name of a wind god), 'tum<sub>9</sub>' (wind), 'im' (thunderstorm), or 'ni<sub>2</sub>' (self), depending on the context.</p>
+<p>So far as we can judge, Sumerian seems to include a large number of homophones, that is words written differently, and with a different meaning, but with the same pronunciation. To distinguish between these homophones, subscript numerals are used in our alphabetic transliteration system. For example, in 'gu' (thread) the lack of a subscript numeral indicates that the word was written with the sign referred to as 'GU'; in 'gu<sub>2</sub>' (neck), the numeral indicates that the word was written with the sign referred to as 'GU<sub>2</sub>'; and in 'gu<sub>3</sub>' (voice), the numeral indicates that the word was written with the sign referred to as 'KA'; such sequences can continue with <sub>4</sub>, <sub>5</sub>, etc. (An older convention was to use an acute accent rather than the numeral <sub>2</sub>, and a grave accent rather than the numeral <sub>3</sub>, that is 'g&uacute;' for 'gu<sub>2</sub>' and 'g&ugrave;' for 'gu<sub>3</sub>'.) Our convention is to display the numerals in subscript; however, plain numerals or the entities &amp;s1;, &amp;s2;, etc. are used in the XML version of the data. See further <a href="#char">2.8 Special characters and entities</a>.</p>
+<p>In a few instances no general conventions have been established for correlating a reading to a particular sign. In such cases the sign is specified in brackets after the reading. If the value is already associated with another sign, the following convention is used: 'tuba<sub>x</sub>(TUG<sub>2</sub>)'. However, if the value is not associated with another sign, the convention is as follows: 'unud(UNU<sub>3</sub>)'. The capitalised sequences are referred to as sign names. They are also used unbracketed in transliteration when context cannot distinguish between the various possible readings of a sign. For example, the sign 'IM' is transliterated 'IM' when the appropriate reading cannot be identified. When the sign itself cannot be identified it is transliterated as 'X'. Some signs have complex names; for example, 'NUNten&ucirc;' indicates that the sign in question is written with the sign 'NUN' placed at an angle (<i>ten&ucirc;</i> being the Akkadian technical term).</p>
+<p>In addition to instances such as 'unud(UNU<sub>3</sub>)' in which the bracketed sign name specifies how the word was written, brackets have a further function in transliteration, being used to qualify the presence of a sign in the source. In these cases, the contents of the brackets specify the qualified sign, in lower case if the appropriate reading can be suggested, e.g. '(tum<sub>9</sub>)'; in capitals if not, e.g. '(IM)'; and as '(X)' if no suggestion can be made.</p>
+<p>The following conventions have been used to encode special sign configurations:</p>
+<table border="1" cellpadding="4" cellspacing="4">
+<tr><td align="center"><b>Symbol</b></td><td align="center"><b>Example</b></td><td align="center"><b>Explanation</b></td></tr>
+<tr><td align="center"><font size="+1"><b>.</b></font></td><td align="left">&amp;d;&Scaron;AR.&Scaron;AR.GABA</td><td align="left">the sign sequence forms one word(stem)</td></tr>
+<tr><td align="center"><font size="+1"><b>/</b></font></td><td align="left">&Scaron;IR.LU.KU&Scaron;/&Scaron;IR.LU.KU&Scaron;</td><td align="left">the first sign (sequence) is written above the second (sequence)</td></tr>
+<tr><td align="center"><font size="+1"><b>:</b></font></td><td align="left">gal:simug</td><td align="left">the pronunciation is the reverse of the written sequence</td></tr>
+<tr><td align="center"><font size="+1"><b>+</b></font></td><td align="left">ERIN2+KISIM5</td><td align="left"> the two signs form a ligature</td></tr>
+<tr><td align="center"><font size="+1">&amp;times;</font></td><td align="left">KA&amp;times;A</td><td align="left">the second sign (sequence) is written within or conjoined to the first sign (sequence)</td></tr>
+<tr><td align="center"><font size="+1">(inverted)</font></td><td align="left">AN.NISABA.(inverted)AN.NISABA</td><td align="left">the second sign (sequence) is written inverted in relation to the first sign (sequence)</td></tr>
+</table>
+<p>Since these symbols have special functions, they are not used with their usual meaning of full stop, etc. in the body of the transliterations. The only exception is when they occur inside English notes.</p>
+<p>Hyphens in transliteration have several functions.</p>
+<ol>
+<li>They link phonologically bound elements (clitics or affixes) to the element to which they are bound, e.g. 'lugal-ju10' (king-my).</li>
+<li>They are used to link multisyllabic words and stems that are written phonographically, e.g. 'har-ra-an' (journey).</li>
+<li>They link elements regarded as constituting a compound, e.g. 'e2-gal' (palace, lit. house-big).</li>
+<li>They link elements regarded as constituting a complex proper noun, e.g. 'cul-gi' (Shulgi).</li></ol>
+<p>For more details on hyphenation, see the <a href="pdf/hyphenprinciples.pdf">Hyphenation principles</a> (pdf file).</p>
+<p><b><a name="structure">2.3 The overall structure of the corpus</a></b></p>
+<p>The structure is basically the same for the transliterations and the translations. The transliterations are, however, much more richly annotated. A bibliography document, which is separate from the transliterations and the translations, differs in structure from the other documents, but is also in agreement with the TEI guidelines. The source of the bibliography document is a FileMaker Pro database.</p>
+<p>All documents start and end with the &lt;TEI.2&gt; document tag.</p>
+<p style="font-family:arial;font-size:90%">&nbsp;&lt;TEI.2 id="c.0.1.1"&gt;<br/>
+&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&lt;/TEI.2&gt;</p>
+<p>Each document has a header element (&lt;teiHeader&gt;) and a text element (&lt;text&gt;). All headers are in English; text is in Sumerian for the transliterations and in English for the translations. The bibliography document contains no data except what is in its header, that is the &lt;text&gt; element of the document is empty.</p>
+<p>The value of the <i>id</i> attribute of the &lt;TEI.2&gt; document tag uniquely identifies a composition within the corpus. The identifier starts with lower case 'c' for the transliterations and lower case 't' for the translations. In the bibliography document, the <i>id</i> attribute value is simply 'etcsl-bibliography'.</p>
+<p>When there are several versions of the same composition in one TEI document, the &lt;group&gt; tag is used and the &lt;text&gt; elements within the &lt;group&gt; tag are numbered.</p>
+<p style="font-family:arial;font-size:90%">&lt;TEI.2 id="c.2.4.1.1"&gt;<br/>
+&nbsp;&lt;teiHeader lang="eng"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&lt;/teiHeader&gt;<br/>
+&nbsp;&lt;text lang="sux"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;group&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text n="1"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/text&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text n="2"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/text&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/group&gt;<br/>
+&nbsp;&lt;/text&gt;<br/>
+&lt;/TEI.2&gt;</p>
+<p>The &lt;group&gt; tag is also used to group together various sources containing proverbs.</p>
+<p>When we have only one version of a composition in a TEI document, there is no need for the &lt;group&gt; tag, and the &lt;text&gt; element is not numbered.</p>
+<p style="font-family:arial;font-size:90%">&nbsp;&lt;TEI.2 id="c.1.2.1"&gt;<br/>
+&nbsp;&nbsp;&lt;teiHeader lang="eng"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&nbsp;&lt;/teiHeader&gt;<br/>
+&nbsp;&nbsp;&lt;text lang="sux"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&nbsp;&lt;/text&gt;<br/>
+&nbsp;&lt;/TEI.2&gt;</p>
+<p>To be able to process all the documents, transliterations as well as translations, an outer wrapper in the form of a &lt;teiCorpus.2&gt; element is used. This acts as a container and makes it easy to, for instance, validate the corpus using an XML validation program.</p>
+<p style="font-family:arial;font-size:90%">&lt;teiCorpus.2 id="ETCSL"&gt;<br/>
+&nbsp;&lt;TEI.2 id="c.0.1.1"&gt;<br/>
+&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&lt;/TEI.2&gt;<br/>
+&nbsp;&hellip;<br/>
+&nbsp;&lt;TEI.2 id="c.0.1.2"&gt;<br/>
+&nbsp;&nbsp;&hellip;<br/>
+&nbsp;&lt;/TEI.2&gt;<br/>
+&lt;/teiCorpus.2&gt;</p>
+<p><b><a name="headers">2.4 The &lt;teiHeader&gt;</a></b></p>
+<p>The corpus header acts as a container for certain values of <i>id</i> attributes used as targets or anchors in the individual documents, e.g. the language attributes. Apart from these unique ids and the name and address of the distributor, the corpus header is empty.</p>
+<p style="font-family:arial;font-size:90%">&lt;teiHeader type="corpus"&gt;<br/>
+&nbsp;&lt;fileDesc&gt;<br/>
+&nbsp;&nbsp;&lt;titleStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br/>
+&nbsp;&nbsp;&lt;/titleStmt&gt;<br/>
+&nbsp;&nbsp;&lt;publicationStmt&gt;&lt;distributor&gt;The Electronic Text Corpus of Sumerian Literature&lt;/distributor&gt;<br/>
+&nbsp;&nbsp;&lt;address&gt;&lt;addrLine&gt;The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl@orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk&lt;/addrLine&gt;&lt;/address&gt;<br/>
+&nbsp;&nbsp;&lt;date&gt;2000&lt;/date&gt;&lt;/publicationStmt&gt;<br/>
+&nbsp;&nbsp;&lt;notesStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;note id="scribe"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;note id="editor"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;note id="x"&gt;dummy line/paragraph id&lt;/note&gt;<br/>
+&nbsp;&nbsp;&lt;/notesStmt&gt;<br/>
+&nbsp;&nbsp;&lt;sourceDesc&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;biblStruct&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;monogr&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;&lt;/author&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;imprint&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pubPlace&gt;&lt;/pubPlace&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publisher&gt;&lt;/publisher&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;date&gt;&lt;/date&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/imprint&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/monogr&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/biblStruct&gt;<br/>
+&nbsp;&nbsp;&lt;/sourceDesc&gt;<br/>
+&nbsp;&lt;/fileDesc&gt;<br/>
+&nbsp;&lt;profileDesc&gt;<br/>
+&nbsp;&nbsp;&lt;langUsage&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="sux"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="akk"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="eng"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="dut"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="ger"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="fre"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;language id="fra"/&gt;<br/>
+&nbsp;&nbsp;&lt;/langUsage&gt;<br/>
+&nbsp;&nbsp;&lt;handList&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;hand id="GC"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;hand id="NN"/&gt;<br/>
+&nbsp;&nbsp;&lt;/handList&gt;<br/>
+&nbsp;&nbsp;&lt;textClass&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;classCode&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;sic id="scribes"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;sic id="editors"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/classCode&gt;<br/>
+&nbsp;&nbsp;&lt;/textClass&gt;<br/>
+&nbsp;&lt;/profileDesc&gt;<br/>
+&lt;/teiHeader&gt;</p>
+<p>The document header contains more information than the corpus header, but it also has a very simple structure. It consists of two main parts only, the file description, &lt;fileDesc&gt;, and the revision description, &lt;revisionDesc&gt;.</p>
+<p>The &lt;fileDesc&gt; consists of the &lt;titleStmt&gt;, &lt;publicationStmt&gt;, &lt;seriesStmt&gt;, and the &lt;sourceDesc&gt;. The &lt;sourceDesc&gt; in the transliterations distinguishes between 'secondary' and 'tablets'. Each secondary source has a number which corresponds to an <i>id</i> in the bibliography document. The &lt;sourceDesc&gt; is occasionally preceded by a &lt;notesStmt&gt; which provides further information about the text part of the document.</p>
+<p>The &lt;revisionDesc&gt; contains a list of all the revisions the document has gone through, with date of revision, name of person responsible, and purpose of revision. A detailed discussion of the use of the elements found in the &lt;teiHeader&gt; can be found in chapter 5, <i>The TEI Header</i>, of the TEI guidelines.</p>
+<p style="font-family:arial;font-size:90%">&lt;teiHeader lang="eng"&gt;<br/>
+&nbsp;&lt;fileDesc&gt;<br/>
+&nbsp;&nbsp;&lt;titleStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;title&gt;Letter from &amp;C;ulgi (?) to Arad&amp;g;u about troops -- a composite transliteration&lt;/title&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;Jeremy Black&lt;/name&gt;&lt;resp&gt;Project Director and Editor&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;G&aacute;bor Z&oacute;lyomi&lt;/name&gt;&lt;resp&gt;Editor&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;Graham Cunningham&lt;/name&gt;&lt;resp&gt;Editor&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;Esther Fl&uuml;ckiger-Hawker&lt;/name&gt;&lt;resp&gt;Editor&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;Eleanor Robson&lt;/name&gt;&lt;resp&gt;Technical Developer&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;respStmt&gt;&lt;name&gt;Jarle Ebeling&lt;/name&gt;&lt;resp&gt;Technical Developer&lt;/resp&gt;&lt;/respStmt&gt;<br/>
+&nbsp;&nbsp;&lt;/titleStmt&gt;<br/>
+&nbsp;&nbsp;&lt;publicationStmt&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;distributor&gt;The Electronic Text Corpus of Sumerian Literature<br/>
+&nbsp;&nbsp;&nbsp;&lt;/distributor&gt;&lt;address&gt;&lt;addrLine&gt;The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl@orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk&lt;/addrLine&gt;&lt;/address&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;date&gt;2001&lt;/date&gt;<br/>
+&nbsp;&nbsp;&lt;/publicationStmt&gt;<br/>
+&nbsp;&nbsp;&lt;seriesStmt&gt;&lt;p&gt;The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.&lt;/p&gt;&lt;/seriesStmt&gt;<br/>
+&nbsp;&nbsp;&lt;sourceDesc&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;listBibl type="secondary"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl&gt;&lt;xref from="b729"&gt;Michalowski 1976&lt;/xref&gt;&lt;biblScope type="page"&gt;184-185&lt;/biblScope&gt;&lt;biblScope type="contents"&gt;score transliteration, commentary&lt;/biblScope&gt;&lt;/bibl&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl&gt;&lt;xref from="b732"&gt;Huber 1998&lt;/xref&gt;&lt;biblScope type="page"&gt;36&lt;/biblScope&gt;&lt;biblScope type="contents"&gt;commentary&lt;/biblScope&gt;&lt;/bibl&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl&gt;&lt;xref from="b309"&gt;Krecher 1996b&lt;/xref&gt;&lt;biblScope type="contents"&gt;composite text, translation&lt;/biblScope&gt;&lt;/bibl&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;listBibl type="tablets"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl&gt;&lt;biblScope type="museumNumber"&gt;Ni 9703 (ISET 2 120) c 2'-9'&lt;/biblScope&gt;&lt;biblScope type="composLines"&gt;1-8&lt;/biblScope&gt;&lt;/bibl&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br/>
+&nbsp;&nbsp;&lt;/sourceDesc&gt;<br/>
+&nbsp;&lt;/fileDesc&gt;<br/>
+&nbsp;&lt;revisionDesc&gt;<br/>
+&nbsp;&nbsp;&lt;change&gt;&lt;date&gt;03.v.2001&lt;/date&gt;&lt;respStmt&gt;&lt;name&gt;EFH&lt;/name&gt;&lt;resp&gt;editor&lt;/resp&gt;&lt;/respStmt&gt; &lt;item&gt;standardisation&lt;/item&gt;&lt;/change&gt;<br/>
+&nbsp;&nbsp;&lt;change&gt;&lt;date&gt;09.viii.2001&lt;/date&gt;&lt;respStmt&gt;&lt;name&gt;JAB&lt;/name&gt;&lt;resp&gt;editor&lt;/resp&gt;&lt;/respStmt&gt; &lt;item&gt;proofreading&lt;/item&gt;&lt;/change&gt;<br/>
+&nbsp;&nbsp;&lt;change&gt;&lt;date&gt;11.viii.2001&lt;/date&gt;&lt;respStmt&gt;&lt;name&gt;GZ&lt;/name&gt;&lt;resp&gt;editor&lt;/resp&gt;&lt;/respStmt&gt; &lt;item&gt;SGML tagging&lt;/item&gt;&lt;/change&gt;<br/>
+&nbsp;&nbsp;&lt;change&gt;&lt;date&gt;21.ix.2001&lt;/date&gt;&lt;respStmt&gt;&lt;name&gt;ER&lt;/name&gt;&lt;resp&gt;editor&lt;/resp&gt;&lt;/respStmt&gt; &lt;item&gt;proofreading SGML&lt;/item&gt;&lt;/change&gt;<br/>
+&nbsp;&nbsp;&lt;change&gt;&lt;date&gt;01.vi.2003&lt;/date&gt;&lt;respStmt&gt;&lt;name&gt;GC/JE&lt;/name&gt;&lt;resp&gt;editor/technical developer&lt;/resp&gt;&lt;/respStmt&gt; &lt;item&gt;XML/TEI conversion&lt;/item&gt;&lt;/change&gt;<br/>
+&nbsp;&lt;/revisionDesc&gt;<br/>
+&lt;/teiHeader&gt;</p>
+<p>The translations have a similar header to the transliterations except that there are no bibliographic references.</p>
+<p>The header of the bibliography document differs from the headers of the transliterations and the translations. It contains all the works cited in the transliteration documents, e.g. Huber 1998 (see above). Each work is encoded by a &lt;biblStruct&gt; element.</p>
+<p style="font-family:arial;font-size:90%">&lt;biblStruct id="b732" lang="fre" type="unpublished work"&gt;<br/>
+&nbsp;&lt;analytic&gt;<br/>
+&nbsp;&nbsp;&lt;author&gt;Huber, Fabienne&lt;/author&gt;<br/>
+&nbsp;&nbsp;&lt;title&gt;Etude sur l'Authenticit&eacute; de la Correspondence Royale d'Ur&lt;/title&gt;<br/>
+&nbsp;&lt;/analytic&gt;<br/>
+&nbsp;&lt;monogr&gt;<br/>
+&nbsp;&nbsp;&lt;imprint&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;publisher&gt;University of Geneva&lt;/publisher&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;date value="2003"&gt;1998&lt;/date&gt;<br/>
+&nbsp;&nbsp;&lt;/imprint&gt;<br/>
+&nbsp;&lt;/monogr&gt;<br/>
+&nbsp;&lt;note&gt;M&eacute;moire de licence&lt;/note&gt;<br/>
+&nbsp;&lt;note&gt;lic.phil.&lt;/note&gt;<br/>
+&lt;/biblStruct&gt;</p>
+<p>Another example is</p>
+<p style="font-family:arial;font-size:90%">
+&lt;biblStruct id="b226" lang="fre" type="article"&gt;<br/>
+&nbsp;&lt;analytic&gt;<br/>
+&nbsp;&nbsp;&lt;author&gt;Cavigneaux, A.&lt;/author&gt;<br/>
+&nbsp;&nbsp;&lt;author&gt;F.N.H. Al-Rawi&lt;/author&gt;<br/>
+&nbsp;&nbsp;&lt;title&gt;Gilgame&scaron; et Taureau de Ciel (&scaron;ul-m&egrave;-kam) (Textes de Tell Haddad IV)&lt;/title&gt;<br/>
+&nbsp;&lt;/analytic&gt;<br/>
+&nbsp;&lt;monogr&gt;<br/>
+&nbsp;&nbsp;&lt;title&gt;Revue d'Assyriologie&lt;/title&gt;<br/>
+&nbsp;&nbsp;&lt;imprint&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;pubPlace&gt;Paris&lt;/pubPlace&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;date&gt;1993&lt;/date&gt;<br/>
+&nbsp;&nbsp;&lt;/imprint&gt;<br/>
+&nbsp;&nbsp;&lt;biblScope type="vol"&gt;87&lt;/biblScope&gt;<br/>
+&nbsp;&nbsp;&lt;biblScope type="issue"&gt;2&lt;/biblScope&gt;<br/>
+&nbsp;&nbsp;&lt;biblScope type="page"&gt;97-129&lt;/biblScope&gt;<br/>
+&nbsp;&nbsp;&lt;biblScope type="plate"&gt;I-III&lt;/biblScope&gt;<br/>
+&nbsp;&lt;/monogr&gt;<br/>
+&lt;/biblStruct&gt;</p>
+<p><b><a name="structureforming">2.5 Text units</a></b></p>
+<p><b><a name="text">2.5.1 The &lt;text&gt;, &lt;body&gt;, &lt;div1&gt;, &lt;lg&gt;, &lt;trailer&gt; and &lt;head&gt; tags</a></b></p>
+<p>Unless outside a &lt;group&gt; tag, each &lt;text&gt; element contains a &lt;body&gt; tag. The latter can be subdivided into segments and/or line groups if necessary.</p>
+<p>A composition is divided into segments when it has a lacuna containing an unknown number of lines. In accordance with the TEI guidelines, the segments are encoded as &lt;div1&gt;. The example below, which is of the kind where there are several versions of the same composition, shows a common structure. The versions (&lt;text&gt;) are numbered using Arabic numbers, while we use capital letters to number the &lt;div1&gt; level. The &lt;head&gt; element is used to tag the heading of the relevant version. For display in HTML, segments have headings which are generated from the values of the &lt;div1&gt; tags.</p>
+<pre>&lt;group&gt;
+&nbsp;&lt;text n="1"&gt;
+&nbsp;&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&lt;head lang="eng"&gt;A version of unknown provenance, supplemented from Nippur mss.&lt;/head&gt;
+&nbsp;&nbsp;&nbsp;&lt;div1 type="segment" n="A"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;l n="1"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;l n="2"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&nbsp;&lt;/div1&gt;
+&nbsp;&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&lt;/body&gt;
+&nbsp;&lt;/text&gt;
+&nbsp;&lt;text n="2"&gt;
+&nbsp;&nbsp;&hellip;
+&nbsp;&lt;/text&gt;
+&lt;/group&gt;</pre>
+<p>The line group tag, &lt;lg&gt;, is used to group lines functioning as a formal unit, that is individual proverbs (the first example) and specified sections of hymns (the second example). Neither unit has a &lt;head&gt; tag. However, for display in HTML, individual proverbs have headings which are generated from the values of their &lt;lg&gt; tags.</p>
+<pre>&lt;text lang="sux"&gt;
+&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&lt;div1 type="segment" n="A"&gt;
+&nbsp;&nbsp;&nbsp;&lt;lg type="proverb" n="21.a1"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;l n="1"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;l n="2"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&nbsp;&lt;/lg&gt;
+&nbsp;&nbsp;&lt;/div1&gt;
+&nbsp;&nbsp;&hellip;
+&nbsp;&lt;/body&gt;
+&lt;/text&gt;</pre>
+<p>Line groups within hymns typically end with a &lt;trailer&gt; tag specifying the Sumerian technical term for the unit (referred to as a rubric).</p>
+<pre>&lt;text lang="sux"&gt;
+&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&lt;lg n="A" type="kirugu"&gt;
+&nbsp;&nbsp;&nbsp;&lt;l n="1"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&lt;l n="2"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&nbsp;&lt;trailer place="rubric" type="kirugu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;l n="21"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&nbsp;&lt;/trailer&gt;
+&nbsp;&nbsp;&lt;/lg&gt;
+&nbsp;&nbsp;&hellip;
+&nbsp;&lt;/body&gt;
+&lt;/text&gt;</pre>
+<p>The &lt;trailer&gt; tag is also used to specify the Sumerian technical term for particular types of composition (referred to as subscripts).</p>
+<pre>&lt;text lang="sux"&gt;
+&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&lt;l n="1"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&lt;l n="2"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&lt;trailer place="subscript" type="cir-gida"&gt;
+&nbsp;&nbsp;&nbsp;&lt;l n="208"&gt;&hellip;&lt;/l&gt;
+&nbsp;&nbsp;&lt;/trailer&gt;
+&nbsp;&lt;/body&gt;
+&lt;/text&gt;</pre>
+<p>The translations have a parallel structure to the transliterations, except that they contain no lines only paragraphs (&lt;p&gt;). Several transliterated lines usually correspond to only one paragraph in the translation.</p>
+<pre>&lt;text lang="eng"&gt;
+&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&lt;div1 type="segment" n="A"&gt;
+&nbsp;&nbsp;&nbsp;&lt;lg type="proverb" n="14.1"&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&hellip;
+&nbsp;&nbsp;&lt;/lg&gt;
+&nbsp;&lt;/body&gt;
+&lt;/text&gt;</pre>
+<p>Another tag which has an important structuring function is &lt;addSpan/&gt;. This element is described next together with the &lt;altGrp&gt;, &lt;alt/&gt;, &lt;linkGrp&gt;, and &lt;link/&gt; tags.</p>
+<p><b><a name="addspan">2.5.2 The &lt;addSpan/&gt;, &lt;anchor/&gt;, &lt;altGrp&gt;, &lt;alt/&gt;, &lt;linkGrp&gt; and &lt;link/&gt; tags</a></b></p>
+<p>Since we are often dealing with composite editions compiled from several sources, it has been necessary to devise a way to tag differences between the same span of text. The span can be from one word within a line to a large number of consecutive lines.</p>
+<p>One source or a minority of the sources may contain additional words or lines not found in the rest of the sources. These additional words or lines are then encoded using the code pair &lt;addSpan/&gt; and &lt;anchor/&gt;. In addition, a note stating that what follows occurs in one or a minority of the sources is included.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="254"&gt;cu-kal-le-tud-da<br/>
+&lt;addSpan to="c133.v9"/&gt;<br/>
+&lt;note lang="eng" target="c133.v9"&gt;1 ms. adds:&lt;/note&gt;<br/>
+dili-ni<br/>
+&lt;anchor id="c133.v9"/&gt;<br/>
+ni2-ta ba-ab-tur-tur-re<br/>
+&lt;/l&gt;</p>
+<p>Here, one manuscript (1 ms.) adds the word 'dili-ni', which is not found in the other sources. The &lt;addSpan/&gt; tag marks the start of the addition, and the &lt;anchor/&gt; tag marks the end of it. Since such additions can be nested, it is necessary to uniquely identify exactly where this addition begins and where it ends. This is done by having the value of the <i>to</i> attribute of the &lt;addSpan/&gt; tag match the value of the <i>id</i> attribute of the &lt;anchor/&gt; tag.</p>
+<p>In the next example, a line of text has been added. Note the numbering of the lines in this case. The line number of the additional line is 204A. When there are many additional lines, or the additions are nested, e.g. where there are lines added within other lines, the numbering of the additional lines becomes quite elaborate and both upper and lower case letters are used.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="204"&gt;jiri3-ni gakkul zabar-ra im-ma-an-cu2-cu2&lt;/l&gt;<br/>
+&lt;addSpan to="c151.v3"/&gt;<br/>
+&lt;note lang="eng" target="c151.v3"&gt;1 ms. adds 1 line:&lt;/note&gt;<br/>
+&lt;l n="204A"&gt;cu-si-ni bulug &amp;jic;tackarin mu-na-an-bur12-bur12-re&lt;/l&gt;<br/>
+&lt;anchor id="c151.v3"/&gt;<br/>
+&lt;l n="205"&gt;ackud2-bi i3 he-nun-na-ka cu ga-am3-ma-ni-ib-ur3&lt;/l&gt;</p>
+<p>A second use of the &lt;addSpan/&gt; and &lt;anchor/&gt; tags is in cases where we have two or more alternatives (variants) within the sources. To separate this type from the type where one or more words or lines are simply added, a different wording of the note is used. In the following example, one source has a one-line alternative to the other source(s).</p>
+<p style="font-family:arial;font-size:90%">&lt;addSpan to="c4061.v7"/&gt;<br/>
+&lt;l n="29"&gt;i3-ne-ec2 lu2 lu2-ra a-na an-na-an-dug4&lt;/l&gt;<br/>
+&lt;l n="30"&gt;lu2-ulu3 lu2-ra AC a-na an-na-an-tah&lt;/l&gt;<br/>
+&lt;anchor id="c4061.v7"/&gt;<br/>
+&lt;addSpan to="c4061.v8"/&gt;<br/>
+&lt;note lang="eng" target="c4061.v7"&gt;instead of lines 29-30, 1 ms. has:&lt;/note&gt;<br/>
+&lt;l n="A"&gt;i3-ne-ec2 &amp;d;utu ud ne-a&lt;/l&gt;<br/>
+&lt;anchor id="c4061.v8"/&gt;<br/>
+&lt;altGrp&gt;&lt;alt targType="addSpan" targets="c4061.v7 c4061.v8"/&gt;&lt;/altGrp&gt;</p>
+<p>To group the variants explicitly, the &lt;altGrp&gt; and &lt;alt/&gt; tags are used. The value of the <i>targets</i> attribute of the &lt;alt/&gt; tag links the variants by including the values of the <i>to</i>/<i>id</i> attributes of the &lt;addSpan/&gt;/&lt;anchor/&gt; tags.</p>
+<p>The &lt;linkGrp&gt; and &lt;link/&gt; tags perform a similar function to the &lt;altGrp&gt; and &lt;alt/&gt; tags, but they group or link elements other than variants, e.g. line groups that cross segment boundaries. The fact that line groups are here referred to as sections (sec) has historical reasons.</p>
+<p style="font-family:arial;font-size:90%">&lt;lg id="c2512.sec1" n="C" type="kirugu"&gt;<br/>
+&nbsp;&hellip;<br/>
+&lt;/lg&gt;<br/>
+&lt;lg id="c2512.sec2" n="C" type="kirugu"&gt;<br/>
+&nbsp;&hellip;<br/>
+&lt;/lg&gt;<br/>
+&lt;linkGrp&gt;&lt;link targType="section" targets="c2512.sec1 c2512.sec2"/&gt;</p>
+<p><b><a name="line">2.5.3 The &lt;l&gt; and &lt;p&gt; tags</a></b></p>
+<p>The &lt;l&gt; tag in the transliterations is the most important structuring device and corresponds to a line of cuneiform as found on a clay tablet. In many cases it will correspond to a sentence in the form of a verb and its arguments, but not always. Since it is very difficult to translate line by line from Sumerian into English, the &lt;p&gt; element, which is only found in the translations, contains a coherent English prose translation of several Sumerian lines. This means that there is a one-to-many relationship between an English paragraph (&lt;p&gt;) and the corresponding Sumerian lines. Several Sumerian lines thus have links to the same English paragraph, as shown in the next example.</p>
+<p>Sumerian original:</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="9" id="c151.9" corresp="t151.p2"&gt;ur-saj-me-en je26-e iri-ju10-ce3 ga-jen&lt;/l&gt;<br/>
+&lt;l n="10" id="c151.10" corresp="t151.p2"&gt;je26-e iri-ju10-ce3 ga-jen a-a-ju10-ce3 ga-an-ci-jen&lt;/l&gt;<br/>
+&lt;l n="11" id="c151.11" corresp="t151.p2"&gt;&amp;d;suen-me-en je26-e iri-ju10-ce3 ga-jen&lt;/l&gt;<br/>
+&lt;l n="12" id="c151.12" corresp="t151.p2"&gt;je26-e iri-ju10-ce3 ga-jen a-a-ju10-ce3 ga-an-ci-jen&lt;/l&gt;<br/>
+&lt;l n="13" id="c151.13" corresp="t151.p2"&gt;a-a-ju10 &amp;d;en-lil2-la2-ce3&lt;/w&gt; ga-an-ci-jen&lt;/l&gt;<br/>
+&lt;l n="14" id="c151.14" corresp="t151.p2"&gt;je26-e iri-ju10-ce3 ga-jen ama-ju10-ce3 ga-an-ci-jen&lt;/l&gt;<br/>
+&lt;l n="15" id="c151.15" corresp="t151.p2"&gt;ama-ju10 &amp;d;nin-lil2-la2-ce3&lt;/w&gt; ga-an-ci-jen&lt;/l&gt;<br/>
+&lt;l n="16" id="c151.16" corresp="t151.p2"&gt;a-a-ju10-ce3 ga-an-ci-jen&lt;/l&gt;</p>
+<p>English prose translation:</p>
+<p style="font-family:arial;font-size:90%">&lt;p id="t151.p2" n="9-16" corresp="c151.9"&gt;I, the hero, will set off for my city. I will set off for my city, I will set off to my father. I, Suen, will set off for my city. I will set off for my city, I will set off to my father. I will set off to my father Enlil. I will set off for my city, I will set off to my mother. I will set off to my mother Ninlil. I will set off to my father.&lt;/p&gt;</p>
+<p>The explicit linking is achieved by having paired <i>id</i> and <i>corresp</i> attributes. The <i>n</i> attribute of the &lt;p&gt; tag encodes the span of Sumerian lines corresponding to the English paragraph.</p>
+<p>In a handful of cases, we have had to introduce dummy lines and paragraphs to be in accordance with the TEI guidelines. In these cases, the <i>n</i> attribute has the value "x".</p>
+<p><b><a name="w">2.5.4 The &lt;w&gt; tag</a></b></p>
+<p>To hold grammatical and other types of information about Sumerian words, the &lt;w&gt; element is used. The content of the &lt;w&gt; element is comparable to an orthographic word in e.g. Modern English. All recognisable Sumerian words have a lemma, a part of speech, and a label attribute.</p>
+<p style="font-family:arial;font-size:90%">&lt;w form="cul" lemma="cul" pos="N" label="young man"&gt;cul&lt;/w&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;w form="he2-tum2" lemma="de6" pos="V" label="to carry"&gt;he2-tum2&lt;/w&gt;</p>
+<p>The <i>form</i> attribute of the &lt;w&gt; tag has been introduced to simplify the recognistion of the word form, which may have various tags embedded in it.</p>
+<p style="font-family:arial;font-size:90%">&lt;w form="na-an-dug4" lemma="dug4" pos="V" label="to say"&gt;na&lt;suppliedEnd/&gt;-&lt;damage/&gt;an&lt;damageEnd/&gt;-dug4&lt;/w&gt;</p>
+<p>The following is a list of possible attributes (some of these are not part of the standard TEI.2 DTD):</p>
+<ul>
+<li>form</li>
+<li>lemma (standardised citation form/lexeme)</li>
+<li>pos (part of speech)</li>
+<li>type (further sub-grouping of pos)</li>
+<li>label (English gloss)</li>
+<li>emesal (Emesal base of word)</li>
+<li>emesal-prefix (Emesal prefix attested in word)</li>
+<li>form-type (morphological information on word, e.g. reduplicated</li>
+<li>npart (compound proper noun)</li>
+<li>bound (segmentational information)</li>
+<li>det (determinative)</li>
+</ul>
+<p>The pos and type attributes can have the following values.</p>
+<table cellspacing="2" cellpadding="4" border="1" width="90%">
+<thead><tr><td colspan="4" align="center"><b>Part-of-speech information</b></td></tr></thead>
+<tr><td align="center" width="12%"><b>Pos value</b></td><td width="18%"><b>Part of speech</b></td><td width="35%"><b>Type values</b></td><td width="35%"><b>Example/Comment</b></td></tr>
+<tr><td align="center" width="12%">AJ</td><td width="18%">adjective</td><td width="35%"></td><td width="35%">kug, gal-an-zu</td></tr>
+<tr><td align="center" width="12%">AV</td><td width="18%">adverb</td><td width="35%"></td><td width="35%">a-da-al, ga-nam, me-a</td></tr>
+<tr><td align="center" width="12%">C</td><td width="18%">conjunction</td><td width="35%"></td><td width="35%">tukum-bi, u<sub>3</sub></td></tr>
+<tr><td align="center" width="12%">I</td><td width="18%">interjection</td><td width="35%"></td><td width="35%">e, u-u<sub>8</sub>-a</td></tr>
+<tr><td align="center" width="12%">N</td><td width="18%">noun</td><td width="35%">ideophone, DN, EN, GN, MN, ON, PN, RN, SN, TN, WN</td><td width="35%">The upper case values are types of proper nouns. Common nouns are not marked as such. Example of ideophone: dum-dam</td></tr>
+<tr><td align="center" width="12%">NEG</td><td width="18%">negator</td><td width="35%"></td><td width="35%">nu</td></tr>
+<tr><td align="center" width="12%">NU</td><td width="18%">numeral</td><td width="35%">cardinal, fraction, ordinal</td><td width="35%">1, 1/2, 2-kam-ma</td></tr>
+<tr><td align="center" width="12%">PD</td><td width="18%">pronoun/determiner</td><td width="35%">demonstrative, indefinite, interrogative, nominal-relative, personal, reflexive</td><td width="35%">re, na-me, a-ba, za, ni<sub>2</sub>-bi</td></tr>
+<tr><td align="center" width="12%">V</td><td width="18%">verb</td><td width="35%"></td><td width="35%"></td></tr>
+</table>
+<p><b><a name="editorial">2.6 Editorial principles</a></b></p>
+<p>The tags described in this section mainly occur within the &lt;l&gt; element in the transliterations or the &lt;p&gt; element in the translations.</p>
+<p>Many of the tags involve the coding of some kind of damage to a cuneiform source or a qualification of the identification of a sign. Representing sources accurately in transliteration requires an elaborate coding scheme, which in some cases deviates from the TEI guidelines.</p>
+<p><b><a name="damage">2.6.1 The &lt;damage/&gt; and &lt;damageEnd/&gt; tags</a></b></p>
+<p>Damaged text is bounded by the &lt;damage/&gt; and &lt;damageEnd/&gt; tags.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="29" id="c012.29"&gt;ucum huc an-&lt;damage/&gt;na&lt;damageEnd/&gt;&lt;/l&gt;</p>
+<p>Cuneiform signs were of course never combined using hyphens. Combining cuneiform signs with hyphens is a way of approximating words in modern European languages including clitics and affixes, and is part of the transliteration practice. The hyphen is therefore never part of the damage, even though it may occur inside the two tags. Damage is not indicated in the translations.</p>
+<p><b><a name="supplied">2.6.2 The &lt;supplied/&gt; and &lt;suppliedEnd/&gt; tags</a></b></p>
+<p>Missing, and supplied text, is bounded by the &lt;supplied/&gt; and &lt;suppliedEnd/&gt; tags.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="15" id="c135.B.15" corresp="t135.p4"&gt;&lt;supplied/&gt;inim&lt;suppliedEnd/&gt; &lt;damage/&gt;kug&lt;damageEnd/&gt; &hellip;&lt;/l&gt;</p>
+<p>When the missing text cannot be supplied, upper case X is used to indicate that one cuneiform sign is missing, while entity &amp;X; indicates that a sequence of more than two signs are missing.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="13" id="c135.B.13" corresp="t135.p4"&gt;&lt;supplied/&gt;X X&lt;suppliedEnd/&gt; zi &amp;jic;gu-za-ja2 nam-mah-ja2 mu-un-pad3&lt;/l&gt;</p>
+<p>Upper case X is also used to indicate an unreadable sign, i.e. where there is a sign, but we cannot decipher it.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="1" id="c135.C.1" corresp="t135.p6"&gt;X X &lt;supplied/&gt;&amp;X;&lt;suppliedEnd/&gt;&lt;/l&gt;</p>
+<p>Supplied text is not specified as being so in the translations. However, missing or untranslatable text is indicated by &amp;X;&amp;X;. &amp;X; displays as '&hellip;' in the HTML version.</p>
+<p>When one line or more lines of text are missing a different tag is used (see <a href="#gap">2.7.2</a>).</p>
+<p><b><a name="corr">2.6.3 The &lt;corr&gt;, &lt;corr/&gt; and &lt;corrEnd/&gt; tags</a></b></p>
+<p>The &lt;corr&gt; tag has three variants. The first variant is in accordance with the TEI guidelines by having the corrected form as the value of a <i>sic</i> attribute.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="16" id="c40825.16" corresp="t40825.p2"&gt;&lt;corr sic="iti6"&gt;mul&lt;/corr&gt; e2-ba mi-ni-di4-di4-la2-gin7&lt;/l&gt;</p>
+<p>Since the value of the <i>sic</i> attribute can be damaged or queried (see below), we have had to introduce a few entities to capture this. In the following example, the value of the <i>sic</i> attribute is queried.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="77" id="c40833.77" corresp="t40833.p9"&gt;isin-ja2 udu-zu he2-em-mi-&lt;corr sic="&amp;qryb;lu&amp;qrye;"&gt;gu7&lt;/corr&gt;&lt;/l&gt;</p>
+<p>The two other variants of the &lt;corr/&gt; tag have empty start tags with corresponding &lt;corrEnd/&gt; tags. The only difference between the two is the value of the <i>resp</i> attribute, which can be either "scrAdd" or "scrOm", the first indicating a wrong, and corrected, addition and the second an omission made by the scribe.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="8" id="c0203.8"&gt;di4-&lt;corr resp="scrOm"/&gt;di4&lt;corrEnd/&gt;-la2 ud-da&lt;/l&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="10" id="c0211.10"&gt;&amp;d;en-lil2 su3-ra2-&lt;corr resp="scrAdd"/&gt;DU&lt;corrEnd/&gt;-&lt;damage/&gt;ce3&lt;damageEnd/&gt;&lt;/note&gt;&lt;/l&gt;</p>
+<p>In these cases, there is no <i>sic</i> attribute.</p>
+<p><b><a name="unclear">2.6.4 The &lt;unclear&gt; tag</a></b></p>
+<p>This tag is used to indicate that the interpretation of a sign is unclear or uncertain. The type of uncertainty is encoded by the <i>cert</i> attribute. It can have two values, either "qry" or "cor". The first expresses doubt about whether what is written has been correctly identified. The second indicates that the sign identified is irregularly written.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="701" id="c162.701" corresp="t162.p78"&gt;&lt;unclear cert="qry"&gt;ucum&lt;/unclear&gt; ceg11 gi4 mu-ni-UD-a-ac&lt;/l&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="307" id="c217.307" corresp="t217.p39"&gt;&amp;jic;NE-ha-&lt;unclear cert="cor"&gt;an&lt;/unclear&gt; mu-ra-ta-ed3-de3&lt;/l&gt;</p>
+<p><b><a name="foreign">2.6.5 The &lt;foreign&gt; tag</a></b></p>
+<p>The &lt;foreign&gt; tag is most commonly found in the &lt;title&gt; element of the header, which has English as the default language, and in the translation text, which of course also has English as the default language.</p>
+<p style="font-family:arial;font-size:90%">&lt;title&gt;A &lt;foreign lang="sux"&gt;&amp;c;ir-nam&amp;c;ub&lt;/foreign&gt; to Nanna for Ur-Namma (Ur-Namma F)&lt;/title&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;p id="t225.p10" n="21-33" corresp="c225.D.B.21"&gt;Its good &lt;foreign lang="sux"&gt;udug&lt;/foreign&gt; deities went away, its &lt;foreign lang="sux"&gt;lama&lt;/foreign&gt; deities ran off. &hellip; &lt;/p&gt;</p>
+<p>The tag is also found in English language contexts within the transliteration text, e.g. in notes. Furthermore, the tag is used in a few cases where we have Akkadian interspersed between the Sumerian text.</p>
+<p><b><a name="distinct">2.6.6 The &lt;distinct&gt; tag</a></b></p>
+<p>Literary Sumerian sometimes contains words in a variety of Sumerian termed Emesal. Emesal words and phrases are tagged &lt;distinct&nbsp;type="emesal"&gt;.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="164" id="c144.164" corresp="t144.p18"&gt;ki-nu2 &lt;distinct type="emesal"&gt;ze2-ze2-ba&lt;/distinct&gt; in-nin-ra&lt;/l&gt;</p>
+<p><b><a name="termgloss">2.6.7 The &lt;term&gt; and &lt;gloss&gt; tags</a></b></p>
+<p>Words or phrases in literary Sumerian are occasionally provided with a pronunciation guide or an Akkadian translation. To handle such glosses, the &lt;term&gt; and &lt;gloss&gt; tags are used. The word or phrase to be glossed is tagged with the &lt;term&gt; element, while the gloss itself is encoded by the &lt;gloss&gt; tag. The gloss can precede as well as follow its term.</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt;nin9 e-ju10 kug &amp;d;nin-&lt;term id="c113.t1"&gt;isin2&lt;/term&gt;&lt;gloss lang="sux" target="c113.t1"&gt;si&lt;/gloss&gt;-na-ke4&lt;/w&gt;&lt;/l&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt;su-a ka5-a su-a-ri ur-cub5 udu-kur-ra ab2-za-za &lt;gloss lang="sux" target="c122.t1"&gt;ugu&lt;/gloss&gt;&lt;term id="c122.t1"&gt;ugu4&lt;/term&gt;-bi&lt;/l&gt;</p>
+<p>Note that there is no space between the start tag and end tag in these cases (&lt;gloss&gt;&lt;/term&gt; and &lt;term&gt;&lt;/gloss&gt;), and that the two tags are linked using the <i>id</i> and <i>target</i> attributes. With Akkadian and other glosses, there IS a white space character between the term and the gloss tag.</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt;&lt;term id="c1815.t1"&gt;nitah saj-dili&lt;/term&gt; &lt;gloss lang="akk" target="c1815.t1"&gt;NITAH.ME.EC sag-di-lu-u2&lt;/gloss&gt; je26-e-gin7 ak</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt;&lt;term id="c111.t1"&gt;dili-ni&lt;/term&gt; &lt;gloss lang="uncertain" target="c111.t1"&gt;TAR&lt;/gloss&gt; jectug2-ge tuku-a &amp;d;nin-tud ama kalam-ma-ce3&lt;/l&gt;</p>
+<p><b><a name="xref">2.6.8 The &lt;ref&gt;, &lt;xref&gt; and&lt;ptr&gt; tags</a></b></p>
+<p>The function of the &lt;ref&gt; tag is to link a word or other part of the document to a note within the same document. This has been done sparingly in the transliterations, but quite often in the translations, where an explanatory note is often required.</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt; &hellip; uzu-zu-um &lt;ref id="c134.r1"&gt;X&lt;/ref&gt; &lt;note id="c134.n1" lang="eng" target="c134.r1"&gt;possibly an erasure&lt;/note&gt; i3-gu7&lt;/l&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;p&gt; &hellip; Enlil approached the man of the &lt;ref id="t121.r500"&gt;Id-kura&lt;/ref&gt; &lt;note target="t121.r500"&gt;river of the underworld&lt;/note&gt;, the man-eating river. &hellip; &lt;/p&gt;</p>
+<p>The &lt;xref&gt; tag is used to refer to another ETCSL document, and in most cases, to a particular point in that document. The tag is found inside the &lt;bibl&gt; element in the transliteration header and as part of notes (see the &lt;note&gt; tag described below) in the transliteration and translation text.</p>
+<p style="font-family:arial;font-size:90%">&lt;bibl&gt;&lt;xref from="b266"&gt;Civil 1989c&lt;/xref&gt;&lt;biblScope type="contents"&gt;composite text&lt;/biblScope&gt;&lt;/bibl&gt;</p>
+<p style="font-family:arial;font-size:90%">&lt;l&gt; &hellip; ba-ni-in-dag &lt;note lang="eng"&gt;Cited in &lt;xref doc="c.0.2.01" from="c0201.39"&gt;OB catalogue from Nibru, at Philadelphia, 0.2.01, line 39&lt;/xref&gt;; &hellip; &lt;/l&gt;</p>
+<p>The default document for the bibliography references is the file bibliography.xml.</p>
+<p>The &lt;ptr&gt; tag is used in the transliteration to refer to a line in another version within the same group.</p>
+<p style="font-family:arial;font-size:90%">&lt;l n="142" id="c122.1.A.142" corresp="t122.p10"&gt;2-na-ne-ne dul6-ta NE.&lt;damage/&gt;NE&lt;damageEnd/&gt;-en-ze2-en ud-da-ta tu-ud-en-ze2-en&lt;/l&gt;<br/>
+&hellip;<br/>
+&lt;l n="1" id="c122.2.B.1" corresp="t122.p14"&gt;&lt;ptr targType="l" target="c122.1.A.142"/&gt;&lt;supplied/&gt;&amp;X;&lt;suppliedEnd/&gt; &lt;damage/&gt;du7&lt;damageEnd/&gt;-da zal-zal-le-ze2-en &lt;damage/&gt;mu&lt;damageEnd/&gt; X &lt;supplied/&gt;&amp;X;&lt;suppliedEnd/&gt;&lt;/l&gt;</p>
+<p><b><a name="other">2.7 Other elements</a></b></p>
+<p><b><a name="note">2.7.1 The &lt;note&gt; tag</a></b></p>
+<p>In principle, a note can be inserted almost anywhere in an ETCSL document. However, a note will commonly occur either between lines of text or inside lines of text, as can be seen in 2.5.2 and 2.6.8. Below is a shortened example of a more general use of the &lt;note&gt; tag.</p>
+<p style="font-family:arial;font-size:90%">&lt;div1&gt;<br/>
+&lt;note lang="eng"&gt;It is possible that this fragment does not belong to the same composition&lt;/note&gt;<br/>
+&lt;l&gt;X &lt;supplied/&gt;&amp;X;&lt;suppliedEnd/&gt;&lt;/l&gt;<br/>
+&hellip;<br/>
+&lt;/div1&gt;</p>
+<p><b><a name="gap">2.7.2 The &lt;gap/&gt; tag</a></b></p>
+<p>The &lt;gap/&gt; tag is used to include a special kind of note. This tag often occurs either at the beginning or at the end of a text segment. It is used, in both transliterations and translations, when one or more lines (or an unknown number of lines) is missing.</p>
+<p style="font-family:arial;font-size:90%">&lt;div1&gt;<br/>
+&nbsp;&hellip;<br/>
+&nbsp;&lt;l&gt;an-ur2 an-pa sa-par3 &lt;supplied/&gt;&amp;X;&lt;suppliedEnd/&gt;&lt;/l&gt;<br/>
+&nbsp;&lt;gap extent="unknown no. of lines missing"/&gt;<br/>
+&lt;/div1&gt;</p>
+<p><b><a name="q">2.7.3 The &lt;q&gt; tag</a></b></p>
+<p>This is the only tag, besides the &lt;p&gt; tag, that occurs in the translations only. It is used to indicate direct speech. It can have the two attributes <i>who</i> and <i>toWhom</i>. The latter is not part of the TEI.2 DTD.</p>
+<p style="font-family:arial;font-size:90%">&lt;p id="t113.p9" n="84-85" corresp="c113.84"&gt;&lt;q who="Anuna" toWhom="Enki"&gt;Praise be to &lt;w type="DN"&gt;Enki&lt;/w&gt;, the much-praised lord who controls all the arts and crafts, who takes decisions!&lt;/q&gt;&lt;/p&gt;</p>
+<p><b><a name="char">2.8 Special characters and entities</a></b></p>
+<p>Transliterated Sumerian contains three characters which are not part of the conventional Roman alphabet. These are g&#x0303; (g with tilde), &#x1E2B; (h with breve below), &#x0161; (shin = s with caron), and their corresponding upper case equivalents, G&#x0303;, &#x1E2A; and &#x0160;. Depending on where in a document they occur, either j/J, h/H, c/C or the entities &amp;j;/&amp;J;, &amp;h;/&amp;H; and &amp;c;/&amp;C; are used to encode these Sumerian characters. The first method is used within the body part of the transliterations, while the other method, i.e. having the special entities, is used in the translations, in the headers of the transliterations and in other non-Sumerian language context, e.g. notes.</p>
+<p>Apart from the special Sumerian characters, the documents also contain Akkadian, which has a number of accented vowels and three special consonants, &#x1E62; (sadhe) &#x1E6D; (teth), and &#x2019; (aleph). Most of the accented vowels are covered by the ISOLat1 and ISOLat2 entity sets, while sadhe, teth and aleph have been encoded using the entities &amp;s;/&amp;S;, &amp;t;/&amp;T; and &amp;aleph;. All entities special to ETCSL documents are listed in the file "etcsl-sux.ent", which is invoked during the XML parse process.</p>
+<p>In addition to the character entities mentioned above, the ETCSL entity set contains a number of other entities, e.g. &amp;hr;, &amp;plus;, &amp;times; (&amp;times;) and the so-called determinatives. The &amp;hr; entity is used to encode a horizontal line often found on the clay tablets. The &amp;times; (&amp;times;) entity is part of the ISOnum entity set and encodes the multiplication sign. The &amp;plus; entity is used to encode addition. Together with '.', '/', '+' and ':', which are not encoded as entities, &amp;times; has a special meaning when combining two or more cuneiform signs (see <a href="#cuneiform">2.2 Transliterating cuneiform writing</a>).</p>
+<p>Determinatives, which occur either before or after a cuneiform sign, are (thought to be) unspoken signs which indicate the semantic set to which a noun belongs. Examples are &amp;d; placed before names of deities and &amp;ki; used after place names.</p>
+<p>Finally, &amp;s0;, &amp;s1;, etc. to &amp;s9; are used to mark subscript numbers in the non-Sumerian language contexts (see <a href="#cuneiform">2.2 Transliterating cuneiform writing</a>). The headers also contain entities such as &amp;amp; for '&amp;'.</p>
+<hr/>
+<center>
+<table cellpadding="0" cellspacing="0" border="0"><tr>
+<td align="center" valign="bottom"><p class="smaller">&copy; Copyright 2003, 2004, 2005, 2006 The ETCSL project, Faculty of Oriental Studies, University of Oxford<br/>Updated 2006-10-09 by JE</p></td>
+</tr></table>
+</center>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<TEI.2 id="t.2.5.7.2">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>An <foreign lang="sux">adab</foreign> to Enlil for B&umacr;r-Suen (B&umacr;r-Suen B) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>25.i.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>16.vi.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>19.vi.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>30.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>23.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<div1 type="segment" n="A">
+<lg n="A" type="unknown">
+<p id="t2572.p1" n="1-13" corresp="c2572.A.A.1">&X;&X; who alone surpasses heaven and earth, the exalted one, prominent among the <w type="DN">Anuna</w> gods, whose utterances cannot be overturned! <w type="DN">Nunamnir</w>, whose decisions cannot be altered, proud one imbued with terrifying awesomeness, 
+<addSpan to="t2572.v1"/>who alone is exalted
+<anchor id="t2572.v1"/>
+<addSpan to="t2572.v2"/><note id="t2572.n1" lang="eng" target="t2572.v1">1 ms. has instead:</note> who alone is eminent, the foremost one
+<anchor id="t2572.v2"/> among the Great Princes, has taken his seat in the shrine of <w type="SN">Nibru</w>, in <w type="TN">Dur-an-ki</w>, in <w type="TN">E-kur</w>, the temple where the fates are determined, in the holy shining temple. When Mother <w type="DN">Ninlil</w>, who is equal in rank with the Great Mountain, embraces him &X;&X;, &X;&X; says to &X;&X;: <q who="Ninlil">&X;&X; chosen in the heart by &X;&X;.</q>
+<gap extent="unknown no. of lines missing"/></p>
+<altGrp><alt targType="addSpan" targets="t2572.v1 t2572.v2"/></altGrp></lg></div1><div1 type="segment" n="B">
+<lg n="B" type="sa-jara">
+<p id="t2572.p2" n="1-8" corresp="c2572.B.B.1">The city, where &X;&X; orders &X;&X;.
+<gap extent="1 line fragmentary"/>
+<w type="DN">Enlil</w>, what you say is exalted, and there is no god who can interpret it. <q who="Enlil">I will make the fate I have determined for you even more glorious. I will make your life long-lasting. I will make your days as numerous as those of <w type="DN">Utu</w>.</q> You are the god of all the foreign lands!</p>
+<trailer place="rubric" type="sa-jara">
+<p id="t2572.p3" n="9" corresp="c2572.B.B.9"><foreign lang="sux">Sa-&g;ara</foreign>.</p>
+</trailer></lg><lg n="C" type="jicgijal">
+<p id="t2572.p4" n="10" corresp="c2572.B.C.10">You are the lord who determines the fates! <w type="RN">B&umacr;r-<w type="DN">Suen's</w></w> royal trust is in you!</p>
+<trailer place="rubric" type="jicgijal">
+<p id="t2572.p5" n="11" corresp="c2572.B.C.11">Its <foreign lang="sux">&g;i&c;gi&g;al</foreign>.</p>
+</trailer></lg><lg n="D" type="uru">
+<p id="t2572.p6" n="12-14" corresp="c2572.B.D.12">You have made justice and righteousness conspicuous, and you have made the Land feel content. <w type="RN">B&umacr;r-<w type="DN">Suen</w></w>, may your name be a cause for rejoicing &X;&X; daily. May you be exalted among &X;&X;; let them call you the pre-eminent lord!</p>
+<trailer place="rubric" type="uru">
+<p id="t2572.p7" n="15" corresp="c2572.B.D.15">Its <foreign lang="sux">uru</foreign>.</p>
+</trailer></lg><trailer place="subscript" type="adab">
+<p id="t2572.p8" n="16" corresp="c2572.B.D.16">An <foreign lang="sux">adab</foreign> of <w type="DN">Enlil</w>. <note id="t2572.n2" lang="eng" target="t2572.p8">lines 15 and 16 are written as one line in source</note></p>
+</trailer></div1></body>
+</text>
+</TEI.2>

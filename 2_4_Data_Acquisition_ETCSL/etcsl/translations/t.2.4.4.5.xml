@@ -1,0 +1,73 @@
+<TEI.2 id="t.2.4.4.5">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>An <foreign lang="sux">adab</foreign> to An for &C;u-Suen (&C;u-Suen E) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>03.iv-26.v.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>translation</item></change>
+<change><date>26.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>27.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>15.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>15.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<div1 type="segment" n="A">
+<lg n="A" type="cagbatuku">
+<gap extent="unknown no. of lines missing"/>
+<p id="t2445.p1" n="1" corresp="c2445.A.A.1">Warrior from birth &X;&X;.</p>
+<trailer place="rubric" type="cagbatuku">
+<p id="t2445.p2" n="2" corresp="c2445.A.A.2"><foreign lang="sux">&C;agbatuku</foreign>.</p>
+</trailer></lg><lg n="B" type="barsud">
+<p id="t2445.p3" n="3-6" corresp="c2445.A.B.3">Wise <w type="RN">&C;u-<w type="DN">Suen</w></w> &X;&X;.
+<gap extent="1 line fragmentary"/>
+&X;&X; dais &X;&X;. &X;&X; the beauty and ornament &X;&X;.</p>
+<trailer place="rubric" type="barsud">
+<p id="t2445.p4" n="7" corresp="c2445.A.B.7">2nd (?) <foreign lang="sux">barsud</foreign>.</p>
+</trailer></lg><lg n="C" type="unknown">
+<p id="t2445.p5" n="8-11" corresp="c2445.A.C.8"><w type="DN">An</w> &X;&X;. <w type="RN">&C;u-<w type="DN">Suen</w></w> &X;&X;.
+<gap extent="2 lines fragmentary"/>
+<gap extent="unknown no. of lines missing"/></p>
+</lg></div1><div1 type="segment" n="B">
+<lg n="D" type="sa-gida">
+<p id="t2445.p6" n="1-2" corresp="c2445.B.D.1"><gap extent="1 line fragmentary"/>
+<w type="RN">&C;u-<w type="DN">Suen</w></w> &X;&X; rising &X;&X;.</p>
+<trailer place="rubric" type="sa-gida">
+<p id="t2445.p7" n="3" corresp="c2445.B.D.3"><foreign lang="sux">Sa-gida</foreign>.</p>
+</trailer></lg><lg n="E" type="jicgijal">
+<p id="t2445.p8" n="4" corresp="c2445.B.E.4"><gap extent="1 line fragmentary"/></p>
+<trailer place="rubric" type="jicgijal">
+<p id="t2445.p9" n="5" corresp="c2445.B.E.5"><foreign lang="sux">&G;i&c;gi&g;al</foreign> of the <foreign lang="sux">sa-gida</foreign>.</p>
+</trailer></lg><lg n="F" type="uru">
+<p id="t2445.p10" n="6-8" corresp="c2445.B.F.6">As <w type="DN">An</w> determined the fates &X;&X;. Holy <w type="DN">An</w> determined the fates, &X;&X; the shrine <w type="SN">Urim</w> &X;&X;. Like the sunlight <w type="DN">An</w> &X;&X; for <w type="RN">&C;u-<w type="DN">Suen</w></w>.</p>
+<trailer place="rubric" type="uru">
+<p id="t2445.p11" n="9" corresp="c2445.B.F.9">Its <foreign lang="sux">uru</foreign>.</p>
+</trailer></lg><trailer place="subscript" type="adab">
+<p id="t2445.p12" n="10" corresp="c2445.B.F.10">An <foreign lang="sux">adab</foreign> of <w type="DN">An</w>. <note lang="eng" target="t2445.p12">lines 9 and 10 are written as one line in source</note></p>
+</trailer></div1></body>
+</text>
+</TEI.2>

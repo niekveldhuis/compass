@@ -1,0 +1,166 @@
+<TEI.2 id="c.4.08.05">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>The song of the lettuce: a <foreign lang="sux">balbale</foreign> to Inana (Dumuzid-Inana E) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b244">Sefati 1998</xref><biblScope type="page">165-170</biblScope><biblScope type="plate">XLII</biblScope><biblScope type="contents">photograph, commentary, translation, score transliteration</biblScope></bibl>
+<bibl><xref from="b464">Krecher 1998j</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b455">Krecher 1998a</xref><biblScope type="contents">score transliteration</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b605">Sefati 1999</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">AO 5385:66ff. (TCL 15 20)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">IM 11087,65 (TIM 9 14)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">Ni 9846:4'ff. (ISET 2 87)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">UET 6 121</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>27.i.1999-08.ii.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>05.viii.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>16.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c40805.1" corresp="t40805.p1">
+<w form="ba-lam" lemma="lam" pos="V" label="to flourish">ba-lam</w>
+<w form="ba-lam-lam" lemma="lam" pos="V" label="to flourish" form-type="RR">ba-lam-lam</w>
+<w form="hi-iz&sar;-am3" lemma="hi-iz" pos="N" label="lettuce" bound="L,am" det="&sar;">hi-iz&sar;-am3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="ba-an-dug4" lemma="dug4" pos="V" label="to say">ba-an-dug4</w>
+</l>
+<l n="2" id="c40805.2" corresp="t40805.p1">
+<w form="&jic;kiri6" lemma="kiri6" pos="N" label="orchard" det="&jic;">&jic;kiri6</w>
+<w form="ji6-edin-na" lemma="ji6-edin" pos="N" label="deep shade">ji6-edin-na</w>
+<w form="gu2" lemma="gu2" pos="N" label="neck">gu2</w>
+<w form="jar-jar-ra-na" lemma="jar" pos="V" label="to place" form-type="RR">jar-jar-ra-na</w>
+<addSpan to="c40805.v1" type="primary"/>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<w form="ama-na-ju10" lemma="ama" pos="N" label="mother">ama-na-ju10</w>
+<anchor id="c40805.v1"/>
+<addSpan to="c40805.v2" type="secondary"/>
+<note id="c40805.n1" lang="eng" target="c40805.v1">1 ms. has instead:</note>
+<w form="hi-iz&sar;" lemma="hi-iz" pos="N" label="lettuce" det="&sar;">hi-iz&sar;</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="ba-an-de2" lemma="de2" pos="V" label="to pour">ba-an-de2</w>
+<anchor id="c40805.v2"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c40805.v1 c40805.v2"/></altGrp>
+<l n="3" id="c40805.3" corresp="t40805.p1">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="ab-sin2-ba" lemma="absin3" pos="N" label="furrow">ab-sin2-ba</w>
+<w form="hi-li-a" lemma="hi-li" pos="N" label="attractiveness">hi-li-a</w>
+<w form="sag9-ju10" lemma="sag9" pos="V" label="to be good">sag9-ju10</w>
+<w form="hi-iz&sar;-am3" lemma="hi-iz" pos="N" label="lettuce" bound="L,am" det="&sar;">hi-iz&sar;-am3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="ba-an-dug4" lemma="dug4" pos="V" label="to say">ba-an-dug4</w>
+</l>
+<l n="4" id="c40805.4" corresp="t40805.p1">
+<w form="&jic;hachur" lemma="hachur" pos="N" label="apple (tree)" det="&jic;">&jic;hachur</w>
+<distinct type="emesal">
+<w form="aj2" lemma="nij2" pos="N" label="thing" emesal="aj2">aj2</w>
+</distinct>
+<w form="saj-ja2" lemma="saj" pos="N" label="head">saj-ja2</w>
+<w form="gurun" lemma="gurun" pos="N" label="fruit">gurun</w>
+<w form="il2-la-ju10" lemma="il2" pos="V" label="to raise">il2-la-ju10</w>
+<w form="hi-iz&sar;-am3" lemma="hi-iz" pos="N" label="lettuce" bound="L,am" det="&sar;">hi-iz&sar;-am3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="ba-an-dug4" lemma="dug4" pos="V" label="to say">ba-an-dug4</w>
+</l>
+<l n="5" id="c40805.5" corresp="t40805.p2">
+<w form="lu2-lal3-e" lemma="lu2-lal3" pos="N" label="sweet man">lu2-lal3-e</w>
+<w form="lu2-lal3-e" lemma="lu2-lal3" pos="N" label="sweet man">lu2-lal3-e</w>
+<distinct type="emesal">
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+</distinct>
+<w form="mu-ku7-ku7-de3-en" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">mu-ku7-ku7-de3-en</w>
+</l>
+<l n="6" id="c40805.6" corresp="t40805.p2">
+<w form="en-ju10" lemma="en" pos="N" label="lord">en-ju10</w>
+<w form="lu2-lal3-e" lemma="lu2-lal3" pos="N" label="sweet man">lu2-lal3-e</w>
+<distinct type="emesal">
+<w form="dim3-me-er-ra" lemma="dijir" pos="N" label="deity" emesal="dim3-me-er">dim3-me-er-ra</w>
+</distinct>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<w form="ama-na-ju10" lemma="ama" pos="N" label="mother">ama-na-ju10</w>
+</l>
+<l n="7" id="c40805.7" corresp="t40805.p2">
+<w form="cu-ni" lemma="cu" pos="N" label="hand">cu-ni</w>
+<w form="lal3-e" lemma="lal3" pos="N" label="syrup">lal3-e</w>
+<distinct type="emesal">
+<damage/>
+<w form="me-ri-ni" lemma="jiri3" pos="N" label="foot" emesal="me-ri">me<damageEnd/>-ri-ni</w>
+</distinct>
+<w form="lal3-e" lemma="lal3" pos="N" label="syrup">lal3-e</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="mu-un-ku7-ku7-de3-en" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">mu-un-ku7-ku7-de3-<supplied/>en</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c40805.8" corresp="t40805.p2">
+<w form="a2-cu-jiri3-ni" lemma="a2-cu-jiri3" pos="N" label="limbs">a2-cu-jiri3-ni</w>
+<w form="lal3" lemma="lal3" pos="N" label="syrup">lal3</w>
+<w form="ku7-ku7-dam" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">ku7-ku7-dam</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="mu-un-ku7-ku7-de3-en" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">mu-un-ku7-ku7-<supplied/>de3-en</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c40805.9" corresp="t40805.p3">
+<w form="en3-dur" lemma="en3-dur" pos="N" label="navel">en3-dur</w>
+<w form="cu-nijin2" lemma="cu-nijin2" pos="N" label="total">cu-nijin2</w>
+<w form="tukum" lemma="tukum" pos="AV" label="soon?">tukum</w>
+<w form="ku7-ku7-ju10" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">ku7-ku7-ju10</w>
+<damage/>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9<damageEnd/>-<supplied/>ga</w>
+<w form="ama-na-ju10" lemma="ama" pos="N" label="mother">ama-na-ju10</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c40805.10" corresp="t40805.p3">
+<damage/>
+<w form="hac4" lemma="hac2" pos="N" label="thigh">hac4</w>
+<damageEnd/>
+<w form="sag9-sag9" lemma="sag9" pos="V" label="to be good" form-type="RR">sag9-sag9</w>
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="buluj5" lemma="buluj3" pos="V" label="to flourish">buluj5</w>
+<w form="e-ru-ju10" lemma="e-ru" pos="N" label="meaning unknown">e-ru-ju10</w>
+<w form="hi-iz&sar;-am3" lemma="hi-iz" pos="N" label="lettuce" bound="L,am" det="&sar;">hi-iz&sar;-am3</w>
+<supplied/>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="ba-an-dug4" lemma="dug4" pos="V" label="to say">ba-an-dug4</w>
+<suppliedEnd/>
+</l>
+<trailer place="subscript" type="balbale">
+<l n="11" id="c40805.11" corresp="t40805.p4">
+<w form="bal-bal-e" lemma="bal-bal-e" pos="N" label="type of composition" form-type="RR">bal-bal-e</w>
+<w form="&d;inana-kam" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-<supplied/>kam<suppliedEnd/></w>
+</l>
+</trailer>
+</body>
+</text>
+</TEI.2>

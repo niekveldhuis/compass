@@ -1,0 +1,60 @@
+<TEI.2 id="t.2.5.4.16">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>An <foreign lang="sux">adab</foreign> (?) to Ninurta for I&c;me-Dagan (I&c;me-Dagan P) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>02.iii.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>translation</item></change>
+<change><date>16.vi.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>19.vi.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>30.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>23.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<lg n="A" type="sa-gida">
+<gap extent="unknown no. of lines missing"/>
+<p id="t25416.p1" n="1-11" corresp="c25416.A.1"><gap extent="3 lines fragmentary"/>
+Great warrior, &X;&X;. Brave &X;&X;. His radiance &X;&X;.
+<gap extent="1 line fragmentary"/>
+&X;&X; the cities and settlements. Roaring lion &X;&X; to &X;&X;. <w type="DN">Ninurta</w>. <w type="DN">Uta-ulu</w> &X;&X;.</p>
+<trailer place="rubric" type="sa-gida">
+<p id="t25416.p2" n="12" corresp="c25416.A.12"><foreign lang="sux">Sa-gida</foreign>.</p>
+</trailer></lg><lg n="B" type="jicgijal">
+<p id="t25416.p3" n="13" corresp="c25416.B.13">Lord &X;&X;.</p>
+<trailer place="rubric" type="jicgijal">
+<p id="t25416.p4" n="14" corresp="c25416.B.14"><foreign lang="sux">&G;i&c;gi&g;al</foreign> of the <foreign lang="sux">sa-gida</foreign>.</p>
+</trailer></lg><lg n="C" type="unknown">
+<p id="t25416.p5" n="15-27" corresp="c25416.C.15"><gap extent="2 lines fragmentary"/>
+&X;&X; in the <w type="TN">Ub&c;u-unkena</w>. &X;&X; the status of <w type="DN">Enlil</w> &X;&X;. &X;&X; the power of the Great Mountain <w type="DN">Enlil</w> &X;&X;. &X;&X; my man &X;&X;. Prince <w type="RN">I&c;me-<w type="DN">Dagan</w></w> &X;&X;. &X;&X; <w type="DN">Ninurta</w> &X;&X;. &X;&X; fifty-headed battle-mace &X;&X;. &X;&X; <w type="RN">I&c;me-<w type="DN">Dagan</w></w> &X;&X;.
+<gap extent="1 line fragmentary"/>
+&X;&X; great copper throne &X;&X;.
+<gap extent="1 line fragmentary"/>
+<gap extent="unknown no. of lines missing"/></p>
+</lg></body>
+</text>
+</TEI.2>

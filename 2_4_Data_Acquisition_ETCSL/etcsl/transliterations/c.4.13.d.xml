@@ -1,0 +1,216 @@
+<TEI.2 id="c.4.13.d">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A fragment of a hymn to Nanna -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b506">Sj&ouml;berg 1960</xref><biblScope type="page">102-103</biblScope><biblScope type="contents">score transliteration, commentary</biblScope></bibl>
+<bibl><xref from="b688">Hall 1985</xref><biblScope type="page">499</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">VAT 1372 (VAS 2 75) 1'-13'</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>31.viii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>30.ix.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>05.x.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>20.x.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>20.x.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<gap extent="unknown no. of lines missing"/>
+<l n="1" id="c413d.1" corresp="t413d.p1">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c413d.2" corresp="t413d.p1">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="su-na" lemma="suen" pos="N" type="DN" label="Suen">su-na</w>
+<w form="a-ia" lemma="a-a" pos="N" label="father">a-ia</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+&hr;
+</l>
+<l n="3" id="c413d.3" corresp="t413d.p1">
+<supplied/>
+<w form="ma" lemma="ma2" pos="N" label="boat">ma</w>
+<suppliedEnd/>
+<w form="in-di-ri" lemma="dirig" pos="V" label="to be superior">in-di-ri</w>
+<w form="ma" lemma="ma2" pos="N" label="boat">ma</w>
+<w form="in-di-ri" lemma="dirig" pos="V" label="to be superior">in-di-<damage/>ri</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c413d.4" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<distinct type="emesal">
+<damage/>
+<w form="u3-mu-ra" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3<damageEnd/>-mu-ra</w>
+</distinct>
+<w form="e-su-la-ci" lemma="e-su-la" pos="N" type="TN" label="E-sila">e-su-la-ci</w>
+<w form="mu-uc" lemma="mu-uc" pos="N" label="meaning unknown">mu-uc</w>
+<w form="ja2-ar" lemma="jar" pos="V" label="to place">ja2-<damage/>ar</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c413d.5" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="u3-ri-ma" lemma="urim2" pos="N" type="SN" label="Urim"><damage/><unclear cert="qry">u3</unclear><damageEnd/>-ri-ma</w>
+<w form="e-mu-ud-ku-ra" lemma="e2-mud-kur-ra" pos="N" type="TN" label="E-mud-kura">e-mu-ud-ku-ra</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c413d.6" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="e-ki-ic-nu-jal2" lemma="e2-kic-nu-jal2" pos="N" type="TN" label="E-ki&c;-nu-&g;al">e-ki-ic-nu-jal2</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c413d.7" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="ka-ar-zi-da" lemma="kar-zid-da" pos="N" type="TN" label="Kar-zida">ka-ar-zi-<supplied/>da<suppliedEnd/></w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c413d.8" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="ka-ar-za-gi-na" lemma="kar-za-gin3-na" pos="N" type="TN" label="Kar-zagina">ka-ar-za-gi-na</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="e-na" lemma="e-na" pos="N" label="meaning unknown">e-na</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c413d.9" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<distinct type="emesal">
+<w form="i-bi" lemma="igi" pos="N" label="eye" emesal="i-bi2">i-bi</w>
+</distinct>
+<w form="ne-pa-ar-ci" lemma="ji6-par4" pos="N" label="cloister">ne-pa-ar-ci</w>
+<distinct type="emesal">
+<w form="ma-la" lemma="jal2" pos="V" label="to be (located)" emesal="ma-al">ma-la</w>
+</distinct>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c413d.10" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="LI" lemma="LI" label="LI">LI</w>
+<w form="UR2" lemma="UR2" label="UR&s2;">UR2</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="NA" lemma="NA" label="NA">NA</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="11" id="c413d.11" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="ka-ar-za-gi-na" lemma="kar-za-gin3-na" pos="N" type="TN" label="Kar-zagina"><damage/>ka<damageEnd/>-ar-za-gi-na</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="e-na" lemma="e-na" pos="N" label="meaning unknown">e-na</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="12" id="c413d.12" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<w form="MI" lemma="MI" label="MI">MI</w>
+<w form="TA" lemma="TA" label="TA">TA</w>
+<w form="di-li" lemma="dili" pos="AJ" label="single">di-li</w>
+<w form="du-a" lemma="jen" pos="V" label="to go">du-a</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="13" id="c413d.13" corresp="t413d.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="ma" lemma="ma2" pos="N" label="boat">ma</w>
+<w form="im-di-ri" lemma="dirig" pos="V" label="to be superior">im-di-ri</w>
+<w form="ma" lemma="ma2" pos="N" label="boat">ma</w>
+<w form="im-di-ri" lemma="dirig" pos="V" label="to be superior">im-di-<corr sic="&damb;&qryb;im&qrye;&dame;">ri</corr></w>
+<distinct type="emesal">
+<w form="u3-mu-un" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3-<damage/>mu<damageEnd/>-<supplied/>un</w>
+<suppliedEnd/>
+</distinct>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+</body>
+</text>
+</TEI.2>

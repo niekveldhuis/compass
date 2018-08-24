@@ -1,0 +1,351 @@
+<TEI.2 id="c.3.1.16">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Letter from &C;u-Suen to &C;arrum-b&amacr;ni about digging a trench -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Senior Editor</resp></respStmt>
+<respStmt><name>Esther Fl&uuml;ckiger-Hawker</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2001</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b309">Krecher 1996b</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b729">Michalowski 1976</xref><biblScope type="page">234-242, 86-87, 112ff.</biblScope><biblScope type="contents">composite text, score transliteration, translation, commentary</biblScope></bibl>
+<bibl><xref from="b733">Michalowski 1980-83</xref><biblScope type="page">57-58 (section 7.3)</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+<bibl><xref from="b732">Huber 1998</xref><biblScope type="page">11, 17, 18, 21, 24, 30, 31-32, 33, 38 (l. 22), 40 (ll. 22, 26, 33, 35-36), 48, 50, 51, 52, 53ff., 67-68, 81, 82-83, 84, 88, 91, 93</biblScope><biblScope type="contents">composite text, translation, commentary</biblScope></bibl>
+<bibl><xref from="b752">Cavigneaux 1996</xref><biblScope type="page">58</biblScope><biblScope type="contents">score transliteration, handcopy, commentary</biblScope><note>incipit in Catalogue W 17259 an (= no. 112) obv. 5</note></bibl>
+<bibl><xref from="b751">van Dijk 1989</xref><biblScope type="page">443, 444</biblScope><biblScope type="contents">score transliteration, handcopy, commentary</biblScope><note>incipit in Catalogue W 17259 an obv. 5</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">BM 54327 ii 1'-13'</biblScope><biblScope type="composLines">8-25</biblScope><note>collated by EFH</note></bibl>
+<bibl><biblScope type="museumNumber">YBC 4672</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>25.vi.2001-27.vi.2001</date><respStmt><name>EFH</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>28.vi.2001</date><respStmt><name>EFH</name><resp>editor</resp></respStmt>
+<item>collation</item></change>
+<change><date>06.x.2001</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>11.x.2001</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>02.xi.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>02.xi.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c3116.1" corresp="t3116.p1">
+<w form="&m;car-ru-um-ba-ni" lemma="car-ru-um-ba-ni" pos="N" type="PN" label="&C;arrum-b&amacr;ni" det="&m;">&m;car-ru-um-ba-ni</w>
+<w form="u3-na-a-dug4" lemma="dug4" pos="V" label="to say">u3-na-a-<damage/>dug4</w>
+<damageEnd/>
+</l>
+<l n="2" id="c3116.2" corresp="t3116.p1">
+<w form="&d;cu-&d;suen" lemma="cu-suen" pos="N" type="RN" label="&C;u-Suen" npart="DN:Suen" det="&d;">&d;cu-<corr resp="scrOm"/>&d;suen<corrEnd/></w>
+<w form="lugal-zu" lemma="lugal" pos="N" label="king">lugal-zu</w>
+<w form="na-ab-be2-a" lemma="dug4" pos="V" label="to say" form-type="ppli">na-ab-be2-a</w>
+</l>
+<l n="3" id="c3116.3" corresp="t3116.p2">
+<w form="lu2-kij2-gi4-a" lemma="lu2-kij2-gi4-a" pos="N" label="messenger">lu2-kij2-gi4-a</w>
+<w form="mu-e-ci-gi-a-ju10" lemma="gi4" pos="V" label="to return">mu-e-ci-gi-a-ju10</w>
+<w form="dirig" lemma="dirig" pos="V" label="to be superior">dirig</w>
+<w form="cag4-ce3" lemma="cag4" pos="N" label="heart">cag4-ce3</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c3116.4" corresp="t3116.p2">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="e3" lemma="e3" pos="V" label="to go out or in">e3</w>
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="aj2-ja2-ju10" lemma="aj2" pos="V" label="to measure">aj2-ja2-ju10</w>
+<w form="ja2-a-gin7-nam" lemma="je26" pos="PD" type="personal" label="I">ja2-a-gin7-nam</w>
+<w form="ma-&X;" lemma="&X;" label="&X;">ma-<supplied/>&X;</w>
+<suppliedEnd/>
+<w form="li-bi2-ib-dirig-ge" lemma="dirig" pos="V" label="to be superior">li-bi2-ib-dirig-<damage/>ge</w>
+<damageEnd/>
+</l>
+<l n="5" id="c3116.5" corresp="t3116.p2">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="ed2-da-zu-ne" lemma="e3" pos="V" label="to go out or in">ed2-da-zu-ne</w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="nu-ub-X-&X;" lemma="&X;" label="&X;">nu-<damage/><unclear cert="qry">ub</unclear><damageEnd/>-X-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c3116.6" corresp="t3116.p2">
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="a-na" lemma="a-na" pos="PD" type="nominal-relative" label="what(ever)">a-na</w>
+<w form="ma-ab-be2-en-na-X" lemma="dug4" pos="V" label="to say">ma-ab-<corr resp="scrOm"/>be2<corrEnd/>-en-na-X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c3116.7" corresp="t3116.p3">
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="ma-da-ka" lemma="ma-da" pos="N" label="land">ma-da-ka</w>
+<w form="jen-a-zu-ne" lemma="jen" pos="V" label="to go">jen-a-zu-<supplied/>ne</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c3116.8" corresp="t3116.p3">
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<w form="a-ba" lemma="a-ba" pos="PD" type="interrogative" label="who">a-<unclear cert="qry">ba</unclear></w>
+<w form="e-te" lemma="te" pos="V" label="to approach">e-te</w>
+<w form="ji6" lemma="ji6" pos="N" label="night">ji6</w>
+<w form="sa2" lemma="sa2" pos="V" label="to equal">sa2</w>
+<w form="na-&X;" lemma="&X;" label="&X;">na-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c3116.9" corresp="t3116.p3">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="gal-gal-be2-e-ne" lemma="gal" pos="V" label="to be big" form-type="RR">gal-gal-be2-e-ne</w>
+<w form="inim" lemma="inim" pos="N" label="word">inim</w>
+<w form="u3-&X;" lemma="&X;" label="&X;">u3-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c3116.10" corresp="t3116.p3">
+<w form="tukum-bi" lemma="tukum-bi" pos="C" label="if">tukum-bi</w>
+<addSpan to="c3116.v1" type="primary"/>
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="te-na-ja2" lemma="te" pos="V" label="to approach">te-na-ja2</w>
+<anchor id="c3116.v1"/>
+<addSpan to="c3116.v2" type="secondary"/>
+<note id="c3116.n1" lang="eng" target="c3116.v1">1 ms. has instead:</note>
+<w form="nam-ba-&X;" lemma="&X;" label="&X;">nam-ba-<supplied/>&X;</w>
+<suppliedEnd/>
+<anchor id="c3116.v2"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c3116.v1 c3116.v2"/></altGrp>
+<l n="11" id="c3116.11" corresp="t3116.p3">
+<w form="KU-ne-ne" lemma="KU" label="KU">KU-ne-ne</w>
+<w form="KUC-a-ni" lemma="KUC" label="KU&C;">KUC-a-<unclear cert="qry">ni</unclear></w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="12" id="c3116.12" corresp="t3116.p3">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="gal-gal-be2-e-ne" lemma="gal" pos="V" label="to be big" form-type="RR">gal-gal-be2-e-ne</w>
+<w form="cubtum6" lemma="cubtum6" pos="N" label="dwelling">cubtum6</w>
+<w form="he2-mu-e-da-sug2-&X;" lemma="gub" pos="V" label="to stand">he2-mu-e-da-sug2-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="13" id="c3116.13" corresp="t3116.p3">
+<addSpan to="c3116.v3" type="primary"/>
+<w form="TUR-TUR-ne-ne" lemma="TUR" label="TUR" form-type="RR">TUR-TUR-ne-ne</w>
+<anchor id="c3116.v3"/>
+<addSpan to="c3116.v4" type="secondary"/>
+<note id="c3116.n2" lang="eng" target="c3116.v3">1 ms. has instead:</note>
+<w form="TUR-ne-ne" lemma="TUR" label="TUR">TUR-ne-ne</w>
+<anchor id="c3116.v4"/>
+<w form="ub-ta-ri" lemma="ri" pos="V" label="to direct">ub-ta-ri</w>
+</l>
+<altGrp><alt targType="addSpan" targets="c3116.v3 c3116.v4"/></altGrp>
+<l n="14" id="c3116.14" corresp="t3116.p3">
+<w form="e-ne-ne-gin7-nam" lemma="e-ne-ne" pos="PD" type="personal" label="they">e-ne-ne-gin7-nam</w>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="15" id="c3116.15" corresp="t3116.p4">
+<w form="tukum-bi" lemma="tukum-bi" pos="C" label="if">tukum-bi</w>
+<w form="u3" lemma="u3" pos="C" label="and">u3</w>
+<w form="lu2-jarza2-be2-e-ne" lemma="lu2-jarza2" pos="N" label="type of official">lu2-jarza2-be2-e-ne</w>
+</l>
+<l n="16" id="c3116.16" corresp="t3116.p4">
+<w form="dib2-be2-de3-ac-am3" lemma="dib" pos="V" label="to pass">dib2-be2-de3-ac-am3</w>
+</l>
+<l n="17" id="c3116.17" corresp="t3116.p4">
+<w form="buru3-da-ne-ne" lemma="buru3" pos="V" label="to penetrate">buru3-da-ne-ne</w>
+<w form="nu-e-da-sig10-ge5" lemma="sig10" pos="V" label="to place">nu-e-da-sig10-ge5</w>
+</l>
+<l n="18" id="c3116.18" corresp="t3116.p4">
+<w form="lu2-kur2-ra" lemma="lu2-kur2-ra" pos="N" label="stranger">lu2-kur2-ra</w>
+<w form="jar-jar-bi" lemma="jar" pos="V" label="to place" form-type="RR">jar-jar-bi</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="19" id="c3116.19" corresp="t3116.p4">
+<w form="iri-bi" lemma="iri" pos="N" label="town">iri-bi</w>
+<w form="zag-bi" lemma="zag" pos="N" label="side">zag-bi</w>
+<w form="u3-ne-ec2" lemma="dug4" pos="V" label="to say" form-type="ppli">u3-ne-ec2</w>
+</l>
+<l n="20" id="c3116.20" corresp="t3116.p4">
+<w form="en-na" lemma="en-na" pos="C" label="as long as">en-na</w>
+<addSpan to="c3116.v5" type="primary"/>
+<w form="ib2-ta-ab-ed3-de3" lemma="ed3" pos="V" label="to go down or up">ib2-ta-ab-ed3-de3</w>
+<anchor id="c3116.v5"/>
+<addSpan to="c3116.v6" type="secondary"/>
+<note id="c3116.n3" lang="eng" target="c3116.v5">1 ms. has instead:</note>
+<w form="bad3-bi" lemma="bad3" pos="N" label="wall">bad3-bi</w>
+<w form="ab-ta-e3-&X;" lemma="e3" pos="V" label="to go out or in">ab-ta-e3-<supplied/>&X;</w>
+<suppliedEnd/>
+<anchor id="c3116.v6"/>
+<w form="na-ab-ta-bal-e-ne" lemma="bal" pos="V" label="to turn over">na-ab-ta-bal-e-ne</w>
+</l>
+<altGrp><alt targType="addSpan" targets="c3116.v5 c3116.v6"/></altGrp>
+<l n="21" id="c3116.21" corresp="t3116.p5">
+<w form="nitah-bi" lemma="nitah" pos="N" label="male">nitah-bi</w>
+<w form="u3-gaz" lemma="gaz" pos="V" label="to strike (dead)">u3-gaz</w>
+</l>
+<l n="22" id="c3116.22" corresp="t3116.p5">
+<addSpan to="c3116.v7" type="primary"/>
+<w form="munus-bi" lemma="munus" pos="N" label="woman">munus-bi</w>
+<anchor id="c3116.v7"/>
+<addSpan to="c3116.v8" type="secondary"/>
+<note id="c3116.n4" lang="eng" target="c3116.v7">1 ms. has instead:</note>
+<w form="erin2-bi" lemma="erin2" pos="N" label="group of people">erin2-bi</w>
+<anchor id="c3116.v8"/>
+<w form="iri" lemma="iri" pos="N" label="town">iri</w>
+<w form="ma-da-ka-zu" lemma="ma-da" pos="N" label="land">ma-da-ka-zu</w>
+<w form="dib2-ba-am3" lemma="dib" pos="V" label="to pass">dib2-ba-am3</w>
+<w form="la-ab-X" lemma="X" label="X">la-ab-X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+</l>
+<altGrp><alt targType="addSpan" targets="c3116.v7 c3116.v8"/></altGrp>
+<l n="23" id="c3116.23" corresp="t3116.p6">
+<w form="a2-ce3" lemma="a2" pos="N" label="arm">a2-ce3</w>
+<w form="mu-e-da-aj2" lemma="aj2" pos="V" label="to measure">mu-e-da-aj2</w>
+</l>
+<l n="24" id="c3116.24" corresp="t3116.p6">
+<w form="a-na-ac-am3" lemma="a-na-ac" pos="AV" label="why">a-na-ac-am3</w>
+<w form="ja2-a-gin7-nam" lemma="je26" pos="PD" type="personal" label="I">ja2-a-gin7-nam</w>
+<w form="nu-ak" lemma="ak" pos="V" label="to do">nu-ak</w>
+</l>
+<l n="25" id="c3116.25" corresp="t3116.p7">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="gaz-de3" lemma="gaz" pos="V" label="to strike (dead)">gaz-de3</w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="hul-hul-le-de3" lemma="hul" pos="V" label="to be bad">hul-hul-le-de3</w>
+</l>
+<l n="26" id="c3116.26" corresp="t3116.p7">
+<damage/>
+<w form="iri" lemma="iri" pos="N" label="town">iri</w>
+<w form="gul-gul-de3" lemma="gul" pos="V" label="to destroy" form-type="RR">gul<damageEnd/>-gul-de3</w>
+<w form="cu-zu-ce3" lemma="cu" pos="N" label="hand">cu-zu-ce3</w>
+<w form="nu-jar-ra" lemma="jar" pos="V" label="to place">nu-jar-ra</w>
+</l>
+<l n="27" id="c3116.27" corresp="t3116.p7">
+<damage/>
+<w form="nam-nir-jal2" lemma="nam-nir-jal2" pos="N" label="authority">nam-nir<damageEnd/>-jal2</w>
+<w form="mu-ra-cum2" lemma="cum2" pos="V" label="to give">mu-ra-cum2</w>
+</l>
+<l n="28" id="c3116.28" corresp="t3116.p8">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="bad3" lemma="bad3" pos="N" label="wall">bad3</w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="TA" lemma="TA" label="TA">TA</w>
+<w form="DA" lemma="DA" label="DA">DA</w>
+<w form="KAM" lemma="KAM" label="KAM">KAM</w>
+<w form="&d;cul-gi" lemma="cul-gi" pos="N" type="RN" label="&C;ulgi" det="&d;">&d;cul-gi</w>
+<w form="ad-da-ju10" lemma="ad-da" pos="N" label="father">ad-da-<corr resp="scrOm"/>ju10</w>
+<corrEnd/>
+<w form="mu-un-du3-a" lemma="du3" pos="V" label="to erect">mu-un-du3-a</w>
+</l>
+<l n="29" id="c3116.29" corresp="t3116.p8">
+<w form="za-e-en-ze2-en" lemma="za-e-en-ze2-en" pos="PD" type="personal" label="you (pl.)">za-e-en-ze2-en</w>
+<w form="in-nu" lemma="me" pos="V" label="to be">in-nu</w>
+</l>
+<l n="30" id="c3116.30" corresp="t3116.p8">
+<w form="&jic;gu-za-ja2" lemma="gu-za" pos="N" label="chair" bound="L,ju.a" det="&jic;">&jic;gu-za-ja2</w>
+<w form="&jic;gu-za" lemma="gu-za" pos="N" label="chair" det="&jic;">&jic;gu-za</w>
+<w form="&d;cul-gi-ra-ka" lemma="cul-gi" pos="N" type="RN" label="&C;ulgi" det="&d;">&d;cul-gi-ra-ka</w>
+<w form="in-nu" lemma="me" pos="V" label="to be">in-nu</w>
+</l>
+<l n="31" id="c3116.31" corresp="t3116.p9">
+<w form="&m;lu2-&d;en-ki" lemma="lu2-en-ki" pos="N" type="PN" label="Lu-Enki" npart="DN:Enki" det="&m; &d;">&m;<corr resp="scrOm"/>lu2<corrEnd/>-&d;en-ki</w>
+<w form="ensi2" lemma="ensi2" pos="N" label="(city) ruler">ensi2</w>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<w form="zi-mu-dar&ki;-ce3" lemma="zi-mu-dar" pos="N" type="GN" label="Zimudar" det="&ki;">zi-mu-<unclear cert="cor">dar</unclear>&ki;-ce3</w>
+</l>
+<l n="32" id="c3116.32" corresp="t3116.p9">
+<w form="he2-mu-e-ci-du" lemma="jen" pos="V" label="to go" form-type="isg">he2-mu-e-ci-du</w>
+</l>
+<l n="33" id="c3116.33" corresp="t3116.p9">
+<w form="60" lemma="60" pos="NU" type="cardinal" label="60">60</w>
+<w form="ugnim-ma-ka" lemma="ugnim" pos="N" label="troops">ugnim-ma-ka</w>
+<w form="he2-tum2" lemma="de6" pos="V" label="to carry" form-type="isg">he2-tum2</w>
+</l>
+<l n="34" id="c3116.34" corresp="t3116.p9">
+<supplied/>
+<w form="&X;-ta" lemma="&X;" label="&X;">&X;<suppliedEnd/>-<damage/>ta</w>
+<damageEnd/>
+<w form="he2-mi-ib-gi4-gi4" lemma="gi4" pos="V" label="to return" form-type="RR">he2-mi-ib-gi4-gi4</w>
+</l>
+<l n="35" id="c3116.35" corresp="t3116.p10">
+<w form="&X;-ti" lemma="X" pos="N" type="PN" label="unclear"><supplied/>&X;<suppliedEnd/>-ti</w>
+<damage/>
+<w form="pisaj-dub-ba" lemma="pisaj-dub-ba" pos="N" label="archivist">pisaj<damageEnd/>-<supplied/>dub<suppliedEnd/>-ba</w>
+<w form="bi2-tur-e" lemma="tur" pos="V" label="to be small">bi2-tur-e</w>
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="aj2-ta" lemma="aj2" pos="V" label="to measure">aj2-ta</w>
+</l>
+<l n="36" id="c3116.36" corresp="t3116.p10">
+<damage/>
+<w form="mu-na-an-cum2-ma-ta" lemma="cum2" pos="V" label="to give">mu<damageEnd/>-na-an-cum2-ma-ta</w>
+<w form="bad3-bi" lemma="bad3" pos="N" label="wall">bad3-bi</w>
+<w form="he2-du3-a" lemma="du3" pos="V" label="to erect">he2-du3-a</w>
+</l>
+<l n="37" id="c3116.37" corresp="t3116.p11">
+<w form="u3" lemma="u3" pos="C" label="and">u3</w>
+<w form="za-e" lemma="za" pos="PD" type="personal" label="you (sg.)">za-e</w>
+<w form="erin2" lemma="erin2" pos="N" label="group of people">erin2</w>
+<w form="cu-zu-ta" lemma="cu" pos="N" label="hand">cu-zu-ta</w>
+<w form="i3-jal2-la" lemma="jal2" pos="V" label="to be (located)">i3-jal2-la</w>
+</l>
+<l n="38" id="c3116.38" corresp="t3116.p11">
+<supplied/>
+<w form="hi-ri-tum2" lemma="hi-ri-tum2" pos="N" label="trench">hi<suppliedEnd/>-ri-tum2<corr resp="scrAdd"/>&ki;<corrEnd/></w>
+<w form="ba-al-la2" lemma="ba-al" pos="V" label="to dig">ba-al-la2</w>
+</l>
+<l n="39" id="c3116.39" corresp="t3116.p12">
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<w form="dim2-ma-bi" lemma="dim2-ma" pos="N" label="reasoning">dim2-ma-bi</w>
+<w form="nu-kur2-ru-de3" lemma="kur2" pos="V" label="to be different">nu-kur2-ru-de3</w>
+</l>
+<l n="40" id="c3116.40" corresp="t3116.p12">
+<w form="nam-ba-cum2-mu-un-ze2-en" lemma="cum2" pos="V" label="to give">nam-ba-cum2-mu-<supplied/>un<suppliedEnd/>-ze2-en</w>
+</l>
+<l n="41" id="c3116.41" corresp="t3116.p12">
+<w form="en-na" lemma="en-na" pos="N" label="extent">en-na</w>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<w form="nu-um-gen7-na-ta" lemma="gen6" pos="V" label="to be firm">nu-um-gen7-na-ta</w>
+</l>
+<l n="42" id="c3116.42" corresp="t3116.p12">
+<w form="erin2" lemma="erin2" pos="N" label="group of people">erin2</w>
+<w form="nam-mu-un-du8-re-ze2-en" lemma="du8" pos="V" label="to spread">nam-mu-un-du8-re-ze2-en</w>
+</l>
+<l n="43" id="c3116.43" corresp="t3116.p13">
+<w form="lu2-kij2-gi4-a-e-ne" lemma="lu2-kij2-gi4-a" pos="N" label="messenger">lu2-kij2-gi4-a-e-ne</w>
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="aj2-ja2" lemma="aj2" pos="V" label="to measure">aj2-ja2</w>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+</l>
+<l n="44" id="c3116.44" corresp="t3116.p13">
+<w form="&d;utu" lemma="utu" pos="N" type="DN" label="Utu" det="&d;">&d;utu</w>
+<w form="ed2-da-bi" lemma="e3" pos="V" label="to go out or in">ed2-da-bi</w>
+<w form="ha-ma-tum3" lemma="de6" pos="V" label="to carry" form-type="isg">ha-ma-tum3</w>
+</l>
+<l n="45" id="c3116.45" corresp="t3116.p13">
+<w form="a-ma-ru-kam" lemma="a-ma-ru" pos="N" label="flood">a-ma-ru-kam</w>
+</l>
+</body>
+</text>
+</TEI.2>

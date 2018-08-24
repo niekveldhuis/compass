@@ -1,0 +1,346 @@
+<TEI.2 id="c.4.07.6">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> (?) to  Inana (Inana F) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b124">R&ouml;mer 1989a</xref><biblScope type="page">646-649</biblScope><biblScope type="contents">translation, commentary</biblScope></bibl>
+<bibl><xref from="b631">R&ouml;mer 1969a</xref><biblScope type="contents">score transliteration, translation, commentary</biblScope><note>VAT 7025</note></bibl>
+<bibl><xref from="b670">Tinney 2000</xref><biblScope type="page">25, note 6</biblScope><biblScope type="contents">score transliteration</biblScope><note>collation of N 4305</note></bibl>
+<bibl><xref from="b691">Veldhuis 2000b</xref><biblScope type="contents">score transliteration, translation</biblScope><note>electronic source</note><note>VAT 7025</note></bibl>
+<bibl><xref from="b42">Falkenstein 1953</xref><biblScope type="page">67-68</biblScope><biblScope type="contents">translation</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">VAT 7025 (VS 10 199) iii 8-41</biblScope><biblScope type="composLines">1-34</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 4305 (PAPS 107 521) iv 4-15</biblScope><biblScope type="composLines">1-13</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>12.iv.2000-26.iv.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>21.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>24.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>28.vii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>28.vii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c4076.1" corresp="t4076.p1">
+<w form="a-ju10" lemma="a-a" pos="N" label="father">a-ju10</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+</distinct>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+</distinct>
+</l>
+<l n="2" id="c4076.2" corresp="t4076.p1">
+<distinct type="emesal">
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+<w form="&d;ga-ca-an-an-na-jen" lemma="inana" pos="N" type="DN" label="Inana" emesal="ga-ca-an-an-na" det="&d;">&d;ga-ca-an-an-na-jen</w>
+</distinct>
+</l>
+<l n="3" id="c4076.3" corresp="t4076.p1">
+<distinct type="emesal">
+<w form="ma-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me"><unclear cert="qry">ma</unclear>-ra</w>
+<w form="dim3-me-er" lemma="dijir" pos="N" label="deity" emesal="dim3-me-er">dim3-me-er</w>
+</distinct>
+<w form="tec2" lemma="tec2" pos="N" label="unity">tec2</w>
+<w form="mu-da-sa2-a" lemma="sa2" pos="V" label="to equal">mu-da-sa2-a</w>
+</l>
+<l n="4" id="c4076.4" corresp="t4076.p2">
+<distinct type="emesal">
+<w form="&d;mu-ul-lil2-le" lemma="en-lil2" pos="N" type="DN" label="Enlil" emesal="mu-ul-lil2" det="&d;">&d;mu-ul-lil2-le</w>
+</distinct>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+</distinct>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="5" id="c4076.5" corresp="t4076.p2">
+<distinct type="emesal">
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+<w form="&d;ga-ca-an-an-na-jen" lemma="inana" pos="N" type="DN" label="Inana" emesal="ga-ca-an-an-na" det="&d;">&d;<corr resp="scrOm"/>ga-ca-an-an-na-jen<corrEnd/></w>
+</distinct>
+</l>
+<l n="6" id="c4076.6" corresp="t4076.p2">
+<distinct type="emesal">
+<w form="na-aj2-u3-mu-un" lemma="nam-en" pos="N" label="high (priestly) office" emesal="na-aj2-u3-mu-un">na-aj2-u3-mu-un</w>
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+</distinct>
+</l>
+<l n="7" id="c4076.7" corresp="t4076.p2">
+<distinct type="emesal">
+<w form="na-aj2-ga-ca-an" lemma="nam-nin" pos="N" label="ladyship" emesal="na-aj2-ga-ca-an">na-aj2-ga-ca-an</w>
+<damage/>
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an<damageEnd/>-ze2-ej3</w>
+</distinct>
+</l>
+<l n="8" id="c4076.8" corresp="t4076.p2">
+<w form="me3" lemma="me3" pos="N" label="battle">me3</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-ej3</w>
+</distinct>
+<supplied/>
+<w form="cen-cen" lemma="cen" pos="N" label="combat" form-type="RR">cen<suppliedEnd/>-<damage/><unclear cert="qry">cen</unclear></w>
+<damageEnd/>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-<corr resp="scrOm"/>an-ze2-ej3</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="9" id="c4076.9" corresp="t4076.p2">
+<w form="mar-uru5" lemma="mar-uru5" pos="N" label="tempest">mar-uru5</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-an-ze2-<damage/>ej3</w>
+<damageEnd/>
+</distinct>
+<damage/>
+<w form="dal-ha-mun" lemma="dal-ha-mun" pos="N" label="dust storm"><unclear cert="qry">dal</unclear><damageEnd/>-ha-mun</w>
+<distinct type="emesal">
+<w form="ma-an-ze2-ej3" lemma="cum2" pos="V" label="to give" emesal="ze2-ej3">ma-<corr resp="scrOm"/>an-ze2-ej3</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="10" id="c4076.10" corresp="t4076.p2">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="men" lemma="men" pos="N" label="diadem">men</w>
+<w form="saj-ja2" lemma="saj" pos="N" label="head">saj-ja2</w>
+<distinct type="emesal">
+<w form="mu-ni-in-ma-al" lemma="jal2" pos="V" label="to be (located)" emesal="ma-al">mu-ni-in-ma-al</w>
+</distinct>
+</l>
+<l n="11" id="c4076.11" corresp="t4076.p2">
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="&kuc;e-sir2" lemma="e-sir2" pos="N" label="sandal" det="&kuc;">&kuc;e-sir2</w>
+<distinct type="emesal">
+<w form="me-ri-ja2" lemma="jiri3" pos="N" label="foot" emesal="me-ri">me-ri-ja2</w>
+</distinct>
+<w form="mu-ni-in-sig9" lemma="sig9" pos="V" label="to put">mu-ni-in-sig9</w>
+</l>
+<l n="12" id="c4076.12" corresp="t4076.p2">
+<w form="tug2-ba13" lemma="tug2-ba13" pos="N" label="type of garment">tug2-ba13</w>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="su-ja2" lemma="su" pos="N" label="flesh">su-ja2</w>
+<w form="mu-ni-in-la2" lemma="la2" pos="V" label="to hang">mu-ni-in-la2</w>
+</l>
+<l n="13" id="c4076.13" corresp="t4076.p2">
+<distinct type="emesal">
+<w form="&mu;mudru" lemma="jidru" pos="N" label="sceptre" emesal="mudru" det="&mu;">&mu;mudru</w>
+</distinct>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="cu-ja2" lemma="cu" pos="N" label="hand">cu-ja2</w>
+<distinct type="emesal">
+<w form="mu-ni-in-ma-al" lemma="jal2" pos="V" label="to be (located)" emesal="ma-al">mu-ni-in-ma-al</w>
+</distinct>
+</l>
+<l n="14" id="c4076.14" corresp="t4076.p3">
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<w form="buru5-me-ec" lemma="buru5" pos="N" label="sparrow?">buru5-me-ec</w>
+<distinct type="emesal">
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+<w form="mu-tin-jen" lemma="sur2-du3" pos="N" label="falcon" emesal="mu-tin">mu-tin-jen</w>
+</distinct>
+</l>
+<l n="15" id="c4076.15" corresp="t4076.p3">
+<w form="&d;a-nun-na" lemma="a-nun-na" pos="N" type="DN" label="Anuna" det="&d;">&d;a-nun-na</w>
+<distinct type="emesal">
+<w form="di-da-me-ec" lemma="jen" pos="V" label="to go" emesal="di">di-da-me-ec</w>
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+</distinct>
+<w form="sumun2" lemma="sumun2" pos="N" label="wild cow">sumun2</w>
+<distinct type="emesal">
+<w form="zid-jen" lemma="zid" pos="AJ" label="right">zid-jen</w>
+</distinct>
+</l>
+<l n="16" id="c4076.16" corresp="t4076.p3">
+<w form="sumun2" lemma="sumun2" pos="N" label="wild cow">sumun2</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="a-a" lemma="a-a" pos="N" label="father">a-a</w>
+<distinct type="emesal">
+<w form="&d;en-lil2-la2-jen" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-la2-jen</w>
+</distinct>
+</l>
+<l n="17" id="c4076.17" corresp="t4076.p3">
+<w form="u3-sumun2" lemma="u3-sumun2" pos="N" label="wild cow?">u3-sumun2</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="saj-ja2" lemma="saj" pos="N" label="head">saj-ja2</w>
+<distinct type="emesal">
+<w form="di-a-ni" lemma="jen" pos="V" label="to go" emesal="di">di-a-ni</w>
+</distinct>
+</l>
+<l n="18" id="c4076.18" corresp="t4076.p4">
+<w form="e2-kur-ra" lemma="e2-kur" pos="N" type="TN" label="E-kur">e2-kur-ra</w>
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<distinct type="emesal">
+<w form="&d;mu-ul-lil2-la2-ce3" lemma="en-lil2" pos="N" type="DN" label="Enlil" emesal="mu-ul-lil2" det="&d;">&d;mu-ul-lil2-la2-ce3</w>
+</distinct>
+<w form="ku4-ku4-da-ju10-ne" lemma="kur9" pos="V" label="to enter" form-type="rr">ku4-ku4-da-ju10-ne</w>
+</l>
+<l n="19" id="c4076.19" corresp="t4076.p4">
+<w form="i3-du8-e" lemma="i3-du8" pos="N" label="doorkeeper">i3-du8-e</w>
+<w form="gaba-ju10" lemma="gaba" pos="N" label="chest">gaba-ju10</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<distinct type="emesal">
+<w form="li-bi2-ma-ma" lemma="jar" pos="V" label="to place" emesal="mar" form-type="rr">li-bi2-ma-ma</w>
+</distinct>
+</l>
+<l n="20" id="c4076.20" corresp="t4076.p4">
+<w form="sukkal-e" lemma="sukkal" pos="N" label="minister">sukkal-e</w>
+<w form="il2-la2" lemma="il2" pos="V" label="to raise">il2-la2</w>
+<w form="na-ma-ab-be2" lemma="dug4" pos="V" label="to say" form-type="ppli">na-ma-ab-be2</w>
+</l>
+<l n="21" id="c4076.21" corresp="t4076.p5">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ja2-a-kam" lemma="je26" pos="PD" type="personal" label="I">ja2-a-kam</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="ja2-a-kam" lemma="je26" pos="PD" type="personal" label="I">ja2-a-kam</w>
+<distinct type="emesal">
+<w form="me-e" lemma="je26" pos="PD" type="personal" label="I" emesal="me">me-e</w>
+<w form="ur-saj-jen" lemma="ur-saj" pos="N" label="hero">ur-saj-jen</w>
+</distinct>
+</l>
+<l n="22" id="c4076.22" corresp="t4076.p5">
+<w form="unug&ki;-ga" lemma="unug" pos="N" type="SN" label="Unug" det="&ki;">unug&ki;-ga</w>
+<w form="e2-an-na" lemma="e2-an-na" pos="N" type="TN" label="E-ana">e2-an-na</w>
+<w form="ja2-a-kam" lemma="je26" pos="PD" type="personal" label="I">ja2-a-kam</w>
+</l>
+<l n="23" id="c4076.23" corresp="t4076.p5">
+<w form="zabalam&ki;" lemma="zabalam" pos="N" type="SN" label="Zabalam" det="&ki;">zabalam&ki;</w>
+<w form="gi-gun4-na" lemma="gi-gun4-na" pos="N" type="TN" label="Giguna">gi-gun4-<unclear cert="cor">na</unclear></w>
+<distinct type="emesal">
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+</distinct>
+</l>
+<l n="24" id="c4076.24" corresp="t4076.p5">
+<w form="nibru&ki;-a" lemma="nibru" pos="N" type="SN" label="Nibru" det="&ki;">nibru&ki;-a</w>
+<w form="dur-an-ki" lemma="dur-an-ki" pos="N" type="TN" label="Dur-an-ki">dur-an-ki</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="25" id="c4076.25" corresp="t4076.p5">
+<w form="urim2&ki;-ma" lemma="urim2" pos="N" type="SN" label="Urim" det="&ki;">urim2&ki;-ma</w>
+<w form="e2-dilmun-na" lemma="e2-dilmun-na" pos="N" type="TN" label="E-Dilmuna" npart="GN:Dilmun">e2-dilmun-na</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="26" id="c4076.26" corresp="t4076.p5">
+<w form="jir2-su&ki;-a" lemma="jir2-su" pos="N" type="SN" label="&G;irsu" det="&ki;">jir2-su&ki;-a</w>
+<w form="ec2-dam-kug" lemma="ec2-dam-kug" pos="N" type="TN" label="E&c;dam-kug">ec2-dam-kug</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="27" id="c4076.27" corresp="t4076.p5">
+<w form="adab&ki;-a" lemma="adab" pos="N" type="SN" label="Adab" det="&ki;">adab&ki;-a</w>
+<w form="e2-car-ra" lemma="e2-car-ra" pos="N" type="TN" label="E-&c;ara">e2-car-ra</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="28" id="c4076.28" corresp="t4076.p5">
+<w form="kic&ki;-a" lemma="kic" pos="N" type="SN" label="Ki&c;" det="&ki;">kic&ki;-a</w>
+<w form="hur-saj-kalam-ma" lemma="hur-saj-kalam-ma" pos="N" type="TN" label="&H;ursa&g;-kalama">hur-saj-kalam-ma</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="29" id="c4076.29" corresp="t4076.p5">
+<w form="kisiga&ki;" lemma="kisiga" pos="N" type="SN" label="Kisiga" det="&ki;"><unclear cert="cor">kisiga</unclear>&ki;</w>
+<w form="amac-kug-ga" lemma="amac-kug-ga" pos="N" type="TN" label="Ama&c;-kuga">amac-kug-ga</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="30" id="c4076.30" corresp="t4076.p5">
+<w form="akcak&ki;-a" lemma="akcak" pos="N" type="SN" label="Ak&c;ak" det="&ki;">akcak&ki;-a</w>
+<w form="an-za-gar3" lemma="an-za-gar3" pos="N" type="TN" label="Anzagar">an-za-gar3</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="31" id="c4076.31" corresp="t4076.p5">
+<w form="umma&ki;-a" lemma="umma" pos="N" type="SN" label="Umma" det="&ki;">umma&ki;-a</w>
+<w form="ib-gal" lemma="ib-gal" pos="N" type="TN" label="Ibgal">ib-gal</w>
+<distinct type="emesal">
+<corr resp="scrOm"/>
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+<corrEnd/>
+</distinct>
+</l>
+<l n="32" id="c4076.32" corresp="t4076.p5">
+<w form="a-ga-de3&ki;-a" lemma="a-ga-de3" pos="N" type="SN" label="Agade" det="&ki;">a-ga-de3&ki;-a</w>
+<w form="ul-mac" lemma="ul-mac" pos="N" type="SN" label="Ulma&c;"><unclear cert="cor">ul</unclear>-mac</w>
+<distinct type="emesal">
+<w form="ma-a-kam" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-kam</w>
+</distinct>
+</l>
+<l n="33" id="c4076.33" corresp="t4076.p5">
+<distinct type="emesal">
+<w form="ma-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-ra</w>
+<damage/>
+<w form="dim3-me-er" lemma="dijir" pos="N" label="deity" emesal="dim3-me-er">dim3<damageEnd/>-me-er</w>
+</distinct>
+<w form="tec2" lemma="tec2" pos="N" label="unity">tec2</w>
+<w form="mu-da-sa2-a" lemma="sa2" pos="V" label="to equal">mu-da-sa2-a</w>
+</l>
+<trailer place="subscript" type="missing">
+<l n="34" id="c4076.34" corresp="t4076.p6">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="&d;inana-kam" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-kam</w>
+</l>
+</trailer>
+</body>
+</text>
+</TEI.2>

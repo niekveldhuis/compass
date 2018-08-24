@@ -1,0 +1,91 @@
+<TEI.2 id="t.4.08.01">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> to Inana (Dumuzid-Inana A) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>17.ix.1998-22.ix.1998</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>12.x.1998</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>30.xi.1998</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>05.viii.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>16.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t40801.p1" n="1-11" corresp="c40801.1">The brother speaks gently to his sister, <w type="DN">Utu</w> speaks gently to his sister, he speaks tenderly to holy <w type="DN">Inana</w>: <q who="Utu" toWhom="Inana">Young lady, the flax in the garden beds is full of loveliness, <w type="DN">Inana</w>, the flax in the garden beds is full of loveliness, like the barley in the furrows, overflowing with loveliness and delight. 
+<addSpan to="t40801.v1"/>Sister
+<anchor id="t40801.v1"/>
+<addSpan to="t40801.v2"/><note id="t40801.n1" lang="eng" target="t40801.v1">1 ms. has instead:</note> Young lady
+<anchor id="t40801.v2"/>, you took a fancy to a grand length of linen; <w type="DN">Inana</w>, you took a fancy to a grand length of linen. I will dig up the plants for you and give them to you. 
+<addSpan to="t40801.v3"/>Young lady
+<anchor id="t40801.v3"/>
+<addSpan to="t40801.v4"/><note id="t40801.n2" lang="eng" target="t40801.v3">1 ms. has instead:</note> My sister
+<anchor id="t40801.v4"/>, I will bring you flax from the garden beds. <w type="DN">Inana</w>, I will bring you flax from the garden beds.</q></p>
+<altGrp><alt targType="addSpan" targets="t40801.v1 t40801.v2"/><alt targType="addSpan" targets="t40801.v3 t40801.v4"/></altGrp>
+<p id="t40801.p2" n="12-14" corresp="c40801.12"><q who="Inana" toWhom="Utu">
+<addSpan to="t40801.v5"/>Brother
+<anchor id="t40801.v5"/>
+<addSpan to="t40801.v6"/><note id="t40801.n3" lang="eng" target="t40801.v5">1 ms. has instead:</note> My brother
+<anchor id="t40801.v6"/>, when you have brought me flax from the garden beds, who will ret it for me? Who will ret it for me? Who will ret that flax for me?</q></p>
+<altGrp><alt targType="addSpan" targets="t40801.v5 t40801.v6"/></altGrp>
+<p id="t40801.p3" n="15-16" corresp="c40801.15"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already retted! <w type="DN">Inana</w>, I will bring it to you already retted!</q></p>
+<p id="t40801.p4" n="17-19" corresp="c40801.17"><q who="Inana" toWhom="Utu">
+<addSpan to="t40801.v7"/>Brother
+<anchor id="t40801.v7"/>
+<addSpan to="t40801.v8"/><note id="t40801.n4" lang="eng" target="t40801.v7">1 ms. has instead:</note> My brother
+<anchor id="t40801.v8"/>, when you have brought it to me already retted, who will spin it for me? Who will spin it for me? Who will spin that flax for me?</q></p>
+<altGrp><alt targType="addSpan" targets="t40801.v7 t40801.v8"/></altGrp>
+<p id="t40801.p5" n="20-21" corresp="c40801.20"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already spun! <w type="DN">Inana</w>, I will bring it to you already spun!</q></p>
+<p id="t40801.p6" n="22-24" corresp="c40801.22"><q who="Inana" toWhom="Utu">
+<addSpan to="t40801.v9"/>Brother
+<anchor id="t40801.v9"/>
+<addSpan to="t40801.v10"/><note id="t40801.n5" lang="eng" target="t40801.v9">1 ms. has instead:</note> My brother
+<anchor id="t40801.v10"/>, when you have brought it to me already spun, who will twine it for me? Who will twine it for me? Who will twine that flax for me?</q></p>
+<altGrp><alt targType="addSpan" targets="t40801.v9 t40801.v10"/></altGrp>
+<p id="t40801.p7" n="25-26" corresp="c40801.25"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already twined! <w type="DN">Inana</w>, I will bring it to you already twined!</q></p>
+<p id="t40801.p8" n="27-29" corresp="c40801.27"><q who="Inana" toWhom="Utu">Brother, when you have brought it to me already twined, who will warp it for me? Who will warp it for me? Who will warp that flax for me?</q></p>
+<p id="t40801.p9" n="30-31" corresp="c40801.30"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already warped! <w type="DN">Inana</w>, I will bring it to you already warped!</q></p>
+<p id="t40801.p10" n="32-34" corresp="c40801.32"><q who="Inana" toWhom="Utu">Brother, when you have brought it to me already warped, who will weave for me? Who will weave for me? Who will weave that flax for me?</q></p>
+<p id="t40801.p11" n="35-36" corresp="c40801.35"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already woven! <w type="DN">Inana</w>, I will bring it to you already woven!</q></p>
+<p id="t40801.p12" n="37-39" corresp="c40801.37"><q who="Inana" toWhom="Utu">Brother, when you have brought it to me already woven, who will bleach it for me? Who will bleach it for me? Who will bleach that linen for me?</q></p>
+<p id="t40801.p13" n="40-41" corresp="c40801.40"><q who="Utu" toWhom="Inana">My sister, I will bring it to you already bleached! <w type="DN">Inana</w>, I will bring it to you already bleached!</q></p>
+<p id="t40801.p14" n="42-44" corresp="c40801.42"><q who="Inana" toWhom="Utu">Brother, when you have brought it to me already bleached, who will lie down on it with me? Who will lie down on it with me? Who will lie down on that linen with me?</q></p>
+<p id="t40801.p15" n="45-50" corresp="c40801.45"><q who="Utu" toWhom="Inana">There shall lie down with you, there shall lie down with you, there shall lie down with you your bridegroom! <w type="DN">Ama-u&c;umgal-ana</w> shall lie down with you, the companion of <w type="DN">Enlil</w> shall lie down with you, the issue of a noble womb shall lie down with you, the offspring of a ruler shall lie down with you.</q></p>
+<p id="t40801.p16" n="51-56" corresp="c40801.51"><q who="Inana" toWhom="Utu">Is it true?-- He is the man of my heart! He is the man of my heart! Brother, he is the man who has spoken to my heart! He does no hoeing, yet heaps up piles of grain; he delivers grain regularly to the storehouse, a farmer who has numerous piles of 
+<addSpan to="t40801.v11"/>grain
+<anchor id="t40801.v11"/>
+<addSpan to="t40801.v12"/><note id="t40801.n6" lang="eng" target="t40801.v11">1 ms. has instead:</note> plentiful grain
+<anchor id="t40801.v12"/>; a shepherd whose sheep are heavy (?) with wool.</q></p>
+<altGrp><alt targType="addSpan" targets="t40801.v11 t40801.v12"/></altGrp><trailer place="subscript" type="balbale">
+<p id="t40801.p17" n="57" corresp="c40801.57">A <foreign lang="sux">balbale</foreign> of <w type="DN">Inana</w>.</p>
+</trailer></body>
+</text>
+</TEI.2>

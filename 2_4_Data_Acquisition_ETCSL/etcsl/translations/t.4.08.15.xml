@@ -1,0 +1,62 @@
+<TEI.2 id="t.4.08.15">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> to Inana (Dumuzid-Inana O) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>28.i.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>30.ix.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>18.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>14.xi.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>13.xi.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t40815.p1" n="1-7" corresp="c40815.1"><gap extent="1 line fragmentary"/>
+Your name &X;&X;. As I walk, as I walk, as I pass along the banks of the august river, as I roam along the banks of the <w type="WN">Euphrates</w>, as I stand &X;&X; the lord, as I pass along the gaudy streets:</p>
+<p id="t40815.p2" n="8-13" corresp="c40815.8">May you be &X;&X; a bending reed, may you be barley in the furrows, a beautiful &X;&X;, may you be <w type="DN">Ezina</w>, who beautifies &X;&X;, may you be a nursing mother of the womb, may you be your mother's &X;&X;, a vine, 
+<addSpan to="t40815.v1"/>my
+<anchor id="t40815.v1"/>
+<addSpan to="t40815.v2"/><note id="t40815.n1" lang="eng" target="t40815.v1">1 ms. has instead:</note> your
+<anchor id="t40815.v2"/> beloved, your personal god's &X;&X;, acting 
+<addSpan to="t40815.v3"/>grandly
+<anchor id="t40815.v3"/>
+<addSpan to="t40815.v4"/><note id="t40815.n2" lang="eng" target="t40815.v3">1 ms. has instead:</note> humanely
+<anchor id="t40815.v4"/>!</p>
+<altGrp><alt targType="addSpan" targets="t40815.v1 t40815.v2"/><alt targType="addSpan" targets="t40815.v3 t40815.v4"/></altGrp>
+<p id="t40815.p3" n="14-21" corresp="c40815.14">May <q>There is enough, there is enough</q> 
+<addSpan to="t40815.v5"/>be your blessing
+<anchor id="t40815.v5"/>
+<addSpan to="t40815.v6"/><note lang="eng" target="t40815.v5">1 ms. has instead:</note> is a splendid utterance
+<anchor id="t40815.v6"/>, and may <q>There is none</q> be your abomination. May you be the owner of a house where there is enough, with (?) a beautiful sister, beautiful children! A beautiful storehouse &X;&X; like a rope (?). May you be, may you be a male among men, among men. May you be, may you be the son of your god, may you be handsome, may you be praised!</p>
+<altGrp><alt targType="addspan" targets="t40815.v5 t40815.v6"/></altGrp>
+<p id="t40815.p4" n="22-33" corresp="c40815.22">May you be one who pleases his city's god, may you be a son who delights his mother, may you be the life-force of your city, may you be an honourable man, good offspring, may you be prosperous and &X;&X; destiny, may you own silver there, may you own grain there! Owning silver, may you delight in silver; owning grain, may you delight in grain! May you be valiant and joyous, may you not be blighted by &X;&X;. May you be a soother of hearts, who never wearies of words!</p>
+<trailer place="subscript" type="balbale">
+<p id="t40815.p5" n="34" corresp="c40815.34">A <foreign lang="sux">balbale</foreign> of <w type="DN">Inana</w>.</p>
+</trailer></body>
+</text>
+</TEI.2>

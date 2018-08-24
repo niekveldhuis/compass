@@ -1,0 +1,361 @@
+<TEI.2 id="c.0.2.04">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>OB catalogue from Urim (U2) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b307">Krecher 1996</xref><biblScope type="contents">score transliteration</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b655">Kramer 1961</xref><biblScope type="contents">commentary, score transliteration</biblScope></bibl>
+<bibl><xref from="b34">Charpin 1986</xref><biblScope type="page">455-458</biblScope><biblScope type="contents">commentary, score transliteration</biblScope></bibl>
+<bibl><xref from="b693">Hallo 1966a</xref><biblScope type="contents">commentary</biblScope></bibl>
+<bibl><xref from="b894">Robson 2003</xref><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">U 17900 H (UET 6 123)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>31.v.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>26.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>31.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>18.viii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>18.viii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>09.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>links updated</item></change>
+<change><date>15.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>links updated</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c0204.1">
+<w form="nin" lemma="nin" pos="N" label="lady">nin</w>
+<w form="mul-an-gin7" lemma="mul-an" pos="N" label="heavenly star">mul-an-gin7</w>
+<w form="EN" lemma="EN" label="EN">EN</w>
+<note id="c0204.n1" lang="eng" target="c0204.1"><xref doc="c.4.16.1">Nisaba A, 4.16.1</xref></note>
+</l>
+<l n="2" id="c0204.2">
+<w form="bur-cum2-ma" lemma="bur-cu-um" pos="N" label="old woman">bur-<unclear cert="qry">cum2</unclear>-ma</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<note id="c0204.n2" lang="eng" target="c0204.2">I&c;bi-Erra E, 2.5.1.5</note>
+</l>
+<l n="3" id="c0204.3">
+<w form="zi-jal2" lemma="zi-jal2" pos="N" label="living creature">zi-jal2</w>
+</l>
+<l n="4" id="c0204.4">
+<w form="lugal-me" lemma="lugal" pos="N" label="king">lugal-me</w>
+<w form="cag4-ta" lemma="cag4" pos="N" label="heart">cag4-ta</w>
+<w form="ur-saj-me-en" lemma="ur-saj" pos="N" label="hero">ur-saj-me-en</w>
+<note id="c0204.n4" lang="eng" target="c0204.4"><xref doc="c.2.4.2.01">&C;ulgi A, 2.4.2.01</xref></note>
+</l>
+<l n="5" id="c0204.5">
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="me" lemma="mi2" pos="N" label="(loving) care">me</w>
+<w form="dug4-ga" lemma="dug4" pos="V" label="to say">dug4-ga</w>
+<note id="c0204.n5" lang="eng" target="c0204.5"><xref doc="c.2.5.5.1">Lipit-E&c;tar A, 2.5.5.1</xref></note>
+</l>
+<l n="6" id="c0204.6">
+<w form="me-ta-am3" lemma="me-ta" pos="AV" label="type of time and place adverbial">me-ta-am3</w>
+<distinct type="emesal">
+<w form="me-di" lemma="jen" pos="V" label="to go" emesal="di">me-di</w>
+</distinct>
+<w form="A2" lemma="A2" label="A&s2;">A2</w>
+<note id="c0204.n6" lang="eng" target="c0204.6">Dialogue 5, 5.4.05 (?)</note>
+</l>
+<l n="7" id="c0204.7">
+<w form="me-ta-am3" lemma="me-ta" pos="AV" label="type of time and place adverbial">me-ta-am3</w>
+<w form="im-du" lemma="jen" pos="V" label="to go" form-type="isg">im-du</w>
+<note id="c0204.n7" lang="eng" target="c0204.7">E-dub-ba-a B, 5.1.2</note>
+</l>
+<l n="8" id="c0204.8">
+<w form="nin" lemma="nin" pos="N" label="lady">nin</w>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="car2-ra" lemma="car2" pos="V" label="to be numerous">car2-ra</w>
+<note id="c0204.n8" lang="eng" target="c0204.8"><xref doc="c.4.07.2">Inana B, 4.07.2</xref></note>
+</l>
+<l n="9" id="c0204.9">
+<w form="en-e" lemma="en" pos="N" label="lord">en-e</w>
+<w form="kur" lemma="kur" pos="N" label="(mountain) land">kur</w>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="til3-la-ce3" lemma="til3" pos="V" label="to live">til3-la-ce3</w>
+<note id="c0204.n9" lang="eng" target="c0204.9"><xref doc="c.1.8.1.5">Gilgame&c; and &H;uwawa (Version A), 1.8.1.5</xref></note>
+</l>
+<l n="10" id="c0204.10">
+<w form="i3-a" lemma="i3-a" pos="I" label="type of exclamation">i3-a</w>
+<w form="lu2-ulu3" lemma="lum" pos="V" label="to thrive" form-type="RR">lu2-ulu3</w>
+<note id="c0204.n10" lang="eng" target="c0204.10"><xref doc="c.1.8.1.5.1">Gilgame&c; and &H;uwawa (Version B), 1.8.1.5.1</xref></note>
+</l>
+<l n="11" id="c0204.11">
+<w form="cul" lemma="cul" pos="N" label="young man">cul</w>
+<w form="me3-kam" lemma="me3" pos="N" label="battle">me3-kam</w>
+<note id="c0204.n11" lang="eng" target="c0204.11"><xref doc="c.1.8.1.2">Gilgame&c; and the bull of heaven, 1.8.1.2</xref></note>
+</l>
+<l n="12" id="c0204.12">
+<w form="lu2-kij2-gi4-a" lemma="lu2-kij2-gi4-a" pos="N" label="messenger">lu2-kij2-gi4-a</w>
+<note id="c0204.n12" lang="eng" target="c0204.12"><xref doc="c.1.8.1.1">Gilgame&c; and Aga, 1.8.1.1</xref></note>
+</l>
+<l n="13" id="c0204.13">
+<w form="in-nin" lemma="in-nin" pos="N" label="mistress">in-nin</w>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="huc-a" lemma="huc" pos="V" label="to be reddish">huc-a</w>
+<note id="c0204.n13" lang="eng" target="c0204.13"><xref doc="c.1.3.2">Inana and Ebi&h;, 1.3.2</xref></note>
+</l>
+<l n="14" id="c0204.14">
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="ud" lemma="ud" pos="N" label="storm">ud</w>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<note id="c0204.n14" lang="eng" target="c0204.14"><xref doc="c.4.28.1">Nungal A, 4.28.1</xref></note>
+</l>
+<l n="15" id="c0204.15">
+<w form="hur-saj" lemma="hur-saj" pos="N" label="mountain (range)">hur-saj</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki-bi-da-ke4" lemma="ki" pos="N" label="place">ki-<unclear cert="cor">bi</unclear>-<unclear cert="cor">da</unclear>-ke4</w>
+<note id="c0204.n15" lang="eng" target="c0204.15"><xref doc="c.5.3.2">The debate between Grain and Sheep, 5.3.2</xref></note>
+</l>
+<l n="16" id="c0204.16">
+<w form="&d;en-lil2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2</w>
+<w form="su3-ra2-ce3" lemma="sud" pos="V" label="to be distant">su3-<unclear cert="cor">ra2</unclear>-ce3</w>
+<note id="c0204.n16" lang="eng" target="c0204.16"><xref doc="c.4.05.1">Enlil A, 4.05.1</xref></note>
+</l>
+<l n="17" id="c0204.17">
+<w form="saj-ki" lemma="saj-ki" pos="N" label="forehead">saj-ki</w>
+<w form="gid2-da" lemma="gid2" pos="V" label="to be long">gid2-da</w>
+<note id="c0204.n17" lang="eng" target="c0204.17"><xref doc="c.2.1.5">The cursing of Agade, 2.1.5</xref></note>
+</l>
+<l n="18" id="c0204.18">
+<w form="&jic;al-e" lemma="al" pos="N" label="hoe" bound="L,e" det="&jic;">&jic;al-e</w>
+<w form="&jic;al-e" lemma="al" pos="N" label="hoe" bound="L,e" det="&jic;">&jic;al-e</w>
+<note id="c0204.n18" lang="eng" target="c0204.18"><xref doc="c.5.3.1">The debate between Hoe and Plough, 5.3.1</xref></note>
+</l>
+<l n="19" id="c0204.19">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="ul-e" lemma="ul" pos="N" label="distant time">ul-e</w>
+<w form="re-da" lemma="re" pos="PD" type="demonstrative" label="that">re-da</w>
+<note id="c0204.n19" lang="eng" target="c0204.19"><xref doc="c.5.3.5">The debate between Bird and Fish, 5.3.5</xref> (?)</note>
+</l>
+<l n="20" id="c0204.20">
+<w form="ki-ur3" lemma="ki-ur3" pos="N" label="foundation">ki-<unclear cert="cor">ur3</unclear></w>
+<w form="gal-e" lemma="gal" pos="V" label="to be big">gal-e</w>
+<note id="c0204.n20" lang="eng" target="c0204.20">The debate between Tree and Reed, 5.3.4</note>
+</l>
+<l n="21" id="c0204.21">
+<w form="e2-u4-nir" lemma="e2-u6-nir" pos="N" type="TN" label="E-unir">e2-u4-nir</w>
+<note id="c0204.n21" lang="eng" target="c0204.21"><xref doc="c.4.80.1">The temple hymns, 4.80.1</xref></note>
+</l>
+<l n="22" id="c0204.22">
+<w form="an-ne2" lemma="an" pos="N" type="DN" label="An">an-ne2</w>
+<w form="nam-nir-ra" lemma="nam-nir" pos="N" label="authority">nam-nir-ra</w>
+<note id="c0204.n22" lang="eng" target="c0204.22"><xref doc="c.5.3.3"><xref doc="c.5.3.3">The debate between Winter and Summer, 5.3.3</xref></xref></note>
+</l>
+<l n="23" id="c0204.23">
+<w form="nam" lemma="nam2" pos="N" label="lord">nam</w>
+<w form="nun-e" lemma="nun" pos="N" label="prince">nun-e</w>
+<note id="c0204.n23" lang="eng" target="c0204.23">three compositions are known with this incipit: <xref doc="c.4.13.13">Nanna M, 4.13.13</xref>; <xref doc="c.4.13.a">A hymn to Nanna, 4.13.a</xref>; <xref doc="c.4.80.2">The Ke&c; temple hymn, 4.80.2</xref>; a fourth is cited in the next line of this catalogue and in OB catalogue in the Louvre, 0.2.02, line 35; and a fifth in OB catalogue in the Louvre, 0.2.02, line 36</note>
+</l>
+<l n="24" id="c0204.24">
+<w form="nam" lemma="nam2" pos="N" label="lord">nam</w>
+<w form="nun-e" lemma="nun" pos="N" label="prince">nun-e</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="na-il2" lemma="il2" pos="V" label="to raise">na-il2</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="25" id="c0204.25">
+<w form="nam-lugal" lemma="nam-lugal" pos="N" label="kingship">nam-lugal</w>
+<note id="c0204.n25" lang="eng" target="c0204.25"><xref doc="c.2.1.1">The Sumerian king list, 2.1.1</xref></note>
+</l>
+<l n="26" id="c0204.26">
+<w form="cag4-ga-a-ni" lemma="cag4" pos="N" label="heart">cag4-ga-a-ni</w>
+<note id="c0204.n26" lang="eng" target="c0204.26"><xref doc="c.1.4.3">Dumuzid's dream, 1.4.3</xref></note>
+</l>
+<l n="27" id="c0204.27">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="gal-ta" lemma="gal" pos="V" label="to be big">gal-ta</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="gal-ce3" lemma="gal" pos="V" label="to be big">gal-ce3</w>
+<note id="c0204.n27" lang="eng" target="c0204.27"><xref doc="c.1.4.1">Inana's descent to the nether world, 1.4.1</xref></note>
+</l>
+<l n="28" id="c0204.28">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="re-a" lemma="re" pos="PD" type="demonstrative" label="that">re-a</w>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="ba-tar-ra" lemma="tar" pos="V" label="to cut">ba-tar-<unclear cert="cor">ra</unclear></w>
+<note id="c0204.n28" lang="eng" target="c0204.28"><xref doc="c.1.1.4">Enki's journey to Nibru, 1.1.4</xref></note>
+</l>
+<l n="29" id="c0204.29">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="re-a" lemma="re" pos="PD" type="demonstrative" label="that">re-a</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="sud4-ta" lemma="sud" pos="V" label="to be distant">sud4-ta</w>
+<w form="re-a" lemma="re" pos="PD" type="demonstrative" label="that"><unclear cert="cor">re</unclear>-a</w>
+<note id="c0204.n29" lang="eng" target="c0204.29">two compositions are known with this incipit: <xref doc="c.1.8.1.4">Gilgame&c;, Enkidu and the nether world, 1.8.1.4</xref> and <xref doc="c.5.6.1">The instructions of &C;uruppag, 5.6.1</xref></note>
+</l>
+<l n="30" id="c0204.30">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="re-a" lemma="re" pos="PD" type="demonstrative" label="that">re-a</w>
+<w form="nij2-ul-e" lemma="nij2-ul" pos="N" label="distant time">nij2-ul-e</w>
+</l>
+<l n="31" id="c0204.31">
+<w form="UD" lemma="UD" label="UD">UD</w>
+<w form="MA" lemma="MA" label="MA">MA</w>
+<w form="DAM-DAM" lemma="DAM" label="DAM" form-type="RR">DAM-DAM</w>
+<w form="NA-NA" lemma="NA" label="NA" form-type="RR">NA-NA</w>
+</l>
+<l n="32" id="c0204.32">
+<w form="di4-di4-la2" lemma="di4-di4" pos="V" label="to be small" form-type="RR">di4-di4-la2</w>
+<w form="ud-da" lemma="ud" pos="N" label="day(light)">ud-da</w>
+<note id="c0204.n32" lang="eng" target="c0204.32">Dialogue 2, 5.4.02</note>
+</l>
+<l n="33" id="c0204.33">
+<w form="3" lemma="3" pos="NU" type="cardinal" label="3">3</w>
+<w form="dumu" lemma="dumu" pos="N" label="child">dumu</w>
+<w form="e2-dub-ba" lemma="e2-dub-ba-a" pos="N" label="scribal school">e2-dub-ba</w>
+<note id="c0204.n33" lang="eng" target="c0204.33">five compositions are known with this incipit: E-dub-ba-a A, 5.1.1; E-dub-ba-a C, 5.1.3; E-dub-ba-a E, 5.1.5; Dialogue 1, 5.4.01; Dialogue 3, 5.4.03</note>
+</l>
+<l n="34" id="c0204.34">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="NI" lemma="NI" label="NI">NI</w>
+<w form="IL2" lemma="IL2" label="IL&s2;">IL2</w>
+</l>
+<l n="35" id="c0204.35">
+<w form="ud-ul-la-ur11" lemma="ud-ul-ur11-ru" pos="N" type="PN" label="Ud-ul-uru">ud-ul-la-ur11</w>
+<note id="c0204.n35" lang="eng" target="c0204.35"><xref doc="c.5.6.3">The farmer's instructions, 5.6.3</xref></note>
+</l>
+<l n="36" id="c0204.36">
+<w form="in-nin" lemma="in-nin" pos="N" label="mistress">in-nin</w>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="gal-gal" lemma="gal" pos="V" label="to be big" form-type="RR">gal-gal</w>
+<note id="c0204.n36" lang="eng" target="c0204.36"><xref doc="c.1.3.3">Inana and &C;u-kale-tuda, 1.3.3</xref></note>
+</l>
+<l n="37" id="c0204.37">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="ul" lemma="ul" pos="N" label="distant time">ul</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki-ta" lemma="ki" pos="N" label="place">ki-ta</w>
+<note id="c0204.n37" lang="eng" target="c0204.37"><xref doc="c.1.8.2.1">Lugalbanda in the mountain cave, 1.8.2.1</xref></note>
+</l>
+<l n="38" id="c0204.38">
+<w form="LUM" lemma="LUM" label="LUM">LUM</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="ki-ta" lemma="ki" pos="N" label="place">ki-ta</w>
+</l>
+<l n="39" id="c0204.39">
+<w form="&d;lugal-ban3-da" lemma="lugal-ban3-da" pos="N" type="DN" label="Lugalbanda" det="&d;">&d;lugal-ban3-da</w>
+<note id="c0204.n39" lang="eng" target="c0204.39"><xref doc="c.1.8.2.2">Lugalbanda and the Anzud bird, 1.8.2.2</xref></note>
+</l>
+<l n="40" id="c0204.40">
+<w form="iri&ki;" lemma="iri" pos="N" label="town" det="&ki;">iri&ki;</w>
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<note id="c0204.n40" lang="eng" target="c0204.40"><xref doc="c.1.8.2.3">Enmerkar and the lord of Aratta, 1.8.2.3</xref></note>
+</l>
+<l n="41" id="c0204.41">
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="ud" lemma="ud" pos="N" label="storm">ud</w>
+<w form="me-lem4-bi" lemma="me-lem4" pos="N" label="(awesome) radiance">me-lem4-bi</w>
+<w form="nir-jal2" lemma="nir-jal2" pos="AJ" label="authoritative">nir-<damage/>jal2</w>
+<damageEnd/>
+<note id="c0204.n41" lang="eng" target="c0204.41"><xref doc="c.1.6.2">Ninurta's exploits: a <foreign lang="sux">&c;ir-sud</foreign> (?) to Ninurta, 1.6.2</xref></note>
+</l>
+<l n="42" id="c0204.42">
+<w form="an-gin7" lemma="an" pos="N" type="DN" label="An">an-gin7</w>
+<w form="dim2-ma" lemma="dim2" pos="V" label="to create">dim2-ma</w>
+<note id="c0204.n42" lang="eng" target="c0204.42"><xref doc="c.1.6.1">Ninurta's return to Nibru: a <foreign lang="sux">&c;ir-gida</foreign> to Ninurta, 1.6.1</xref></note>
+</l>
+<l n="43" id="c0204.43">
+<w form="11" lemma="11" pos="NU" type="cardinal" label="11">11</w>
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+</l>
+<l n="44" id="c0204.44">
+<w form="tur3-ra-na" lemma="tur3" pos="N" label="animal stall">tur3-ra-na</w>
+<note id="c0204.n44" lang="eng" target="c0204.44"><xref doc="c.2.2.2">The lament for Urim, 2.2.2</xref></note>
+</l>
+<l n="45" id="c0204.45">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="bal" lemma="bal" pos="V" label="to turn over">bal</w>
+<w form="ki-ta" lemma="ak" pos="V" label="to do">ki-ta</w>
+<note id="c0204.n45" lang="eng" target="c0204.45"><xref doc="c.2.2.3">The lament for Sumer and Urim, 2.2.3</xref></note>
+</l>
+<l n="46" id="c0204.46">
+<w form="ud" lemma="ud" pos="N" label="storm">ud</w>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<w form="ki-en-gi-ra" lemma="ki-en-gi" pos="N" type="GN" label="Sumer">ki-en-gi-ra</w>
+</l>
+<l n="47" id="c0204.47">
+<w form="ur-saj-e" lemma="ur-saj" pos="N" label="hero">ur-saj-e</w>
+<note id="c0204.n47" lang="eng" target="c0204.47"><xref doc="c.1.5.1">Nanna-Suen's journey to Nibru, 1.5.1</xref></note>
+</l>
+<l n="48" id="c0204.48">
+<w form="ud-bi-ta" lemma="ud" pos="N" label="day(light)">ud-bi-ta</w>
+</l>
+<l n="49" id="c0204.49">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="an-ne2" lemma="an" pos="N" type="DN" label="An">an-ne2</w>
+</l>
+<l n="50" id="c0204.50">
+<foreign lang="akk">
+i-nu
+an
+u3
+&d;en-lil2
+</foreign>
+</l>
+<l n="51" id="c0204.51">
+<w form="&d;en-lil2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2</w>
+<w form="dirig-ce3" lemma="dirig" pos="V" label="to be superior">dirig-ce3</w>
+<note id="c0204.n51" lang="eng" target="c0204.51"><xref doc="c.2.5.4.01">I&c;me-Dagan A, 2.5.4.01</xref></note>
+</l>
+<l n="52" id="c0204.52">
+<w form="ku6-ju10" lemma="ku6" pos="N" label="fish">ku6-ju10</w>
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="du3" lemma="du3" pos="V" label="to erect">du3</w>
+<note id="c0204.n52" lang="eng" target="c0204.52"><xref doc="c.5.9.1">The home of the fish, 5.9.1</xref></note>
+</l>
+<l n="53" id="c0204.53">
+<w form="ur-saj" lemma="ur-saj" pos="N" label="hero">ur-saj</w>
+<w form="kur-ra" lemma="kur" pos="N" label="(mountain) land">kur-ra</w>
+</l>
+<l n="54" id="c0204.54">
+<w form="iri-am3" lemma="iri" pos="N" label="town">iri-am3</w>
+<w form="er2" lemma="er2" pos="N" label="tear">er2</w>
+<w form="a-nir-ra" lemma="a-nir" pos="N" label="lament"><unclear cert="cor">a</unclear>-nir-ra</w>
+</l>
+<l n="55" id="c0204.55">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="i-lu" lemma="i-lu" pos="N" label="(sad) song">i-lu</w>
+<w form="di" lemma="dug4" pos="V" label="to say" form-type="nfi">di</w>
+</l>
+<l n="56" id="c0204.56">
+<w form="cu-nijin" lemma="cu-nijin2" pos="N" label="total">cu-nijin</w>
+<w form="67" lemma="67" pos="NU" type="cardinal" label="67">67</w>
+</l>
+</body>
+</text>
+</TEI.2>

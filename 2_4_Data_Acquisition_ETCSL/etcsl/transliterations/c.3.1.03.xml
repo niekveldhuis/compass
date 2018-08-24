@@ -1,0 +1,228 @@
+<TEI.2 id="c.3.1.03">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Letter from Arad&g;u to &C;ulgi about irrigation work -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Esther Fl&uuml;ckiger-Hawker</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2001</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b729">Michalowski 1976</xref><biblScope type="page">167-171</biblScope><biblScope type="contents">commentary, composite text, score transliteration, translation</biblScope></bibl>
+<bibl><xref from="b732">Huber 1998</xref><biblScope type="page">33 (l. 3), 36, 41 (l. 3), 46 (l. 3), 75 (ll. 4-6), 76, 80, 85</biblScope><biblScope type="contents">commentary, composite text</biblScope></bibl>
+<bibl><xref from="b737">Wilcke 1970a</xref><biblScope type="page">67-69</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">Ni 9706 (ISET 2 111-112 = Orientalia 22 pls. 38-39 = UMB 17/2 fg. 4) rev. iii' 13'-34'</biblScope><biblScope type="composLines">1-22</biblScope></bibl>
+<bibl><biblScope type="museumNumber">A w/n</biblScope></bibl>
+<bibl><biblScope type="museumNumber">CBS 7787</biblScope><note>Gerardi, A Bibliography of the Tablet Collections of the University Museum = OPBF 8, Philadelphia (1984) 94</note></bibl>
+<bibl><biblScope type="museumNumber">CBS 8385+N 3290</biblScope><note>Gerardi, A Bibliography of the Tablet Collections of the University Museum = OPBF 8, Philadelphia (1984) 105</note></bibl>
+<bibl><biblScope type="museumNumber">N 2884</biblScope><note>Civil, Catalogue (3.13)</note></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>26.iii.2001-28.iii.2001</date><respStmt><name>EFH</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>18.v.2001</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>03.viii.2001</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>24.viii.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>24.viii.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c3103.1" corresp="t3103.p1">
+<w form="lugal-ju10-ra" lemma="lugal" pos="N" label="king">lugal-ju10-ra</w>
+<w form="u3-na-a-dug4" lemma="dug4" pos="V" label="to say">u3-na-a-dug4</w>
+</l>
+<l n="2" id="c3103.2" corresp="t3103.p1">
+<w form="&m;arad-ju10" lemma="arad-ju10" pos="N" type="PN" label="Arad&g;u" det="&m;">&m;arad-ju10</w>
+<w form="arad-zu" lemma="arad" pos="N" label="slave">arad-zu</w>
+<w form="na-ab-be2-a" lemma="dug4" pos="V" label="to say" form-type="ppli">na-ab-be2-a</w>
+</l>
+<l n="3" id="c3103.3" corresp="t3103.p2">
+<w form="lugal-ju10" lemma="lugal" pos="N" label="king">lugal-ju10</w>
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="na-me-ce3" lemma="na-me" pos="PD" type="indefinite" label="any">na-me-ce3</w>
+<w form="a2-ce" lemma="a2-ce" pos="AV" label="now">a2-ce</w>
+<w form="mu-e-da-a-aj2" lemma="aj2" pos="V" label="to measure">mu-e-da-a-aj2</w>
+</l>
+<l n="4" id="c3103.4" corresp="t3103.p2">
+<w form="a-ab-ba" lemma="a-ab-ba" pos="N" label="sea(water)">a-ab-ba</w>
+<w form="kur" lemma="kur" pos="N" label="(mountain) land">kur</w>
+<w form="dilmun&ki;-na-ta" lemma="dilmun" pos="N" type="GN" label="Dilmun" det="&ki;">dilmun&ki;-na-ta</w>
+</l>
+<l n="5" id="c3103.5" corresp="t3103.p2">
+<addSpan to="c3103.v1" type="primary"/>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="mun4" lemma="mun" pos="N" label="salt">mun4</w>
+<w form="gaba" lemma="gaba" pos="N" label="chest">gaba</w>
+<w form="kur" lemma="kur" pos="N" label="(mountain) land">kur</w>
+<w form="mar-tu&ki;-ta" lemma="mar-tu" pos="N" type="EN" label="Martu" det="&ki;">mar-tu&ki;-ta</w>
+<anchor id="c3103.v1"/>
+<addSpan to="c3103.v2" type="secondary"/>
+<note id="c3103.n1" lang="eng" target="c3103.v1">some mss. have instead:</note>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="mun4" lemma="mun" pos="N" label="salt">mun4</w>
+<w form="gaba" lemma="gaba" pos="N" label="chest">gaba</w>
+<w form="kur" lemma="kur" pos="N" label="(mountain) land">kur</w>
+<w form="mar-tu&ki;-ce3" lemma="mar-tu" pos="N" type="EN" label="Martu" det="&ki;">mar-tu&ki;-ce3</w>
+<anchor id="c3103.v2"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c3103.v1 c3103.v2"/></altGrp>
+<l n="6" id="c3103.6" corresp="t3103.p2">
+<addSpan to="c3103.v3" type="primary"/>
+<damage/>
+<w form="da" lemma="da" pos="N" label="side"><unclear cert="qry">da</unclear></w>
+<damageEnd/>
+<anchor id="c3103.v3"/>
+<addSpan to="c3103.v4" type="secondary"/>
+<note id="c3103.n2" lang="eng" target="c3103.v3">1 ms. has instead:</note>
+<damage/>
+<w form="gaba" lemma="gaba" pos="N" label="chest"><unclear cert="qry">gaba</unclear></w>
+<damageEnd/>
+<anchor id="c3103.v4"/>
+<w form="si-mu-ur-ru-um" lemma="si-mu-ur-ru-um" pos="N" type="SN" label="Simurrum">si-mu-ur-ru-um</w>
+<addSpan to="c3103.v5" type="primary"/>
+<supplied/>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma<suppliedEnd/>-da</w>
+<w form="X&ki;-ce3" lemma="X" pos="N" type="SN" label="unclear" det="&ki;">X&ki;-ce3</w>
+<anchor id="c3103.v5"/>
+<addSpan to="c3103.v6" type="secondary"/>
+<note id="c3103.n3" lang="eng" target="c3103.v5">1 ms. has instead:</note>
+<w form="ma-da" lemma="ma-da" pos="N" label="land">ma-da</w>
+<w form="su-bir4&ki;-ta" lemma="su-bir4" pos="N" type="GN" label="Subir" det="&ki;">su-bir4&ki;-ta</w>
+<anchor id="c3103.v6"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c3103.v3 c3103.v4"/>
+<alt targType="addSpan" targets="c3103.v5 c3103.v6"/></altGrp>
+<l n="7" id="c3103.7" corresp="t3103.p3">
+<w form="iri&ki;" lemma="iri" pos="N" label="town" det="&ki;">iri&ki;</w>
+<w form="dili-dili-bi" lemma="dili" pos="AJ" label="single" form-type="RR">dili-dili-bi</w>
+<addSpan to="c3103.v7" type="primary"/>
+<w form="ma-da-ma-da-bi" lemma="ma-da" pos="N" label="land" form-type="RR">ma-da-ma-da-bi</w>
+<anchor id="c3103.v7"/>
+<addSpan to="c3103.v8" type="secondary"/>
+<note id="c3103.n4" lang="eng" target="c3103.v7">1 ms. has instead:</note>
+<w form="ugnim-be2-ne" lemma="ugnim" pos="N" label="troops">ugnim-be2-ne</w>
+<anchor id="c3103.v8"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c3103.v7 c3103.v8"/></altGrp>
+<l n="8" id="c3103.8" corresp="t3103.p3">
+<w form="id2" lemma="id2" pos="N" label="watercourse">id2</w>
+<w form="a-cag4" lemma="a-cag4" pos="N" label="field">a-cag4</w>
+<w form="a-gar3-bi" lemma="a-gar3" pos="N" label="meadow">a-gar3-bi</w>
+<w form="u3" lemma="u3" pos="C" label="and">u3</w>
+<w form="eg2" lemma="eg2" pos="N" label="embankment">eg2</w>
+<w form="pa5-bi" lemma="pa5" pos="N" label="canal">pa5-bi</w>
+</l>
+<l n="9" id="c3103.9" corresp="t3103.p3">
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="IN" lemma="IN" label="INe">IN</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+<w form="DU" lemma="DU" label="DU">DU</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart"><unclear cert="qry">cag4</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="10" id="c3103.10" corresp="t3103.p3">
+<w form="iri&ki;-iri&ki;" lemma="iri" pos="N" label="town" form-type="RR" det="&ki;">iri&ki;-iri&ki;</w>
+<w form="jic" lemma="jic" pos="N" label="tree">jic</w>
+<w form="tuku" lemma="tuku" pos="V" label="to have">tuku</w>
+<w form="lugal-ju10" lemma="lugal" pos="N" label="king">lugal-ju10</w>
+</l>
+<l n="11" id="c3103.11" corresp="t3103.p3">
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="BI" lemma="BI" label="BI">BI</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+<w form="ur2" lemma="ur2" pos="N" label="root">ur2</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+</l>
+<l n="12" id="c3103.12" corresp="t3103.p4">
+<w form="bad3-bi" lemma="bad3" pos="N" label="wall"><unclear cert="qry">bad3</unclear>-bi</w>
+<w form="en-nu-uj3" lemma="en-nu-uj3" pos="N" label="guard">en-nu-uj3</w>
+<w form="kalag-ga" lemma="kalag" pos="V" label="to be strong"><unclear cert="qry">kalag</unclear>-ga</w>
+<w form="bi2-gub" lemma="gub" pos="V" label="to stand">bi2-gub</w>
+</l>
+<l n="13" id="c3103.13" corresp="t3103.p4">
+<w form="ugnim-bi" lemma="ugnim" pos="N" label="troops">ugnim-bi</w>
+<w form="gu2" lemma="gu2" pos="N" label="neck">gu2</w>
+<w form="jic" lemma="jic" pos="N" label="tree">jic</w>
+<w form="bi2-jar-jar" lemma="jar" pos="V" label="to place" form-type="RR">bi2-jar-jar</w>
+</l>
+<l n="14" id="c3103.14" corresp="t3103.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="sig" lemma="sig" pos="V" label="to be low"><unclear cert="qry">sig</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="NE" lemma="NE" label="NE">NE</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="15" id="c3103.15" corresp="t3103.p5">
+<w form="a-gar3" lemma="a-gar3" pos="N" label="meadow">a-gar3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="jar-ra-bi" lemma="jar" pos="V" label="to place">jar-ra-bi</w>
+<w form="a-ta" lemma="a" pos="N" label="water">a-ta</w>
+<w form="im-ta-e3" lemma="e3" pos="V" label="to go out or in">im-ta-e3</w>
+</l>
+<l n="16" id="c3103.16" corresp="t3103.p5">
+<w form="X" lemma="X" label="X">X</w>
+<w form="eg2" lemma="eg2" pos="N" label="embankment">eg2</w>
+<w form="zal-la-bi" lemma="zal" pos="V" label="to pass">zal-la-bi</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="bi2-ak" lemma="ak" pos="V" label="to do">bi2-ak</w>
+</l>
+<l n="17" id="c3103.17" corresp="t3103.p5">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="a-cag4-bi" lemma="a-cag4" pos="N" label="field">a-cag4-bi</w>
+<w form="jic-gi" lemma="jic-gi" pos="N" label="reedbed">jic-gi</w>
+<w form="X-ra" lemma="X" label="X">X-ra</w>
+</l>
+<l n="18" id="c3103.18" corresp="t3103.p5">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X-ke4" lemma="X" label="X">X-<unclear cert="qry">ke4</unclear></w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="sag3-ge" lemma="sag3" pos="V" label="to beat">sag3-ge</w>
+<w form="X-bi" lemma="X" label="X">X-bi</w>
+</l>
+<gap extent="4 lines fragmentary"/>
+<gap extent="unknown no. of lines missing"/>
+</body>
+</text>
+</TEI.2>

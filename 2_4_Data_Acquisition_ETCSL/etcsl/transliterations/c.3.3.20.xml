@@ -1,0 +1,131 @@
+<TEI.2 id="c.3.3.20">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Letter from Gudea to his personal deity -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Senior Editor</resp></respStmt>
+<respStmt><name>Esther Fl&uuml;ckiger-Hawker</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2001</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b777">B&ouml;ck 1996</xref><biblScope type="page">11-12, 19</biblScope><biblScope type="contents">commentary, translation, score transliteration</biblScope><note>ll. 3-6, 10</note></bibl>
+<bibl><xref from="b782">Kramer and Bernhardt 1961</xref><biblScope type="page">20-21</biblScope><biblScope type="contents">commentary, translation, score transliteration</biblScope></bibl>
+<bibl><xref from="b854">Michalowski 2001a</xref><biblScope type="contents">composite text</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">HS 1444 (TMH NF 3 56)</biblScope><biblScope type="composLines">1-10</biblScope></bibl>
+<bibl><biblScope type="museumNumber">UM 29-15-995</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>17.vii.2001-19.vii.2001</date><respStmt><name>EFH</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>15.xi.2001</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>20.xi.2001</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>23.xi.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>23.xi.2001</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c3320.1" corresp="t3320.p1">
+<damage/>
+<w form="dijir-ja2" lemma="dijir" pos="N" label="deity">dijir<damageEnd/>-ja2</w>
+<w form="u3-na-dug4" lemma="dug4" pos="V" label="to say">u3-na-<damage/>dug4</w>
+<damageEnd/>
+</l>
+<l n="2" id="c3320.2" corresp="t3320.p1">
+<w form="&m;gu3-de2-a" lemma="gu3-de2-a" pos="N" type="PN" label="Gudea" det="&m;">&m;gu3-<damage/>de2<damageEnd/>-a</w>
+<w form="arad-zu" lemma="arad" pos="N" label="slave">arad-zu</w>
+<w form="na-ab-be2-a" lemma="dug4" pos="V" label="to say" form-type="ppli">na-ab-<damage/>be2<damageEnd/>-a</w>
+</l>
+<l n="3" id="c3320.3" corresp="t3320.p2">
+<w form="udu-gin7" lemma="udu" pos="N" label="sheep">udu-gin7</w>
+<w form="sipad" lemma="sipad" pos="N" label="shepherd">sipad</w>
+<w form="gen6-na" lemma="gen6" pos="V" label="to be firm">gen6-na</w>
+<w form="nu-tuku" lemma="tuku" pos="V" label="to have">nu-tuku</w>
+</l>
+<l n="4" id="c3320.4" corresp="t3320.p2">
+<w form="na-gada" lemma="na-gada" pos="N" label="herdsman">na-gada</w>
+<w form="gen6-na" lemma="gen6" pos="V" label="to be firm">gen6-na</w>
+<w form="nu-mu-un-tum2-tum2-mu" lemma="de6" pos="V" label="to carry" form-type="RR-isg">nu-mu-un-tum2-tum2-mu</w>
+</l>
+<l n="5" id="c3320.5" corresp="t3320.p3">
+<w form="dam-gara3" lemma="dam-gara3" pos="N" label="merchant">dam-gara3</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="du3-du3" lemma="du3" pos="V" label="to erect" form-type="RR">du3-du3</w>
+<w form="nu-zu" lemma="zu" pos="V" label="to know">nu-zu</w>
+<w form="bal-ce3" lemma="bal" pos="V" label="to turn over">bal-<unclear cert="cor">ce3</unclear></w>
+<w form="mu-X-ak" lemma="ak" pos="V" label="to do">mu-X-ak</w>
+</l>
+<l n="6" id="c3320.6" corresp="t3320.p3">
+<w form="ance-gin7" lemma="ance" pos="N" label="donkey">ance-gin7</w>
+<w form="&kuc;usan3" lemma="usan3" pos="N" label="whip" det="&kuc;">&kuc;usan3</w>
+<w form="hul-jal2-la" lemma="hul-jal2" pos="AJ" label="evil">hul-jal2-la</w>
+<w form="hul-jal2-la" lemma="hul-jal2" pos="AJ" label="evil">hul-jal2-la</w>
+<w form="bi2-in-X" lemma="X" label="X">bi2-in-<supplied/>X</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c3320.7" corresp="t3320.p4">
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="i3-tuku" lemma="tuku" pos="V" label="to have">i3-tuku</w>
+<w form="inim" lemma="inim" pos="N" label="word">inim</w>
+<w form="nu-um-me" lemma="dug4" pos="V" label="to say" form-type="ppli">nu-um-<unclear cert="cor">me</unclear></w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="tuku" lemma="tuku" pos="V" label="to have">tuku</w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="mu-&X;-un-X" lemma="X" label="X">mu-<supplied/>&X;<suppliedEnd/>-<damage/>un<damageEnd/>-X</w>
+</l>
+<l n="8" id="c3320.8" corresp="t3320.p4">
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="ak-a-ju10" lemma="ak" pos="V" label="to do">ak-a-ju10</w>
+<w form="igi" lemma="igi" pos="N" label="eye"><unclear cert="qry">igi</unclear></w>
+<w form="a-ra2" lemma="a-ra2" pos="N" label="times">a-ra2</w>
+<w form="7-e" lemma="7" pos="NU" type="cardinal" label="7">7-e</w>
+<w form="nu-un-DU" lemma="DU" pos="V" label="DU">nu-un-DU</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="9" id="c3320.9" corresp="t3320.p4">
+<w form="zag-ba" lemma="zag" pos="N" label="side">zag-ba</w>
+<w form="a-ra2" lemma="a-ra2" pos="N" label="times">a-ra2</w>
+<w form="7-e" lemma="7" pos="NU" type="cardinal" label="7">7-e</w>
+<w form="nu-mu-un-da-pad3-X-X" lemma="pad3" pos="V" label="to find">nu-mu-un-da-pad3-<supplied/>X<suppliedEnd/>-X</w>
+</l>
+<l n="10" id="c3320.10" corresp="t3320.p5">
+<w form="dijir-ju10" lemma="dijir" pos="N" label="deity">dijir-ju10</w>
+<damage/>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<damageEnd/>
+<w form="kur2" lemma="kur2" pos="V" label="to be different">kur2</w>
+<w form="di" lemma="dug4" pos="V" label="to say" form-type="nfi">di</w>
+<w form="nu-me-en" lemma="me" pos="V" label="to be">nu-me-en</w>
+<w form="cag4-zu" lemma="cag4" pos="N" label="heart">cag4-zu</w>
+<damage/>
+<w form="ki-bi" lemma="ki" pos="N" label="place"><unclear cert="cor">ki</unclear><damageEnd/>-<unclear cert="cor">bi</unclear></w>
+<damage/>
+<w form="ha-ma-ab-gi4-gi4" lemma="gi4" pos="V" label="to return" form-type="RR">ha<damageEnd/>-ma-ab-gi4-<damage/>gi4</w>
+<damageEnd/>
+</l>
+</body>
+</text>
+</TEI.2>

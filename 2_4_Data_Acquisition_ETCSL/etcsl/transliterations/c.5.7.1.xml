@@ -1,0 +1,204 @@
+<TEI.2 id="c.5.7.1">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Enlil and Nam-zid-tara -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1998</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b190">Vanstiphout 1980</xref><biblScope type="contents">commentary</biblScope></bibl>
+<bibl><xref from="b307">Krecher 1996</xref><biblScope type="contents">composite text</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b308">Krecher 1996a</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b133">Klein 1990</xref><biblScope type="contents">translation, commentary</biblScope><note>ll. 17-21</note></bibl>
+<bibl><xref from="b346">Civil 1974</xref><biblScope type="contents">composite text, translation, commentary</biblScope></bibl>
+<bibl><xref from="b347">Alster 1990a</xref><biblScope type="contents">translation</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets"><bibl><biblScope type="museumNumber">3N-T 326 (= IM 58427) + 3N-T 360 (= A 30218) ix 8ff.</biblScope></bibl>
+<bibl><biblScope type="museumNumber">CBS 4605 (PBS 12 31)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 5149 obv.</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 5909 obv.</biblScope></bibl>
+<bibl><biblScope type="museumNumber">CBS 7917 + N 4784 obv.</biblScope></bibl>
+<bibl><biblScope type="museumNumber">UM 29-16-79A iii</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 3097*</biblScope></bibl>
+</listBibl></sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>31.x.1998</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>30.xi.1998</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>11.xii.1998</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>15.i.99</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>22.i.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c571.1" corresp="t571.p1">
+<w form="nam-zid-tar-ra" lemma="nam-zid-tar-ra" pos="N" type="PN" label="Nam-zid-tara">nam-zid-tar-ra</w>
+<w form="&d;en-lil2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2</w>
+<w form="mu-zal-le" lemma="zal" pos="V" label="to pass">mu-zal-le</w>
+</l>
+<l n="2" id="c571.2" corresp="t571.p1">
+<w form="inim" lemma="inim" pos="N" label="word">inim</w>
+<w form="in-na-an-dug4" lemma="dug4" pos="V" label="to say">in-na-an-dug4</w>
+</l>
+<l n="3" id="c571.3" corresp="t571.p1">
+<w form="me-ta-am3" lemma="me-ta" pos="AV" label="type of time and place adverbial">me-ta-am3</w>
+<w form="nam-zid-tar-ra" lemma="nam-zid-tar-ra" pos="N" type="PN" label="Nam-zid-tara">nam-zid-tar-ra</w>
+</l>
+<l n="4" id="c571.4" corresp="t571.p1">
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="&d;en-lil2-la2-ta" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-la2-ta</w>
+</l>
+<l n="5" id="c571.5" corresp="t571.p1">
+<w form="bal" lemma="bal" pos="N" label="term (in office)">bal</w>
+<w form="gub-ba-ju10" lemma="gub" pos="V" label="to stand">gub-ba-ju10</w>
+<w form="bi2-silim-ma-am3" lemma="silim" pos="V" label="to be healthy">bi2-silim-ma-am3</w>
+</l>
+<l n="6" id="c571.6" corresp="t571.p1">
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="gudug-e-ne-ka" lemma="gudug" pos="N" label="type of priest">gudug-e-ne-ka</w>
+<w form="udu-bi-da" lemma="udu" pos="N" label="sheep">udu-bi-da</w>
+<w form="i3-gub-bu-nam" lemma="gub" pos="V" label="to stand">i3-gub-bu-nam</w>
+</l>
+<l n="7" id="c571.7" corresp="t571.p1">
+<w form="e2-ju10-ce3" lemma="e2" pos="N" label="house(hold)">e2-ju10-ce3</w>
+<w form="al-du-un" lemma="jen" pos="V" label="to go" form-type="isg">al-du-un</w>
+</l>
+<l n="8" id="c571.8" corresp="t571.p1">
+<w form="nam-mu-un-gub-be2-en" lemma="gub" pos="V" label="to stand">nam-mu-un-gub-be2-en</w>
+</l>
+<l n="9" id="c571.9" corresp="t571.p1">
+<w form="jiri3-ju10" lemma="jiri3" pos="N" label="foot">jiri3-ju10</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="tab2-tab2" lemma="tab2" pos="V" label="to burn" form-type="RR">tab2-tab2</w>
+</l>
+<l n="10" id="c571.10" corresp="t571.p1">
+<w form="a-ba-am3" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-am3</w>
+<w form="za-e-me-en" lemma="za" pos="PD" type="personal" label="you (sg.)">za-e-me-en</w>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<phr type="VP" lemma="en3 tar" label="to ask">
+<w form="en3" lemma="en3" pos="N" label="noun part of multiword verb">en3</w>
+<w form="mu-e-ci-tar-re-en" lemma="tar" pos="V" label="to cut">mu-e-ci-tar-re-en</w>
+</phr>
+</l>
+<l n="11" id="c571.11" corresp="t571.p2">
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="&d;en-lil2-me-en" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-me-en</w>
+</l>
+<l n="12" id="c571.12" corresp="t571.p2">
+<w form="&d;en-lil2-le" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-le</w>
+<w form="igi-ni" lemma="igi" pos="N" label="eye">igi-ni</w>
+<w form="mu-ni-in-gi4" lemma="gi4" pos="V" label="to return">mu-ni-in-gi4</w>
+</l>
+<l n="13" id="c571.13" corresp="t571.p2">
+<w form="uga&mucen;-ac" lemma="uga" pos="N" label="raven" bound="L,ece" det="&mucen;">uga&mucen;-ac</w>
+<w form="u3-mu-ni-in-kur9" lemma="kur9" pos="V" label="to enter">u3-mu-ni-in-kur9</w>
+</l>
+<l n="14" id="c571.14" corresp="t571.p2">
+<w form="gu3" lemma="gu3" pos="N" label="voice">gu3</w>
+<w form="al-de2-de2-e" lemma="de2" pos="V" label="to pour" form-type="RR">al-de2-de2-e</w>
+</l>
+<l n="15" id="c571.15" corresp="t571.p2">
+<w form="uga&mucen;" lemma="uga" pos="N" label="raven" det="&mucen;">uga&mucen;</w>
+<w form="nu-me-en" lemma="me" pos="V" label="to be">nu-me-en</w>
+<w form="&d;en-lil2-me-en" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-me-en</w>
+</l>
+<l n="16" id="c571.16" corresp="t571.p2">
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="mu-tar-ra" lemma="tar" pos="V" label="to cut">mu-tar-ra</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="&d;en-lil2-me-en" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-me-en</w>
+<w form="a-gin7" lemma="a-gin7" pos="AV" label="type of manner adverbial">a-gin7</w>
+<w form="bi2-zu" lemma="zu" pos="V" label="to know">bi2-zu</w>
+</l>
+<l n="17" id="c571.17" corresp="t571.p3">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="en-me-car2-ra" lemma="en-me-car2-ra" pos="N" type="DN" label="En-me-&c;ara">en-me-car2-ra</w>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<w form="ad-da-zu" lemma="ad-da" pos="N" label="father">ad-da-zu</w>
+<w form="LU2&times;KAR2-da-a" lemma="LU2&times;KAR2" pos="N" label="LU&s2;&times;KAR&s2;">LU2&times;KAR2-da-a</w>
+</l>
+<l n="18" id="c571.18" corresp="t571.p3">
+<w form="nam-&d;en-lil2" lemma="nam-en-lil2" pos="N" label="status as principal deity" det="&d;">nam-&d;en-lil2</w>
+<w form="ba-e-de6-a" lemma="de6" pos="V" label="to carry">ba-e-de6-a</w>
+<w form="ud-de3" lemma="ud" pos="N" label="day(light)">ud-de3</w>
+<w form="en-gin7" lemma="en" pos="N" label="lord">en-gin7</w>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<damage/>
+<w form="ga-zu-e-ce" lemma="zu" pos="V" label="to know">ga<damageEnd/>-zu-e-ce</w>
+</l>
+<l n="19" id="c571.19" corresp="t571.p4">
+<w form="kug" lemma="kug" pos="N" label="precious metal">kug</w>
+<w form="he2-tuku" lemma="tuku" pos="V" label="to have">he2-tuku</w>
+<w form="za" lemma="za" pos="N" label="stone">za</w>
+<w form="he2-tuku" lemma="tuku" pos="V" label="to have">he2-tuku</w>
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<w form="he2-tuku" lemma="tuku" pos="V" label="to have">he2-tuku</w>
+<w form="udu" lemma="udu" pos="N" label="sheep">udu</w>
+<w form="he2-tuku" lemma="tuku" pos="V" label="to have">he2-tuku</w>
+</l>
+<l n="20" id="c571.20" corresp="t571.p4">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="nam-lu2-u18-lu" lemma="nam-lu2-ulu3" pos="N" label="humanity">nam-lu2-u18-lu</w>
+<w form="al-ku-nu" lemma="ku-nu" pos="V" label="to be close">al-ku-nu</w>
+</l>
+<l n="21" id="c571.21" corresp="t571.p4">
+<w form="nij2-tuku-zu" lemma="nij2-tuku" pos="AJ" label="rich">nij2-tuku-zu</w>
+<w form="me-ce3" lemma="me-ce3" pos="AV" label="where">me-ce3</w>
+<w form="e-tum3-ma" lemma="de6" pos="V" label="to carry" form-type="isg">e-tum3-ma</w>
+</l>
+<l n="22" id="c571.22" corresp="t571.p4">
+<w form="&d;en-lil2-me-en" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-me-en</w>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="mu-tar-ra" lemma="tar" pos="V" label="to cut">mu-tar-ra</w>
+</l>
+<l n="23" id="c571.23" corresp="t571.p4">
+<w form="a-ba-am3" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-am3</w>
+<w form="mu-zu" lemma="mu" pos="N" label="name">mu-zu</w>
+</l>
+<l n="24" id="c571.24" corresp="t571.p5">
+<w form="nam-zid-tar-ra" lemma="nam-zid-tar-ra" pos="N" type="PN" label="Nam-zid-tara">nam-zid-tar-ra</w>
+<w form="mu-ju10-um" lemma="mu" pos="N" label="name">mu-ju10-um</w>
+</l>
+<l n="25" id="c571.25" corresp="t571.p5">
+<w form="mu-zu-gin7" lemma="zu" pos="V" label="to know">mu-zu-gin7</w>
+<w form="nam-zu" lemma="nam" pos="N" label="destiny">nam-zu</w>
+<w form="he2-tar-re" lemma="tar" pos="V" label="to cut">he2-tar-re</w>
+</l>
+<l n="26" id="c571.26" corresp="t571.p5">
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="lugal-za-ka" lemma="lugal" pos="N" label="king">lugal-za-ka</w>
+<w form="e3-a" lemma="e3" pos="V" label="to go out or in">e3-a</w>
+</l>
+<l n="27" id="c571.27" corresp="t571.p5">
+<w form="ibila-zu" lemma="ibila" pos="N" label="heir">ibila-zu</w>
+<w form="e2-ja2" lemma="e2" pos="N" label="house(hold)">e2-ja2</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="sa2-e" lemma="sa2" pos="V" label="to equal">sa2-e</w>
+</phr>
+<w form="he2-en-dib-dib-be2-ne" lemma="dib" pos="V" label="to pass" form-type="RR">he2-en-dib-dib-be2-ne</w>
+</l>
+</body>
+</text>
+</TEI.2>

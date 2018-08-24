@@ -1,0 +1,68 @@
+<TEI.2 id="t.4.08.33">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Dumuzid and Enkimdu -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>29.i.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>04.xii.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>05.xii.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>18.ii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>18.ii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t40833.p1" n="1-6" corresp="c40833.1"><q who="Dumuzid" toWhom="Inana">Maiden, the cattle-pen &X;&X;; maiden <w type="DN">Inana</w>, the sheepfold &X;&X;. &X;&X; bending in the furrows. <w type="DN">Inana</w>, let me stroll with you; &X;&X; the emmer &X;&X;. Young lady, let me &X;&X;.</q></p>
+<p id="t40833.p2" n="7-11" corresp="c40833.7"><q who="Inana" toWhom="Dumuzid">I am a woman and I won't do that, I won't! I am a star &X;&X;, and I won't! I won't be the wife of a shepherd!</q> Her brother, the warrior youth <w type="DN">Utu</w>, said to holy <w type="DN">Inana</w>:</p>
+<p id="t40833.p3" n="12-19" corresp="c40833.12"><q who="Utu" toWhom="Inana">My sister, let the shepherd marry you! Maiden <w type="DN">Inana</w>, why are you unwilling? 
+<addSpan to="t40833.v1"/>His butter is good, his milk is good
+<anchor id="t40833.v1"/>
+<addSpan to="t40833.v2"/><note id="t40833.n1" lang="eng" target="t40833.v1">2 mss. have instead:</note> He of good butter, he of good milk
+<anchor id="t40833.v2"/> -- all the work of the shepherd's hands is splendid. <w type="DN">Inana</w>, let <w type="DN">Dumuzid</w> marry you. You who wear jewellery, who wear <foreign lang="sux">&c;uba</foreign> jewels, why are you unwilling? 
+<addSpan to="t40833.v3"/><note id="t40833.n2" lang="eng" target="t40833.v3">1 ms. adds 2 lines:</note> His butter is good, his milk is good -- all the work of the shepherd's hands is splendid.
+<anchor id="t40833.v3"/> He will eat his good butter with you. Protector of the king, why are you unwilling?</q></p>
+<altGrp><alt targType="addSpan" targets="t40833.v1 t40833.v2"/></altGrp>
+<p id="t40833.p4" n="20-34" corresp="c40833.20"><q who="Inana" toWhom="Utu">The shepherd shall not marry me! He shall not make me carry his garments of new wool. His brand new wool will not influence me. Let the farmer marry me, the maiden. With the farmer who grows colourful flax, with the farmer who grows dappled grain &X;&X;.</q>
+<gap extent="1 line fragmentary"/>
+<gap extent="approx. 7 lines missing"/>
+<q who="Inana" toWhom="Utu">The shepherd shall not marry me!</q></p>
+<p id="t40833.p5" n="35-39" corresp="c40833.35">These words &X;&X;. &X;&X;the farmer to the shepherd. My king &X;&X;, the shepherd, <w type="DN">Dumuzid</w> &X;&X;. &X;&X; to say &X;&X;:</p>
+<p id="t40833.p6" n="40-54" corresp="c40833.40"><q id="t40833.q1" who="Dumuzid" toWhom="Inana">In what is the farmer superior to me, the farmer to me, the farmer to me? <w type="DN">Enkimdu</w>, the man of the dykes and canals -- in what is that farmer superior to me? Let him give me his black garment, and I will give the farmer my black ewe for it. Let him give me his white garment, and I will give the farmer my white ewe for it. Let him pour me his best beer, and I will pour the farmer my yellow milk for it. Let him pour me his fine beer, and I will pour the farmer my soured (?) milk for it. Let him pour me his brewed beer, and I will pour the farmer my whipped milk for it. Let him pour me his beer shandy, and I will pour the farmer my &X;&X; milk for it.</q></p>
+<linkGrp><link targType="q" targets="t40833.q1 t40833.q2"/></linkGrp>
+<p id="t40833.p7" n="55-64" corresp="c40833.55"><q id="t40833.q2">Let him give me his best filtered beer, and I will give the farmer my curds (?). Let him give me his best bread, and I will give the farmer my &X;&X; milk for it. Let him give me his little beans, and I will give the farmer my small cheeses for them. 
+<addSpan to="t40833.v4"/><note id="t40833.n3" lang="eng" target="t40833.v4">1 ms. adds 2 lines:</note> Let him give me his large beans, and I will give the farmer my big cheeses for them.
+<anchor id="t40833.v4"/> After letting him eat and letting him drink, I will even leave extra butter for him, and I will leave extra milk for him. In what is the farmer superior to me?</q></p>
+<p id="t40833.p8" n="65-73" corresp="c40833.65">He was cheerful, he was cheerful, at the edge of the riverbank, he was cheerful. On the riverbank, the shepherd on the riverbank, now the shepherd was even pasturing the sheep on the riverbank. The farmer approached the shepherd there, the shepherd pasturing the sheep on the riverbank; the farmer <w type="DN">Enkimdu</w> approached him there. <w type="DN">Dumuzid</w> &X;&X; the farmer, the king of dyke and canal. From the plain where he was, the shepherd from the plain where he was provoked a quarrel with him; the shepherd <w type="DN">Dumuzid</w> from the plain where he was provoked a quarrel with him.</p>
+<p id="t40833.p9" n="74-79" corresp="c40833.74"><q who="Enkimdu" toWhom="Dumuzid">Why should I compete against you, shepherd, I against you, shepherd, I against you? Let your sheep eat the grass of the riverbank, let your sheep graze on my stubble. Let them eat grain in the jewelled (?) fields of <w type="SN">Unug</w>, let your kids and lambs drink water from my <w type="WN">Surungal</w> canal.</q></p>
+<p id="t40833.p10" n="80-83" corresp="c40833.80"><q who="Dumuzid" toWhom="Enkimdu">As for me, I am a shepherd: when I am married, farmer, you are going to be counted as my friend. Farmer <w type="DN">Enkimdu</w>, you are going to be counted as my friend, farmer, as my friend.</q></p>
+<p id="t40833.p11" n="84-87" corresp="c40833.84"><q who="Enkimdu" toWhom="Dumuzid Inana">I will bring you wheat, and I will bring you beans; I will bring you two-row barley from the threshing-floor. And you, maiden, I will bring you whatever you please, maiden <w type="DN">Inana</w>, &X;&X; barley or &X;&X; beans.</q></p>
+<p id="t40833.p12" n="88-89" corresp="c40833.88">The dispute between the shepherd and the farmer: maiden <w type="DN">Inana</w>, your praise is sweet.</p>
+<trailer place="subscript" type="balbale">
+<p id="t40833.p13" n="90" corresp="c40833.90">A <foreign lang="sux">balbale</foreign>.</p>
+</trailer></body>
+</text>
+</TEI.2>

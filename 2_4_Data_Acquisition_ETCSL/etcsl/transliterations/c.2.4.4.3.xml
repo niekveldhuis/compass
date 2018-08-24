@@ -1,0 +1,189 @@
+<TEI.2 id="c.2.4.4.3">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> to Inana for &C;u-Suen (&C;u-Suen C) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b244">Sefati 1998</xref><biblScope type="page">360-364</biblScope><biblScope type="contents">score transliteration, translation, commentary</biblScope></bibl>
+<bibl><xref from="b464">Krecher 1998j</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b605">Sefati 1999</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">N 3560 (PAPS 107 521)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">? UET 6 121 r.</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 4305 ii' 10'f. (PAPS 107 521)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>21.v.1999-03.vi.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>27.vii.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>04.viii.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>16.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>22.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>22.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c2443.1" corresp="t2443.p1">
+<w form="siki-ju10" lemma="siki" pos="N" label="hair">siki-ju10</w>
+<w form="hi-iz&sar;-am3" lemma="hi-iz" pos="N" label="lettuce" bound="L,am" det="&sar;">hi-iz&sar;-am3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="im-ma-an-dug4" lemma="dug4" pos="V" label="to say">im-<damage/>ma<damageEnd/>-<supplied/>an-dug4</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c2443.2" corresp="t2443.p1">
+<w form="hi-iz" lemma="hi-iz" pos="N" label="lettuce">hi-iz</w>
+<w form="gakkul3&sar;-am3" lemma="gakkul" pos="N" label="(plant) heart" bound="L,am" det="&sar;">gakkul3(<unclear cert="cor">U</unclear>.DIM)&sar;-am3</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="im-ma-an-dug4" lemma="dug4" pos="V" label="to say">im-<supplied/>ma-an-dug4</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c2443.3" corresp="t2443.p1">
+<w form="su-hu-uh2-hu-ub4-bi" lemma="suh3" pos="V" label="to blur" form-type="RR">su-hu-uh2-hu-ub4-bi</w>
+<w form="ba-tag-tag" lemma="tag" pos="V" label="to touch" form-type="RR">ba-tag-tag</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c2443.4" corresp="t2443.p1">
+<w form="emeda-ju10" lemma="emeda" pos="N" label="nursemaid"><term id="c2443.t1">emeda(UM.ME)</term><gloss lang="sux" target="c2443.t1">da</gloss>-ju10</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="mu-un-X-X" lemma="X" label="X">mu-un-X-<supplied/>X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c2443.5" corresp="t2443.p1">
+<w form="siki-ju10" lemma="siki" pos="N" label="hair">siki-ju10</w>
+<w form="a-a-lum" lemma="a-a-lum" pos="N" label="stag">a-a-lum</w>
+<w form="im-mi-in-ak" lemma="ak" pos="V" label="to do">im-mi-in-ak</w>
+</l>
+<l n="6" id="c2443.6" corresp="t2443.p1">
+<w form="suh" lemma="suh10" pos="N" label="crown">suh</w>
+<w form="tur-tur-bi" lemma="tur" pos="V" label="to be small" form-type="RR">tur-tur-bi</w>
+<w form="mu-un-dub-dub" lemma="dub" pos="V" label="to heap up" form-type="RR">mu-un-dub-dub</w>
+</l>
+<l n="7" id="c2443.7" corresp="t2443.p1">
+<w form="he2-em-du-ju10" lemma="jen" pos="V" label="to go" form-type="isg">he2-em-du-ju10</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="im-sa2-sa2-e" lemma="sa2" pos="V" label="to equal" form-type="RR">im-sa2-sa2-e</w>
+</phr>
+</l>
+<l n="8" id="c2443.8" corresp="t2443.p1">
+<w form="he2-em-du" lemma="jen" pos="V" label="to go" form-type="isg">he2-em-du</w>
+<w form="siki-ju10" lemma="siki" pos="N" label="hair">siki-ju10</w>
+<w form="hi-iz&sar;" lemma="hi-iz" pos="N" label="lettuce" det="&sar;">hi-iz&sar;</w>
+<w form="nisig" lemma="nisig" pos="N" label="greenery">nisig</w>
+<w form="sag9-sag9-ga-am3" lemma="sag9" pos="V" label="to be good" form-type="RR">sag9-sag9-ga-am3</w>
+</l>
+<l n="9" id="c2443.9" corresp="t2443.p2">
+<damage/>
+<w form="cec-e" lemma="cec" pos="N" label="brother">cec<damageEnd/>-e</w>
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="bar" lemma="bar" pos="V" label="to set aside">bar</w>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="til3-la-na" lemma="til3" pos="V" label="to live"><unclear cert="cor">til3</unclear>-la-na</w>
+<w form="im-ma-ni-in-kur9-re-en" lemma="kur9" pos="V" label="to enter">im-ma-<damage/>ni<damageEnd/>-in-kur9-re-en</w>
+</l>
+<l n="10" id="c2443.10" corresp="t2443.p2">
+<w form="&d;cu-&d;suen" lemma="cu-suen" pos="N" type="RN" label="&C;u-Suen" npart="DN:Suen" det="&d;"><supplied/>&d;<suppliedEnd/>cu-&d;suen</w>
+<damage/>
+<w form="saj-ba" lemma="saj" pos="N" label="head"><unclear cert="qry">saj</unclear>-<unclear cert="qry">ba</unclear></w>
+<damageEnd/>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<w form="im-ma-ni-in-pad3-de3-en" lemma="pad3" pos="V" label="to find">im-ma-ni-in-pad3-<damage/>de3<damageEnd/>-<supplied/>en</w>
+<suppliedEnd/>
+</l>
+<l n="11" id="c2443.11" corresp="t2443.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="hi-li-ju10" lemma="hi-li" pos="N" label="attractiveness">hi-li<suppliedEnd/>-ju10</w>
+<w form="nu-til-le-dam" lemma="til" pos="V" label="to complete">nu-<damage/>til<damageEnd/>-le-dam</w>
+</l>
+<l n="12" id="c2443.12" corresp="t2443.p2">
+<supplied/>
+<w form="&X;-re-dam" lemma="&X;" label="&X;">&X;<suppliedEnd/>-re-dam</w>
+</l>
+<gap extent="5 lines missing"/>
+<l n="18" id="c2443.18" corresp="t2443.p3">
+<distinct type="emesal">
+<w form="u3-mu-un-me" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3-mu-un-me</w>
+</distinct>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+<distinct type="emesal">
+<w form="u3-mu-un-me" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3-<supplied/>mu<suppliedEnd/>-<damage/>un<damageEnd/>-me</w>
+</distinct>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+</l>
+<l n="19" id="c2443.19" corresp="t2443.p3">
+<w form="kug" lemma="kug" pos="N" label="precious metal">kug</w>
+<w form="&na4;za-gin3-na" lemma="za-gin3" pos="N" label="lapis lazuli" bound="L,ak" det="&na4;">&na4;za-gin3-na</w>
+<distinct type="emesal">
+<w form="u3-mu-un-me" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3-mu-un-me</w>
+</distinct>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+</l>
+<l n="20" id="c2443.20" corresp="t2443.p3">
+<distinct type="emesal">
+<w form="mu-un-gar3" lemma="engar" pos="N" label="farmer" emesal="mu-un-gar3">mu-un-gar3</w>
+</distinct>
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="tum3-me" lemma="de6" pos="V" label="to carry" form-type="isg">tum3-me</w>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+</l>
+<l n="21" id="c2443.21" corresp="t2443.p4">
+<w form="igi-ja2" lemma="igi" pos="N" label="eye">igi-ja2</w>
+<w form="lal3-bi-im" lemma="lal3" pos="N" label="syrup">lal3-bi-im</w>
+<w form="cag4-ja2" lemma="cag4" pos="N" label="heart">cag4-ja2</w>
+<w form="hi-li-bi-im" lemma="hi-li" pos="N" label="attractiveness">hi-li-bi-im</w>
+</l>
+<l n="22" id="c2443.22" corresp="t2443.p4">
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="nam-til3-la" lemma="nam-til3" pos="N" label="life">nam-til3-la</w>
+<w form="he2-en-na-e3" lemma="e3" pos="V" label="to go out or in">he2-en-na-e3</w>
+<w form="&d;cu-&d;suen" lemma="cu-suen" pos="N" type="RN" label="&C;u-Suen" npart="DN:Suen" det="&d;">&d;cu-&d;suen</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<trailer place="subscript" type="balbale">
+<l n="23" id="c2443.23" corresp="t2443.p5">
+<w form="bal-bal-e" lemma="bal-bal-e" pos="N" label="type of composition" form-type="RR">bal-bal-e</w>
+<w form="&d;inana-kam" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-kam</w>
+</l>
+</trailer>
+</body>
+</text>
+</TEI.2>

@@ -1,0 +1,305 @@
+<TEI.2 id="c.4.13.14">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A hymn to Nanna (Nanna N) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b506">Sj&ouml;berg 1960</xref><biblScope type="page">97-101</biblScope><biblScope type="contents">score transliteration, translation, commentary</biblScope></bibl>
+<bibl><xref from="b688">Hall 1985</xref><biblScope type="page">497-499</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">VAT 613+ iii 6-38 (VAS 2 4)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>18.v.2000-19.v.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>29.viii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>04.ix.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>20.x.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>20.x.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c41314.1" corresp="t41314.p1">
+<w form="UR2" lemma="UR2" label="UR&s2;">UR2</w>
+<w form="NE-ru" lemma="NE-ru" label="NE-ru">NE-ru</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="kug-ge" lemma="kug" pos="AJ" label="shining">kug-ge</w>
+<w form="si-a" lemma="si" pos="V" label="to fill">si-a</w>
+</l>
+<l n="2" id="c41314.2" corresp="t41314.p1">
+<w form="ku-zu-e" lemma="kug-zu" pos="AJ" label="wise">ku-zu-e</w>
+<w form="mi-li" lemma="me-lem4" pos="N" label="(awesome) radiance">mi-li</w>
+<w form="gur-u3-a" lemma="guru3" pos="V" label="to bear">gur-u3-a</w>
+</l>
+<l n="3" id="c41314.3" corresp="t41314.p1">
+<w form="nanna" lemma="nanna" pos="N" type="DN" label="Nanna">nanna</w>
+<w form="me-en-zu" lemma="men" pos="N" label="diadem">me-en-zu</w>
+<w form="ku-ku-gu" lemma="kug" pos="AJ" label="shining" form-type="RR">ku-ku-gu</w>
+</l>
+<l n="4" id="c41314.4" corresp="t41314.p1">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="di-il5" lemma="dili" pos="AJ" label="single">di-il5</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="UD" lemma="UD" label="UD">UD</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="an-ne" lemma="an" pos="N" label="heaven">an-ne</w>
+<w form="ci-X" lemma="X" label="X">ci-X</w>
+</l>
+<l n="5" id="c41314.5" corresp="t41314.p1">
+<w form="u3-na" lemma="un3" pos="V" label="to be high">u3-na</w>
+<w form="ba-ba-ra" lemma="babbar" pos="AJ" label="white">ba-ba-ra</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c41314.6" corresp="t41314.p1">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki-a" lemma="ki" pos="N" label="place">ki-a</w>
+<w form="na" lemma="na" pos="N" label="advice">na</w>
+<w form="de5" lemma="de5" pos="V" label="to collect">de5</w>
+<w form="ci-&X;" lemma="&X;" label="&X;">ci-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c41314.7" corresp="t41314.p1">
+<w form="dijir-me-en" lemma="dijir" pos="N" label="deity">dijir-me-en</w>
+<w form="A2" lemma="A2" label="A&s2;"><unclear cert="qry">A2</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c41314.8" corresp="t41314.p1">
+<w form="ki-u3-lu-X" lemma="ki-ulutim2" pos="N" label="place of creation">ki-u3-<unclear cert="qry">lu</unclear>-X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c41314.9" corresp="t41314.p1">
+<w form="su" lemma="cul" pos="N" label="young man">su</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c41314.10" corresp="t41314.p2">
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="gur" lemma="guru3" pos="V" label="to bear">gur</w>
+<w form="e-a-zu-ne" lemma="e3" pos="V" label="to go out or in">e-a-zu-ne</w>
+<suppliedEnd/>
+</l>
+<l n="11" id="c41314.11" corresp="t41314.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="mi-li-im-mu" lemma="me-lem4" pos="N" label="(awesome) radiance">mi-li-im<suppliedEnd/>-<damage/>mu</w>
+<damageEnd/>
+<w form="na-il5" lemma="il2" pos="V" label="to raise">na-<damage/>il5</w>
+<damageEnd/>
+</l>
+<l n="12" id="c41314.12" corresp="t41314.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-zu" lemma="X" label="X">X-zu</w>
+<w form="kug-ga-am" lemma="kug" pos="AJ" label="shining">kug<suppliedEnd/>-<damage/>ga-am</w>
+<damageEnd/>
+<w form="da-da-ga" lemma="dadag" pos="V" label="to be bright" form-type="RR">da-da-<damage/>ga</w>
+<damageEnd/>
+</l>
+<l n="13" id="c41314.13" corresp="t41314.p2">
+<supplied/>
+<w form="e" lemma="e" pos="I" label="vocative expression">e</w>
+<w form="i" lemma="i" pos="I" label="vocative expression">i</w>
+<w form="lu2-gal-ju10" lemma="lugal" pos="N" label="king">lu2-gal<suppliedEnd/>-ju10</w>
+<w form="u3" lemma="ud" pos="N" label="day(light)">u3</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="ci-mu-nu" lemma="e3" pos="V" label="to go out or in">ci-mu-nu</w>
+</l>
+<l n="14" id="c41314.14" corresp="t41314.p2">
+<supplied/>
+<w form="&d;nanna" lemma="nanna" pos="N" type="DN" label="Nanna" det="&d;">&d;nanna</w>
+<suppliedEnd/>
+<damage/>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<damageEnd/>
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="gur" lemma="guru3" pos="V" label="to bear"><unclear cert="qry">gur</unclear></w>
+<w form="e-a-zu-ne" lemma="e3" pos="V" label="to go out or in">e-a-zu-ne</w>
+</l>
+<l n="15" id="c41314.15" corresp="t41314.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="mi-li-im-mu" lemma="me-lem4" pos="N" label="(awesome) radiance">mi-li-im-mu</w>
+<w form="na-il5" lemma="il2" pos="V" label="to raise">na-il5</w>
+</l>
+<l n="16" id="c41314.16" corresp="t41314.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X-zu" lemma="X" label="X">X-zu</w>
+<w form="kug-ga-am" lemma="kug" pos="AJ" label="shining">kug-ga-am</w>
+<w form="da-da-ga" lemma="dadag" pos="V" label="to be bright" form-type="RR">da-da-ga</w>
+</l>
+<l n="17" id="c41314.17" corresp="t41314.p2">
+<w form="e" lemma="e" pos="I" label="vocative expression">e</w>
+<w form="i" lemma="i" pos="I" label="vocative expression">i</w>
+<w form="lu2-gal-ju10" lemma="lugal" pos="N" label="king">lu2-gal-ju10</w>
+<w form="u3" lemma="ud" pos="N" label="day(light)">u3</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="ci-mu-nu" lemma="e3" pos="V" label="to go out or in">ci-mu-nu</w>
+</l>
+<l n="18" id="c41314.18" corresp="t41314.p3">
+<w form="SA" lemma="SA" label="SA">SA</w>
+<w form="CE" lemma="CE" label="&C;E">CE</w>
+<w form="RI" lemma="RI" label="RI">RI</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="ca-ge" lemma="cag4" pos="N" label="heart">ca-ge</w>
+<w form="ba-da-na" lemma="pad3" pos="V" label="to find">ba-da-na</w>
+</l>
+<l n="19" id="c41314.19" corresp="t41314.p3">
+<w form="UR2" lemma="UR2" label="UR&s2;">UR2</w>
+<w form="ku-zu" lemma="kug" pos="AJ" label="shining">ku-zu</w>
+<w form="pa3" lemma="pa" pos="N" label="branch">pa3</w>
+<w form="e" lemma="e3" pos="V" label="to go out or in">e</w>
+<w form="ci-mi-nu" lemma="ak" pos="V" label="to do">ci-mi-nu</w>
+</l>
+<l n="20" id="c41314.20" corresp="t41314.p3">
+<w form="X-la" lemma="X" label="X">X-la</w>
+<w form="BAR" lemma="BAR" label="BAR">BAR</w>
+<w form="KU" lemma="KU" label="KU">KU</w>
+<w form="BA" lemma="BA" label="BA">BA</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="KA-KA" lemma="KA" label="KA" form-type="RR">KA-KA</w>
+<w form="nu-si-li-ge" lemma="silig" pos="V" label="to cease">nu-<unclear cert="cor">si</unclear>-li-ge</w>
+</l>
+<l n="21" id="c41314.21" corresp="t41314.p3">
+<w form="u3" lemma="ud" pos="N" label="day(light)">u3</w>
+<w form="bi-na" lemma="bi-na" pos="X" label="meaning unknown">bi-na</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="a-na" lemma="an" pos="N" label="heaven">a-na</w>
+<w form="cu-du" lemma="cudu3" pos="N" label="prayer">cu-du</w>
+<w form="sa2" lemma="sa2" pos="V" label="to equal">sa2</w>
+<w form="ha-pa-du" lemma="dug4" pos="V" label="to say">ha-pa-du</w>
+</l>
+<l n="22" id="c41314.22" corresp="t41314.p4">
+<w form="ki-sa2-al" lemma="kisal" pos="N" label="courtyard">ki-sa2-al</w>
+<w form="ma-he" lemma="mah" pos="V" label="to be majestic">ma-he</w>
+<w form="ninda" lemma="ninda" pos="N" label="bread">ninda</w>
+<w form="ba-ja2-ra-zu" lemma="jar" pos="V" label="to place">ba-ja2-ra-zu</w>
+</l>
+<l n="23" id="c41314.23" corresp="t41314.p4">
+<w form="ti-gi" lemma="tigi" pos="N" label="type of instrument and composition">ti-gi</w>
+<w form="ni5" lemma="nij2" pos="N" label="thing">ni5</w>
+<w form="du-ge" lemma="dug3" pos="V" label="to be good">du-ge</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="ha-pa3-ne-sa2" lemma="sa2" pos="V" label="to equal">ha-pa3-ne-sa2</w>
+</phr>
+</l>
+<l n="24" id="c41314.24" corresp="t41314.p4">
+<w form="um-mi" lemma="unken" pos="N" label="assembly">um-mi</w>
+<w form="na-na" lemma="an" pos="N" label="heaven">na-na</w>
+<w form="ti-gi" lemma="tigi" pos="N" label="type of instrument and composition">ti-gi</w>
+<w form="mu-ra-an-du" lemma="du12" pos="V" label="to perform (music)">mu-ra-an-du</w>
+</l>
+<l n="25" id="c41314.25" corresp="t41314.p4">
+<w form="&d;nanna" lemma="nanna" pos="N" type="DN" label="Nanna" det="&d;">&d;nanna</w>
+<w form="ki-sa2-al" lemma="kisal" pos="N" label="courtyard">ki-sa2-al</w>
+<w form="ma-he" lemma="mah" pos="V" label="to be majestic">ma-he</w>
+<w form="ninda" lemma="ninda" pos="N" label="bread">ninda</w>
+<w form="ba-ja2-ra-zu" lemma="jar" pos="V" label="to place">ba-ja2-ra-zu</w>
+</l>
+<l n="26" id="c41314.26" corresp="t41314.p4">
+<w form="ti-gi" lemma="tigi" pos="N" label="type of instrument and composition">ti-gi</w>
+<w form="ni5-in" lemma="nij2" pos="N" label="thing">ni5-in</w>
+<w form="du-ge" lemma="dug3" pos="V" label="to be good">du-ge</w>
+<phr type="VP" lemma="si sa2" label="to make straight">
+<w form="si" lemma="si" pos="N" label="horn">si</w>
+<w form="ha-pa-ne-sa2" lemma="sa2" pos="V" label="to equal">ha-pa-ne-sa2</w>
+</phr>
+</l>
+<l n="27" id="c41314.27" corresp="t41314.p4">
+<w form="um-mi" lemma="unken" pos="N" label="assembly">um-mi</w>
+<w form="na-na" lemma="an" pos="N" label="heaven">na-na</w>
+<w form="ti-gi" lemma="tigi" pos="N" label="type of instrument and composition">ti-gi</w>
+<w form="mu-ra-an-du" lemma="du12" pos="V" label="to perform (music)">mu-ra-an-du</w>
+</l>
+<l n="28" id="c41314.28" corresp="t41314.p5">
+<w form="URU&times;UD-zu" lemma="iri" pos="N" label="town"><term id="c41314.t1">URU&times;UD</term><gloss lang="sux" target="c41314.t1">ri</gloss>-zu</w>
+<w form="he-ja2-la" lemma="he2-jal2" pos="N" label="plenty">he-ja2-la</w>
+<w form="he-da-an-du" lemma="jen" pos="V" label="to go">he-da-an-du</w>
+</l>
+<l n="29" id="c41314.29" corresp="t41314.p5">
+<w form="u3-ri-ma" lemma="urim2" pos="N" type="SN" label="Urim">u3-ri-ma</w>
+<w form="gu" lemma="gu2" pos="N" label="neck">gu</w>
+<w form="an-ce3" lemma="an" pos="N" label="heaven">an-ce3</w>
+<w form="he-en-zig3-ge" lemma="zig3" pos="V" label="to rise">he-en-zig3-<supplied/>ge</w>
+<suppliedEnd/>
+</l>
+<l n="30" id="c41314.30" corresp="t41314.p5">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="di-il5" lemma="dili" pos="AJ" label="single">di-il5</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="UD" lemma="UD" label="UD">UD</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="su-ud-cu" lemma="sud" pos="V" label="to be distant">su-ud-cu</w>
+<w form="ul-a-ce3" lemma="ul" pos="N" label="distant time">ul-a-ce3</w>
+</l>
+<l n="31" id="c41314.31" corresp="t41314.p5">
+<w form="&d;nanna" lemma="nanna" pos="N" type="DN" label="Nanna" det="&d;">&d;nanna</w>
+<w form="URU&times;UD-zu" lemma="iri" pos="N" label="town"><term id="c41314.t2">URU&times;UD</term><gloss lang="sux" target="c41314.t2">ri</gloss>-zu</w>
+<w form="he-ja2-la" lemma="he2-jal2" pos="N" label="plenty">he-ja2-la</w>
+<w form="he-da-an-du" lemma="jen" pos="V" label="to go">he-da-an-<damage/>du</w>
+<damageEnd/>
+</l>
+<l n="32" id="c41314.32" corresp="t41314.p5">
+<w form="u3-ri-ma" lemma="urim2" pos="N" type="SN" label="Urim">u3-ri-ma</w>
+<w form="gu" lemma="gu2" pos="N" label="neck">gu</w>
+<w form="an-ce3" lemma="an" pos="N" label="heaven">an-ce3</w>
+<w form="he-en-zig3-ge" lemma="zig3" pos="V" label="to rise">he-en-zig3-<supplied/>ge</w>
+<suppliedEnd/>
+</l>
+<l n="33" id="c41314.33" corresp="t41314.p5">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="di-il5" lemma="dili" pos="AJ" label="single">di-il5</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="UD" lemma="UD" label="UD">UD</w>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="su-ud-cu" lemma="sud" pos="V" label="to be distant">su-ud-cu</w>
+<w form="ul-a-ce3" lemma="ul" pos="N" label="distant time">ul-a-ce3</w>
+</l>
+</body>
+</text>
+</TEI.2>

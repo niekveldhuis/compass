@@ -1,0 +1,50 @@
+<TEI.2 id="t.2.8.3.7">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A prayer for Samsu-iluna (Samsu-iluna G) -- an English prose translation</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<p>Sources are listed in the header of the composite text</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>26.iii.1999-01.iv.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>adapting translation</item></change>
+<change><date>27.iv.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>06.v.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>28.x.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>07.i.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="eng">
+<body>
+<p id="t2837.p1" n="1-6" corresp="c2837.1">He greeted 
+<addSpan to="t2837.v1"/><w type="DN">Enki</w>, <w type="DN">Asalim</w> and the son of <w type="SN">Eridug</w>
+<anchor id="t2837.v1"/>
+<addSpan to="t2837.v2"/><note id="t2837.n1" target="t2837.v1">an Akkadian gloss has:</note> <w type="DN">Ea</w>, <w type="DN">Marduk</w> and <w type="DN">Asallu&h;a</w>
+<anchor id="t2837.v2"/>, the great gods, 
+<addSpan to="t2837.v3"/>while sitting majestically on the golden throne of kingship with head high in heroic strength in its midst
+<anchor id="t2837.v3"/>
+<addSpan to="t2837.v4"/><note id="t2837.n2" target="t2837.v3">an Akkadian gloss has:</note> on your golden throne of kingship, whose head is raised high in the strength of your heroism, may you sit majestically, <w type="RN"><w type="DN">Samsu</w>-il&umacr;na</w>, double king
+<anchor id="t2837.v4"/>, the king of <w type="SN">Urim</w> and king of <w type="SN">Larsam</w>, the king of <w type="GN">Sumer</w> and <w type="GN">Akkad</w>.</p>
+<altGrp><alt targType="addSpan" targets="t2837.v1 t2837.v2"/><alt targType="addSpan" targets="t2837.v3 t2837.v4"/></altGrp></body>
+</text>
+</TEI.2>
