@@ -29,28 +29,40 @@ In order to achieve compatability between [ETCSL][] and [ORACC][] the code uses 
 
 ### 2.4.1 TEI XML format
 
-The [ETCSL][] files as distributed by the [Oxford Text Archive][] are encoded in a dialect of XML (Extensible Markup Language) that is referred to as TEI (Text Encoding Initiative). In this encoding each word (in transliteration) is an *element* that is surrounded by `<w>` and `</w>` tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs:
+The [ETCSL][] files as distributed by the [Oxford Text Archive](http://ota.ox.ac.uk/desc/2518) are encoded in a dialect of `XML` (Extensible Markup Language) that is referred to as `TEI` (Text Encoding Initiative). In this encoding each word (in transliteration) is an *element* that is surrounded by `<w>` and `</w>` tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs, as in the following random examples:
 
 ```xml
-<w form="mah-bi" lemma="mah" pos="V" label="to be majestic">mah-bi</w>
+<w form="ti-a" lemma="te" pos="V" label="to approach">ti-a</w>
+<w form="e2-jar8-bi" lemma="e2-jar8" pos="N" label="wall">e2-jar8-bi</w>
+<w form="ickila-bi" lemma="ickila" pos="N" label="shell"><term id="c1813.t1">ickila</term><gloss lang="sux" target="c1813.t1">la</gloss>-bi</w>
 ```
 
-In parsing the [ETCSL][] files we will be looking for these `<w>` and `</w>` tags to isolate words and their attributes. Higher level tags identify lines (`<l>` and `</l>`) , versions, secondary text (found only in a minority of sources), etcetera.
+The `form` attribute is the full form of the word, omitting flags (such as question marks), indication of breakage, or glosses. The `lemma` attribute is the form minus morphology (corresponding to `citation form` in [ORACC][]). Some lemmas may be spelled in more than one way in Sumerian; the `lemma` attribute will use a standard spelling (note, for instance, that the `lemma` of "ti-a" is "te"). The `lemma` in [ETCSL][]](unlike `Citation Form` in [ORACC][]) uses actual transliteration with hyphens and sign index numbers (as in `lemma = e2-jar8`, where the corresponding [ORACC][] `citation form` is egar).
 
-The [ETCSL][] file set includes the [etcslmanual.html](http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php) with explanations of the tags, their attributes, and their proper usage.
+The `label` attribute gives a general indication of the meaning of the Sumerian word but is not context-sensitive. That is, the `label` of "lugal" is always "king", even if in context the word means "owner". The `pos` attribute gives the Part of Speech, but again the attribute is not context-sensitive. Where a verb (such as sag₉, to be good) is used as an adjective the `pos` is still "V" (for verb). Together `lemma`, `label`, and `pos` define a Sumerian lemma (dictionary entry).
+
+In parsing the [ETCSL] files we will be looking for the `<w>` and `</w>` tags to isolate words and their attributes. Higher level tags identify lines (`<l>` and `</l>`), versions, secondary text (found only in a minority of sources), etcetera.
+
+The [ETCSL] file set includes the file [etcslmanual.html](http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php) with explanations of the tags, their attributes, and their proper usage.
+
+Goal of the parsing process is to get as much information as possible out of the `XML` tree in a format that is useful for computational text analysis. What "useful" means depends, of course, on the particular project. The output of the parser is a word-by-word (or rather lemma-by-lemma) representation of the entire [ETCSL][] corpus in a format that is as close as possible to the output of the [ORACC][] parser. For most computational projects it will be necessary to group words into lines or compositions, or to separate out a particular group of compositions. The data is structured in such a way that that can be achieved with a standard set of Python commands of the `Pandas` library..
 
 ### 2.4.2 `lxml` and `Xpath`
 
-There are several Python libraries specifically for parsing `XML`, among them the popular `ElementTree` and its twin `cElementTree`. The library `lxml` is largely compatible with `ElemnetTree` and `cElementTree` but differs from those in its full support of `Xpath`. `Xpath` is a language for finding and retrieving elements and attributes in XML trees. `Xpath` is not a program or a library, but a set of specifications that is implemented in a variety of software packages in different programming languages. 
+There are several Python libraries specifically for parsing `XML`, among them the popular `ElementTree` and its twin `cElementTree`. The library `lxml` is largely compatible with `ElementTree` and `cElementTree` but differs from those in its full support of `Xpath`. `Xpath` is a language for finding and retrieving elements and attributes in XML trees. `Xpath` is not a program or a library, but a set of specifications that is implemented in a variety of software packages in different programming languages. 
 
-In `Xpath` `'//w'`means: all the `w` nodes, wherever in the hierarchy of the `XML` tree. The expression may be used to create a list of all the `w` nodes with all of their associated attributes. The attributes of a node are addressed  with the `@` sign, so that `//w[@label]` refers to the `label` attributes of all the `w` nodes at any level in the hierarchy. 
+`Xpath` uses the forward slash to describe a path through the hierarchy of the the `XML` tree. The expression `"/body/l/w"` will select all the `w` (word) elements that are children of `l` (line) elements that are children of the `body` element in the top level of `XML` hierarchy.
+
+The expression `'//w'`means: all the `w` nodes, wherever in the hierarchy of the `XML` tree. The expression may be used to create a list of all the `w` nodes with all of their associated attributes. The attributes of a node are addressed  with the `@` sign, so that `//w/@label` refers to the `label` attributes of all the `w` nodes at any level in the hierarchy. 
 
 ```python
 words = tree.xpath('//w')
-labels = tree.xpath('//w[@label]')
+labels = tree.xpath('//w/@label')
 ```
 
-`Xpath` also defines hundreds of functions. An important function is `'string()'` which will return the string value of a node or an attribute.  The `string()` function is usually applied to a single node. Once all `w` nodes are listed in the list `words` (with the code above) one may extract the transliteration and Guide Word (`label` in [ETCSL][]) of each word as follows:
+Predicates are put between square brackets and describe conditions for filtering a node set. The expression  `//w[@emesal]` will return all the `w` elements that have an attribute `emesal`. 
+
+`Xpath` also defines hundreds of functions. An important function is `'string()'` which will return the string value of a node or an attribute.  Once all `w` nodes are listed in the list `words` (with the code above) one may extract the transliteration and Guide Word (`label` in [ETCSL][]) of each word as follows:
 
 ```python
 form_l = []
@@ -64,7 +76,7 @@ for node in words:
 
 The dot in `node.xpath('string(.)')` refers to the current node.
 
-For proper introductions to `Xpath` and `lxml` see the [Wikipedia](https://en.wikipedia.org/wiki/XPath) article on `Xpath` and the homepage of the [`lxml`](https://lxml.de/) library.
+For proper introductions to `Xpath` and `lxml` see the [Wikipedia](https://en.wikipedia.org/wiki/XPath) article on `Xpath` and the homepage of the [`lxml`](https://lxml.de/) library, respectively.
 
 ### 2.4.3 Pre-processing: HTML entities
 
@@ -100,11 +112,9 @@ def ampersands(x):
     return x
 ```
 
-
-
 ### 2.4.4 Pre-Processing: Additional Text and Secondary Text
 
-In order to be able to preserve the [ETCSL][] distinctions between main text (the default), secondary text, and additional text, such information needs to be added as an attribute to each `w` node (word node). This must take place in pre-processing, before the `XML` files are parsed.
+In order to be able to preserve the [ETCSL][] distinctions between main text (the default), secondary text, and additional text, such information needs to be added as an attribute to each `w` node (word node). This must take place in pre-processing, before the `XML` file is parsed.
 
 [ETCSL][] transliterations represent composite texts, put together (in most cases) from multiple exemplars. The editions include substantive variants, which are marked either as "additional" or as "secondary". Additional text consists of words or lines that are *added* to the text in a minority of sources. In the opening passage of [Inana's Descent to the Netherworld][], for instance, there is a list of temples that Inana leaves behind. One exemplar extends this list with eight more temples; in the composite text these lines are marked as "additional" and numbered lines 13A-13H. Secondary text, on the other hand, is variant text (words or lines) that are found in a minority of sources *instead of* the primary text. An example in [Inana's Descent to the Netherworld][] is lines 30-31, which are replaced by 30A-31A in one manuscript (text and translation as in [ETCSL][]):
 
@@ -175,13 +185,13 @@ Gaps of one or more lines in the composite text, due to damage to the original c
 <gap extent="8 lines missing"/>
 ```
 
-In order to be able to process this information and keep it at the right place in the data we will parse the `gap` tags together with the `l` (line) tags and process the gap as a line.
+In order to be able to process this information and keep it at the right place in the data we will parse the `gap` tags together with the `l` (line) tags and process the gap as a line. In [ORACC][] gaps are described with the fields `extent` (a number, or `n` for unknown),  and`scope` (line, column, obverse, etc.) . [ORACC][] uses a restricted vocabulary for these fields, but [ETCSL][] does not. The code currently does not try to make the [ETCSL][] encoding of gaps compatible with the [ORACC][] encoding.
 
 
 
 ### 2.4.7 Parsing the XML Tree
 
-The Python library `lxml`, includes a unit `etree`, specialized in parsing XML trees. The code basically works from the highest level of the hierarchy  to the lowest, in the following way:
+The Python library `lxml`, includes a module`etree`, specialized in parsing XML trees. The code basically works from the highest level of the hierarchy  to the lowest, in the following way:
 
 ```
 text							parsetext()
@@ -191,7 +201,7 @@ text							parsetext()
 				word			getword()
 ```
 
-The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section 2.4.3. It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, finally, calls `getword()`. Along the way a dictionary, `meta_d` collects information about text IDs, text names, version names, and line numbers. The function `getline()` adds a line reference number (`line_ref`), an integer, in order to be able to put  lines and gaps in their correct sequence (`line_no` is a string and will put line "11" before line "3"). The function `getword()` at the lowest level of this hierarchy, will create a dictionary for each word. This dictionary contains all the information about line number, section, version name, text name, etc. plus the lemmatization data of the single word.
+The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section 2.4.3 and 2.4.4. It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, finally, calls `getword()`. Along the way a dictionary, `meta_d` collects information about text IDs, text names, version names, and line numbers. The function `getline()` adds a line reference number (`line_ref`), an integer, in order to be able to put  lines and gaps in their correct sequence (`line_no` is a string and will put line "11" before line "3"). The function `getword()` at the lowest level of this hierarchy, will create a dictionary for each word. This dictionary contains all the information about line number, section, version name, text name, etc. plus the lemmatization data of the individual word.
 
 Thus the word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in XML: 
 
@@ -216,6 +226,29 @@ The dictionary that is created in `getword()` represents that same word as follo
 ```
 
 Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()` replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
+
+The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `getword()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
+
+### 2.4.8 Parsetext()
+
+For each `XML` file, the function `parsetext()` is called by the main process and returns to the main process a list of dictionaries, where each item (each dictionary) represents a single word. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to get rid of the HTML entities (2.4.3). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
+
+```python
+tree = etree.fromstring(xmltext)
+```
+
+After creating the tree the function `mark_extra()` (2.4.4) is called in order to explicitly mark "addional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for the online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
+
+The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL][] text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference will be used and manipulated in the function `getline()`.
+
+The `XML` tree is now forwarded to the function `getversion()`.
+
+### 2.4.9 Getversion()
+
+In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
+
+The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. If so, the function iterates over these versions while adding the version name to the `meta_d` dictionary. If there are no versions, the version name is left empty. The parsing process is continued by calling `getsection()` to see if the composition/version is further divided into sections. The results of the `getsection()` function are stored in a list called `sectionsinversion`.
+
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
 [ORACC]:                             http://oracc.org
