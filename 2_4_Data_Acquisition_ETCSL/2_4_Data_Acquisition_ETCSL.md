@@ -177,7 +177,7 @@ def mark_extra(tree, which):
 
 In the main process the function `mark_extra()`is called with the entire `XML` tree as its first argument, and  "additional" or "secondary" as its second argument.
 
-### 2.4.6 Gaps
+###  2.4.5 Gaps
 
 Gaps of one or more lines in the composite text, due to damage to the original cuneiform tablet, is encoded as follows:
 
@@ -187,9 +187,7 @@ Gaps of one or more lines in the composite text, due to damage to the original c
 
 In order to be able to process this information and keep it at the right place in the data we will parse the `gap` tags together with the `l` (line) tags and process the gap as a line. In [ORACC][] gaps are described with the fields `extent` (a number, or `n` for unknown),  and`scope` (line, column, obverse, etc.) . [ORACC][] uses a restricted vocabulary for these fields, but [ETCSL][] does not. The code currently does not try to make the [ETCSL][] encoding of gaps compatible with the [ORACC][] encoding.
 
-
-
-### 2.4.7 Parsing the XML Tree
+### 2.4.6 Parsing the XML Tree
 
 The Python library `lxml`, includes a module`etree`, specialized in parsing XML trees. The code basically works from the highest level of the hierarchy  to the lowest, in the following way:
 
@@ -201,9 +199,9 @@ text							parsetext()
 				word			getword()
 ```
 
-The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section 2.4.3 and 2.4.4. It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, finally, calls `getword()`. Along the way a dictionary, `meta_d` collects information about text IDs, text names, version names, and line numbers. The function `getline()` adds a line reference number (`line_ref`), an integer, in order to be able to put  lines and gaps in their correct sequence (`line_no` is a string and will put line "11" before line "3"). The function `getword()` at the lowest level of this hierarchy, will create a dictionary for each word. This dictionary contains all the information about line number, section, version name, text name, etc. plus the lemmatization data of the individual word.
+The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.4.3](#2.4.3-Pre-processing:-HTML-entities) and [2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, finally, calls `getword()`. The functions `parsetext()`, `getversion()`, `getsection()`and `getline()` and `getword()`do not return anything. Instead, they modify the dictionary `meta_d` which collects information collects information on various levels of the hierarchy about text IDs, text names, version names, and line numbers. The function `getline()` adds a line reference number (`line_ref`), an integer, in order to be able to put  lines and gaps in their correct sequence (`line_no` is a string and will put line "11" before line "3"). The function `getword()` at the lowest level of this hierarchy, will create a dictionary for each word. This dictionary contains all the mete data (line number, section, version name, text name, etc.) from `meta_d` plus the lemmatization data of the individual word. The function then adds this dictionary to the list `alltexts` which was created as an empty list in the main process. After iterating through all the compositions the list `alltexts` contains 170.856 entries, each representing a single word.
 
-Thus the word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in XML: 
+The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in XML: 
 
 ```xml
 <w form="cej6-ja2" lemma="cej6" pos="V" label="to be hot">cej6-ja2</w>
@@ -225,30 +223,34 @@ The dictionary that is created in `getword()` represents that same word as follo
  'extent': ''}
 ```
 
-Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()` replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
+Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()` (which is called by `getword()` replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
 
 The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `getword()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
 
-### 2.4.8 Parsetext()
+### 2.4.7 Parsetext()
 
-For each `XML` file, the function `parsetext()` is called by the main process and returns to the main process a list of dictionaries, where each item (each dictionary) represents a single word. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to get rid of the HTML entities (2.4.3). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
+For each `XML` file, the function `parsetext()` is called by the main process. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to get rid of the HTML entities ([2.4.3](#2.4.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
 
 ```python
 tree = etree.fromstring(xmltext)
 ```
 
-After creating the tree the function `mark_extra()` (2.4.4) is called in order to explicitly mark "addional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for the online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
+After creating the tree the function `mark_extra()` ([2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text)) is called in order to explicitly mark "addional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
 
 The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL][] text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference will be used and manipulated in the function `getline()`.
 
 The `XML` tree is now forwarded to the function `getversion()`.
 
-### 2.4.9 Getversion()
+### 2.4.8 Getversion()
 
-In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
+In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb (or a few), and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
 
-The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. If so, the function iterates over these versions while adding the version name to the `meta_d` dictionary. If there are no versions, the version name is left empty. The parsing process is continued by calling `getsection()` to see if the composition/version is further divided into sections. The results of the `getsection()` function are stored in a list called `sectionsinversion`.
+The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. For each set of `XML` nodes that represents one version the code adds the version name to the `meta_d` dictionary and then calls the `getsection()` dictionary. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name is the empty string.
 
+### 2.4.9 Getsection()
+
+Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section `B` supposedly follows section `A`, but how much text is missing between these sections cannot be reconstructed.
+The function `getsection()` works essentially in the same way as `getversion()`. The code will check whether the composition (or a version of the composition) is divided into sections. If so, it will pull the name of that section and add it to the dictionary `meta_d`. The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to the section (potentially part of a version) that is being parsed. If a composition (or version) is not divided into sections the entire tree is passed on to `getline()`. 
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
 [ORACC]:                             http://oracc.org
