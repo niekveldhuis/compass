@@ -1,11 +1,16 @@
-## 2.4 Data Acquisition: ETCSL
+Preliminary version
+
+This is a preliminary version of Chapter 2.3 of [ComPass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
+
 Back to the main [COMPASS][] page.
 
-Back to COMPASS Chapter 2
+Back to [COMPASS Chapter 2](http://build-oracc.museum.upenn.edu/compass/2dataacquisition/index.html)
+
+To the [Data Acquisition ETCSL](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) notebook on Github.
+
+## 2.4 Data Acquisition: ETCSL
 
 [TOC]
-# NOTE: under construction
-
 The Electronic Text Corpus of Sumerian Literature ([ETCSL][]) provides editions and translations of almost 400 Sumerian literary texts, mostly from the Old Babylonian period (around 1800 BCE). The project was led by Jeremy Black (Oxford University) and was active until 2006, when it was archived. Information about the project, its stages, products and collaborators may be found in the project's [About](http://etcsl.orinst.ox.ac.uk/edition2/general.php) page. By the time of its inception [ETCSL][] was a pioneering effort - the first large digital project in Assyriology, using well-structured data according to the standards and best practices of the time. [ETCSL][] allows for various kinds of searches in Sumerian and in English translation and provides lemmatization for each individual word. Numerous scholars contributed data sets to the [ETCSL][] project (see [Acknowledgements](http://etcsl.orinst.ox.ac.uk/edition2/credits.php#ack)). The availability of [ETCSL][] has fundamentally altered the study of Sumerian literature and has made this literature available for undergraduate teaching.
 
 The original [ETCSL][] files in TEI XML are stored in the [Oxford Text Archive][] from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License ([by-nc-sa 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.
@@ -230,7 +235,7 @@ The sections below will discuss in some detail the various functions, starting w
 
 ### 2.4.7 Parsetext()
 
-For each `XML` file, the function `parsetext()` is called by the main process. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to get rid of the HTML entities ([2.4.3](#2.4.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
+For each `XML` file, the function `parsetext()` is called by the main process. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to replace HTML entities by their unicode counterparts ([2.4.3](#2.4.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
 
 ```python
 tree = etree.fromstring(xmltext)
@@ -326,6 +331,10 @@ In a few cases a single word in [ETCSL][] is represented by a sequence of two wo
 The code checks for the existence of a `cf2`key. If present, a new dictionary is created (`word2`) and both dictionaries (`word` and `word2`) are appended to the list `alltexts`.
 
 If the lemma is not found in the `equiv` list the `word` dictionary is left unchanged and appended to the list `alltexts`.
+
+### 2.4.13 Post-processing
+
+The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in our `Pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.3: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
 
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
