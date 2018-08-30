@@ -197,17 +197,18 @@ text							parsetext()
 		section					getsection()
 			line				getline()
 				word			getword()
+					format		etcsl_to_oracc()
 ```
 
-The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.4.3](#2.4.3-Pre-processing:-HTML-entities) and [2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, finally, calls `getword()`. The functions `parsetext()`, `getversion()`, `getsection()`and `getline()` and `getword()`do not return anything. Instead, they modify the dictionary `meta_d` which collects information collects information on various levels of the hierarchy about text IDs, text names, version names, and line numbers. The function `getline()` adds a line reference number (`line_ref`), an integer, in order to be able to put  lines and gaps in their correct sequence (`line_no` is a string and will put line "11" before line "3"). The function `getword()` at the lowest level of this hierarchy, will create a dictionary for each word. This dictionary contains all the mete data (line number, section, version name, text name, etc.) from `meta_d` plus the lemmatization data of the individual word. The function then adds this dictionary to the list `alltexts` which was created as an empty list in the main process. After iterating through all the compositions the list `alltexts` contains 170.856 entries, each representing a single word.
+The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.4.3](#2.4.3-Pre-processing:-HTML-entities) and [2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, calls `getword()`, which calls `etcsl_to_oracc()`. These functions do not return anything. Instead, they modify the dictionaries `meta_d` (which collects meta data on various levels) and `word`, which contains all the information (including meta data) of an individual word. The function `etcsl_to_oracc()`, the last one in the hierarchy, appends the dictionary `word` to the list `alltexts` (which was created as an empty list in the main process) before the whole cycle starts again.
 
-The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in XML: 
+The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in the original XML file: 
 
 ```xml
 <w form="cej6-ja2" lemma="cej6" pos="V" label="to be hot">cej6-ja2</w>
 ```
 
-The dictionary that is created in `getword()` represents that same word as follows:
+The dictionary that is created in `etcsl_to_oracc()` represents that same word as follows:
 
 ```python
 {'id_text': 'c.1.2.2', 
@@ -223,9 +224,9 @@ The dictionary that is created in `getword()` represents that same word as follo
  'extent': ''}
 ```
 
-Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()` (which is called by `getword()` replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
+Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()`replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
 
-The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `getword()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
+The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `etcsl_to_oracc()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
 
 ### 2.4.7 Parsetext()
 
@@ -235,7 +236,15 @@ For each `XML` file, the function `parsetext()` is called by the main process. A
 tree = etree.fromstring(xmltext)
 ```
 
-After creating the tree the function `mark_extra()` ([2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text)) is called in order to explicitly mark "addional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
+After creating the tree the function `mark_extra()` ([2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text)) is called in order to explicitly mark "additional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
+
+```python
+name = tree.xpath('string(//title)')
+name = name.replace(' -- a composite transliteration', '')
+name = name.replace(',', '')
+```
+
+
 
 The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL][] text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference will be used and manipulated in the function `getline()`.
 
@@ -245,12 +254,79 @@ The `XML` tree is now forwarded to the function `getversion()`.
 
 In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb (or a few), and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
 
-The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. For each set of `XML` nodes that represents one version the code adds the version name to the `meta_d` dictionary and then calls the `getsection()` dictionary. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name is the empty string.
+The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. Versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. For each set of `XML` nodes that represents one version the code adds the version name to the `meta_d` dictionary and then calls the `getsection()` dictionary. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name is the empty string.
 
 ### 2.4.9 Getsection()
 
-Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section `B` supposedly follows section `A`, but how much text is missing between these sections cannot be reconstructed.
-The function `getsection()` works essentially in the same way as `getversion()`. The code will check whether the composition (or a version of the composition) is divided into sections. If so, it will pull the name of that section and add it to the dictionary `meta_d`. The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to the section (potentially part of a version) that is being parsed. If a composition (or version) is not divided into sections the entire tree is passed on to `getline()`. 
+Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section B supposedly follows section A, but how much text is missing between these sections cannot be reconstructed.
+The function `getsection()` works essentially in the same way as `getversion()`. The code will check whether the composition (or a version of the composition) is divided into sections. Sections are indicated in the `XML` with a node `div1`. If such nodes are detected, the function will pull the name of that section (an attribute of `div1` called `n`) and store it in a temporary variable. Section names are usually capital letters that are prefixed to the line number. The function will now collect all `l` (line) *and* `gap` nodes. The Xpath expression that is used for that is `.//l|.//gap`. In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. If the node is an `l` node the `meta_d`dictionary is updated with a line number (or section + line number, if the text is divided into sections)The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
+
+### 2.4.10 Getline()
+
+The function `getline()`first updates the field `line_ref` in `meta_d`, increasing it by 1. The data type `line_ref` is integer - it is used to keep lines and gaps in correct order.
+
+If `getline()` receives a `gap` node it copies all the metadata in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node.
+
+If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss` nodes with the language attribute `akk`. The Xpath expression looks as follows: './/w|.//gloss[@lang="akk"]'. This will find both Sumerian and Akkadian words in the text.
+
+The found nodes are sent to `getword()`.
+
+### 2.4.11 Getword() and tounicode()
+
+The function `getword()` is the most complex of the series of functions because different types of words are processed in different ways.
+
+As a first step `getword()` will copy all the meta-data in the dictionary `meta_d` into the dictionary `word`. This dictionary will hold all the data for one individual word token.
+
+If `getword()` receives a `gloss` node, this is an Akkadian word, or an entire Akkadian phrase or sentence, that is inserted in a Sumerian text as a translation gloss. Akkadian words are not lemmatized in [ETCSL][], so all we can collect is the `form` (the transliteration) and the language. These fields are added to the `word` dictionary, `word` is appended to the list `alltexts` and control is returned to the previous function (`getline()`), which will send the next word.
+
+If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form (`cf`) is found in the attribute `lemma`. The Citation Form is sent to the `tounicode()` function in order to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. The function `tounicode()` use the dictionaries `ascii_unicode` and `index_no` that are both found in the file `equivalencies.json`.  The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) or a Unicode index number (₀-₉) the digit is replaced by a its Unicode subscript counterpart. Otherwise it is left unchanged.
+
+The Guide Word (`gw`) is found in the attribute `label` and the Part of Speech (`pos`) in the attribute `pos`.  
+
+The rest of the code takes care of some special situations:
+
+* * If there is no attribute `pos`, this indicates that the word was not lemmatized (because it is broken or unknown). In such cases `pos` and `gw` are both assigned 'NA'. Note that 'NA' is a string, not Missing Value.
+* if the word has an attribute `emesal`, then the citation form is found in that attribute and the language is "sux-x-emesal". If there is no such attribute the language is "sux" (for Sumerian).
+* In [ETCSL][] **proper nouns** are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC][] a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL][] becomes `pos` in [ORACC][]. [ORACC][] proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL][] guide words (`label`) for names come pretty close to [ORACC][] citation forms. Proper nouns are therefore formatted differently from other nouns.
+* Finally, in pre-processing we added to some `w` nodes an attribute `status`, which is either 'additional' or 'secondary'. If the attribute exists, it is added to the `word` dictionary.
+
+The dictionary `word` now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in [ETCSL][] format. The function `getword()`, therefore, sends the `word` dictionary to `etcsl_to_oracc` for final formatting of these data elements.
+
+### 2.4.12 etcsl_to_oracc()
+
+The function receives a single argument, the dictionary `word` that was created in `getword()`. The function will look up each lemma (a combination of Citation Form, Guide Word, and Part of Speech) in the dictionary `equiv`. This dictionary is a combination of three dictionaries in the file `equivalecies.json`, namely `suxwords`, `emesalwords` and `propernouns`. If the lemma is found in equiv, the [ETCSL][] forms of `cf`, `gw`, and `pos` are replaced by their [ORACC][] counterparts.
+In the `equiv` dictionary the lemmas are stored in the following format:
+```json
+"taka₄[to leave behind]V": {
+            "gw": "abandon",
+            "pos": "V/t",
+            "cf": "taka"
+        },
+ "me-te-ŋal₂[seemly]AJ": {
+            "gw": "seemly",
+            "pos": "AJ",
+            "cf": "meteŋal"
+        }
+```
+The keys in this dictionary are combinations of `cf`, `gw`, and `pos` ([ETCSL][]-style) in a single string. The `etcsl_to_oracc()` function, therefore first has to create the `lemma` from the fields `cf`, `gw`, and `pos` before it can look the word up in `equiv`. 
+
+In a few cases a single word in [ETCSL][] is represented by a sequence of two words in [EPSD2][] style. This is represented as follows in the `JSON`:
+
+```json
+ "maš₂-sa-la₂[bug-ridden goat]N": {
+            "pos": "N",
+            "cf2": "sala",
+            "gw2": "bug-ridden",
+            "gw": "goat",
+            "pos2": "AJ",
+            "cf": "maš"
+        },
+```
+
+The code checks for the existence of a `cf2`key. If present, a new dictionary is created (`word2`) and both dictionaries (`word` and `word2`) are appended to the list `alltexts`.
+
+If the lemma is not found in the `equiv` list the `word` dictionary is left unchanged and appended to the list `alltexts`.
+
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
 [ORACC]:                             http://oracc.org
