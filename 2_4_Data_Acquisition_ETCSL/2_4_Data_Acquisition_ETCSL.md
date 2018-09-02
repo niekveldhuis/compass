@@ -1,6 +1,6 @@
 Preliminary version
 
-This is a preliminary version of Chapter 2.3 of [ComPass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
+This is a preliminary version of Chapter 2.4 of [ComPass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
 
 Back to the main [COMPASS][] page.
 
@@ -284,20 +284,28 @@ As a first step `getword()` will copy all the meta-data in the dictionary `meta_
 
 If `getword()` receives a `gloss` node, this is an Akkadian word, or an entire Akkadian phrase or sentence, that is inserted in a Sumerian text as a translation gloss. Akkadian words are not lemmatized in [ETCSL][], so all we can collect is the `form` (the transliteration) and the language. These fields are added to the `word` dictionary, `word` is appended to the list `alltexts` and control is returned to the previous function (`getline()`), which will send the next word.
 
-If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form (`cf`) is found in the attribute `lemma`. The Citation Form is sent to the `tounicode()` function in order to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. The function `tounicode()` use the dictionaries `ascii_unicode` and `index_no` that are both found in the file `equivalencies.json`.  The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) or a Unicode index number (₀-₉) the digit is replaced by a its Unicode subscript counterpart. Otherwise it is left unchanged.
+If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form (`cf`) is found in the attribute `lemma`. 
 
 The Guide Word (`gw`) is found in the attribute `label` and the Part of Speech (`pos`) in the attribute `pos`.  
 
 The rest of the code takes care of some special situations:
 
-* * If there is no attribute `pos`, this indicates that the word was not lemmatized (because it is broken or unknown). In such cases `pos` and `gw` are both assigned 'NA'. Note that 'NA' is a string, not Missing Value.
+* If there is no attribute `pos`, this indicates that the word was not lemmatized (because it is broken or unknown). In such cases `pos` and `gw` are both assigned 'NA'. Note that 'NA' is a string, not Missing Value.
 * if the word has an attribute `emesal`, then the citation form is found in that attribute and the language is "sux-x-emesal". If there is no such attribute the language is "sux" (for Sumerian).
 * In [ETCSL][] **proper nouns** are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC][] a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL][] becomes `pos` in [ORACC][]. [ORACC][] proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL][] guide words (`label`) for names come pretty close to [ORACC][] citation forms. Proper nouns are therefore formatted differently from other nouns.
 * Finally, in pre-processing we added to some `w` nodes an attribute `status`, which is either 'additional' or 'secondary'. If the attribute exists, it is added to the `word` dictionary.
 
-The dictionary `word` now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in [ETCSL][] format. The function `getword()`, therefore, sends the `word` dictionary to `etcsl_to_oracc` for final formatting of these data elements.
+The dictionary `word` now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in [ETCSL][] format. 
 
-### 2.4.12 etcsl_to_oracc()
+First, Fitation Form and Form are sent to the `tounicode()` function in order to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. The function `tounicode()` use the dictionaries `ascii_unicode` and `index_no` (in fact, a list of two dictionaries) that are both found in the file `equivalencies.json`.  The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. 
+
+The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc` for final formatting of these data elements.
+
+### 2.4.12 tounicode()
+
+discuss to Unicode!
+
+### 2.4.13 etcsl_to_oracc()
 
 The function receives a single argument, the dictionary `word` that was created in `getword()`. The function will look up each lemma (a combination of Citation Form, Guide Word, and Part of Speech) in the dictionary `equiv`. This dictionary is a combination of three dictionaries in the file `equivalecies.json`, namely `suxwords`, `emesalwords` and `propernouns`. If the lemma is found in equiv, the [ETCSL][] forms of `cf`, `gw`, and `pos` are replaced by their [ORACC][] counterparts.
 In the `equiv` dictionary the lemmas are stored in the following format:
@@ -319,12 +327,12 @@ In a few cases a single word in [ETCSL][] is represented by a sequence of two wo
 
 ```json
  "maš₂-sa-la₂[bug-ridden goat]N": {
-            "pos": "N",
-            "cf2": "sala",
-            "gw2": "bug-ridden",
+            "cf": "maš",
+     		"pos": "N",
             "gw": "goat",
+     		"cf2": "sala",
             "pos2": "AJ",
-            "cf": "maš"
+		    "gw2": "bug-ridden" 
         },
 ```
 
