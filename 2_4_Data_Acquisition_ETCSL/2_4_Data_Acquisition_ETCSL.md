@@ -1,8 +1,8 @@
-Preliminary version
+**Preliminary version**
 
 This is a preliminary version of Chapter 2.4 of [ComPass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
 
-Back to the main [COMPASS][] page.
+Back to the main [COMPASS][] page on [ORACC][]
 
 Back to [COMPASS Chapter 2](http://build-oracc.museum.upenn.edu/compass/2dataacquisition/index.html)
 
@@ -276,7 +276,7 @@ If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss
 
 The found nodes are sent to `getword()`.
 
-### 2.4.11 Getword() and tounicode()
+### 2.4.11 Getword()
 
 The function `getword()` is the most complex of the series of functions because different types of words are processed in different ways.
 
@@ -295,15 +295,21 @@ The rest of the code takes care of some special situations:
 * In [ETCSL][] **proper nouns** are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC][] a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL][] becomes `pos` in [ORACC][]. [ORACC][] proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL][] guide words (`label`) for names come pretty close to [ORACC][] citation forms. Proper nouns are therefore formatted differently from other nouns.
 * Finally, in pre-processing we added to some `w` nodes an attribute `status`, which is either 'additional' or 'secondary'. If the attribute exists, it is added to the `word` dictionary.
 
-The dictionary `word` now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in [ETCSL][] format. 
-
-First, Fitation Form and Form are sent to the `tounicode()` function in order to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. The function `tounicode()` use the dictionaries `ascii_unicode` and `index_no` (in fact, a list of two dictionaries) that are both found in the file `equivalencies.json`.  The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. 
+The dictionary `word` now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in [ETCSL][] format. The function `getword()` calls `tounicode()`to change (Sumerian) text from ASCII to Unicode representation. The argument of `tounicode()` is a string, the `form` or the `cf` (Citation Form) of the word that is being processed. The function returns the same string in Unicode representation.
 
 The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc` for final formatting of these data elements.
 
 ### 2.4.12 tounicode()
 
-discuss to Unicode!
+The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. In a second run the same code is used to take care of the second digit in 2-digit indexes (as in šeg₁₂), now with the unicode index digits in the look behind regular expression. The routine uses the dictionary `index_no` in `equivalencies.json`, which lists the digits 0-9 (and x) as keys, and their unicode counterparts as values.
+
+```python
+for key in eq["index_no"]: 
+	x = re.sub(r'(?<=[a-zA-Z])'+key, eq["index_no"][key], x)
+for key in eq["index_no"]: 
+	x = re.sub(r'(?<=[₀-₉])'+key, eq["index_no"][key], x)
+```
+Finally,  `tounicode()` use the dictionary `ascii_unicode` (also in the file `equivalencies.json` to replace 'c' by 'š', 'j' by 'ŋ', etc.
 
 ### 2.4.13 etcsl_to_oracc()
 
@@ -340,7 +346,7 @@ The code checks for the existence of a `cf2`key. If present, a new dictionary is
 
 If the lemma is not found in the `equiv` list the `word` dictionary is left unchanged and appended to the list `alltexts`.
 
-### 2.4.13 Post-processing
+### 2.4.14 Post-processing
 
 The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in our `Pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.3: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
 

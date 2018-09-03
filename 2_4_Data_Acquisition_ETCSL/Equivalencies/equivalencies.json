@@ -7,44 +7,20 @@
         "J": "Ŋ",
         "c": "š"
     },
-    "index_no": [
-        {
-            "11": "₁₁",
-            "24": "₂₄",
-            "22": "₂₂",
-            "27": "₂₇",
-            "25": "₂₅",
-            "28": "₂₈",
-            "14": "₁₄",
-            "15": "₁₅",
-            "17": "₁₇",
-            "26": "₂₆",
-            "29": "₂₉",
-            "16": "₁₆",
-            "21": "₂₁",
-            "12": "₁₂",
-            "20": "₂₀",
-            "18": "₁₈",
-            "10": "₁₀",
-            "19": "₁₉",
-            "23": "₂₃",
-            "13": "₁₃"
-        },
-        {
-            "9": "₉",
-            "3": "₃",
-            "x": "ₓ",
-            "6": "₆",
-            "8": "₈",
-            "7": "₇",
-            "2": "₂",
-            "0": "₀",
-            "1": "₁",
-            "4": "₄",
-            "5": "₅"
-        }
-    ],
-    "more-info": "https://github.com/niekveldhuis/Digital-Assyriology/tree/master/Scrape-etcsl",
+    "index_no": {
+        "9": "₉",
+        "3": "₃",
+        "x": "ₓ",
+        "6": "₆",
+        "8": "₈",
+        "7": "₇",
+        "2": "₂",
+        "0": "₀",
+        "1": "₁",
+        "4": "₄",
+        "5": "₅"
+    },
+    "more-info": "http://oracc.org/compass/downloads/2_4_Data_Acquisition_ETCSL.html",
     "ampersands": {
         "&suppe;": "",
         "&gud;": "{gud}",
@@ -21169,6 +21145,46 @@
             "cf": "girim",
             "pos": "N",
             "gw": "flower"
+        },
+        "iku[1]ON": {
+            "cf": "Iku",
+            "pos": "CN",
+            "gw": "Field"
+        },
+        "gigir[1]ON": {
+            "cf": "Gigir",
+            "pos": "CN",
+            "gw": "Chariot"
+        },
+        "erim₂-a₂-bi-nu-šub[1]ON": {
+            "cf": "Erimabinušubu",
+            "pos": "ON",
+            "gw": "1"
+        },
+        "šar₂-gaz[1]ON": {
+            "cf": "Šargaz",
+            "pos": "ON",
+            "gw": "1"
+        },
+        "šeg₉-saŋ-6[1]DN": {
+            "cf": "Šegsaŋaš",
+            "pos": "DN",
+            "gw": "1"
+        },
+        "kur-erin-kud[1]GN": {
+            "cf": "Kurerinkud",
+            "pos": "GN",
+            "gw": "1"
+        },
+        "niŋ₂-babbar₂-ra[1]DN": {
+            "cf": "Niŋbabbara",
+            "pos": "DN",
+            "gw": "1"
+        },
+        "urud[1]DN": {
+            "cf": "Urud",
+            "pos": "DN",
+            "gw": "1"
         }
     },
     "propernouns": {
@@ -21177,46 +21193,46 @@
             "pos": "TN",
             "gw": "1"
         },
-	"iku[1]ON" : {
-	    "cf": "Iku",
-	    "pos": "CN",
-	    "gw": "Field"
-	},
-	"gigir[1]ON" : {
-	    "cf": "Gigir",
-	    "pos": "CN",
-	    "gw": "Chariot"
-	},
-	"erim₂-a₂-bi-nu-šub[1]ON" : {
-	    "cf": "Erimabinušubu",
-	    "pos" : "ON",
-	    "gw" : "1"
-	},
-	"šar₂-gaz[1]ON" : {
-	    "cf": "Šargaz",
-	    "pos": "ON",
-	    "gw": "1"
-	},
-	"šeg₉-saŋ-6[1]DN" : {
-	    "cf": "Šegsaŋaš",
-	    "pos": "DN",
-	    "gw": "1"
-	},
-	"kur-erin-kud[1]GN" : {
-	    "cf": "Kurerinkud",
-	    "pos": "GN",
-	    "gw": "1"
-	},
-	"niŋ₂-babbar₂-ra[1]DN" : {
-	    "cf": "Niŋbabbara",
-	    "pos": "DN",
-	    "gw": "1"
-	},
-	"urud[1]DN" :{
-	    "cf": "Urud",
-	    "pos": "DN",
-	    "gw": "1"
-	}, 
+        "iku[1]ON": {
+            "cf": "Iku",
+            "pos": "CN",
+            "gw": "Field"
+        },
+        "gigir[1]ON": {
+            "cf": "Gigir",
+            "pos": "CN",
+            "gw": "Chariot"
+        },
+        "erim₂-a₂-bi-nu-šub[1]ON": {
+            "cf": "Erimabinušubu",
+            "pos": "ON",
+            "gw": "1"
+        },
+        "šar₂-gaz[1]ON": {
+            "cf": "Šargaz",
+            "pos": "ON",
+            "gw": "1"
+        },
+        "šeg₉-saŋ-6[1]DN": {
+            "cf": "Šegsaŋaš",
+            "pos": "DN",
+            "gw": "1"
+        },
+        "kur-erin-kud[1]GN": {
+            "cf": "Kurerinkud",
+            "pos": "GN",
+            "gw": "1"
+        },
+        "niŋ₂-babbar₂-ra[1]DN": {
+            "cf": "Niŋbabbara",
+            "pos": "DN",
+            "gw": "1"
+        },
+        "urud[1]DN": {
+            "cf": "Urud",
+            "pos": "DN",
+            "gw": "1"
+        },
         "Ur-Ninazu[1]PN": {
             "cf": "Urninazu",
             "pos": "PN",
