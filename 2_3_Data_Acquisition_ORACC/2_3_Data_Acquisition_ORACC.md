@@ -270,7 +270,7 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
                       "f": {
 ```
 
-A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this Gábor Zólyomi of [ETCSRI](http://oracc.org/etcsri)) has added them in the source files. In order to make the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in a dictionary (called `parameters`), and add that ID to each word in the list of lemmas:
+A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this Gábor Zólyomi of [ETCSRI](http://oracc.org/etcsri)) has marked such units (sentences and phrases) in the source files. In order to make the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in a dictionary (called `parameters`), and add that ID to each word in the list of lemmas:
 
 ```python
 def parsejson(text, parameters):  # this version captures text and sentence IDs
@@ -331,7 +331,7 @@ text = json.loads(st)
 parsejson(text, parameters)
 ```
 
-The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
+The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
 
 #### 2.3.5.3 Select a Section
 
@@ -378,7 +378,7 @@ The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian 
 
 In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel`and `endlabel`) in order to parse a collection of documents or entire [ORACC](http://oracc.org) projects. Example code for doing so is available in the [Computational Assyriology](https://github.com/niekveldhuis/ORACC-JSON) repo. That part of code (iterating through a list of text IDs) is not specific to [ORACC](http://oracc.org) or to JSON and will not be discussed here (some code explanation is available in the notebooks).
 
-The output of `parsejson()` is a list of words, where each word is represented by a number of fields, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some fields are always present, others are specific for Sumerian or Akkadian. For most projects it will be necessary to select and/or manipulate the data (section 2.4.7).
+The output of `parsejson()` is a list of words, where each word is represented by a number of fields, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some fields are always present, others are specific for Sumerian or Akkadian. For most projects it will be necessary to select and/or manipulate the data (section [2.3.7](#2.3.7-Data-Structuring)).
 
 ### 2.3.6 Other Data Types in Text Edition JSON Files
 
@@ -440,7 +440,7 @@ The column `gw` (Guide Word) in the Pandas DataFrame just created includes bare-
 
 The presence of spaces in Guide Words may cause trouble in a variety of computational methods, because such methods will interpret the space a a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as a new field. 
 
-For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The Pandas `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, the `replace()` replaces a full string; we need to set `regex = True` to replace a partial string.
+For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The Pandas `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default,`replace()` replaces a full string; we need to set `regex = True` to replace a partial string.
 
 ```python
 findreplace = {' ' : '-', ',' : ''}
@@ -449,25 +449,7 @@ words = words.replace({'gw' : findreplace, 'sense' : findreplace}, regex=True)
 
 Now the Guide Word for *abāru* has become `(a-kind-of-clamp)`. If the field Sense is relevant for your project you will want to do the same there.
 
-#### 2.3.7.2 Create Lemmas
-
-The DataFrame `words` includes all the fields that were present in the `f` keys of the JSON files we parsed, plus the extra fields (such as `id_line` or `label`) that we have added. It is not likely that we want to keep all of that data for further analysis. For many types of analysis one may need the lemma. A lemma, [ORACC](http://oracc.org) style, combines Citation Form, Guide Word and Part of Speech into a unique reference to one particular entry in a standard dictionary, as in `lugal[king]N` (Sumerian) or `nadānu[give]V` (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. The code below will create a new field `lemma` that has the following form:
-
-| status       | lemma      | example       |
-| :----------- | :--------- | :------------ |
-| lemmatized   | CF[GW]POS  | lugal[king]N  |
-| unlemmatized | Form[NA]NA | i-ze₂-x[NA]NA |
-
-```python
-words["lemma"] = words.apply(lambda r: (r["cf"] + '[' + r["gw"] + ']' + r["pos"]) 
-                            if r["cf"] != '', axis=1)
-words["lemma"] = words.apply(lambda r: (r['form'] + '[NA]NA') 
-                            if r["cf"] == '' and r['form'] != '' , axis=1)
-```
-
-The code checks to see if the field Citation Form has content. If so, the field `lemma` is created by adding Citation Form, Guide Word, and Part of Speech (with `[`and `]`as dividers). If not, then `lemma` is identical with the form (the raw transliteration) followed by [NA]NA (Guide Word and Part of Speech unknown).
-
-#### 2.3.7.3  Create `id_line`
+#### 2.3.7.2  Create `id_line`
 
 In order to arrange the data in line-by-line format we need a we need to create an `id_line` field. The `id_word` field created by the extended parser (see 2.4.5.2) has the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). We can split this field, indicating that the dot is the separator, as follow:
 
@@ -486,6 +468,26 @@ The second element (`ids[1]`) is the one we need (`'4'`). Note that this `'4'`is
 ```python
 words['id_line'] = [int(wordid.split('.')[1]) for wordid in words['id_word']]
 ```
+
+
+
+#### 2.3.7.3 Create Lemmas
+
+The DataFrame `words` includes all the fields that were present in the `f` keys of the JSON files we parsed, plus the extra fields (such as `id_line` or `label`) that we have added. It is not likely that we want to keep all of that data for further analysis. For many types of analysis one may need the lemma. A lemma, [ORACC](http://oracc.org) style, combines Citation Form, Guide Word and Part of Speech into a unique reference to one particular entry in a standard dictionary, as in `lugal[king]N` (Sumerian) or `nadānu[give]V` (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. The code below will create a new field `lemma` that has the following form:
+
+| status       | lemma      | example       |
+| :----------- | :--------- | :------------ |
+| lemmatized   | CF[GW]POS  | lugal[king]N  |
+| unlemmatized | Form[NA]NA | i-ze₂-x[NA]NA |
+
+```python
+words["lemma"] = words.apply(lambda r: (r["cf"] + '[' + r["gw"] + ']' + r["pos"]) 
+                            if r["cf"] != '', axis=1)
+words["lemma"] = words.apply(lambda r: (r['form'] + '[NA]NA') 
+                            if r["cf"] == '' and r['form'] != '' , axis=1)
+```
+
+The code checks to see if the field Citation Form has content. If so, the field `lemma` is created by adding Citation Form, Guide Word, and Part of Speech (with `[`and `]`as dividers). If not, then `lemma` is identical with the form (the raw transliteration) followed by [NA]NA (Guide Word and Part of Speech unknown).
 
 
 

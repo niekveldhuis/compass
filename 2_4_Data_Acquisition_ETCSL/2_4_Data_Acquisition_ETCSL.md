@@ -225,7 +225,7 @@ The dictionary that is created in `etcsl_to_oracc()` represents that same word a
  'pos': 'V/t',
  'form': 'šeŋ₆-ŋa₂',
  'line_no' : 'A115',
- 'line_ref': 109,
+ 'id_line': 109,
  'extent': ''}
 ```
 
@@ -268,7 +268,7 @@ The function `getsection()` works essentially in the same way as `getversion()`.
 
 ### 2.4.10 Getline()
 
-The function `getline()`first updates the field `line_ref` in `meta_d`, increasing it by 1. The data type `line_ref` is integer - it is used to keep lines and gaps in correct order.
+The function `getline()`first updates the field `id_line` in `meta_d`, increasing it by 1. The data type  of`id_line` is integer - it is used to keep lines and gaps in correct order.
 
 If `getline()` receives a `gap` node it copies all the metadata in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node.
 
