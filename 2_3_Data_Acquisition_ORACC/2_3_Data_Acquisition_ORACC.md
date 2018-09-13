@@ -233,16 +233,19 @@ The list `lemm_l` now contains all the lemmatization data of [P251867](http://or
 
 ### 2.3.5 Enhancing `parsejson()`
 
-The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are captured in the JSON files. The function can easily be enhanced to do a variety of things. 
+The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are captured in the JSON files. The function can easily be enhanced to capture various types of mete-data. These mete-data are stored in a dictionary called `meta_d`which is created in the main process and is then adjusted from within the `parsejson()`function. Each row (each word) in the list `lemm_l` gets the current meta-data from `meta_d`.
 
 #### 2.3.5.1 Sentences
 
 One type of `c` nodes defines a sentence - a sequence of words that belong together in a self-contained syntactical unit. Such a JSON node may look like this (from [etcsri/Q000376](http://oracc.org/etcsri/corpusjson/Q000376.json)):
 
+**TODO** replace json fragment with correct UTF-8.
+
 ```json
  {
               "node": "c",
               "type": "sentence",
+              "implicit": "yes",
               "tag": ".",
               "id": "Q000376.U8",
               "label": "26 - 26",
@@ -263,33 +266,53 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
                   "cdl": [
                     {
                       "node": "l",
-                      "id": "Q000376.l01fb0",
+                      "id": "Q000376.l02092",
                       "ref": "Q000376.26.1",
                       "inst": "szud[prayer]\\abs",
-                      "sig": "@etcsri%sux:Å¡udâ‚ƒ\\abs=Å¡ud[prayer//prayer, dedication, blessing]N'N$Å¡ud.Ã¸/Å¡udâ‚ƒ#N1=Å¡ud.N5=Ã¸##N1=STEM.N5=ABS",
+                      "sig": "@etcsri%sux:šud₃\\abs=šud[prayer//prayer, dedication, blessing]N'N$šud.ø/šud₃#N1=šud.N5=ø##N1=STEM.N5=ABS",
                       "f": {
+                        "lang": "sux",
+                        "form": "šud₃",
+                        "delim": "",
+                        "gdl": [
+                          {
+                            "v": "šud₃",
+                            "id": "Q000376.26.1.0"
+                          }
+                        ],
+                        "cf": "šud",
+                        "gw": "prayer",
+                        "sense": "prayer, dedication, blessing",
+                        "norm": "šud.ø",
+                        "pos": "N",
+                        "epos": "N",
+                        "base": "šud₃",
+                        "morph": "N1=šud.N5=ø",
+                        "morph2": "N1=STEM.N5=ABS"
+                      }
+                    }
 ```
 
-A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this Gábor Zólyomi of [ETCSRI](http://oracc.org/etcsri)) has marked such units (sentences and phrases) in the source files. In order to make the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in a dictionary (called `parameters`), and add that ID to each word in the list of lemmas:
+A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of [ETCSRI](http://oracc.org/etcsri)) has marked such units (sentences and phrases) in the source files. In order to enable the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in the `meta_d` dictionary and add that ID to each word in the list of lemmas:
 
 ```python
-def parsejson(text, parameters):  # this version captures text and sentence IDs
+def parsejson(text):  # this version captures text and sentence IDs
 	for JSONobject in text["cdl"]:
 		if "cdl" in JSONobject: 
-			parsejson(JSONobject, parameters)
+			parsejson(JSONobject)
 		if "type" in JSONobject and JSONobject["type"] == "sentence":
-			parameters["sentence"] = JSONobject["id"]
+			meta_d["sentence"] = JSONobject["id"]
 		if "f" in JSONobject:
 			lemma = JSONobject["f"]
-			lemma["sentence_id"] = parameters["sentence"]
-            lemma["id_text"] = parameters["textid"]
+			lemma["sentence_id"] = meta_d["sentence"]
+            lemma["id_text"] = meta_d["textid"]
 			lemm_l.append(lemma)
 	return 
 ```
 
 ```python
 lemm_l = []
-parameters = {"sentence" : None, "textid": "etcsri/Q000376"}
+meta_d = {"sentence" : None, "textid": "etcsri/Q000376"}
 file = "jsonzip/etcsri.zip"    
 z = zipfile.ZipFile(file)
 st = z.read("etcsri/corpusjson/Q000376.json").decode("utf-8") 
@@ -297,7 +320,7 @@ text = json.loads(st)
 parsejson(text)
 ```
 
-The initial value of the key `sentence` in the `parameters` dictionary is `None`, but when the `parsejson()` function encounters a node`type` with value `sentence` it changes the value of that key to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
+The initial value of the key `sentence` in the `meta_d` dictionary is `None`, but when the `parsejson()` function encounters a node`type` with value `sentence` it changes the value of that key to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
 
 Each row (word) in the list `lemm_l` will now have a field `sentence_id`that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
 
@@ -306,16 +329,16 @@ Each row (word) in the list `lemm_l` will now have a field `sentence_id`that can
 For other types of explorations one may wish to keep together words in a line, or one may wish to indicate which lines of the tablet to include or exclude in the parsing (this is useful for excluding colophons or for selecting one exercise from a school text that includes multiple unrelated extracts). Both of these can be achieved with slight adjustments of the `jsonparser()` and the code that calls that function.
 
 ```python
-def parsejson(text, parameters):  # this version captures line IDs
+def parsejson(text):  # this version captures line IDs
 	for JSONobject in text["cdl"]:
 		if "cdl" in JSONobject: 
-			parsejson(JSONobject, parameters)
+			parsejson(JSONobject)
 		if "label" in JSONobject:
-			parameters["label"] = JSONobject["label"]
+			meta_d["label"] = JSONobject["label"]
 		if "f" in JSONobject:
 			lemma = JSONobject["f"]
-			lemma["id_text"] = parameters["textid"]
-			lemma["label"] = parameters["label"]
+			lemma["id_text"] = meta_d["textid"]
+			lemma["label"] = meta_d["label"]
 			lemma["id_word"] = JSONobject["ref"]
 			lemm_l.append(JSONobject[lemma])
 	return 
@@ -323,12 +346,12 @@ def parsejson(text, parameters):  # this version captures line IDs
 
 ```python
 lemm_l = []
-parameters = {"label" : None, "textid": "cams/gkab/P338628"}
+meta_d = {"label" : None, "textid": "cams/gkab/P338628"}
 file = "jsonzip/cams-gkab.zip"    
 z = zipfile.ZipFile(file)
 st = z.read("cams/gkab/corpusjson/P338628.json").decode("utf-8") 
 text = json.loads(st)
-parsejson(text, parameters)
+parsejson(text)
 ```
 
 The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
@@ -338,41 +361,41 @@ The key `ref`, in this case, will give a word ID of the format `ID_text.line.wor
 Using this same structure to select a section of a tablet for parsing, the code may be adapted as follows:
 
 ```python
-def parsejson(text, parameters):  # this version captures the lemmatization of a partial text
+def parsejson(text):  # this version captures the lemmatization of a partial text
 	for JSONobject in text["cdl"]:
 		if "cdl" in JSONobject: 
-			parsejson(JSONobject, parameters)
+			parsejson(JSONobject)
 		if "label" in JSONobject:
-			parameters["label"] = JSONobject["label"]
-        if parameters["label"] == labels["startlabel"]:
-			parameters["keep"] = True
-        if parameters["keep"] == True: 
+			meta_d["label"] = JSONobject["label"]
+        if meta_d["label"] == labels["startlabel"]:
+			meta_d["keep"] = True
+        if meta_d["keep"] == True: 
          	if "f" in JSONobject:							
 				lemma = JSONobject["f"]						
-				lemma["id_text"] = parameters["id_text"]
-				lemma["label"] = parameters["label"]
+				lemma["id_text"] = meta_d["id_text"]
+				lemma["label"] = meta_d["label"]
 				lemma["id_word"] = JSONobject["ref"]
 				lemm_l.append(JSONobject[lemma])
-        if parameters["label"] == parameters["endlabel"]:
-			parameters["keep"] = False
+        if meta_d["label"] == meta_d["endlabel"]:
+			meta_d["keep"] = False
 	return 
 ```
 
 ```python
 lemm_l = []
-parameters = {"label" : None, "startlabel": "r 1", "endlabel": "r 5", "keep": False,
+meta_d = {"label" : None, "startlabel": "r 1", "endlabel": "r 5", "keep": False,
              "id_text": "dcclt/P273244"}
 file = "jsonzip/dcclt.zip"    
 z = zipfile.ZipFile(file)
 st = z.read("dcclt/corpusjson/P273244.json").decode("utf-8") 
 text = json.loads(st)
-if parameters["startlabel"] == "":
-    parameters["keep"] = True
-parsejson(text, parameters)
+if meta_d["startlabel"] == "":
+    meta_d["keep"] = True
+parsejson(text)
 
 ```
 
-The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key `label` in the dictionary `parameters`, while comparing `label` with the value of `startlabel` and `endlabel` to decide where to start and where to stop capturing the lemmatization.
+The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key `label` in the dictionary `meta_d`, while comparing `label` with the value of `startlabel` and `endlabel` to decide where to start and where to stop capturing the lemmatization.
 
 #### 2.3.5.4 Using `parsejson()`
 
