@@ -239,8 +239,6 @@ The basic `parsejson()` captures only lemmatization data, it ignores line number
 
 One type of `c` nodes defines a sentence - a sequence of words that belong together in a self-contained syntactical unit. Such a JSON node may look like this (from [etcsri/Q000376](http://oracc.org/etcsri/corpusjson/Q000376.json)):
 
-**TODO** replace json fragment with correct UTF-8.
-
 ```json
  {
               "node": "c",
