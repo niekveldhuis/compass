@@ -6,9 +6,9 @@ dependencies:
         - python=3.6
         - jupyter
         - matplotlib
-        - tqdm
         - json
         - pandas
         - ipywidgets
         - rise
-       
+        - pip:
+            - tqdm
