@@ -20,19 +20,23 @@ In order to do so we read the  [ETCSL][] and the [DCCLT][] datasets into Pandas 
 
 From the two sets, which we call `etcsl_words_s` and `lexical_words_s` we eliminate all words that have not been lemmatized (unknown words or broken words). We will see in the next section that we will need unlemmatized words in a slightly more sophisticated analysis - but not here. Collections of unique elements can be visualized in a Venn diagram, that shows the two sets as two partly overlapping circles. The intersection of the two sets represent the overlap. The function `plot_venn`  calls the function `venn2` from the `matplotlib_venn` library and defines the colors and captions. The result looks like this:
 
-![venn diagram 1](C:\Users\veldhuis\Documents\GitHub\CompAss\3_Vocabularies\viz\venn_1.png)
+![venn diagram 1](viz\venn_1.png)
 
 The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 2,033 (or almost half) are shared with the literary corpus. The vocabulary of the literary corpus is slightly larger with 4,345 distinct lemmas.
 
-For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. The Old Babylonian list of animals ([OB Ura 3](http://oracc.org/dcclt/Q000001)) has 106 entries that begin with **udu** (sheep), including
+For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**) but the lexical *entry* (the sequence of these three lemmas in this order) may well be very rare or non-existent in the literary corpus. 
 
-| text                   | translation           |
-| ---------------------- | --------------------- |
-| 23. udu diŋir-e gu₇-a  | sheep eaten by a god  |
-| 2. udu ur-mah-e gu₇-a  | sheep eaten by a lion |
-| 3. udu ur-bar-ra gu₇-a | sheep eaten by a wolf |
+## 	3.2 Lexical Entries in Literary Context
 
-The individual lemmas here (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**, etc.) are fairly to very common and it is not a surprise to see all of them appear in the literary corpus. But what about the full entries? 
+The Old Babylonian list of animals ([OB Ura 3](http://oracc.org/dcclt/Q000001)) has 106 entries that begin with **udu** (sheep), including
+
+| text                    | translation           |
+| ----------------------- | --------------------- |
+| 23. udu diŋir-e gu₇-a   | sheep eaten by a god  |
+| 24. udu ur-mah-e gu₇-a  | sheep eaten by a lion |
+| 25. udu ur-bar-ra gu₇-a | sheep eaten by a wolf |
+
+The individual lemmas here are all fairly to very common and it is not a surprise to see them appear in the literary corpus. But what about the full entries? 
 
 
 
