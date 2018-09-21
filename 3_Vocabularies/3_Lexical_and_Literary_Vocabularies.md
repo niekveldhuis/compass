@@ -20,7 +20,7 @@ In order to do so we read the  [ETCSL][] and the [DCCLT][] datasets into Pandas 
 
 From the two sets, which we call `etcsl_words_s` and `lexical_words_s` we eliminate all words that have not been lemmatized (unknown words or broken words). We will see in the next section that we will need unlemmatized words in a slightly more sophisticated analysis - but not here. Collections of unique elements can be visualized in a Venn diagram, that shows the two sets as two partly overlapping circles. The intersection of the two sets represent the overlap. The function `plot_venn`  calls the function `venn2` from the `matplotlib_venn` library and defines the colors and captions. The result looks like this:
 
-![venn diagram 1](viz\venn_1.png)
+![venn diagram 1](viz/venn_1.png)
 
 The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 2,033 (or almost half) are shared with the literary corpus. The vocabulary of the literary corpus is slightly larger with 4,345 distinct lemmas.
 
