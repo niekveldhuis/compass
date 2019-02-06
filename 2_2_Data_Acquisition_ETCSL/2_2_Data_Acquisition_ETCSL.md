@@ -1,16 +1,13 @@
 **Preliminary version**
 
-This is a preliminary version of Chapter 2.4 of [ComPass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
+This is a preliminary version of Chapter 2.2 of [Compass][] (Computational Assyriology). The associated [notebook](https://github.com/niekveldhuis/CompAss/blob/master/2_2_Data_Acquisition_ETCSL/2_2_Data_Acquisition_ETCSL.ipynb) should work as advertised (Python 3; tested for Windows and Mac), but the text below still needs polishing and editing for clarity. Comments are very welcome.
 
-Back to the main [COMPASS][] page on [ORACC][]
+To the [Data Acquisition ETCSL](https://github.com/niekveldhuis/CompAss/blob/master/2_2_Data_Acquisition_ETCSL/2_2_Data_Acquisition_ETCSL.ipynb) notebook on Github.
 
-Back to [COMPASS Chapter 2](http://build-oracc.museum.upenn.edu/compass/2dataacquisition/index.html)
+## 2.2 Data Acquisition: ETCSL
 
-To the [Data Acquisition ETCSL](https://github.com/niekveldhuis/CompAss/blob/master/2_4_Data_Acquisition_ETCSL/2_4_Data_Acquisition_ETCSL.ipynb) notebook on Github.
 
-## 2.4 Data Acquisition: ETCSL
 
-[TOC]
 The Electronic Text Corpus of Sumerian Literature ([ETCSL][]) provides editions and translations of almost 400 Sumerian literary texts, mostly from the Old Babylonian period (around 1800 BCE). The project was led by Jeremy Black (Oxford University) and was active until 2006, when it was archived. Information about the project, its stages, products and collaborators may be found in the project's [About](http://etcsl.orinst.ox.ac.uk/edition2/general.php) page. By the time of its inception [ETCSL][] was a pioneering effort - the first large digital project in Assyriology, using well-structured data according to the standards and best practices of the time. [ETCSL][] allows for various kinds of searches in Sumerian and in English translation and provides lemmatization for each individual word. Numerous scholars contributed data sets to the [ETCSL][] project (see [Acknowledgements](http://etcsl.orinst.ox.ac.uk/edition2/credits.php#ack)). The availability of [ETCSL][] has fundamentally altered the study of Sumerian literature and has made this literature available for undergraduate teaching.
 
 The original [ETCSL][] files in TEI XML are stored in the [Oxford Text Archive][] from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License ([by-nc-sa 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.
@@ -32,7 +29,7 @@ For some applications, therefore, parsing the original [ETCSL][] XML TEI files h
 
 In order to achieve compatability between [ETCSL][] and [ORACC][] the code uses a number of equivalence dictionaries, that enable replacement of characters, words, or names. These equivalence dictionaries are stored in JSON format (for JSON see section 2.3) in the file `equivalancies.json`  in the directory `equivalencies`.
 
-### 2.4.1 TEI XML format
+### 2.2.1 TEI XML format
 
 The [ETCSL][] files as distributed by the [Oxford Text Archive](http://ota.ox.ac.uk/desc/2518) are encoded in a dialect of `XML` (Extensible Markup Language) that is referred to as `TEI` (Text Encoding Initiative). In this encoding each word (in transliteration) is an *element* that is surrounded by `<w>` and `</w>` tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs, as in the following random examples:
 
@@ -52,7 +49,7 @@ The [ETCSL] file set includes the file [etcslmanual.html](http://etcsl.orinst.ox
 
 Goal of the parsing process is to get as much information as possible out of the `XML` tree in a format that is useful for computational text analysis. What "useful" means depends, of course, on the particular project. The output of the parser is a word-by-word (or rather lemma-by-lemma) representation of the entire [ETCSL][] corpus in a format that is as close as possible to the output of the [ORACC][] parser. For most computational projects it will be necessary to group words into lines or compositions, or to separate out a particular group of compositions. The data is structured in such a way that that can be achieved with a standard set of Python commands of the `Pandas` library..
 
-### 2.4.2 `lxml` and `Xpath`
+### 2.2.2 `lxml` and `Xpath`
 
 There are several Python libraries specifically for parsing `XML`, among them the popular `ElementTree` and its twin `cElementTree`. The library `lxml` is largely compatible with `ElementTree` and `cElementTree` but differs from those in its full support of `Xpath`. `Xpath` is a language for finding and retrieving elements and attributes in XML trees. `Xpath` is not a program or a library, but a set of specifications that is implemented in a variety of software packages in different programming languages. 
 
@@ -83,7 +80,7 @@ The dot in `node.xpath('string(.)')` refers to the current node.
 
 For proper introductions to `Xpath` and `lxml` see the [Wikipedia](https://en.wikipedia.org/wiki/XPath) article on `Xpath` and the homepage of the [`lxml`](https://lxml.de/) library, respectively.
 
-### 2.4.3 Pre-processing: HTML entities
+### 2.2.3 Pre-processing: HTML entities
 
 Before the XML files can be parsed, it is necessary to remove character sequences that are not allowed in XML proper (so-called HTML entities). 
 
@@ -117,7 +114,7 @@ def ampersands(x):
     return x
 ```
 
-### 2.4.4 Pre-Processing: Additional Text and Secondary Text
+### 2.2.4 Pre-Processing: Additional Text and Secondary Text
 
 In order to be able to preserve the [ETCSL][] distinctions between main text (the default), secondary text, and additional text, such information needs to be added as an attribute to each `w` node (word node). This must take place in pre-processing, before the `XML` file is parsed.
 
@@ -182,7 +179,7 @@ def mark_extra(tree, which):
 
 In the main process the function `mark_extra()`is called with the entire `XML` tree as its first argument, and  "additional" or "secondary" as its second argument.
 
-###  2.4.5 Gaps
+###  2.2.5 Gaps
 
 Gaps of one or more lines in the composite text, due to damage to the original cuneiform tablet, is encoded as follows:
 
@@ -192,7 +189,7 @@ Gaps of one or more lines in the composite text, due to damage to the original c
 
 In order to be able to process this information and keep it at the right place in the data we will parse the `gap` tags together with the `l` (line) tags and process the gap as a line. In [ORACC][] gaps are described with the fields `extent` (a number, or `n` for unknown),  and`scope` (line, column, obverse, etc.) . [ORACC][] uses a restricted vocabulary for these fields, but [ETCSL][] does not. The code currently does not try to make the [ETCSL][] encoding of gaps compatible with the [ORACC][] encoding.
 
-### 2.4.6 Parsing the XML Tree
+### 2.2.6 Parsing the XML Tree
 
 The Python library `lxml`, includes a module`etree`, specialized in parsing XML trees. The code basically works from the highest level of the hierarchy  to the lowest, in the following way:
 
@@ -233,7 +230,7 @@ Note that in the process the transliteration and lemmatization data have been re
 
 The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `etcsl_to_oracc()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
 
-### 2.4.7 Parsetext()
+### 2.2.7 Parsetext()
 
 For each `XML` file, the function `parsetext()` is called by the main process. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to replace HTML entities by their unicode counterparts ([2.4.3](#2.4.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
 
@@ -255,18 +252,18 @@ The dictionary `meta_d`, which was created as an empty dictionary in the main pr
 
 The `XML` tree is now forwarded to the function `getversion()`.
 
-### 2.4.8 Getversion()
+### 2.2.8 Getversion()
 
 In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb (or a few), and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
 
 The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. Versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. For each set of `XML` nodes that represents one version the code adds the version name to the `meta_d` dictionary and then calls the `getsection()` dictionary. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name is the empty string.
 
-### 2.4.9 Getsection()
+### 2.2.9 Getsection()
 
 Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section B supposedly follows section A, but how much text is missing between these sections cannot be reconstructed.
 The function `getsection()` works essentially in the same way as `getversion()`. The code will check whether the composition (or a version of the composition) is divided into sections. Sections are indicated in the `XML` with a node `div1`. If such nodes are detected, the function will pull the name of that section (an attribute of `div1` called `n`) and store it in a temporary variable. Section names are usually capital letters that are prefixed to the line number. The function will now collect all `l` (line) *and* `gap` nodes. The Xpath expression that is used for that is `.//l|.//gap`. In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. If the node is an `l` node the `meta_d`dictionary is updated with a line number (or section + line number, if the text is divided into sections)The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
 
-### 2.4.10 Getline()
+### 2.2.10 Getline()
 
 The function `getline()`first updates the field `id_line` in `meta_d`, increasing it by 1. The data type  of`id_line` is integer - it is used to keep lines and gaps in correct order.
 
@@ -276,7 +273,7 @@ If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss
 
 The found nodes are sent to `getword()`.
 
-### 2.4.11 Getword()
+### 2.2.11 Getword()
 
 The function `getword()` is the most complex of the series of functions because different types of words are processed in different ways.
 
@@ -299,7 +296,7 @@ The dictionary `word` now has all the information it needs, but Citation Form, G
 
 The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc` for final formatting of these data elements.
 
-### 2.4.12 tounicode()
+### 2.2.12 tounicode()
 
 The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. In a second run the same code is used to take care of the second digit in 2-digit indexes (as in šeg₁₂), now with the unicode index digits in the look behind regular expression. The routine uses the dictionary `index_no` in `equivalencies.json`, which lists the digits 0-9 (and x) as keys, and their unicode counterparts as values.
 
@@ -311,7 +308,7 @@ for key in eq["index_no"]:
 ```
 Finally,  `tounicode()` use the dictionary `ascii_unicode` (also in the file `equivalencies.json` to replace 'c' by 'š', 'j' by 'ŋ', etc.
 
-### 2.4.13 etcsl_to_oracc()
+### 2.2.13 etcsl_to_oracc()
 
 The function receives a single argument, the dictionary `word` that was created in `getword()`. The function will look up each lemma (a combination of Citation Form, Guide Word, and Part of Speech) in the dictionary `equiv`. This dictionary is a combination of three dictionaries in the file `equivalecies.json`, namely `suxwords`, `emesalwords` and `propernouns`. If the lemma is found in equiv, the [ETCSL][] forms of `cf`, `gw`, and `pos` are replaced by their [ORACC][] counterparts.
 In the `equiv` dictionary the lemmas are stored in the following format:
@@ -346,9 +343,9 @@ The code checks for the existence of a `cf2`key. If present, a new dictionary is
 
 If the lemma is not found in the `equiv` list the `word` dictionary is left unchanged and appended to the list `alltexts`.
 
-### 2.4.14 Post-processing
+### 2.2.14 Post-processing
 
-The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in our `Pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.3: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
+The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in our `Pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.1: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
 
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
@@ -357,5 +354,5 @@ The DataFrame that is the result of the notebook is saved as a `csv` file named 
 [epsd2/etcsl]: http://oracc.museum.upenn.edu/epsd2/etcsl/
 [Inana's Descent to the Netherworld]: http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;display=Crit&amp;amp;amp;charenc=gcirc#
 [Oxford Text Archive]:       http://ota.ox.ac.uk/desc/2518
-[COMPASS]:	http://oracc.org/compass
+[COMPASS]:	https://github.com/niekveldhuis/compass
 
