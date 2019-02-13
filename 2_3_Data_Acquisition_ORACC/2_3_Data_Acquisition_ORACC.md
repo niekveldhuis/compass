@@ -1,17 +1,17 @@
 ## 2.3 Data Acquisition: [ORACC](http://oracc.org)
 Back to the main [COMPASS](http://build-oracc.museum.upenn.edu/compass) page.
 [TOC]
-[ORACC](http://oracc.org) (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. Currently it counts some 30 independent projects, some with one or more subprojects. Corpus-based projects include editions and translations of cuneiform texts with linked local glossaries. [ORACC](http://oracc.org) was created by Steve Tinney (University of Pennsylvania) in 2006.
+[ORACC](http://oracc.org) (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. [ORACC](oracc) counts several dozens of independent projects, some with one or more sub-projects. Corpus-based projects include editions and translations of cuneiform texts with linked local glossaries. [ORACC](http://oracc.org) was created by Steve Tinney (University of Pennsylvania) in 2006.
 
 [ORACC](http://oracc.org) data are made available as open data in JSON format under the [CC0](https://creativecommons.org/publicdomain/zero/1.0/) license (public domain). JSON (JavaScript Object Notation) is a file format that is used widely for exchanging data between programs or between web sites. The file format is simple and straightforward, but allows for complex representations of data in a hierarchical format (not unlike XML). The structure of JSON files is very easy to read and parse in Python and in many other programming languages.
 
-The sections that follow explain how the [ORACC](http://oracc.org) JSON is parsed and how the data can be reformatted in various ways. This is rather technical in nature and perhaps not a very interesting place to start (there are no research results to be reported or evaluated at the end). Proper data acquisition is foundational for all computational research. *What* data are collected (transliteration, transcription, or a series of lemmas) and in what *format* they are collected (word-by-word, line-by-line, or text-by text) depends on the research question and therefore the acquisition techniques discussed below are flexible and allow the user to adjust the code to her or his needs. The analytical chapters (Chapter 3-6) will provide the data in the required format and thus the present section is not necessary to follow along. If you wish to devise your own research project - and format the data accordingly - a deeper understanding of the JSON format and the techniques of parsing the data are required.
+The sections that follow explain how the [ORACC](http://oracc.org) JSON is parsed and how the data can be reformatted in various ways. This is rather technical in nature and perhaps not a very interesting place to start (there are no research results to be reported or to be evaluated at the end). Proper data acquisition is foundational for all computational research. *What* data are collected (transliteration, transcription, or a series of lemmas) and in what *format* they are collected (word-by-word, line-by-line, or text-by text) depends on the research question and therefore the acquisition techniques discussed below are flexible and allow the user to adjust the code to her or his needs. The analytical chapters (Chapter 3-6) will provide the data in the required format and thus the present section is not necessary to follow along. The reader who wishes to devise her own research project - and format the data accordingly - will require a deeper understanding of the JSON format and the techniques of parsing the data.
 
 ### 2.3.1 The JSON Data Format
 
-JSON is recognized as a lightweight but very versatile data structure in particular for exchanging data between programs and web sites. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in traditional databases. We will see that [ORACC](http://oracc.org) JSON documents make extensive use of this feature. The two features mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Java, Python, and R. 
+JavaScript Object Notation, or [JSON](http://www.json.org) is recognized as a lightweight but very versatile data structure in particular for exchanging data between programs and web sites. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in traditional databases. We will see that [ORACC](http://oracc.org) JSON makes extensive use of this feature. The two characteristics mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Python, and R. 
 
-The contents of a valid JSON file are always wrapped in curly brackets, defining it as a dictionary. Dictionaries (and JSON objects) consist entirely of `"key" : "value"` pairs, as in:
+The contents of a valid JSON file are always wrapped in curly brackets, defining it as a Python dictionary. Dictionaries consist entirely of `"key" : "value"` pairs, as in:
 
 ```json
 {"id_text": "P334930", "designation": "SAA 03, 001"}
@@ -23,9 +23,9 @@ In a `"key" : "value"` pair, keys are always strings. Values may be string, numb
 ["ABRT 1 32", "SAA 03, 001"]
 ```
 
-A dictionary is wrapped in curly brackets and consists, again, of `key`: `value` pairs..
+A dictionary is wrapped in curly brackets and consists, again, of `key`: `value` pairs.
 
-Lists and dictionaries do not stand by themselves, but are included as a value in `"key" : "value"` pairs as follows:
+The following is an (abbreviated) example of a JSON file (the catalog of an imaginary [ORACC](http://oracc.org) project) that illustrates the format:
 
 ```json
 {"members": {
@@ -58,28 +58,28 @@ For all practical purposes, a JSON object is identical in structure to a Python 
 
 ### 2.3.2 Acquiring [ORACC](http://oracc.org) `JSON`
 
-Each [ORACC](http://oracc.org) project has `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where [PROJECT] is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json[PROJECT]-[SUBPROJECT].zip`(e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook ### (### with link). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`.
+Each [ORACC](http://oracc.org) project has `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where [PROJECT] is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json/[PROJECT]-[SUBPROJECT].zip`(e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_3_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`.
 
 After downloading the JSON `zip` file you may unzip it to inspect its contents. Note, however, that the scripts will always extract the data directly from the `zip` file.
 
 ### 2.3.3 Parsing JSON: `catalogue.json`
 
-Each [ORACC](http://oracc.org) JSON `zip` file includes a file named `catalogue.json`. Since the structure of `catalogue.json` is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file `dcclt.zip` is available in the directory `jsonzip`. The comments (after #) show the proper naming conventions for a sub-project.
+Each [ORACC](http://oracc.org) JSON `zip` file includes a file named `catalogue.json`. Since the structure of `catalogue.json` is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file `obmc.zip` is available in the directory `jsonzip`. You may download it at http://build-oracc.museum.upenn.edu/json/obmc.zip or use the notebook referenced above. The comments (after #) show the proper naming conventions for a sub-project.
 
 ```python
 import zipfile
 import json
-file = "jsonzip/dcclt.zip"    
+file = "jsonzip/obmc.zip"    
 # or: file = "jsonzip/dcclt-nineveh.zip"
 z = zipfile.ZipFile(file)
-st = z.read("dcclt/catalogue.json").decode("utf-8") 
+st = z.read("obmc/catalogue.json").decode("utf-8") 
 # or: st = z.read("dcclt/nineveh/catalogue.json").decode("utf-8")
 cat = json.loads(st)
 ```
 
-The command `ZipFile` from the `zipfile` library reads in the entire `zip` file. The `read()` command from that same package extracts one particular file from the `zip` and the command `loads()` from the `json` library turns a JSON object into a Python object.
+The command `ZipFile` from the `zipfile` library turns the `zip` file into a `zipfile` object that can be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading in or producing a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
 
-The variable `cat` will now contain the entire `catalogue.json` object from the [DCCLT](http://oracc.org/dcclt) project. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas Dataframe for ease of viewing and manipulation.
+The variable `cat` will now contain the entire `catalogue.json` object from the [OBMC](http://oracc.org/obmc) (Old Babylonian Model Contracts) project by Gabriella Spada. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas Dataframe for ease of viewing and manipulation.
 
 ``` python
 import Pandas as pd	
@@ -95,15 +95,15 @@ df = pd.DataFrame(cat).T
 df
 ```
 
-The table in `df` now contains all the catalog data available in [DCCLT](http://oracc.org/dcclt). The catalog derives from (but is not identical to) a [CDLI](http://cdli.ucla.edu) catalog, and thus one will find the well-known [CDLI](http://cdli.ucla.edu) field names. The Pandas library allows one to manipulate and slice the DataFrame in many different ways. For instance, one may select the relevant fields by creating a new DataFrame as follows:
+The table in `df` now contains all the catalog data available in [OBMC](http://oracc.org/obmc). The Pandas library allows one to manipulate and slice the DataFrame in many different ways. For instance, one may select the relevant fields by creating a new DataFrame as follows:
 
 ```python
 df1 = df[["provenience", "period", "id_text"]]
 ```
 
-Pandas is a powerful Python library that allows for many different ways of slicing and manipulating – we will see some of those in later sections. Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.
+Pandas is a powerful Python library – we will see some of its functionality in later sections. Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.
 
-The notebook `json-cat.ipynb` allows one to enter one or more project abbreviations, download the JSON `zip` file, extract the catalog information and store that information in a `csv` file.
+The notebook [2-3-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file, extract the catalog information and store that information in a `csv` file.
 
 ### 2.3.4 Parsing an [ORACC](http://oracc.org) JSON Text Edition File
 
@@ -114,15 +114,15 @@ Reading in the data works in exactly the same way as above:
 ```python
 import zipfile
 import json
-file = "jsonzip/dcclt.zip"    
+file = "jsonzip/obmc.zip"    
 # or: file = "jsonzip/saao-saa01.zip"
 z = zipfile.ZipFile(file)
-st = z.read("dcclt/corpusjson/P251867.json").decode("utf-8") 
+st = z.read("obmc/corpusjson/P230754.json").decode("utf-8") 
 # or: st = z.read("dcclt/saao/saa01/corpusjson/P251867.json").decode("utf-8")
 text = json.loads(st)
 ```
 
-The structure of the JSON file, however, is much more complex, because of the hierarchical structure of the data. A text may have one or more surfaces (obverse, reverse), each surface may have one or more columns; each column has lines; each line has words; and each word has signs.
+The structure of the JSON file, however, is much more complex, because of the hierarchical structure of textual data. A text may have one or more surfaces (obverse, reverse), each surface may have one or more columns; each column has lines; each line has words; and each word has signs.
 
 	text object
 		surface
@@ -133,7 +133,7 @@ The structure of the JSON file, however, is much more complex, because of the hi
 
 How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC](http://oracc.org) JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object in columns and lines.	
 
-The JSON tree for a text edition consists of a hierarchy of three types of nodes: `c` for a Chunk of text (a word, a line, a sentence, or an entire text); `d` for Discontinuity (beginning of a line, a column, or a surface; breakage; or a ruling on the tablet); and `l` for Lemma, containing all the lemmatization data, including data on the graphemes that write the word.
+The JSON tree for a text edition consists of a hierarchy `cdl` nodes. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning (or end) of a column, a break in the text, or the beginning (or end) of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` node is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy, because a word is always part of a Chunk of text and comes between two Discontinuities (say, the beginning and the end of a line).  The "l" dictionary itself contains a `gdl`key (for [Grapheme Description Language](http://http://oracc.museum.upenn.edu/ns/gdl/1.0/)), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the  reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC](http://oracc.org) projects the `gdl` node will include the cuneiform sign itself).
 
 The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (beginning of the file omitted): 
 
@@ -198,9 +198,11 @@ The structure may be illustrated with the beginning of [P251867](http://oracc.or
                   },
 ```
 
-The first `cdl` node contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). The dictionary contains a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list a list as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text. The lowest node in this tree is called `gdl` (for [Grapheme Description Language](http://http://oracc.museum.upenn.edu/ns/gdl/1.0/)), which identifies the graphemes (cuneiform signs) of which each word is composed, with information on the  reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC](http://oracc.org) projects the `gdl` node will include the cuneiform sign itself). 
+The first `cdl` node contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list of dictionaries as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text.
 
-At any level in the tree the key `cdl` (for Chunk Discontinuity Lemma) thus has as its value a list. The list contains a sequence of dictionaries, each of which is a `c`, `d`, or `l` node. Each `c` node (Chunk) may contain another `cdl` key, which again contains an list – etc. The `l` nodes contain a key `f` which has as its value a dictionary that contains all the lemmatization data. In order to pull out the lemmatization data, therefore, we need to iterate through all the `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
+This hierarchy implies that a word (an "l" node) may belong to multiple Chunks ("c" nodes) that do not necessarily align. For instance, a word may belong to a sentence that continues from the obverse to the reverse of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
+
+In order to pull out the lemmatization data we need to iterate through the hierarchy of `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
 
 A straightforward way of doing this is by defining a recursive function, that is, a function that calls itself to recursively inspect the value of successive layers of `cdl` keys until one encounters an `f` key. The contents of the `f` key are then added to a list. In its most basic form that function looks like this:
 
@@ -214,18 +216,18 @@ def parsejson(text):
 	return 
 ```
 
-For the `parsejson()` function to run properly we need to first define `lemm_l` as an empty list. Then the function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function modifies the list, adding a new row with lemmatization data (one word at a time) each time it encounters an `f` key.
+For the `parsejson()` function to run properly we need to first define `lemm_l` as an empty list. Then the function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function modifies the list, adding a new row of lemmatization data (one word at a time) each time it encounters an `f` key.
 
 ```python
 lemm_l = []
 file = "jsonzip/dcclt.zip"    
 z = zipfile.ZipFile(file)
-st = z.read("dcclt/corpusjson/P251867.json").decode("utf-8") 
+st = z.read("obmc/corpusjson/P230754.json").decode("utf-8") 
 text = json.loads(st)
 parsejson(text)
 ```
 
-The list `lemm_l` now contains all the lemmatization data of [P251867](http://oracc.org/dcclt/P251867) as edited in [DCCLT](http://oracc.org/dcclt). One may write the list directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section 2.4.6). Before we get to that we will first discuss several enhancements of the`parsejson()` function.
+The list `lemm_l` now contains all the lemmatization data of [P230754](http://oracc.org/obmc/P230754) as edited in [OBMC](http://oracc.org/obmc). One may write the list directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section 2.4.6). Before we get to that we will first discuss several enhancements of the`parsejson()` function.
 
 ![P251867](http://cdli.ucla.edu/dl/tn_photo/P251867.jpg)
 
@@ -233,9 +235,82 @@ The list `lemm_l` now contains all the lemmatization data of [P251867](http://or
 
 ### 2.3.5 Enhancing `parsejson()`
 
-The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are captured in the JSON files. The function can easily be enhanced to capture various types of mete-data. These mete-data are stored in a dictionary called `meta_d`which is created in the main process and is then adjusted from within the `parsejson()`function. Each row (each word) in the list `lemm_l` gets the current meta-data from `meta_d`.
+The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are included in the JSON files. Line numbers and text breaks are stored are stored in "d" nodes in a level above the "l" node in the `cdl` hierarchy. Similarly, sentence identifiers (and other discourse units) are stored in "c" nodes. The `parsejson()` function can easily be enhanced to capture various types of such meta-data. These meta-data are (temporarily) stored in a dictionary called `meta_d`which is created in the main process and is updated whenever the `parsejson()` function encounters a relevant node. Each row (each word) in the list `lemm_l` receives the current meta-data from `meta_d`.
 
-#### 2.3.5.1 Sentences
+#### 2.3.5.2 Lines
+
+For many types of explorations one may wish to keep together words in a line, or one may wish to indicate which lines of the tablet to include or exclude in the parsing (this is useful for excluding colophons or for selecting one exercise from a school text that includes multiple unrelated extracts). Both of these can be achieved with slight adjustments of the `jsonparser()` and the code that calls that function.
+
+```python
+def parsejson(text):  # this version captures line IDs
+	for JSONobject in text["cdl"]:
+		if "cdl" in JSONobject: 
+			parsejson(JSONobject)
+		if "label" in JSONobject:
+			meta_d["label"] = JSONobject["label"]
+		if "f" in JSONobject:
+			lemma = JSONobject["f"]
+			lemma["id_text"] = meta_d["textid"]
+			lemma["label"] = meta_d["label"]
+			lemma["id_word"] = JSONobject["ref"]
+			lemm_l.append(JSONobject[lemma])
+	return 
+```
+
+```python
+lemm_l = []
+meta_d = {"label" : None, "textid": "cams/gkab/P338628"}
+file = "jsonzip/cams-gkab.zip"    
+z = zipfile.ZipFile(file)
+st = z.read("cams/gkab/corpusjson/P338628.json").decode("utf-8") 
+text = json.loads(st)
+parsejson(text)
+```
+
+The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
+
+#### 2.3.5.3 Select a Section
+
+Using this same structure to select a section of a tablet for parsing, the code may be adapted as follows:
+
+```python
+def parsejson(text):  # this version captures the lemmatization of a partial text
+	for JSONobject in text["cdl"]:
+		if "cdl" in JSONobject: 
+			parsejson(JSONobject)
+		if "label" in JSONobject:
+			meta_d["label"] = JSONobject["label"]
+        if meta_d["label"] == labels["startlabel"]:
+			meta_d["keep"] = True
+        if meta_d["keep"] == True: 
+         	if "f" in JSONobject:							
+				lemma = JSONobject["f"]						
+				lemma["id_text"] = meta_d["id_text"]
+				lemma["label"] = meta_d["label"]
+				lemma["id_word"] = JSONobject["ref"]
+				lemm_l.append(JSONobject[lemma])
+        if meta_d["label"] == meta_d["endlabel"]:
+			meta_d["keep"] = False
+	return 
+```
+
+```python
+lemm_l = []
+meta_d = {"label" : None, "startlabel": "r 1", "endlabel": "r 5", "keep": False,
+             "id_text": "dcclt/P273244"}
+file = "jsonzip/dcclt.zip"    
+z = zipfile.ZipFile(file)
+st = z.read("dcclt/corpusjson/P273244.json").decode("utf-8") 
+text = json.loads(st)
+if meta_d["startlabel"] == "":
+    meta_d["keep"] = True
+parsejson(text)
+
+```
+
+The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key `label` in the dictionary `meta_d`, while comparing `label` with the value of `startlabel` and `endlabel` to decide where to start and where to stop capturing the lemmatization.
+
+#### 2.3.5.2 Sentences
 
 One type of `c` nodes defines a sentence - a sequence of words that belong together in a self-contained syntactical unit. Such a JSON node may look like this (from [etcsri/Q000376](http://oracc.org/etcsri/corpusjson/Q000376.json)):
 
@@ -322,78 +397,7 @@ The initial value of the key `sentence` in the `meta_d` dictionary is `None`, bu
 
 Each row (word) in the list `lemm_l` will now have a field `sentence_id`that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
 
-#### 2.3.5.2 Lines
 
-For other types of explorations one may wish to keep together words in a line, or one may wish to indicate which lines of the tablet to include or exclude in the parsing (this is useful for excluding colophons or for selecting one exercise from a school text that includes multiple unrelated extracts). Both of these can be achieved with slight adjustments of the `jsonparser()` and the code that calls that function.
-
-```python
-def parsejson(text):  # this version captures line IDs
-	for JSONobject in text["cdl"]:
-		if "cdl" in JSONobject: 
-			parsejson(JSONobject)
-		if "label" in JSONobject:
-			meta_d["label"] = JSONobject["label"]
-		if "f" in JSONobject:
-			lemma = JSONobject["f"]
-			lemma["id_text"] = meta_d["textid"]
-			lemma["label"] = meta_d["label"]
-			lemma["id_word"] = JSONobject["ref"]
-			lemm_l.append(JSONobject[lemma])
-	return 
-```
-
-```python
-lemm_l = []
-meta_d = {"label" : None, "textid": "cams/gkab/P338628"}
-file = "jsonzip/cams-gkab.zip"    
-z = zipfile.ZipFile(file)
-st = z.read("cams/gkab/corpusjson/P338628.json").decode("utf-8") 
-text = json.loads(st)
-parsejson(text)
-```
-
-The key `ref`, in this case, will give a word ID of the format `ID_text.line.word`, for instance `P338628.4.1`: the first word in line 4 of `P338628` (an astronomical fragment edited in [GKAB](http://oracc.org/cams/gkab)). Note that "4" is an abstract reference to a line (in this case the first line of the fragment), not a traditional line number. Breaks, horizontal drawings, and other features of the tablet may receive a similar reference number. Because `id_word` includes a line reference as its second element, it can be used to keep the words of a single line together and to keep lines, breaks, and rulings in their proper order. Traditional line numbers are captured with the key `label`. 
-
-#### 2.3.5.3 Select a Section
-
-Using this same structure to select a section of a tablet for parsing, the code may be adapted as follows:
-
-```python
-def parsejson(text):  # this version captures the lemmatization of a partial text
-	for JSONobject in text["cdl"]:
-		if "cdl" in JSONobject: 
-			parsejson(JSONobject)
-		if "label" in JSONobject:
-			meta_d["label"] = JSONobject["label"]
-        if meta_d["label"] == labels["startlabel"]:
-			meta_d["keep"] = True
-        if meta_d["keep"] == True: 
-         	if "f" in JSONobject:							
-				lemma = JSONobject["f"]						
-				lemma["id_text"] = meta_d["id_text"]
-				lemma["label"] = meta_d["label"]
-				lemma["id_word"] = JSONobject["ref"]
-				lemm_l.append(JSONobject[lemma])
-        if meta_d["label"] == meta_d["endlabel"]:
-			meta_d["keep"] = False
-	return 
-```
-
-```python
-lemm_l = []
-meta_d = {"label" : None, "startlabel": "r 1", "endlabel": "r 5", "keep": False,
-             "id_text": "dcclt/P273244"}
-file = "jsonzip/dcclt.zip"    
-z = zipfile.ZipFile(file)
-st = z.read("dcclt/corpusjson/P273244.json").decode("utf-8") 
-text = json.loads(st)
-if meta_d["startlabel"] == "":
-    meta_d["keep"] = True
-parsejson(text)
-
-```
-
-The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key `label` in the dictionary `meta_d`, while comparing `label` with the value of `startlabel` and `endlabel` to decide where to start and where to stop capturing the lemmatization.
 
 #### 2.3.5.4 Using `parsejson()`
 
