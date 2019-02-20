@@ -447,7 +447,7 @@ This tells us that at this position in `Q000039` three lines are missing. The re
 
 This indicates a double ruling at the end of the lexical prism [CUSAS 12, 3.1.01](http://oracc.org/dcclt/P273880.718). 
 
-Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `lemm_l in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_3_Data_Acquisition_ORACC/2_3_3_extended_ORACC-JSON_parser.ipynb) in the Compass repo does include that functionality.
+Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `lemm_l in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo does include that functionality.
 
 ### 2.1.7 Data Structuring
 
@@ -496,7 +496,7 @@ words['id_line'] = [int(wordid.split('.')[1]) for wordid in words['id_word']]
 
 The field `id_line` will be used in section [2.1.7.4](#2.1.7.4-Arrange-by-Line-or-by-Document) to arrange the data in line-by-line fashion.
 
-The [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_3_Data_Acquisition_ORACC/2_3_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo captures information about broken lines and horizontal rulings (see section [2.1.6.2](#2.1.6.2-Broken-Lines). Such features have a reference in the format `ID_TEXT.ID_LINE`; that reference is copied to the field 'id_word' and extended with an extra '.0' to mimic the format of true word IDs.
+The [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo captures information about broken lines and horizontal rulings (see section [2.1.6.2](#2.1.6.2-Broken-Lines). Such features have a reference in the format `ID_TEXT.ID_LINE`; that reference is copied to the field 'id_word' and extended with an extra '.0' to mimic the format of true word IDs.
 
 Note that it would be more straightforward to derive `id_line` from the key "ref" in a `d` node in the `parsejson()`function:
 
