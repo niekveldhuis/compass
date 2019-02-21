@@ -369,7 +369,7 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
 A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of [ETCSRI][etcsri]) has marked such units (sentences and phrases) in the source files. In order to enable the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in the `meta_d` dictionary and add that ID to each word in the list of lemmas:
 
 ```python
-def parsejson(text):  # this version captures and sentence IDs
+def parsejson(text):  # this version captures sentence IDs
     for JSONobject in text["cdl"]:
         if "type" in JSONobject and JSONobject["type"] == "sentence":
             meta_d["sentence"] = JSONobject["id"]
@@ -496,7 +496,7 @@ words['id_line'] = [int(wordid.split('.')[1]) for wordid in words['id_word']]
 
 The field `id_line` will be used in section [2.1.7.4](#2.1.7.4-Arrange-by-Line-or-by-Document) to arrange the data in line-by-line fashion.
 
-The [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo captures information about broken lines and horizontal rulings (see section [2.1.6.2](#2.1.6.2-Broken-Lines). Such features have a reference in the format `ID_TEXT.ID_LINE`; that reference is copied to the field 'id_word' and extended with an extra '.0' to mimic the format of true word IDs.
+The [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo captures information about broken lines and horizontal rulings (see section [2.1.6.2](#2.1.6.2-Broken-Lines). Such features have a reference in the format `ID_TEXT.ID_LINE`; that reference is copied to the field 'id_word'.
 
 Note that it would be more straightforward to derive `id_line` from the key "ref" in a `d` node in the `parsejson()`function:
 

@@ -23,11 +23,11 @@ Since [ETCSL][] is an archival site, the editions are not updated to reflect new
 
 In terms of data acquisition, the way to deal with these limitations is to make the [ETCSL][] data as much as possible compatible with the data standards of the Open Richly Annotated Cuneiform Corpus ([ORACC][]). [ORACC][] is an active project where new or updated editions can be produced. If compatible, if [ETCSL][] and [ORACC][] data may be freely mixed and matched, then the [ETCSL][] data set can effectively be updated and expanded.
 
-The [ETCSL][] text corpus was one of the core data sets for the development of of [ePSD1](http://psd.museum.upenn.edu/epsd1/index.html) and [ePSD2][] (currently in a Beta version) and this version of the [ETCSL][] data is available at [ePSD2/ETCSL][] and can be parsed with the ORACC parser, discussed in section 2.3. In order to include the data in ePSD the lemmatization is adapted there to [ORACC][] standards and thus this version of the [ETCSL][] dataset is fully compatible with any [ORACC][] dataset.
+The [ETCSL][] text corpus was one of the core data sets for the development of of [ePSD1](http://psd.museum.upenn.edu/epsd1/index.html) and [ePSD2][] (currently in a Beta version) and this version of the [ETCSL][] data forms the core of the literary corpus collected in [ePSD2/literary][]. In order to harvest the [ETCSL][] data for [ePSD2][] the lemmatization was adapted to [ORACC][] standards and thus the [ePSD2/literary][] version of the [ETCSL][] dataset is fully compatible with any [ORACC][] dataset, and can be parsed with the ORACC parser, discussed in section 2.1. 
 
-For some applications, therefore, parsing the original [ETCSL][] XML TEI files has become somewhat redundant. However, any data transformation implies choices and it is hard to know what the needs will be of future computational approaches to the [ETCSL][] dataset. The reason to include and discuss the [ETCSL][] parser here is, first, to offer users the opportunity to work with the original data set. The various transformations included in the current parser may be adapted and adjusted to reflect the preferences and research questions of the user. As a concrete example of choices to be made, [ETCSL][] distinguishes between main text, secondary text, and additional text, to reflect different types of variants between manuscripts (see below 2.4.4). The [ePSD2/ETCSL][] data set does not include this distinction. The output of the current parser will indicate for each word whether it is "secondary" or "additional" (according to [ETCSL][] criteria) and offer the possibility to include such words or exclude them from the  analysis. Similarly, the translations are not included in the [ePSD2/ETCSL][] dataset, nor are they considered by the present parser. Those data are available in the [ETCSL][] XML TEI file set and the XML of the transcription files marks the beginning and end of translation paragraphs. Such data, therefore, is available and one may well imagine research questions for which the translation files are relevant (e.g. translation alignment). Although the present code does not deal with that, one may use the same techniques and the same approach exemplified here to retrieve such data.
+For some applications, therefore, parsing the original [ETCSL][] XML TEI files has become redundant. However, any data transformation implies choices and it is hard to know what the needs will be of future computational approaches to the [ETCSL][] dataset. The reason to include and discuss the [ETCSL][] parser here is, first, to offer users the opportunity to work with the original data set. The various transformations included in the current parser may be adapted and adjusted to reflect the preferences and research questions of the user. As a concrete example of choices to be made, [ETCSL][] distinguishes between main text, secondary text, and additional text, to reflect different types of variants between manuscripts (see below 2.1.4). The [ePSD2/literary][] data set does not include this distinction. The output of the current parser will indicate for each word whether it is "secondary" or "additional" (according to [ETCSL][] criteria) and offer the possibility to include such words or exclude them from the  analysis. Similarly, the translations are not included in the [ePSD2/literary][] dataset, nor are they considered by the present parser. Translation data are, however, available in the [ETCSL][] XML TEI file set and the XML of the transcription files marks the beginning and end of translation paragraphs. Such data, therefore, is available and one may well imagine research questions for which the translation files are relevant (e.g. translation alignment). Although the present code does not deal with translation, one may use the same techniques and the same approach exemplified here to retrieve such data.
 
-In order to achieve compatability between [ETCSL][] and [ORACC][] the code uses a number of equivalence dictionaries, that enable replacement of characters, words, or names. These equivalence dictionaries are stored in JSON format (for JSON see section 2.3) in the file `equivalancies.json`  in the directory `equivalencies`.
+In order to achieve compatability between [ETCSL][] and [ORACC][] the code uses a number of equivalence dictionaries, that enable replacement of characters, words, or names. These equivalence dictionaries are stored in JSON format (for JSON see section 2.1) in the file `equivalencies.json`  in the directory `equivalencies`.
 
 ### 2.2.1 TEI XML format
 
@@ -39,21 +39,21 @@ The [ETCSL][] files as distributed by the [Oxford Text Archive](http://ota.ox.ac
 <w form="ickila-bi" lemma="ickila" pos="N" label="shell"><term id="c1813.t1">ickila</term><gloss lang="sux" target="c1813.t1">la</gloss>-bi</w>
 ```
 
-The `form` attribute is the full form of the word, omitting flags (such as question marks), indication of breakage, or glosses. The `lemma` attribute is the form minus morphology (corresponding to `citation form` in [ORACC][]). Some lemmas may be spelled in more than one way in Sumerian; the `lemma` attribute will use a standard spelling (note, for instance, that the `lemma` of "ti-a" is "te"). The `lemma` in [ETCSL][]](unlike `Citation Form` in [ORACC][]) uses actual transliteration with hyphens and sign index numbers (as in `lemma = e2-jar8`, where the corresponding [ORACC][] `citation form` is egar).
+The `form` attribute is the full form of the word, omitting flags (such as question marks), indication of breakage, or glosses. The `lemma` attribute is the form minus morphology (corresponding to `citation form` in [ORACC][]). Some lemmas may be spelled in more than one way in Sumerian; the `lemma` attribute will use a standard spelling (note, for instance, that the `lemma` of "ti-a" is "te"). The `lemma` in [ETCSL][] (unlike `Citation Form` in [ORACC][]) uses actual transliteration with hyphens and sign index numbers (as in `lemma = e2-jar8`, where the corresponding [ORACC][] `citation form` is egar).
 
 The `label` attribute gives a general indication of the meaning of the Sumerian word but is not context-sensitive. That is, the `label` of "lugal" is always "king", even if in context the word means "owner". The `pos` attribute gives the Part of Speech, but again the attribute is not context-sensitive. Where a verb (such as sag₉, to be good) is used as an adjective the `pos` is still "V" (for verb). Together `lemma`, `label`, and `pos` define a Sumerian lemma (dictionary entry).
 
-In parsing the [ETCSL] files we will be looking for the `<w>` and `</w>` tags to isolate words and their attributes. Higher level tags identify lines (`<l>` and `</l>`), versions, secondary text (found only in a minority of sources), etcetera.
+In parsing the [ETCSL][] files we will be looking for the `<w>` and `</w>` tags to isolate words and their attributes. Higher level tags identify lines (`<l>` and `</l>`), versions, secondary text (found only in a minority of sources), etcetera.
 
-The [ETCSL] file set includes the file [etcslmanual.html](http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php) with explanations of the tags, their attributes, and their proper usage.
+The [ETCSL][] file set includes the file [etcslmanual.html](http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php) with explanations of the tags, their attributes, and their proper usage.
 
-Goal of the parsing process is to get as much information as possible out of the `XML` tree in a format that is useful for computational text analysis. What "useful" means depends, of course, on the particular project. The output of the parser is a word-by-word (or rather lemma-by-lemma) representation of the entire [ETCSL][] corpus in a format that is as close as possible to the output of the [ORACC][] parser. For most computational projects it will be necessary to group words into lines or compositions, or to separate out a particular group of compositions. The data is structured in such a way that that can be achieved with a standard set of Python commands of the `Pandas` library..
+Goal of the parsing process is to get as much information as possible out of the `XML` tree in a format that is as close as possible to the output of the [ORACC][] parser. The output of the parser is a word-by-word (or rather lemma-by-lemma) representation of the entire [ETCSL][] corpus. For most computational projects it will be necessary to group words into lines or compositions, or to separate out a particular group of compositions. The data is structured in such a way that that can be achieved with a standard set of Python commands of the `pandas` library.
 
 ### 2.2.2 `lxml` and `Xpath`
 
 There are several Python libraries specifically for parsing `XML`, among them the popular `ElementTree` and its twin `cElementTree`. The library `lxml` is largely compatible with `ElementTree` and `cElementTree` but differs from those in its full support of `Xpath`. `Xpath` is a language for finding and retrieving elements and attributes in XML trees. `Xpath` is not a program or a library, but a set of specifications that is implemented in a variety of software packages in different programming languages. 
 
-`Xpath` uses the forward slash to describe a path through the hierarchy of the the `XML` tree. The expression `"/body/l/w"` will select all the `w` (word) elements that are children of `l` (line) elements that are children of the `body` element in the top level of `XML` hierarchy.
+`Xpath` uses the forward slash to describe a path through the hierarchy of the the `XML` tree. The expression `"/body/l/w"` refers to all the `w` (word) elements that are children of `l` (line) elements that are children of the `body` element in the top level of `XML` hierarchy.
 
 The expression `'//w'`means: all the `w` nodes, wherever in the hierarchy of the `XML` tree. The expression may be used to create a list of all the `w` nodes with all of their associated attributes. The attributes of a node are addressed  with the `@` sign, so that `//w/@label` refers to the `label` attributes of all the `w` nodes at any level in the hierarchy. 
 
@@ -88,7 +88,7 @@ In non-transliteration contexts (bibliographies, text titles, etc.) [ETCSL][] us
 
 For purposes of data acquisition these entities need to be resolved, because XML parsers will not recognize these sequences as valid XML. 
 
-The key `ampersands`in the file `equivalences.json` includes a dictionary, listing all the HTML entities that appear in the [ETCSL][] files with their Unicode counterparts:
+The key `ampersands`in the file `equivalencies.json` has as its value a dictionary, listing all the HTML entities that appear in the [ETCSL][] files with their Unicode counterparts:
 
 ```json
 {'&C;': 'Š',
@@ -202,7 +202,17 @@ text							parsetext()
 					format		etcsl_to_oracc()
 ```
 
-The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.4.3](#2.4.3-Pre-processing:-HTML-entities) and [2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, calls `getword()`, which calls `etcsl_to_oracc()`. These functions do not return anything. Instead, they modify the dictionaries `meta_d` (which collects meta data on various levels) and `word`, which contains all the information (including meta data) of an individual word. The function `etcsl_to_oracc()`, the last one in the hierarchy, appends the dictionary `word` to the list `alltexts` (which was created as an empty list in the main process) before the whole cycle starts again.
+The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.2.3](#2.2.3-Pre-processing:-HTML-entities) and [2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, calls `getword()`, which calls `etcsl_to_oracc()`. These functions do not return anything. Instead, they modify the dictionary `meta_d` which collects meta data on various levels amd plays a central role in the parsing process.
+
+The function `getversion()`, for instance, checks whether the composition that is being parsed is divided into versions.  This is done with the line
+
+```python
+versions = tree.xpath('.//body[child::head]')
+```
+
+This results in a list (`versions`), if the length of the list is 0, there are no versions, and the key "version" in `meta_d` is set to '' (the empty string). If there are versions, the code iterates through the list `versions` and detects for each the name of that version (e.g. "Version A"). The key "version" in meta_d is then updated with that name and then the next function (`getsection()`) is called with as argument the part of the XML tree that represents one version. The other functions in this hierarchy work in similar fashion, each adding or modifying a key in `meta_d` while digging deeper into the XML tree. 
+
+The function `getword()`not only retrieves and formats a lemma, but also adds to this lemma the meta data that was assembled in `meta_d`: line number, section, version, text name, etc. The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL][] style lemma into a [ORACC][] style lemma and appends the resulting dictionary `word` to the list `alltexts` (which was created as an empty list in the main process) before the whole cycle starts again.
 
 The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in the original XML file: 
 
@@ -232,46 +242,41 @@ The sections below will discuss in some detail the various functions, starting w
 
 ### 2.2.7 Parsetext()
 
-For each `XML` file, the function `parsetext()` is called by the main process. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to replace HTML entities by their unicode counterparts ([2.4.3](#2.4.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
+The main process iterates through the list of `XML` files (one for each composition in [ETCSL][]) and calls for each of them the function `parsetext()`. After opening the `XML` file `parsetext()` first calls the function `ampersands()` in order to replace HTML entities by their unicode counterparts ([2.2.3](#2.2.3-Pre-processing:-HTML-entities)). The module `etree` from the `lxml` library is used to read the `XML` tree. Since `etree` does not read the `XML` directly from file, but rather reads the output of the `ampersands()` function, we need the function `fromstring()`:
 
 ```python
 tree = etree.fromstring(xmltext)
 ```
 
-After creating the tree the function `mark_extra()` ([2.4.4](#2.4.4-Pre-Processing:-Additional-Text-and-Secondary-Text)) is called in order to explicitly mark "additional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which create problems when data are saved in `cvs`. These two elements are removed from the title.
+After creating the tree, the function `mark_extra()` ([2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text)) is called in order to explicitly mark "additional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL][] text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which may create problems when data are saved in `cvs`. These two elements are removed from the title.
 
 ```python
 name = tree.xpath('string(//title)')
 name = name.replace(' -- a composite transliteration', '')
 name = name.replace(',', '')
 ```
-
-
-
-The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL][] text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference will be used and manipulated in the function `getline()`.
+The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL][] text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference is updated every time the function `getline()` is called.
 
 The `XML` tree is now forwarded to the function `getversion()`.
 
 ### 2.2.8 Getversion()
 
-In some cases an [ETCSL][] file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb (or a few), and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL][] c.6.2.1 - c.6.2.5).
-
-The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). The function updates`meta_d`, a dictionary of meta data. The function checks to see if versions are available in the file that is being parsed. Versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. For each set of `XML` nodes that represents one version the code adds the version name to the `meta_d` dictionary and then calls the `getsection()` dictionary. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name is the empty string.
+The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). In the XML versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of the versions and then calls the `getsection()` function. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name in `meta_d` is the empty string.
 
 ### 2.2.9 Getsection()
 
 Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section B supposedly follows section A, but how much text is missing between these sections cannot be reconstructed.
-The function `getsection()` works essentially in the same way as `getversion()`. The code will check whether the composition (or a version of the composition) is divided into sections. Sections are indicated in the `XML` with a node `div1`. If such nodes are detected, the function will pull the name of that section (an attribute of `div1` called `n`) and store it in a temporary variable. Section names are usually capital letters that are prefixed to the line number. The function will now collect all `l` (line) *and* `gap` nodes. The Xpath expression that is used for that is `.//l|.//gap`. In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. If the node is an `l` node the `meta_d`dictionary is updated with a line number (or section + line number, if the text is divided into sections)The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
+The function `getsection()` works essentially in the same way as `getversion()`. Sections are indicated in the `XML` with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap`. In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d`dictionary is updated with a line number (or section + line number, if the text is divided into sections). The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
 
 ### 2.2.10 Getline()
 
 The function `getline()`first updates the field `id_line` in `meta_d`, increasing it by 1. The data type  of`id_line` is integer - it is used to keep lines and gaps in correct order.
 
-If `getline()` receives a `gap` node it copies all the metadata in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node.
+If `getline()` receives a `gap` node it copies all the meta data in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node.
 
 If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss` nodes with the language attribute `akk`. The Xpath expression looks as follows: './/w|.//gloss[@lang="akk"]'. This will find both Sumerian and Akkadian words in the text.
 
-The found nodes are sent to `getword()`.
+The nodes that are found are sent to `getword()`.
 
 ### 2.2.11 Getword()
 
@@ -279,7 +284,7 @@ The function `getword()` is the most complex of the series of functions because 
 
 As a first step `getword()` will copy all the meta-data in the dictionary `meta_d` into the dictionary `word`. This dictionary will hold all the data for one individual word token.
 
-If `getword()` receives a `gloss` node, this is an Akkadian word, or an entire Akkadian phrase or sentence, that is inserted in a Sumerian text as a translation gloss. Akkadian words are not lemmatized in [ETCSL][], so all we can collect is the `form` (the transliteration) and the language. These fields are added to the `word` dictionary, `word` is appended to the list `alltexts` and control is returned to the previous function (`getline()`), which will send the next word.
+If `getword()` receives a `gloss` node, this node represents either an Akkadian word, or an entire Akkadian phrase or sentence, that is inserted in a Sumerian text as a translation gloss. Akkadian words are not lemmatized in [ETCSL][], so all we can collect is the `form` (the transliteration) and the language. These fields are added to the `word` dictionary, `word` is appended to the list `alltexts` and control is returned to the previous function (`getline()`), which will send the next word.
 
 If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form (`cf`) is found in the attribute `lemma`. 
 
@@ -350,8 +355,8 @@ The DataFrame that is the result of the notebook is saved as a `csv` file named 
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
 [ORACC]:                             http://oracc.org
-[epsd2]:                               http://oracc.org/epsd2/sux
-[epsd2/etcsl]: http://oracc.museum.upenn.edu/epsd2/etcsl/
+[epsd2]:                               http://oracc.org/epsd2
+[epsd2/literary]: http://oracc.museum.upenn.edu/epsd2/literary
 [Inana's Descent to the Netherworld]: http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;display=Crit&amp;amp;amp;charenc=gcirc#
 [Oxford Text Archive]:       http://ota.ox.ac.uk/desc/2518
 [COMPASS]:	https://github.com/niekveldhuis/compass
