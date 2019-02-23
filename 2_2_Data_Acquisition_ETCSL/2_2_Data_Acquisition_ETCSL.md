@@ -191,28 +191,29 @@ In order to be able to process this information and keep it at the right place i
 
 ### 2.2.6 Parsing the XML Tree
 
-The Python library `lxml`, includes a module`etree`, specialized in parsing XML trees. The code basically works from the highest level of the hierarchy  to the lowest, in the following way:
+The module`etree` from the `lxml` library is used to parse the XML files. The code basically works from the highest level of the hierarchy of the XML tree to the lowest, in the following way:
 
 ```
-text							parsetext()
-	version						getversion()
-		section					getsection()
-			line				getline()
-				word			getword()
-					format		etcsl_to_oracc()
+corpus								main process
+	text							parsetext()
+		version						getversion()
+			section					getsection()
+				line				getline()
+					word			getword()
+						format		etcsl_to_oracc()
 ```
 
-The main process calls the function `parsetext()` which calls the pre-processing functions discussed in section [2.2.3](#2.2.3-Pre-processing:-HTML-entities) and [2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text). It then calls `getversion()`, which calls `getsection()`, which calls `getline()`, which, calls `getword()`, which calls `etcsl_to_oracc()`. These functions do not return anything. Instead, they modify the dictionary `meta_d` which collects meta data on various levels amd plays a central role in the parsing process.
+Each of these functions divides the XML tree into smaller parts (versions, sections, lines, words) and sends one such smaller part of the tree to the next function. The functions do not return anything. Instead, they modify the dictionary `meta_d` by adding or changing keys that hold met-data such as version name, line number, etc. Once arrived at the word level (the most basic level of this tree) the dictionary `meta_d` will hold accurate information about the text name, the version name, the line number, etc. for this particular word. The function `getword()` will create a new dictionary (called `word`) that holds the lemmatization information (form, citation form, part of speech, etc.) and the meta-data taken from `meta_d`. The dictionary `word` is then appended to the list `alltexts` which, eventually, will hold all words from all compositions.
 
-The function `getversion()`, for instance, checks whether the composition that is being parsed is divided into versions.  This is done with the line
+The main process iterates over the list of compositions, sending one [ETCSL][] composition at the time to the function `parsetext()`. The function `parsetext()` calls the pre-processing functions discussed in section [2.2.3](#2.2.3-Pre-processing:-HTML-entities) and [2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text) and and modifies the keys "id_text" and "text_name" in the dictionary `meta_d`. Then it forwards the entire XML tree to `getversion()`. The function `getversion()` checks whether the composition that is being parsed is divided into versions.  This is done with the line
 
 ```python
 versions = tree.xpath('.//body[child::head]')
 ```
 
-This results in a list (`versions`), if the length of the list is 0, there are no versions, and the key "version" in `meta_d` is set to '' (the empty string). If there are versions, the code iterates through the list `versions` and detects for each the name of that version (e.g. "Version A"). The key "version" in meta_d is then updated with that name and then the next function (`getsection()`) is called with as argument the part of the XML tree that represents one version. The other functions in this hierarchy work in similar fashion, each adding or modifying a key in `meta_d` while digging deeper into the XML tree. 
+This results in a list (`versions`), in which the entire XML tree is cut into parts, each element of the list representing one version. If the length of the list is 0, there are no versions, and the key "version" in `meta_d` is set to '' (the empty string). If there are versions, the code iterates through the list `versions` and detects for each the name of that version (e.g. "Version A"). The key "version" in meta_d is updated with that name and then the next function (`getsection()`) is called with as argument the part of the XML tree that represents that version. The other functions in this hierarchy work in similar fashion, each adding or modifying a key in `meta_d` while digging deeper into the XML tree. 
 
-The function `getword()`not only retrieves and formats a lemma, but also adds to this lemma the meta data that was assembled in `meta_d`: line number, section, version, text name, etc. The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL][] style lemma into a [ORACC][] style lemma and appends the resulting dictionary `word` to the list `alltexts` (which was created as an empty list in the main process) before the whole cycle starts again.
+The function `getword()`not only retrieves and formats a lemma, but also adds to this lemma the meta data that was collected in `meta_d`: line number, section, version, text name, etc. The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL][] style lemma into a [ORACC][] style lemma and appends the resulting dictionary `word` to the list `alltexts` (which was created as an empty list in the main process).
 
 The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in the original XML file: 
 
@@ -231,12 +232,12 @@ The dictionary that is created in `etcsl_to_oracc()` represents that same word a
  'gw': 'cook',
  'pos': 'V/t',
  'form': 'šeŋ₆-ŋa₂',
- 'line_no' : 'A115',
+ 'label' : 'A115',
  'id_line': 109,
  'extent': ''}
 ```
 
-Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()`replaces [ETCSL][] style lemmatization with [epsd2][] style (`gw` 'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
+Note that in the process the transliteration and lemmatization data have been replaced by [epsd2][] style data. The function `tounicode()` replaces `j` by `ŋ` , `c` by `š`, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function `etcsl_to_oracc()`replaces [ETCSL][] style lemmatization with [epsd2][] style ('gw' :  'cook' instead of `label= "to be hot"`). Both replacements use dictionaries in the `equivalencies.json` file.  
 
 The sections below will discuss in some detail the various functions, starting with `parsetext()` and going down the hierarchy to `etcsl_to_oracc()`. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.
 
@@ -261,22 +262,22 @@ The `XML` tree is now forwarded to the function `getversion()`.
 
 ### 2.2.8 Getversion()
 
-The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the `etree` object). In the XML versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of the versions and then calls the `getsection()` function. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name in `meta_d` is the empty string.
+The function `getversion()` is called by the function `parsetext()` and receives one argument: `tree` (the relevant part of the `etree` object). In the XML tree versions are marked by a node `body`with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of the version and then calls the `getsection()` function. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name in `meta_d` is the empty string.
 
 ### 2.2.9 Getsection()
 
 Some compositions in [ETCSL][] are divided into *sections*. This is usually the case when there are gaps of unknown length. Section B supposedly follows section A, but how much text is missing between these sections cannot be reconstructed.
-The function `getsection()` works essentially in the same way as `getversion()`. Sections are indicated in the `XML` with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap`. In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d`dictionary is updated with a line number (or section + line number, if the text is divided into sections). The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
+The function `getsection()` works essentially in the same way as `getversion()`. Sections are indicated in the `XML` with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap` (where | is the "or" operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d`dictionary is updated with a (human-legible) line number (or section + line number, if the text is divided into sections). This line number, which is a string, is stored in the key "label" in order to achieve consistency with [ORACC][] naming conventions. The function then calls `getline()`. The only argument of `getline()` is the part of the `XML` tree that belongs to a single line or gap. 
 
 ### 2.2.10 Getline()
 
 The function `getline()`first updates the field `id_line` in `meta_d`, increasing it by 1. The data type  of`id_line` is integer - it is used to keep lines and gaps in correct order.
 
-If `getline()` receives a `gap` node it copies all the meta data in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node.
+If `getline()` receives a `gap` node it copies all the meta data in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. Each row, therefore, in `alltexts` will represent either a word or a gap.
 
 If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss` nodes with the language attribute `akk`. The Xpath expression looks as follows: './/w|.//gloss[@lang="akk"]'. This will find both Sumerian and Akkadian words in the text.
 
-The nodes that are found are sent to `getword()`.
+The function iterates over the list words sending each word to `getword()`.
 
 ### 2.2.11 Getword()
 
@@ -303,7 +304,7 @@ The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc
 
 ### 2.2.12 tounicode()
 
-The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Forms` and `Forms` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. In a second run the same code is used to take care of the second digit in 2-digit indexes (as in šeg₁₂), now with the unicode index digits in the look behind regular expression. The routine uses the dictionary `index_no` in `equivalencies.json`, which lists the digits 0-9 (and x) as keys, and their unicode counterparts as values.
+The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Form` and `Form` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. In a second run the same code is used to take care of the second digit in 2-digit indexes (as in šeg₁₂), now with the unicode index digits in the look behind regular expression. The routine uses the dictionary `index_no` in `equivalencies.json`, which lists the digits 0-9 (and x) as keys, and their unicode subscript counterparts as values.
 
 ```python
 for key in eq["index_no"]: 
@@ -350,7 +351,7 @@ If the lemma is not found in the `equiv` list the `word` dictionary is left unch
 
 ### 2.2.14 Post-processing
 
-The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in our `Pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.1: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
+The DataFrame that is the result of the notebook is saved as a `csv` file named `alltexts.csv`, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove "additional" and/or "secondary" text - etc.). Such transformations can be done most easily in a `pandas` DataFrame. The code for doing so is essentially the same as the code for structuring [ORACC][] data discussed in Chapter 2.1: Data Acquisition ORACC (see the [Basic ORACC-JSON Parser](https://github.com/niekveldhuis/CompAss/blob/master/2_3_Data_Acquisition_ORACC/2_3_2_basic_ORACC-JSON_parser.ipynb)).
 
 
 [ETCSL]:                               http://etcsl.orinst.ox.ac.uk
