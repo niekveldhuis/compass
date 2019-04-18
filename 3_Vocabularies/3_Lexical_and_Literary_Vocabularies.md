@@ -10,7 +10,7 @@ The sequence lexical exercises - literary exercises suggests that the literary m
 
 One may draw the conclusion that the "invented tradition" that was the subject of this curriculum not only involved the literary corpus, but also the Sumerian language itself. The lexical corpus not only functioned in support of the literary corpus - it also had a function of its own in preserving as much as possible of Sumerian writing and vocabulary.
 
-Research on bird vocabulary showed that of the ### entries in the Old Babylonian list of birds, only ##% can be found in the literary corpus. This research was mainly done by hand, based on the author's reconstruction of the Old Babylonian bird list and a survey of Sumerian literature - primarily based on the Electronic Text Corpus of Sumerian Literature ([ETCSL][]; more on [ETCSL][] below). The challenge of this chapter is: can we scale this analysis up, to include the entire Old Babylonian lexical and literary corpus by using computational methods? And is it possible to use such methods to dig deeper into the relationship between these two vocabularies?
+Research on bird vocabulary showed that of the 116 entries in the Old Babylonian [list of birds](http://oracc.org/dcclt/Q000041.405), only 39 can be found in the literary corpus.[^1] This research was mainly done by hand, based on the author's reconstruction of the Old Babylonian bird list and a survey of Sumerian literature - primarily based on the Electronic Text Corpus of Sumerian Literature ([ETCSL][]; more on [ETCSL][] below). The challenge of this chapter is: can we scale this analysis up, to include the entire Old Babylonian lexical and literary corpus by using computational methods? And is it possible to use such methods to dig deeper into the relationship between these two vocabularies?
 
 ## 3.1 A First Attempt
 
@@ -24,22 +24,22 @@ From the two sets, which we call `etcsl_words_s` and `lexical_words_s` we elimin
 
 The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 2,033 (or almost half) are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger with 4,345 distinct lemmas.
 
-For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical *entry*? Does the nominal phrase **udu diŋir-e-gu₇-a** (or, more precisely, the sequence of the lemmas **udu[sheep]N, diŋir[deity]N, gu[eat]V/t**) ever appear in a literary text? 
+For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical *entry*? Does the nominal phrase **udu diŋir-e-gu₇-a** or, more precisely, the sequence of the lemmas **udu[sheep]N, diŋir[deity]N, gu[eat]V/t**) ever appear in a literary text? 
 
 ## 	3.2 Lexical Entries in Literary Context
 
-In order to perform the comparison of lexical and literary vocabularies on the lexical *entry* level we first need to represent the data (lexical and literary) as lines, rather than as individual words. Lines in lexical texts will become our unit of comparison. Lines in literary texts will serve as boundaries, since noun phrases do not usually continue from one line to the next. 
+In order to perform the comparison of lexical and literary vocabularies on the lexical *entry* level we first need to represent the data (lexical and literary) as lines, rather than as individual words. Lines in lexical texts will become our unit of comparison, by defining those as Multiple Word Expressions (or MWEs). Lines in literary texts will serve as boundaries, since we do not expect an MWE to continue from one line to the next. 
 
-The first step, therefore, is to group the data by line. This is done with the Pandas commands `groupby()`and `aggregate()` (abbreviated as `agg()`) . Once the lexical data are grouped by line the lexical dataframe will look like this (from the list of animals)
+The first step, therefore, is to group the data by line. This is done with the Pandas commands `groupby()`and `aggregate()` (abbreviated as `agg()`) . Once the lexical data are grouped by line the lexical dataframe will look like this (from theOld Babylonian [list of animals](http://oracc.org/dcclt/Q000001)):
 
 | id_text       | id_line | lemma                                            |
 | :------------ | :------ | :----------------------------------------------- |
 | dcclt/Q000001 | 1       | udu\[sheep\]n niga\[fattened\]v/i                |
 | dcclt/Q000001 | 2       | udu\[sheep\]n niga\[fattened\]v/i sag\[rare\]v/i |
 
-We can use this data to look through the literary compositions to see whether there are place where the lemma **udu[sheep]n** is followed by the lemma **niga[fattened]v/i**, or whether we can find the sequence **udu[sheep]n niga[fattened]v/i sag[rare]v/i** to correspond with the second line in the list of animals. When such a match is found in a literary composition, the lemmas are connected to each other with asterisks, so that sequence can be treated as a unit. Finding and marking such sequences takes a considerable amount of time, because the process needs to check about 36,500 lines in [ETCSL][] against every single lexical entry (several thousands of them).
+We can use this data to look through the literary compositions to see whether there are place where the lemma **udu[sheep]n** is followed by the lemma **niga[fattened]v/i**, or whether we can find the sequence **udu[sheep]n niga[fattened]v/i sag[rare]v/i** to correspond with the second line in the list of animals. When such a match is found in a literary composition, the lemmas are connected to each other with underscores, so that the sequence can be treated as a unit. Finding and marking such sequences is done with the MWETokenizer from the Natural Language Toolkit (NLTK) library. The MWETokenizer is initialized with a list of Multiple Word Expressions, which we can easily derive from the lexical data. It then applies this list to the corpus to be tokenized (in this case the [ETCSL][] corpus) to connect elements of MWEs by underscores.
 
-Once this is done the lexical entries are treated the same: each space is replaced by an asterisk. Now we have the same two sets of data in a slightly different representation and we can essentially the same analysis as we did above by creating sets (called `etcsl_s2`and `lexical_s2`) and representing those sets in a Venn diagram: 
+Once this is done the lexical entries are treated the same: each space is replaced by an underscore. Now we have the same two sets of data in a slightly different representation and we can do essentially the same analysis as we did above by creating sets (called `etcsl_s2` and `lexical_s2`) and representing those sets in a Venn diagram: 
 
 ![venn diagram 2](viz/venn_2.png)
 
@@ -49,13 +49,13 @@ We see that this approach essentially doubles the number of unique elements on t
 
 Finally we can add the two approaches discussed above into a single Venn diagram. There are words that appear as modifiers in lexical *entries* but never appear on their own in a lexical composition. Similarly, there are words in the literary corpus that occur in phrases known from the lexical corpus, but never outside of such phrases (we will see examples below). Such words, one may argue, potentially add to the intersection between the lexical and literary corpus, but are not represented in the second Venn diagram.
 
-In order to so we create the *union* of the first lexical set (individual words) and the second one (lexical expressions), and the same for the literary corpus and then draw a new Venn diagram. The union of two sets is a new set, with all the unique elements from the two original sets. The union sets are called `etcsl_s3`and `lexical_s3`.
+In order to do so we create the *union* of the first lexical set (individual words) and the second one (lexical expressions), and the same for the literary corpus and then draw a new Venn diagram. The union of two sets is a new set, with all the unique elements from the two original sets. The union sets are called `etcsl_s3` and `lexical_s3`.
 
 ![venn diagram 3](viz/venn_3.png)
 
-The new diagram shows some increase on both sides, and little increase in overlap as well - but the change is not very dramatic.
+The new diagram shows some increase on both sides, and a little increase in overlap as well - but the change is not very dramatic.
 
-So which words are found on the literary side that only appear in in expressions known from lexical sources? We can easily find those by subtracting `etcsl_s2` from `etcsl_s3`. It turns out there are about thirty such words, most of them appearing just once
+So which words are found on the literary side that only appear in MWEs known from lexical sources? We can easily find those by subtracting `etcsl_s2` from `etcsl_s3`. It turns out there are about thirty such words, most of them appearing just once
 
 ```
 'ašgar[kid]n',
@@ -92,19 +92,19 @@ So which words are found on the literary side that only appear in in expressions
 
 An example is the word **ašgar[kid]n** (a female kid) that is very common in administrative and lexical texts, but appears only once in our literary corpus. The context, in Gudea Cylinder A vii 9, is where Gudea uses the hide of a virgin kid ({munus}aš₂-gar₃ ŋeš nu-zu) for a ritual purpose (the same expression appears in some Old Babylonian incantations). This expression, though written slightly differently, is found in the lexical corpus.
 
-Our investigation so far has shown that a very considerable portion of lexical words and lexical expressions are not found in the literary corpus as represented by [ETCSL][]. Chances are that a good number of them will be found in literary texts that are not in [ETCSL][] or that are not even known today. However, the lexical corpus is likely to increase, too, and chances that the intersection between those two vocabularies will increase significantly seem slim. Other forces may actually decrease the overlap. The example of **ašgar[kid]n**, above, derives from the Gudea Cylinders which is a royal inscription from several centuries before nthe Old Babylonian period. It is often included in presentations of Sumerian literature because it is, indeed, one of the highpoints of Sumerian literary language. But is has nothing to do with Old Babylonian schools that our research started with and a good argument can be made for excluding it from our investigation.
+Our investigation so far has shown that a very considerable portion of lexical words and lexical expressions are not found in the literary corpus as represented by [ETCSL][]. Chances are that a good number of them will be found in literary texts that are not in [ETCSL][] or that are not even known today. However, the lexical corpus is likely to increase, too, and chances that the intersection between those two vocabularies will increase significantly seem slim. Other forces may actually decrease the overlap. The example of **ašgar[kid]n**, above, derives from the Gudea Cylinders which is a royal inscription from several centuries before the Old Babylonian period. It is often included in presentations of Sumerian literature because it is, indeed, one of the high points of Sumerian literary language. But is has nothing to do with the Old Babylonian schools that our research started with and a good argument can be made for excluding it from our investigation.
 
 ## 3.4 Digging Deeper
 
-We can take our analysis several steps further by looking for *important* words,  or *rare* words, or by investigating the relative contribution of individual lexical and literary compositions to the intersection. the lemmas **šag[heart]n** and **igi[eye]n** appear in the lexical composition Ugumu (the list of body parts). They also appear in virtually every literary composition, because there are many common verbal and nominal expressions that use these lemmas. On the other hand, the list of stones includes the entry {na₄}e-gu₂-en-sag₉ (with many variant writings), a very rare word that is know from the literary composition Lugal-e (or Ninurta's Exploits) line 619 in the form {na₄}en-ge-en.  Since part of this composition is an enumeration of many types of stones (and their fates), there is a good chance that this particular match is significant - that the stone name is included in the list because it appears in Lugal-e, for instance.
+We can take our analysis several steps further by looking for *important* words,  or *rare* words, or by investigating the relative contribution of individual lexical and literary compositions to the intersection. The lemmas **šag[heart]n** and **igi[eye]n** appear in the lexical composition Ugumu (the list of body parts). They also appear in virtually every literary composition, because there are many common verbal and nominal expressions that use these lemmas. On the other hand, the list of stones includes the entry {na₄}e-gu₂-en-sag₉ (with many variant writings), a very rare word that is know from the literary composition Lugal-e (or Ninurta's Exploits) line 619 in the form {na₄}en-ge-en.  Since part of this composition is an enumeration of many types of stones (and their fates), there is a good chance that this particular match is significant - that the stone name is included in the list because it appears in Lugal-e, for instance.
 
-The sets used in the previous sections are not useful for such investigations. First, we have no idea where words/expressions that match (or do not match) appear and second, we have no information about how frequent a word is or its importance in a text. 
+The sets used in the previous sections are not useful for such investigations. First, we have no idea where words/expressions that match (or do not match) appear and second, we have no information about how frequent a word is or its importance in a particular composition. 
 
 In order to address such questions we will use a Document Term Matrix (DTM): a huge matrix, where each row represents a (lexical or literary) composition (Document) and each column represents a lemma (Term). The number of columns will thus equal the number of individual lemmas available in our corpus. 
 
-In order to do so we will use the Pandas  `groupby()` and `aggregate()` commands again to represent each composition (lexical or literary) as one long string of lemmas.  We will use the data representation where lemmas in lexical expressions are connected by asterisks. In order to make the dataset more manageable, we will select the most important lexical compositions from Old Babylonian Nippur (rather than going for every single Old Babylonian lexical text). Nippur is (by far) the most important source of lexical and literary material of the period.
+In order to do so we will use the Pandas  `groupby()` and `aggregate()` commands again to represent each composition (lexical or literary) as one long string of lemmas.  We will use the data representation where lemmas in lexical expressions are connected by underscores. In order to make the dataset more manageable, we will select the most important lexical compositions from Old Babylonian Nippur (rather than going for every single Old Babylonian lexical text). Nippur is (by far) the most important source of lexical and literary material of the period.
 
-Once we have the data represented this way we can use `Countvecorizer()`from the `sklearn`package to create the DTM. The `countvectorizer()`essentially vectorizes a document by counting the number of times each word appears. In a artificial example we can vectorize the sentences (documents) **lugal[king]n e[house]n du[build]v/t** and **lugal[king]n egal[palace]n du[build]v/t** as follows: 
+Once we have the data represented this way we can use `Countvecorizer()` from the `sklearn` package to create the DTM. The `countvectorizer()` function essentially vectorizes a document by counting the number of times each word appears. In a artificial example we can vectorize the sentences (documents) **lugal[king]n e[house]n du[build]v/t** and **lugal[king]n egal[palace]n du[build]v/t** as follows: 
 
 | sentence | du[build]v/t | e[house]n | egal[palace]n | lugal[king]n |
 | -------- | ------------ | --------- | ------------- | ------------ |
@@ -115,7 +115,7 @@ We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and
 
 We can use the DTM to investigate in more complex ways the relationship between the lexical and the literary vocabulary.
 
-
+[^1]: 	N. Veldhuis, *Religion, Literature, and Scholarship: The Sumerian Composition "Nanše and the Birds"*. Cuneiform Monographs 22. Leiden: Brill 2004.
 
 [ETCSL]: http://etcsl.orinst.ox.ac.uk
 [DCCLT]: http://oracc.org/dcclt
