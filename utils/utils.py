@@ -106,7 +106,7 @@ def dataformat(lemm_list):
     return(words_df)
 
 def get_data(x):
-    make_dirs(["jsonzip"])
+    make_dirs(["jsonzip", "output"])
     p = format_project_list(x)
     oracc_download(p)
     lemm_list = get_lemmas(p)
