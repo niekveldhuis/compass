@@ -56,13 +56,13 @@ For all practical purposes, a JSON object is identical in structure to a Python 
 
 ### 2.1.2 Acquiring ORACC JSON
 
-Each [ORACC][oracc] project has a `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where `[PROJECT]` is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json/[PROJECT]-[SUBPROJECT].zip`(e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_3_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_3_Data_Acquisition_ORACC/2_3_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`.
+Each [ORACC][oracc] project has a `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where `[PROJECT]` is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json/[PROJECT]-[SUBPROJECT].zip`(e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`. The same code is also available in the functions `make_dirs()` and `oracc_download()` in the `utils` module in the directory  `utils`. See the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb) for instructions how to use the functions of the `utils` module.
 
 After downloading the JSON `zip` file you may unzip it to inspect its contents. Note, however, that the scripts will always read the data directly from the `zip` file.
 
 ### 2.1.3 Parsing JSON: catalogue.json
 
-Each [ORACC][oracc] JSON `zip` file includes a file named `catalogue.json`. Since the structure of `catalogue.json` is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file `obmc.zip` is available in the directory `jsonzip`. You may download it at http://build-oracc.museum.upenn.edu/json/obmc.zip or use the notebook referenced above. The comment lines (beginning with #) show the proper naming conventions for a sub-project.
+Each [ORACC][oracc] JSON `zip` file includes a file named `catalogue.json`. Since the structure of `catalogue.json` is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file `obmc.zip` is available in the directory `jsonzip`. You may download it at http://build-oracc.museum.upenn.edu/json/obmc.zip or use the notebook/utility referenced above. The comment lines (beginning with #) show the proper naming conventions for a sub-project.
 
 ```python
 import zipfile
@@ -75,9 +75,9 @@ st = z.read("obmc/catalogue.json").decode("utf-8")
 cat = json.loads(st)
 ```
 
-The command `ZipFile` from the `zipfile` library turns the `zip` file into a `zipfile` object that may be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
+The command `ZipFile` from the `zipfile` library turns `obmc.zip` into a `zipfile` object that may be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
 
-The variable `cat` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas Dataframe for ease of viewing and manipulation.
+The variable `cat` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
 
 ``` python
 import pandas as pd	
@@ -101,7 +101,7 @@ df1 = df[["provenience", "period", "id_text"]]
 
 Pandas is a powerful Python library – we will see some of its functionality in later sections. Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.
 
-The notebook [2-3-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_3_Data_Acquisition_ORACC/2_3_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file, extract the catalog information and store that information in a `csv` file and/ or a `pickle` file.
+The notebook [2-1-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file, extract the catalog information and store that information in a `csv` file and/ or a `pickle` file.
 
 ### 2.1.4 Parsing an ORACC JSON Text Edition File
 
@@ -116,7 +116,7 @@ file = "jsonzip/obmc.zip"
 # or: file = "jsonzip/saao-saa01.zip"
 z = zipfile.ZipFile(file)
 st = z.read("obmc/corpusjson/P230754.json").decode("utf-8") 
-# or: st = z.read("dcclt/saao/saa01/corpusjson/P251867.json").decode("utf-8")
+# or: st = z.read("saao/saa01/corpusjson/P224485.json").decode("utf-8")
 text = json.loads(st)
 ```
 
@@ -129,11 +129,11 @@ The structure of the JSON files for text editions, however, is much more complex
 					word
 						sign
 
-How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC][oracc] JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object in columns and lines.	
+How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC][oracc] JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object into columns and lines.	
 
-The JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning of a column, a break in the text, or the beginning of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data. The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the  reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the cuneiform sign itself as well).
+The JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning of a column, a break in the text, or the beginning of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data. The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
 
-The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (beginning of the file omitted): 
+The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (school text), edited in [DCCLT](http://oracc.org/dcclt) (beginning of the file omitted): 
 
 ```json
 {"cdl": [
@@ -242,9 +242,9 @@ The basic `parsejson()` captures only lemmatization data, it ignores line number
 
 #### 2.1.5.1 Line Labels and Line IDs
 
-For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  `label` of the line and the word ID of each word. The `label` is human-legible and has the traditional format to indicate obverse, reverse,  column and line number or side of a prism (e.g. "o ii 7" or "a i 19'"). The field `id_word`, has the format TEXT_ID.LINE_ID.WORD_ID, for instance "P273880.22.1", (the first word of the twenty-second line of [P273880](http://oracc.org/dcclt/P273880.22.1)). In the data formatting stage we will use the word ID to extract the line ID (section [2.1.7.2](#2.1.7.2-Create-Line-IDs)).
+For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  `label` of the line and the word ID of each word. The `label` is human-legible and has the traditional format to indicate obverse, reverse,  column and line number or side of a prism (e.g. "o ii 7" or "a i 19'"). The field `id_word` is machine -legible and has the format TEXT_ID.LINE_ID.WORD_ID, for instance "P273880.22.1", (the first word of the twenty-second line of [P273880](http://oracc.org/dcclt/P273880.22.1)). In the data formatting stage we will use the word ID to extract the line ID (section [2.1.7.2](#2.1.7.2-Create-Line-IDs)).
 
-We can capture `label` and `id_word` with slight adjustments to the `jsonparser()` and the code that calls that function. In the main process we create a dictionary `meta_d,` which will hold all the relevant meta data. Initially, it only contains the text ID. When the `parsejson()` function finds a dictionary that has the `key`  "label" the `key` "label" in`meta_d` gets updated. When the process gets to the lemmatization data the `key` "label" in `meta_d` will hold the proper line label. The word ID is found in the field "ref" in the `l` node, and is added to the `lemma` dictionary. 
+We can capture `label` and `id_word` with slight adjustments to the `jsonparser()` and the code that calls that function. In the main process we create a dictionary `meta_d,` which will hold all the relevant meta data. Initially, it only contains the text ID. When the `parsejson()` function finds a dictionary that has the `key`  "label" the `key` "label" in `meta_d` gets updated. When the process gets to the lemmatization data the `key` "label" in `meta_d` will hold the proper line label. The word ID is found in the field "ref" in the `l` node, and is added to the `lemma` dictionary. 
 
 ```python
 def parsejson(text):  # this version captures line labels and line IDs
@@ -382,7 +382,7 @@ def parsejson(text):  # this version captures sentence IDs
             lemm_l.append(lemma)
     return 
 ```
-In the example we will use [Q000376](http://oracc.org/etcsri/Q000376) (The Victory of Utu-hegal) from the [ETCSRI][etcsri] project. In order for the code to work, place the file `etcsri.zip` in the `jsonzip`folder (see section [2.1.2](#2.1.2-Acquiring-ORACC-JSON)).
+In the example we will use [Q000376](http://oracc.org/etcsri/Q000376) (The Victory of Utu-hegal) from the [ETCSRI][etcsri] project. In order for the code to work, place the file `etcsri.zip` in the `jsonzip` folder (see section [2.1.2](#2.1.2-Acquiring-ORACC-JSON)).
 ```python
 lemm_l = []
 meta_d = {"sentence" : None, "textid": "etcsri/Q000376"}
@@ -395,13 +395,13 @@ parsejson(text)
 
 The initial value of the key `sentence` in the `meta_d` dictionary is `None`, but when the `parsejson()` function encounters a key `type` with value `sentence` it changes the value of `meta_d["sentence"]` to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
 
-Each row (word) in the list `lemm_l` will now have a field `sentence_id`that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
+Each row (word) in the list `lemm_l` will now have a field `sentence_id` that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
 
 
 
 #### 2.1.5.4 Using parsejson()
 
-In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel`and `endlabel`) in order to parse a collection of documents or entire [ORACC][oracc] projects. Example code for doing so is available in the [Computational Assyriology][compass]  repo. That part of code (iterating through a list of text IDs) is not specific to [ORACC][oracc] or to JSON and will not be discussed here (some code explanation is available in the notebooks).
+In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel` and `endlabel`) in order to parse a collection of documents or entire [ORACC][oracc] projects. Example code for doing so is available in the [Computational Assyriology][compass]  repo. The point of discussing some variants of the `parsejson()` function is to demonstarte its flexibility and the possibility of extracting various types of data.
 
 The output of `parsejson()` is a list of words, where each word is represented by dictionary that includes a number of data elements, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some data elements are always present, others are specific for Sumerian or Akkadian, or are only present if the word in question has been lemmatized. For most projects it will be necessary to select and/or manipulate the data (section [2.1.7](#2.1.7-Data-Structuring)).
 
@@ -431,7 +431,7 @@ In the JSON text edition files the PSUs are listed at the end under the node `li
                 },
 ```
 
-This tells us that at this position in `Q000039` three lines are missing. The reference number belongs to the same number sequence as the line ID numbers (see above section [2.1.5.1](#2.1.5.1-Line-Labels-and-Line-IDs)) and may thus be used to keep the three missing lines in their proper position. The same mechanism is used to record single or double horizontal rulings, as in: 
+This tells us that at this position in [Q000039](http://oracc.org/dcclt/Q000039) three lines are missing. The reference number belongs to the same number sequence as the line ID numbers (see above section [2.1.5.1](#2.1.5.1-Line-Labels-and-Line-IDs)) and may thus be used to keep the three missing lines in their proper position. The same mechanism is used to record single or double horizontal rulings, as in: 
 
 ```json
 {
@@ -463,7 +463,7 @@ For a brief discussion of the `pandas` `fillna()` function see the end of sectio
 
 The column "gw" (Guide Word) in the `pandas` DataFrame just created includes bare-bones translations of individual words, such as "king" (for Sumerian lugal) or "(a kind of clamp)" for Akkadian *abāru*. Strictly speaking, Guide Words are not translations but disambiguators - disambiguating between potential homonyms. Akkadian Guide Words are derived from the first meaning in the *Concise Dictionary of Akkadian* (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for [ORACC lemmatization](http://oracc.org/doc/help/languages/akkadian/index.html). 
 
-The presence of spaces in Guide Words may cause trouble in a variety of computational methods, because such methods will interpret the space as a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as the beginning of a new field. 
+The presence of spaces in Guide Words may cause trouble in a variety of Natural Language Processing methods, because such methods will interpret the space as a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as the beginning of a new field. 
 
 For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The `pandas` `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, `replace()` replaces a full string; we need to set `regex = True` to replace a partial string.
 
@@ -494,7 +494,7 @@ The second element (`ids[1]`) is the one we need (`'4'`). Note that this `'4'`is
 words['id_line'] = [int(wordid.split('.')[1]) for wordid in words['id_word']]
 ```
 
-The field `id_line` will be used in section [2.1.7.4](#2.1.7.4-Arrange-by-Line-or-by-Document) to arrange the data in line-by-line fashion.
+The field `id_line` will be used in section [2.1.7.4](#2.1.7.4-Arrange-by-Line-or-by-Document) to arrange the data in line-by-line format.
 
 The [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo captures information about broken lines and horizontal rulings (see section [2.1.6.2](#2.1.6.2-Broken-Lines). Such features have a reference in the format `ID_TEXT.ID_LINE`; that reference is copied to the field 'id_word'.
 
@@ -533,7 +533,7 @@ words.loc[words["form"] == "", 'lemma'] = ""
 words
 ```
 
-The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the "lemma" column will contain the "form" followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()`that is used, the `words`dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
+The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the "lemma" column will contain the "form" followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()` that is used, the `words` dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
 
 
 
@@ -563,7 +563,7 @@ The [Open Data](http://oracc.org/doc/opendata/index.html) page in [ORACC][oracc]
 
 #### 2.1.8.1 metadata.json
 
-The file `metadata.json` provides information about composite texts (which witnesses belong to which composite text) and about formats: `atf` (available in transliteration), `lem` (files with lemmatization) and `tr-en` (files with English translation). In projects that work with other translation languages one may find `tr-de` (for German), `tr-hun`(for Hungarian), etc. The file `metadata.json` may be useful, for instance, if you intent to parse all the files of a project that have lemmatization, but ignore those that do not. One may pull out the list `formats["lem"]` to get all the relevant text IDs.
+The file `metadata.json` provides information about composite texts (which witnesses belong to which composite text) and about formats: `atf` (available in transliteration), `lem` (files with lemmatization) and `tr-en` (files with English translation). In projects that work with other translation languages one may find `tr-de` (for German), `tr-hun` (for Hungarian), etc. The file `metadata.json` may be useful, for instance, if you intent to parse all the files of a project that have lemmatization, but ignore those that do not. One may pull out the list `formats["lem"]` to get all the relevant text IDs.
 
 #### 2.1.8.2 Indexes and Glossary
 
