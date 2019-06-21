@@ -9,7 +9,7 @@ The sections that follow explain how the [ORACC][oracc] JSON is parsed and how t
 
 JavaScript Object Notation, or [JSON](http://www.json.org) is recognized as a lightweight but very versatile data structure. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in (relational) databases. We will see that [ORACC][oracc] JSON makes extensive use of hierarchies. The two characteristics mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Python, and R. 
 
-The contents of a valid JSON file are always wrapped in curly brackets, very similar to a Python dictionary. Dictionaries consist entirely of `"key" : "value"` pairs, as in:
+The contents of a valid JSON file are wrapped in curly brackets, very similar to a Python dictionary. Dictionaries consist entirely of `"key" : "value"` pairs, as in:
 
 ```json
 {"id_text": "P334930", "designation": "SAA 03, 001"}
@@ -72,16 +72,16 @@ file = "jsonzip/obmc.zip"
 z = zipfile.ZipFile(file)
 st = z.read("obmc/catalogue.json").decode("utf-8") 
 # or: st = z.read("dcclt/nineveh/catalogue.json").decode("utf-8")
-cat = json.loads(st)
+j = json.loads(st)
 ```
 
 The command `ZipFile` from the `zipfile` library turns `obmc.zip` into a `zipfile` object that may be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
 
-The variable `cat` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. We can treat the variable `cat` as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
+The variable `j` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. The variable `j` is a JSON object which we may treat as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
 
 ``` python
 import pandas as pd	
-cat = cat["members"]
+cat = j["members"]
 df = pd.DataFrame(cat)
 df
 ```
