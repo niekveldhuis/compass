@@ -129,9 +129,13 @@ The structure of the JSON files for text editions, however, is much more complex
 					word
 						sign
 
-How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC][oracc] JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object into columns and lines.	
+How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC][oracc] JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object into columns and lines.
 
-The JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning of a column, a break in the text, or the beginning of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data. The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
+**Discuss: c-nodes (Chunks) are strictly hierarchical and go from text body to sentence, to word (discourse units). d-nodes (Discontinuities) may be marked with a beginning and an end and are therefore, not strictly hierarchical, but may 
+
+**
+
+The JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning of a column, a break in the text, or the beginning of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data of a single word. The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
 
 The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (school text), edited in [DCCLT](http://oracc.org/dcclt) (beginning of the file omitted): 
 
@@ -301,10 +305,10 @@ meta_d = {"label" : None, "startlabel": "r 1", "endlabel": "r 5", "keep": False,
 file = "jsonzip/dcclt.zip"    
 z = zipfile.ZipFile(file)
 st = z.read("dcclt/corpusjson/P273244.json").decode("utf-8") 
-data_json = json.loads(st)
+text = json.loads(st)
 if meta_d["startlabel"] == "":
     meta_d["keep"] = True
-parsejson(data_json)
+parsejson(text)
 
 ```
 
@@ -401,7 +405,7 @@ Each row (word) in the list `lemm_l` will now have a field `sentence_id` that ca
 
 #### 2.1.5.4 Using parsejson()
 
-In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel` and `endlabel`) in order to parse a collection of documents or entire [ORACC][oracc] projects. Example code for doing so is available in the [Computational Assyriology][compass]  repo. The point of discussing some variants of the `parsejson()` function is to demonstarte its flexibility and the possibility of extracting various types of data.
+In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel` and `endlabel`) in order to parse a collection of documents or entire [ORACC][oracc] projects. Example code for doing so is available in the [Computational Assyriology][compass]  repo. The point of discussing some variants of the `parsejson()` function is to demonstrate its flexibility and the possibility of extracting various types of data.
 
 The output of `parsejson()` is a list of words, where each word is represented by dictionary that includes a number of data elements, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some data elements are always present, others are specific for Sumerian or Akkadian, or are only present if the word in question has been lemmatized. For most projects it will be necessary to select and/or manipulate the data (section [2.1.7](#2.1.7-Data-Structuring)).
 
@@ -465,7 +469,7 @@ The column "gw" (Guide Word) in the `pandas` DataFrame just created includes bar
 
 The presence of spaces in Guide Words may cause trouble in a variety of Natural Language Processing methods, because such methods will interpret the space as a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as the beginning of a new field. 
 
-For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The `pandas` `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, `replace()` replaces a full string; we need to set `regex = True` to replace a partial string.
+For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The `pandas` `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, `replace()` finds and replaces a full string; we need to set `regex = True` to replace a partial string.
 
 ```python
 findreplace = {' ' : '-', ',' : ''}
@@ -533,7 +537,7 @@ words.loc[words["form"] == "", 'lemma'] = ""
 words
 ```
 
-The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the "lemma" column will contain the "form" followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()` that is used, the `words` dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
+The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the `lemma` column will contain the "form" followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()` that is used, the `words` dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
 
 
 
