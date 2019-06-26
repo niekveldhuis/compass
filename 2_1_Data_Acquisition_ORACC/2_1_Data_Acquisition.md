@@ -7,9 +7,9 @@ The sections that follow explain how the [ORACC][oracc] JSON is parsed and how t
 
 ### 2.1.1 The JSON Data Format
 
-JavaScript Object Notation, or [JSON](http://www.json.org) is recognized as a lightweight but very versatile data structure. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in (relational) databases. We will see that [ORACC][oracc] JSON makes extensive use of hierarchies. The two characteristics mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as Python, and R. 
+JavaScript Object Notation, or [JSON](http://www.json.org) is recognized as a lightweight but very versatile data structure. Databases (and `.csv` files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in (relational) databases. We will see that [ORACC][oracc] JSON makes extensive use of hierarchies. The two characteristics mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as JavaScript, Python, and R. 
 
-The contents of a valid JSON file are wrapped in curly brackets, very similar to a Python dictionary. Dictionaries consist entirely of `"key" : "value"` pairs, as in:
+The contents of a valid JSON file are wrapped in curly brackets, very similar to a Python dictionary, and consist of `"key" : "value"` pairs, as in:
 
 ```json
 {"id_text": "P334930", "designation": "SAA 03, 001"}
@@ -45,12 +45,12 @@ The value of the key `members` is a dictionary (surrounded by curly brackets) wi
 
 For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. To avoid confusion, we use the Python vocabulary here (key, list, dictionary), even when talking about the JSON  structure.
 
-| JSON   | Python     | Surrounded by | Defined as                                               |
-| ------ | ---------- | ------------- | -------------------------------------------------------- |
-| object | dictionary | {}            | unordered sequence of name/value pairs                   |
-| array  | list       | []            | ordered sequence of values                               |
-| value  | value      |               | string, number, list (= array), or dictionary (= object) |
-| name   | key        |               | string                                                   |
+| JSON   | Python     | Surrounded by | Defined as                                                   |
+| ------ | ---------- | ------------- | ------------------------------------------------------------ |
+| object | dictionary | {}            | unordered sequence of name/value pairs                       |
+| array  | list       | []            | ordered sequence of values                                   |
+| value  | value      |               | string, number, boolean, list (= array), or dictionary (= object) |
+| name   | key        |               | string                                                       |
 
  For a more formal and exhaustive description of the JSON data structure see [http://www.json.org/](http://www.json.org). 
 
@@ -77,7 +77,7 @@ j = json.loads(st)
 
 The command `ZipFile` from the `zipfile` library turns `obmc.zip` into a `zipfile` object that may be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
 
-The variable `j` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. The variable `j` is a JSON object which we may treat as a Python dictionary. The value of the key `members` is itself a dictionary of dictionaries which may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
+The variable `j` will now contain the entire `catalogue.json` object from the [OBMC][obmc] (Old Babylonian Model Contracts) project by Gabriella Spada. The variable `j` is a JSON object which we may treat as a Python dictionary. The `catalogue.json` has various keys, including `type`, `project`, `source`, `license`, `license-url`, `more-info`, `UTC-timestamp`, `members`, and `summaries`. The key `members` contains the actual catalog information. The value of the key `members` is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (`primary_publication`, `provenience`, `genre`, etc.). The dictionary of dictionaries under the key `members` may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
 
 ``` python
 import pandas as pd	
@@ -105,7 +105,7 @@ The notebook [2-1-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compas
 
 ### 2.1.4 Parsing an ORACC JSON Text Edition File
 
-[ORACC][oracc] JSON text edition files include transliteration and lemmatization, as well as information on the sign level. Translation is not included. The files are found in the `corpusjson` directory of each project's `zip` file and are named after their text ID, for instance `dcclt/corpusjson/P251867.json`, or `saao/saa01/corpusjson/P224485.json`.
+[ORACC][oracc] JSON text edition files include transliteration and lemmatization, as well as information on the sign level. Translation is not included. The files are found in the `corpusjson` directory of each project's `zip` file and are named after their text ID, for instance `dcclt/corpusjson/P251867.json`, or, in the case of a sub-project, `saao/saa01/corpusjson/P224485.json`.
 
 Reading in the data works in exactly the same way as above:
 
@@ -129,13 +129,11 @@ The structure of the JSON files for text editions, however, is much more complex
 					word
 						sign
 
-How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. Moreover, [ORACC][oracc] JSON potentially also has information about sentences or other discourse units, which may or may not align with the division of the object into columns and lines.
+How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. In addition, a text consists of textual units, such as paragraphs, sentences, and phrases, which may or may not coincide with the physical units of surfaces and lines.
 
-**Discuss: c-nodes (Chunks) are strictly hierarchical and go from text body to sentence, to word (discourse units). d-nodes (Discontinuities) may be marked with a beginning and an end and are therefore, not strictly hierarchical, but may 
+The [ORACC][oracc] JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks (text units), Discontinuities (physical units), and Lemmas (words). A Chunk is a chunk of text of any length: the body of the text, a sentence, a phrase, a word, etc. A Discontinuity is the text object, the obverse or reverse, the beginning of a column, a break in the text, a horizontal ruling on the tablet, or the beginning of a new line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. 
 
-**
-
-The JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks, Discontinuities, and Lemmas. A Chunk is a chunk of text of any length: the entire text, a discourse unit (such as a sentence), a column, a line, a word, etc. A discontinuity is the beginning of a column, a break in the text, or the beginning of a line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data of a single word. The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
+The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. The "c" and "d" dictionaries always have a key `type`, which may have values such as `text`, `discourse`, or `sentence` (for "c" nodes) or `object`, `obverse`, `column-start`, `line-start` (for "d" nodes). Discontinuities (or "d" nodes") may also have `type : nonx`, recording non-textual physical features such as rulings on the tablet, or missing lines. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data of a single word (transliteration, citation form, guide word, part of speech, etc.). The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC][oracc] projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
 
 The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (school text), edited in [DCCLT](http://oracc.org/dcclt) (beginning of the file omitted): 
 
@@ -202,7 +200,7 @@ The structure may be illustrated with the beginning of [P251867](http://oracc.or
 
 The first `cdl` key contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list of dictionaries as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text.
 
-This hierarchy implies that a word (an "l" node) may belong to multiple Chunks ("c" nodes) that do not necessarily align. For instance, a word may belong to a sentence that continues from the obverse to the reverse of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
+This hierarchy implies that a word (an "l" node) may belong to differnet hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
 
 In order to pull out the lemmatization data we need to iterate through the hierarchy of `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
 
@@ -232,9 +230,9 @@ import pandas as pd
 words = pd.DataFrame(lemm_l).fillna("")
 words
 ```
-The function `fillna()` from the `pandas` library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields "cf" (Citation Form), "gw" (Guide Word), and "pos" (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: "Not a Number"), which can be problematic in further data manipulation. The argument of the function is the value to be placed in empty cells - in this case the empty string. Note that NaN and "" are of different data types. NaN belongs to a numeric data type; the empty string is a string.
+The function `fillna()` from the `pandas` library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields "cf" (Citation Form), "gw" (Guide Word), and "pos" (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: "Not a Number"), which can be problematic in further data manipulation. The argument of the `fillna()` function is the value to be placed in empty cells - in this case the empty string. Note that NaN and "" are of different data types. NaN belongs to a numeric data type; the empty string is a string.
 
-One may write the list (or the DataFrame) directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section [2.1.7](#2.1.7-Data-Structuring)). Before we get to that we will first discuss several enhancements of the`parsejson()` function.
+One may write the DataFrame directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section [2.1.7](#2.1.7-Data-Structuring)). Before we get to that we will first discuss several enhancements of the`parsejson()` function.
 
 ![P251867](http://cdli.ucla.edu/dl/tn_photo/P251867.jpg)
 
@@ -421,7 +419,7 @@ In the JSON text edition files the PSUs are listed at the end under the node `li
 
 #### 2.1.6.2 Broken Lines
 
-[ORACC][oracc] editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes. The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"` (a string) if the remark follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
+[ORACC][oracc] editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes of the type `nonx` (non-textual). The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"` (a string) if the remark follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
 
 ```JSON
 {
@@ -449,9 +447,9 @@ This tells us that at this position in [Q000039](http://oracc.org/dcclt/Q000039)
                 },
 ```
 
-This indicates a double ruling at the end of the lexical prism [CUSAS 12, 3.1.01](http://oracc.org/dcclt/P273880.718). 
+This represents a double ruling at the end of the lexical prism [CUSAS 12, 3.1.01](http://oracc.org/dcclt/P273880.718). 
 
-Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `lemm_l in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo does include that functionality.
+Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `lemm_l` in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo does include that functionality.
 
 ### 2.1.7 Data Structuring
 
@@ -469,7 +467,7 @@ The column "gw" (Guide Word) in the `pandas` DataFrame just created includes bar
 
 The presence of spaces in Guide Words may cause trouble in a variety of Natural Language Processing methods, because such methods will interpret the space as a word divider. Similarly, commas may cause trouble when saving data in a `.csv` (Comma Separated Values) file, because a comma will be interpreted as the beginning of a new field. 
 
-For text analysis purposes, therefore it is important to remove all commas and spaces from Guide Word and Sense. The `pandas` `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, `replace()` finds and replaces a full string; we need to set `regex = True` to replace a partial string.
+For text analysis purposes, therefore it is useful to remove all commas and spaces from Guide Word and Sense. The `pandas` `replace()` function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, `replace()` finds and replaces a full string; we need to set `regex = True` to replace a partial string.
 
 ```python
 findreplace = {' ' : '-', ',' : ''}
@@ -537,7 +535,7 @@ words.loc[words["form"] == "", 'lemma'] = ""
 words
 ```
 
-The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the `lemma` column will contain the "form" followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()` that is used, the `words` dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
+The first line creates the new "lemma" column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the `lemma` column will contain the "form" (the transliterated form of the word) followed by "[NA]NA" (Guide Word and POS unknown). Finally, depending on the version of `parsejson()` that is used, the `words` dataframe may include rows that represent horizontal drawings or broken lines (see section [2.1.6.2](#2.1.6.2-Broken-Lines)). For those entries the "form" is an empty string and the "lemma" should be empty as well.
 
 
 
