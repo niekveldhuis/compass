@@ -1,6 +1,6 @@
 """ Utilities for Computational Assyriology """
 import requests
-import tqdm
+from tqdm._tqdm_notebook import tqdm_notebook
 import os
 import errno
 import zipfile
@@ -31,22 +31,25 @@ def format_project_list(x):
 
 def oracc_download(p):
     """Downloads ZIP with JSON files from
-    ORACC server. Parameter is a single string
-    with ORACC project names, separated by commas"""
+    ORACC server. Parameter is a list
+    with ORACC project names"""
 
     CHUNK = 16 * 1024
+    p = list(set(p)) #remove duplicates
+    projects = p.copy()
     for project in p:
-        project = project.replace('/', '-')
-        url = "http://build-oracc.museum.upenn.edu/json/" + project + ".zip"
-        file = 'jsonzip/' + project + '.zip'
+        proj = project.replace('/', '-')
+        url = "http://build-oracc.museum.upenn.edu/json/" + proj + ".zip"
+        file = 'jsonzip/' + proj + '.zip'
         with requests.get(url, stream=True) as r:
             if r.status_code == 200:
-                print("Downloading " + url + " saving as " + file)
                 with open(file, 'wb') as f:
-                    for c in tqdm.tqdm(r.iter_content(chunk_size=CHUNK)):
+                    for c in tqdm_notebook(r.iter_content(chunk_size=CHUNK), desc = project):
                         f.write(c)
             else:
                 print(url + " does not exist.")
+                projects.remove(project)
+    return projects
 
 def parsejson(text):
     for JSONobject in text["cdl"]:
@@ -76,7 +79,6 @@ def parsejson(text):
 
 def get_lemmas(p):
     for project in p:
-        print("Parsing " + project)
         file = "jsonzip/" + project.replace("/", "-") + ".zip"
         try:
             z = zipfile.ZipFile(file) 
@@ -85,7 +87,7 @@ def get_lemmas(p):
             continue
         files = z.namelist()
         files = [name for name in files if "corpusjson" in name and name[-5:] == '.json'] 
-        for filename in tqdm.tqdm(files):
+        for filename in tqdm_notebook(files, desc = project):
             id_text = project + filename[-13:-5] 
             meta_d["id_text"] = id_text
             try:
