@@ -41,7 +41,7 @@ The following is an (abbreviated) example of a JSON file (the catalog of an imag
 }
 ```
 
-The value of the key `members` is a dictionary (surrounded by curly brackets) with length of 2. Each element in the dictionary is again a dictionary (surrounded by curly brackets and consisting of `key` : `value` pairs). The key `publications` has a list as its value. A list is a way to give multiple values to the same key. In `publications`  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.
+The value of the key `members` is a dictionary (surrounded by curly brackets) with length of 2. The value of each key in this dictionary is again a dictionary (surrounded by curly brackets and consisting of `key` : `value` pairs). The key `publications` has a list as its value. A list is a way to give multiple values to the same key. In `publications`  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.
 
 For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. To avoid confusion, we use the Python vocabulary here (key, list, dictionary), even when talking about the JSON  structure.
 
@@ -56,7 +56,7 @@ For all practical purposes, a JSON object is identical in structure to a Python 
 
 ### 2.1.2 Acquiring ORACC JSON
 
-Each [ORACC][oracc] project has a `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where `[PROJECT]` is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json/[PROJECT]-[SUBPROJECT].zip`(e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`. The same code is also available in the functions `make_dirs()` and `oracc_download()` in the `utils` module in the directory  `utils`. See the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb) for instructions how to use the functions of the `utils` module.
+Each [ORACC][oracc] project has a `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://build-oracc.museum.upenn.edu/json/[PROJECT].zip`, where `[PROJECT]` is to be replaced with the project abbreviation (e.g. http://build-oracc.museum.upenn.edu/json/etcsri.zip). For sub-projects the address is `http://build-oracc.museum.upenn.edu/json/[PROJECT]-[SUBPROJECT].zip` (e.g. http://build-oracc.museum.upenn.edu/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`. The same code is also available in the functions `make_dirs()` and `oracc_download()` in the `utils` module in the directory  `utils`. See the notebook [2_1_0_download_ORACC-JSON.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb) for instructions how to use the functions of the `utils` module.
 
 After downloading the JSON `zip` file you may unzip it to inspect its contents. Note, however, that the scripts will always read the data directly from the `zip` file.
 
@@ -101,7 +101,7 @@ df1 = df[["provenience", "period", "id_text"]]
 
 Pandas is a powerful Python library – we will see some of its functionality in later sections. Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.
 
-The notebook [2-1-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file, extract the catalog information and store that information in a `csv` file and/ or a `pickle` file.
+The notebook [2-1-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file(s), extract the catalog information and store that information in a `csv` file and/or a `pickle` file.
 
 ### 2.1.4 Parsing an ORACC JSON Text Edition File
 
@@ -200,7 +200,7 @@ The structure may be illustrated with the beginning of [P251867](http://oracc.or
 
 The first `cdl` key contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list of dictionaries as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text.
 
-This hierarchy implies that a word (an "l" node) may belong to differnet hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
+This hierarchy implies that a word (an "l" node) may belong to different hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
 
 In order to pull out the lemmatization data we need to iterate through the hierarchy of `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
 
@@ -230,9 +230,9 @@ import pandas as pd
 words = pd.DataFrame(lemm_l).fillna("")
 words
 ```
-The function `fillna()` from the `pandas` library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields "cf" (Citation Form), "gw" (Guide Word), and "pos" (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: "Not a Number"), which can be problematic in further data manipulation. The argument of the `fillna()` function is the value to be placed in empty cells - in this case the empty string. Note that NaN and "" are of different data types. NaN belongs to a numeric data type; the empty string is a string.
+The function `fillna()` from the `pandas` library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields "cf" (Citation Form), "gw" (Guide Word), and "pos" (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: "Not a Number"), which can be problematic in further data manipulation. The argument of the `fillna()` function is the value to be placed in empty cells - in this case the empty string. Note that NaN and "" are of different data types: NaN belongs to a numeric data type; the empty string is a string.
 
-One may write the DataFrame directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section [2.1.7](#2.1.7-Data-Structuring)). Before we get to that we will first discuss several enhancements of the`parsejson()` function.
+One may write the DataFrame directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section [2.1.7](#2.1.7-Data-Structuring)). Before we get to that we will first discuss several enhancements of the `parsejson()` function.
 
 ![P251867](http://cdli.ucla.edu/dl/tn_photo/P251867.jpg)
 
@@ -244,7 +244,7 @@ The basic `parsejson()` captures only lemmatization data, it ignores line number
 
 #### 2.1.5.1 Line Labels and Line IDs
 
-For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  `label` of the line and the word ID of each word. The `label` is human-legible and has the traditional format to indicate obverse, reverse,  column and line number or side of a prism (e.g. "o ii 7" or "a i 19'"). The field `id_word` is machine -legible and has the format TEXT_ID.LINE_ID.WORD_ID, for instance "P273880.22.1", (the first word of the twenty-second line of [P273880](http://oracc.org/dcclt/P273880.22.1)). In the data formatting stage we will use the word ID to extract the line ID (section [2.1.7.2](#2.1.7.2-Create-Line-IDs)).
+For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  `label` of the line and the word ID of each word. The `label` is human-legible and has the traditional format to indicate obverse, reverse, column and line number or side of a prism (e.g. "o ii 7" or "a i 19'"). The field `id_word` is machine -legible and has the format TEXT_ID.LINE_ID.WORD_ID, for instance "P273880.22.1", (the first word of the twenty-second line of [P273880](http://oracc.org/dcclt/P273880.22.1)). In the data formatting stage we will use the word ID to extract the line ID (section [2.1.7.2](#2.1.7.2-Create-Line-IDs)).
 
 We can capture `label` and `id_word` with slight adjustments to the `jsonparser()` and the code that calls that function. In the main process we create a dictionary `meta_d,` which will hold all the relevant meta data. Initially, it only contains the text ID. When the `parsejson()` function finds a dictionary that has the `key`  "label" the `key` "label" in `meta_d` gets updated. When the process gets to the lemmatization data the `key` "label" in `meta_d` will hold the proper line label. The word ID is found in the field "ref" in the `l` node, and is added to the `lemma` dictionary. 
 
@@ -368,7 +368,7 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
                     }
 ```
 
-A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of [ETCSRI][etcsri]) has marked such units (sentences and phrases) in the source files. In order to enable the `parsejson()`function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in the `meta_d` dictionary and add that ID to each word in the list of lemmas:
+A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of [ETCSRI][etcsri]) has marked such units (sentences and phrases) in the source files. In order to enable the `parsejson()` function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in the `meta_d` dictionary and add that ID to each word in the list of lemmas:
 
 ```python
 def parsejson(text):  # this version captures sentence IDs
@@ -415,11 +415,54 @@ The JSON files for individual text editions include other data types that may be
 
 In addition to words, [ORACC][oracc] recognizes Phrasal Semantic Units ([PSU](http://oracc.museum.upenn.edu/doc/help/lemmatising/psus/index.html)s), including idiomatic expressions, (Sumerian) Compound Verbs, multi-word proper nouns, etc. A PSU consists of multiple words, which are each lemmatized independently but are also indexed as a compound (and listed in the glossary).
 
-In the JSON text edition files the PSUs are listed at the end under the node `linkbase` with references to where the expression appears in the text.
+In the JSON text edition files the PSUs are listed at the end under the node `linkbase` with references to where the expression appears in the text. The node `linkbase` has as its value a list of dictionaries, each dictionary represents one occurrence of a PSU. The following snippet represents **gu₃ de₂-a-za** ('of your speaking') in [Bau A](http://oracc.org/epsd2/literary/Q000616) Segment C line 9 ([ETCSL 4.02.1](<http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.02.1&display=Crit&charenc=gcirc&lineid=c4021.C.5#c4021.C.9>)): 
+
+```json
+{"linkbase": [{
+          "type": "linkset",
+          "xlink_title": "gu de[say//to say (addressing someone),]V/t'V/t",
+          "id": "Q000616.ls00009",
+          "xlink_type": "extended",
+          "xlink_role": "psu",
+          "sig": "{gu₃ de₂-a-za = gu[voice]N de[pour]V/t += gu de[say//to say (addressing someone),]V/t'V/t}::@epsd2%sux:gu₃=gu[voice//voice, cry, noise]N'N$gu/gu₃#~++@epsd2%sux:de₂-a-za=de[pour//to pour]V/t'V/t$de;a,zu.ak/de₂#~;a,zu.ak",
+          "links": [
+            {
+              "type": "link",
+              "xlink_title": "gu",
+              "xlink_type": "locator",
+              "xlink_href": "#Q000616.l19760",
+              "xlink_role": "elt"
+            },
+            {
+              "type": "link",
+              "xlink_title": "de",
+              "xlink_type": "locator",
+              "xlink_href": "#Q000616.l19761",
+              "xlink_role": "elt"
+            }
+          ]
+        }]}
+```
+
+The node `linkbase` is an element in the highest level `cdl` list, and can thus be addressed as follows
+
+```python
+file = "jsonzip/epsd2-literary.zip"    
+z = zipfile.ZipFile(file)
+st = z.read("epsd2/literary/corpusjson/Q000616.json").decode("utf-8") 
+text = json.loads(st)
+cdl = text['cdl']
+for n in cdl: 
+    if 'linkbase' in n: 
+		linkbase = n['linkbase']
+
+```
+
+
 
 #### 2.1.6.2 Broken Lines
 
-[ORACC][oracc] editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes of the type `nonx` (non-textual). The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"` (a string) if the remark follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
+[ORACC][oracc] editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes of the type `nonx` (non-textual). The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"` (a string) if the annotation follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
 
 ```JSON
 {
@@ -569,7 +612,7 @@ The file `metadata.json` provides information about composite texts (which witne
 
 #### 2.1.8.2 Indexes and Glossary
 
-The Index and Glossary JSON files reproduce the indexes used by [ORACC Search](http://oracc.org/doc/search/searchingcorpora/index.html) and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for `lugal` and `dalla` in the same text), a feature that is not currently available in standard [ORACC][oracc] search. How to build such a search engine is a topic not discussed in this book.
+The Index and Glossary JSON files reproduce the indexes used by [ORACC Search](http://oracc.org/doc/search/searchingcorpora/index.html) and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for `lugal` and `dalla` in the same text), a feature that is not currently available in standard [ORACC][oracc] search. How to build such a search engine is a topic not discussed in this study.
 
 
 [oracc]: http://oracc.org

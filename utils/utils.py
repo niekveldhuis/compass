@@ -1,6 +1,7 @@
 """ Utilities for Computational Assyriology """
 import requests
-from tqdm._tqdm_notebook import tqdm_notebook
+from tqdm import tqdm_notebook
+#from tqdm._tqdm_notebook import tqdm_notebook
 import os
 import errno
 import zipfile
