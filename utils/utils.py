@@ -1,7 +1,6 @@
 """ Utilities for Computational Assyriology """
 import requests
-from tqdm import tqdm_notebook
-#from tqdm._tqdm_notebook import tqdm_notebook
+from tqdm import tqdm_notebook, tqdm
 import os
 import errno
 import zipfile
@@ -44,11 +43,12 @@ def oracc_download(p):
         file = 'jsonzip/' + proj + '.zip'
         with requests.get(url, stream=True) as r:
             if r.status_code == 200:
+                tqdm.write("Saving " + url + " as " + file)
                 with open(file, 'wb') as f:
                     for c in tqdm_notebook(r.iter_content(chunk_size=CHUNK), desc = project):
                         f.write(c)
             else:
-                print(url + " does not exist.")
+                tqdm.write(url + " does not exist.")
                 projects.remove(project)
     return projects
 
