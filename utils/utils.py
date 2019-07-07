@@ -32,8 +32,11 @@ def format_project_list(x):
 def oracc_download(p):
     """Downloads ZIP with JSON files from
     ORACC server. Parameter is a list
-    with ORACC project names"""
-
+    with ORACC project names,
+    return is the same list of names,
+    minus doublets and non-existing
+    projects"""
+    
     CHUNK = 16 * 1024
     p = list(set(p)) #remove duplicates
     projects = p.copy()
@@ -111,7 +114,9 @@ def dataformat(lemm_list):
 def get_data(x):
     make_dirs(["jsonzip", "output"])
     p = format_project_list(x)
-    oracc_download(p)
+    print("Downloading JSON")
+    p = oracc_download(p)
+    print("Parsing JSON")
     lemm_list = get_lemmas(p)
     words_df = dataformat(lemm_list)
     return(words_df)
