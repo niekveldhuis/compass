@@ -68,7 +68,7 @@ for node in words:
     gw_l.append(gw)
 ```
 
-The dot in `node.xpath('string(.)')` refers to the current node.
+The dot, the argument to the `string()` function in `node.xpath('string(.)')`, refers to the current node.
 
 For proper introductions to `Xpath` and `lxml` see the [Wikipedia](https://en.wikipedia.org/wiki/XPath) article on `Xpath` and the homepage of the [`lxml`](https://lxml.de/) library, respectively.
 
@@ -94,7 +94,7 @@ The key `ampersands` in the file `equivalencies.json` has as its value a diction
  etc.  
 ```
 
-This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in each of the data files (the original files are, of course, left untouched). The function `ampersands()` is called in the function `parsetext()` immediately after opening the file of one of the compositions in [ETCSL][]. It uses the regular expression `amp`, compiled in the main process. This regular expression matches any character sequence that begins with an ampersand (&) and ends with a semicolon (;). 
+This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in each of the data files (the original files are, of course, left untouched). The function `ampersands()` is called in the function `parsetext()` immediately after opening the file of one of the compositions in [ETCSL][].  
 
 ```python
 import json
@@ -102,13 +102,16 @@ import re
 with open("equivalencies/equivalencies.json") as f:
     eq = json.load(f)
 amp = re.compile(r'&[^;]+;')
+
 def ampersands(x):    
     x = re.sub(amp, lambda m: 
                eq["ampersands"].get(m.group(0), m.group(0)),x)
     return x
+
+xmltext = ampersands(xmltext)
 ```
 
-The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with ;. The `replace_with` argument is a temporary lambda function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match). The `get()` function allows a second argument to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those case where the dictionary does not contain the match it is replaced by itself.
+The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with a semicolon (;). The `replace_with` argument is a temporary lambda function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those case where the dictionary does not contain the match it is replaced by itself.
 
 ### 2.2.4 Pre-Processing: Additional Text and Secondary Text
 
@@ -145,7 +148,7 @@ The number c141 represents the text number in [ETCSL][] (in this case [Inana's D
 
 Note that the `id` attribute in the `anchor` tag is identical to the `to` attribute in the `addSpan` tag.
 
-We can collect all the `w` tags (words) between `addSpan` and its corresponding `anchor` tag wih the following `xpath` expression:
+We can collect all the `w` tags (words) between `addSpan` and its corresponding `anchor` tag with the following `xpath` expression:
 
 ```python
 secondary = tree.xpath('//w[preceding::addSpan[@type="secondary"]/@to = following::anchor/@id]')
@@ -273,7 +276,7 @@ If `getline()` receives a `gap` node it copies all the meta data in the dictiona
 
 If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss` nodes with the language attribute `akk`. The Xpath expression looks as follows: './/w|.//gloss[@lang="akk"]'. This will find both Sumerian and Akkadian words in the text.
 
-The function iterates over the list words sending each word to `getword()`.
+The function iterates over the list of words, sending each word to `getword()`.
 
 ### 2.2.11 Getword()
 
@@ -300,14 +303,22 @@ The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc
 
 ### 2.2.12 tounicode()
 
-The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Form` and `Form` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit to be replaced. If this is a letter (a-z or A-Z) the digit is replaced by its Unicode subscript counterpart. Otherwise it is left unchanged. In a second run the same code is used to take care of the second digit in 2-digit indexes (as in šeg₁₂), now with the unicode index digits in the look behind regular expression. The routine uses the dictionary `index_no` in `equivalencies.json`, which lists the digits 0-9 (and x) as keys, and their unicode subscript counterparts as values.
+The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Form` and `Form` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit(s) to be replaced. The regular expression is defined in the main process, as follows:
 
 ```python
-for key in eq["index_no"]: 
-	x = re.sub(r'(?<=[a-zA-Z])'+key, eq["index_no"][key], x)
-for key in eq["index_no"]: 
-	x = re.sub(r'(?<=[₀-₉])'+key, eq["index_no"][key], x)
+ind = re.compile(r'(?<=[a-zA-Z])[0-9x]{1,2}')
 ```
+The variable `ind` will now match any sequence of one or two digits (or x) immediately preceded by a letter in upper or lower case.
+
+The replacement code uses the same combination of the `re.sub()` function with a `get()` call to a dictionary, discussed in section [2.2.3](#2.2.3-Pre-Processing:-HTML entities):
+
+```python
+x = re.sub(ind, lambda m: eq['index_no'].get(m.group(0), 
+                                                 m.group(0)), x)
+```
+
+The dictionary `index_no` has equivalencies for all indexes from 1 to 39 and x.
+
 Finally,  `tounicode()` use the dictionary `ascii_unicode` (also in the file `equivalencies.json` to replace 'c' by 'š', 'j' by 'ŋ', etc.
 
 ### 2.2.13 etcsl_to_oracc()
@@ -333,11 +344,11 @@ In a few cases a single word in [ETCSL][] is represented by a sequence of two wo
 ```json
  "maš₂-sa-la₂[bug-ridden goat]N": {
             "cf": "maš",
-     				"pos": "N",
+     		"pos": "N",
             "gw": "goat",
-     				"cf2": "sala",
+     		"cf2": "sala",
             "pos2": "AJ",
-		    		"gw2": "bug-ridden" 
+		    "gw2": "bug-ridden" 
         },
 ```
 
