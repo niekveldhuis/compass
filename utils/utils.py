@@ -1,6 +1,6 @@
 """ Utilities for Computational Assyriology """
 import requests
-from tqdm import tqdm_notebook, tqdm
+from tqdm.auto import tqdm
 import os
 import errno
 import zipfile
@@ -48,7 +48,7 @@ def oracc_download(p):
             if r.status_code == 200:
                 tqdm.write("Saving " + url + " as " + file)
                 with open(file, 'wb') as f:
-                    for c in tqdm_notebook(r.iter_content(chunk_size=CHUNK), desc = project):
+                    for c in tqdm(r.iter_content(chunk_size=CHUNK), desc = project):
                         f.write(c)
             else:
                 tqdm.write(url + " does not exist.")
@@ -91,7 +91,7 @@ def get_lemmas(p):
             continue
         files = z.namelist()
         files = [name for name in files if "corpusjson" in name and name[-5:] == '.json'] 
-        for filename in tqdm_notebook(files, desc = project):
+        for filename in tqdm(files, desc = project):
             id_text = project + filename[-13:-5] 
             meta_d["id_text"] = id_text
             try:
