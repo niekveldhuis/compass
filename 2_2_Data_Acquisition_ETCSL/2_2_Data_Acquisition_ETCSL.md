@@ -105,13 +105,13 @@ amp = re.compile(r'&[^;]+;')
 
 def ampersands(x):    
     x = re.sub(amp, lambda m: 
-               eq["ampersands"].get(m.group(0), m.group(0)),x)
+               eq["ampersands"].get(m.group(), m.group()),x)
     return x
 
 xmltext = ampersands(xmltext)
 ```
 
-The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with a semicolon (;). The `replace_with` argument is a temporary lambda function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those case where the dictionary does not contain the match it is replaced by itself.
+The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with a semicolon (;). The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group() represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
 
 ### 2.2.4 Pre-Processing: Additional Text and Secondary Text
 
@@ -303,23 +303,22 @@ The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc
 
 ### 2.2.12 tounicode()
 
-The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Form` and `Form` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, therefore, uses a "look-behind" [regular expression](http://www.regular-expressions.info/) to check what character is found before the digit(s) to be replaced. The regular expression is defined in the main process, as follows:
+The main function of `tounicode()` is to change 'c' into  'š', 'j' into 'ŋ', 'e2' into 'e₂', etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 > du₃). The replacement of sign index numbers is complicated by the fact that `Citation Form` and `Form` may include real numbers, as in **7-ta-am3** where the **7** should remain unchanged, while **am3** should become **am₃**. The replacement routine for numbers, uses a [regular expression](http://www.regular-expressions.info/) to search for a sequence of one or two digits, preceded by a letter. The regular expression is defined in the main process, as follows:
 
 ```python
-ind = re.compile(r'(?<=[a-zA-Z])[0-9x]{1,2}')
+ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}')
 ```
 The variable `ind` will now match any sequence of one or two digits (or x) immediately preceded by a letter in upper or lower case.
 
-The replacement code uses the same combination of the `re.sub()` function with a `get()` call to a dictionary, discussed in section [2.2.3](#2.2.3-Pre-Processing:-HTML entities):
+The replacement code uses the `re.sub()` function with a temporary `lambda` function to translate the regular digits into their Unicode subscript counterparts. Using a function in `re.sub()` was discussed above in section [2.2.3](#2.2.3-Pre-Processing:-HTML entities):
 
 ```python
-x = re.sub(ind, lambda m: eq['index_no'].get(m.group(0), 
-                                                 m.group(0)), x)
+x = re.sub(ind, lambda m: m.group().translate(transind), x)
 ```
 
-The dictionary `index_no` has equivalencies for all indexes from 1 to 39 and x.
+The translation table `transind` is created in the main process. Note that in this case it is not necessary to define a `look-behind` in the regular expression `ind`. The match of `ind` includes the letter that precedes the index, but since the translation table only has digits, this letter is returned unchanged.
 
-Finally,  `tounicode()` use the dictionary `ascii_unicode` (also in the file `equivalencies.json` to replace 'c' by 'š', 'j' by 'ŋ', etc.
+Finally,  `tounicode()` uses another `translate()` call to replace 'c' by 'š', 'j' by 'ŋ', etc, using the table `transcj` created in the main process.
 
 ### 2.2.13 etcsl_to_oracc()
 
