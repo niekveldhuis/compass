@@ -52,7 +52,7 @@ def search(search, maxhits, links):
     results = results[:maxhits]
     if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
-        results = results.style
+        results = results.style.hide_index()
     return results
 
 
