@@ -26,7 +26,7 @@ The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 
 
 For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical *entry*? Does the nominal phrase **udu diŋir-e-gu₇-a** or, more precisely, the sequence of the lemmas **udu[sheep]N, diŋir[deity]N, gu[eat]V/t**) ever appear in a literary text? 
 
-## 	3.2 Lexical Entries in Literary Context
+## 	3.1.2 Lexical Entries in Literary Context
 
 In order to perform the comparison of lexical and literary vocabularies on the lexical *entry* level we first need to represent the data (lexical and literary) as lines, rather than as individual words. The line in a lexical texts will become our unit of comparison by defining those as Multiple Word Expressions (or MWEs). Lines in literary texts will serve as boundaries, since we do not expect an MWE to continue from one line to the next. 
 
@@ -45,7 +45,7 @@ Once this is done the lexical entries are treated the same: each space is replac
 
 We see that this approach essentially doubles the number of unique elements on the lexical side; on the literary side the increase is much less drastic. It turns out that many of the lexical entries (some 70%) never appear as such in the literary corpus.
 
-## 3.3. Add them Up
+## 3.1.3. Add them Up
 
 Finally we can add the two approaches discussed above into a single Venn diagram. There are words that appear as modifiers in lexical *entries* but never appear on their own in a lexical composition. Similarly, there are words in the literary corpus that occur in phrases known from the lexical corpus, but never outside of such phrases (we will see examples below). Such words, one may argue, potentially add to the intersection between the lexical and literary corpus, but are not represented in the second Venn diagram.
 
@@ -94,7 +94,7 @@ An example is the word **ašgar[kid]n** (a female kid) that is very common in ad
 
 Our investigation so far has shown that a very considerable portion of lexical words and lexical expressions are not found in the literary corpus as represented by [ETCSL][]. Chances are that a good number of them will be found in literary texts that are not in [ETCSL][] or that are not even known today. However, the lexical corpus is likely to increase, too, and chances that the intersection between those two vocabularies will increase significantly seem slim. Other forces may actually decrease the overlap. The example of **ašgar[kid]n**, above, derives from the Gudea Cylinders which is a royal inscription from several centuries before the Old Babylonian period. It is often included in presentations of Sumerian literature because it is, indeed, one of the high points of Sumerian literary language. But is has nothing to do with the Old Babylonian schools that our research started with and a good argument can be made for excluding it from our investigation.
 
-## 3.4 Digging Deeper
+## 3.2 Digging Deeper
 
 We can take our analysis several steps further by looking for *important* words,  or *rare* words, or by investigating the relative contribution of individual lexical and literary compositions to the intersection. The lemmas **šag[heart]n** and **igi[eye]n** appear in the lexical composition Ugumu (the list of body parts). They also appear in virtually every literary composition, because there are many common verbal and nominal expressions that use these lemmas. On the other hand, the list of stones includes the entry {na₄}e-gu₂-en-sag₉ (with many variant writings), a very rare word that is know from the literary composition Lugal-e (or [Ninurta's Exploits](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc&lineid=c162.619#c162.619)) line 619 in the form **{na₄}en-ge-en**.  Since part of this composition is an enumeration of many types of stones (and their fates), there is a good chance that this particular match is significant - that the stone name is included in the list because it appears in Lugal-e, for instance.
 
@@ -102,20 +102,56 @@ The sets used in the previous sections are not useful for such investigations. F
 
 In order to address such questions we will use a Document Term Matrix (DTM): a huge matrix, where each row represents a (lexical or literary) composition (Document) and each column represents a lemma (Term). The number of columns will thus equal the number of individual lemmas available in our corpus. 
 
-In order to do so we will use the Pandas  `groupby()` and `aggregate()` commands again to represent each composition (lexical or literary) as one long string of lemmas.  We will use the data representation where lemmas in lexical expressions are connected by underscores. [In order to make the dataset more manageable, we will select the most important lexical compositions from Old Babylonian Nippur (rather than going for every single Old Babylonian lexical text). Nippur is (by far) the most important source of lexical and literary material of the period.]
+In order to do so we will use the Pandas  `groupby()` and `aggregate()` commands again to represent each composition (lexical or literary) as one long string of lemmas.  We will use the data representation where lemmas in lexical expressions are connected by underscores.
 
-Once we have the data represented this way we can use `Countvecorizer()` from the `sklearn` package to create the DTM. The `countvectorizer()` function essentially vectorizes a document by counting the number of times each word appears. In a artificial example we can vectorize the sentences (documents) **lugal[king]n e[house]n du[build]v/t** and **lugal[king]n egal[palace]n du[build]v/t** as follows: 
+Once we have the data represented this way we can use `Countvecorizer()` from the `sklearn` package to create the DTM. The `countvectorizer()` function essentially vectorizes a document by counting the number of times each word appears. In an artificial example we can vectorize the sentences (documents)
+
+> **lugal[king]n e[house]n du[build]v/t** 
+>
+>  **lugal[king]n egal[palace]n du[build]v/t** 
+
+as follows: 
 
 | sentence | du[build]v/t | e[house]n | egal[palace]n | lugal[king]n |
 | -------- | ------------ | --------- | ------------- | ------------ |
 | one      | 1            | 1         | 0             | 1            |
 | two      | 1            | 0         | 1             | 1            |
 
-We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[1, 0, 1, 1]`. That means that we can apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.66). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular text) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once).
+We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[1, 0, 1, 1]`. That means that we can apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.66). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular composition) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each *word* (or lemma) is now also characterized by a vector, represented by the numbers in a column.
 
-We can use the DTM to investigate in more complex ways the relationship between the lexical and the literary vocabulary. Instead of a full DTM, in which all occurrences of all words are represented, we will first build a *binary* DTM, using the lexical vocabulary. Our DTM will have one row for each document/composition (as in any DTM), but the columns represent words and expressions that appear in the *lexical* corpus. Each cell has either a 0 or a 1, to indicate that the word/expression in question does or does not appear in that particular literary composition. How many times a lemma is attested in the composition is not indicated - only *that* it appears, or not.
+We can use various types of DTMs to investigate in more complex ways the relationships between the lexical and the literary vocabulary. Instead of a full DTM, in which all occurrences of all words are represented, we will first build a *binary* DTM of the literary corpus (the [ETCSL][] corpus), using the lexical vocabulary. Our DTM will have one row for each document/composition (as in any DTM), and one column for each lemma or expression attested in the Old Babylonian *lexical* corpus. Because this is a *binary* DTM, each cell has either a 0 or a 1, to indicate that the word/expression in question does or does not appear in that particular literary composition. How many times a lemma is attested in the composition is not indicated - only *that* it appears, or not.
 
-By summing all the entries in a row we get an integer that represents the number of lexically attested lemmas in this composition, and this gives us a way to compare between compositions. Not surprisingly, longer composition have more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we may restrict the analysis to texts that are at least 200 words (lemmas/expressions) long. In addition to text length, other (related) characteristics that we may want to pay attention to are lexical richness (how many unique lemmas/expressions are attested in this composition?) and type-token-ration (TTR), which is defined as the number of unique lemmas (types) divided by the length of the text (number of tokens).  TTR is considered a rather poor measurement for lexical diversity (because it is strongly correlated with text length), but for compositions of approximately even length it may give some idea of the creativity vs. repetitiveness of the text.
+Because each column represents a word in the lexical corpus, there are many columns that have only zeroes (lexical entries that do not occur in [ETCSL][]). In terms of our Venn diagrams, the zeros in our DTM represent the blue area to the right, the ones represent the middle area (overlap between lexical and literary vocabulary). 
+![venn diagram 3](viz/venn_3.png)
+
+The main difference between the Venn diagram and the DTM is that the DTM shows in which compositions the shared words are attested. By computing the sum of a row we get an integer that represents the number of lexically attested lemmas in a particular composition, and this gives us a (numerical) measuring for comparing between compositions. Not surprisingly, longer compositions, such as the [Gudea Cylinders](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.7&display=Crit&charenc=gcirc#) (1363 lines), or the Ninurta narrative [Lugale](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc#) (726 lines) have more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we will restrict the analysis to texts that are at least 200 words (lemmas/expressions) long. In addition to text length, other (related) characteristics that we may want to pay attention to are lexical richness (how many unique lemmas/expressions are attested in this composition?) and type-token-ration (TTR), which is defined as the number of unique lemmas (types) divided by the length of the text (number of tokens).  TTR is considered a rather poor measurement for lexical diversity (because it has it strong negative correlation with text length), but for compositions of approximately even length it may give some idea of the creativity vs. repetitiveness of the text.
+
+
+| id_text                                                                                                | text_name                                   |   length |   ttr |   lex_var |   n_matches |   norm1 |   norm2 |
+|--------------------------------------------------------------------------------------------------------|---------------------------------------------|----------|-------|-----------|-------------|---------|---------|
+| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#)   | A tigi to Inana (Inana E)                   |      296 | 0.331 |        98 |          89 |   0.301 |   0.908 |
+| [c.5.5.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.5.4&display=Crit&charenc=gcirc#)     | The song of the hoe                         |      443 | 0.517 |       229 |         203 |   0.458 |   0.886 |
+| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E) |      216 | 0.602 |       130 |         115 |   0.532 |   0.885 |
+| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                 |      251 | 0.474 |       119 |         104 |   0.414 |   0.874 |
+| [c.2.8.3.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.8.3.2&display=Crit&charenc=gcirc#) | A prayer for Samsu-iluna (Samsu-iluna B)    |      206 | 0.563 |       116 |         101 |   0.49  |   0.871 |
+
+In the notebook you can manipulate the table to sort it by different columns (ascending or descending) and by displaying a larger or smaller number of rows. The column `norm1` represents the number of matches (with Old Babylonian lexical texts) divided by text length (in lemmas). The column `norm2` represents the number of matches divided by the number of unique lexemes (`lex_var`). The table as presented here has the first five rows, ordered by `norm2` (descending).  Ordering by `norm1` yields a very different output:
+
+| id_text                                                      | text_name                                      | length | ttr   | lex_var | n_matches | norm1 | norm2 |
+| ------------------------------------------------------------ | ---------------------------------------------- | ------ | ----- | ------- | --------- | ----- | ----- |
+| [c.2.5.6.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.4&display=Crit&charenc=gcirc#) | An adab to Inana for Ur-Ninurta (Ur-Ninurta D) | 204    | 0.657 | 134     | 114       | 0.559 | 0.851 |
+| [c.2.5.8.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#) | A praise poem of Enlil-bāni (Enlil-bāni A)     | 335    | 0.657 | 220     | 186       | 0.555 | 0.845 |
+| [c.4.19.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.19.1&display=Crit&charenc=gcirc#) | A balbale to Ninŋišzida (Ninŋišzida A)         | 216    | 0.634 | 137     | 116       | 0.537 | 0.847 |
+| [c.2.5.6.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.2&display=Crit&charenc=gcirc#) | A tigi to Enki for Ur-Ninurta (Ur-Ninurta B)   | 284    | 0.616 | 175     | 151       | 0.532 | 0.863 |
+| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E)    | 216    | 0.602 | 130     | 115       | 0.532 | 0.885 |
+| [c.2.5.5.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.1&display=Crit&charenc=gcirc#) | A praise poem of Lipit-Eštar (Lipit-Eštar A)   | 393    | 0.611 | 240     | 206       | 0.524 | 0.858 |
+| [c.2.5.5.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.2&display=Crit&charenc=gcirc#) | A praise poem of Lipit-Eštar (Lipit-Eštar B)   | 289    | 0.606 | 175     | 149       | 0.516 | 0.851 |
+| [c.2.6.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.6.6.5&display=Crit&charenc=gcirc#) | Sîn-iddinam and Iškur (Sîn-iddinam E)          | 234    | 0.641 | 150     | 119       | 0.509 | 0.793 |
+| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)  | 252    | 0.611 | 154     | 126       | 0.5   | 0.818 |
+| [c.2.4.2.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.4.2.01&display=Crit&charenc=gcirc#) | A praise poem of Šulgi (Šulgi A)               | 477    | 0.583 | 278     | 237       | 0.497 | 0.853 |
+
+These ten texts that score highest on lexical matches per lemma include a very large number of hymns to Isin kings, including Ur-Ninurta, Enlil-bani, Lipit-Eštar, Sin-Iddinam, and Išme-Dagan. The list includes some texts that are considered typical school compositions, such as [Enlil-bani A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#), [Lipit-Eštar A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.1&display=Crit&charenc=gcirc#), [Lipit-Eštar B](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.2&display=Crit&charenc=gcirc#), and [Šulgi A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.4.2.01&display=Crit&charenc=gcirc#). 
+
 
 
 
@@ -124,3 +160,6 @@ By summing all the entries in a row we get an integer that represents the number
 
 [ETCSL]: http://etcsl.orinst.ox.ac.uk
 [DCCLT]: http://oracc.org/dcclt
+```
+
+```
