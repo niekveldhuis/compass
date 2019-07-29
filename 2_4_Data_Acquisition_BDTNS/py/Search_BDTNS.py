@@ -43,13 +43,13 @@ def search(search, maxhits, links):
     signs = ' '.join(row_l).upper()
     signs_esc = re.escape(' ' + signs + ' ')
     signs_esc = signs_esc.replace('\ X\ ', '(?:\ [^ ]+)*\ ')
-    show = ['id_text', 'label', 'text']
+    show = ['id_text', 'label', 'text', 'date', 'provenance', 'publication']
     results = bdtns.loc[bdtns['sign_names'].str.contains(signs_esc, regex=True), show].copy()
     hits = len(results)
     if maxhits > hits:
         maxhits = hits
     print(signs), print(str(hits) + ' hits; ' + str(maxhits) + " displayed")
-    results = results[:maxhits]
+    results = results.sort_values(by = sortby.value)[:maxhits]
     if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
         results = results.style.hide_index()
@@ -71,13 +71,18 @@ links = widgets.Checkbox(
     value=True,
     description='Display Links',
         )
+sortby = widgets.Dropdown(
+    options = ['id_text', 'text', 'label', 'date', 'provenance', 'publication'],
+    value = 'id_text',
+    description = 'Sort By: ')
 def on_button_clicked(_):
     with out:
         clear_output()
         display(search(text.value, maxhits.value, links.value))
 button.on_click(on_button_clicked)
-line = widgets.HBox([text, maxhits, links])
-disp = widgets.VBox([line,button,out])
+line = widgets.HBox([text, maxhits])
+line2 = widgets.HBox([links, sortby])
+disp = widgets.VBox([line,line2,button,out])
 
 
 
