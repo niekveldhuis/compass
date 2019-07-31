@@ -22,7 +22,7 @@ From the two sets, which we call `etcsl_words_s` and `lexical_words_s` we elimin
 
 ![venn diagram 1](viz/venn_1.png)
 
-The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 2,033 (or almost half) are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger with 4,345 distinct lemmas.
+The Old Babylonian lexical corpus currently has 4,165 distinct lemmas, of which 2,033 (or almost half) are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger with 4,345 distinct lemmas. The number of items in the literary set should be stable, because it is based on the archival set of [ETCSL][] files. The number on the right (set of lexical lemmas), however, may vary, because it is based on [DCCLT][] and its subcorpora, and those are still in the process of being edited.
 
 For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical *entry*? Does the nominal phrase **udu diŋir-e-gu₇-a** or, more precisely, the sequence of the lemmas **udu[sheep]N, diŋir[deity]N, gu[eat]V/t**) ever appear in a literary text? 
 
@@ -126,37 +126,54 @@ Because each column represents a word in the lexical corpus, there are many colu
 
 The main difference between the Venn diagram and the DTM is that the DTM shows in which compositions the shared words are attested. By computing the sum of a row we get an integer that represents the number of lexically attested lemmas in a particular composition, and this gives us a (numerical) measuring for comparing between compositions. Not surprisingly, longer compositions, such as the [Gudea Cylinders](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.7&display=Crit&charenc=gcirc#) (1363 lines), or the Ninurta narrative [Lugale](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc#) (726 lines) have more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we will restrict the analysis to texts that are at least 200 words (lemmas/expressions) long. In addition to text length, other (related) characteristics that we may want to pay attention to are lexical richness (how many unique lemmas/expressions are attested in this composition?) and type-token-ration (TTR), which is defined as the number of unique lemmas (types) divided by the length of the text (number of tokens).  TTR is considered a rather poor measurement for lexical diversity (because it has it strong negative correlation with text length), but for compositions of approximately even length it may give some idea of the creativity vs. repetitiveness of the text.
 
+The table below gives the first ten compositions, sorted by `norm2` (descending). Of the 97 unique lemmas that are attested in Inana E no less than 94 are also attested in the Old Babylonian lexical corpus - a norm2 score of 0.969.
 
-| id_text                                                                                                | text_name                                   |   length |   ttr |   lex_var |   n_matches |   norm1 |   norm2 |
-|--------------------------------------------------------------------------------------------------------|---------------------------------------------|----------|-------|-----------|-------------|---------|---------|
-| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#)   | A tigi to Inana (Inana E)                   |      296 | 0.331 |        98 |          89 |   0.301 |   0.908 |
-| [c.5.5.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.5.4&display=Crit&charenc=gcirc#)     | The song of the hoe                         |      443 | 0.517 |       229 |         203 |   0.458 |   0.886 |
-| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E) |      216 | 0.602 |       130 |         115 |   0.532 |   0.885 |
-| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                 |      251 | 0.474 |       119 |         104 |   0.414 |   0.874 |
-| [c.2.8.3.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.8.3.2&display=Crit&charenc=gcirc#) | A prayer for Samsu-iluna (Samsu-iluna B)    |      206 | 0.563 |       116 |         101 |   0.49  |   0.871 |
+| id_text                                                      | text_name                                                    | length | ttr   | lex_var | n_matches | norm1 | norm2 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ----- | ------- | --------- | ----- | ----- |
+| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) | A tigi to Inana (Inana E)                                    | 292    | 0.332 | 97      | 94        | 0.322 | 0.969 |
+| [c.2.3.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.3.1&display=Crit&charenc=gcirc#) | An adab to Bau for Luma (Luma A)                             | 232    | 0.336 | 78      | 75        | 0.323 | 0.962 |
+| [c.4.15.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.15.3&display=Crit&charenc=gcirc#) | A tigi to Nergal (Nergal C)                                  | 213    | 0.451 | 96      | 91        | 0.427 | 0.948 |
+| [c.2.5.4.23](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.23&display=Crit&charenc=gcirc#) | A hymn to Nibru and Išme-Dagan (Išme-Dagan W)                | 331    | 0.465 | 154     | 144       | 0.435 | 0.935 |
+| [c.5.2.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.2.4&display=Crit&charenc=gcirc#) | A man and his god                                            | 564    | 0.418 | 236     | 218       | 0.387 | 0.924 |
+| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                                  | 245    | 0.478 | 117     | 108       | 0.441 | 0.923 |
+| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E)                  | 216    | 0.602 | 130     | 120       | 0.556 | 0.923 |
+| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                                | 286    | 0.615 | 176     | 162       | 0.566 | 0.92  |
+| [c.5.1.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#) | The advice of a supervisor to a younger scribe (E-dub-ba-a C) | 407    | 0.521 | 212     | 195       | 0.479 | 0.92  |
+| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)                | 233    | 0.635 | 148     | 136       | 0.584 | 0.919 |
 
-In the notebook you can manipulate the table to sort it by different columns (ascending or descending) and by displaying a larger or smaller number of rows. The column `norm1` represents the number of matches (with Old Babylonian lexical texts) divided by text length (in lemmas). The column `norm2` represents the number of matches divided by the number of unique lexemes (`lex_var`). The table as presented here has the first five rows, ordered by `norm2` (descending).  Ordering by `norm1` yields a very different output:
+Note that changes in the [DCCLT][] data may change the numbers and the arrangement of the table.
 
-| id_text                                                      | text_name                                      | length | ttr   | lex_var | n_matches | norm1 | norm2 |
-| ------------------------------------------------------------ | ---------------------------------------------- | ------ | ----- | ------- | --------- | ----- | ----- |
-| [c.2.5.6.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.4&display=Crit&charenc=gcirc#) | An adab to Inana for Ur-Ninurta (Ur-Ninurta D) | 204    | 0.657 | 134     | 114       | 0.559 | 0.851 |
-| [c.2.5.8.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#) | A praise poem of Enlil-bāni (Enlil-bāni A)     | 335    | 0.657 | 220     | 186       | 0.555 | 0.845 |
-| [c.4.19.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.19.1&display=Crit&charenc=gcirc#) | A balbale to Ninŋišzida (Ninŋišzida A)         | 216    | 0.634 | 137     | 116       | 0.537 | 0.847 |
-| [c.2.5.6.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.2&display=Crit&charenc=gcirc#) | A tigi to Enki for Ur-Ninurta (Ur-Ninurta B)   | 284    | 0.616 | 175     | 151       | 0.532 | 0.863 |
-| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E)    | 216    | 0.602 | 130     | 115       | 0.532 | 0.885 |
-| [c.2.5.5.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.1&display=Crit&charenc=gcirc#) | A praise poem of Lipit-Eštar (Lipit-Eštar A)   | 393    | 0.611 | 240     | 206       | 0.524 | 0.858 |
-| [c.2.5.5.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.2&display=Crit&charenc=gcirc#) | A praise poem of Lipit-Eštar (Lipit-Eštar B)   | 289    | 0.606 | 175     | 149       | 0.516 | 0.851 |
-| [c.2.6.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.6.6.5&display=Crit&charenc=gcirc#) | Sîn-iddinam and Iškur (Sîn-iddinam E)          | 234    | 0.641 | 150     | 119       | 0.509 | 0.793 |
-| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)  | 252    | 0.611 | 154     | 126       | 0.5   | 0.818 |
-| [c.2.4.2.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.4.2.01&display=Crit&charenc=gcirc#) | A praise poem of Šulgi (Šulgi A)               | 477    | 0.583 | 278     | 237       | 0.497 | 0.853 |
+The top-ten for `norm2` does not favor typical school compositions. Typical school compositions are found in large numbers of exemplars or have other characteristics that make it likely that they played an important role in literary education in scribal school. Several such groups of texts, labeled the *tetrad*, the *decad* and the *House F Fourteen* have been identified in the past [^3]Of these compositions only [Eduba C](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#)  (which belongs to the *House F Fourteen*) appears in our list appears at number 9. 
+
+In the notebook one may manipulate the table to sort it by different columns (ascending or descending) and by displaying a larger or smaller number of rows. The column `norm1` represents the number of matches (with Old Babylonian lexical texts) divided by text length (in lemmas). Ordering by `norm1` yields a very different output:
+
+| id_text                                                      | text_name                                                    | length | ttr   | lex_var | n_matches | norm1 | norm2 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ----- | ------- | --------- | ----- | ----- |
+| [c.2.6.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.6.6.5&display=Crit&charenc=gcirc#) | Sîn-iddinam and Iškur (Sîn-iddinam E)                        | 207    | 0.705 | 146     | 130       | 0.628 | 0.89  |
+| [c.2.5.4.09](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.09&display=Crit&charenc=gcirc#) | Išme-Dagan and Enlil's chariot: a tigi to Enlil (Išme-Dagan I) | 265    | 0.687 | 182     | 165       | 0.623 | 0.907 |
+| [c.2.5.8.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#) | A praise poem of Enlil-bāni (Enlil-bāni A)                   | 316    | 0.68  | 215     | 197       | 0.623 | 0.916 |
+| [c.6.1.12](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.12&display=Crit&charenc=gcirc#) | Proverbs: collection 12                                      | 202    | 0.663 | 134     | 123       | 0.609 | 0.918 |
+| [c.6.1.26](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.26&display=Crit&charenc=gcirc#) | Proverbs: collection 26                                      | 246    | 0.654 | 161     | 148       | 0.602 | 0.919 |
+| [c.6.1.19](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.19&display=Crit&charenc=gcirc#) | Proverbs: collection 19                                      | 235    | 0.681 | 160     | 141       | 0.6   | 0.881 |
+| [c.6.1.04](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.04&display=Crit&charenc=gcirc#) | Proverbs: collection 4                                       | 252    | 0.687 | 173     | 148       | 0.587 | 0.855 |
+| [c.4.19.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.19.1&display=Crit&charenc=gcirc#) | A balbale to Ninŋišzida (Ninŋišzida A)                       | 208    | 0.649 | 135     | 122       | 0.587 | 0.904 |
+| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)                | 233    | 0.635 | 148     | 136       | 0.584 | 0.919 |
+| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                                | 286    | 0.615 | 176     | 162       | 0.566 | 0.92  |
+
+Here the highest score is for Sîn-iddinam E, which has 130 matches on a text length of 207 - a score of 0.628. 
 
 These ten texts that score highest on lexical matches per lemma include a very large number of hymns to Isin kings, including Ur-Ninurta, Enlil-bani, Lipit-Eštar, Sin-Iddinam, and Išme-Dagan. The list includes some texts that are considered typical school compositions, such as [Enlil-bani A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#), [Lipit-Eštar A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.1&display=Crit&charenc=gcirc#), [Lipit-Eštar B](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.5.2&display=Crit&charenc=gcirc#), and [Šulgi A](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.4.2.01&display=Crit&charenc=gcirc#). 
+
+Although the two "top tens" do not have any composition in common, it seems that hymns to gods and (in particular) to kings score high in both categories. The only narrative text to show in either table is Gilgameš and Aga, with the 10th highest score on`norm2`; proverbs and disputations are absent.
+
+We can look in more detail at the highest scoring text in the `norm2` column to see what is going on.  
 
 
 
 
 [^1]: 	N. Veldhuis, *Religion, Literature, and Scholarship: The Sumerian Composition "Nanše and the Birds"*. Cuneiform Monographs 22. Leiden: Brill 2004.
 [^2]:	N. Veldhuis, *Religion, Literature, and Scholarship: The Sumerian Composition "Nanše and the Birds"*. Cuneiform Monographs 22. Leiden: Brill 2004.
+[^3]:	For tetrad, decad and House F Fourteen, see E. Robson, The tablet House: a scribal school in old Babylonian Nippur, in: *Revue d'Assyriologie* 93 (2001) 39-66, [doi:10.3917/assy.093.0039](https://doi.org/10.3917/assy.093.0039); and Paul Delnero, *The Textual Criticism of Sumerian Literature*, Journal of Cuneiform Studies Supplementary Series 3 (2012); both with further literature.
 
 [ETCSL]: http://etcsl.orinst.ox.ac.uk
 [DCCLT]: http://oracc.org/dcclt
