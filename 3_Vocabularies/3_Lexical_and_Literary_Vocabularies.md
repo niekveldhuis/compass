@@ -128,37 +128,43 @@ The main difference between the Venn diagram and the DTM is that the DTM shows i
 
 The table below gives the first ten compositions, sorted by `norm2` (descending). Of the 97 unique lemmas that are attested in Inana E no less than 94 are also attested in the Old Babylonian lexical corpus - a norm2 score of 0.969.
 
-| id_text                                                      | text_name                                                    | length | ttr   | lex_var | n_matches | norm1 | norm2 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ----- | ------- | --------- | ----- | ----- |
-| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) | A tigi to Inana (Inana E)                                    | 292    | 0.332 | 97      | 94        | 0.322 | 0.969 |
-| [c.2.3.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.3.1&display=Crit&charenc=gcirc#) | An adab to Bau for Luma (Luma A)                             | 232    | 0.336 | 78      | 75        | 0.323 | 0.962 |
-| [c.4.15.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.15.3&display=Crit&charenc=gcirc#) | A tigi to Nergal (Nergal C)                                  | 213    | 0.451 | 96      | 91        | 0.427 | 0.948 |
-| [c.2.5.4.23](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.23&display=Crit&charenc=gcirc#) | A hymn to Nibru and Išme-Dagan (Išme-Dagan W)                | 331    | 0.465 | 154     | 144       | 0.435 | 0.935 |
-| [c.5.2.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.2.4&display=Crit&charenc=gcirc#) | A man and his god                                            | 564    | 0.418 | 236     | 218       | 0.387 | 0.924 |
-| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                                  | 245    | 0.478 | 117     | 108       | 0.441 | 0.923 |
-| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E)                  | 216    | 0.602 | 130     | 120       | 0.556 | 0.923 |
-| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                                | 286    | 0.615 | 176     | 162       | 0.566 | 0.92  |
-| [c.5.1.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#) | The advice of a supervisor to a younger scribe (E-dub-ba-a C) | 407    | 0.521 | 212     | 195       | 0.479 | 0.92  |
-| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)                | 233    | 0.635 | 148     | 136       | 0.584 | 0.919 |
+| id_text                                                      | text_name                                                    | length | mtld    | ttr   | lex_var | n_matches | norm1 | norm2 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ------- | ----- | ------- | --------- | ----- | ----- |
+| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) | A tigi to Inana (Inana E)                                    | 292    | 23.982  | 0.332 | 97      | 94        | 0.322 | 0.969 |
+| [c.2.3.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.3.1&display=Crit&charenc=gcirc#) | An adab to Bau for Luma (Luma A)                             | 232    | 20.212  | 0.336 | 78      | 75        | 0.323 | 0.962 |
+| [c.4.15.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.15.3&display=Crit&charenc=gcirc#) | A tigi to Nergal (Nergal C)                                  | 213    | 60.425  | 0.451 | 96      | 91        | 0.427 | 0.948 |
+| [c.2.5.4.23](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.23&display=Crit&charenc=gcirc#) | A hymn to Nibru and Išme-Dagan (Išme-Dagan W)                | 331    | 62.805  | 0.465 | 154     | 144       | 0.435 | 0.935 |
+| [c.5.2.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.2.4&display=Crit&charenc=gcirc#) | A man and his god                                            | 564    | 85.109  | 0.418 | 236     | 218       | 0.387 | 0.924 |
+| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                                  | 245    | 48.75   | 0.478 | 117     | 108       | 0.441 | 0.923 |
+| [c.2.5.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.6.5&display=Crit&charenc=gcirc#) | An adab to An for Ur-Ninurta (Ur-Ninurta E)                  | 216    | 58.974  | 0.602 | 130     | 120       | 0.556 | 0.923 |
+| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                                | 286    | 110.755 | 0.615 | 176     | 162       | 0.566 | 0.92  |
+| [c.5.1.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#) | The advice of a supervisor to a younger scribe (E-dub-ba-a C) | 407    | 90.529  | 0.521 | 212     | 195       | 0.479 | 0.92  |
+| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)                | 233    | 135.139 | 0.635 | 148     | 136       | 0.584 | 0.919 |
 
 Note that changes in the [DCCLT][] data may change the numbers and the arrangement of the table.
 
-The top-ten for `norm2` does not favor typical school compositions. Typical school compositions are found in large numbers of exemplars or have other characteristics that make it likely that they played an important role in literary education in scribal school. Several such groups of texts, labeled the *tetrad*, the *decad* and the *House F Fourteen* have been identified in the past [^3]Of these compositions only [Eduba C](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#)  (which belongs to the *House F Fourteen*) appears in our list appears at number 9. 
+The top-ten for `norm2` does not favor typical school compositions. Typical school compositions are found in large numbers of exemplars or have other characteristics that make it likely that they played an important role in literary education in scribal school. Several such groups of texts, labeled the *tetrad*, the *decad* and the *House F Fourteen* have been identified in the past[^3]. Of these compositions only [Eduba C](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.1.3&display=Crit&charenc=gcirc#)  (which belongs to the *House F Fourteen*) appears in our list appears at number 9. 
 
-In the notebook one may manipulate the table to sort it by different columns (ascending or descending) and by displaying a larger or smaller number of rows. The column `norm1` represents the number of matches (with Old Babylonian lexical texts) divided by text length (in lemmas). Ordering by `norm1` yields a very different output:
+In the notebook one may manipulate the table to sort it by different columns (ascending or descending) and by displaying a larger or smaller number of rows. We can manipulate the various columns to get a sense of what these numbers mean.
 
-| id_text                                                      | text_name                                                    | length | ttr   | lex_var | n_matches | norm1 | norm2 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ----- | ------- | --------- | ----- | ----- |
-| [c.2.6.6.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.6.6.5&display=Crit&charenc=gcirc#) | Sîn-iddinam and Iškur (Sîn-iddinam E)                        | 207    | 0.705 | 146     | 130       | 0.628 | 0.89  |
-| [c.2.5.4.09](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.09&display=Crit&charenc=gcirc#) | Išme-Dagan and Enlil's chariot: a tigi to Enlil (Išme-Dagan I) | 265    | 0.687 | 182     | 165       | 0.623 | 0.907 |
-| [c.2.5.8.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.8.1&display=Crit&charenc=gcirc#) | A praise poem of Enlil-bāni (Enlil-bāni A)                   | 316    | 0.68  | 215     | 197       | 0.623 | 0.916 |
-| [c.6.1.12](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.12&display=Crit&charenc=gcirc#) | Proverbs: collection 12                                      | 202    | 0.663 | 134     | 123       | 0.609 | 0.918 |
-| [c.6.1.26](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.26&display=Crit&charenc=gcirc#) | Proverbs: collection 26                                      | 246    | 0.654 | 161     | 148       | 0.602 | 0.919 |
-| [c.6.1.19](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.19&display=Crit&charenc=gcirc#) | Proverbs: collection 19                                      | 235    | 0.681 | 160     | 141       | 0.6   | 0.881 |
-| [c.6.1.04](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.04&display=Crit&charenc=gcirc#) | Proverbs: collection 4                                       | 252    | 0.687 | 173     | 148       | 0.587 | 0.855 |
-| [c.4.19.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.19.1&display=Crit&charenc=gcirc#) | A balbale to Ninŋišzida (Ninŋišzida A)                       | 208    | 0.649 | 135     | 122       | 0.587 | 0.904 |
-| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K)                | 233    | 0.635 | 148     | 136       | 0.584 | 0.919 |
-| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                                | 286    | 0.615 | 176     | 162       | 0.566 | 0.92  |
+Ordering by text *length* we see that the Gudea cylinders are by far the longest composition in this group at 4,387 lemmas. The next composition is Ninurta's exploits (or Lugal-e) at 3,160, followed by The Lament for Sumer and Ur (2,701). From there on composition gradually get shorter, but the first two stand out. 
+
+As expected, this is correlated with a low TTR (Gudea: 0.209). It is interesting to note, however, that there are four compositions that are (much) shorter, but have an even lower TTR. These are: 
+
+| id_text                                                      | text_name                            | length | ttr   |
+| ------------------------------------------------------------ | ------------------------------------ | ------ | ----- |
+| [c.1.3.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.3.1&display=Crit&charenc=gcirc#) | Inana and Enki                       | 2085   | 0167  |
+| [c.1.5.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.5.1&display=Crit&charenc=gcirc#) | Nanna-Suen's journey to Nibru        | 1219   | 0.187 |
+| [c.1.8.1.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.8.1.4&display=Crit&charenc=gcirc#) | Gilgameš Enkidu and the nether world | 2145   | 0.191 |
+| [c.1.4.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&display=Crit&charenc=gcirc#) | Inana's descent to the nether world  | 1827   | 0.205 |
+
+These four compositions are characterized by wholesale repetitions of passages, which probably explains their low TTR.
+
+Ordering our texts by MTLD yields some surprising and perhaps irregular results. MTLD measures the mean number of words needed to lower the TTR to the default threshold of 0.720. There are no less than 50 compositions for which this average is above 100, with a maximum of 239.19 (Enlil-bāni A) and a median of 65.23 (Song of the Hoe). The validity of the result for Enlil-bāni A is questionable, because the text is only 316 lemmas long - which means that the average is based on only one full factor and a partial one. Still, the rest of the numbers for Enlil-bāni A confirm that there is something remarkable about this composition. 
+
+
+
+Examples are Gilgameš Enkidu and the Netherword (length 2145; TTR 0.191) or Inana and Enki (length 2,085; TTR 0.166).  Both of these compositions have long repeated sequences, which may explain their low TTR.
 
 Here the highest score is for Sîn-iddinam E, which has 130 matches on a text length of 207 - a score of 0.628. 
 
