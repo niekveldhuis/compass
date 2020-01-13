@@ -42,7 +42,7 @@ def oracc_download(p):
     projects = p.copy()
     for project in p:
         proj = project.replace('/', '-')
-        url = "http://build-oracc.museum.upenn.edu/json/" + proj + ".zip"
+        url = "http://oracc.museum.upenn.edu/" + project + "json/" + proj + ".zip"
         file = 'jsonzip/' + proj + '.zip'
         with requests.get(url, stream=True) as r:
             if r.status_code == 200:
