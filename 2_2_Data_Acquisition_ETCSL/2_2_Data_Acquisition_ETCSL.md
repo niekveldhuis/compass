@@ -169,7 +169,7 @@ Since we can do exactly the same for "additional text" we can slightly adapt the
 
 ```python
 def mark_extra(tree, which):
-    extra = tree.xpath('//w[preceding::addSpan[@type="' + which + '"]/@to = following::anchor/@id]')
+    extra = tree.xpath(f'//w[preceding::addSpan[@type="{which}"]/@to = following::anchor/@id]')
     
     for word in extra:
         word.attrib["status"] = which
