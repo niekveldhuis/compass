@@ -43,15 +43,15 @@ def oracc_download(p):
     for project in p:
         proj = project.replace('/', '-')
         url = f"http://oracc.museum.upenn.edu/{project}/json/{proj}.zip"
-        file = 'jsonzip/' + proj + '.zip'
+        file = f'jsonzip/{proj}.zip'
         with requests.get(url, stream=True) as r:
             if r.status_code == 200:
-                tqdm.write("Saving " + url + " as " + file)
+                tqdm.write(f"Saving {url} as {file}.")
                 with open(file, 'wb') as f:
                     for c in tqdm(r.iter_content(chunk_size=CHUNK), desc = project):
                         f.write(c)
             else:
-                tqdm.write(url + " does not exist.")
+                tqdm.write(f"{url} does not exist.")
                 projects.remove(project)
     return projects
 
@@ -83,11 +83,11 @@ def parsejson(text):
 
 def get_lemmas(p):
     for project in p:
-        file = "jsonzip/" + project.replace("/", "-") + ".zip"
+        file = f"jsonzip/{project.replace('/', '-')}.zip"
         try:
             z = zipfile.ZipFile(file) 
         except:
-            print(file + " does not exist or is not a proper ZIP file")
+            print(f"{file} does not exist or is not a proper ZIP file")
             continue
         files = z.namelist()
         files = [name for name in files if "corpusjson" in name and name[-5:] == '.json'] 
@@ -99,7 +99,7 @@ def get_lemmas(p):
                 data_json = json.loads(st)           
                 parsejson(data_json)
             except:
-                print(id_text + ' is not available or not complete')
+                print(f'{id_text} is not available or not complete')
         z.close()
     return(lemm_l)
 
