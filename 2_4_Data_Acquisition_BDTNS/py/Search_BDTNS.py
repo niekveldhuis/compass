@@ -21,38 +21,38 @@ ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}')
 anchor = '<a href="http://bdtns.filol.csic.es/{}", target="_blank">{}</a>'
 separators2 = ['.', '+', '|']  # used in compound signs
 
-def search(search, maxhits, links): 
-    search = search.lower().replace('sz', 'š').translate(char).strip()
-    search = re.sub(ind, lambda m: m.group().translate(index), search)
-    search_l = search.split()
-    search_l = [d2.get(s,s) for s in search_l]
-    row_l = []
-    for sign in search_l: 
+def search(s, maxhits, links): 
+    s = s.lower().replace('sz', 'š').translate(char).strip()
+    s = re.sub(ind, lambda m: m.group().translate(index), s)
+    s_l = s.split()
+    s_l = [d2.get(s,s) for s in s_l]
+    signnames_l = []
+    for sign in s_l: 
         if '.' in sign or '+' in sign: 
             for s in separators2:
                 sign = sign.replace(s, ' ').strip() 
                 sign_l = sign.split()
-            row_l.extend(sign_l)
+            signnames_l.extend(sign_l)
         elif '×' in sign:
             sign_l = sign.replace('|', '').split('×')
             sign_l = [d2.get(sign, sign) for sign in sign_l]
-            sign = '|' + '×'.join(sign_l) + '|'
-            row_l.append(sign)
+            sign = f"|{'×'.join(sign_l)}|"
+            signnames_l.append(sign)
         else: 
-            row_l.append(sign)
-    signs = ' '.join(row_l).upper()
-    signs_esc = re.escape(' ' + signs + ' ')
+            signnames_l.append(sign)
+    signs = ' '.join(signnames_l).upper()
+    signs_esc = re.escape(f' {signs} ')
     signs_esc = signs_esc.replace('\ X\ ', '(?:\ [^ ]+)*\ ')
     show = ['id_text', 'label', 'text', 'date', 'provenance', 'publication']
     results = bdtns.loc[bdtns['sign_names'].str.contains(signs_esc, regex=True), show].copy()
     hits = len(results)
     if maxhits > hits:
         maxhits = hits
-    print(signs), print(str(hits) + ' hits; ' + str(maxhits) + " displayed")
+    print(signs), print(f"{str(hits)} hits; {str(maxhits)} displayed.")
     results = results.sort_values(by = sortby.value)[:maxhits]
     if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
-        results = results.style.hide_index()
+        results = results.style.hide_index().set_properties(subset=['publication'], **{'width': '100px'})
     return results
 
 
