@@ -61,14 +61,15 @@ text = widgets.Text(
         value='',
         description='')
 out = widgets.Output()
-maxhits = widgets.IntSlider(
+maxhits = widgets.BoundedIntText(
     value=25,
     min=25,
     max=len(bdtns),
-    step=100,
+    step=1,
     description='Max hits:')
 links = widgets.Checkbox(
     value=True,
+    indent = False,
     description='Display Links',
         )
 sortby = widgets.Dropdown(
@@ -80,10 +81,10 @@ def on_button_clicked(_):
         clear_output()
         display(search(text.value, maxhits.value, links.value))
 button.on_click(on_button_clicked)
-line = widgets.HBox([text, maxhits])
-line2 = widgets.HBox([links, sortby])
-disp = widgets.VBox([line,line2,button,out])
-
+col1 = widgets.VBox([text, links, button])
+col2 = widgets.VBox([maxhits, sortby])
+box = widgets.HBox([col1, col2])
+disp = widgets.VBox([box,out])
 
 
 
