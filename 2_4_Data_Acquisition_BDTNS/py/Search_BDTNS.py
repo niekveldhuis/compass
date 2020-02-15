@@ -28,16 +28,16 @@ def search(s, maxhits, links):
     s_l = [d2.get(s,s) for s in s_l]
     signnames_l = []
     for sign in s_l: 
-        if '.' in sign or '+' in sign: 
-            for s in separators2:
-                sign = sign.replace(s, ' ').strip() 
-                sign_l = sign.split()
-            signnames_l.extend(sign_l)
-        elif '×' in sign:
+        if '×' in sign:
             sign_l = sign.replace('|', '').split('×')
             sign_l = [d2.get(sign, sign) for sign in sign_l]
             sign = f"|{'×'.join(sign_l)}|"
             signnames_l.append(sign)
+        elif '.' in sign or '+' in sign: 
+            for s in separators2:
+                sign = sign.replace(s, ' ').strip() 
+            sign_l = sign.split()
+            signnames_l.extend(sign_l)
         else: 
             signnames_l.append(sign)
     signs = ' '.join(signnames_l).upper()
