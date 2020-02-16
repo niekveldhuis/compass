@@ -21,7 +21,7 @@ ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}')
 anchor = '<a href="http://bdtns.filol.csic.es/{}", target="_blank">{}</a>'
 separators2 = ['.', '+', '|']  # used in compound signs
 
-def search(s, maxhits, links): 
+def search(s, maxhits): 
     s = s.lower().replace('sz', 'š').translate(char).strip()
     s = re.sub(ind, lambda m: m.group().translate(index), s)
     s_l = s.split()
@@ -52,43 +52,84 @@ def search(s, maxhits, links):
         pl = ''
     else:
         pl = 's'
-    print(signs), print(f"{str(hits)} hit{pl}; {str(Max_hits)} displayed.")
+    print(signnames), print(f"{str(hits)} hit{pl}; {str(maxhits)} displayed.")
     results = results.sort_values(by = sortby.value)[:maxhits]
-    if links:
+    if links.value:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
         results = results.style.hide_index().set_properties(subset=['publication'], **{'width': '200px'})
     return results
 
-
+# create User Interface with widgets
 button = widgets.Button(description='Search')
 text = widgets.Text(
-        value='',
-        description='')
-out = widgets.Output()
+       value='',
+       description='', )
 maxhits = widgets.BoundedIntText(
-    value=25,
-    min=25,
-    max=len(bdtns),
-    step=1,
-    description='Max hits:')
+        value=25,
+        min=0,
+        max=len(bdtns),
+        step=1,
+        description='Max hits:',
+        continuous_update = True)
 links = widgets.Checkbox(
     value=True,
     indent = False,
-    description='Display Links',
-        )
+    description='Display Links')
 sortby = widgets.Dropdown(
-    options = ['id_text', 'text', 'label', 'date', 'provenance', 'publication'],
+    options = ['id_text', 'text', 'date', 'provenance', 'publication'],
     value = 'id_text',
     description = 'Sort By: ')
-def on_button_clicked(_):
-    with out:
-        clear_output()
-        display(search(text.value, maxhits.value, links.value))
-button.on_click(on_button_clicked)
+out = widgets.Output()
+def submit_search(change):
+      # "linking function with output"
+        with out:
+          # what happens when we press the button
+            clear_output()
+            display(search(text.value, maxhits.value))
+# when maxhits is set larger than 250, default becomes no links
+def update_maxhits(change):
+    links.value = maxhits.value < 250
+    submit_search(change)
+# linking button and function together using a button's method
+button.on_click(submit_search)
+text.on_submit(submit_search)
+sortby.observe(submit_search, 'value')
+maxhits.observe(update_maxhits, 'value')
+links.observe(submit_search, 'value')
+# displaying button and its output together
 col1 = widgets.VBox([text, links, button])
 col2 = widgets.VBox([maxhits, sortby])
 box = widgets.HBox([col1, col2])
 disp = widgets.VBox([box,out])
+#button = widgets.Button(description='Search')
+#text = widgets.Text(
+#        value='',
+#        description='')
+#out = widgets.Output()
+#maxhits = widgets.BoundedIntText(
+#    value=25,
+#    min=25,
+#    max=len(bdtns),
+#    step=1,
+#    description='Max hits:')
+#links = widgets.Checkbox(
+#    value=True,
+#    indent = False,
+#    description='Display Links',
+#        )
+#sortby = widgets.Dropdown(
+#    options = ['id_text', 'text', 'label', 'date', 'provenance', #'publication'],
+#    value = 'id_text',
+#    description = 'Sort By: ')
+#def on_button_clicked(_):
+#    with out:
+#        clear_output()
+#        display(search(text.value, maxhits.value, links.value))
+#button.on_click(on_button_clicked)
+#col1 = widgets.VBox([text, links, button])
+#col2 = widgets.VBox([maxhits, sortby])
+#box = widgets.HBox([col1, col2])
+#disp = widgets.VBox([box,out])
 
 
 
