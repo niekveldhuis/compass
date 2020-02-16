@@ -40,19 +40,23 @@ def search(s, maxhits, links):
             signnames_l.extend(sign_l)
         else: 
             signnames_l.append(sign)
-    signs = ' '.join(signnames_l).upper()
-    signs_esc = re.escape(f' {signs} ')
+    signnames = f" {' '.join(signnames_l).upper()} "
+    signs_esc = re.escape(signnames)
     signs_esc = signs_esc.replace('\ X\ ', '(?:\ [^ ]+)*\ ')
     show = ['id_text', 'label', 'text', 'date', 'provenance', 'publication']
     results = bdtns.loc[bdtns['sign_names'].str.contains(signs_esc, regex=True), show].copy()
     hits = len(results)
     if maxhits > hits:
         maxhits = hits
-    print(signs), print(f"{str(hits)} hits; {str(maxhits)} displayed.")
+    if hits == 1:
+        pl = ''
+    else:
+        pl = 's'
+    print(signs), print(f"{str(hits)} hit{pl}; {str(Max_hits)} displayed.")
     results = results.sort_values(by = sortby.value)[:maxhits]
     if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
-        results = results.style.hide_index().set_properties(subset=['publication'], **{'width': '100px'})
+        results = results.style.hide_index().set_properties(subset=['publication'], **{'width': '200px'})
     return results
 
 
