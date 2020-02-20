@@ -56,22 +56,31 @@ def oracc_download(p):
     return projects
 
 def parsejson(text):
+    capture_field = False
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
             parsejson(JSONobject)
         if "label" in JSONobject:
             meta_d["label"] = JSONobject['label']
-        if "type" in JSONobject and JSONobject["type"] == "field-start": # this is for sign lists, identifying fields such as
-            meta_d["field"] = JSONobject["subtype"]                    # sign, pronunciation, translation.
-        if "type" in JSONobject and JSONobject["type"] == "field-end":
-            meta_d.pop("field", None)                           # remove the key "field" to prevent it from being copied 
+       # if "type" in JSONobject and JSONobject["type"] == "field-start": # this is for sign lists, identifying fields such as
+       #     meta_d["field"] = JSONobject["subtype"]                    # sign, pronunciation, translation.
+        if "type" in JSONobject and JSONobject["type"] == "cell-start":
+            capture_field = True
+        if "type" in JSONobject and JSONobject["type"] == "cell-end":
+            capture_field = False
+        if capture_field:
+            if "subtype" in JSONobject:
+                meta_d["field"] = JSONobject["subtype"]                    # sign, pronunciation, translation.
+                
+        #if "type" in JSONobject and JSONobject["type"] == "field-end":
+        #    meta_d.pop("field", None)                           # remove the key "field" to prevent it from being copied 
                                                               # to all subsequent lemmas (which may not have fields)
         if "f" in JSONobject:
             lemma = JSONobject["f"]
             lemma["id_word"] = JSONobject["ref"]
             lemma['label'] = meta_d["label"]
             lemma["id_text"] = meta_d["id_text"]
-            if "field" in meta_d:
+            if capture_field:
                 lemma["field"] = meta_d["field"]
             lemm_l.append(lemma)
         if "strict" in JSONobject and JSONobject["strict"] == "1":

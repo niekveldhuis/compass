@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import pandas as pd
+pd.set_option('display.max_rows', None)
 import re
 import pickle
 from ipywidgets import interact, interact_manual
@@ -98,7 +99,7 @@ button.on_click(submit_search)
 text.on_submit(submit_search)
 sortby.observe(submit_search, 'value')
 maxhits.observe(update_maxhits, 'value')
-links.observe(submit_search, 'value')
+#links.observe(submit_search, 'value')
 # displaying button and its output together
 col1 = widgets.VBox([text, links, button])
 col2 = widgets.VBox([maxhits, sortby])
