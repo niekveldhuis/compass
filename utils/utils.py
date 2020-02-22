@@ -29,7 +29,7 @@ def format_project_list(x):
     p = [x.strip() for x in p]
     return(p)
 
-def oracc_download(p):
+def oracc_download(p, server = 'penn'):
     """Downloads ZIP with JSON files from
     ORACC server. Parameter is a list
     with ORACC project names,
@@ -42,17 +42,24 @@ def oracc_download(p):
     projects = p.copy()
     for project in p:
         proj = project.replace('/', '-')
-        url = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
-        file = f'jsonzip/{proj}.zip'
-        with requests.get(url, stream=True) as r:
-            if r.status_code == 200:
-                tqdm.write(f"Saving {url} as {file}.")
-                with open(file, 'wb') as f:
-                    for c in tqdm(r.iter_content(chunk_size=CHUNK), desc = project):
-                        f.write(c)
-            else:
-                tqdm.write(f"{url} does not exist.")
-                projects.remove(project)
+        build = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
+        oracc = f"http://oracc.org/{project}/json/{proj}.zip"
+        lmu = f"http://oracc.ub.uni-muenchen.de/{project}/json/{proj}.zip"
+        file = f"jsonzip/{proj}.zip"
+        servers = [build, oracc, lmu]
+        if server == 'lmu':
+            servers = [lmu, build, oracc]
+        for url in servers:
+            with requests.get(url, stream=True) as r:
+                if r.status_code == 200:
+                    tqdm.write(f"Saving {url} as {file}.")
+                    with open(file, 'wb') as f:
+                        for c in tqdm(r.iter_content(chunk_size=CHUNK), desc = project):
+                            f.write(c)
+                    break
+                else:
+                    tqdm.write(f"{url} does not exist. Try next server.")
+                #projects.remove(project)
     return projects
 
 def parsejson(text):
