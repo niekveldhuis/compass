@@ -31,11 +31,13 @@ def format_project_list(x):
 
 def oracc_download(p, server = 'penn'):
     """Downloads ZIP with JSON files from
-    ORACC server. Parameter is a list
+    ORACC servers. First parameter is a list
     with ORACC project names,
     return is the same list of names,
     minus doublets and non-existing
-    projects"""
+    projects. Second parameter is 'lmu' 
+    (first try LMU server) or 'penn' 
+    (default: first try Penn server)."""
     
     CHUNK = 16 * 1024
     p = list(set(p)) #remove duplicates
@@ -58,8 +60,9 @@ def oracc_download(p, server = 'penn'):
                             f.write(c)
                     break
                 else:
-                    tqdm.write(f"{url} does not exist. Try next server.")
-                #projects.remove(project)
+                    if url == servers[-1]: #last server in the list was tried
+                        tqdm.write(f"{url} does not exist.")
+                        projects.remove(project)
     return projects
 
 def parsejson(text):
