@@ -24,7 +24,7 @@ From the two sets, which we call `lit_words_s` and `lexical_words_s` we eliminat
 
 ![venn diagram 1](viz/venn_1.png)
 
-The Old Babylonian lexical corpus currently has 4,119 distinct lemmas, of which 2,384 (or almost 60%) are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger with 4,373 distinct lemmas. The number of items (lemmas) in both sets will change, because of ongoing improvements and additions in both the literary and the lexical corpus.
+The Old Babylonian lexical corpus currently has more than 4,000 distinct lemmas, of which almost 60% are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger. The number of items (lemmas) in both sets will change, because of ongoing improvements and additions in both the literary and the lexical corpus. The Venn diagram above is redrawn whenever Notebook 3_1 is run, and this will update the numbers.
 
 For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like **udu diŋir-e gu₇-a**  (sheep eaten by a god) consists of three very common lemmas (**udu[sheep]N**, **diŋir[deity]N**, **gu[eat]V/t**). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical *entry*? Does the nominal phrase **udu diŋir-e gu₇-a** or, more precisely, the sequence of the lemmas **udu[sheep]N, diŋir[deity]N, gu[eat]V/t**) ever appear in a literary text? 
 
