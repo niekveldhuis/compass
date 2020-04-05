@@ -62,7 +62,7 @@ In order to download the scripts and other files go to http://github.com/niekvel
 
 ### 1.2.2 Anaconda, Python, and Jupyter
 
-In order to run the scripts in [Compass][] it necessary to first install Python and Jupyter/Jupyter Lab. The easiest way to do so is by installing the [Anaconda Distribution][anaconda], a data science platform that includes a host of useful tools. It is important to choose the [Anaconda][anaconda] version with Python 3.7 or higher (if you happen to have 3.5, that should work, too). [Anaconda][anaconda] is available for Windows, Mac OS X, and Linux.
+In order to run the scripts in [Compass][] it is necessary to first install Python and Jupyter/Jupyter Lab. The easiest way to do so is by installing the [Anaconda Distribution][anaconda], a data science platform that includes a host of useful tools. It is important to choose the [Anaconda][anaconda] version with Python 3.7 or higher (if you happen to have 3.5, that should work, too). [Anaconda][anaconda] is available for Windows, Mac OS X, and Linux.
 
 By installing [Anaconda][anaconda] you will have access to a number of programs and tools, including:
 - **Python 3.x**. This is the programming language used in [Compass][]. Note that the [Compass][] scripts will not work with Python 2.x.
@@ -77,7 +77,7 @@ Jupyter Lab is designed as an extensible environment; for [Compass][] we will ne
 
 Open the Anaconda Prompt (Windows) or Terminal (OS X) and copy the following commands:
 ``` bash
-conda install -c conda-forge nodejs
+conda install nodejs
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
 For more information about installing the jupyter widgets for Jupyter Lab see the instructions [here](https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension).
@@ -94,17 +94,17 @@ from gensim.models.fasttext import FastText as FT_gensim # word embeddings
 Installing packages can be challenging, in particular if your computer happens to have multiple instances of Python (which is not uncommon). Luckily, many important packages belong to the [Anaconda Distribution][anaconda] and are properly installed with [Anaconda][anaconda]. Installing additional packages can be done from within a [Jupyter][jupyter] notebook with the command
 
 ```python
-%conda install c:conda-forge [package name]
+%conda install [package name]
 ```
 or from the Anaconda Prompt (Windows)/Terminal (Mac OS X) with the command
 ```bash
-conda install c:conda-forge [package name]
+conda install [package name]
 ```
 Installing from the terminal, however may not always work properly and when you try to `import` the package you may get an error. The notebook `install_packages.ipynb` in the directory `1_Preliminaries` of [Compass][compass]  provides a more robust way of installing packages, based on a [blog](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/) by Jake VanderPlas.
 
 ### 1.2.4 Windows vs. Mac OS X: Unicode and UTF-8
 
-[Jupyter][jupyter] notebooks and Python are largely platform independent and the notebooks in this project are tested for both Windows and Mac OS X. There is one issue that one may encounter with some frequency and that is in reading and writing files. Python 3 by default stores any string as Unicode, using the UTF-8 encoding (an encoding is a way to represent a Unicode code point as a set of bytes in memory). Internally, however, Windows uses another kind of encoding (usually CP-1252), which means that in reading and writing files the option `encoding = "utf-8"` needs to be added explicitly. The option is superfluous in Mac OS X (or in Unix) where `utf-8` is the default, but is added in the notebooks at every place appropriate to ensure interoperability, as in the following examples:  
+[Jupyter][jupyter] notebooks and Python are largely platform independent and the notebooks in this project are tested for both Windows and Mac OS X. There is one issue that one may encounter with some frequency and that is reading and writing files. Python 3 by default stores any string as Unicode, using the UTF-8 encoding (an encoding is a way to represent a Unicode code point as a set of bytes in memory). Internally, however, Windows uses another kind of encoding (usually CP-1252), which means that in reading and writing files the option `encoding = "utf-8"` needs to be added explicitly. The option is superfluous in Mac OS X (or in Unix) where `utf-8` is the default, but is added in the notebooks at every place appropriate to ensure interoperability, as in the following examples:  
 
 ```python
 with open("equivalencies/equivalencies.json", 'r', encoding="utf-8") as f: # reading
