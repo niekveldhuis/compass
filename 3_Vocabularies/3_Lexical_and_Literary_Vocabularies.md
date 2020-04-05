@@ -133,20 +133,20 @@ The main difference between the Venn diagram and the DTM is that the DTM shows i
 
 The table below gives the first ten compositions, sorted by `norm` (descending). Of the 97 unique lemmas that are attested in [Inana E](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) no less than 95 are also attested in the Old Babylonian lexical corpus - a `norm` score of 0.979.
 
-| id_text                                                      | text_name                                     | length | mtld    | ttr   | lex_var | n_matches | norm  |
-| ------------------------------------------------------------ | --------------------------------------------- | ------ | ------- | ----- | ------- | --------- | ----- |
-| [c.4.07.5](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) | A tigi to Inana (Inana E)                     | 292    | 23.982  | 0.332 | 97      | 95        | 0.979 |
-| [c.2.3.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.3.1&display=Crit&charenc=gcirc#) | An adab to Bau for Luma (Luma A)              | 232    | 20.212  | 0.336 | 78      | 76        | 0.974 |
-| [c.4.15.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.15.3&display=Crit&charenc=gcirc#) | A tigi to Nergal (Nergal C)                   | 213    | 60.425  | 0.451 | 96      | 92        | 0.958 |
-| [c.4.12.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.12.1&display=Crit&charenc=gcirc#) | A šir-gida to Martu (Martu A)                 | 285    | 112.14  | 0.618 | 176     | 167       | 0.949 |
-| [c.2.5.4.23](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.23&display=Crit&charenc=gcirc#) | A hymn to Nibru and Išme-Dagan (Išme-Dagan W) | 331    | 62.805  | 0.465 | 154     | 145       | 0.942 |
-| [c.2.5.4.11](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.11&display=Crit&charenc=gcirc#) | A hymn to Inana for Išme-Dagan (Išme-Dagan K) | 231    | 133.335 | 0.632 | 146     | 137       | 0.938 |
-| [c.5.2.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.2.4&display=Crit&charenc=gcirc#) | A man and his god                             | 562    | 84.39   | 0.423 | 238     | 223       | 0.937 |
-| [c.1.8.1.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.8.1.1&display=Crit&charenc=gcirc#) | Gilgameš and Aga                              | 473    | 42.841  | 0.359 | 170     | 159       | 0.935 |
-| [c.6.1.12](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.1.12&display=Crit&charenc=gcirc#) | Proverbs: collection 12                       | 201    | 75.375  | 0.667 | 134     | 125       | 0.933 |
-| [c.4.13.01](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.13.01&display=Crit&charenc=gcirc#) | A balbale to Suen (Nanna A)                   | 245    | 48.75   | 0.478 | 117     | 109       | 0.932 |
+| id_text                                           | designation                                                            |   length |   mtld |   ttr |   lex_var |   n_matches |   norm |
+|---------------------------------------------------|------------------------------------------------------------------------|----------|--------|-------|-----------|-------------|--------|
+| [Q000626](http://oracc.org/epsd2/literaryQ000626) | A tigi to Inana (Inana E)                                              |      294 | 24.177 | 0.33  |        97 |          95 |  0.979 |
+| [Q000695](http://oracc.org/epsd2/literaryQ000695) | A tigi to Nergal (Nergal C)                                            |      213 | 60.664 | 0.455 |        97 |          95 |  0.979 |
+| [P346203](http://oracc.org/epsd2/literaryP346203) | ETCSL 2.05.04.23 Ishme-Dagan W (witness)                               |      215 | 84.494 | 0.581 |       125 |         121 |  0.968 |
+| [Q000818](http://oracc.org/epsd2/literaryQ000818) | Proverbs: collection 26                                                |      242 | 99.13  | 0.645 |       156 |         151 |  0.968 |
+| [Q000785](http://oracc.org/epsd2/literaryQ000785) | The three ox-drivers from Adab                                         |      268 | 21.743 | 0.34  |        91 |          88 |  0.967 |
+| [Q000756](http://oracc.org/epsd2/literaryQ000756) | The advice of a supervisor to a younger scribe (Edubba C)              |      404 | 95.519 | 0.522 |       211 |         203 |  0.962 |
+| [Q000494](http://oracc.org/epsd2/literaryQ000494) | An adab to An for Ur-Ninurta (Ur-Ninurta E)                            |      215 | 66.458 | 0.609 |       131 |         126 |  0.962 |
+| [Q000384](http://oracc.org/epsd2/literaryQ000384) | An adab to Bau for Luma (Luma A)                                       |      232 | 20.212 | 0.336 |        78 |          75 |  0.962 |
+| [Q000433](http://oracc.org/epsd2/literaryQ000433) | A šir-namgala to Mešlamta-ea and Lugal-era for Ibbi-Suen (Ibbi-Suen B) |      285 | 52.473 | 0.435 |       124 |         119 |  0.96  |
+| [Q000361](http://oracc.org/epsd2/literaryQ000361) | Gilgameš and Aga                                                       |      471 | 39.397 | 0.363 |       171 |         164 |  0.959 |
 
-Note that changes in the [epsd2/literary][] and [DCCLT][] data may change the numbers and the arrangement of the table.
+> Note that changes in the [epsd2/literary][] and [DCCLT][] data may change the numbers and the arrangement of the table.
 
 In the notebook one may manipulate the table to sort it by different columns (ascending or descending) or by displaying a larger or smaller number of rows. Looking at maximum, minimum, median, and mean may give us some idea of how the numbers are distributed.
 
@@ -168,18 +168,18 @@ The 25%, 50%, and 75% point are all very close to each other - the great majorit
 
 Looking at the bottom of the table we find that the compositions ranking lowest on `norm` are the following
 
-| id_text                                                      | text_name                                                    | length | mtld   | ttr   | lex_var | n_matches | norm  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ------ | ----- | ------- | --------- | ----- |
-| [c.2.1.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) | The Sumerian king list                                       | 1424   | 17.793 | 0.262 | 373     | 83        | 0.223 |
-| [c.2.1.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&display=Crit&charenc=gcirc#) | The rulers of Lagaš                                          | 441    | 33.409 | 0.463 | 204     | 129       | 0.632 |
-| [c.3.1.19](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.3.1.19&display=Crit&charenc=gcirc#) | Letter from Puzur-Šulgi to Ibbi-Suen about Išbi-Erra's claim on Isin | 208    | 49.662 | 0.524 | 109     | 78        | 0.716 |
-| [c.4.32.e](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.32.e&display=Crit&charenc=gcirc#) | A šir-namšub to Utu (Utu E)                                  | 345    | 21.251 | 0.383 | 132     | 101       | 0.765 |
-| [c.4.80.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.80.1&display=Crit&charenc=gcirc#) | The temple hymns                                             | 2548   | 89.021 | 0.279 | 712     | 553       | 0.777 |
-| [c.2.1.7](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.7&display=Crit&charenc=gcirc#) | The building of Ninŋirsu's temple (Gudea cylinders A and B)  | 4378   | 94.272 | 0.21  | 919     | 717       | 0.78  |
-| [c.4.80.4](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.80.4&display=Crit&charenc=gcirc#) | A hymn to the E-kur                                          | 244    | 10.425 | 0.25  | 61      | 48        | 0.787 |
-| [c.1.2.1](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.1&display=Crit&charenc=gcirc#) | Enlil and Ninlil                                             | 692    | 18.902 | 0.241 | 167     | 132       | 0.79  |
-| [c.2.2.3](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.2.3&display=Crit&charenc=gcirc#) | The lament for Sumer and Urim                                | 2693   | 61.554 | 0.272 | 733     | 588       | 0.802 |
-| [c.2.2.2](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.2.2&display=Crit&charenc=gcirc#) | The lament for Urim                                          | 2303   | 23.806 | 0.228 | 526     | 426       | 0.81  |
+| id_text                                           | designation                                                          |   length |   mtld |   ttr |   lex_var |   n_matches |   norm |
+|---------------------------------------------------|----------------------------------------------------------------------|----------|--------|-------|-----------|-------------|--------|
+| [Q000371](http://oracc.org/epsd2/literaryQ000371) | The Sumerian king list                                               |     1049 | 10.894 | 0.228 |       239 |          86 |  0.36  |
+| [Q000372](http://oracc.org/epsd2/literaryQ000372) | The rulers of Lagaš                                                  |      405 | 25.858 | 0.442 |       179 |         129 |  0.721 |
+| [Q000559](http://oracc.org/epsd2/literaryQ000559) | Letter from Puzur-Šulgi to Ibbi-Suen about Išbi-Erra's claim on Isin |      205 | 46.402 | 0.532 |       109 |          82 |  0.752 |
+| [Q000752](http://oracc.org/epsd2/literaryQ000752) | A hymn to the E-kur                                                  |      244 | 10.425 | 0.25  |        61 |          46 |  0.754 |
+| [Q000632](http://oracc.org/epsd2/literaryQ000632) | A balbale to Inana (Dumuzid-Inana A)                                 |      212 | 10.758 | 0.278 |        59 |          48 |  0.814 |
+| [Q000750](http://oracc.org/epsd2/literaryQ000750) | The temple hymns                                                     |     2498 | 86.439 | 0.279 |       697 |         570 |  0.818 |
+| [Q000336](http://oracc.org/epsd2/literaryQ000336) | Enlil and Ninlil                                                     |      678 | 20.441 | 0.248 |       168 |         139 |  0.827 |
+| [Q000380](http://oracc.org/epsd2/literaryQ000380) | The lament for Sumer and Ur                                          |     2668 | 57.63  | 0.274 |       731 |         616 |  0.843 |
+| [Q000379](http://oracc.org/epsd2/literaryQ000379) | The lament for Ur                                                    |     2284 | 23.547 | 0.229 |       524 |         444 |  0.847 |
+| [Q000651](http://oracc.org/epsd2/literaryQ000651) | A kungar to Inana (Dumuzid-Inana T)                                  |      236 | 16.243 | 0.479 |       113 |          96 |  0.85  |
 
 *The Sumerian King List* is the outlier with only 83 matches on 373 unique lemmas and a `norm` score of 0.22. *The Sumerian King List* is a rather repetitive composition that enumerates the names of kings and names of cities, recording regnal years with, occasionally, a brief anecdote about one of those kings. Proper nouns, including royal names and city names, are currently underrepresented in the lexical corpus. Moreover, number words are systematically lemmatized in [ETCSL][], as (for instance) `50[50]`. In [DCCLT][], on the other hand, numbers are lemmatized as words (as in `ninnu[fifty]`) and since we do not know the Sumerian words for many numbers (because they are always written in number signs), numbers are frequently not lemmatized at all. The royal names and the numbers in *The Sumerian King List* together explain the large number of lemmas in *The Sumerian King List* not attested in [DCCLT][]. The next two compositions have a `norm`score that is significantly higher (note that the second bin in the histogram is empty), but still low comparatively speaking. *The Rulers of Lagaš* and the *Letter from Puzur-Šulgi* both have relatively large number of of proper nouns.
 
