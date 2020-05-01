@@ -113,16 +113,16 @@ In an artificial example we can transform the following sentences (documents) in
 
 > lugal-e e₂ mu-un-du₃ (the king built the temple)
 > 
-> lugal-e e₂-gal mu-un-du₃ (the king built the palace)
+> lugal-e e₂ mu-un-du₃ e₂-gal mu-un-du₃ (the king built the temple and he built the palace)
 
 The DTM, in our case, uses the lemmatized representation of those sentences:
 
 | sentence | du[build]V/t | e[house]N | egal[palace]N | lugal[king]N |
 | -------- | --------- | -------- | ------------ | ----------- |
 | one      | 1         | 1        | 0            | 1           |
-| two      | 1         | 0        | 1            | 1           |
+| two      | 2        | 1       | 1            | 1           |
 
-We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[1, 0, 1, 1]`. That means that we can apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.66). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular document) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each *word* (or lemma) is now also characterized by a vector, represented by the numbers in a column.
+We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[2, 1, 1, 1]`. The sum of all the elements in the vector gives us the length of the document (3 and 5 respectively). More importantly, we may now apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.873). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular document) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each *word* (or lemma) is now also characterized by a vector, represented by the numbers in a column.
 
 In building the DTM of the literary corpus (the [epsd2/literary][] corpus) we will use the lexical vocabulary: the columns of the DTM represent words and MWE present in the lexical corpus. Because each column represents a word in the lexical corpus, there are many columns that have only zeros (lexical entries that do not occur in [epsd2/literary][]). In terms of the Venn diagrams discussed above, the zero-value columns in our DTM represent the blue area to the right, the non-zero ones represent the middle area (intersection of the lexical and literary vocabulary); the yellow area (words in [epsd2/literary][] that do not appear in the Old Babylonian lexical corpus) is not represented in this DTM. 
 <img src="viz/venn_3.png" alt="venn diagram 3" style="zoom:150%;" />
@@ -201,14 +201,65 @@ This yields a picture that is rather different from the Venn diagrams in section
 
 How is it possible to arrive at such different percentages, using the same data set? It means that for any particular composition a good deal of the 90% of vocabulary items that is shared with the lexical corpus is also shared with at least some other compositions, whereas the 10% of items not shared may well be unique to that composition.
 
+## 3.3 Distinctions between Lexical Compositions
 
+In the previous section it was concluded that there are few significant differences between Old Babylonian literary texts in the way their vocabulary connects to contemporary lexical sources. In this section we will change the perspective and ask whether there are such differences that can be detected among lexical texts - in other words: are some lexical texts more attuned to the literary vocabulary than others?
 
+In order to do so we will approach the lexical corpus more or less in the same way as we did the literary corpus in the previous section, using  much of the same code. Using Lexical Richness measurements does not make much sense for lexical texts and we will omit that aspect here. Instead of using Multiple Word Expressions we will use ngrams - a ngram is a sequence of *n* consecutive words (or lemmas). The function `CountVectorizer()`, which we used in 3.2 to count lemmas (and MWEs), can also count ngrams of any length.
+
+In the process the parameter `ngram_range` is set to (1, 5). With this parameter, `Countvectorizer()` will create a column in the DTM for each lemma (ngram n=1), but also for each sequence of two lemmas (bigram; n=2), three lemmas (trigram; n=3), etc. - up to five. The entry **amar ga gu₇-a** ([OB Nippur Ura 3](http://oracc.org/dcclt/Q000001) line 225), lemmatized as `amar[young]n ga[milk]n gu[eat]v/t` ("suckling calf") will be represented as :
+
+| type    | representation                          |
+| ------- | --------------------------------------- |
+| unigram | amar\[young\]n                          |
+|         | ga\[milk\]n                             |
+|         | gu\[eat\]v/t                            |
+| bigram  | amar\[young\]n ga\[milk\]n              |
+|         | ga\[milk\]n gu\[eat\]v/t                |
+| trigram | amar\[young\]n ga\[milk\]n gu\[eat\]v/t |
+
+For longer entries we will also get 4-grams and 5-grams. 
+
+A three word entry which was treated as a single unit in 3.1 and 3.2 now results in 6 potential columns in the Document Term Matrix. 
+
+Similar to the process in section 3.2, we will compute for each lexical document the number of lemmas and ngrams that are attested in the literary corpus. The resulting table is simpler than the one in 3.2 because it does not include Lexical Variation, TTR or MTLD. It does include text length, however, because we need to normalize the number of hits by text length.
+
+In the notebook one may manipulate the table to sort by different columns (ascending or descending), adjust minimum text length, display a larger or smaller number of rows, and select for composites only, exemplars only, or all.
+
+| id_text                                   | designation     | subgenre               | n_matches | length | norm     |
+| ----------------------------------------- | --------------- | ---------------------- | --------- | ------ | -------- |
+| [P228842](http://oracc.org/dcclt/P228842) | MSL 14, 018 Bb  | OB Nippur Ea           | 333       | 410    | 0.812195 |
+| [Q000055](http://oracc.org/dcclt/Q000055) | OB Nippur Ea    | Sign Lists             | 599       | 779    | 0.768935 |
+| [Q000056](http://oracc.org/dcclt/Q000056) | OB Nippur Aa    | Sign Lists             | 231       | 408    | 0.566176 |
+| [P447992](http://oracc.org/dcclt/P447992) | OECT 04, 152    | OB Diri Oxford         | 145       | 293    | 0.494881 |
+| [Q000050](http://oracc.org/dcclt/Q000050) | OB Nippur Izi   | Acrographic Word Lists | 688       | 1400   | 0.491429 |
+| [P247810](http://oracc.org/dcclt/P247810) | IB 1514         | OB Lu                  | 133       | 274    | 0.485401 |
+| [Q002268](http://oracc.org/dcclt/Q002268) | OB Nippur Ugumu | Thematic Word Lists    | 163       | 348    | 0.468391 |
+| [Q000057](http://oracc.org/dcclt/Q000057) | OB Nippur Diri  | Sign Lists             | 278       | 594    | 0.468013 |
+| [Q000052](http://oracc.org/dcclt/Q000052) | Nippur Nigga    | Acrographic Word Lists | 391       | 844    | 0.46327  |
+| [Q000048](http://oracc.org/dcclt/Q000048) | OB Nippur Kagal | Acrographic Word Lists | 447       | 1015   | 0.440394 |
+
+When ordered by `norm` the top of the list is formed by lexical compositions such as the sign lists [OB Nippur Ea](http://oracc.org/dcclt/Q000055) and [OB Nippur Diri](http://oracc.org/dcclt/Q000057), the acrographic list/list of professions [OB Nippur Lu](http://oracc.org/dcclt/Q000047), and the acrographic lists [OB Nippur Izi](http://oracc.org/dcclt/Q000050), and [OB Nippur Kagal](http://oracc.org/dcclt/Q000048), or (large) exemplars of such compositions. All these lexical texts belong to what Jay Crisostomo has labeled "ALE": Advanced Lexical Exercises[^4]. These exercises belong to the advanced first stage of education, just before students would start copying literary texts. If we restrict the DataFrame to composites (Q numbers) only, this comes out even clearer. 
+
+| id_text                                   | designation       | subgenre               | n_matches | length | norm     |
+| ----------------------------------------- | ----------------- | ---------------------- | --------- | ------ | -------- |
+| [Q000055](http://oracc.org/dcclt/Q000055) | OB Nippur Ea      | Sign Lists             | 599       | 779    | 0.768935 |
+| [Q000056](http://oracc.org/dcclt/Q000056) | OB Nippur Aa      | Sign Lists             | 231       | 408    | 0.566176 |
+| [Q000050](http://oracc.org/dcclt/Q000050) | OB Nippur Izi     | Acrographic Word Lists | 688       | 1400   | 0.491429 |
+| [Q002268](http://oracc.org/dcclt/Q002268) | OB Nippur Ugumu   | Thematic Word Lists    | 163       | 348    | 0.468391 |
+| [Q000057](http://oracc.org/dcclt/Q000057) | OB Nippur Diri    | Sign Lists             | 278       | 594    | 0.468013 |
+| [Q000052](http://oracc.org/dcclt/Q000052) | Nippur Nigga      | Acrographic Word Lists | 391       | 844    | 0.46327  |
+| [Q000048](http://oracc.org/dcclt/Q000048) | OB Nippur Kagal   | Acrographic Word Lists | 447       | 1015   | 0.440394 |
+| [Q000047](http://oracc.org/dcclt/Q000047) | OB Nippur Lu      | Thematic Word Lists    | 608       | 1459   | 0.416724 |
+| [Q000302](http://oracc.org/dcclt/Q000302) | OB Lu₂-azlag₂ B-C | Thematic Word Lists    | 363       | 1040   | 0.349038 |
+| [Q000041](http://oracc.org/dcclt/Q000041) | OB Nippur Ura 04  | Thematic Word Lists    | 343       | 983    | 0.348932 |
+
+The thematic lists collected in [Ura](http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043) (lists of trees, wooden objects, reeds, reed objects, clay, pottery, hides, metals and metal objects, animals, meat cuts, fish, birds, plants, etc.) have much lower `norm` values and thus less overlap with literary vocabulary. The lists that belong to [Ura](http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043) are studied in a more elementary phase of scribal education and are further removed from the literary corpus, both in vocabulary and in curricular terms.
 
 [^1]: 	N. Veldhuis, *Religion, Literature, and Scholarship: The Sumerian Composition "Nanše and the Birds"*. Cuneiform Monographs 22. Leiden: Brill 2004.
 [^2]:	N. Veldhuis, *Religion, Literature, and Scholarship: The Sumerian Composition "Nanše and the Birds"*. Cuneiform Monographs 22. Leiden: Brill 2004.
-[^3]	C. Metcalf, *Sumerian Literary Texts in the Schøyen Collection: Volume 1: Literary Sources on Old Babylonian Religion*. Cornell University Studies in Assyriology and Sumerology. Winona Lake: Eisenbrauns 2019. 
-[^4]: McCarthy, P.M. & Jarvis, S. "MTLD, vocd-D, and HD-D: A validation study of sophisticated approaches to lexical diversity assessment" in: [Behavior Research Methods 42 (2010): 381-392](https://doi.org/10.3758/BRM.42.2.381).
-[^5]:	For tetrad, decad and House F Fourteen, see E. Robson, The tablet House: a scribal school in old Babylonian Nippur, in: *Revue d'Assyriologie* 93 (2001) 39-66, [doi:10.3917/assy.093.0039](https://doi.org/10.3917/assy.093.0039); and Paul Delnero, *The Textual Criticism of Sumerian Literature*, Journal of Cuneiform Studies Supplementary Series 3 (2012); both with further literature.
+[^3]:	C. Metcalf, *Sumerian Literary Texts in the Schøyen Collection: Volume 1: Literary Sources on Old Babylonian Religion*. Cornell University Studies in Assyriology and Sumerology. Winona Lake: Eisenbrauns 2019. 
+[^4]: 	J. Crisostomo, *Translation as ScholarshipLanguage, Writing, and Bilingual Education in Ancient Babylonia*. Studies in Ancient Near Eastern Records (SANER), 22. De Gruyter 2019; https://doi.org/10.1515/9781501509810.
 
 [ETCSL]: http://etcsl.orinst.ox.ac.uk
 [DCCLT]: http://oracc.org/dcclt
