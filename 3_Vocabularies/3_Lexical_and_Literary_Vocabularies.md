@@ -101,13 +101,7 @@ Our investigation so far has shown that a very considerable portion of lexical w
 
 In order to research the relationship between lexical and literary material in more detail, we will look at individual literary texts. Which compositions have more and which have less overlap with the lexical vocabulary?
 
-Longer texts will have more vocabulary items (and Multiple Word Expressions) in common with the lexical corpus than shorter texts, but that does not mean much. For that reason we will look at measures of *lexical richness* and ask: are compositions that use a richer lexicon more likely to utilize lemmas found in the lexical corpus than compositions with a lower lexical richness rank? 
-
-This line of research has a pedigree that goes back to an article by M. Civil entitled: "Feeding Dumuzi's Sheep: the Lexicon as a Source of Literary Inspiration" (in *Language, Literature, and History: Philological and Historical Studies presented to Erica Reiner*, F. Rochberg, Ed. American Oriental Society, 1987). In this article, Civil argued that various Sumerian literary texts use enumeration, listing words from a particular semantic field, often with explanatory or interpretative notes. Compositions that include such sections are [*Nanše and the Birds*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.14.3&display=Crit&charenc=gcirc#) (bird names), [*Home of the Fish*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.5.9.1&display=Crit&charenc=gcirc#) (fish names), [*Dumuzid Inana W*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.08.23&display=Crit&charenc=gcirc#) (plant names; this is the text edited by Civil in his 1987 article), *Ninurta's Fields* (field names), [*Išme-Dagan and Enlil's Chariot*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.4.09&display=Crit&charenc=gcirc#) (names of chariot parts), *Lipit Eštar and the Plow* (names of parts of a plow), [*Šulgi R*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.4.2.18&display=Crit&charenc=gcirc#) (boat parts), and [*Ninurta's Exploits*](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc#) (stone names). Each of the examples listed addresses an area of the lexicon (birds, fish, field names, etc.) to which (part of) a lexical composition is specifically dedicated. Whether, in such cases, the source of literary inspiration was the Sumerian lexicon at large, or, more specifically, the particular lexical composition listing such names remains to be seen in each particular case. 
-
-For our purposes, the approach will be somewhat more generalized. The vocabulary items that will be compared between the lexical and literary corpus are not restricted to one semantic field, but will include verbs, Noun - Verb expressions, and any other type of lexeme (or Multiple Word Expression) that we may encounter.
-
-In order to address these questions we will use a Document Term Matrix (DTM): a huge table, where each row represents a literary composition (Document) and each column represents a lemma (Term).
+In order to address the question we will use a Document Term Matrix (DTM): a huge table, where each row represents a literary composition (Document) and each column represents a lemma (Term).
 
 In an artificial example we can transform the following sentences (documents) into a DTM:
 
@@ -117,46 +111,32 @@ In an artificial example we can transform the following sentences (documents) in
 
 The DTM, in our case, uses the lemmatized representation of those sentences:
 
-| sentence | du[build]V/t | e[house]N | egal[palace]N | lugal[king]N |
+| sentence | du[build]v/t | e[house]n | egal[palace]n | lugal[king]n |
 | -------- | --------- | -------- | ------------ | ----------- |
 | one      | 1         | 1        | 0            | 1           |
 | two      | 2        | 1       | 1            | 1           |
 
-We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[2, 1, 1, 1]`. The sum of all the elements in the vector gives us the length of the document (3 and 5 respectively). More importantly, we may now apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.873). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular document) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each *word* (or lemma) is now also characterized by a vector, represented by the numbers in a column.
+We can now say that sentence one is represented by the vector `[1, 1, 0, 1]` and sentence two by the vector `[2, 1, 1, 1]`. The sum of all the elements in the vector gives us the length of the document lemmas (3 and 5 respectively). More importantly, we may now apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.873). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular document) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each *word* (or lemma) is now also characterized by a vector, represented by the numbers in a column.
 
-In building the DTM of the [epsd2/literary][] corpus we will use the lexical vocabulary: the columns of the DTM represent words and MWE present in the lexical corpus. Because each column in the DTM represents a word or MWE in the lexical corpus, there are many columns that have only zeros (lexical entries that do not occur in [epsd2/literary][]). In terms of the Venn diagrams discussed above, the zero-value columns in our DTM represent the blue area to the right, the non-zero ones represent the middle area (intersection of the lexical and literary vocabulary); the yellow area (words in [epsd2/literary][] that do not appear in the Old Babylonian lexical corpus) is not represented in this DTM. 
+In building the DTM of the [epsd2/literary][] corpus we will use the lexical vocabulary: the columns of the DTM represent words and MWEs present in the lexical corpus. Because each column in the DTM represents a word or MWE in the lexical corpus, there are many columns that have only zeros (lexical entries that do not occur in [epsd2/literary][]). In terms of the Venn diagrams discussed above, the zero-value columns in our DTM represent the blue area to the right, the non-zero ones represent the middle area (intersection of the lexical and literary vocabulary); the yellow area (words in [epsd2/literary][] that do not appear in the Old Babylonian lexical corpus) is not represented in the DTM. 
 <img src="viz/venn_3.png" alt="venn diagram 3" style="zoom:150%;" />
 
-The main difference between the Venn diagram and the DTM is that the DTM shows in which compositions the shared words are attested. By computing the number of non-zero cells in a row we get an integer that represents the number of unique lexically attested lemmas in a particular composition, and this gives us a (numerical) measure for comparing between compositions. Not surprisingly, a longer composition, such as [Ninurta's Exploits](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc#) (726 lines) has more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we will restrict the analysis to texts that are above a certain threshold in length. We will use a normalized measure `norm`, that is defined as the number of matches divided by the number of unique lemmas in the composition. 
+The main difference between the Venn diagram and the DTM is that the DTM shows in which compositions the shared words are attested. By computing the number of non-zero cells in a row we get an integer that represents the number of unique lexically attested lemmas in a particular composition, and this gives us a (numerical) measure for comparing between compositions. Not surprisingly, a longer composition, such as [Ninurta's Exploits](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&display=Crit&charenc=gcirc#) (726 lines) has more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we will restrict the analysis to texts that are above a certain threshold in length. We will therefore include in the table below *text length* (number of lemmas and MWES) and *lexical variation* (number of unique lemmas and MWEs). The column `norm` represents the number of matches divided by the number of unique lemmas. `Norm` may therefore be interpreted as the percentage of lemmas and MWEs present in a literary document that are attested lexically in the Old Babylonian period.
 
-In addition, in order to meaningfully compare literary compositions, we will compute a few measures of lexical richness. Lexical richness measures the variation in vocabulary usage. Texts that use a relatively low number of unique lexemes (repeat the same words all over the place) receive a low lexical richness score. Texts that use the lexicon more ingenuously, using synonyms or circumscriptions to refer to the same concept, receive a higher lexical richness score. Lexical richness is used, among other things, to identify texts written by language learners, to assess aphasia, or to measure the difficulty of a text. For Sumerian literature, we may expect that compositions with high levels of repetition, such as certain hymns and narratives, end up with a (relatively) low lexical richness score, whereas disputation texts or other compositions that actively explore the lexicon may have a higher score.
+The table below gives the first ten compositions, sorted by `norm` (descending), at a minimum text length of 200 lemmas/MWEs . Of the 96 unique lemmas that are attested in [Inana E](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) no less than 95 are also attested in the Old Babylonian lexical corpus - a `norm` score of 0.99.
 
-Many different types of lexical richness measures have been proposed in the literature. We will include the following ones:
-
-| Measurement       |                                          |
-| ----------------- | ---------------------------------------- |
-| Lexical Variation | Number of unique lemmas and MWEs         |
-| Type Token Ration | Lexical Variation divided by Text Length |
-| MTLD              | (see below)                              |
-
-The most straightforward lexical richness score is the Type Token Ratio (or TTR), which simply divides the number of unique lexemes (Lexical Variation) by the total number of lexemes. This is a fine measurement to compare texts of (approximately) equal length, but does not work well for a corpus with texts of very different lengths, as is the case here. Short texts have higher TTR values than long texts, because longer texts will by necessity use the same words over and over again and (in English) function words such as "the" or "in" will be repeated many times whatever the lexical ingenuity of the author. A better measurement is called MTLD or Measure of Textual Lexical Diversity ([McCarthy and Jarvis 2010](https://doi.org/10.3758/BRM.42.2.381)). The MTLD value is calculated as the mean number of words in a text that will bring TTR from 1 (at the first word in the text) down to a threshold value (default is 0.720). The way MTLD works is as follows. A text is read sequentially, starting at word 1. At each step the next word is added and the TTR value of the sequence is computed. When the TTR drops below the threshold value a new sequence is started. This way a text is cut into sections (called factors), each with approximately the same TTR. The mean number of words per factor is a measure of lexical diversity that is not dependent on text length. This is a promising approach that may well work for Sumerian and a Python module that includes MTLD is available ([lexicalrichness]((https://pypi.org/project/lexicalrichness/))).
-
-> It should be noted that the threshold value of 0.720 has been established empirically by analyzing texts in English, with the observation that TTR drops dramatically with the first few words (or as soon as a repeated word is encountered), but then levels out to a plateau where additional words have little impact. There is reason to assume that (literary) Sumerian may well need a different threshold value because a) literary Sumerian has very few function words (a major source of repetition in English) and b) unlike English, literary Sumerian tends to repeat phrases or entire paragraphs. The first issue might indicate the necessity of a higher threshold value for Sumerian (because function words drag TTR down), the second issue might argue for a lower threshold. More research is needed to establish the validity of this measure and/or the necessity of a different threshold value for literary Sumerian.
-
-The table below gives the first ten compositions, sorted by `norm` (descending), at a minimum text length of 200 lemmas/MWEs . Of the 97 unique lemmas that are attested in [Inana E](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&display=Crit&charenc=gcirc#) no less than 95 are also attested in the Old Babylonian lexical corpus - a `norm` score of 0.979.
-
-| id_text                                           | designation                                                  | length | mtld   | ttr   | lex_var | n_matches | norm  |
-| ------------------------------------------------- | ------------------------------------------------------------ | ------ | ------ | ----- | ------- | --------- | ----- |
-| [Q000695](http://oracc.org/epsd2/literary/Q000695) | A tigi to Nergal (Nergal C)                                  | 213    | 60.664 | 0.455 | 97      | 95        | 0.979 |
-| [Q000626](http://oracc.org/epsd2/literary/Q000626) | A tigi to Inana (Inana E)                                    | 294    | 24.177 | 0.33  | 97      | 95        | 0.979 |
-| [P346203](http://oracc.org/epsd2/literary/P346203) | ETCSL 2.05.04.23 Ishme-Dagan W (witness)                     | 215    | 84.494 | 0.581 | 125     | 121       | 0.968 |
-| [Q000818](http://oracc.org/epsd2/literary/Q000818) | Proverbs: collection 26                                      | 242    | 99.13  | 0.645 | 156     | 151       | 0.968 |
-| [Q000785](http://oracc.org/epsd2/literary/Q000785) | The three ox-drivers from Adab                               | 268    | 21.743 | 0.34  | 91      | 88        | 0.967 |
-| [Q000384](http://oracc.org/epsd2/literary/Q000384) | An adab to Bau for Luma (Luma A)                             | 232    | 20.212 | 0.336 | 78      | 75        | 0.962 |
-| [Q000494](http://oracc.org/epsd2/literary/Q000494) | An adab to An for Ur-Ninurta (Ur-Ninurta E)                  | 215    | 66.458 | 0.609 | 131     | 126       | 0.962 |
-| [Q000756](http://oracc.org/epsd2/literary/Q000756) | The advice of a supervisor to a younger scribe (Edubba C)    | 404    | 95.519 | 0.522 | 211     | 203       | 0.962 |
-| [Q000433](http://oracc.org/epsd2/literary/Q000433) | A šir-namgala to Mešlamta-ea and Lugal-era for Ibbi-Suen (Ibbi-Suen B) | 285    | 52.473 | 0.435 | 124     | 119       | 0.96  |
-| [Q000361](http://oracc.org/epsd2/literary/Q000361) | Gilgameš and Aga                                             | 471    | 39.397 | 0.363 | 171     | 164       | 0.959 |
+| id_text                                            | designation                                               |   length |   lex_var |   n_matches |   norm |
+|----------------------------------------------------|-----------------------------------------------------------|----------|-----------|-------------|--------|
+| [Q000626](http://oracc.org/epsd2/literary/Q000626) | A tigi to Inana (Inana E)                                 |      296 |        96 |          95 |  0.99  |
+| [Q000695](http://oracc.org/epsd2/literary/Q000695) | A tigi to Nergal (Nergal C)                               |      209 |        96 |          94 |  0.979 |
+| [P346203](http://oracc.org/epsd2/literary/P346203) | ETCSL 2.05.04.23 Ishme-Dagan W (witness)                  |      214 |       124 |         120 |  0.968 |
+| [Q000818](http://oracc.org/epsd2/literary/Q000818) | Proverbs: collection 26                                   |      238 |       158 |         153 |  0.968 |
+| [Q000756](http://oracc.org/epsd2/literary/Q000756) | The advice of a supervisor to a younger scribe (Edubba C) |      401 |       211 |         204 |  0.967 |
+| [Q000668](http://oracc.org/epsd2/literary/Q000668) | A šir-gida to Martu (Martu A)                             |      279 |       182 |         176 |  0.967 |
+| [Q000785](http://oracc.org/epsd2/literary/Q000785) | The three ox-drivers from Adab                            |      268 |        91 |          88 |  0.967 |
+| [Q000384](http://oracc.org/epsd2/literary/Q000384) | An adab to Bau for Luma (Luma A)                          |      232 |        78 |          75 |  0.962 |
+| [Q000494](http://oracc.org/epsd2/literary/Q000494) | An adab to An for Ur-Ninurta (Ur-Ninurta E)               |      211 |       133 |         128 |  0.962 |
+| [Q000788](http://oracc.org/epsd2/literary/Q000788) | A man and his god                                         |      560 |       235 |         226 |  0.962 |
 
 > Note that changes in the [epsd2/literary][] and [DCCLT][] data may change the numbers and the arrangement of the table. The minimum 0f 200 words may be on the high side. The Notebook uses a default minimum of 50, but this can be adjusted by the user.
 
@@ -164,13 +144,13 @@ In the notebook one may manipulate the table to sort by different columns (ascen
 
 ```
 count    203.000000
-mean       0.906160
-std        0.053349
+mean       0.911294
+std        0.052470
 min        0.359833
-25%        0.895003
-50%        0.913462
-75%        0.930233
-max        0.979381
+25%        0.898747
+50%        0.918182
+75%        0.934008
+max        0.989583
 Name: norm, dtype: float64
 ```
 
@@ -180,26 +160,48 @@ The 25%, 50%, and 75% point are all very close to each other - the great majorit
 
 Looking at the bottom of the table we find that the compositions ranking lowest on `norm` are the following
 
-| id_text                                           | designation                                                          |   length |   mtld |   ttr |   lex_var |   n_matches |   norm |
-|---------------------------------------------------|----------------------------------------------------------------------|----------|--------|-------|-----------|-------------|--------|
-| [Q000371](http://oracc.org/epsd2/literary/Q000371) | The Sumerian king list                                               |     1049 | 10.894 | 0.228 |       239 |          86 |  0.36  |
-| [Q000372](http://oracc.org/epsd2/literary/Q000372) | The rulers of Lagaš                                                  |      405 | 25.858 | 0.442 |       179 |         129 |  0.721 |
-| [Q000559](http://oracc.org/epsd2/literary/Q000559) | Letter from Puzur-Šulgi to Ibbi-Suen about Išbi-Erra's claim on Isin |      205 | 46.402 | 0.532 |       109 |          82 |  0.752 |
-| [Q000752](http://oracc.org/epsd2/literary/Q000752) | A hymn to the E-kur                                                  |      244 | 10.425 | 0.25  |        61 |          46 |  0.754 |
-| [Q000632](http://oracc.org/epsd2/literary/Q000632) | A balbale to Inana (Dumuzid-Inana A)                                 |      212 | 10.758 | 0.278 |        59 |          48 |  0.814 |
-| [Q000750](http://oracc.org/epsd2/literary/Q000750) | The temple hymns                                                     |     2498 | 86.439 | 0.279 |       697 |         570 |  0.818 |
-| [Q000336](http://oracc.org/epsd2/literary/Q000336) | Enlil and Ninlil                                                     |      678 | 20.441 | 0.248 |       168 |         139 |  0.827 |
-| [Q000380](http://oracc.org/epsd2/literary/Q000380) | The lament for Sumer and Ur                                          |     2668 | 57.63  | 0.274 |       731 |         616 |  0.843 |
-| [Q000379](http://oracc.org/epsd2/literary/Q000379) | The lament for Ur                                                    |     2284 | 23.547 | 0.229 |       524 |         444 |  0.847 |
-| [Q000651](http://oracc.org/epsd2/literary/Q000651) | A kungar to Inana (Dumuzid-Inana T)                                  |      236 | 16.243 | 0.479 |       113 |          96 |  0.85  |
+| id_text                                            | designation                                                          |   length |   lex_var |   n_matches |   norm |
+|----------------------------------------------------|----------------------------------------------------------------------|----------|-----------|-------------|--------|
+| [Q000371](http://oracc.org/epsd2/literary/Q000371) | The Sumerian king list                                               |     1049 |       239 |          86 |  0.36  |
+| [Q000372](http://oracc.org/epsd2/literary/Q000372) | The rulers of Lagaš                                                  |      405 |       179 |         131 |  0.732 |
+| [Q000752](http://oracc.org/epsd2/literary/Q000752) | A hymn to the E-kur                                                  |      244 |        61 |          46 |  0.754 |
+| [Q000559](http://oracc.org/epsd2/literary/Q000559) | Letter from Puzur-Šulgi to Ibbi-Suen about Išbi-Erra's claim on Isin |      205 |       107 |          82 |  0.766 |
+| [Q000336](http://oracc.org/epsd2/literary/Q000336) | Enlil and Ninlil                                                     |      674 |       169 |         140 |  0.828 |
+| [Q000632](http://oracc.org/epsd2/literary/Q000632) | A balbale to Inana (Dumuzid-Inana A)                                 |      212 |        59 |          49 |  0.831 |
+| [Q000750](http://oracc.org/epsd2/literary/Q000750) | The temple hymns                                                     |     2490 |       696 |         582 |  0.836 |
+| [Q000651](http://oracc.org/epsd2/literary/Q000651) | A kungar to Inana (Dumuzid-Inana T)                                  |      236 |       113 |          97 |  0.858 |
+| [Q000746](http://oracc.org/epsd2/literary/Q000746) | A šir-namšub to Utu (Utu E)                                          |      331 |       127 |         109 |  0.858 |
+| [Q000380](http://oracc.org/epsd2/literary/Q000380) | The lament for Sumer and Ur                                          |     2646 |       739 |         634 |  0.858 |
 
-[The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) is the outlier with only 86 matches on 239 unique lemmas and a `norm` score of 0.36. [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) is a rather repetitive composition (note its low `mtld`score) that enumerates the names of kings and names of cities, recording regnal years with, occasionally, a brief (one-line) anecdote about one of those kings. Proper nouns, including royal names and city names, are currently underrepresented in the (lemmatized) lexical corpus. The proper nouns in [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) explain the large number of lemmas not attested in [DCCLT][]. The next composition ([The Rulers of Lagaš](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&display=Crit&charenc=gcirc#)) has a `norm` score that is significantly higher, but still low comparatively speaking. [The Rulers of Lagaš](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&display=Crit&charenc=gcirc#) is molded on the pattern of the [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) and equally features a relatively large number of of proper nouns.
+[The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) is the outlier with only 86 matches on 239 unique lemmas and a `norm` score of 0.36. [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) is a rather repetitive composition that enumerates the names of kings and the names of the cities from which they reigned, recording regnal years with, occasionally, a brief (one-line) anecdote about one of those kings. Proper nouns, including royal names and city names, are currently underrepresented in the (lemmatized) lexical corpus. The proper nouns in [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) explain the large number of lemmas not attested in [DCCLT][]. The next composition ([The Rulers of Lagaš](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&display=Crit&charenc=gcirc#)) has a `norm` score that is significantly higher, but still low comparatively speaking. [The Rulers of Lagaš](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&display=Crit&charenc=gcirc#) is molded on the pattern of the [The Sumerian King List](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&display=Crit&charenc=gcirc#) and equally features a relatively large number of proper nouns.
 
-After these two lowest scoring texts, the rest of the [epsd2/literary][] corpus scores at least 0.75, with a median value of 0.913 and a mean of 0.906. In the great majority of cases more than ninety percent of the words and expressions in a literary composition are represented in the lexical corpus. Some of the non-overlap between the two corpora, moreover, may be explained by Proper Nouns, or the use of Emesal (a variety of Sumerian used in liturgical laments and by female speakers; Emesal is very rare in the Old Babylonian lexical corpus).
+After these two lowest scoring texts, the rest of the [epsd2/literary][] corpus scores at least 0.75, with a median value of 0.92 and a mean of 0.91. In the great majority of cases more than ninety percent of the words and expressions in a literary composition are represented in the lexical corpus. Some of the non-overlap between the two corpora, moreover, may be explained by Proper Nouns, or the use of Emesal (a variety of Sumerian used in liturgical laments and by female speakers; Emesal is very rare in the Old Babylonian lexical corpus).
 
 This yields a picture that is rather different from the Venn diagrams in section 3.1, where we looked at the intersection of the full vocabulary of [epsd2/literary][] against the full vocabulary of (lemmatized) Old Babylonian lexical texts in [DCCLT][]. The Venn diagrams showed that only between 55 and 65% (depending on how we count) of the [epsd2/literary][] vocabulary is found in [DCCLT][], but looking in more detail we realize that the relationship between literary compositions and the contemporary lexical corpus is much tighter and that each composition by itself, on average, shares 90% of its vocabulary with the lexical corpus. 
 
 How is it possible to arrive at such different percentages, using the same data set? It means that for any particular composition a good deal of the 90% of vocabulary items that is shared with the lexical corpus is also shared with at least some other compositions, whereas the 10% of items not shared may well be unique to that composition.
+
+in order to investigate this further we may look at one particular composition, known as [Dumuzid's Dream](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&display=Crit&charenc=gcirc#). This composition has a `norm` value of 0.94, fairly close to the median value of 0.92.
+
+This is the set of lemmas (n = 15) currently not found in the lexical corpus:
+```python
+{'amaŋeštinanak[1]dn',
+ 'arali[1]gn',
+ 'dubban[fence]n',
+ 'durtur[1]dn',
+ 'kubireš[1]gn',
+ 'kubirešdildareš[1]gn',
+ 'mašuzudak[goat]n',
+ 'men[go]v/i',
+ 'ne[cvne]n',
+ 'sug[full]v/i',
+ 'ŋeštindudu[1]dn',
+ 'šarag[dry]v/t',
+ 'še[tear]n',
+ 'širkalkal[subscript]n',
+ 'šudu[handcuffs]n'}
+```
+We may notice, first, that there are three Geographical Names (Arali, Kubireš and Kubirešdildareš) and three Divine Names (Amaŋeštinanak, Durtur, and Ŋeštindudu) in this list, as well as an Emesal word (men\[go\]v/i). The Geographical Name Arali is, in fact, to be found in [Old Babylonian Nippur Izi](http://oracc.org/dcclt/Q000050) line 
 
 ## 3.3 Distinctions between Lexical Compositions
 
