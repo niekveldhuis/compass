@@ -29,23 +29,6 @@ def format_project_list(x):
     p = [x.strip() for x in p]
     return(p)
 
-import urllib.request
-
-
-
-
-class DownloadProgressBar(tqdm):
-    def update_to(self, b=1, bsize=1, tsize=None):
-        if tsize is not None:
-            self.total = tsize
-        self.update(b * bsize - self.n)
-
-
-def download_url(url, output_path):
-    with DownloadProgressBar(unit='B', unit_scale=True,
-                             miniters=1, desc=url.split('/')[-1]) as t:
-        urllib.request.urlretrieve(url, filename=output_path, reporthook=t.update_to)
-
 def oracc_download(p, server = 'penn'):
     """Downloads ZIP with JSON files from
     ORACC servers. First parameter is a list
@@ -56,7 +39,7 @@ def oracc_download(p, server = 'penn'):
     (first try LMU server) or 'penn' 
     (default: first try Penn server)."""
     
-    CHUNK = 16 * 1024
+    CHUNK = 1024
     p = list(set(p)) #remove duplicates
     projects = p.copy()
     for project in p:
@@ -71,14 +54,18 @@ def oracc_download(p, server = 'penn'):
         for url in servers:
             with requests.get(url, stream=True) as r:
                 if r.status_code == 200:
+                    print(r.status_code)
                     tqdm.write(f"Saving {url} as {file}.")
+                    total_size = int(r.headers.get('content-length', 0))
+                    t=tqdm(total=total_size, unit='B', unit_scale=True, desc = project)
                     with open(file, 'wb') as f:
-                        for c in tqdm(r.iter_content(chunk_size=CHUNK), desc = project):
+                        for c in r.iter_content(chunk_size=CHUNK):
+                            t.update(len(c))
                             f.write(c)
                     break
                 else:
                     if url == servers[-1]: #last server in the list was tried
-                        tqdm.write(f"{url} does not exist.")
+                        tqdm.write(f"WARNING {url} does not exist.")
                         projects.remove(project)
     return projects
 
