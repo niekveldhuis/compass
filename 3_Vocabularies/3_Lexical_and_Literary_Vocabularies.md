@@ -283,6 +283,21 @@ The thematic lists collected in [Ura](http://oracc.org/dcclt/Q000039,Q000040,Q00
 
 One might entertain the possibility that the vocabulary of [Ura](http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043) is closer to the administrative corpus, whereas the ALE compositions tend to be closer to the literary vocabulary. In 1959, J.B. Curtis and W.W. Hallo already noticed that the great majority of the commodities in the Ur III merchants' accounts that they edited is found in Ura. Anecdotally, the idea of a connection between Ur III accounts and the contents of Ura may be supported by a number of striking observations. For instance, the Old Babylonian entry **ha-zi-in gu₂ bir₅-ra{mušen}{zabar}** (axe made of locust-neck bronze) is found in two Ur III texts, one from Umma ([TCL 05, 6055](http://oracc.org/epsd2/admin/ur3/P131769)) and one from Drehem ([MMFM 2005, 24, 5](http://oracc.org/epsd2/admin/ur3/P113021)). More than sixty years after the article by Curtis and Hallo was published, we are now in a position to approach such an idea systematically.
 
+For com parison it is useful to look at matches between administrative documents and lexical compositions. The administrative corpus selected is the Ur III corpus, dating, approximately, to the twenty-first century BCE. It would be more ideal to use the Old Babylonian administrative corpus, in particular texts from Isin, Nippur, and other Southern cities that were still composed in Sumerian. This corpus, however, has not been fully edited on [ORACC][] and is much smaller than the Ur III corpus. For a rough impression it may not make a big difference.
+
+| id_text                                   | designation      | subgenre               | length | n_matches | norm     |
+| ----------------------------------------- | ---------------- | ---------------------- | ------ | --------- | -------- |
+| [Q000055](http://oracc.org/dcclt/Q000055) | OB Nippur Ea     | Sign Lists             | 779    | 439       | 0.563543 |
+| [Q000056](http://oracc.org/dcclt/Q000056) | OB Nippur Aa     | Sign Lists             | 408    | 180       | 0.441176 |
+| [Q000040](http://oracc.org/dcclt/Q000040) | OB Nippur Ura 02 | Thematic Word Lists    | 1182   | 434       | 0.367174 |
+| [Q000047](http://oracc.org/dcclt/Q000047) | OB Nippur Lu     | Thematic Word Lists    | 1459   | 485       | 0.332419 |
+| [Q000039](http://oracc.org/dcclt/Q000039) | OB Nippur Ura 01 | Thematic Word Lists    | 1289   | 423       | 0.328161 |
+| [Q000041](http://oracc.org/dcclt/Q000041) | OB Nippur Ura 04 | Thematic Word Lists    | 983    | 314       | 0.31943  |
+| [Q000048](http://oracc.org/dcclt/Q000048) | OB Nippur Kagal  | Acrographic Word Lists | 1015   | 324       | 0.319212 |
+| [Q000052](http://oracc.org/dcclt/Q000052) | Nippur Nigga     | Acrographic Word Lists | 866    | 259       | 0.299076 |
+| [Q000001](http://oracc.org/dcclt/Q000001) | OB Nippur Ura 03 | Thematic Word Lists    | 1034   | 300       | 0.290135 |
+| [Q002268](http://oracc.org/dcclt/Q002268) | OB Nippur Ugumu  | Thematic Word Lists    | 348    | 96        | 0.275862 |
+
 ## 3.4 Some Final Thoughts
 
 The issue of the intersection between lexical and literary vocabulary turns out to be more complex than a simple count of words. In all computational work issues of definition become central: what counts as a match, and how do we make sure that we exclude, as much as possible, false positives and false negatives?   I took advantage of the undefined nature of what a "match" is (a word? a lemma? an entry?) to introduce two different ways of considering matches that consist of more than one word, Multiple Word Expressions (essentially reducing such an expression to a single token) and ngrams (counting both the individual words and combinations of words found in sequence). Both of these approaches will identify and match compound nouns and compound verbs, with or without morphology - but neither of them will be able to match the expression **mi₂ dug₄** (to care for) with **mi₂ zid dug₄** (to truly care for), because of the intervening lemma. Other types of analysis could be developed to take care of such situations. For now, the point is: each technique has its limitations and it will never completely match the interpretation of a human reader.
