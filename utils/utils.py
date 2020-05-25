@@ -54,7 +54,6 @@ def oracc_download(p, server = 'penn'):
         for url in servers:
             with requests.get(url, stream=True) as r:
                 if r.status_code == 200:
-                    print(r.status_code)
                     tqdm.write(f"Saving {url} as {file}.")
                     total_size = int(r.headers.get('content-length', 0))
                     t=tqdm(total=total_size, unit='B', unit_scale=True, desc = project)
