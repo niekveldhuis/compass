@@ -93,8 +93,9 @@ def parsejson(text):
             lemma["id_word"] = JSONobject["ref"]
             lemma['label'] = meta_d["label"]
             lemma["id_text"] = meta_d["id_text"]
+            lemma["ftype"] = JSONobject.get("ftype")   # capturing words that belong to yearnames
             if capture_field:
-                lemma["field"] = meta_d["field"]
+                lemma["field"] = meta_d.get("field", "")
             lemm_l.append(lemma)
         if "strict" in JSONobject and JSONobject["strict"] == "1":
             lemma = {key: JSONobject[key] for key in dollar_keys}
