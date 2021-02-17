@@ -7,10 +7,6 @@ import zipfile
 import json
 import pandas as pd
 
-lemm_l = []
-meta_d = {"label": None, "id_text": None}
-dollar_keys = ["extent", "scope", "state"]
-
 def make_dirs(x):
     """Check for existence of directories
     create those if they do not exist
@@ -68,18 +64,19 @@ def oracc_download(p, server = 'penn'):
                         projects.remove(project)
     return projects
 
-def parsejson(text):
+def parsejson(text, meta_d):
+    l = []
     capture_field = False
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
-            parsejson(JSONobject)
-        if "label" in JSONobject:
-            meta_d["label"] = JSONobject['label']
+            l.extend(parsejson(JSONobject, meta_d))
+        
+        meta_d["label"] = JSONobject.get('label')
        # if "type" in JSONobject and JSONobject["type"] == "field-start": # this is for sign lists, identifying fields such as
        #     meta_d["field"] = JSONobject["subtype"]                    # sign, pronunciation, translation.
-        if "type" in JSONobject and JSONobject["type"] == "cell-start":
+        if JSONobject.get("type") == "cell-start":
             capture_field = True
-        if "type" in JSONobject and JSONobject["type"] == "cell-end":
+        if JSONobject.get("type") == "cell-end":
             capture_field = False
         if capture_field:
             if "subtype" in JSONobject:
@@ -93,17 +90,23 @@ def parsejson(text):
             lemma["id_word"] = JSONobject["ref"]
             lemma['label'] = meta_d["label"]
             lemma["id_text"] = meta_d["id_text"]
+            lemma["ftype"] = JSONobject.get("ftype")   # capturing words that belong to yearnames
             if capture_field:
-                lemma["field"] = meta_d["field"]
-            lemm_l.append(lemma)
-        if "strict" in JSONobject and JSONobject["strict"] == "1":
-            lemma = {key: JSONobject[key] for key in dollar_keys}
+                lemma["field"] = meta_d.get("field", "")
+            l.append(lemma)
+        if JSONobject.get("strict") == "1":
+            lemma = {}
+            lemma['extent'] = JSONobject['extent']
+            lemma['scope'] = JSONobject['scope']
+            lemma['state'] = JSONobject['state']
             lemma["id_word"] = JSONobject["ref"]
             lemma["id_text"] = meta_d["id_text"]
-            lemm_l.append(lemma)
-    return
+            l.append(lemma)
+    return l
 
 def get_lemmas(p):
+    lemm_l = []
+    meta_d = {"label": None, "id_text": None}
     for project in p:
         file = f"jsonzip/{project.replace('/', '-')}.zip"
         try:
@@ -119,7 +122,7 @@ def get_lemmas(p):
             try:
                 st = z.read(filename).decode('utf-8')
                 data_json = json.loads(st)           
-                parsejson(data_json)
+                lemm_l.extend(parsejson(data_json, meta_d))
             except:
                 print(f'{id_text} is not available or not complete')
         z.close()
