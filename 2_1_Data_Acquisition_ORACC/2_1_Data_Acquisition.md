@@ -41,7 +41,7 @@ The following is an (abbreviated) example of a JSON file (the catalog of an imag
 }
 ```
 
-The value of the key `members` is a dictionary (surrounded by curly brackets) with length of 2. The value of each key in this dictionary is again a dictionary (surrounded by curly brackets and consisting of `key` : `value` pairs). The key `publications` has a list as its value. A list is a way to give multiple values to the same key. In `publications`  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.
+The value of the key `members` is a dictionary (surrounded by curly brackets) with length of 2. The value of each key in this dictionary is again a dictionary (surrounded by curly brackets and consisting of `key` : `value` pairs). The key `publications` has a list as its value. A list is a way to associate multiple values with the same key. In `publications`  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.
 
 For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. To avoid confusion, we use the Python vocabulary here (key, list, dictionary), even when talking about the JSON  structure.
 
@@ -52,7 +52,7 @@ For all practical purposes, a JSON object is identical in structure to a Python 
 | value  | value      |               | string, number, boolean, list (= array), or dictionary (= object) |
 | name   | key        |               | string                                                       |
 
- For a more formal and exhaustive description of the JSON data structure see [http://www.json.org/](http://www.json.org). 
+ For a more formal and complete description of the JSON data structure see [http://www.json.org/](http://www.json.org). 
 
 ### 2.1.2 Acquiring ORACC JSON
 
@@ -82,14 +82,14 @@ The variable `j` will now contain the entire `catalogue.json` object from the [O
 ``` python
 import pandas as pd	
 cat = j["members"]
-df = pd.DataFrame(cat)
+df = pd.DataFrame.from_dict(cat)
 df
 ```
 
-The `DataFrame()` function in the `pandas` library takes each key as a column - in this case the keys of `cat["members"]` are the P numbers (text IDs); the catalog fields have become rows. In other words we need to transpose the DataFrame, which we can do in the same go:
+By default, the `DataFrame.from_dict()` function in the `pandas` library takes each key as a column - in this case the keys of `cat["members"]` are the P numbers (text IDs); the catalog fields have become rows. To address that issue, we need to tell the `DataFrame.from_dict()` function explicitly that each key should be a row (`orient="index"`) 
 
 ```python
-df = pd.DataFrame(cat).T
+df = pd.DataFrame.from_dict(cat, orient="index")
 df
 ```
 
@@ -208,22 +208,24 @@ A straightforward way of doing this is by defining a recursive function, that is
 
 ```python
 def parsejson(text):
+    l = []
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
-            parsejson(JSONobject)
+            l.extend(parsejson(JSONobject))
         if "f" in JSONobject:
-            lemm_l.append(JSONobject["f"])
-    return 
+            l.append(JSONobject["f"])
+    return l
 ```
 
-For the `parsejson()` function to run properly we need to define `lemm_l` as an empty list before the function is called. Then the function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function modifies the list `lemm_l`, adding a new row of lemmatization data (one word at a time) each time it encounters an `f` key.
+The function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function adds a new row of lemmatization data (one word at a time) each time it encounters an `f` key. Finally it returns the list (a list of dictionaries) with the lemmatization data. The function may be called as follows:
 
 ```python
 lemm_l = []
-parsejson(text)
+lemm_l.extend(parsejson(text))
 ```
+By including the call to `parsejson()` in a loop, we can fill lemm_l with the lemmatization data of multiple texts.
 
-The list `lemm_l` now contains all the lemmatization data of [P230754](http://oracc.org/obmc/P230754) as edited in [OBMC][obmc]. We can inspect the data by reading it into a `pandas` DataFrame
+The list `lemm_l` now contains all the lemmatization data of [P230754](http://oracc.org/obmc/P230754) as edited in [OBMC][obmc]. We can inspect the data by reading it into a `pandas` DataFrame. 
 
 ```python
 import pandas as pd
@@ -240,46 +242,49 @@ One may write the DataFrame directly to a `csv` (or some similar file format), b
 
 ### 2.1.5 Enhancing parsejson()
 
-The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are included in the JSON files. The basic `parsejson()` is good enough for a "Bag of Words" approach, which looks only at vocabulary frequency, ignoring word order. For many other types of analysis we do need to capture line numbers and text breaks. Such information is stored in "d" nodes in a level above the "l" node in the `cdl` hierarchy. Similarly, sentence identifiers (and other discourse units) are stored in "c" nodes. The `parsejson()` function can easily be enhanced to capture various types of such meta-data storing them (temporarily) in a dictionary called `meta_d`. This dictionary is created in the main process and is updated whenever the `parsejson()` function encounters a relevant node. Each row (each word) in the list `lemm_l` receives the current meta-data from `meta_d`. 
+The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are included in the JSON files. The basic `parsejson()` is good enough for a "Bag of Words" approach, which looks only at vocabulary frequency, ignoring word order. For many other types of analysis we do need to capture line numbers and text breaks. Such information is stored in "d" nodes in a level above the "l" node in the `cdl` hierarchy. Similarly, sentence identifiers (and other discourse units) are stored in "c" nodes. The `parsejson()` function can easily be enhanced to capture various types of such meta-data storing them in a dictionary called `meta_d`. This dictionary is updated whenever the `parsejson()` function encounters a relevant node. Each row (each word) in the list `lemm_l` receives the current meta-data from `meta_d`. 
 
 #### 2.1.5.1 Line Labels and Line IDs
 
 For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  `label` of the line and the word ID of each word. The `label` is human-legible and has the traditional format to indicate obverse, reverse, column and line number or side of a prism (e.g. "o ii 7" or "a i 19'"). The field `id_word` is machine -legible and has the format TEXT_ID.LINE_ID.WORD_ID, for instance "P273880.22.1", (the first word of the twenty-second line of [P273880](http://oracc.org/dcclt/P273880.22.1)). In the data formatting stage we will use the word ID to extract the line ID (section [2.1.7.2](#2.1.7.2-Create-Line-IDs)).
 
-We can capture `label` and `id_word` with slight adjustments to the `jsonparser()` and the code that calls that function. In the main process we create a dictionary `meta_d,` which will hold all the relevant meta data. Initially, it only contains the text ID. When the `parsejson()` function finds a dictionary that has the `key`  "label" the `key` "label" in `meta_d` gets updated. When the process gets to the lemmatization data the `key` "label" in `meta_d` will hold the proper line label. The word ID is found in the field "ref" in the `l` node, and is added to the `lemma` dictionary. 
+We can capture `label` and `id_word` with slight adjustments to the `jsonparser()` and the code that calls that function. In the main process we create a dictionary `meta_d,` which will hold all the relevant meta data. Initially, it only contains the text ID. When the `parsejson()` function finds a dictionary that has the `key` "label" the `key` "label" in `meta_d` gets updated. When the process gets to the lemmatization data the `key` "label" in `meta_d` will hold the proper line label. The word ID is found in the field "ref" in the `l` node, and is added to the `lemma` dictionary. 
 
 ```python
-def parsejson(text):  # this version captures line labels and line IDs
+def parsejson(text, meta_d):  # this version captures line labels and line IDs
+    l = []
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
-            parsejson(JSONobject)
+            l.extend(parsejson(JSONobject, meta_d))
         if "label" in JSONobject:
-            meta_d["label"] = JSONobject["label"]
+            meta_d["label"] = JSONobject.get("label")
         if "f" in JSONobject:
             lemma = JSONobject["f"]
             lemma["id_text"] = meta_d["textid"]
             lemma["label"] = meta_d["label"]
             lemma["id_word"] = JSONobject["ref"]
-            lemm_l.append(lemma)
-    return  
+            l.append(lemma)
+    return l
 ```
-Before the new `parsejson()` function can be called we need to create the empty `lemm_l` list as well as the `meta_d` dictionary. Both wil be changed by the `parsejson()` function. We call `parsejson()` with the same variable `text` that was created above, holding the JSON of text [P230754](http://oracc.org/obmc/P230754) from the [OBMC][obmc] project.
+Before the new `parsejson()` function can be called we need to create the empty `lemm_l` list as well as the `meta_d` dictionary. Both wil be changed by the `parsejson()` function. We call `parsejson()` with the arguments `text` (as above) and `meta_d`. The variable `text` holds the JSON of text [P230754](http://oracc.org/obmc/P230754) from the [OBMC][obmc] project.
 
 ```python
 lemm_l = []
 meta_d = {"label" : None, "textid": "obmc/P230754"}
-parsejson(text)
+lemm_l.extend(parsejson(text, meta_d))
 ```
+When using this version of `parsejson()` in a loop (to acquire data from multiple documents), the loop must update the value of the key `textid` in the meta_d dictionary before calling `parsejson()`.
 
 #### 2.1.5.2 Select a Section
 
 Using this same structure to select a section of a tablet for parsing, the code may be adapted as follows:
 
 ```python
-def parsejson(text):  # this version captures the lemmatization of a partial text
+def parsejson(text, meta_d):  # this version captures the lemmatization of a partial text
+    l = []
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
-            parsejson(JSONobject)
+            l.extend(parsejson(JSONobject, meta_d))
         if "label" in JSONobject:
             meta_d["label"] = JSONobject["label"]
         if meta_d["label"] == meta_d["startlabel"]:
@@ -290,10 +295,10 @@ def parsejson(text):  # this version captures the lemmatization of a partial tex
                 lemma["id_text"] = meta_d["id_text"]
                 lemma["label"] = meta_d["label"]
                 lemma["id_word"] = JSONobject["ref"]
-                lemm_l.append(lemma)
+                l.append(lemma)
         if meta_d["label"] == meta_d["endlabel"]:
             meta_d["keep"] = False
-    return 
+    return l
 ```
 In this case we will use a different example, the text [P273244](http://oracc.org/dcclt/P273244) from [DCCLT][dcclt]. In order to run this code the file `dcclt.zip` must be downloaded and put in the `jsonzip` folder (see above, section [2.1.2](#2.1.2-Acquiring-ORACC-JSON)).
 ```python
@@ -306,8 +311,7 @@ st = z.read("dcclt/corpusjson/P273244.json").decode("utf-8")
 text = json.loads(st)
 if meta_d["startlabel"] == "":
     meta_d["keep"] = True
-parsejson(text)
-
+lemm_l.extend(parsejson(text, meta_d))
 ```
 
 The text [P273244](http://oracc.org/dcclt/P273244) is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key `label` in the dictionary `meta_d`, while comparing `label` with the value of `startlabel` and `endlabel` to decide where to start and where to stop capturing the lemmatization. In this case only the lexical lines on the reverse are captured, skipping the Gilgameš extract on the obverse.
@@ -371,18 +375,19 @@ One type of `c` nodes defines a sentence - a sequence of words that belong toget
 A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of [ETCSRI][etcsri]) has marked such units (sentences and phrases) in the source files. In order to enable the `parsejson()` function to keep track of sentences, one may simply add another `if` statement to the code, store the sentence ID in the `meta_d` dictionary and add that ID to each word in the list of lemmas:
 
 ```python
-def parsejson(text):  # this version captures sentence IDs
+def parsejson(text, meta_d):  # this version captures sentence IDs
+    l = []
     for JSONobject in text["cdl"]:
-        if "type" in JSONobject and JSONobject["type"] == "sentence":
+        if JSONobject.get("type") == "sentence":
             meta_d["sentence"] = JSONobject["id"]
         if "cdl" in JSONobject: 
-            parsejson(JSONobject)
+            parsejson(JSONobject, meta_d)
         if "f" in JSONobject:
             lemma = JSONobject["f"]
             lemma["sentence_id"] = meta_d["sentence"]
             lemma["id_text"] = meta_d["textid"]
-            lemm_l.append(lemma)
-    return 
+            l.append(lemma)
+    return l 
 ```
 In the example we will use [Q000376](http://oracc.org/etcsri/Q000376) (The Victory of Utu-hegal) from the [ETCSRI][etcsri] project. In order for the code to work, place the file `etcsri.zip` in the `jsonzip` folder (see section [2.1.2](#2.1.2-Acquiring-ORACC-JSON)).
 ```python
@@ -392,10 +397,10 @@ file = "jsonzip/etcsri.zip"
 z = zipfile.ZipFile(file)
 st = z.read("etcsri/corpusjson/Q000376.json").decode("utf-8") 
 text = json.loads(st)
-parsejson(text)
+lemm_l.extend(parsejson(text, meta_d))
 ```
 
-The initial value of the key `sentence` in the `meta_d` dictionary is `None`, but when the `parsejson()` function encounters a key `type` with value `sentence` it changes the value of `meta_d["sentence"]` to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `lemma_l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
+The initial value of the key `sentence` in the `meta_d` dictionary is `None`, but when the `parsejson()` function encounters a key `type` with value `sentence` it changes the value of `meta_d["sentence"]` to hold the `id` of the sentence. The value of that parameter will stay the same, and is copied into the field `sentence_id` of every row (representing a word) in `l` until the `parsejson()` function encounters a new `"type" : "sentence"` pair. 
 
 Each row (word) in the list `lemm_l` will now have a field `sentence_id` that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building [treebanks](https://en.wikipedia.org/wiki/Treebank).
 
@@ -405,7 +410,7 @@ Each row (word) in the list `lemm_l` will now have a field `sentence_id` that ca
 
 In practice, one will rarely wish to parse a single text - as in the examples above. The various `parsejson()` functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with `startlabel` and `endlabel`) in order to parse a collection of documents or entire [ORACC][oracc] projects. Example code for doing so is available in the [Computational Assyriology][compass]  repo. The point of discussing some variants of the `parsejson()` function is to demonstrate its flexibility and the possibility of extracting various types of data.
 
-The output of `parsejson()` is a list of words, where each word is represented by dictionary that includes a number of data elements, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some data elements are always present, others are specific for Sumerian or Akkadian, or are only present if the word in question has been lemmatized. For most projects it will be necessary to select and/or manipulate the data (section [2.1.7](#2.1.7-Data-Structuring)).
+The output of `parsejson()` is a list of words, where each word is represented by a dictionary that includes a number of data elements, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some data elements are always present, others are specific for Sumerian or Akkadian, or are only present if the word in question has been lemmatized. For most projects it will be necessary to select and/or manipulate the data (section [2.1.7](#2.1.7-Data-Structuring)).
 
 ### 2.1.6 Other Data Types in Text Edition JSON Files
 
@@ -458,8 +463,6 @@ for n in cdl:
 
 ```
 
-
-
 #### 2.1.6.2 Broken Lines
 
 [ORACC][oracc] editions include information such as "10 lines broken", or "rest of column missing". There is a restricted vocabulary for such annotations, preserved in `d` (Discontinuity) nodes of the type `nonx` (non-textual). The information is found in four fields, named `strict`, `extent`, `scope` and `state`. The field `strict` has the value `"1"` (a string) if the annotation follows the restricted vocabulary (if `"0"`, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:
@@ -492,7 +495,7 @@ This tells us that at this position in [Q000039](http://oracc.org/dcclt/Q000039)
 
 This represents a double ruling at the end of the lexical prism [CUSAS 12, 3.1.01](http://oracc.org/dcclt/P273880.718). 
 
-Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `lemm_l` in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo does include that functionality.
+Such information may be captured by looking for nodes that include the key `type` with value `nonx` and add the relevant fields to the list `l` in `parsejson()`. The code for doing so is not discussed in the present chapter, but the [Extended JSON parser](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb) in the [Compass][compass] repo does include that functionality.
 
 ### 2.1.7 Data Structuring
 
