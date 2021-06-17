@@ -112,7 +112,9 @@ def get_lemmas(p):
         try:
             z = zipfile.ZipFile(file) 
         except:
-            print(f"{file} does not exist or is not a proper ZIP file")
+            e = sys.exc_info() # get error information
+            print(file), print(e[0]), print(e[1]) # and print it
+            #print(f"{file} does not exist or is not a proper ZIP file")
             continue
         files = z.namelist()
         files = [name for name in files if "corpusjson" in name and name[-5:] == '.json'] 
@@ -124,7 +126,9 @@ def get_lemmas(p):
                 data_json = json.loads(st)           
                 lemm_l.extend(parsejson(data_json, meta_d))
             except:
-                print(f'{id_text} is not available or not complete')
+                e = sys.exc_info() # get error information
+                print(filename), print(e[0]), print(e[1]) # and print it
+                #print(f'{id_text} is not available or not complete')
         z.close()
     return(lemm_l)
 
