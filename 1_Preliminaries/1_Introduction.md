@@ -18,7 +18,7 @@ The turn towards publicly available electronic data is due in no small part to t
 
 [ETCSL][ETCSL] was quickly followed by the Cuneiform Digital Library Inititative ([CDLI][CDLI]), created by Bob Englund, UCLA. This project provides access to metadata, photographs, line drawings, and transliterations (occasionally also translations) of cuneiform documents of all periods and genres. Importantly, [CDLI][CDLI] assigns unique ID numbers to cuneiform objects. Initially, [CDLI][CDLI] focused on administrative and legal documents from the fourth and third millennium BCE, but today one may find a broad variety of text genres from all periods of cuneiform. In 2006 (after several precursors) the Open Richly Annotated Cuneiform Corpus ([ORACC][ORACC]) was built by Steve Tinney (University of Pennsylvania), who had previously been involved in the development of both [ETCSL][ETCSL] and [CDLI][CDLI]. [ORACC][ORACC] works with semi-independent projects, where project directors have broad leeway in the definition of the scope of their project, but follow shared editorial principles in terms of transliteration and lemmatization.
 
-These three projects together fundamentally changed research and teaching in Assyriology and many Assyriologists today depend in one way or another on these and other digital resources. Together, these three make available large amounts of searchable data and make those data freely accessible to other scholars. All three projects use explicit standards, and reuse data where possible, setting a fairly high standard for digital Assyriology. Many other larger and smaller projects were created in their wake, among the most important are the Database of Neo-Sumerian Texts ([BDTNS][BDTNS]; currently comprising almost 100,000 documents in transliteration); Sources of Early Akkadian Literature ([SEAL][SEAL]; several hundred literary texts in Akkadian from the third and second millennium BCE) and Archives Babyloniennes ([ARCHIBAB][ARCHIBAB]; a collection of thousands of Old Babylonian letters, and legal, and administrative documents)[^1].  The [BDTNS][BDTNS] data set is freely available (transliterations and metadata). [ARCHIBAB][ARCHIBAB] and [SEAL][SEAL] both make their data available in the form of PDFs and restrict usage to non derivatives, making the data of these projects unavailable for computational analysis.
+These three projects together fundamentally changed research and teaching in Assyriology and many Assyriologists today depend in one way or another on these and other digital resources. Together, these three make available large amounts of searchable data and make those data freely accessible to other scholars. All three projects use explicit standards, and reuse data where possible, setting a fairly high standard for digital Assyriology. Many other larger and smaller projects were created in their wake, among the most important are the Database of Neo-Sumerian Texts ([BDTNS][BDTNS]; currently comprising almost 100,000 documents in transliteration); Sources of Early Akkadian Literature ([SEAL][SEAL]; several hundred literary texts in Akkadian from the third and second millennium BCE) and Archives Babyloniennes ([ARCHIBAB][ARCHIBAB]; a collection of thousands of Old Babylonian letters, and legal, and administrative documents)[Charpin2014].  The [BDTNS][BDTNS] data set is freely available (transliterations and metadata). [ARCHIBAB][ARCHIBAB] and [SEAL][SEAL] both make their data available in the form of PDFs and restrict usage to non derivatives, making the data of these projects unavailable for computational analysis.
 
 Reflecting on this (very abbreviated) history one may note that scholars working in Sumerian have been the driving force behind almost all the major projects (exceptions are [ARCHIBAB][archibab] and [SEAL][seal]). The main reason for this situation is that the (traditional) tool set for reading Sumerian is far behind - there is no comprehensive (printed) Sumerian dictionary[^2] and no generally accepted Sumerian grammar. In other words: the need for creating such (digital) tools and the opportunities afforded by the development of the digital landscape were felt much more acutely by scholars working in Sumerian.
 
@@ -173,17 +173,15 @@ For [Compass](compass) open source simply means that the scripts for data acquis
 ### 1.4.2 Accessibility
 
 
-
-
-
-
-[^1]: [D. Charpin, *Bibliotheca Orientalis* 71, 331-357](http://doi.org/10.2143/BIOR.71.3.3062115 ) (open access).
+[^Charpin2014]: [D. Charpin, *Bibliotheca Orientalis* 71, 331-357](http://doi.org/10.2143/BIOR.71.3.3062115 ) (open access).
 
 [^2]: For literary Sumerian we now have the excellent *Glossaire sumérien-français* by Pascal Attinger (2021).
 [^3]: See, for instance, Melanie Walsh, *Introduction to Cultural Analytics & Python*, Version 1 (2021), https://doi.org/10.5281/zenodo.4411250.
 [^4]: Justin Kitzes, Daniel Turek, Fatma Deniz (eds); *The Practice of Reproducible Research: Case Studies and Lessons from the Data-Intensive Sciences* 2017. [online version](https://www.practicereproducibleresearch.org/)
 
 
+
+[Charpin2014]
 
 [Anaconda]: http://www.anaconda.com
 [ARCHIBAB]: http://www.archibab.fr
