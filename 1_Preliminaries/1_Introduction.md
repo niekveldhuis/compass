@@ -1,9 +1,3 @@
-
-
-[TOC]
-
-
-
 # 1. Introduction
 
 This book project attempts to bring together two recent trends: the digital turn in Assyriology, and the rise of Data Science. Although Assyriologists had actively used databases since the nineteen sixties, such data sets were available only to a small circle - important examples include Miguel Civil's Nippur Corpus (a group of Sumerian literary texts, now largely available on [ETCSL][ETCSL]) and Simo Parpola's database of Neo-Assyrian texts, subsequently published in  print in the State Archives of Assyria series and now available online in [SAAo](http://oracc.org/saao) . With the advent of the Internet, it became possible to give public access to data in the form of transliterations, translations, photographs, and glossaries. This development began in earnest in 1996 with the appearance of the Electronic Text Corpus of Sumerian Literature ([ETCSL][ETCSL]), and continues to the present day. Data Science is an interdisciplinary field that draws its techniques from Statistics and Computer Science and (essentially) involves a third field, a domain discipline. Although "Data Science" is a relatively recent coinage, its roots go back well into the twentieth century. In recent years many universities have created institutes or departments for Data Science and/or for Digital Humanities, and have developed undergraduate and graduate programs in such fields. The eco-system for applying Data Science methods to Assyriological data, therefore, is much better today than it was even five years ago. 
@@ -164,7 +158,7 @@ The FAIR principles are designed to develop a metric, indicating whether a parti
 
 Open Source generally refers to large projects such Python or Linux, which are carried by communities of volunteers who contribute code. Packages in Python and R are developed that way and Jupyter is another example of a successful open source project.
 
-For [Compass](compass) open source simply means that the scripts for data acquisition, formatting, cleaning, and analysis are made available through [Github](github), at the address http://github.com/niekveldhuis/compass. Github was founded in 2008 and has grown to host the code of millions of users, including [ORACC](oracc) (https://github.com/oracc/), and [CDLI](cdli) (https://github.com/cdli-gh; this repository includes the code of the *Machine Translation and Automated Analysis of Cuneiform Languages* project [MTAAC](mtaac)). [Github](github) is thus part of the eco-system that makes Computational Assyriology possible.
+For [Compass][compass] open source simply means that the scripts for data acquisition, formatting, cleaning, and analysis are made available through [Github][github], at the address http://github.com/niekveldhuis/compass. Github was founded in 2008 and has grown to host the code of millions of users, including [ORACC](https://github.com/oracc/), and [CDLI](https://github.com/cdli-gh); the CDLI repository includes the code of the *Machine Translation and Automated Analysis of Cuneiform Languages* project [MTAAC][mtaac]. [Github][github] is thus part of the eco-system that makes Computational Assyriology possible.
 
 ## 1.4 Why Computational Assyriology?
 
