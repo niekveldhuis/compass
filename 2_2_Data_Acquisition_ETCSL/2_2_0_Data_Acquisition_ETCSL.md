@@ -325,7 +325,7 @@ Finally,  `tounicode()` uses another `translate()` call to replace 'c' by 'š', 
 The function receives a single argument, the dictionary `word` that was created in `getword()`. The function will look up each lemma (a combination of Citation Form, Guide Word, and Part of Speech) in the dictionary `equiv`. This dictionary is a combination of three dictionaries in the file `equivalecies.json`, namely `suxwords`, `emesalwords` and `propernouns`. If the lemma is found in equiv, the [ETCSL][] forms of `cf`, `gw`, and `pos` are replaced by their [ORACC][] counterparts.
 In the `equiv` dictionary the lemmas are stored in the following format:
 ```json
-"taka₄[to leave behind]V": {
+{"taka₄[to leave behind]V": {
             "gw": "abandon",
             "pos": "V/t",
             "cf": "taka"
@@ -335,6 +335,7 @@ In the `equiv` dictionary the lemmas are stored in the following format:
             "pos": "AJ",
             "cf": "meteŋal"
         }
+}
 ```
 The keys in this dictionary are combinations of `cf`, `gw`, and `pos` ([ETCSL][]-style) in a single string. The `etcsl_to_oracc()` function, therefore first has to create the `lemma` from the fields `cf`, `gw`, and `pos` before it can look the word up in `equiv`. 
 
