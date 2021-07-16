@@ -90,9 +90,9 @@ The key `ampersands` in the file `equivalencies.json` has as its value a diction
  '&H;': 'H',
  '&Imacr;': 'Î',
  '&X;': 'X',
- '&aacute;': 'á',
- etc.  
+ '&aacute;': 'á',}
 ```
+etc.
 
 This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in each of the data files (the original files are, of course, left untouched). The function `ampersands()` is called in the function `parsetext()` immediately after opening the file of one of the compositions in [ETCSL][].  
 

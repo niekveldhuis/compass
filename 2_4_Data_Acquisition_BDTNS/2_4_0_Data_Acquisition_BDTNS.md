@@ -1,4 +1,4 @@
-## 2.4.1 Data Acquisition BDTNS
+# 2.4.1 Data Acquisition BDTNS
 
 The Database of Neo-Sumerian Texts ([BDTNS][]) was created by Manuel Molina (Consejo Superior de Investigaciones Científicas). The site provides a detailed catalog of the administrative, legal, and epistolary documents from the so-called Ur III period (21st century BCE). Molina estimates that museums and private collections all over the world may hold at least 120,000 such documents, not including the holdings of the Iraq Museum, Baghdad. Currently, almost 65% of those documents are available through [BDTNS][] in transliteration, and/or in photograph and line drawing. 
 
@@ -8,7 +8,7 @@ Still, [BDTNS][] is not simply a duplicate of the Ur III data in [CDLI][]. Most 
 
 The [BDTNS][] data can be downloaded by hand through the [Search](http://bdtns.filol.csic.es/index.php?p=formulario_urIII) option in the Catalogue & Transliterations drop-down menu. One can search by a variety of criteria (including word and grapheme strings) and then download the search results by clicking on the Export button. The export page provides options for the types of information to include (various types of meta-data and/or transliterations). By searching for a blank string one may export the entire data set. The export yields two files: one for the meta-data and one for the  transliterations, both in raw text (`.txt`) format.
 
-### 2.4.1.1 Vertical TABs
+## 2.4.1.1 Vertical TABs
 
 The [BDTNS][] transliteration files use "vertical TABs", represented by ^K, \v, or \x0b (depending on which editor is used for reading the file). These "vertical TABS" are inserted between lines that belong to the same document; the regular newline character is used to separate one document from the next. Because of those vertical tabs, the following code will lead to somewhat problematic results:
 
@@ -26,7 +26,7 @@ with open("query_text_19_03_1-210747.txt", encoding="utf8") as b:
 
 The `splitlines()` function does recognize the vertical tabs as newline characters, and this code results in a list with each line in the original `.txt` file as a separate element of that list.
 
-### 2.4.1.2 Format as DataFrame
+## 2.4.1.2 Format as DataFrame
 
 In order to format this data in a DataFrame we first need to look for lines that indicate a new document. In the [BDTNS][] export file such lines begin with a six-digit number, for instance:
 
@@ -69,7 +69,7 @@ for line in tqdm.tqdm(bdtns):
 
 This results in a list of lists called `l` that contains the same data as the original `bdtns` list, but in a more explicit format, seperating between text and non-text. This list of lists is transformed into a five-column DataFrame with column names `id_text` (the [BDTNS][] number), `id_line` (an integer, starting at 0 for each document), `label` (the traditional line number), `text` (transliteration), and `comments` (holding comments as well as sign explications).
 
-### 2.4.1.3 X-values
+## 2.4.1.3 X-values
 
 A peculiarity of the [BDTNS][] data set is the way so-called x-values are represented. In Assyriology, x-values are sign readings that have not (yet) received a conventional index number. For instance, the (very common) word  for "to cut (reeds)" is written either with the sign **zi** or with the sign **SIG₇**. Based on the distribution of those spellings (**SIG₇** only in Umma, **zi** elsewhere), M. Molina and M. Such-Guttiérez (2004)[^2] concluded that both spellings write the same word /**zi**/. On that basis the new reading **/zi/** for the sign **SIG₇** was introduced (and is now commonly accepted among Sumerologists). In such cases one may transliterate **ziₓ(SIG₇)** where the SIG₇ between brackets is the name of the sign transliterated as **ziₓ** (and thus the principle of a one-to-one mapping of a transliterated token to a cuneiform sign is maintained). In the [BDTNS][] export file this is represented as follows: 
 
@@ -112,11 +112,11 @@ Importing `tqdm` from the `tqdm.auto` submodule allows `tqdm` to run either in n
 
 The resulting DataFrame distinguishes between text data (the column `text`) and other data (line numbers, comments, text ID numbers) and follows as much as possible the specifications of the ORACC Global Sign List ([OGSL](http://oracc.org/ogsl)).
 
-### 2.4.1.4 Save
+## 2.4.1.4 Save
 
 Finally, the newly created DataFrame with [BDTNS][] data is saved in two ways. The `to_pickle()` function of the `pandas` library is used to created a pickle, a file that can be opened in a future session to recreate the DataFrame. Second, the DataFrame is saved in JSON format, a format that is more suitable for sharing with other researchers. Both files are saved in the `output` directory.
 
-## 2.4.2 Building Sign Search
+# 2.4.2 Building Sign Search
 
 Combining the data from [BDTNS][], as prepared in the previous section, with data from the ORACC Global Sign List ([OGSL][]) we can build a search engine for [BDTNS][] that finds a sequence of signs, independent of the particular reading employed in the transliteration. The sign search is built here primarily as an example of the kinds of things one can do with data as produced in 2.4.1 (standardized and with proper separation between text data and non-text data).
 
@@ -143,7 +143,7 @@ The search engine uses "widgets" (pieces of software to create a user interface)
 
 Detailed search instructions are found in the Notebook.
 
-## 2.4.3 Search BDTNS
+# 2.4.3 Search BDTNS
 The final notebook in section 2.4 is called `2_4_3_Search_BDTNS.ipynb`. It offers the same search functionality as the search built in section 2.4.2, but it mostly hides the code and does not create the files necessary for the search - assuming they are already there. In other words, before using this notebook for the first time, first run `2_4_1_Data_Acquisition_BDTNS.ipynb` and `2_4_2_Build_Sign_Search.ipynb`(in that order) to create the files `bdtns_tokenized.p`and `ogsl_dict.p` that are used by the code in `2_4_3_Search_BDTNS.ipynb`. Afterwards, you can continue to use the same files and run the search again, or you can rebuild them and capture the latest data from [BDTNS][] and [OGSL][].
 
 The code that is used by the Search is essentially the same as in `2_4_2_Build_Sign_Search.ipynb` but it calls the file `Search_BDTNS.py` in the `py` directory, so that the code itself does not clutter the page.
