@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.3 Lexical Texts and their Relation to Literary Vocabulary" href="3_3_Lex-Lit.html" />
+    <link rel="prev" title="3 Overlap in Lexical and Literary Vocabulary" href="3_1_Lit_Lex_Vocab.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/3_Vocabularies/3_2_Lit_Lex.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/3_Vocabularies/3_2_Lit_Lex.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/3_Vocabularies/3_2_Lit_Lex.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparation">
+   3.2.0 Preparation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literary-by-composition">
+     3.2.0.1 Literary: By Composition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-length-and-number-of-unique-lemmas">
+     3.2.0.2 Text Length and Number of Unique Lemmas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-term-matrix">
+   3.2.1 Document Term Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-lexical-literary-matches-per-literary-composition">
+   3.2.2 Number of Lexical/Literary Matches per Literary Composition.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-metadata">
+     3.2.2.1 Adding Metadata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalizing">
+     3.2.2.2 Normalizing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-the-results">
+   3.2.3 Exploring the Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   3.2.4 Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#norm-descriptive-statistics">
+     3.2.4.1 Norm: Descriptive Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histogram">
+     3.2.4.2 Histogram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dumuzid-s-dream">
+     3.2.4.3 Dumuzid’s Dream
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="overlap-in-lexical-and-literary-vocabulary-digging-deeper">
+<h1>3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper<a class="headerlink" href="#overlap-in-lexical-and-literary-vocabulary-digging-deeper" title="Permalink to this headline">¶</a></h1>
+<p>In order to research the relationship between lexical and literary vocabularies in more detail we will look at individual literary texts. Which compositions have more and which have less overlap with the lexical vocabulary?</p>
+<p>Longer texts will have more vocabulary items (and Multiple Word Expressions) in common with the lexical corpus than shorter texts, but that does not mean much. We will therefore compare literary compositions by means of a normalized measure.</p>
+<div class="section" id="preparation">
+<h2>3.2.0 Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>This notebook uses some files that were downloaded or produced in <a class="reference internal" href="3_1_Lit_Lex_Vocab.html"><span class="doc std std-doc">3_1_Lit_Lex_Vocab.ipynb</span></a>. Run that notebook first, before this one.</p>
+<p>First import the necessary libraries. If you are running this notebook in Jupyter Lab you will need to install the Jupyter Lab ipywidgets extension (see <a class="reference internal" href="../1_Preliminaries/1_Introduction.html"><span class="doc std std-doc">Introduction</span></a>, section 1.2.2.1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span> <span class="c1"># this suppresses a warning about pandas from tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span> <span class="c1"># initiate pandas support in tqdm, allowing progress_apply() and progress_map()</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FormatStrFormatter</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Open the file <code class="docutils literal notranslate"><span class="pre">litlines.p</span></code> which was produced in <a class="reference internal" href="3_1_Lit_Lex_Vocab.html"><span class="doc std std-doc">3_1_Lit_Lex_Vocab.ipynb</span></a>. The file contains the pickled version of the DataFrame <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> in which the literary (<a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>) corpus is represented in line-by-line format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_lines</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;output/litlines.p&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="literary-by-composition">
+<h3>3.2.0.1 Literary: By Composition<a class="headerlink" href="#literary-by-composition" title="Permalink to this headline">¶</a></h3>
+<p>The line-by-line representation that was prepared in the previous notebook will be transformed into a composition-by-composition representation. The DataFrame <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> includes the column <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> in which each line is represented as a sequence of lemmas and/or Multiple Word Expressions (lemmas connected by underscores). The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> function is used here to group on <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">text_name</span></code>. The aggregate function for the <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> column in this case is simply <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join</span></code>: all the entries (representing lines) are concatenated to form one long sequence of lemmas in a single string representing one composition.</p>
+<p>The field <code class="docutils literal notranslate"><span class="pre">id_text</span></code> in the resulting DataFrame has the form ‘epsd2/literary/P254863’. In fact, we only need the last 7 characters of that string (the P, Q, or X number of the text), because all texts derive from the same project. We can simplify the <code class="docutils literal notranslate"><span class="pre">id_text</span></code> string with a list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_comp</span> <span class="o">=</span> <span class="n">lit_lines</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">lit_lines</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;lemma_mwe&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">lit_comp</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]]</span>
+<span class="n">lit_comp</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="mi">35</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a DataFrame with two columns: <code class="docutils literal notranslate"><span class="pre">id_text</span></code>, and <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code>. Each row represents a literary composition from the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus. Each cell in the column <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> contains a sequence of lemmas of one composition (with MWEs connected by underscores).</p>
+</div>
+<div class="section" id="text-length-and-number-of-unique-lemmas">
+<h3>3.2.0.2 Text Length and Number of Unique Lemmas<a class="headerlink" href="#text-length-and-number-of-unique-lemmas" title="Permalink to this headline">¶</a></h3>
+<p>For each literary composition we need to know the text length and the number of unique lemmas. We will use these numbers to weed out documents that are to short and to normalize the number of hits (the number of lemmas shared with the lexical corpus).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lit_stats</span><span class="p">(</span><span class="n">lemmas</span><span class="p">):</span>
+    <span class="n">lemmas</span> <span class="o">=</span> <span class="n">lemmas</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemma</span> <span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">lemmas</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">lemma</span><span class="p">]</span> <span class="c1"># remove unlemmatized words</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lemmas</span><span class="p">)</span> <span class="c1"># number of lemmatized words</span>
+    <span class="n">lex_var</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">lemmas</span><span class="p">))</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lemmas</span><span class="p">),</span> <span class="n">length</span><span class="p">,</span> <span class="n">lex_var</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;lemma_mwe&#39;</span><span class="p">],</span> <span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">],</span> <span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;lex_var&#39;</span><span class="p">]</span> <span class="o">=</span> \
+    <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;lemma_mwe&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">progress_map</span><span class="p">(</span><span class="n">lit_stats</span><span class="p">))</span>
+<span class="n">lit_comp</span> <span class="o">=</span> <span class="n">lit_comp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># remove compositions that have no lemmatized content</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="document-term-matrix">
+<h2>3.2.1 Document Term Matrix<a class="headerlink" href="#document-term-matrix" title="Permalink to this headline">¶</a></h2>
+<p>The literary corpus is transformed into a Document Term Matrix (or DTM), a table in which each column represents a lemma and each row represents a Sumerian composition. Each cell contains a number indicating the frequency of that word  in a particular composition.</p>
+<p>Since we are interested in the usage of lexical vocabulary in literary texts, we may skip all words that are not available in the lexical corpus, saving a considerable amount of memory. We can do that by defining a vocabulary, derived from the data produced in the previous notebook (<a class="reference internal" href="3_1_Lit_Lex_Vocab.html"><span class="doc std std-doc">3_1_Lit_Lex_Vocab.ipynb</span></a>). The vocabulary is sorted (by alphabet) so that the columns in the DTM will be in alphabetical order as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/lex_vocab.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+    <span class="n">lex_vocab</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="n">lex_vocab</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to create the DTM we use the function <code class="docutils literal notranslate"><span class="pre">CountVectorizer()</span></code> (from the <code class="docutils literal notranslate"><span class="pre">Sklearn</span></code> package), a very flexible tool with many possible parameters. The most common use case is a corpus of raw documents (probably in English), each of them consisting of a text string that needs to be pre-processed  and tokenized (turned into a list of words or lemmas) before anything else can be done. Default pre-processing includes, for instance, lowercasing the entire text (so that thursday, Thursday, and THURSDAY will all be recognized as the same lemma) and removal of punctuation and numbers. Default tokenizers assume that the text is in a modern (western) language, taking spaces, hyphens, and punctuation marks as word dividers. The structure of the <a class="reference external" href="http://oracc.org">ORACC</a> data is much simpler than that. Pre-processing is unnecessary, and tokenization should split the string <em>only</em> at blank spaces.</p>
+<p>This can be achieved by defining custom tokenizer/preprocessor functions, and tell <code class="docutils literal notranslate"><span class="pre">Countvectorizer()</span></code> to use these. The custom tokenizer consists of the standard Python function <code class="docutils literal notranslate"><span class="pre">split()</span></code>; the preprocessor function does nothing at all.</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">vocabulary</span></code> is set to the variable <code class="docutils literal notranslate"><span class="pre">lex_vocab</span></code> (created above), which includes all lemmas and lexical entries in the lexical corpus.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CountVectorizer()</span></code> stores the results in a sparse matrix which notes the position and value of non-zero entries. In transforming the output to a Pandas DataFrame, we need to use the <code class="docutils literal notranslate"><span class="pre">toarray()</span></code> method, which will transform the sparse matrix into a regular matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">preprocessor</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">vocabulary</span><span class="o">=</span><span class="n">lex_vocab</span><span class="p">)</span>
+<span class="c1">#Alternative way to do the same thing:</span>
+<span class="c1">#cv = CountVectorizer(token_pattern = r&#39;[^ ]+&#39;, vocabulary=lex_vocab)</span>
+<span class="n">dtm</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">lit_comp</span><span class="p">[</span><span class="s1">&#39;lemma_mwe&#39;</span><span class="p">])</span>
+<span class="n">lit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dtm</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">lit_comp</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">])</span>
+<span class="n">lit_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resulting DataFrame lit_df has a row for each <em>literary</em> composition and it has a column for every lemma/expression in the <em>lexical</em> corpus. The number of columns, therefore, should correspond to the size of the lexical vocabulary in the Venn diagram produced in the previous notebook:</p>
+<p><img alt="venn diagram 3" src="../_images/venn_3.png" /></p>
+<p>As we have seen in the previous notebook, many of these words/expressions do not appear in the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus, and thus all cells in those columns are 0. If we remove those columns, we get the vocabulary that is shared between the lexical corpus and the literary corpus (the intersection of the circles in the Venn diagram). The left side of the Venn diagram (the literary vocabulary that does not appear in lexical texts) is not represented in the DTM. This DTM, therefore, should only be used to research the <em>intersection</em> between the two (literary and lexical) vocabularies.</p>
+<blockquote>
+<div><p>The number of non-zero columns does not <em>exactly</em> correspond to the size of the intersection in the Venn diagram. The reason is that a word like <strong>ašrinna[object]n</strong>, a word that in the literary corpus only appears in the MWE <strong>kid[mat]n_ašrinna[object]n</strong>, is counted as a match in the Venn diagram, but only appears in the column <strong>kid[mat]n_ašrinna[object]n</strong> in the DTM. See <a class="reference internal" href="3_1_Lit_Lex_Vocab.html"><span class="doc std std-doc">3_1_Lit_Lex_Vocab.ipynb</span></a> section 3.1.3.1.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df</span> <span class="o">=</span> <span class="n">lit_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span> <span class="p">,</span> <span class="n">lit_df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">vocab</span> <span class="o">=</span> <span class="n">lit_df</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># `vocab` is a list with all the vocabulary items currently in `lit_df`</span>
+<span class="n">lit_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">vocab</span></code> is a list that includes all lemmas and MWEs that are shared by the literary corpus and the lexical corpus. Save this list for use in section 3.3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/lit_lex_vocab.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">w</span><span class="p">:</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vocab</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="number-of-lexical-literary-matches-per-literary-composition">
+<h2>3.2.2 Number of Lexical/Literary Matches per Literary Composition.<a class="headerlink" href="#number-of-lexical-literary-matches-per-literary-composition" title="Permalink to this headline">¶</a></h2>
+<p>The sum of each row of the DTM equals the sum of the frequencies of all words/expressions that a composition shares with the lexical corpus. Instead of adding up the frequencies, however, it makes more sense to count the number of non-zero entries. This number (<code class="docutils literal notranslate"><span class="pre">nmatches</span></code>) represents the number of unique words and MWEs used in a particular literary composition (represented by a row) that are found in the lexical corpus. We can do so with the Pandas method <code class="docutils literal notranslate"><span class="pre">astype(bool)</span></code>, which will yield 0 for each zero entry and 1 for each non-zero entry.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df</span><span class="p">[</span><span class="s2">&quot;n_matches&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lit_df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By adding more columns to the DTM (in this case the column <code class="docutils literal notranslate"><span class="pre">n_matches</span></code>) it becomes necessary to indicate on which columns we want to perform our calculations. The variable <code class="docutils literal notranslate"><span class="pre">vocab</span></code> is a list of all lemmas and MWEs that are shared by the lexical and literary corpora - and therefore it is also a list of all the relevant column names in the DTM. At this point in the script, adding this restriction to the code (in the form <code class="docutils literal notranslate"><span class="pre">lit_df[vocab]</span></code>) is a safety measure that ensures that running the line twice (for whatever reason) results in the same output and does not take <code class="docutils literal notranslate"><span class="pre">n_matches</span></code> as part of the summation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df</span><span class="p">[</span><span class="s2">&quot;n_matches&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lit_df</span><span class="p">[</span><span class="n">vocab</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-metadata">
+<h3>3.2.2.1 Adding Metadata<a class="headerlink" href="#adding-metadata" title="Permalink to this headline">¶</a></h3>
+<p>Above, we computed various statistics for each of the literary compositions. The catalog file for <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> contains further information (such as the composition name). Parsing the <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> of an <a class="reference external" href="http://oracc.org">ORACC</a> project is discussed in more detail in section <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html"><span class="doc std std-doc">2.1.1</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/epsd2-literary.zip&quot;</span> <span class="c1"># The ZIP file was downloaded in the previous notebook</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> 
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;epsd2/literary/catalogue.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="c1">#The important information, giving the title of the literary text is sometimes found in </span>
+<span class="c1"># `designation` and sometimes in `subgenre`. Merge those two fields.</span>
+<span class="n">cat_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cat_df</span><span class="o">.</span><span class="n">designation</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">13</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;CDLI Literary&quot;</span><span class="p">,</span> <span class="s2">&quot;designation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat_df</span><span class="o">.</span><span class="n">subgenre</span>
+<span class="c1"># Exemplars have a P number (`id_text`), composite texts have a Q number (`id_composite`).</span>
+<span class="c1"># Merge those two in `id_text`.</span>
+<span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_composite&quot;</span><span class="p">])</span>
+<span class="c1"># Keep only `id_text` and `designation`.</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">cat_df</span><span class="p">[[</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;designation&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Merge text length and number of unique lemmas in <code class="docutils literal notranslate"><span class="pre">lit_comp</span></code> with the number of lexical matches from the DTM (<code class="docutils literal notranslate"><span class="pre">lit_df</span></code>) by the shared field <code class="docutils literal notranslate"><span class="pre">id_text</span></code>. Merge the resulting DataFrame (<code class="docutils literal notranslate"><span class="pre">lit_df2</span></code>) with the metadata (<code class="docutils literal notranslate"><span class="pre">cat_df</span></code>). The merge method is “inner,” which means that only those rows that exist in all three DataFrames will end up in the new DataFrame. Thus, the compositions with 0 lemmatized words, which were eliminated above, will not re-surface in the new DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">lit_comp</span><span class="p">[[</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">,</span> <span class="s2">&quot;lex_var&quot;</span><span class="p">]],</span> <span class="n">lit_df</span><span class="p">[</span><span class="s1">&#39;n_matches&#39;</span><span class="p">],</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">lit_df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cat_df</span><span class="p">,</span> <span class="n">lit_df2</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">lit_df2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sort by the number of lexical matches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df2</span> <span class="o">=</span> <span class="n">lit_df2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;n_matches&quot;</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lit_df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="normalizing">
+<h3>3.2.2.2 Normalizing<a class="headerlink" href="#normalizing" title="Permalink to this headline">¶</a></h3>
+<p>Lugal-e (or <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&amp;display=Crit&amp;charenc=gcirc">Ninurta’s Exploits</a> has the highest number of matches (more than 700) with the Old Babylonian lexical corpus in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>. But this is also the longest composition in the corpus. We can normalize by dividing the total number of matches (<code class="docutils literal notranslate"><span class="pre">n_matches</span></code>) by the number of unique lemmas (<code class="docutils literal notranslate"><span class="pre">lex_var</span></code>) in the text (<code class="docutils literal notranslate"><span class="pre">norm</span></code>). Such numbers mean little for very short texts with just a few (lemmatized) words. In the next section we will add the possibility of excluding texts that fall under a certain minimum length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df2</span><span class="p">[</span><span class="s2">&quot;norm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lit_df2</span><span class="p">[</span><span class="s2">&quot;n_matches&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">lit_df2</span><span class="p">[</span><span class="s2">&quot;lex_var&quot;</span><span class="p">]</span>
+<span class="n">lit_df2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-the-results">
+<h2>3.2.3 Exploring the Results<a class="headerlink" href="#exploring-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The following code displays the results in an interactive table that may be sorted (ascending or descending) in different ways for further exploration. By default, texts shorter than 50 lemmatized words are excluded and only the first 10 columns are displayed. One may change these numbers by moving the slides. The column <code class="docutils literal notranslate"><span class="pre">id_text</span></code> provides links to the editions in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df2</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;output/lit.p&#39;</span><span class="p">)</span>
+<span class="n">anchor</span> <span class="o">=</span> <span class="s1">&#39;&lt;a href=&quot;http://oracc.org/epsd2/literary/</span><span class="si">{}</span><span class="s1">&quot;, target=&quot;_blank&quot;&gt;</span><span class="si">{}</span><span class="s1">&lt;/a&gt;&#39;</span>
+<span class="n">lit</span> <span class="o">=</span> <span class="n">lit_df2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">lit</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">anchor</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">lit</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+<span class="n">lit</span><span class="p">[</span><span class="s1">&#39;PQ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Composite&#39;</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span> <span class="k">else</span> <span class="s1">&#39;Exemplar&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lit_df2</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">sort_by</span> <span class="o">=</span> <span class="n">lit</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;PQ&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lit</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="n">min_length</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">show</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Exemplars&quot;</span><span class="p">,</span> <span class="s2">&quot;Composites&quot;</span><span class="p">,</span> <span class="s2">&quot;All&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">sort_df</span><span class="p">(</span><span class="n">sort_by</span> <span class="o">=</span> <span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">min_length</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="s2">&quot;All&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">show</span> <span class="o">==</span> <span class="s1">&#39;All&#39;</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">lit</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lit</span><span class="p">[</span><span class="s1">&#39;PQ&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">show</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">lit</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;PQ&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;=</span> <span class="n">min_length</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="n">sort_by</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="n">ascending</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">rows</span><span class="p">]</span><span class="o">.</span><span class="n">style</span>
+    <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>3.2.4 Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>We may now come back to our initial question: is there a meaningful way to classify literary texts on the basis of the intersection of the vocabulary of that composition with the lexical vocabulary? In other words: are there certain compositions that draw more heavily from the lexical vocabulary than others?</p>
+<p>Exploring the table above seems to indicate that this is not the case. Of the compositions longer than 200 lemmatized words, Inana E has the highest <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of almost .99. Indeed, of the 96 unique lemmas in this text, 95 are known from the lexical corpus. But a review of the spread of <code class="docutils literal notranslate"><span class="pre">norm</span></code> will show that this is hardly exceptional.</p>
+<div class="section" id="norm-descriptive-statistics">
+<h3>3.2.4.1 Norm: Descriptive Statistics<a class="headerlink" href="#norm-descriptive-statistics" title="Permalink to this headline">¶</a></h3>
+<p>In order to explore the spread of <code class="docutils literal notranslate"><span class="pre">norm</span></code> we will restrict the data to documents that are at least 200 lemmas (and MWEs) in length. Very short texts (such as lentils or small fragments) yield extreme results that are not very useful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_length</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">lit</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lit</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;=</span> <span class="n">min_length</span><span class="p">,</span> <span class="s1">&#39;norm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The table shows that the 25%, 50%, and 75% points are all very close to each other, around 0.92. In other words: in the great majority of literary compositions, more than 90% of the lemmas and Multiple Word Expressions are attested in the lexical corpus.</p>
+</div>
+<div class="section" id="histogram">
+<h3>3.2.4.2 Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">¶</a></h3>
+<p>The histogram of <code class="docutils literal notranslate"><span class="pre">norm</span></code> is a way to visualize the (very) skewed distribution of its values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbins</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;norm&#39;</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lit</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lit</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;=</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">column</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">nbins</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FormatStrFormatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span><span class="p">))</span> <span class="c1"># tick labels with two decimals</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbins</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;No. of Compositions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;viz/hist_norm.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we restrict the display to documents of at least 200 lemmas, the lowest scoring one is <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&amp;display=Crit&amp;charenc=gcirc">The Sumerian King List</a>, a rather repetitive text that lists cities, kings, and regnal years, with only occasionally a brief anecdote about one of those kings. Many of these king names are not found in the lexical corpus - hence the <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of 0.36. But, as the histogram shows, this is exceptional, it is much more common to see a literary text with more than 90% of its lemmas represented in the lexical corpus.</p>
+</div>
+<div class="section" id="dumuzid-s-dream">
+<h3>3.2.4.3 Dumuzid’s Dream<a class="headerlink" href="#dumuzid-s-dream" title="Permalink to this headline">¶</a></h3>
+<p>In the Venn diagrams in 3.1 we saw that between 55% and 65% (depending on the way of counting) of the literary vocabulary is not attested in the lexical corpus. How can we square that outcome with the fact that the great majority of literary compositions shares more than 90% of their vocabulary with the lexical corpus? In order to explore that question we will look at a concrete example: the story of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>. In <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> this composition has the ID Q000347.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_df2</span><span class="p">[</span><span class="n">lit_df2</span><span class="o">.</span><span class="n">id_text</span> <span class="o">==</span> <span class="s2">&quot;Q000347&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> has a <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of 0.94, slightly above the median value of 0.92. The number means that 94% of the lemmas (and MWEs) in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> are found in the lexical corpus. Which words are not found?</p>
+<p>We have to go back to the data set as represented by <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> - this contains all words, lemmatized and unlemmatized, those represented in the lexical corpus and those not attested there. We select the lines that belong to <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> (Q000347), join the lines to a single string and then split this string at the blank spaces. This gives a list of all lemmas and MWEs in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>. We remove the unlemmatized forms and reduce the list to a set of unique elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DD</span> <span class="o">=</span> <span class="n">lit_lines</span><span class="p">[</span><span class="n">lit_lines</span><span class="o">.</span><span class="n">id_text</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;Q000347&quot;</span><span class="p">]</span>
+<span class="n">DD_lemmas</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DD</span><span class="p">[</span><span class="s1">&#39;lemma_mwe&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">DD_lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">DD_lemmas</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+<span class="n">DD_lemmas_s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">DD_lemmas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We may now transform the list <code class="docutils literal notranslate"><span class="pre">lex_vocab</span></code> (which contains all lexical lemmas and MWEs) into a set, so that we can subtract one set from the other. The result (another set) contains all the items that are present in the first set (the vocabulary of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>), but not in the other (the Old Babylonian lexical vocabulary).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_vocab_s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lex_vocab</span><span class="p">)</span>
+<span class="n">DD_lemmas_s</span> <span class="o">-</span> <span class="n">lex_vocab_s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Among the words, currenly not found in the lexical corpus, are a remarkable number of proper nouns: Divine Names (Amaŋeštinanak, Durtur, and Ŋeštindudu), and Geographical names (Arali, Kubireš, and Kubirešdildareš). The case of Arali is instructive. This word appears in OB Nippur Izi, but is lemmatized there as a noun (a word for the Netherworld), rather than as a Geographical Name. The goddess Amaŋeštinanak (<strong>{d}ama-ŋeštin-an-na</strong>) is well-attested in third millennium administrative texts and royal inscriptions, but is uncommon in the Old Babylonian period. In fact, the text of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> writes ama {d}ŋeštin-an-na “Mother Ŋeštinanak” - where “Mother” is an apparent honorific. Read that way, the word <strong>ama</strong> (mother) and the Divine Name <strong>{d}ŋeštin-an-na</strong> are present in the lexical corpus.</p>
+<p>The word men[go]v/i is an Emesal word. Emesal is a variety of Sumerian that is used in cultic laments and in speeches by female divinities in Sumerian myths. Although the Old Babylonian lexical corpus includes some Emesal words, they are truly rare. Generally speaking, Emesal is associated with the liturgical use of Sumerian, whereas the scribal school focuses primarily on regular Sumerian.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_Vocabularies"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3_1_Lit_Lex_Vocab.html" title="previous page">3 Overlap in Lexical and Literary Vocabulary</a>
+    <a class='right-next' id="next-link" href="3_3_Lex-Lit.html" title="next page">3.3 Lexical Texts and their Relation to Literary Vocabulary</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

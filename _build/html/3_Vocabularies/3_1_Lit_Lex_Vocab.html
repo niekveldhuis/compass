@@ -1,0 +1,879 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 Overlap in Lexical and Literary Vocabulary &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper" href="3_2_Lit_Lex.html" />
+    <link rel="prev" title="3. Lexical and Literary Vocabularies" href="3_Lexical_and_Literary_Vocabularies.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/3_Vocabularies/3_1_Lit_Lex_Vocab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/3_Vocabularies/3_1_Lit_Lex_Vocab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/3_Vocabularies/3_1_Lit_Lex_Vocab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-corpora">
+   3.0 The Corpora
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counting-words-and-expressions">
+   3.1 Counting Words and Expressions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparation">
+     3.1.0 Preparation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#read-lexical-and-literary-data">
+       3.1.0.1 Read Lexical and Literary Data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lemmas">
+       3.1.0.2 Lemmas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#split-into-lexical-and-literary">
+       3.1.0.3 Split into Lexical and Literary
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#select-old-babylonian-lexical-texts">
+       3.1.0.4 Select Old Babylonian Lexical Texts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-approximation">
+     3.1.1 First Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-approach-multiple-word-expressions">
+     3.1.2 Second Approach: Multiple Word Expressions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-by-line">
+       3.1.2.1 Line by Line
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extract-lexical-entries">
+       3.1.2.2 Extract lexical entries
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mark-lexical-entries-in-literary-texts">
+       3.1.2.3 Mark lexical entries in literary texts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-them-up">
+     3.1.3 Add them Up
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discussion">
+       3.1.3.1 Discussion
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="overlap-in-lexical-and-literary-vocabulary">
+<h1>3 Overlap in Lexical and Literary Vocabulary<a class="headerlink" href="#overlap-in-lexical-and-literary-vocabulary" title="Permalink to this headline">¶</a></h1>
+<p>This notebook compares the vocabulary of Old Babylonian lexical texts edited in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> and the vocabulary of the Sumerian literary corpus as represented in the <a class="reference external" href="http://oracc.org/epsd2/literary">literary</a> sub-project of the Electronic Pennsylvania Sumerian Dictionary, plus the disputation texts in the Datenbank Sumerischer Streitliteratur (<a class="reference external" href="http://oracc.org/dsst">DSSt</a>).</p>
+<div class="section" id="the-corpora">
+<h2>3.0 The Corpora<a class="headerlink" href="#the-corpora" title="Permalink to this headline">¶</a></h2>
+<p>Currently, the <a class="reference external" href="http://oracc.org/epsd2/literary">literary</a> corpus in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2</a> consists of the following text groups:</p>
+<ul class="simple">
+<li><p>almost 400 literary compositions in composite transliteration derived from the Electronic Text Corpus of Sumerian Literature (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk/">ETCSL</a>), adjusted to <a class="reference external" href="http://oracc.org/epsd2">epsd2</a> standards. The Gudea Cylinders, which are part of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/">ETCSL</a> corpus, have been removed from the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus, because they are available in the <a class="reference external" href="http://oracc.org/epsd2/royal">epsd2/royal</a> project.</p></li>
+<li><p>the literary texts from Old Babylonian Ur published in UET 6/1-3, edited by Jeremiah Peterson and lemmatized by Niek Veldhuis and Steve Tinney.</p></li>
+<li><p>a somewhat random collection of literary texts scattered over recently published books and articles. This collection includes most of CUSAS 38 (by Christopher Metcalf; 2019) and various other texts.</p></li>
+<li><p>added to this is the corpus of disputation texts edited by Catherine Mittermayer and her team in <a class="reference external" href="http://oracc.org/dsst">DSSt</a>.</p></li>
+</ul>
+<p>The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/">ETCSL</a> collection provides composite texts, the other collections include individual exemplars. There is, therefore, some duplication in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>. The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=t.2.2.3"><em>Lament for Sumer and Ur</em></a>, for instance, is represented by a composite text from <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=t.2.2.3">ETCSL</a>, but also by 14 exemplars from Ur. The exemplars yield variants but mostly duplicate the composite text. On the other hand, the exemplars from Nippur and other places (and the variants that they yield) are not currently represented in the corpus.</p>
+<p><a class="reference external" href="http://oracc.org/dsst">DSSt</a> adds some new texts to this corpus, but also provides fresh editions of compositions already covered in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/">ETCSL</a>. In such cases, the old editions have been removed from <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> in order to avoid duplication. Unlike <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/">ETCSL</a>, <a class="reference external" href="http://oracc.org/dsst">DSSt</a> includes both composite texts and all the exemplars. However, for now, only the composite texts have been lemmatized. Since our analysis works with lemmatization, this means that only those composite texts go into the comparison.</p>
+<p>The lexical corpus under consideration is taken from the Digital Corpus of Cuneiform Lexical Texts (<a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>), in particular those that date to the Old Babylonian period. This corpus includes both composite texts (primarily for the Nippur material) and individual exemplars. Exemplars that belong to a composite text are, for the most part, not lemmatized and will therefore not figure in the current comparison.</p>
+</div>
+<div class="section" id="counting-words-and-expressions">
+<h2>3.1 Counting Words and Expressions<a class="headerlink" href="#counting-words-and-expressions" title="Permalink to this headline">¶</a></h2>
+<p>In this notebook we will simply count lemmas and expressions in lexical texts and in the Old Babylonian Sumerian literary corpus and compute the amount of overlap. The vocabularies and their intersection will be visualized in Venn diagrams.</p>
+<div class="section" id="preparation">
+<h3>3.1.0 Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h3>
+<p>The code below uses the package <code class="docutils literal notranslate"><span class="pre">matplotlib_venn</span></code>, which is currently not part of the set of packages installed with Anaconda. Run the following line in a notebook in order to install the module (see <a class="reference internal" href="../1_Preliminaries/install_packages.html"><span class="doc std std-doc">install_packages.ipynb</span></a> for more information about installing modules):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">matplotlib</span><span class="o">-</span><span class="n">venn</span>
+</pre></div>
+</div>
+<p>Note that the package is <em>imported</em> as matplotlib_venn (with underscore) but must be <em>installed</em> as matplotlib-venn (with dash). Installation of a package can take quite some time, but it needs to be done only once.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="c1"># %matplotlib inline enables drawing of visualizations in the Notebook</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span> <span class="c1"># this suppresses a warning about pandas from tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span> <span class="c1"># initiate pandas support in tqdm, allowing progress_apply() and progress_map()</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">MWETokenizer</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">util_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../utils&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="read-lexical-and-literary-data">
+<h4>3.1.0.1 Read Lexical and Literary Data<a class="headerlink" href="#read-lexical-and-literary-data" title="Permalink to this headline">¶</a></h4>
+<p>The module <code class="docutils literal notranslate"><span class="pre">utils</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> directory of Compass includes the function <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> which essentially runs the same code as the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html"><span class="doc std std-doc">Extended ORACC Parser</span></a> (see there for explanation of the code). Its only parameter is a string with <a class="reference external" href="http://oracc.org">ORACC</a> project names, separated by commas. It returns a Pandas DataFrame in which each word is represented by a row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="s2">&quot;dcclt, dcclt/nineveh, dcclt/signlists, dcclt/ebla, epsd2/literary, dsst&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">projects</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lemmas">
+<h4>3.1.0.2 Lemmas<a class="headerlink" href="#lemmas" title="Permalink to this headline">¶</a></h4>
+<p>First, only those rows are selected that have <code class="docutils literal notranslate"><span class="pre">sux</span></code> (Sumerian) in the language (<code class="docutils literal notranslate"><span class="pre">lang</span></code>) field. This removes not only Akkadian glosses and translations, but also entries that represent horizontal rulings, breakage, etc.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column is created by combining Citation Form (<code class="docutils literal notranslate"><span class="pre">cf</span></code>), Guide Word (<code class="docutils literal notranslate"><span class="pre">gw</span></code>) and Part of Speech (<code class="docutils literal notranslate"><span class="pre">pos</span></code>) with a list comprehension. A single lemma now looks like <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code>. The list comprehension has one condition: if there is no Citation Form (column <code class="docutils literal notranslate"><span class="pre">cf</span></code> equals the empty string) the contents of the column <code class="docutils literal notranslate"><span class="pre">form</span></code> are taken, followed by <code class="docutils literal notranslate"><span class="pre">[NA]NA</span></code>. The absence of a Citation Form implies that the word was not lemmatized (perhaps an unknown or a broken word). The field <code class="docutils literal notranslate"><span class="pre">form</span></code> contains the raw transliteration - the result may be <code class="docutils literal notranslate"><span class="pre">x-ra-bi[NA]NA</span></code>.</p>
+<p>For the current analysis we will use <em>lemmatized</em> forms for the comparison between literary and lexical vocabulary. The advantage of using lemmatized forms is that we can easily match, for instance <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">naŋ</span></code> (to drink water) with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">mu-naŋ</span></code> (he drank water), because both are lemmatized as <code class="docutils literal notranslate"><span class="pre">a[water]N</span> <span class="pre">naŋ[drink]V/t</span></code>. The unlemmatized forms, therefore, are of little importance here. We need to keep them, for now, because we will also compare <em>sequences</em> of lemmas in lexical and literary texts. Premature removal of unlemmatized forms would result in false positives. For instance, the sequence <code class="docutils literal notranslate"><span class="pre">dumu[child]N</span> <span class="pre">x[NA]NA</span> <span class="pre">lugal[king]N</span></code> should <em>not</em> result in a match for the lemma sequence (or multiple word expression) <code class="docutils literal notranslate"><span class="pre">dumu[child]N</span> <span class="pre">lugal[king]N</span></code>.</p>
+<p>Finally, all lemmas are lower cased, to avoid confusion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;sux&quot;</span><span class="p">)]</span> 
+<span class="c1"># remove Akkadian glosses etc as well entries that note horizontal rulings, breakage, etc.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">progress_apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;cf&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> 
+                            <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">[NA]NA&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">words</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sign lists (which belong to the broader category of lexical lists) list cuneiform signs with pronunciation glosses and sometimes with Akkadian translation, sign name, and other information. For the current purposes we <em>only</em> need the Sumerian word that is represented by the entry. We remove entries that derive from the pronunciation glosses and the signs themselves. Sign names and translations into Akkadian (or other languages) are already removed, because we have selected for Sumerian only in the previous cell.</p>
+<p>The Pandas function <code class="docutils literal notranslate"><span class="pre">isin()</span></code> compares the contents of a field with a list and returns a boolean (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>). In this case the column <code class="docutils literal notranslate"><span class="pre">field</span></code> (which is primarily used for sign lists) is compared to the list <code class="docutils literal notranslate"><span class="pre">[&quot;sg&quot;,</span> <span class="pre">&quot;pr&quot;]</span></code>. If <code class="docutils literal notranslate"><span class="pre">field</span></code> equals one of these terms <code class="docutils literal notranslate"><span class="pre">isin()</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. The <code class="docutils literal notranslate"><span class="pre">~</span></code> before the entire expression changes <code class="docutils literal notranslate"><span class="pre">True</span></code> into <code class="docutils literal notranslate"><span class="pre">False</span></code> and vv. As a result the dataframe <code class="docutils literal notranslate"><span class="pre">words</span></code> now omits all rows that have either “sg” or “pr” in the column <code class="docutils literal notranslate"><span class="pre">field</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove lemmas that derive from the fields &quot;sign&quot; </span>
+<span class="c1"># or &quot;pronunciation&quot; in sign lists.</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="o">~</span><span class="n">words</span><span class="p">[</span><span class="s2">&quot;field&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;sg&quot;</span><span class="p">,</span> <span class="s2">&quot;pr&quot;</span><span class="p">])]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-into-lexical-and-literary">
+<h4>3.1.0.3 Split into Lexical and Literary<a class="headerlink" href="#split-into-lexical-and-literary" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_words</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">words</span><span class="o">.</span><span class="n">id_text</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;dcclt&#39;</span><span class="p">)]</span>
+<span class="n">lit_words</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">words</span><span class="o">.</span><span class="n">id_text</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;dcclt&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="select-old-babylonian-lexical-texts">
+<h4>3.1.0.4 Select Old Babylonian Lexical Texts<a class="headerlink" href="#select-old-babylonian-lexical-texts" title="Permalink to this headline">¶</a></h4>
+<p>The compositions in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> are from the Old Babylonian period. We will use the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> catalog to select only those lexical texts that come from that same period.</p>
+<p>The catalog is included as a separate <code class="docutils literal notranslate"><span class="pre">json</span></code> file in <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code>. Since we parsed the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> text editions earlier in this script, the file <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code> should still be in the <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> directory, we do not have to download it.</p>
+<p>For more information about handling the file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> see the notebook <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html"><span class="doc std std-doc">2_1_1_parse-json-cat.ipynb</span></a>.</p>
+<p>The resulting dataframe is reduced to just two columns: <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">period</span></code> so that we can select the ones that have “Old Babylonian” in the <code class="docutils literal notranslate"><span class="pre">period</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/dcclt.zip&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> 
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;dcclt/catalogue.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;id_composite&quot;</span><span class="p">])</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">cat_df</span><span class="p">[[</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;period&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ob</span> <span class="o">=</span> <span class="n">cat_df</span><span class="p">[</span><span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;period&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Old Babylonian&quot;</span><span class="p">]</span>
+<span class="n">ob</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The index of the resulting dataframe <code class="docutils literal notranslate"><span class="pre">ob</span></code> is identical to the column <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number of each text). We can retrieve the index with the Pandas command <code class="docutils literal notranslate"><span class="pre">index.values</span></code>, which returns a list. These are the P/Q/X numbers that we want to keep.</p>
+<p>In the dataframe <code class="docutils literal notranslate"><span class="pre">lex_words</span></code> all text IDs are preceded by <code class="docutils literal notranslate"><span class="pre">dcclt/</span></code>, <code class="docutils literal notranslate"><span class="pre">dcclt/signlists</span></code>, etc. We will compare the last seven characters of <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number), to see if that number appears in <code class="docutils literal notranslate"><span class="pre">keep</span></code>. This will select the Old Babylonian entries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keep</span> <span class="o">=</span> <span class="n">ob</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">lex_words</span> <span class="o">=</span> <span class="n">lex_words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lex_words</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">keep</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="first-approximation">
+<h3>3.1.1 First Approximation<a class="headerlink" href="#first-approximation" title="Permalink to this headline">¶</a></h3>
+<p>Now we have two dataframes: <code class="docutils literal notranslate"><span class="pre">lit_words</span></code> and <code class="docutils literal notranslate"><span class="pre">lex_words</span></code>. In both the field <code class="docutils literal notranslate"><span class="pre">lemma</span></code> contains the lemmatization data of a single word. We can extract the unique lemmas with the <code class="docutils literal notranslate"><span class="pre">set()</span></code> command (a set is an unordered collection of unique elements). We remove the non-lemmatized words (those have <code class="docutils literal notranslate"><span class="pre">na</span></code> as Guide Word and <code class="docutils literal notranslate"><span class="pre">na</span></code> as POS) with a set comprehension, and compare the two resulting sets in a <a class="reference external" href="https://en.wikipedia.org/wiki/Venn_diagram">Venn diagram</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_words_s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lit_words</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">])</span>
+<span class="n">lexical_words_s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lex_words</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">])</span>
+<span class="n">lit_words_s</span> <span class="o">=</span> <span class="p">{</span><span class="n">lemma</span> <span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">lit_words_s</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">lemma</span><span class="p">}</span>
+<span class="n">lexical_words_s</span> <span class="o">=</span> <span class="p">{</span><span class="n">lemma</span> <span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">lexical_words_s</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">lemma</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">venn2</span></code> function from the <code class="docutils literal notranslate"><span class="pre">matplotlib_venn</span></code> library creates a Venn diagram of two sets. Each set is represented by a circle, the diameter of the circle is related to the number of elements in the set. The intersection of the circles represents elements that are contained in both sets.</p>
+<p>In its most basic form the <code class="docutils literal notranslate"><span class="pre">venn2()</span></code> command simply takes a list that contains the two sets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">venn2</span><span class="p">([</span><span class="n">lit_words_s</span><span class="p">,</span> <span class="n">lexical_words_s</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This basic plot is not too informative because it does not include the size of each set, nor its name. We can customize colors, size of the plot, and the legends. This customization is put in a function so it can be reused later on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_venn</span><span class="p">(</span><span class="n">lit_vocab</span><span class="p">,</span> <span class="n">lex_vocab</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;venn_plot.png&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The function takes two sets as arguments and draws a Venn diagram </span>
+<span class="sd">    that shows the intersection between the two sets.</span>
+<span class="sd">    The legend includes the size of each set and the size </span>
+<span class="sd">    of the intersection with the other set as a percentage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">lit_abs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lit_vocab</span><span class="p">)</span>
+    <span class="n">lex_abs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lex_vocab</span><span class="p">)</span>
+    <span class="n">inter_abs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lit_vocab</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">lex_vocab</span><span class="p">))</span>
+    <span class="n">lit_per</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.0%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inter_abs</span><span class="o">/</span><span class="n">lit_abs</span><span class="p">)</span>
+    <span class="n">lex_per</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.0%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inter_abs</span><span class="o">/</span><span class="n">lex_abs</span><span class="p">)</span>
+    <span class="n">lit_legend</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;literary (</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">lit_abs</span><span class="p">)</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">lit_per</span><span class="si">}</span><span class="s2"> overlap&quot;</span>
+    <span class="n">lex_legend</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;lexical (</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">lex_abs</span><span class="p">)</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">lex_per</span><span class="si">}</span><span class="s2"> overlap&quot;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">([</span><span class="n">lit_vocab</span><span class="p">,</span> <span class="n">lex_vocab</span><span class="p">],</span> <span class="p">(</span><span class="n">lit_legend</span><span class="p">,</span> <span class="n">lex_legend</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">get_patch_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;#fdb515&quot;</span><span class="p">)</span> <span class="c1"># color for left set</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">get_patch_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;#003262&quot;</span><span class="p">)</span> <span class="c1"># color for right set</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">get_patch_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;#bc9b6a&quot;</span><span class="p">)</span> <span class="c1"># color for intersection</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;viz/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_venn</span><span class="p">(</span><span class="n">lit_words_s</span><span class="p">,</span> <span class="n">lexical_words_s</span><span class="p">,</span> <span class="s1">&#39;venn_1.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="second-approach-multiple-word-expressions">
+<h3>3.1.2 Second Approach: Multiple Word Expressions<a class="headerlink" href="#second-approach-multiple-word-expressions" title="Permalink to this headline">¶</a></h3>
+<p>Instead of looking at individual words (or lexemes), we may also look at lexical <em>entries</em> and their presence (or absence) in literary texts. The list of domestic animals, for instance, includes the entry <code class="docutils literal notranslate"><span class="pre">udu</span> <span class="pre">diŋir-e</span> <span class="pre">gu₇-a</span></code>(‘sheep eaten by a god’), lemmatized as <code class="docutils literal notranslate"><span class="pre">udu[sheep]n</span> <span class="pre">diŋir[god]n</span> <span class="pre">gu[eat]v/t</span></code>. Unsurprisingly, all these very common lemmas appear in the literary corpus, and thus in our previous analysis this item results in three hits. But does the expression as a whole ever appear in the literary corpus?</p>
+<p>In order to perform the comparison on the lexical entry level we first need to represent our data (lexical and literary) as lines, rather than as individual words. Lines in lexical texts will become our multiple word expressions. Lines in literary texts will serve as boundaries, since we do not expect our multiple word expressions to continue from one line to the next.</p>
+<p>We will use the Multiple Word Expressions (MWE) Tokenizer from the Natural Language Toolkit (<code class="docutils literal notranslate"><span class="pre">nltk</span></code>) to identify and mark the lexical expressions in the literary corpus. Essentially MWETokenizer processes a text that is already tokenized, combining tokens that belong together in a Multiple Word Expression according to a list of such expressions provided by the user. The corpus to be tokenized with MWETokenizer is expected to be a list of lists, where each lower level list represents a sentence. The data format for the Multiple Word Expressions is a list of tuples, where each tuple represents a sequence of words that belong together. In order to use MWETokenizer for our purposes we thus need to transform the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> data into a list of lists and the lexical data into a list of tuples.</p>
+<div class="section" id="line-by-line">
+<h4>3.1.2.1 Line by Line<a class="headerlink" href="#line-by-line" title="Permalink to this headline">¶</a></h4>
+<p>The dataframe <code class="docutils literal notranslate"><span class="pre">lex_words</span></code> that was produced in section 3.1.0.3 contains the lemmatizations of all Old Babylonian lexical texts in a word-by-word (or rather lemma-by-lemma) arrangement. In order to work with lexical <em>entries</em> we need to reconstruct lines. That is, we collect the words (lemmas) that belong to the same line of the same lexical text. The dataframe <code class="docutils literal notranslate"><span class="pre">lex_words</span></code> includes the fields <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">id_line</span></code> that allow us to do so.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>id_text</p></th>
+<th class="text-align:left head"><p>id_line</p></th>
+<th class="text-align:left head"><p>lemma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>udu[sheep]n</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>niga[fattened]v/i</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>udu[sheep]n</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>niga[fattened]v/i</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>sag[rare]v/i</p></td>
+</tr>
+</tbody>
+</table>
+<p>We need to change the above representation into two entries (representing two lines in a lexical text) like this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>id_text</p></th>
+<th class="text-align:left head"><p>id_line</p></th>
+<th class="text-align:left head"><p>lemma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>udu[sheep]n niga[fattened]v/i</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>udu[sheep]n niga[fattened]v/i, sag[rare]v/i</p></td>
+</tr>
+</tbody>
+</table>
+<p>In order to do this we use the Pandas functions <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (for aggregate). For a brief explanation of these functions see the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html"><span class="doc std std-doc">Basic ORACC Parser</span></a> (in particular section 3.3: Group by TextID). The <code class="docutils literal notranslate"><span class="pre">to_pickle</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package saves the resulting DataFrame for use in the next notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_lines</span> <span class="o">=</span> <span class="n">lex_words</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">lex_words</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">lex_words</span><span class="p">[</span><span class="s1">&#39;id_line&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s1">&#39;lemma&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">lex_lines</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;output/lexlines.p&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_lines</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we do the same for the <code class="docutils literal notranslate"><span class="pre">lit_words</span></code> dataframe, reconstructing lines in literary compositions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_lines</span> <span class="o">=</span> <span class="n">lit_words</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">lit_words</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">lit_words</span><span class="p">[</span><span class="s1">&#39;id_line&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s1">&#39;lemma&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_lines</span><span class="p">[</span><span class="mi">1200</span><span class="p">:</span><span class="mi">1210</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extract-lexical-entries">
+<h4>3.1.2.2 Extract lexical entries<a class="headerlink" href="#extract-lexical-entries" title="Permalink to this headline">¶</a></h4>
+<p>Each row in the resulting DataFrame <code class="docutils literal notranslate"><span class="pre">lex_lines</span></code> now consists of a text ID (<code class="docutils literal notranslate"><span class="pre">id_text</span></code>), a line number (<code class="docutils literal notranslate"><span class="pre">id_line</span></code>), and a sequenbce of lemmas representing a lexical <em>entry</em> (e.g. <code class="docutils literal notranslate"><span class="pre">udu[sheep]</span> <span class="pre">diŋir[god]</span> <span class="pre">gu[eat])</span></code>). We extract the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column, remove duplicate lexical entries with the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function and use a list comprehension to turn each lexical entry (sequence of lemmas) into a tuple. This creates a list of tuples, which is the data format we need for the MWEtokenizer.</p>
+<p>Any lexical line that contains an unlemmatized word (characterized by “na” as Guide Word) is useless for the comparison and is deleted from the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lex_lines</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">])</span>
+<span class="n">lex</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lex</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">]</span>
+<span class="n">lex</span><span class="p">[</span><span class="o">-</span><span class="mi">30</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mark-lexical-entries-in-literary-texts">
+<h4>3.1.2.3 Mark lexical entries in literary texts<a class="headerlink" href="#mark-lexical-entries-in-literary-texts" title="Permalink to this headline">¶</a></h4>
+<p>The list <code class="docutils literal notranslate"><span class="pre">lex</span></code> now contains all uniquely lemmatized entries in the Old Babylonian lexical corpus as edited in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>. This is the vocabulary that we wish to find in the literary corpus as edited in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>.</p>
+<p>In order to do so we must re-tokenize the literary corpus, using the Multiple Word Expressions Tokenizer from <code class="docutils literal notranslate"><span class="pre">nltk</span></code>. This tokenizer is initialized with a list of tuples, where each tuple represents a Multiple Word Expression. By default, the words that constitute a MWE are connected by underscores.</p>
+<p>For this purpose we will first remove from <code class="docutils literal notranslate"><span class="pre">lex</span></code> the single-word entries (tuples with length 1). The resulting list is called <code class="docutils literal notranslate"><span class="pre">lex_mwe</span></code>. Now the tokenizer is inititalized with <code class="docutils literal notranslate"><span class="pre">lex_mwe</span></code> as its sole argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_mwe</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lex</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">MWETokenizer</span><span class="p">(</span><span class="n">lex_mwe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To illustrate how the MWETokenizer works we may try it on a single line of text, line 148 of the composition <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.5.3.1&amp;display=Crit&amp;charenc=gcirc">Iddin-Dagan A</a>:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>{udu}a-lum udu zulumḫi udu niga ŋiš mu-ni-ib-tag-ge</p></li>
+</ol>
+<p>“They sacrifice <em>aslum</em> sheep, long-haired sheep, and fattened sheep for her.”</p>
+</div></blockquote>
+<p>In the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column of the <code class="docutils literal notranslate"><span class="pre">etcsl</span></code> DataFrame the line is represented as</p>
+<blockquote>
+<div><p>[aslum[sheep]n, udu[sheep]n, zulumhi[sheep]n, udu[sheep]n, niga[fattened]v/i, ŋeš[tree]n, tag[touch]v/t]</p>
+</div></blockquote>
+<p>We can run this list of lemmas through the tokenizer to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_line</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;aslum[sheep]n&quot;</span><span class="p">,</span> <span class="s2">&quot;udu[sheep]n&quot;</span><span class="p">,</span> <span class="s2">&quot;zulumhi[sheep]n&quot;</span><span class="p">,</span> <span class="s2">&quot;udu[sheep]n&quot;</span><span class="p">,</span> <span class="s2">&quot;niga[fattened]v/i&quot;</span><span class="p">,</span> <span class="s2">&quot;ŋeš[tree]n&quot;</span><span class="p">,</span> <span class="s2">&quot;tag[touch]v/t&quot;</span><span class="p">]</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">lemm_line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tokenizer thus found three Multiple Word Expressions in this single line and connected the lemmas of the MWEs by underscores. The line also illustrates a limitation of this approach. The <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> edition of <a class="reference external" href="http://oracc.org/epsd2/literary/Q000447">Iddin-Dagan A</a> represents the first word of line 148 as {udu}a-lum, taking “udu” (sheep) as a determinative (or semantic classifier). The edition of the list of animals in <a class="reference external" href="http://oracc.org/dcclt/Q000001">OB Ura 3</a> in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>, however, treats this same sign sequence as a sequence of two words: udu a-lum, lemmatized as udu[sheep]N aslum[sheep]N (line 8). Although aslum[sheep]N will result in a match, it will seem that the combination udu[sheep]N aslum[sheep]N does not appear in the literary corpus. Matches are only found if the words are represented in exactly the same way, and small inconsistencies in lemmatization may result in false negatives.</p>
+<p>We can now apply the MWE tokenizer on the entire data set, by re-tokenizing each list of lemmas in the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column of the <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> DataFrame. The function <code class="docutils literal notranslate"><span class="pre">tokenize_sents()</span></code> (for “tokenize sentences”) can be used to tokenize a list of lists where each second-order list represents a sentence (or, in our case, a line) in one go. The result of this function is again a list of lists; it contains the same tokens, but now Multiple Word Expressions are connected by underscores.</p>
+<p>We extract the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> from the <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> DataFrame and split each entry into a list - producing a list of list that can be fed as input to the MWETokenizer. The output is again a list of list - each line is represented by a list of lemmas. These lists are joined, so that each line is now again represented by a sequence of lemmas in a single string. This data is added as a new column (<code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> to the DataFrame <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> column of the <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> dataframe will now represent the <a class="reference external" href="http:///oracc.org/epsd2/literary">epsd2/literary</a> data in a line-by-line presentation of lemmatizations, with underscores connecting lemmas if a corresponding sequence of lemmas exists as an Old Babylonian lexical entry. This version of the DataFrame <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> is pickled for use in the next notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemma_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemma</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">lit_lines</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]]</span>
+<span class="n">lemma_mwe</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize_sents</span><span class="p">(</span><span class="n">lemma_list</span><span class="p">)</span>
+<span class="n">lit_lines</span><span class="p">[</span><span class="s2">&quot;lemma_mwe&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lemma_mwe</span><span class="p">]</span>
+<span class="n">lit_lines</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;output/litlines.p&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now join all the tuples in the list <code class="docutils literal notranslate"><span class="pre">lex</span></code> with underscores, so that the multiple-word entries in the lexical corpus are represented in the same way as they are in the literary corpus. Thus the entry <strong>udu diŋir-e gu₇-a</strong> (sheep eaten by a god) has gone through the following transformations:</p>
+<ul class="simple">
+<li><p>lemmatization: udu[sheep]n diŋir[god]n gu[eat]V/t</p></li>
+<li><p>tuple (lex):   (udu[sheep]n, diŋir[god]n, gu[eat]V/t)</p></li>
+<li><p>MWE (lex_vocab): udu[sheep]n_diŋir[god]n_gu[eat]V/t</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_vocab</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">lex</span><span class="p">]</span>
+<span class="n">lex_vocab</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now extract the column <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> from the <code class="docutils literal notranslate"><span class="pre">lit_lines</span></code> DataFrame in order to get a full list of all lemmas and Multiple Word Expressions in the entire <a class="reference external" href="http:///oracc.org/epsd2/literary">epsd2/literary</a> data set. In order to do so we will first join all entries in <code class="docutils literal notranslate"><span class="pre">lemma_mwe</span></code> (joining all literary lines into one big sequence of entries) and then split the result by blank space. That will create a list of all vocabulary items - with MWEs joined by underscores.</p>
+<p>We will turn this list into a set (to remove duplicate lemmas and duplicate Multiple Word Expressions) and remove all the non-lemmatized words from the <a class="reference external" href="http:///oracc.org/epsd2/literary">epsd2/literary</a> data set with a single set comprehension. That is the set that we can compare with the set of lemmas and MWEs from the lexical corpus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_words2</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lit_lines</span><span class="p">[</span><span class="s1">&#39;lemma_mwe&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">lit_words_s2</span> <span class="o">=</span> <span class="p">{</span><span class="n">lemma</span> <span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">lit_words2</span> <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;[na]na&#39;</span> <span class="ow">in</span> <span class="n">lemma</span><span class="p">}</span>
+<span class="n">lexical_words_s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lex_vocab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now reuse the function <code class="docutils literal notranslate"><span class="pre">plot_venn()</span></code> that was created above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_venn</span><span class="p">(</span><span class="n">lit_words_s2</span><span class="p">,</span> <span class="n">lexical_words_s2</span><span class="p">,</span> <span class="s1">&#39;venn_2.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-them-up">
+<h3>3.1.3 Add them Up<a class="headerlink" href="#add-them-up" title="Permalink to this headline">¶</a></h3>
+<p>By creating the union of the two sets (the set with individual words and the set with the lexical entries) we get the most complete comparison of the two corpora. Here <code class="docutils literal notranslate"><span class="pre">gud[oxen]N_an[heaven]N</span></code>, <code class="docutils literal notranslate"><span class="pre">gud[oxen]N</span></code> and <code class="docutils literal notranslate"><span class="pre">an[heaven]N</span></code> are all counted as separate vocabulary items, whether or not <code class="docutils literal notranslate"><span class="pre">gud</span></code> and <code class="docutils literal notranslate"><span class="pre">an</span></code> actually appear as separate entries in the lexical corpus.</p>
+<p>The full lexical vocabulary is written to a file for use in the next notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_words_s3</span> <span class="o">=</span> <span class="n">lit_words_s</span> <span class="o">|</span> <span class="n">lit_words_s2</span>
+<span class="n">lexical_words_s3</span> <span class="o">=</span> <span class="n">lexical_words_s</span> <span class="o">|</span> <span class="n">lexical_words_s2</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/lex_vocab.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">w</span><span class="p">:</span>
+    <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lexical_words_s3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_venn</span><span class="p">(</span><span class="n">lit_words_s3</span><span class="p">,</span> <span class="n">lexical_words_s3</span><span class="p">,</span> <span class="s1">&#39;venn_3.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h4>3.1.3.1 Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h4>
+<p>Whereas the change from individual <em>words</em> to <em>lexical expressions</em> made a big difference in the plot, adding the two up changes the picture only slightly. Many words (lemmas) are part of lexical entries, but are also lexical entries in and of themselves. These individual words are already included in the set of lexical entries and are taken into account in the previous plot. Nevertheless, there are several hundreds of words added on the lexical side - these are lexemes that <em>only</em> appear in multiple-word lexical entries and are not attested in the lexical corpus as separate words.</p>
+<p>On the literary side the number of additional entries is much smaller (counted in the tens, rather than in the hundreds). These are words that appear <em>only</em> in fixed expressions (connected by underscore), but not as separate words. We can see which words those are by by subtracting the set <code class="docutils literal notranslate"><span class="pre">lit_words_s2</span></code> from <code class="docutils literal notranslate"><span class="pre">lit_words_s3</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_words_s3</span> <span class="o">-</span> <span class="n">lit_words_s2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The word <code class="docutils literal notranslate"><span class="pre">ašrinna[object]n</span></code>, for instance, appears only a few times in the current literary corpus, in one of the Eduba dialogues and in proverbs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lit_lines</span><span class="p">[</span><span class="n">lit_lines</span><span class="o">.</span><span class="n">lemma_mwe</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ašrinna&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In each case the word is preceded by <code class="docutils literal notranslate"><span class="pre">kid[mat]n</span></code> and this word sequence is also found in <a class="reference external" href="http://oracc.org/dcclt/Q000040">Old Babylonian Nippur Ura 2</a>, line 20. As a result, the lemma sequence <code class="docutils literal notranslate"><span class="pre">kid[mat]n_ašrinna[object]n</span></code> was treated as a unit, a Multiple Word Expression, and the separate word <code class="docutils literal notranslate"><span class="pre">ašrinna[object]n</span></code> was not found in <code class="docutils literal notranslate"><span class="pre">lit_words_s2</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_Vocabularies"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3_Lexical_and_Literary_Vocabularies.html" title="previous page">3. Lexical and Literary Vocabularies</a>
+    <a class='right-next' id="next-link" href="3_2_Lit_Lex.html" title="next page">3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

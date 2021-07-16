@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Lexical and Literary Vocabularies &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3 Overlap in Lexical and Literary Vocabulary" href="3_1_Lit_Lex_Vocab.html" />
+    <link rel="prev" title="2.4.3 Search BDTNS" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/3_Vocabularies/3_Lexical_and_Literary_Vocabularies.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Lexical and Literary Vocabularies
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#venn-diagrams">
+     3.1 Venn Diagrams
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-first-attempt">
+       3.1.1 A First Attempt
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lexical-entries-in-literary-context">
+       3.1.2 Lexical Entries in Literary Context
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-them-up">
+       3.1.3. Add them Up
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literary-compositions-and-their-relation-to-lexical-vocabulary">
+     3.2 Literary Compositions and their Relation to Lexical Vocabulary
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-document-term-matrix">
+       3.2.1 The Document Term Matrix
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploring-results">
+       3.2.2 Exploring Results
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dumuzid-s-dream">
+       3.2.3 Dumuzid’s Dream
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distinctions-between-lexical-compositions">
+     3.3 Distinctions between Lexical Compositions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-final-thoughts">
+     3.4 Some Final Thoughts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footnotes">
+   Footnotes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>[TOC]</p>
+<div class="section" id="lexical-and-literary-vocabularies">
+<h1>3. Lexical and Literary Vocabularies<a class="headerlink" href="#lexical-and-literary-vocabularies" title="Permalink to this headline">¶</a></h1>
+<p>In the Old Babylonian period (around 1,800 BCE) scribal students learned how to read and write by copying long lists of cuneiform signs and Sumerian words (lexical lists). In a second stage they copied a broad variety of Sumerian literary texts, including hymns to gods and kings, narrative texts about gods and heroes of the past, and whimsical texts in which non-human entities (such as hoe and plow) dispute their utility for mankind.</p>
+<p>By this time Sumerian was a dead language and the whole curriculum has been interpreted as an “invented tradition” - a vision of a golden age, projected in a distant past, when all of Babylonia was imagined to be united under a single king, speaking a single language - Sumerian<a class="footnote-reference brackets" href="#id7" id="id1">1</a>.</p>
+<p>The curricular sequence with lexical exercises followed by literary exercises may suggest that the literary material embodies the real goal of this education and that the lexical texts, enumerating thousands of Sumerian words and expressions, function in support of the students’ ability to read, copy, and understand the literary compositions. Yet, it has often been noticed that many words and expressions in the lexical repertoire never appear in literary texts - and the other way around. In the <a class="reference external" href="http://oracc.org/dcclt/Q000001">list of domestic animals</a>, for instance, we find the entry <strong>udu gug-ga-na₂</strong> (sheep for a <em>guqqanû</em> offering; line 98). The expression is known from administrative texts in the Ur III period, several centuries earlier (see, for instance, <a class="reference external" href="http://oracc.org/epsd2/admin/u3adm/P134236">TLB 03, 095</a> o 9), but in the literary corpus the word <strong>gug-ga-na₂</strong> is absent. Many other such examples could be quoted here.</p>
+<p>One may draw the conclusion that the “invented tradition” that was the subject of this curriculum not only involved the literary corpus, but also the Sumerian language itself. The lexical corpus functioned in support of the literary corpus but also had a function of its own in preserving as much as possible of Sumerian writing and vocabulary.</p>
+<p>Research on bird vocabulary has shown that of the 116 entries in the Old Babylonian <a class="reference external" href="http://oracc.org/dcclt/Q000041.405">list of birds</a>, only 39 can be found in the literary corpus.<a class="footnote-reference brackets" href="#id8" id="id2">2</a> This research was mainly done by hand, based on the author’s reconstruction of the Old Babylonian bird list and a survey of Sumerian literature - primarily the compositions edited in the Electronic Text Corpus of Sumerian Literature (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>). The challenge of this chapter is: can we scale this analysis up, to include the entire Old Babylonian lexical and literary corpus by using computational methods? And is it possible to use such methods to dig deeper into the relationship between these two corpora and their vocabularies?</p>
+<div class="section" id="venn-diagrams">
+<h2>3.1 Venn Diagrams<a class="headerlink" href="#venn-diagrams" title="Permalink to this headline">¶</a></h2>
+<p>In order to compare lexical and literary vocabulary we will draw <a class="reference external" href="https://en.wikipedia.org/wiki/Venn_diagram">Venn diagrams</a>. One circle in the diagram represents all the lemmas found in the literary corpus, the other circle represents all the lemmas of the lexical corpus. The overlap of the two circles indicates the intersection of both.</p>
+<div class="section" id="a-first-attempt">
+<h3>3.1.1 A First Attempt<a class="headerlink" href="#a-first-attempt" title="Permalink to this headline">¶</a></h3>
+<p>As a first attempt, we may simply take all Old Babylonian lexical lists from the Digital Corpus of Cuneiform Lexical Texts (<a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>), extract the full vocabulary and compare that vocabulary to the inventory of words (lemmas) in Sumerian literary texts. The corpus of Sumerian literary texts that we will use is formed by the material currently in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>. This includes the compositions edited in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> (excluding the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.7&amp;display=Crit&amp;charenc=gcirc">Gudea Cylinders</a>, which were moved to <a class="reference external" href="http://oracc.org/epsd2/royal">epsd2/royal</a>), the (Sumerian) literary texts published in Ur Excavations Texts Vol. 6/1-3, edited by Jeremiah Peterson, and a somewhat random collection of recently published texts, including most of CUSAS 38.<a class="footnote-reference brackets" href="#id9" id="id3">3</a> The <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus, however, is not frozen (nor is <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>) so that repeating this process in the future will necessarily lead to somewhat different results.</p>
+<p>We are not concerned with word frequencies - the issue simply is: is this particular word (lemma) attested in literary texts (in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>), in (Old Babylonian) lexical texts, or in both.</p>
+<p>In order to do so we read the  <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> and the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> datasets into Pandas DataFrames, using the code developed in section 2.1. The first step is to create a field <code class="docutils literal notranslate"><span class="pre">lemma</span></code> by adding Citation Form,  Guide Word, and Part of Speech in the format <strong>du[build]V/t</strong>, or <strong>lugal[king]N</strong>. Next, we restrict the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> dataset to only Old Babylonian documents by utilizing the catalog. From both datasets we eliminate words that are not in Sumerian (e.g. Akkadian glosses). Finally we extract the new <code class="docutils literal notranslate"><span class="pre">lemma</span></code> field from both datasets and reduce them to their unique elements with the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function: a <code class="docutils literal notranslate"><span class="pre">set</span></code> in Python is an unordered list of unique elements.</p>
+<p>From the two sets, which we call <code class="docutils literal notranslate"><span class="pre">lit_words_s</span></code> and <code class="docutils literal notranslate"><span class="pre">lexical_words_s</span></code> we eliminate all words that have not been lemmatized (unknown words or broken words). We will see in the next section that we will need unlemmatized words in a slightly more sophisticated analysis - but not here. Collections of unique elements can be visualized in a Venn diagram, that shows the two sets as two partly overlapping circles. The overlap represents the intersection of the two sets. This is done with the function <code class="docutils literal notranslate"><span class="pre">venn2</span></code> from the <code class="docutils literal notranslate"><span class="pre">matplotlib_venn</span></code> package, which allows us to select colors and define captions. The result looks like this:</p>
+<img src="viz/venn_1.png" alt="venn diagram 1" style="zoom:150%;" />
+<p>The Old Babylonian lexical corpus currently has more than 4,000 distinct lemmas, of which almost 60% are shared with the literary corpus. The vocabulary of the literary corpus is only slightly larger. The number of items (lemmas) in both sets will change, because of ongoing improvements and additions in both the literary and the lexical corpus. The Venn diagram above is redrawn whenever Notebook 3_1 is run, and this will update the numbers.</p>
+<p>For a number of reasons, this is a very rough estimate and perhaps not exactly what we were looking for. A lexical entry like <strong>udu diŋir-e gu₇-a</strong>  (sheep eaten by a god) consists of three very common lemmas (<strong>udu[sheep]N</strong>, <strong>diŋir[deity]N</strong>, <strong>gu[eat]V/t</strong>). This lexical entry, therefore, will result in three matches, three correspondences between the lexical and literary vocabulary. But what about the lexical <em>entry</em>? Does the nominal phrase <strong>udu diŋir-e gu₇-a</strong> or, more precisely, the sequence of the lemmas <strong>udu[sheep]N, diŋir[deity]N, gu[eat]V/t</strong>) ever appear in a literary text?</p>
+</div>
+<div class="section" id="lexical-entries-in-literary-context">
+<h3>3.1.2 Lexical Entries in Literary Context<a class="headerlink" href="#lexical-entries-in-literary-context" title="Permalink to this headline">¶</a></h3>
+<p>In order to perform the comparison of lexical and literary vocabularies on the lexical <em>entry</em> level we first need to represent the data (lexical and literary) as lines, rather than as individual words. The line in a lexical text will become our unit of comparison by defining each line as a Multiple Word Expression (or MWE). Lines in literary texts will serve as boundaries. Lines in Sumerian literary texts tend to coincide with meaningful semantic (and poetic) units and therefore we will not allow an MWE to continue from one line to the next.</p>
+<p>The first step, therefore, is to group the data by line. This is done with the Pandas functions <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>and <code class="docutils literal notranslate"><span class="pre">aggregate()</span></code>. Once the lexical data are grouped by line the lexical DataFrame will look like this (from the Old Babylonian <a class="reference external" href="http://oracc.org/dcclt/Q000001">list of animals</a>):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>id_text</p></th>
+<th class="text-align:left head"><p>id_line</p></th>
+<th class="text-align:left head"><p>lemma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>udu[sheep]N niga[fattened]V/i</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>dcclt/Q000001</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>udu[sheep]N niga[fattened]V/i sag[rare]V/i</p></td>
+</tr>
+</tbody>
+</table>
+<p>We can use this data to look through the literary compositions to see whether there are places where the lemma <strong>udu[sheep]N</strong> is followed by the lemma <strong>niga[fattened]V/i</strong>, or whether we can find the sequence <strong>udu[sheep]N niga[fattened]V/i sag[rare]V/i</strong>, corresponding to the second line in the list of animals. When such a match is found in a literary composition, the lemmas are connected to each other with underscores, so that the sequence can be treated as a unit. Finding and marking such sequences is done with the MWETokenizer from the Natural Language Toolkit (<a class="reference external" href="https://www.nltk.org/">NLTK</a>) package. The MWETokenizer is initialized with a list of Multiple Word Expressions, which we can easily derive from the lexical data. It then applies this list to the corpus to be tokenized (in this case the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus) to connect elements of MWEs by underscores.</p>
+<p>Once this is done the lexical entries are treated the same: each space is replaced by an underscore. Now we have the same two sets of data in a slightly different representation and we can do essentially the same analysis as we did above by creating sets (called <code class="docutils literal notranslate"><span class="pre">lit_words_s2</span></code> and <code class="docutils literal notranslate"><span class="pre">lexical_words_s2</span></code>) and then visualize those sets in a Venn diagram:</p>
+<img src="viz/venn_2.png" alt="venn diagram 2" style="zoom:150%;" />
+<p>We see that this approach essentially doubles the number of unique elements on the lexical side; on the literary side the increase is much less drastic. It turns out that many of the lexical entries (more than 65%) never appear as such in the literary corpus.</p>
+</div>
+<div class="section" id="add-them-up">
+<h3>3.1.3. Add them Up<a class="headerlink" href="#add-them-up" title="Permalink to this headline">¶</a></h3>
+<p>Finally we can add the two approaches discussed above into a single Venn diagram. There are words that appear as modifiers in lexical <em>entries</em> but never appear on their own in a lexical composition. Similarly, there are words in the literary corpus that occur in phrases known from the lexical corpus, but never outside of such phrases (we will see examples below). Such words, one may argue, potentially add to the intersection between the lexical and literary corpus, but are not represented in the second Venn diagram.</p>
+<p>In order to do so we create the union of the first lexical set (individual words) and the second one (lexical expressions), and the same for the literary corpus and then draw a new Venn diagram. The union of two sets is a new set, with all the unique elements from the two original sets. The union sets are called <code class="docutils literal notranslate"><span class="pre">lit_words_s3</span></code> and <code class="docutils literal notranslate"><span class="pre">lexical_words_s3</span></code>.</p>
+<img src="viz/venn_3.png" alt="venn diagram 3" style="zoom:150%;" />
+<p>The new diagram shows some increase on both sides, and a little increase in overlap as well - but the change is not very dramatic.</p>
+<p>So which words are found on the literary side that only appear in MWEs known from lexical sources? We can easily find those by subtracting <code class="docutils literal notranslate"><span class="pre">lit_words_s2</span></code> from <code class="docutils literal notranslate"><span class="pre">lit_words_s3</span></code>. It turns out there are about thirty such words, most of them appearing just once or a few times.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;ašrinna[object]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ašša[perfect]aj&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;babbardili[~stone]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;bur[grass]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;burgia[offering]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;du[hold]v/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ebir[vessel-stand]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;giʾiziʾešta[~bread]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;gub[bathe]v/i&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hub[cvve]v/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;huldim[rotten]aj&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;kašu[~plow]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;kiŋ[pointed]v/i&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ligidba[plant]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;manzila[foot]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;maʾu[barge]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mud[rabid]aj&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nir[trust]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nisaba[1]dn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;niŋkalaga[strong]aj&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;sa.ku[arm]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;sar[shave]v/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;saŋa[priest]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;tuhul[hip]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;tutu[cvve]v/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ugudili[scalp]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;uzudirig[mushroom]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zaga[part-of-the-face]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zana[doll]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zidsig[flour]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;še[cone]n&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The word <code class="docutils literal notranslate"><span class="pre">ašrinna[object]n</span></code>, for instance, appears only a few times in the current literary corpus: in one of the Eduba dialogues and in proverbs. In each case the word is preceded by <code class="docutils literal notranslate"><span class="pre">kid[mat]n</span></code> and this word sequence is also found in <a class="reference external" href="http://oracc.org/dcclt/Q000040">Old Babylonian Nippur Ura 2</a>, line 20. As a result, the lemma sequence <code class="docutils literal notranslate"><span class="pre">kid[mat]n_ašrinna[object]n</span></code> was treated as a unit, a Multiple Word Expression, and the word <code class="docutils literal notranslate"><span class="pre">ašrinna[object]n</span></code> was found in <code class="docutils literal notranslate"><span class="pre">lit_words_s1</span></code> , but not in <code class="docutils literal notranslate"><span class="pre">lit_words_s2</span></code>.</p>
+<p>Our investigation so far has shown that a very considerable portion of lexical words and lexical expressions are not found in the literary corpus as represented by <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>. Chances are that a good number of them will be found in literary texts that are currently not in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> or that are not even known today. However, the lexical corpus is likely to increase, too, and chances that the intersection between those two vocabularies will increase significantly seem slim. Quite puzzling is the large amount of vocabulary on the literary side that is not represented in the lexical corpus. We will investigate the origins of that in the next section.</p>
+</div>
+</div>
+<div class="section" id="literary-compositions-and-their-relation-to-lexical-vocabulary">
+<h2>3.2 Literary Compositions and their Relation to Lexical Vocabulary<a class="headerlink" href="#literary-compositions-and-their-relation-to-lexical-vocabulary" title="Permalink to this headline">¶</a></h2>
+<p>In order to research the relationship between lexical and literary material in more detail, we will look at individual literary texts. Which compositions have more and which have less overlap with the lexical vocabulary? Is it possible to make meaningful distinctions between literary texts that primarily use vocabulary that is found in the lexical corpus, vs. compositions that do not do so?</p>
+<div class="section" id="the-document-term-matrix">
+<h3>3.2.1 The Document Term Matrix<a class="headerlink" href="#the-document-term-matrix" title="Permalink to this headline">¶</a></h3>
+<p>In order to address this question we will use a <a class="reference external" href="https://en.wikipedia.org/wiki/Document-term_matrix">Document Term Matrix</a> (DTM): a huge table, that describes the frequency of terms that occur in a collection of documents. Each row in our DTM represents a literary composition (Document) and each column represents a lemma (Term).</p>
+<p>In an artificial example we can transform the following sentences (documents) into a DTM:</p>
+<blockquote>
+<div><p>lugal-e e₂ mu-un-du₃ (the king built the temple)</p>
+<p>lugal-e e₂ mu-un-du₃ e₂-gal mu-un-du₃ (the king built the temple and he built the palace)</p>
+</div></blockquote>
+<p>The DTM, in our case, uses the lemmatized representation of those sentences:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>sentence</p></th>
+<th class="head"><p>du[build]v/t</p></th>
+<th class="head"><p>e[house]n</p></th>
+<th class="head"><p>egal[palace]n</p></th>
+<th class="head"><p>lugal[king]n</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>one</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>two</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>We can now say that sentence one is represented by the vector <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1]</span></code> and sentence two by the vector <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>. The sum of all the elements in the vector gives us the length of the document in lemmas (3 and 5 respectively) and the number of non-zero elements in the vector gives us the number of unique lemmas in the document (3 and 4, respectively). We may now apply vector operations and vector mathematics on these two sentences - for instance we can compute their cosine similarity (0.873). In real-world examples many slots in the matrix are 0 (there are many words in the corpus that do not appear in this particular document) and many slots are higher than 1 (a word that appears in a document is likely to appear more than once). Note that each <em>word</em> (or lemma) is now also characterized by a vector, represented by the numbers in a column.</p>
+<p>In our case, we will use the DTM to count the number of matches between each literary composition and the lexical vocabulary. In building the DTM of the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus we will use the lexical vocabulary: the columns of the DTM represent words and MWEs present in the lexical corpus, the rows represent the documents in the literary corpus. Because each column in the DTM represents a word or MWE in the lexical corpus, there are many columns that have only zeros (lexical entries that do not occur in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a>). In terms of the Venn diagrams discussed in 3.1, the zero-value columns in our DTM represent the blue area to the right, the non-zero ones represent the middle area (intersection of the lexical and literary vocabulary); the yellow area (words in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> that do not appear in the Old Babylonian lexical corpus) is not represented in the DTM.
+<img src="viz/venn_3.png" alt="venn diagram 3" style="zoom:150%;" /></p>
+<p>The main difference between the Venn diagram and the DTM is that the DTM shows in which compositions the shared words are attested. By counting the number of non-zero cells in a row we get an integer that represents the number of unique lexically attested lemmas in a particular composition, and this gives us a (numerical) measure for comparing between compositions. Not surprisingly, a longer composition, such as <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.6.2&amp;display=Crit&amp;charenc=gcirc">Ninurta’s Exploits</a> (726 lines) has more such matches than shorter ones. In fact, the very short ones (some consist of only a few words) are not very useful for the comparison - we will restrict the analysis to texts that are above a certain threshold in length. We will therefore include in the table below for each literary document its <em>text length</em> (number of lemmas and MWES) and <em>lexical variation</em> (number of unique lemmas and MWEs). The column <code class="docutils literal notranslate"><span class="pre">norm</span></code> represents the number of matches divided by the number of unique lemmas. <code class="docutils literal notranslate"><span class="pre">Norm</span></code> may therefore be interpreted as the percentage of lemmas and MWEs present in a literary document that are attested lexically in the Old Babylonian period.</p>
+</div>
+<div class="section" id="exploring-results">
+<h3>3.2.2 Exploring Results<a class="headerlink" href="#exploring-results" title="Permalink to this headline">¶</a></h3>
+<p>The table below gives the first ten compositions, sorted by <code class="docutils literal notranslate"><span class="pre">norm</span></code> (descending), at a minimum text length of 200 lemmas and MWEs . Of the 96 unique lemmas that are attested in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.07.5&amp;display=Crit&amp;charenc=gcirc">Inana E</a> no less than 95 are also attested in the Old Babylonian lexical corpus - a <code class="docutils literal notranslate"><span class="pre">norm</span></code> score of 0.99.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id_text</p></th>
+<th class="head"><p>designation</p></th>
+<th class="head"><p>length</p></th>
+<th class="head"><p>lex_var</p></th>
+<th class="head"><p>n_matches</p></th>
+<th class="head"><p>norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000626">Q000626</a></p></td>
+<td><p>A tigi to Inana (Inana E)</p></td>
+<td><p>296</p></td>
+<td><p>96</p></td>
+<td><p>95</p></td>
+<td><p>0.99</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000695">Q000695</a></p></td>
+<td><p>A tigi to Nergal (Nergal C)</p></td>
+<td><p>209</p></td>
+<td><p>96</p></td>
+<td><p>94</p></td>
+<td><p>0.979</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/P346203">P346203</a></p></td>
+<td><p>ETCSL 2.05.04.23 Ishme-Dagan W (witness)</p></td>
+<td><p>214</p></td>
+<td><p>124</p></td>
+<td><p>120</p></td>
+<td><p>0.968</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000818">Q000818</a></p></td>
+<td><p>Proverbs: collection 26</p></td>
+<td><p>238</p></td>
+<td><p>158</p></td>
+<td><p>153</p></td>
+<td><p>0.968</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000756">Q000756</a></p></td>
+<td><p>The advice of a supervisor to a younger scribe (Edubba C)</p></td>
+<td><p>401</p></td>
+<td><p>211</p></td>
+<td><p>204</p></td>
+<td><p>0.967</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000668">Q000668</a></p></td>
+<td><p>A šir-gida to Martu (Martu A)</p></td>
+<td><p>279</p></td>
+<td><p>182</p></td>
+<td><p>176</p></td>
+<td><p>0.967</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000785">Q000785</a></p></td>
+<td><p>The three ox-drivers from Adab</p></td>
+<td><p>268</p></td>
+<td><p>91</p></td>
+<td><p>88</p></td>
+<td><p>0.967</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000384">Q000384</a></p></td>
+<td><p>An adab to Bau for Luma (Luma A)</p></td>
+<td><p>232</p></td>
+<td><p>78</p></td>
+<td><p>75</p></td>
+<td><p>0.962</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000494">Q000494</a></p></td>
+<td><p>An adab to An for Ur-Ninurta (Ur-Ninurta E)</p></td>
+<td><p>211</p></td>
+<td><p>133</p></td>
+<td><p>128</p></td>
+<td><p>0.962</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000788">Q000788</a></p></td>
+<td><p>A man and his god</p></td>
+<td><p>560</p></td>
+<td><p>235</p></td>
+<td><p>226</p></td>
+<td><p>0.962</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>Note that changes in the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> and <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> data may change the numbers and the arrangement of the table.</p>
+</div></blockquote>
+<p>In the notebook one may manipulate the table to sort by different columns (ascending or descending), adjust minimum text length or display a larger or smaller number of rows. Looking at the descriptive statistics of the <code class="docutils literal notranslate"><span class="pre">norm</span></code> variable may give us some idea of how the values are distributed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">count</span>    <span class="mf">203.000000</span>
+<span class="n">mean</span>       <span class="mf">0.911294</span>
+<span class="n">std</span>        <span class="mf">0.052470</span>
+<span class="nb">min</span>        <span class="mf">0.359833</span>
+<span class="mi">25</span><span class="o">%</span>        <span class="mf">0.898747</span>
+<span class="mi">50</span><span class="o">%</span>        <span class="mf">0.918182</span>
+<span class="mi">75</span><span class="o">%</span>        <span class="mf">0.934008</span>
+<span class="nb">max</span>        <span class="mf">0.989583</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">norm</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</pre></div>
+</div>
+<p>The 25%, 50%, and 75% point are all very close to each other - the great majority of values are on the (very) high side of the scale, with only a few outliers at the bottom. A histogram of the values visualizes that:</p>
+<img src="viz/hist_norm.png" alt="Histogram of norm" style="zoom:150%;" />
+<p>Looking at the bottom of the table we find that the compositions ranking lowest on <code class="docutils literal notranslate"><span class="pre">norm</span></code> are the following:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id_text</p></th>
+<th class="head"><p>designation</p></th>
+<th class="head"><p>length</p></th>
+<th class="head"><p>lex_var</p></th>
+<th class="head"><p>n_matches</p></th>
+<th class="head"><p>norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000371">Q000371</a></p></td>
+<td><p>The Sumerian king list</p></td>
+<td><p>1049</p></td>
+<td><p>239</p></td>
+<td><p>86</p></td>
+<td><p>0.36</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000372">Q000372</a></p></td>
+<td><p>The rulers of Lagaš</p></td>
+<td><p>405</p></td>
+<td><p>179</p></td>
+<td><p>131</p></td>
+<td><p>0.732</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000752">Q000752</a></p></td>
+<td><p>A hymn to the E-kur</p></td>
+<td><p>244</p></td>
+<td><p>61</p></td>
+<td><p>46</p></td>
+<td><p>0.754</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000559">Q000559</a></p></td>
+<td><p>Letter from Puzur-Šulgi to Ibbi-Suen about Išbi-Erra’s claim on Isin</p></td>
+<td><p>205</p></td>
+<td><p>107</p></td>
+<td><p>82</p></td>
+<td><p>0.766</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000336">Q000336</a></p></td>
+<td><p>Enlil and Ninlil</p></td>
+<td><p>674</p></td>
+<td><p>169</p></td>
+<td><p>140</p></td>
+<td><p>0.828</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000632">Q000632</a></p></td>
+<td><p>A balbale to Inana (Dumuzid-Inana A)</p></td>
+<td><p>212</p></td>
+<td><p>59</p></td>
+<td><p>49</p></td>
+<td><p>0.831</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000750">Q000750</a></p></td>
+<td><p>The temple hymns</p></td>
+<td><p>2490</p></td>
+<td><p>696</p></td>
+<td><p>582</p></td>
+<td><p>0.836</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000651">Q000651</a></p></td>
+<td><p>A kungar to Inana (Dumuzid-Inana T)</p></td>
+<td><p>236</p></td>
+<td><p>113</p></td>
+<td><p>97</p></td>
+<td><p>0.858</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000746">Q000746</a></p></td>
+<td><p>A šir-namšub to Utu (Utu E)</p></td>
+<td><p>331</p></td>
+<td><p>127</p></td>
+<td><p>109</p></td>
+<td><p>0.858</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/epsd2/literary/Q000380">Q000380</a></p></td>
+<td><p>The lament for Sumer and Ur</p></td>
+<td><p>2646</p></td>
+<td><p>739</p></td>
+<td><p>634</p></td>
+<td><p>0.858</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&amp;display=Crit&amp;charenc=gcirc">The Sumerian King List</a> is the outlier with only 86 matches on 239 unique lemmas and a <code class="docutils literal notranslate"><span class="pre">norm</span></code> score of 0.36. <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&amp;display=Crit&amp;charenc=gcirc">The Sumerian King List</a> is a rather repetitive composition that enumerates the names of kings and the cities from which they reigned, recording regnal years with, occasionally, a brief (one-line) anecdote about one of those kings. Proper nouns, including royal names and city names, are currently underrepresented in the (lemmatized) lexical corpus. The proper nouns in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&amp;display=Crit&amp;charenc=gcirc">The Sumerian King List</a> explain the large number of lemmas not attested in the Old Babylonian lexical corpus in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>. The next composition (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&amp;display=Crit&amp;charenc=gcirc">The Rulers of Lagaš</a>) has a <code class="docutils literal notranslate"><span class="pre">norm</span></code> score that is significantly higher, but still low comparatively speaking. <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.2&amp;display=Crit&amp;charenc=gcirc">The Rulers of Lagaš</a> is molded on the pattern of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.1&amp;display=Crit&amp;charenc=gcirc">The Sumerian King List</a> and equally features a relatively large number of proper nouns.</p>
+<p>After these two lowest scoring texts, the rest of the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> corpus scores at least 0.75, with a median value of 0.92 and a mean of 0.91. In the great majority of cases more than ninety percent of the words and expressions in a literary composition are represented in the lexical corpus. Some of the non-overlap between the two corpora, moreover, may be explained by Proper Nouns, or the use of Emesal, a variety of Sumerian used in liturgical laments and by female speakers (Emesal is very rare in the Old Babylonian lexical corpus).</p>
+<p>This yields a picture that is rather different from the Venn diagrams in section 3.1, where we looked at the intersection of the full vocabulary of <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> against the full vocabulary of (lemmatized) Old Babylonian lexical texts in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>. The Venn diagrams showed that only between 55 and 65% (depending on how we count) of the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> vocabulary is found in the Old Babylonian lexical corpus in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>, but looking in more detail we realize that the relationship between literary compositions and the contemporary lexical corpus is much tighter and that each composition by itself, on average, shares more than 90% of its vocabulary with the lexical corpus.</p>
+</div>
+<div class="section" id="dumuzid-s-dream">
+<h3>3.2.3 Dumuzid’s Dream<a class="headerlink" href="#dumuzid-s-dream" title="Permalink to this headline">¶</a></h3>
+<p>How is it possible to arrive at such different percentages, using the same data set? It means that for any particular composition a good deal of the 90% of vocabulary items that is shared with the lexical corpus is also shared with at least some other compositions, whereas the 10% of items not shared may well be unique to that composition.</p>
+<p>in order to investigate this further we may look at one particular composition, known as <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>. This composition is well-preserved with about 60 exemplars that derive from Nippur, Ur, and other places.<a class="footnote-reference brackets" href="#id10" id="id4">4</a> This composition is fairly well preserved and has a <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of 0.94, slightly above the median value of 0.92.</p>
+<p>This is the set of lemmas (n = 16) currently not found in the lexical corpus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;amaŋeštinanak[1]dn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;arali[1]gn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;dubban[fence]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;durtur[1]dn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;kubireš[1]gn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;kubirešdildareš[1]gn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mašuzudak[goat]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;men[go]v/i&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ne[cvne]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;sug[full]v/i&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zipatum[cord]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ŋeštindudu[1]dn&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;šarag[dry]v/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;še[tear]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;širkalkal[subscript]n&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;šudu[handcuffs]n&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>We may notice, first, that there are three geographical names (Arali, Kubireš and Kubirešdildareš) and three divine names (Amaŋeštinanak, Durtur, and Ŋeštindudu) in this list, as well as an Emesal word (<strong>men[go]v/i</strong>). The geographical name Arali is, in fact, to be found in <a class="reference external" href="http://oracc.org/dcclt/Q000050">Old Babylonian Nippur Izi</a> I 394 among other terms that denote the realm of the dead. In Izi it has been lemmatized as a noun, rather than as a geographical name, preventing the match.</p>
+<p>The divine name Amaŋeštinanak appears in line 83 of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>, where it is written <strong>ama-{d}ŋeštin-an-na</strong>. Although this Divine Name is known from a number of instances in third millennium administrative and royal texts, this is the only place in the Old Babylonian corpus where it appears. The placement of the divine determinative (in the transliteration represented by {d}) indicates that <strong>ama</strong> is more probably a separate word, not part of the name. The Sumerian word <strong>ama</strong> means mother and is likely a honorific here (see, for instance, the translation by <a class="reference external" href="https://doi.org/10.5281/zenodo.2599639">P. Attinger</a>). The Divine Name Ŋeštinanak ({d}ŋeštin-an-na) is well known, and is attested in Old Babylonian lexical texts (for instance in the <a class="reference external" href="http://oracc.org/dcclt/Q000261">Nippur God List</a> line 185). In fact, she is one of the main characters in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>.</p>
+<p>The lemma <strong>men[go]v/i</strong> is an example of an Emesal lemma. It appears in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> in the imperative plural form <strong>ŋa₂-nam-ma-an-ze₂-en</strong> “You all go!” (line 140 and parallels) in an address spoken by the demons in search of Dumuzid. That this really is an Emesal form, however, is questionable and most likely an error in the transformation from the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> source data to the <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> format. Treating this form as a regular form of the Sumerian lemma <strong>ŋen[go]v/i</strong> (as <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> does) makes it into a very common lemma that is found all over the place in the Old Babylonian lexical corpus (although this particular form is currently not found there).</p>
+<p>There are, in other words, a good number of instances where the particularities and mistakes of the edited corpora prevent additional matches, and the <code class="docutils literal notranslate"><span class="pre">norm</span></code>value of 0.94 may well underestimate the role of lexically attested words in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>.</p>
+<p>This is not say that there are no such non-matching words or expressions in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a>. The lemma <strong>zipatum[cord]n</strong> is one such example. This word appears three times in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> (in the same repeated phrase) and in Enki and the Turtle (not in the current corpus), but is not currently found in the Old Babylonian lexical corpus. More remarkable is the absence of <strong>še[tear]n</strong>, a word that only appears in the expression <strong>šeₓ(SIG₇)-šeₓ(SIG₇) … ŋa₂-ŋa₂</strong> which means to sob or to cry. This is a fairly common, perhaps onomatopoetic, representation of the sound of sobbing.<a class="footnote-reference brackets" href="#id11" id="id5">5</a></p>
+<p>The discussion of the non-matching words in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.3&amp;display=Crit&amp;charenc=gcirc">Dumuzid’s Dream</a> suggests that the average <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of 0.91 may well be an underestimation and that the literary corpus sticks very close to the vocabulary found in the contemporary literary corpus. As a corollary, there is little chance that we can find meaningful distinctions between different groups of literary compositions based on lexically attested vocabulary.</p>
+</div>
+</div>
+<div class="section" id="distinctions-between-lexical-compositions">
+<h2>3.3 Distinctions between Lexical Compositions<a class="headerlink" href="#distinctions-between-lexical-compositions" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section it was shown that there are few significant differences between Old Babylonian literary texts in the way their vocabulary connects to contemporary lexical sources. In this section we will change the perspective and ask whether there are such differences that can be detected among lexical texts - in other words: are some lexical texts more attuned to the literary vocabulary than others?</p>
+<p>In order to do so we will approach the lexical corpus more or less in the same way as we did the literary corpus in the previous section, using  much of the same code. Instead of using Multiple Word Expressions we will use <a class="reference external" href="https://en.wikipedia.org/wiki/N-gram">ngrams</a> - a ngram is a sequence of <em>n</em> consecutive words (or lemmas). The function that builds the DTM can also count ngrams of any length.</p>
+<p>For this analysis we will count ngrams from n=1 to n=5. That will create a DTM with a column for each lemma (ngram n=1), but also for each sequence of two lemmas (bigram; n=2), three lemmas (trigram; n=3), etc. - up to five. The entry <strong>amar ga gu₇-a</strong> (<a class="reference external" href="http://oracc.org/dcclt/Q000001">OB Nippur Ura 3</a> line 225), lemmatized as <code class="docutils literal notranslate"><span class="pre">amar[young]n</span> <span class="pre">ga[milk]n</span> <span class="pre">gu[eat]v/t</span></code> (“suckling calf”) will be represented as :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>representation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>unigram</p></td>
+<td><p>amar[young]n</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>ga[milk]n</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>gu[eat]v/t</p></td>
+</tr>
+<tr class="row-odd"><td><p>bigram</p></td>
+<td><p>amar[young]n ga[milk]n</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>ga[milk]n gu[eat]v/t</p></td>
+</tr>
+<tr class="row-odd"><td><p>trigram</p></td>
+<td><p>amar[young]n ga[milk]n gu[eat]v/t</p></td>
+</tr>
+</tbody>
+</table>
+<p>For longer entries we will also get 4-grams and 5-grams.</p>
+<p>A three word entry which was treated as a single unit in 3.1 and 3.2 now results in 6 columns in the Document Term Matrix.</p>
+<p>Similar to the process in section 3.2, we will compute for each lexical document the number of lemmas and ngrams that are attested in the literary corpus.</p>
+<p>In the notebook one may manipulate the table to sort by different columns (ascending or descending), adjust minimum text length, display a larger or smaller number of rows, and select for composites only, exemplars only, or all.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id_text</p></th>
+<th class="head"><p>designation</p></th>
+<th class="head"><p>subgenre</p></th>
+<th class="head"><p>n_matches</p></th>
+<th class="head"><p>length</p></th>
+<th class="head"><p>norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/P228842">P228842</a></p></td>
+<td><p>MSL 14, 018 Bb</p></td>
+<td><p>OB Nippur Ea</p></td>
+<td><p>333</p></td>
+<td><p>410</p></td>
+<td><p>0.812195</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000055">Q000055</a></p></td>
+<td><p>OB Nippur Ea</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>599</p></td>
+<td><p>779</p></td>
+<td><p>0.768935</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000056">Q000056</a></p></td>
+<td><p>OB Nippur Aa</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>231</p></td>
+<td><p>408</p></td>
+<td><p>0.566176</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/P447992">P447992</a></p></td>
+<td><p>OECT 04, 152</p></td>
+<td><p>OB Diri Oxford</p></td>
+<td><p>145</p></td>
+<td><p>293</p></td>
+<td><p>0.494881</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000050">Q000050</a></p></td>
+<td><p>OB Nippur Izi</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>688</p></td>
+<td><p>1400</p></td>
+<td><p>0.491429</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/P247810">P247810</a></p></td>
+<td><p>IB 1514</p></td>
+<td><p>OB Lu</p></td>
+<td><p>133</p></td>
+<td><p>274</p></td>
+<td><p>0.485401</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q002268">Q002268</a></p></td>
+<td><p>OB Nippur Ugumu</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>163</p></td>
+<td><p>348</p></td>
+<td><p>0.468391</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000057">Q000057</a></p></td>
+<td><p>OB Nippur Diri</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>278</p></td>
+<td><p>594</p></td>
+<td><p>0.468013</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000052">Q000052</a></p></td>
+<td><p>Nippur Nigga</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>391</p></td>
+<td><p>844</p></td>
+<td><p>0.46327</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000048">Q000048</a></p></td>
+<td><p>OB Nippur Kagal</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>447</p></td>
+<td><p>1015</p></td>
+<td><p>0.440394</p></td>
+</tr>
+</tbody>
+</table>
+<p>When ordered by <code class="docutils literal notranslate"><span class="pre">norm</span></code> the top of the list is formed by lexical compositions such as the sign lists <a class="reference external" href="http://oracc.org/dcclt/Q000055">OB Nippur Ea</a> and <a class="reference external" href="http://oracc.org/dcclt/Q000057">OB Nippur Diri</a>, the acrographic list/list of professions <a class="reference external" href="http://oracc.org/dcclt/Q000047">OB Nippur Lu</a>, and the acrographic lists <a class="reference external" href="http://oracc.org/dcclt/Q000050">OB Nippur Izi</a>, and <a class="reference external" href="http://oracc.org/dcclt/Q000048">OB Nippur Kagal</a>, or (large) exemplars of such compositions. All these lexical texts belong to what Jay Crisostomo has labeled “ALE”: Advanced Lexical Exercises<a class="footnote-reference brackets" href="#id10" id="id6">4</a>. These exercises were studied in the advanced first stage of education, just before students would start copying literary compositions. If we restrict the DataFrame to composites (Q numbers) only, this comes out even clearer.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id_text</p></th>
+<th class="head"><p>designation</p></th>
+<th class="head"><p>subgenre</p></th>
+<th class="head"><p>n_matches</p></th>
+<th class="head"><p>length</p></th>
+<th class="head"><p>norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000055">Q000055</a></p></td>
+<td><p>OB Nippur Ea</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>599</p></td>
+<td><p>779</p></td>
+<td><p>0.768935</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000056">Q000056</a></p></td>
+<td><p>OB Nippur Aa</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>231</p></td>
+<td><p>408</p></td>
+<td><p>0.566176</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000050">Q000050</a></p></td>
+<td><p>OB Nippur Izi</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>688</p></td>
+<td><p>1400</p></td>
+<td><p>0.491429</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q002268">Q002268</a></p></td>
+<td><p>OB Nippur Ugumu</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>163</p></td>
+<td><p>348</p></td>
+<td><p>0.468391</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000057">Q000057</a></p></td>
+<td><p>OB Nippur Diri</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>278</p></td>
+<td><p>594</p></td>
+<td><p>0.468013</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000052">Q000052</a></p></td>
+<td><p>Nippur Nigga</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>391</p></td>
+<td><p>844</p></td>
+<td><p>0.46327</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000048">Q000048</a></p></td>
+<td><p>OB Nippur Kagal</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>447</p></td>
+<td><p>1015</p></td>
+<td><p>0.440394</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000047">Q000047</a></p></td>
+<td><p>OB Nippur Lu</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>608</p></td>
+<td><p>1459</p></td>
+<td><p>0.416724</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000302">Q000302</a></p></td>
+<td><p>OB Lu₂-azlag₂ B-C</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>363</p></td>
+<td><p>1040</p></td>
+<td><p>0.349038</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000041">Q000041</a></p></td>
+<td><p>OB Nippur Ura 04</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>343</p></td>
+<td><p>983</p></td>
+<td><p>0.348932</p></td>
+</tr>
+</tbody>
+</table>
+<p>The thematic lists collected in <a class="reference external" href="http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043">Ura</a> (lists of trees, wooden objects, reeds, reed objects, clay, pottery, hides, metals and metal objects, animals, meat cuts, fish, birds, plants, etc.) have much lower <code class="docutils literal notranslate"><span class="pre">norm</span></code> values and thus less overlap with literary vocabulary. The lists that belong to <a class="reference external" href="http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043">Ura</a> are studied in a more elementary phase of scribal education and are further removed from the literary corpus, both in vocabulary and in curricular terms.</p>
+<p>One might entertain the possibility that the vocabulary of <a class="reference external" href="http://oracc.org/dcclt/Q000039,Q000040,Q000001,Q000041,Q000042,Q000043">Ura</a> is closer to the administrative corpus, whereas the ALE compositions tend to be closer to the literary vocabulary. In 1959, J.B. Curtis and W.W. Hallo already noticed that the great majority of the commodities in the Ur III merchants’ accounts that they edited is found in Ura. Anecdotally, the idea of a connection between Ur III accounts and the contents of Ura may be supported by a number of striking observations. For instance, the Old Babylonian entry <strong>ha-zi-in gu₂ bir₅-ra{mušen}{zabar}</strong> (axe made of locust-neck bronze) is found in two Ur III texts, one from Umma (<a class="reference external" href="http://oracc.org/epsd2/admin/ur3/P131769">TCL 05, 6055</a>) and one from Drehem (<a class="reference external" href="http://oracc.org/epsd2/admin/ur3/P113021">MMFM 2005, 24, 5</a>). More than sixty years after the article by Curtis and Hallo was published, we are now in a position to approach such an idea systematically.</p>
+<p>For comparison it is useful to look at matches between administrative documents and lexical compositions (see Notebook 3_4). The administrative corpus selected is the Ur III corpus, dating, approximately, to the twenty-first century BCE. It would be more ideal to use the Old Babylonian administrative corpus, in particular texts from Isin, Nippur, and other Southern cities that were still composed in Sumerian. This corpus, however, has not been fully edited on [ORACC][] and is much smaller than the Ur III corpus. For a rough impression it may not make a big difference.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id_text</p></th>
+<th class="head"><p>designation</p></th>
+<th class="head"><p>subgenre</p></th>
+<th class="head"><p>length</p></th>
+<th class="head"><p>n_matches</p></th>
+<th class="head"><p>norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000055">Q000055</a></p></td>
+<td><p>OB Nippur Ea</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>779</p></td>
+<td><p>439</p></td>
+<td><p>0.563543</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000056">Q000056</a></p></td>
+<td><p>OB Nippur Aa</p></td>
+<td><p>Sign Lists</p></td>
+<td><p>408</p></td>
+<td><p>180</p></td>
+<td><p>0.441176</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000040">Q000040</a></p></td>
+<td><p>OB Nippur Ura 02</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>1182</p></td>
+<td><p>434</p></td>
+<td><p>0.367174</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000047">Q000047</a></p></td>
+<td><p>OB Nippur Lu</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>1459</p></td>
+<td><p>485</p></td>
+<td><p>0.332419</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000039">Q000039</a></p></td>
+<td><p>OB Nippur Ura 01</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>1289</p></td>
+<td><p>423</p></td>
+<td><p>0.328161</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000041">Q000041</a></p></td>
+<td><p>OB Nippur Ura 04</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>983</p></td>
+<td><p>314</p></td>
+<td><p>0.31943</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000048">Q000048</a></p></td>
+<td><p>OB Nippur Kagal</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>1015</p></td>
+<td><p>324</p></td>
+<td><p>0.319212</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000052">Q000052</a></p></td>
+<td><p>Nippur Nigga</p></td>
+<td><p>Acrographic Word Lists</p></td>
+<td><p>866</p></td>
+<td><p>259</p></td>
+<td><p>0.299076</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q000001">Q000001</a></p></td>
+<td><p>OB Nippur Ura 03</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>1034</p></td>
+<td><p>300</p></td>
+<td><p>0.290135</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://oracc.org/dcclt/Q002268">Q002268</a></p></td>
+<td><p>OB Nippur Ugumu</p></td>
+<td><p>Thematic Word Lists</p></td>
+<td><p>348</p></td>
+<td><p>96</p></td>
+<td><p>0.275862</p></td>
+</tr>
+</tbody>
+</table>
+<p>This analysis is rather rough in that it mixes texts of different kinds (administrative, legal, epistolary) and from different sites (Umma, Drehem, Girsu, and other places) without distinction. The numbers by itself, therefore, are not very informative. What is informative is the contrast with the previous table, where matches between literary and lexical texts were presented. It turns out that <a class="reference external" href="http://oracc.org/dcclt/Q000055">OB Nippur Ea</a> and <a class="reference external" href="http://oracc.org/dcclt/Q000056">OB Nippur Aa</a> are found at exactly the same position at the top of the table (0.56 and 0.44 vs. 0.77 and 0.57 for the literary corpus) but the relative position is the same. It turns out that Ea and Aa (which are closely related to each other) list a common Sumerian vocabulary. Both are sign lists, not word lists, they mainly represent Sumerian lemmas written by a single sign and these belong, in large numbers, to the common Sumerian vocabulary. The thematic word lists and acrographic word lists contain more complex entries. Most striking in this comparison is the position of <a class="reference external" href="http://oracc.org/dcclt/Q000050">Old Babylonian Izi</a> which has fallen out of the top-ten (at position 12; with a <code class="docutils literal notranslate"><span class="pre">norm</span></code>value of 0.26). In the top of the list, <a class="reference external" href="http://oracc.org/dcclt/Q000040">OB Nippur Ura 2</a> has gone from position 12 (in the lexical - literary comparison, with a <code class="docutils literal notranslate"><span class="pre">norm</span></code> value of 0.35) to position 3 (<code class="docutils literal notranslate"><span class="pre">norm</span></code> 0.37). <a class="reference external" href="http://oracc.org/dcclt/Q000040">OB Nippur Ura 2</a> lists words for reeds and reed objects, clays and pottery, and metal objects - quite a few of those are attested in Ur III administrative texts.</p>
+</div>
+<div class="section" id="some-final-thoughts">
+<h2>3.4 Some Final Thoughts<a class="headerlink" href="#some-final-thoughts" title="Permalink to this headline">¶</a></h2>
+<p>The issue of the intersection between lexical and literary vocabulary turns out to be more complex than a simple count of words. It turns out that of all the Old Babylonian lexical texts <a class="reference external" href="http://oracc.org/dcclt/Q000050">OB Nippur Izi</a> is most closely aligned with the contemporary literary vocabulary. This not only the case because it has the largest number of matches (688), but also because it has the largest number relatively speaking among the word lists. The sign lists <a class="reference external" href="http://oracc.org/dcclt/Q000055">OB Nippur Ea</a> and <a class="reference external" href="http://oracc.org/dcclt/Q000056">OB Nippur Aa</a> have even higher (relative) numbers, but they fail to distinguish between different text types.</p>
+<p>In all computational work issues of definition become central: what counts as a match, and how do we make sure that we exclude, as much as possible, false positives and false negatives? I took advantage of the undefined nature of what a “match” is (a word? a lemma? an entry?) to introduce two different ways of considering matches that consist of more than one word, Multiple Word Expressions (essentially reducing such an expression to a single token) and ngrams (counting both the individual words and combinations of words found in sequence). Both of these approaches will identify and match compound nouns and compound verbs, with or without morphology - but neither of them will be able to match the expression <strong>mi₂ dug₄</strong> (to care for) with <strong>mi₂ zid dug₄</strong> (to truly care for), because of the intervening lemma. Other types of analysis could be developed to take care of such situations. For now, the point is: each technique has its limitations and it will never completely match the interpretation of a human reader.</p>
+<p>Moreover, computational results can never be more reliable than the data on which they are based. Inconsistencies in large datasets are unavoidable - as we have seen - but still the computations lead to interpretable results. The volume of the data is canceling out a few errors or inconsistencies here or there. This is a line of reasoning that is still uncommon in Assyriology where errors are regarded with great suspicion.</p>
+</div>
+</div>
+<div class="section" id="footnotes">
+<h1>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>N. Veldhuis, <em>Religion, Literature, and Scholarship: The Sumerian Composition “Nanše and the Birds”</em>. Cuneiform Monographs 22. Leiden: Brill 2004.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>N. Veldhuis, <em>Religion, Literature, and Scholarship: The Sumerian Composition “Nanše and the Birds”</em>. Cuneiform Monographs 22. Leiden: Brill 2004.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>C. Metcalf, <em>Sumerian Literary Texts in the Schøyen Collection: Volume 1: Literary Sources on Old Babylonian Religion</em>. Cornell University Studies in Assyriology and Sumerology. Winona Lake: Eisenbrauns 2019.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">4</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p>Attinger, Pascal. (2019, March 1). Edubba’a A (5.1.1). Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.2599639">https://doi.org/10.5281/zenodo.2599639</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>George, Andrew (2002) ‘How women weep? Reflections on a passage of Bilgames and the Bull of Heaven.’ In: Parpola, S and Whiting, R, (eds.), <em>Sex and Gender in the Ancient Near East.</em> Helsinki: University Helsinki (Finland), pp. 141-150.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_Vocabularies"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html" title="previous page">2.4.3 Search BDTNS</a>
+    <a class='right-next' id="next-link" href="3_1_Lit_Lex_Vocab.html" title="next page">3 Overlap in Lexical and Literary Vocabulary</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

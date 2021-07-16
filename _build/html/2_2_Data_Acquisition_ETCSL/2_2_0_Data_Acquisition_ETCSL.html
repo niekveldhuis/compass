@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.2 Data Acquisition: ETCSL &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parsing ETCSL" href="2_2_1_Data_Acquisition_ETCSL.html" />
+    <link rel="prev" title="Extract Lemmatization from JSON: Extended Parser" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tei-xml-format">
+   2.2.1 TEI XML format
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lxml-and-xpath">
+   2.2.2
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lxml
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xpath
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-processing-html-entities">
+   2.2.3 Pre-processing: HTML entities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-processing-additional-text-and-secondary-text">
+   2.2.4 Pre-Processing: Additional Text and Secondary Text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaps">
+   2.2.5 Gaps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-the-xml-tree">
+   2.2.6 Parsing the XML Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsetext">
+   2.2.7 Parsetext()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getversion">
+   2.2.8 Getversion()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getsection">
+   2.2.9 Getsection()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getline">
+   2.2.10 Getline()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getword">
+   2.2.11 Getword()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tounicode">
+   2.2.12 tounicode()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etcsl-to-oracc">
+   2.2.13 etcsl_to_oracc()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-processing">
+   2.2.14 Post-processing
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-acquisition-etcsl">
+<h1>2.2 Data Acquisition: ETCSL<a class="headerlink" href="#data-acquisition-etcsl" title="Permalink to this headline">¶</a></h1>
+<p>The Electronic Text Corpus of Sumerian Literature (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>) provides editions and translations of almost 400 Sumerian literary texts, mostly from the Old Babylonian period (around 1800 BCE). The project was led by Jeremy Black (Oxford University) and was active until 2006, when it was archived. Information about the project, its stages, products and collaborators may be found in the project’s <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/edition2/general.php">About</a> page. By the time of its inception <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> was a pioneering effort - the first large digital project in Assyriology, using well-structured data according to the standards and best practices of the time. <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> allows for various kinds of searches in Sumerian and in English translation and provides lemmatization for each individual word. Numerous scholars contributed data sets to the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> project (see <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/edition2/credits.php#ack">Acknowledgements</a>). The availability of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> has fundamentally altered the study of Sumerian literature and has made this literature available for undergraduate teaching.</p>
+<p>The original <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> files in TEI XML are stored in the <a class="reference external" href="http://ota.ox.ac.uk/desc/2518">Oxford Text Archive</a> from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (<a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">by-nc-sa 3.0</a>). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.</p>
+<p>The <a class="reference external" href="http://ota.ox.ac.uk/desc/2518">Oxford Text Archive</a> page offers the following description:</p>
+<blockquote>
+<div><p>The Electronic Text Corpus of Sumerian Literature (ETCSL) comprises transliterations and English translations of 394 compositions attested on sources dating to the period from approximately 2100 to 1700 BCE. The compositions are divided into seven categories: ancient literary catalogues; narrative compositions; royal praise poetry and hymns to deities on behalf of rulers; literary letters and letter-prayers; divine and temple hymns; proverbs and proverb collections; and a more general category including compositions such as debates, dialogues and riddles. The numbering of the compositions within the corpus follows Miguel Civil’s unpublished catalogue of Sumerian literature (etcslfullcat.html).Files with an initial c are composite transliterations (a reconstructed text editorially assembled from the extant exemplars but including substantive variants) in which the cuneiform signs are represented in the Roman alphabet. Files with an initial t are translations. The composite files include full references for the cuneiform sources and author-date references for the secondary sources (detailed in bibliography.xml). The composite and translation files are in XML and have been annotated according to the TEI guidelines. In terms of linguistic information, each word form in the composite transliterations has been assigned to a lexeme which is specified by a citation form, word class information and basic English translation.</p>
+</div></blockquote>
+<p>Since <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> is an archival site, the editions are not updated to reflect new text finds or new insights in the Sumerian language. Many of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> editions were based on standard print editions that itself may have been 10 or 20 years old by the time they were digitized. Any computational analysis of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> corpus will have to deal with the fact that:</p>
+<ul class="simple">
+<li><p>the text may not represent the latest standard</p></li>
+<li><p>the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> corpus is extensive - but does not cover all of Sumerian literature known today</p></li>
+</ul>
+<p>In terms of data acquisition, the way to deal with these limitations is to make the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> data as much as possible compatible with the data standards of the Open Richly Annotated Cuneiform Corpus (<a class="reference external" href="http://oracc.org">ORACC</a>). <a class="reference external" href="http://oracc.org">ORACC</a> is an active project where new or updated editions can be produced. If compatible, if <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> and <a class="reference external" href="http://oracc.org">ORACC</a> data may be freely mixed and matched, then the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> data set can effectively be updated and expanded.</p>
+<p>The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> text corpus was one of the core data sets for the development of of <a class="reference external" href="http://psd.museum.upenn.edu/epsd1/index.html">ePSD1</a> and <a class="reference external" href="http://oracc.org/epsd2">ePSD2</a> (currently in a Beta version) and this version of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> data forms the core of the literary corpus collected in <a class="reference external" href="http://oracc.museum.upenn.edu/epsd2/literary">ePSD2/literary</a>. In order to harvest the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> data for <a class="reference external" href="http://oracc.org/epsd2">ePSD2</a> the lemmatization was adapted to <a class="reference external" href="http://oracc.org">ORACC</a> standards and thus the <a class="reference external" href="http://oracc.museum.upenn.edu/epsd2/literary">ePSD2/literary</a> version of the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> dataset is fully compatible with any <a class="reference external" href="http://oracc.org">ORACC</a> dataset, and can be parsed with the ORACC parser, discussed in section 2.1.</p>
+<p>For some applications, therefore, parsing the original <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> XML TEI files has become redundant. However, any data transformation implies choices and it is hard to know what the needs will be of future computational approaches to the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> dataset. The reason to include and discuss the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> parser here is, first, to offer users the opportunity to work with the original data set. The various transformations included in the current parser may be adapted and adjusted to reflect the preferences and research questions of the user. As a concrete example of choices to be made, <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> distinguishes between main text, secondary text, and additional text, to reflect different types of variants between manuscripts (see below <a class="reference external" href="#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text">2.2.4</a>). The <a class="reference external" href="http://oracc.museum.upenn.edu/epsd2/literary">ePSD2/literary</a> data set does not include this distinction. The output of the current parser will indicate for each word whether it is “secondary” or “additional” (according to <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> criteria) and offer the possibility to include such words or exclude them from the analysis. Similarly, the translations are not included in the <a class="reference external" href="http://oracc.museum.upenn.edu/epsd2/literary">ePSD2/literary</a> dataset, nor are they considered by the present parser. Translation data are, however, available in the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> XML TEI file set and the XML of the transcription files marks the beginning and end of translation paragraphs. Such data, therefore, is available and one may well imagine research questions for which the translation files are relevant (e.g. translation alignment). Although the present code does not deal with translation, one may use the same techniques and the same approach exemplified here to retrieve such data.</p>
+<p>In order to achieve compatability between <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> and <a class="reference external" href="http://oracc.org">ORACC</a> the code uses a number of equivalence dictionaries, that enable replacement of characters, words, or names. These equivalence dictionaries are stored in JSON format (for JSON see section 2.1) in the file <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code>  in the directory <code class="docutils literal notranslate"><span class="pre">equivalencies</span></code>.</p>
+<div class="section" id="tei-xml-format">
+<h2>2.2.1 TEI XML format<a class="headerlink" href="#tei-xml-format" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> files as distributed by the <a class="reference external" href="http://ota.ox.ac.uk/desc/2518">Oxford Text Archive</a> are encoded in a dialect of <code class="docutils literal notranslate"><span class="pre">XML</span></code> (Extensible Markup Language) that is referred to as <code class="docutils literal notranslate"><span class="pre">TEI</span></code> (Text Encoding Initiative). In this encoding each word (in transliteration) is an <em>element</em> that is surrounded by <code class="docutils literal notranslate"><span class="pre">&lt;w&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/w&gt;</span></code> tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs, as in the following random examples:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;w</span> <span class="na">form=</span><span class="s">&quot;ti-a&quot;</span> <span class="na">lemma=</span><span class="s">&quot;te&quot;</span> <span class="na">pos=</span><span class="s">&quot;V&quot;</span> <span class="na">label=</span><span class="s">&quot;to approach&quot;</span><span class="nt">&gt;</span>ti-a<span class="nt">&lt;/w&gt;</span>
+<span class="nt">&lt;w</span> <span class="na">form=</span><span class="s">&quot;e2-jar8-bi&quot;</span> <span class="na">lemma=</span><span class="s">&quot;e2-jar8&quot;</span> <span class="na">pos=</span><span class="s">&quot;N&quot;</span> <span class="na">label=</span><span class="s">&quot;wall&quot;</span><span class="nt">&gt;</span>e2-jar8-bi<span class="nt">&lt;/w&gt;</span>
+<span class="nt">&lt;w</span> <span class="na">form=</span><span class="s">&quot;ickila-bi&quot;</span> <span class="na">lemma=</span><span class="s">&quot;ickila&quot;</span> <span class="na">pos=</span><span class="s">&quot;N&quot;</span> <span class="na">label=</span><span class="s">&quot;shell&quot;</span><span class="nt">&gt;&lt;term</span> <span class="na">id=</span><span class="s">&quot;c1813.t1&quot;</span><span class="nt">&gt;</span>ickila<span class="nt">&lt;/term&gt;&lt;gloss</span> <span class="na">lang=</span><span class="s">&quot;sux&quot;</span> <span class="na">target=</span><span class="s">&quot;c1813.t1&quot;</span><span class="nt">&gt;</span>la<span class="nt">&lt;/gloss&gt;</span>-bi<span class="nt">&lt;/w&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">form</span></code> attribute is the full form of the word, omitting flags (such as question marks), indication of breakage, or glosses. The <code class="docutils literal notranslate"><span class="pre">lemma</span></code> attribute is the form minus morphology (similar to <code class="docutils literal notranslate"><span class="pre">Citation</span> <span class="pre">Form</span></code> in <a class="reference external" href="http://oracc.org">ORACC</a>). Some lemmas may be spelled in more than one way in Sumerian; the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> attribute will use a standard spelling (note, for instance, that the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> of “ti-a” is “te”). The <code class="docutils literal notranslate"><span class="pre">lemma</span></code> in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> (unlike <code class="docutils literal notranslate"><span class="pre">Citation</span> <span class="pre">Form</span></code> in <a class="reference external" href="http://oracc.org">ORACC</a>) uses actual transliteration with hyphens and sign index numbers (as in <code class="docutils literal notranslate"><span class="pre">lemma</span> <span class="pre">=</span> <span class="pre">&quot;e2-jar8&quot;</span></code>, where the corresponding <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">Citation</span> <span class="pre">Form</span></code> is “egar”).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">label</span></code> attribute gives a general indication of the meaning of the Sumerian word but is not context-sensitive. That is, the <code class="docutils literal notranslate"><span class="pre">label</span></code> of “lugal” is always “king”, even if in context the word means “owner”. The <code class="docutils literal notranslate"><span class="pre">pos</span></code> attribute gives the Part of Speech, but again the attribute is not context-sensitive. Where a verb (such as sag₉, to be good) is used as an adjective the <code class="docutils literal notranslate"><span class="pre">pos</span></code> is still “V” (for verb). Together <code class="docutils literal notranslate"><span class="pre">lemma</span></code>, <code class="docutils literal notranslate"><span class="pre">label</span></code>, and <code class="docutils literal notranslate"><span class="pre">pos</span></code> define a Sumerian lemma (dictionary entry).</p>
+<p>In parsing the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> files we will be looking for the <code class="docutils literal notranslate"><span class="pre">&lt;w&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/w&gt;</span></code> tags to isolate words and their attributes. Higher level tags identify lines (<code class="docutils literal notranslate"><span class="pre">&lt;l&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/l&gt;</span></code>), versions, secondary text (found only in a minority of sources), etcetera.</p>
+<p>The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> file set includes the file <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php">etcslmanual.html</a> with explanations of the tags, their attributes, and their proper usage.</p>
+<p>Goal of the parsing process is to get as much information as possible out of the <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree in a format that is as close as possible to the output of the <a class="reference external" href="http://oracc.org">ORACC</a> parser. The output of the parser is a word-by-word (or rather lemma-by-lemma) representation of the entire <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> corpus. For most computational projects it will be necessary to group words into lines or compositions, or to separate out a particular group of compositions. The data is structured in such a way that that can be achieved with a standard set of Python functions of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library.</p>
+</div>
+<div class="section" id="lxml-and-xpath">
+<h2>2.2.2 <code class="docutils literal notranslate"><span class="pre">lxml</span></code> and <code class="docutils literal notranslate"><span class="pre">Xpath</span></code><a class="headerlink" href="#lxml-and-xpath" title="Permalink to this headline">¶</a></h2>
+<p>There are several Python libraries specifically for parsing <code class="docutils literal notranslate"><span class="pre">XML</span></code>, among them the popular <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> and its twin <code class="docutils literal notranslate"><span class="pre">cElementTree</span></code>. The library <code class="docutils literal notranslate"><span class="pre">lxml</span></code> is largely compatible with <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> and <code class="docutils literal notranslate"><span class="pre">cElementTree</span></code> but differs from those in its full support of <code class="docutils literal notranslate"><span class="pre">Xpath</span></code>. <code class="docutils literal notranslate"><span class="pre">Xpath</span></code> is a language for finding and retrieving elements and attributes in XML trees. <code class="docutils literal notranslate"><span class="pre">Xpath</span></code> is not a program or a library, but a set of specifications that is implemented in a variety of software packages in different programming languages.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Xpath</span></code> uses the forward slash to describe a path through the hierarchy of the <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree. The expression <code class="docutils literal notranslate"><span class="pre">&quot;/body/l/w&quot;</span></code> refers to all the <code class="docutils literal notranslate"><span class="pre">w</span></code> (word) elements that are children of <code class="docutils literal notranslate"><span class="pre">l</span></code> (line) elements that are children of the <code class="docutils literal notranslate"><span class="pre">body</span></code> element in the top level of <code class="docutils literal notranslate"><span class="pre">XML</span></code> hierarchy.</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">'//w'</span></code>means: all the <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes, wherever in the hierarchy of the <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree. The expression may be used to create a list of all the <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes with all of their associated attributes. The attributes of a node are addressed  with the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> sign, so that <code class="docutils literal notranslate"><span class="pre">//w/&#64;label</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">label</span></code> attributes of all the <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes at any level in the hierarchy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//w&#39;</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//w/@label&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Predicates are put between square brackets and describe conditions for filtering a node set. The expression  <code class="docutils literal notranslate"><span class="pre">//w[&#64;emesal]</span></code> will return all the <code class="docutils literal notranslate"><span class="pre">w</span></code> elements that have an attribute <code class="docutils literal notranslate"><span class="pre">emesal</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Xpath</span></code> also defines hundreds of functions. An important function is <code class="docutils literal notranslate"><span class="pre">'string()'</span></code> which will return the string value of a node or an attribute.  Once all <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes are listed in the list <code class="docutils literal notranslate"><span class="pre">words</span></code> (with the code above) one may extract the transliteration and Guide Word (<code class="docutils literal notranslate"><span class="pre">label</span></code> in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>) of each word as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">form_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">gw_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;string(.)&#39;</span><span class="p">)</span> 
+    <span class="n">form_l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+    <span class="n">gw</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;string(@label)&#39;</span><span class="p">)</span>
+    <span class="n">gw_l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gw</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The dot, the argument to the <code class="docutils literal notranslate"><span class="pre">string()</span></code> function in <code class="docutils literal notranslate"><span class="pre">node.xpath('string(.)')</span></code>, refers to the current node.</p>
+<p>For proper introductions to <code class="docutils literal notranslate"><span class="pre">Xpath</span></code> and <code class="docutils literal notranslate"><span class="pre">lxml</span></code> see the <a class="reference external" href="https://en.wikipedia.org/wiki/XPath">Wikipedia</a> article on <code class="docutils literal notranslate"><span class="pre">Xpath</span></code> and the homepage of the <a class="reference external" href="https://lxml.de/"><code class="docutils literal notranslate"><span class="pre">lxml</span></code></a> library, respectively.</p>
+</div>
+<div class="section" id="pre-processing-html-entities">
+<h2>2.2.3 Pre-processing: HTML entities<a class="headerlink" href="#pre-processing-html-entities" title="Permalink to this headline">¶</a></h2>
+<p>Before the XML files can be parsed, it is necessary to remove character sequences that are not allowed in XML proper (so-called HTML entities).</p>
+<p>In non-transliteration contexts (bibliographies, composition titles, etc.) <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> uses so-called HTML entities to represent non-ASCII characters such as,  á, ü, or š. These entities are encoded with an opening ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) and a closing semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>). For instance, <code class="docutils literal notranslate"><span class="pre">&amp;C;</span></code> represents the character <code class="docutils literal notranslate"><span class="pre">Š</span></code>. The HTML entities are for the most part project-specific and are declared in the file <code class="docutils literal notranslate"><span class="pre">etcsl-sux.ent</span></code> which is part of the file package and is used by the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> project in the process of validating and parsing the XML for on-line publication.</p>
+<p>For purposes of data acquisition these entities need to be resolved, because XML parsers will not recognize these sequences as valid XML.</p>
+<p>The key <code class="docutils literal notranslate"><span class="pre">ampersands</span></code> in the file <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code> has as its value a dictionary, listing all the HTML entities that appear in the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> files with their Unicode counterparts:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> 
+ <span class="nt">&quot;&amp;C;&quot;</span><span class="p">:</span> <span class="s2">&quot;Š&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;Ccedil;&quot;</span><span class="p">:</span> <span class="s2">&quot;Ç&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;Eacute;&quot;</span><span class="p">:</span> <span class="s2">&quot;É&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;G;&quot;</span><span class="p">:</span> <span class="s2">&quot;Ŋ&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;H;&quot;</span><span class="p">:</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;Imacr;&quot;</span><span class="p">:</span> <span class="s2">&quot;Î&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;X;&quot;</span> <span class="p">:</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;&amp;aacute;&quot;</span><span class="p">:</span> <span class="s2">&quot;á&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>etc.</p>
+<p>This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in each of the data files (the original files are, of course, left untouched). The function <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> is called in the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> immediately after opening the file of one of the compositions in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;equivalencies/equivalencies.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">eq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">amp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&amp;[^;]+;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ampersands</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> 
+               <span class="n">eq</span><span class="p">[</span><span class="s2">&quot;ampersands&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()),</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">xmltext</span> <span class="o">=</span> <span class="n">ampersands</span><span class="p">(</span><span class="n">xmltext</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> uses the <code class="docutils literal notranslate"><span class="pre">sub()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">re</span></code> (Regular Expressions) module. The arguments of this function are <code class="docutils literal notranslate"><span class="pre">sub(find_what,</span> <span class="pre">replace_with,</span> <span class="pre">text)</span></code>. In this case, the <code class="docutils literal notranslate"><span class="pre">find_what</span></code> is the compiled regular expression <code class="docutils literal notranslate"><span class="pre">amp</span></code>, matching all character sequences that begin with &amp; and end with a semicolon (;). The <code class="docutils literal notranslate"><span class="pre">replace_with</span></code> argument is a temporary <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function that uses the <code class="docutils literal notranslate"><span class="pre">ampersands</span></code> dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function (m.group() represents the match of the regular expression <code class="docutils literal notranslate"><span class="pre">amp</span></code>). The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.</p>
+</div>
+<div class="section" id="pre-processing-additional-text-and-secondary-text">
+<h2>2.2.4 Pre-Processing: Additional Text and Secondary Text<a class="headerlink" href="#pre-processing-additional-text-and-secondary-text" title="Permalink to this headline">¶</a></h2>
+<p>In order to be able to preserve the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> distinctions between main text (the default), secondary text, and additional text, such information needs to be added as an attribute to each <code class="docutils literal notranslate"><span class="pre">w</span></code> node (word node). This must take place in pre-processing, before the <code class="docutils literal notranslate"><span class="pre">XML</span></code> file is parsed.</p>
+<p><a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> transliterations represent composite texts, put together (in most cases) from multiple exemplars. The editions include substantive variants, which are marked either as “additional” or as “secondary”. Additional text consists of words or lines that are <em>added</em> to the text in a minority of sources. In the opening passage of <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp%3Bamp%3Bdisplay=Crit&amp;amp%3Bamp%3Bcharenc=gcirc">Inana’s Descent to the Netherworld</a>, for instance, there is a list of temples that Inana leaves behind. One exemplar extends this list with eight more temples; in the composite text these lines are marked as “additional” and numbered lines 13A-13H. Secondary text, on the other hand, is variant text (words or lines) that are found in a minority of sources <em>instead of</em> the primary text. An example in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp%3Bamp%3Bdisplay=Crit&amp;amp%3Bamp%3Bcharenc=gcirc">Inana’s Descent to the Netherworld</a> is lines 30-31, which are replaced by 30A-31A in one manuscript (text and translation from <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>line</p></th>
+<th class="head"><p>text</p></th>
+<th class="head"><p>translation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>sukkal e-ne-eĝ₃ sag₉-sag₉-ga-ĝu₁₀</p></td>
+<td><p>my minister who speaks fair words,</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>ra-gaba e-ne-eĝ₃ ge-en-gen₆-na-ĝu₁₀</p></td>
+<td><p>my escort who speaks trustworthy words</p></td>
+</tr>
+<tr class="row-even"><td><p>30A</p></td>
+<td><p>[na] ga-e-de₅ na de₅-ĝu₁₀ /ḫe₂-[dab₅]</p></td>
+<td><p>I am going to give you instructions: my instructions must be followed;</p></td>
+</tr>
+<tr class="row-odd"><td><p>31A</p></td>
+<td><p>[inim] ga-ra-ab-dug₄ ĝizzal [ḫe₂-em-ši-ak]</p></td>
+<td><p>I am going to say something to you: it must be observed</p></td>
+</tr>
+</tbody>
+</table>
+<p>“Secondary text” and “additional text” can also consist of a single word and there are even cases of “additional text” within “additional text” (an additional word within an additional line).</p>
+<p>In <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> TEI XML secondary/additional text is introduced by a tag of the type:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;addSpan</span> <span class="na">to=</span><span class="s">&quot;c141.v11&quot;</span> <span class="na">type=</span><span class="s">&quot;secondary&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;addSpan</span> <span class="na">to=</span><span class="s">&quot;c141.v11&quot;</span> <span class="na">type=</span><span class="s">&quot;additional&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The number c141 represents the text number in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> (in this case <a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp%3Bamp%3Bdisplay=Crit&amp;amp%3Bamp%3Bcharenc=gcirc">Inana’s Descent to the Netherworld</a>, text c.1.4.1). The return to the primary text is indicated by a tag of the type:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;anchor</span> <span class="na">id=</span><span class="s">&quot;c141.v11&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute in the <code class="docutils literal notranslate"><span class="pre">anchor</span></code> tag is identical to the <code class="docutils literal notranslate"><span class="pre">to</span></code> attribute in the <code class="docutils literal notranslate"><span class="pre">addSpan</span></code> tag.</p>
+<p>We can collect all the <code class="docutils literal notranslate"><span class="pre">w</span></code> tags (words) between <code class="docutils literal notranslate"><span class="pre">addSpan</span></code> and its corresponding <code class="docutils literal notranslate"><span class="pre">anchor</span></code> tag with the following <code class="docutils literal notranslate"><span class="pre">xpath</span></code> expression:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">secondary</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//w[preceding::addSpan[@type=&quot;secondary&quot;]/@to = following::anchor/@id]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">preceding</span></code> and <code class="docutils literal notranslate"><span class="pre">following</span></code> are so-called <code class="docutils literal notranslate"><span class="pre">axes</span></code> (plural of <code class="docutils literal notranslate"><span class="pre">axis</span></code>) which describe the relationship of an element to another element in the tree. The expression means: get all <code class="docutils literal notranslate"><span class="pre">w</span></code> tags that are preceded by an <code class="docutils literal notranslate"><span class="pre">addSpan</span></code> tag and followed by an <code class="docutils literal notranslate"><span class="pre">anchor</span></code> tag. The <code class="docutils literal notranslate"><span class="pre">addSpan</span></code> tag has to have an attribute <code class="docutils literal notranslate"><span class="pre">type</span></code> with value <code class="docutils literal notranslate"><span class="pre">secondary</span></code> , and the value of the <code class="docutils literal notranslate"><span class="pre">to</span></code> attribute of this <code class="docutils literal notranslate"><span class="pre">addSpan</span></code> tag is to be equal to the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute of the following <code class="docutils literal notranslate"><span class="pre">anchor</span></code> tag.</p>
+<p>Once we have collected all the “secondary” <code class="docutils literal notranslate"><span class="pre">w</span></code> tags this way, we can add an attribute to each of these words in the following way:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">secondary</span><span class="p">:</span>
+    <span class="n">word</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;secondary&quot;</span>
+</pre></div>
+</div>
+<p>In the process of parsing we can retrieve this new <code class="docutils literal notranslate"><span class="pre">status</span></code> attribute to mark all of these words as <code class="docutils literal notranslate"><span class="pre">secondary</span></code>.</p>
+<p>Since we can do exactly the same for “additional text” we can slightly adapt the above expression for use in a function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mark_extra</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">which</span><span class="p">):</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;//w[preceding::addSpan[@type=&quot;</span><span class="si">{</span><span class="n">which</span><span class="si">}</span><span class="s1">&quot;]/@to = following::anchor/@id]&#39;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">extra</span><span class="p">:</span>
+        <span class="n">word</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">which</span>
+	<span class="k">return</span> <span class="n">tree</span>
+</pre></div>
+</div>
+<p>In the main process the function <code class="docutils literal notranslate"><span class="pre">mark_extra()</span></code> is called with the entire <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree of one composition as its first argument, and  “additional” or “secondary” as its second argument.</p>
+</div>
+<div class="section" id="gaps">
+<h2>2.2.5 Gaps<a class="headerlink" href="#gaps" title="Permalink to this headline">¶</a></h2>
+<p>A gap of one or more lines in the composite text, due to damage to the original cuneiform tablet, is encoded as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gap</span> <span class="na">extent=</span><span class="s">&quot;8 lines missing&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>In order to be able to process this information and keep it at the right place in the data we will parse the <code class="docutils literal notranslate"><span class="pre">gap</span></code> tags together with the <code class="docutils literal notranslate"><span class="pre">l</span></code> (line) tags and process the gap as a line. In <a class="reference external" href="http://oracc.org">ORACC</a> gaps are described with the fields <code class="docutils literal notranslate"><span class="pre">extent</span></code> (a number, or <code class="docutils literal notranslate"><span class="pre">n</span></code> for unknown),  and <code class="docutils literal notranslate"><span class="pre">scope</span></code> (line, column, obverse, etc.) . <a class="reference external" href="http://oracc.org">ORACC</a> uses a restricted vocabulary for these fields, but <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> does not. The code currently does not try to make the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> encoding of gaps compatible with the <a class="reference external" href="http://oracc.org">ORACC</a> encoding.</p>
+</div>
+<div class="section" id="parsing-the-xml-tree">
+<h2>2.2.6 Parsing the XML Tree<a class="headerlink" href="#parsing-the-xml-tree" title="Permalink to this headline">¶</a></h2>
+<p>The module <code class="docutils literal notranslate"><span class="pre">etree</span></code> from the <code class="docutils literal notranslate"><span class="pre">lxml</span></code> library is used to parse the XML files. The code basically works from the highest level of the hierarchy of the XML tree to the lowest, in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">corpus</span>									<span class="n">main</span> <span class="n">process</span>
+	<span class="n">text</span>								<span class="n">parsetext</span><span class="p">()</span>
+		<span class="n">version</span>							<span class="n">getversion</span><span class="p">()</span>
+			<span class="n">section</span>						<span class="n">getsection</span><span class="p">()</span>
+				<span class="n">line</span>					<span class="n">getline</span><span class="p">()</span>
+					<span class="n">word</span>				<span class="n">getword</span><span class="p">()</span>
+						<span class="nb">format</span>			<span class="n">etcsl_to_oracc</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Each of these functions divides the XML tree into smaller parts (versions, sections, lines, words) and sends one such smaller part of the tree to the next function. The functions do not return anything. Instead, they modify the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> by adding or changing keys that hold meta-data such as version name, line number, etc. Once arrived at the word level (the most basic level of this tree) the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> will hold accurate information about the composition name, the version name, the line number, etc. for this particular word. The function <code class="docutils literal notranslate"><span class="pre">getword()</span></code> will create a new dictionary (called <code class="docutils literal notranslate"><span class="pre">word</span></code>) that holds the lemmatization information (form, citation form, part of speech, etc.) and the meta-data taken from <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>. The dictionary <code class="docutils literal notranslate"><span class="pre">word</span></code> is then appended to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> which, eventually, will hold all words from all compositions.</p>
+<p>The main process iterates over the list of compositions, sending one <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> composition at the time to the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code>. The function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> calls the pre-processing functions discussed in section <a class="reference external" href="#2.2.3-Pre-processing:-HTML-entities">2.2.3</a> and <a class="reference external" href="#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text">2.2.4</a> and and modifies the keys “id_text” and “text_name” in the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>. Then it forwards the entire XML tree to <code class="docutils literal notranslate"><span class="pre">getversion()</span></code>. The function <code class="docutils literal notranslate"><span class="pre">getversion()</span></code> checks whether the composition that is being parsed is divided into versions.  This is done with the line</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">versions</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//body[child::head]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This results in a list (<code class="docutils literal notranslate"><span class="pre">versions</span></code>), in which the entire XML tree is cut into parts, each element of the list representing one version. If the length of the list is 0, then there are no versions, and the key “version” in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is set to ‘’ (the empty string). If there are versions, the code iterates through the list <code class="docutils literal notranslate"><span class="pre">versions</span></code> and detects for each the name of that version (e.g. “Version A”). The key “version” in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is updated with that name and then the next function (<code class="docutils literal notranslate"><span class="pre">getsection()</span></code>) is called with as argument the part of the XML tree that represents that version. The other functions in this hierarchy work in similar fashion, each adding or modifying a key in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> while digging deeper into the XML tree.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">getword()</span></code> not only retrieves and formats a lemma, but also adds to this lemma the meta data that was collected in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>: line number, section, version, text name, etc. The function <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc()</span></code>, the last one in the hierarchy, transforms the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> style lemma into a <a class="reference external" href="http://oracc.org">ORACC</a> style lemma and appends the resulting dictionary <code class="docutils literal notranslate"><span class="pre">word</span></code> to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> (which was created as an empty list in the main process).</p>
+<p>The word <code class="docutils literal notranslate"><span class="pre">šeŋ₆-ŋa₂</span></code> in the file <code class="docutils literal notranslate"><span class="pre">c.1.2.2.xml</span></code> (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&amp;display=Crit&amp;charenc=gcirc">Enlil and Sud</a>), in Version A, section A line 115, looks as follows in the original XML file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;w</span> <span class="na">form=</span><span class="s">&quot;cej6-ja2&quot;</span> <span class="na">lemma=</span><span class="s">&quot;cej6&quot;</span> <span class="na">pos=</span><span class="s">&quot;V&quot;</span> <span class="na">label=</span><span class="s">&quot;to be hot&quot;</span><span class="nt">&gt;</span>cej6-ja2<span class="nt">&lt;/w&gt;</span>
+</pre></div>
+</div>
+<p>The dictionary that is created in <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc()</span></code> represents that same word as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;id_text&#39;</span><span class="p">:</span> <span class="s1">&#39;c.1.2.2&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;text_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Enlil and Sud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;lang&#39;</span><span class="p">:</span> <span class="s1">&#39;sux&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;cf&#39;</span><span class="p">:</span> <span class="s1">&#39;šeŋ&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;gw&#39;</span><span class="p">:</span> <span class="s1">&#39;cook&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;pos&#39;</span><span class="p">:</span> <span class="s1">&#39;V/t&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="s1">&#39;šeŋ₆-ŋa₂&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;label&#39;</span> <span class="p">:</span> <span class="s1">&#39;A115&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;id_line&#39;</span><span class="p">:</span> <span class="mi">109</span><span class="p">,</span>
+ <span class="s1">&#39;extent&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that in the process the transliteration and lemmatization data have been replaced by <a class="reference external" href="http://oracc.org/epsd2">epsd2</a> style data. The function <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code> replaces <code class="docutils literal notranslate"><span class="pre">j</span></code> by <code class="docutils literal notranslate"><span class="pre">ŋ</span></code> , <code class="docutils literal notranslate"><span class="pre">c</span></code> by <code class="docutils literal notranslate"><span class="pre">š</span></code>, etc. and substitutes Unicode subscript numbers for the regular numbers in sign indexes. The function <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc()</span></code>replaces <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> style lemmatization with <a class="reference external" href="http://oracc.org/epsd2">epsd2</a> style (‘gw’ :  ‘cook’ instead of <code class="docutils literal notranslate"><span class="pre">label=</span> <span class="pre">&quot;to</span> <span class="pre">be</span> <span class="pre">hot&quot;</span></code>). Both replacements use dictionaries in the <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code> file.</p>
+<p>The sections below will discuss in some detail the various functions, starting with <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> and going down the hierarchy to <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc()</span></code>. In the notebook, the functions are defined in the opposite order, because a function cannot be called before it has been defined.</p>
+</div>
+<div class="section" id="parsetext">
+<h2>2.2.7 Parsetext()<a class="headerlink" href="#parsetext" title="Permalink to this headline">¶</a></h2>
+<p>The main process iterates through the list of <code class="docutils literal notranslate"><span class="pre">XML</span></code> files (one for each composition in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>) and calls for each of them the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code>. After opening the <code class="docutils literal notranslate"><span class="pre">XML</span></code> file <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> first calls the function <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> in order to replace HTML entities by their unicode counterparts (<a class="reference external" href="#2.2.3-Pre-processing:-HTML-entities">2.2.3</a>). The module <code class="docutils literal notranslate"><span class="pre">etree</span></code> from the <code class="docutils literal notranslate"><span class="pre">lxml</span></code> library is used to read the <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree. Since <code class="docutils literal notranslate"><span class="pre">etree</span></code> does not read the <code class="docutils literal notranslate"><span class="pre">XML</span></code> directly from file, but rather reads the output of the <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> function, we need the function <code class="docutils literal notranslate"><span class="pre">fromstring()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xmltext</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After creating the tree, the function <code class="docutils literal notranslate"><span class="pre">mark_extra()</span></code> (<a class="reference external" href="#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text">2.2.4</a>) is called in order to explicitly mark “additional” and “secondary” words.  The composition name is found in the node <code class="docutils literal notranslate"><span class="pre">title</span></code>. This name is slightly adjusted in two ways. First, all <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> text names include the phrase ” – a composite transliteration”. This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which may create problems when data are saved in <code class="docutils literal notranslate"><span class="pre">cvs</span></code>. These two elements are removed from the title.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;string(//title)&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; -- a composite transliteration&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> text number, for instance c.1.4.1 for Inana’s Descent) and the text name. Finally, the line reference count is set to 0. This line reference is updated every time the function <code class="docutils literal notranslate"><span class="pre">getline()</span></code> is called.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree is now forwarded to the function <code class="docutils literal notranslate"><span class="pre">getversion()</span></code>.</p>
+</div>
+<div class="section" id="getversion">
+<h2>2.2.8 Getversion()<a class="headerlink" href="#getversion" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">getversion()</span></code> is called by the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> and receives one argument: <code class="docutils literal notranslate"><span class="pre">tree</span></code> (the relevant part of the <code class="docutils literal notranslate"><span class="pre">etree</span></code> object). In the XML tree versions are marked by a node <code class="docutils literal notranslate"><span class="pre">body</span></code>with a child <code class="docutils literal notranslate"><span class="pre">head</span></code>. The node <code class="docutils literal notranslate"><span class="pre">head</span></code> contains the name of the version. Iterating through the versions, the function updates the key “version” in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> with the name of the version and then calls the <code class="docutils literal notranslate"><span class="pre">getsection()</span></code> function. The sole argument is the portion of the tree that represents the version that is being parsed. If a composition is not divided into versions the entire tree is passed to <code class="docutils literal notranslate"><span class="pre">getsection()</span></code> and the version name in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is the empty string.</p>
+</div>
+<div class="section" id="getsection">
+<h2>2.2.9 Getsection()<a class="headerlink" href="#getsection" title="Permalink to this headline">¶</a></h2>
+<p>Some compositions in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> are divided into <em>sections</em>. This is usually the case when there are gaps of unknown length. Section B supposedly follows section A, but how much text is missing between these sections cannot be reconstructed.
+The function <code class="docutils literal notranslate"><span class="pre">getsection()</span></code> works essentially in the same way as <code class="docutils literal notranslate"><span class="pre">getversion()</span></code>. Sections are indicated in the <code class="docutils literal notranslate"><span class="pre">XML</span></code> with a node <code class="docutils literal notranslate"><span class="pre">div1</span></code>. Section names (usually a capital letter) are found in an attribute of <code class="docutils literal notranslate"><span class="pre">div1</span></code> called <code class="docutils literal notranslate"><span class="pre">n</span></code>.  The function will now collect all <code class="docutils literal notranslate"><span class="pre">l</span></code> (line) <em>and</em> <code class="docutils literal notranslate"><span class="pre">gap</span></code> nodes that belong to a single section. The Xpath expression that is used for that is <code class="docutils literal notranslate"><span class="pre">.//l|.//gap</span></code> (where | is the “or” operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an <code class="docutils literal notranslate"><span class="pre">l</span></code> node the <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>dictionary is updated with a (human-legible) line number (or section + line number, if the text is divided into sections). This line number, which is a string, is stored in the key “label” in order to achieve consistency with <a class="reference external" href="http://oracc.org">ORACC</a> naming conventions. The function then calls <code class="docutils literal notranslate"><span class="pre">getline()</span></code>. The only argument of <code class="docutils literal notranslate"><span class="pre">getline()</span></code> is the part of the <code class="docutils literal notranslate"><span class="pre">XML</span></code> tree that belongs to a single line or gap.</p>
+</div>
+<div class="section" id="getline">
+<h2>2.2.10 Getline()<a class="headerlink" href="#getline" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">getline()</span></code>first updates the field <code class="docutils literal notranslate"><span class="pre">id_line</span></code> in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>, increasing it by 1. The data type  of<code class="docutils literal notranslate"><span class="pre">id_line</span></code> is integer - it is used to keep lines and gaps in correct order.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">getline()</span></code> receives a <code class="docutils literal notranslate"><span class="pre">gap</span></code> node it copies all the meta data in the dictionary meta_d into the dictionary <code class="docutils literal notranslate"><span class="pre">line</span></code> and adds a field <code class="docutils literal notranslate"><span class="pre">extent</span></code> (the length of the gap). This data is found in the attribute <code class="docutils literal notranslate"><span class="pre">extent</span></code> of the <code class="docutils literal notranslate"><span class="pre">gap</span></code> node. This dictionary is then appended to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> and control is returned to the function <code class="docutils literal notranslate"><span class="pre">getsection()</span></code>. Each row, therefore, in <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> will represent either a word or a gap.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">getline()</span></code> receives an <code class="docutils literal notranslate"><span class="pre">l</span></code> node it will collect <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes (words) and <code class="docutils literal notranslate"><span class="pre">gloss</span></code> nodes with the language attribute <code class="docutils literal notranslate"><span class="pre">akk</span></code>. The Xpath expression looks as follows: ‘.//w|.//gloss[&#64;lang=”akk”]’. This will find both Sumerian and Akkadian words in the text.</p>
+<p>The function iterates over the list of words, sending each word to <code class="docutils literal notranslate"><span class="pre">getword()</span></code>.</p>
+</div>
+<div class="section" id="getword">
+<h2>2.2.11 Getword()<a class="headerlink" href="#getword" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">getword()</span></code> is the most complex of the series of functions because different types of words are processed in different ways.</p>
+<p>As a first step <code class="docutils literal notranslate"><span class="pre">getword()</span></code> will copy all the meta-data in the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> into the dictionary <code class="docutils literal notranslate"><span class="pre">word</span></code>. This dictionary will hold all the data for one individual word token.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">getword()</span></code> receives a <code class="docutils literal notranslate"><span class="pre">gloss</span></code> node, this node represents either an Akkadian word, or an entire Akkadian phrase or sentence, that is inserted in a Sumerian text as a translation gloss. Akkadian words are not lemmatized in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>, so all we can collect is the <code class="docutils literal notranslate"><span class="pre">form</span></code> (the transliteration) and the language. These fields are added to the <code class="docutils literal notranslate"><span class="pre">word</span></code> dictionary, <code class="docutils literal notranslate"><span class="pre">word</span></code> is appended to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> and control is returned to the previous function (<code class="docutils literal notranslate"><span class="pre">getline()</span></code>), which will send the next word.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">getword()</span></code> receives a <code class="docutils literal notranslate"><span class="pre">w</span></code> node (a word) it will assign different attributes of that node to different fields in the <code class="docutils literal notranslate"><span class="pre">word</span></code> dictionary. The Citation Form (<code class="docutils literal notranslate"><span class="pre">cf</span></code>) is found in the attribute <code class="docutils literal notranslate"><span class="pre">lemma</span></code>.</p>
+<p>The Guide Word (<code class="docutils literal notranslate"><span class="pre">gw</span></code>) is found in the attribute <code class="docutils literal notranslate"><span class="pre">label</span></code> and the Part of Speech (<code class="docutils literal notranslate"><span class="pre">pos</span></code>) in the attribute <code class="docutils literal notranslate"><span class="pre">pos</span></code>.</p>
+<p>The rest of the code takes care of some special situations:</p>
+<ul class="simple">
+<li><p>If there is no attribute <code class="docutils literal notranslate"><span class="pre">pos</span></code>, this indicates that the word was not lemmatized (because it is broken or unknown). In such cases <code class="docutils literal notranslate"><span class="pre">pos</span></code> and <code class="docutils literal notranslate"><span class="pre">gw</span></code> are both assigned ‘NA’. Note that ‘NA’ is a string, not Missing Value.</p></li>
+<li><p>if the word has an attribute <code class="docutils literal notranslate"><span class="pre">emesal</span></code>, then the citation form is found in that attribute and the language is “sux-x-emesal”. If there is no such attribute the language is “sux” (for Sumerian).</p></li>
+<li><p>In <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> <strong>proper nouns</strong> are nouns (<code class="docutils literal notranslate"><span class="pre">pos</span></code> = “N”), which are qualified by an additional attribute <code class="docutils literal notranslate"><span class="pre">type</span></code> (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In <a class="reference external" href="http://oracc.org">ORACC</a> a word has a single <code class="docutils literal notranslate"><span class="pre">pos</span></code>; for proper nouns this is DN, PN, GN, etc. - so what is <code class="docutils literal notranslate"><span class="pre">type</span></code> in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> becomes <code class="docutils literal notranslate"><span class="pre">pos</span></code> in <a class="reference external" href="http://oracc.org">ORACC</a>. <a class="reference external" href="http://oracc.org">ORACC</a> proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> guide words (<code class="docutils literal notranslate"><span class="pre">label</span></code>) for names come pretty close to <a class="reference external" href="http://oracc.org">ORACC</a> citation forms. Proper nouns are therefore formatted differently from other nouns.</p></li>
+<li><p>Finally, in pre-processing we added to some <code class="docutils literal notranslate"><span class="pre">w</span></code> nodes an attribute <code class="docutils literal notranslate"><span class="pre">status</span></code>, which is either ‘additional’ or ‘secondary’. If the attribute exists, it is added to the <code class="docutils literal notranslate"><span class="pre">word</span></code> dictionary.</p></li>
+</ul>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">word</span></code> now has all the information it needs, but Citation Form, Guide Word, and Part of Speech are still mostly in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> format. The function <code class="docutils literal notranslate"><span class="pre">getword()</span></code> calls <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code>to change (Sumerian) text from ASCII to Unicode representation. The argument of <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code> is a string, the <code class="docutils literal notranslate"><span class="pre">form</span></code> or the <code class="docutils literal notranslate"><span class="pre">cf</span></code> (Citation Form) of the word that is being processed. The function returns the same string in Unicode representation.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">getword()</span></code>, finally sends the <code class="docutils literal notranslate"><span class="pre">word</span></code> dictionary to <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc</span></code> for final formatting of these data elements.</p>
+</div>
+<div class="section" id="tounicode">
+<h2>2.2.12 tounicode()<a class="headerlink" href="#tounicode" title="Permalink to this headline">¶</a></h2>
+<p>The main function of <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code> is to change ‘c’ into  ‘š’, ‘j’ into ‘ŋ’, ‘e2’ into ‘e₂’, etc. This is done in two steps. First sign index numbers are changed from regular numbers into Unicode index numbers (du3 &gt; du₃). The replacement of sign index numbers is complicated by the fact that <code class="docutils literal notranslate"><span class="pre">Citation</span> <span class="pre">Form</span></code> and <code class="docutils literal notranslate"><span class="pre">Form</span></code> may include real numbers, as in <strong>7-ta-am3</strong> where the <strong>7</strong> should remain unchanged, while <strong>am3</strong> should become <strong>am₃</strong>. The replacement routine for numbers, uses a <a class="reference external" href="http://www.regular-expressions.info/">regular expression</a> to search for a sequence of one or two digits, preceded by a letter. The regular expression is defined in the main process, as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ind</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">ind</span></code> will now match any sequence of one or two digits (or x) immediately preceded by a letter in upper or lower case.</p>
+<p>The replacement code uses the <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> function with a temporary <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function to translate the regular digits into their Unicode subscript counterparts. Using a function in <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> was discussed above in section [2.2.3](#2.2.3-Pre-Processing:-HTML entities):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">transind</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The translation table <code class="docutils literal notranslate"><span class="pre">transind</span></code> is created in the main process. Note that in this case it is not necessary to define a <code class="docutils literal notranslate"><span class="pre">look-behind</span></code> in the regular expression <code class="docutils literal notranslate"><span class="pre">ind</span></code>. The match of <code class="docutils literal notranslate"><span class="pre">ind</span></code> includes the letter that precedes the index, but since the translation table only has digits, this letter is returned unchanged.</p>
+<p>Finally,  <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code> uses another <code class="docutils literal notranslate"><span class="pre">translate()</span></code> call to replace ‘c’ by ‘š’, ‘j’ by ‘ŋ’, etc, using the table <code class="docutils literal notranslate"><span class="pre">transcj</span></code> created in the main process.</p>
+</div>
+<div class="section" id="etcsl-to-oracc">
+<h2>2.2.13 etcsl_to_oracc()<a class="headerlink" href="#etcsl-to-oracc" title="Permalink to this headline">¶</a></h2>
+<p>The function receives a single argument, the dictionary <code class="docutils literal notranslate"><span class="pre">word</span></code> that was created in <code class="docutils literal notranslate"><span class="pre">getword()</span></code>. The function will look up each lemma (a combination of Citation Form, Guide Word, and Part of Speech) in the dictionary <code class="docutils literal notranslate"><span class="pre">equiv</span></code>. This dictionary is a combination of three dictionaries in the file <code class="docutils literal notranslate"><span class="pre">equivalecies.json</span></code>, namely <code class="docutils literal notranslate"><span class="pre">suxwords</span></code>, <code class="docutils literal notranslate"><span class="pre">emesalwords</span></code> and <code class="docutils literal notranslate"><span class="pre">propernouns</span></code>. If the lemma is found in equiv, the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> forms of <code class="docutils literal notranslate"><span class="pre">cf</span></code>, <code class="docutils literal notranslate"><span class="pre">gw</span></code>, and <code class="docutils literal notranslate"><span class="pre">pos</span></code> are replaced by their <a class="reference external" href="http://oracc.org">ORACC</a> counterparts.
+In the <code class="docutils literal notranslate"><span class="pre">equiv</span></code> dictionary the lemmas are stored in the following format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;taka₄[to leave behind]V&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;gw&quot;</span><span class="p">:</span> <span class="s2">&quot;abandon&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;V/t&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cf&quot;</span><span class="p">:</span> <span class="s2">&quot;taka&quot;</span>
+        <span class="p">},</span>
+ <span class="nt">&quot;me-te-ŋal₂[seemly]AJ&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;gw&quot;</span><span class="p">:</span> <span class="s2">&quot;seemly&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;AJ&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cf&quot;</span><span class="p">:</span> <span class="s2">&quot;meteŋal&quot;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The keys in this dictionary are combinations of <code class="docutils literal notranslate"><span class="pre">cf</span></code>, <code class="docutils literal notranslate"><span class="pre">gw</span></code>, and <code class="docutils literal notranslate"><span class="pre">pos</span></code> (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>-style) in a single string. The <code class="docutils literal notranslate"><span class="pre">etcsl_to_oracc()</span></code> function, therefore first has to create the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> from the fields <code class="docutils literal notranslate"><span class="pre">cf</span></code>, <code class="docutils literal notranslate"><span class="pre">gw</span></code>, and <code class="docutils literal notranslate"><span class="pre">pos</span></code> before it can look the word up in <code class="docutils literal notranslate"><span class="pre">equiv</span></code>.</p>
+<p>In a few cases a single word in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> is represented by a sequence of two words in <a class="reference external" href="http://oracc.org/epsd2">EPSD2</a> style. This is represented as follows in the <code class="docutils literal notranslate"><span class="pre">JSON</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span><span class="nt">&quot;maš₂-sa-la₂[bug-ridden goat]N&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;cf&quot;</span><span class="p">:</span> <span class="s2">&quot;maš&quot;</span><span class="p">,</span>
+     		<span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;gw&quot;</span><span class="p">:</span> <span class="s2">&quot;goat&quot;</span><span class="p">,</span>
+     		<span class="nt">&quot;cf2&quot;</span><span class="p">:</span> <span class="s2">&quot;sala&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pos2&quot;</span><span class="p">:</span> <span class="s2">&quot;AJ&quot;</span><span class="p">,</span>
+		    <span class="nt">&quot;gw2&quot;</span><span class="p">:</span> <span class="s2">&quot;bug-ridden&quot;</span> 
+        <span class="p">},}</span>
+</pre></div>
+</div>
+<p>The code checks for the existence of a <code class="docutils literal notranslate"><span class="pre">cf2</span></code>key. If present, a new dictionary is created (<code class="docutils literal notranslate"><span class="pre">word2</span></code>) and both dictionaries (<code class="docutils literal notranslate"><span class="pre">word</span></code> and <code class="docutils literal notranslate"><span class="pre">word2</span></code>) are appended to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code>.</p>
+<p>If the lemma is not found in the <code class="docutils literal notranslate"><span class="pre">equiv</span></code> list the <code class="docutils literal notranslate"><span class="pre">word</span></code> dictionary is left unchanged and appended to the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code>.</p>
+</div>
+<div class="section" id="post-processing">
+<h2>2.2.14 Post-processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
+<p>The DataFrame that is the result of the notebook is saved as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file named <code class="docutils literal notranslate"><span class="pre">alltexts.csv</span></code>, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove “additional” and/or “secondary” text - etc.). Such transformations can be done most easily in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. The code for doing so is essentially the same as the code for structuring <a class="reference external" href="http://oracc.org">ORACC</a> data discussed in Chapter 2.1: Data Acquisition ORACC (see the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html"><span class="doc std std-doc">Basic ORACC-JSON Parser</span></a>).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_2_Data_Acquisition_ETCSL"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html" title="previous page">Extract Lemmatization from JSON: Extended Parser</a>
+    <a class='right-next' id="next-link" href="2_2_1_Data_Acquisition_ETCSL.html" title="next page">Parsing ETCSL</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

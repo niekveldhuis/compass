@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Sign Search for BDTNS &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4.3 Search BDTNS" href="2_4_3_Search_BDTNS.html" />
+    <link rel="prev" title="2.4 Data Acquision BDTNS" href="2_4_1_Data_Acquisition_BDTNS.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Build Sign Search for BDTNS
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-directories-if-necessary">
+     0 Create Directories, if Necessary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-ogsl-zip-file">
+     1 Download the OGSL ZIP file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-parse-ogsl-json-function">
+   2 The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     parse_ogsl_json()
+    </span>
+   </code>
+   function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process-the-json">
+   3 Process the JSON
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspect-the-results-in-dataframe">
+   4 Inspect the Results in Dataframe
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-bdtns-data">
+   5 Open BDTNS Data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenizing-signs">
+   6 Tokenizing Signs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-metadata">
+   7 Adding Metadata
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-search-function">
+   8 The Search Function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-user-interface">
+   9. Creating a User Interface
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-interface">
+   10 Alternative Interface
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-instructions">
+   11 Search Instructions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="build-sign-search-for-bdtns">
+<h1>Build Sign Search for BDTNS<a class="headerlink" href="#build-sign-search-for-bdtns" title="Permalink to this headline">¶</a></h1>
+<p>Goal of this notebook is to search the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> data by signs, irrespective of their reading. For instance, the sign NE may be read bi₂, ne, izi, šeŋ₆, kum₂, lam₂, zah₂, etc. It is easy to search for transliteration (and/or metadata) in the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> search page, but there is currently no way to search for a sequence of signs. This is useful, in particular, in two situations.</p>
+<ol class="simple">
+<li><p>Sumerological transliteration conventions may differ quite substantially between different schools. Thus, lu₂ kin-gi₄-a, {lu₂}kin-gi₄-a, lu₂ kiŋ₂-gi₄-a and {lu₂}kiŋ₂-gi₄-a all represent the same sequence of signs and the same word (meaning ‘messenger’), but without knowledge of the particular set of conventions used it may be difficult to guess which search will yield the desired results. In the sign search one may enter sign readings according to any convention recognized by the ORACC Global Sign List (<a class="reference external" href="http://oracc.org/ogsl">OGSL</a>).</p></li>
+<li><p>In some cases the correct reading and interpretation of a sign sequence may be unclear and this ambiguiuty may have been resolved in different ways throughout the database. The names lugal-mudra₅, lugal-zuluhu₂ and lugal-siki-su₁₃ all represent the same sign sequence. Which of these is correct is not entirely clear (although the third seems unlikely) and, depending on the research question, may even be unimportant (for instance for an SNA analysis). In the sign search one may enter any of these forms and the results will include all of them.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span> <span class="c1"># this suppresses a warning about pandas from tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>  <span class="c1"># tqdm.auto will activate the notebook version when called from a notebook</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span> <span class="c1"># initiate progress bars for pandas</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span> <span class="c1"># User Interface for search</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="n">util_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../utils&#39;</span><span class="p">)</span> <span class="c1"># make Compass utilities available</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-directories-if-necessary">
+<h2>0 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
+<p>The two directories needed for this script are <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;jsonzip&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-the-ogsl-zip-file">
+<h2>1 Download the OGSL ZIP file<a class="headerlink" href="#download-the-ogsl-zip-file" title="Permalink to this headline">¶</a></h2>
+<p>The sign search uses the ORACC Global Sign List <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>, available in JSON format at <a class="reference external" href="http://build-oracc.museum.upenn.edu/json/ogsl.zip">http://build-oracc.museum.upenn.edu/json/ogsl.zip</a>. The function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module downloads the JSON file in ZIP format. The function expects a list as its sole argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ogsl&quot;</span><span class="p">]</span> <span class="c1"># oracc_download() expects a list</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-parse-ogsl-json-function">
+<h1>2 The <code class="docutils literal notranslate"><span class="pre">parse_ogsl_json()</span></code> function<a class="headerlink" href="#the-parse-ogsl-json-function" title="Permalink to this headline">¶</a></h1>
+<p>The function iterates through the JSON object. The output is a dictionary where each possible reading, listed in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> is a key, the value is the sign name of that reading. For instance</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;u₄&#39;</span> <span class="p">:</span> <span class="s1">&#39;UD&#39;</span><span class="p">,</span> <span class="s1">&#39;ud&#39;</span> <span class="p">:</span> <span class="s1">&#39;UD&#39;</span><span class="p">,</span> <span class="s1">&#39;babbar&#39;</span> <span class="p">:</span> <span class="s1">&#39;UD&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>etc.</p>
+<p>In the process of parsing the JSON the sign list is adapted to reflect Ur III writing. Some signs that are distinguished in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> coincided in the Ur III period. For instance, the signs NI₂ and IM, which are different in the Fara period, are the same in Ur III. Such signs are listed in the dictionary <code class="docutils literal notranslate"><span class="pre">equiv</span></code>, which is used in the <code class="docutils literal notranslate"><span class="pre">parse_ogsl_json()</span></code> function. When adding more signs to the dictionary, make sure to use the canonical sign names as defined in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equiv</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ANŠE&#39;</span> <span class="p">:</span> <span class="s1">&#39;GIR₃&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;DUR₂&#39;</span> <span class="p">:</span> <span class="s1">&#39;KU&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;NAM₂&#39;</span> <span class="p">:</span> <span class="s1">&#39;TUG₂&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;TIL&#39;</span> <span class="p">:</span> <span class="s1">&#39;BAD&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;NI₂&#39;</span> <span class="p">:</span> <span class="s1">&#39;IM&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ŠAR₂&#39;</span> <span class="p">:</span> <span class="s1">&#39;HI&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;ZI₃&#39;</span>  <span class="p">:</span> <span class="s1">&#39;EŠ₂&#39;</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_ogsl_json</span><span class="p">(</span><span class="n">data_json</span><span class="p">):</span>
+    <span class="n">value2signname</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">)</span> <span class="c1"># replace whole words only - do not replace TILLA with BADLA.</span>
+                           <span class="c1"># but do replace |SAL.ANŠE| with |SAL.GIR₃|</span>
+    <span class="k">for</span> <span class="n">sign_name</span><span class="p">,</span> <span class="n">sign_data</span> <span class="ow">in</span> <span class="n">data_json</span><span class="p">[</span><span class="s2">&quot;signs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">sign_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">equiv</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()),</span> <span class="n">sign_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;values&quot;</span> <span class="ow">in</span> <span class="n">sign_data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">reading</span> <span class="ow">in</span> <span class="n">sign_data</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]:</span>
+                <span class="n">value2signname</span><span class="p">[</span><span class="n">reading</span><span class="p">]</span> <span class="o">=</span> <span class="n">sign_name</span>
+    <span class="k">return</span> <span class="n">value2signname</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="process-the-json">
+<h1>3 Process the JSON<a class="headerlink" href="#process-the-json" title="Permalink to this headline">¶</a></h1>
+<p>In the main process the file <code class="docutils literal notranslate"><span class="pre">ogsl-sl.json</span></code> is extracted from the zip and made into a JSON object (with the <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> function). This object is sent to the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function defined above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/ogsl.zip&quot;</span>
+<span class="n">zip_file</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> 
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;ogsl/ogsl-sl.json&quot;</span>
+<span class="n">signlist</span> <span class="o">=</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">data_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">signlist</span><span class="p">)</span>                <span class="c1"># make it into a json object (essentially a dictionary)</span>
+<span class="n">value2signname</span> <span class="o">=</span> <span class="n">parse_ogsl_json</span><span class="p">(</span><span class="n">data_json</span><span class="p">)</span>  
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/ogsl_dict.p&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">value2signname</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inspect-the-results-in-dataframe">
+<h1>4 Inspect the Results in Dataframe<a class="headerlink" href="#inspect-the-results-in-dataframe" title="Permalink to this headline">¶</a></h1>
+<p>This DataFrame is only for inspection - it is not otherwise used in the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ogsl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">value2signname</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+<span class="n">ogsl</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1025</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="open-bdtns-data">
+<h1>5 Open BDTNS Data<a class="headerlink" href="#open-bdtns-data" title="Permalink to this headline">¶</a></h1>
+<p>We can now open the dataframe with the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> transliterations. This dataframe was pickled in notebook <a class="reference internal" href="2_4_1_Data_Acquisition_BDTNS.html"><span class="doc std std-doc">2_4_1_Data_Acquisition_BDTNS.ipynb</span></a>. The dataframe has five fields: <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number of a document), <code class="docutils literal notranslate"><span class="pre">id_line</span></code> (a continuous line numbering that starts at 1 for each new document; integer), <code class="docutils literal notranslate"><span class="pre">label</span></code> (the regular, human legible <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> line number), <code class="docutils literal notranslate"><span class="pre">text</span></code> (the transliteration of the line) and <code class="docutils literal notranslate"><span class="pre">comments</span></code> (any comments added to the line in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;output/bdtns.p&#39;</span>
+<span class="n">bdtns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">bdtns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tokenizing-signs">
+<h1>6 Tokenizing Signs<a class="headerlink" href="#tokenizing-signs" title="Permalink to this headline">¶</a></h1>
+<p>In order to search by sign, we need to tokenize signs in the transliteration column (<code class="docutils literal notranslate"><span class="pre">text</span></code>) while ignoring elements such as question marks or (half-) brackets. First step is to define different types of separators, and flags that may be present in the text or in the sign name. The most common separators are space and hyphen. Curly brackets are placed around determinatives (semantic classifiers), as in {d}En-lil₂ (“the god Enlil”). Curly brackets and hyphens will be replaced by spaces. The separators in <code class="docutils literal notranslate"><span class="pre">separators2</span></code> are used in compound signs, as in |SI.A|, or |ŠU+NIGIN|. Operators, finally, are also used in compound signs and indicate how the signs are written in relation to each other (on top of each other, one inside the other, etc.). Compound signs that represent a sequence of simple signs (|SI.A| for <strong>dirig</strong> or |A.TU.GAB.LIŠ| for <strong>asal₂</strong>) will be decomposed in their component signs. Compound signs of the type |KA×GAR| (for <strong>gu₇</strong>) are not analyzed, but their component parts are aligned with <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> practices (that is |KA×NINDA| will be re-written as |KA×GAR|, because in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> GAR is the name of the sign that can be read <strong>ninda</strong> or <strong>gar</strong>).</p>
+<p>Finally the flags include various characters that may appear in the transliteration but will be ignored in the search. A search for <code class="docutils literal notranslate"><span class="pre">ninda</span></code>, therefore, will find <code class="docutils literal notranslate"><span class="pre">ninda</span></code>, <code class="docutils literal notranslate"><span class="pre">[nin]da</span></code>, <code class="docutils literal notranslate"><span class="pre">ninda?</span></code>, etc., as well as <code class="docutils literal notranslate"><span class="pre">gar</span></code>, <code class="docutils literal notranslate"><span class="pre">⸢gar⸣</span></code>, <code class="docutils literal notranslate"><span class="pre">gar!(SIG)</span></code>, etc. (but not <code class="docutils literal notranslate"><span class="pre">nagar</span></code>, see below).</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">flags2none</span></code> represents a table in which each character in <code class="docutils literal notranslate"><span class="pre">flags</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">None</span></code>. This is used by the <code class="docutils literal notranslate"><span class="pre">translate()</span></code> method; see below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">separators</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">]</span>
+<span class="n">separators2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">]</span>  <span class="c1"># used in compound signs</span>
+<span class="c1">#operators = [&#39;&amp;&#39;, &#39;%&#39;, &#39;@&#39;, &#39;×&#39;]</span>
+<span class="n">flags</span> <span class="o">=</span> <span class="s2">&quot;][?&lt;&gt;⸢⸣⌈⌉*/&quot;</span> <span class="c1"># note that ! is omitted from flags, because it is dealt with separately</span>
+<span class="n">flags2none</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">flags</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translit_to_signnames</span><span class="p">(</span><span class="n">translit</span><span class="p">):</span>  
+    <span class="sd">&quot;&quot;&quot;This function takes a string of transliterated cuneiform text (in any transliteration style) and translates that string into a string of</span>
+<span class="sd">    sign names, separated by spaces. In order to work it needs the variables separators, separators2, and flags2none defined above. The variable flags2none</span>
+<span class="sd">    is used by the translate() method to translate all flags (except for !) to None. The function also needs a dictionary, called value2signname, that has as</span>
+<span class="sd">    keys sign readings and sign names as corresponding values. In case a key is not found, the sign reading is replaced by itself.&quot;&quot;&quot;</span>
+    <span class="n">signnames_l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">translit</span> <span class="o">=</span> <span class="n">translit</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">flags2none</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># remove flags, half brackets, square brackets.</span>
+    <span class="n">translit</span> <span class="o">=</span> <span class="n">translit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">separator</span> <span class="ow">in</span> <span class="n">separators</span><span class="p">:</span> <span class="c1"># split transliteration line into signs   </span>
+        <span class="n">translit</span> <span class="o">=</span> <span class="n">translit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">separator</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">signs_cleaned</span> <span class="o">=</span> <span class="n">translit</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># s_l is a list that contains the sequence of transliterated signs without separators or flags</span>
+    <span class="n">signs_cleaned</span> <span class="o">=</span> <span class="p">[</span><span class="n">value2signname</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">sign</span><span class="p">)</span> <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">signs_cleaned</span><span class="p">]</span> <span class="c1"># replace each transliterated sign with its sign name.</span>
+    <span class="c1"># Now take care of some special situations: signs with qualifiers, compound signs.</span>
+    <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">signs_cleaned</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;!&#39;</span> <span class="ow">in</span> <span class="n">sign</span><span class="p">:</span> <span class="c1"># corrected sign, as in ka!(SAG), get only the corrected reading.</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;!(&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># remove remaining exclamation marks</span>
+        <span class="k">elif</span> <span class="n">sign</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;)&#39;</span> <span class="ow">and</span> <span class="s1">&#39;(&#39;</span> <span class="ow">in</span> <span class="n">sign</span><span class="p">:</span> <span class="c1"># qualified sign, as in ziₓ(SIG₇) - get only the qualifier</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;×&#39;</span> <span class="ow">in</span> <span class="n">sign</span><span class="p">:</span> <span class="c1">#compound. Compound like |KA×NINDA| to be replaced by |KA×GAR|</span>
+            <span class="n">sign_l</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;×&#39;</span><span class="p">)</span>
+            <span class="c1">#replace individual signs of the compound by OGSL names</span>
+            <span class="n">sign_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">value2signname</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">sign</span><span class="p">)</span> <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">sign_l</span><span class="p">]</span> 
+            <span class="c1"># if user enters |KA*EŠ| this is transformed to [&#39;KA&#39;, &#39;|U.U.U|&#39;]. The pipes around U.U.U must be replaced by brackets</span>
+            <span class="n">sign_l</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">sign</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sign</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">sign</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;|&#39;</span> <span class="k">else</span> <span class="n">sign</span> <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">sign_l</span><span class="p">]</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="s1">&#39;×&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sign_l</span><span class="p">)</span><span class="si">}</span><span class="s2">|&quot;</span>  <span class="c1">#put the sign together again with enclosing pipes.</span>
+        <span class="k">elif</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">sign</span> <span class="ow">or</span> <span class="s1">&#39;+&#39;</span> <span class="ow">in</span> <span class="n">sign</span><span class="p">:</span> <span class="c1"># using elif, so that compounds like |UD×(U.U.U)| are not further analyzed.</span>
+            <span class="k">for</span> <span class="n">separator</span> <span class="ow">in</span> <span class="n">separators2</span><span class="p">:</span>
+                <span class="n">sign</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">separator</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
+            <span class="n">sign_l</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># compound sign split into multiple signs</span>
+            <span class="n">sign_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">value2signname</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">sign</span><span class="p">)</span> <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">sign_l</span><span class="p">]</span>
+            <span class="n">signnames_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">sign_l</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="n">value2signname</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span> <span class="n">sign</span><span class="p">)</span>
+        <span class="n">signnames_l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sign</span><span class="p">)</span>
+    <span class="c1"># add space before and after each line so that each sign representation is enclosed in spaces</span>
+    <span class="n">signnames</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">signnames_l</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span> 
+    <span class="k">return</span> <span class="n">signnames</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">translit_to_signnames()</span></code> is called for every row in the <code class="docutils literal notranslate"><span class="pre">bdtns</span></code> dataframe with the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function. The output is stored in a new column of that same dataframe called <code class="docutils literal notranslate"><span class="pre">sign_names</span></code>. The function <code class="docutils literal notranslate"><span class="pre">progress_map()</span></code> adds a progress bar to the regular <code class="docutils literal notranslate"><span class="pre">map()</span></code> function; <code class="docutils literal notranslate"><span class="pre">progress_map()</span></code> is activated by <code class="docutils literal notranslate"><span class="pre">tqdm.pandas()</span></code> in the first cell of this notebook.</p>
+<p>After running this cell the <code class="docutils literal notranslate"><span class="pre">bdtns</span></code> dataframe will have a column <code class="docutils literal notranslate"><span class="pre">sign_names</span></code> that represents a single line of text as a sequence of sign names as in ” KI UR AN EN KID TA ” (for ki ur-{d}en-lil₂-ta).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bdtns</span><span class="p">[</span><span class="s2">&quot;sign_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdtns</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">progress_map</span><span class="p">(</span><span class="n">translit_to_signnames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-metadata">
+<h1>7 Adding Metadata<a class="headerlink" href="#adding-metadata" title="Permalink to this headline">¶</a></h1>
+<p>Open the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> catalog DataFrame (pickled in section 2.4.1) and add provenance, date, and publication to each row. Note that in the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> transliteration file the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> numbers are strings, whereas in the catalog file they are integers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;output/bdtns_cat.p&#39;</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">date_d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]))</span>
+<span class="n">prov_d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;provenance&#39;</span><span class="p">]))</span>
+<span class="n">publ_d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">cat_df</span><span class="p">[</span><span class="s1">&#39;publication&#39;</span><span class="p">]))</span>
+<span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;provenance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">prov_d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">idt</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">idt</span> <span class="ow">in</span> <span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+<span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">date_d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">idt</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">idt</span> <span class="ow">in</span> <span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+<span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;publication&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">publ_d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">idt</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">idt</span> <span class="ow">in</span> <span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bdtns</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;output/bdtns_tokenized.p&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-search-function">
+<h1>8 The Search Function<a class="headerlink" href="#the-search-function" title="Permalink to this headline">¶</a></h1>
+<p>The search function takes as input any style of transliteration recognized in <a class="reference external" href="http://orac.org/ogsl">OGSL</a> in upper or lower case (see the search instructions below).</p>
+<p>The search engine will find any matching sequence of signs, independent of the transliteration, thus ‘nig2 sig’ will also find ‘ninda sig’ or ‘nig2-sig’ or ‘gar-sig’ etc.</p>
+<p>The search results are listed in a DataFrame with links to the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> pages of the matching texts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">digits</span> <span class="o">=</span> <span class="s1">&#39;0123456789x&#39;</span>
+<span class="n">indexes</span> <span class="o">=</span> <span class="s1">&#39;₀₁₂₃₄₅₆₇₈₉ₓ&#39;</span>
+<span class="n">input_char</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-cjĝ*&#39;</span>
+<span class="n">translate_to</span> <span class="o">=</span> <span class="s1">&#39;   šŋŋ×&#39;</span>
+<span class="n">index</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">digits</span><span class="p">,</span> <span class="n">indexes</span><span class="p">)</span>
+<span class="n">char</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">input_char</span><span class="p">,</span> <span class="n">translate_to</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}&#39;</span><span class="p">)</span> <span class="c1"># regular expression for a letter</span>
+                                                   <span class="c1"># followed immediately by one or two digits or x</span>
+<span class="n">anchor</span> <span class="o">=</span> <span class="s1">&#39;&lt;a href=&quot;http://bdtns.filol.csic.es/</span><span class="si">{}</span><span class="s1">&quot;, target=&quot;_blank&quot;&gt;</span><span class="si">{}</span><span class="s1">&lt;/a&gt;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">Search</span><span class="p">,</span> <span class="n">Max_hits</span><span class="p">,</span> <span class="n">Links</span><span class="p">,</span> <span class="n">Sortby</span> <span class="o">=</span> <span class="s1">&#39;id_text&#39;</span><span class="p">):</span> 
+    <span class="n">search_term</span> <span class="o">=</span> <span class="n">Search</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;sz&#39;</span><span class="p">,</span> <span class="s1">&#39;š&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># replace sz by š; translate c, j, ĝ, and * to š, ŋ, ŋ, and ×, respectively.</span>
+    <span class="n">search_term</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">search_term</span><span class="p">)</span> <span class="c1">#translate regular numbers (and x) to index numbers</span>
+    <span class="n">search_term</span> <span class="o">=</span> <span class="n">translit_to_signnames</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span>  <span class="c1"># replace a sequence of transliterated signs by a sequence of sign names</span>
+    <span class="n">search_term_esc</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span> <span class="c1"># use escapes for characters that have special meaning in regular expressions</span>
+    <span class="n">search_term_esc</span> <span class="o">=</span> <span class="n">search_term_esc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;\ X\ &#39;</span><span class="p">,</span> <span class="s1">&#39;(?:\ [^ ]+)*\ &#39;</span><span class="p">)</span> <span class="c1"># use X (preceded and followed by space) as wild card for any sequence of signs</span>
+    <span class="n">show</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;provenance&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;publication&#39;</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">bdtns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bdtns</span><span class="p">[</span><span class="s1">&#39;sign_names&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">search_term_esc</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">show</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># this is the actual search command</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Max_hits</span> <span class="o">&gt;</span> <span class="n">hits</span><span class="p">:</span> 
+        <span class="n">Max_hits</span> <span class="o">=</span> <span class="n">hits</span> 
+    <span class="k">if</span> <span class="n">hits</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pl</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pl</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">search_term</span><span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span><span class="si">}</span><span class="s2"> hit</span><span class="si">{</span><span class="n">pl</span><span class="si">}</span><span class="s2">; </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">Max_hits</span><span class="p">)</span><span class="si">}</span><span class="s2"> displayed.&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="n">Sortby</span><span class="p">)[:</span><span class="n">Max_hits</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">Links</span><span class="p">:</span>
+        <span class="n">results</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">anchor</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;publication&#39;</span><span class="p">],</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-user-interface">
+<h1>9. Creating a User Interface<a class="headerlink" href="#creating-a-user-interface" title="Permalink to this headline">¶</a></h1>
+<p>The user interface is created with widgets from the package <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>. Widgets are pieces of software that allow a user to interact with functions through text boxes, sliders, buttons, drop-down menus, check boxes, etc. These widgets contain code in javascript and are treated differently in Jupyter Notebook and Jupyter Lab. Jupyter Notebook allows the embedding of any kind of javascript code. For safety reasons, this is not the case in Jupyter Lab. The Jupyter widgets need to be installed as a Jupyter Lab extension before they can be run; enabling Jupyter Lab extensions, in turn, requires <code class="docutils literal notranslate"><span class="pre">node.js</span></code>. For more information about installing and enabling the extension (including node.js) see <a class="reference internal" href="../1_Preliminaries/install_packages.html"><span class="doc std std-doc">install_packages.ipynb</span></a>. For detailed information about widgets, see <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a>.</p>
+<p>The widgets used here are</p>
+<ul class="simple">
+<li><p>Button - when clicked, the search function is called</p></li>
+<li><p>Text - a text box in which the user may enter a sequence of signs; after hitting ENTER (or clicking the Search button) the search function is called</p></li>
+<li><p>BoundIntText - a text box that indicates the maximum number of hits (default is 25)</p></li>
+<li><p>Checkbox - when checked (default) the search results display active links to BDTNS pages. When maximum hits is set to larger than 250 the default becomes unchecked.</p></li>
+<li><p>Dropdown - a drop-down menu for arranging the search results by different columns.</p></li>
+</ul>
+<p>In addition, a number of special widgets are used, namely</p>
+<ul class="simple">
+<li><p>Vbox, for displaying widgets vertically</p></li>
+<li><p>Hbox, for displaying widgets horizontally</p></li>
+<li><p>Output, an area where the search output is displayed</p></li>
+</ul>
+<p>The code for each widget consists of several parts. First, the widget is called with various parameters, such as its default value, or the text that is to appear on a button. Second is a function that defines what happens when the button is clicked, or when the user hits the ENTER button. Third, a method for each of the widgets defines what event will trigger the function. For the button it is the event <code class="docutils literal notranslate"><span class="pre">on_click</span></code>, for the text box it is <code class="docutils literal notranslate"><span class="pre">on_submit</span></code> (that is, when the user hits ENTER); the other three widgets listen for a change in value with the <code class="docutils literal notranslate"><span class="pre">observe</span></code> method. Finally, the VBox and HBox widgets define the layout.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a User Interface</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Search&#39;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+       <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+       <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">maxhits</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">BoundedIntText</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">bdtns</span><span class="p">),</span>
+        <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Max hits:&#39;</span><span class="p">,</span>
+        <span class="n">continuous_update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Display Links&#39;</span><span class="p">)</span>
+<span class="n">sortby</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;provenance&#39;</span><span class="p">,</span> <span class="s1">&#39;publication&#39;</span><span class="p">],</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;id_text&#39;</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Sort By: &#39;</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">submit_search</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+        <span class="k">with</span> <span class="n">out</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+            <span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">maxhits</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">links</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sortby</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+<span class="c1"># when maxhits is set larger than 250, default becomes no links</span>
+<span class="k">def</span> <span class="nf">update_maxhits</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">links</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">maxhits</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">250</span>
+    <span class="n">submit_search</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+<span class="c1"># linking button to search function the button&#39;s method</span>
+<span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">submit_search</span><span class="p">)</span>
+<span class="c1"># linking text box to search function - called when user hits ENTER.</span>
+<span class="n">text</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="n">submit_search</span><span class="p">)</span>
+<span class="c1"># linking drop-down menu and search function - called when the value of the drop-down menu changes</span>
+<span class="n">sortby</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">submit_search</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="c1"># linking the maximum hits box and search function - called when the value changes</span>
+<span class="n">maxhits</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_maxhits</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="c1"># linking the links checkbox and search function - called when its value changes</span>
+<span class="c1">#links.observe(submit_search, &#39;value&#39;)</span>
+<span class="c1"># displaying the widgets and output together</span>
+<span class="n">col1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">text</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">button</span><span class="p">])</span> <span class="c1"># first column: text box, checkbox, and button</span>
+<span class="n">col2</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">maxhits</span><span class="p">,</span> <span class="n">sortby</span><span class="p">])</span> <span class="c1"># second column: Maximum Hits and drop-down menu.</span>
+<span class="n">box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">])</span> <span class="c1"># put first and second column next to each other in a row</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">box</span><span class="p">,</span><span class="n">out</span><span class="p">])</span> <span class="c1"># add ouput below the widgets.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alternative-interface">
+<h1>10 Alternative Interface<a class="headerlink" href="#alternative-interface" title="Permalink to this headline">¶</a></h1>
+<p>The following alterative interface is much simpler in its coding (essentially letting the <code class="docutils literal notranslate"><span class="pre">interact</span></code> function do all the work). To be useful, this interface requires a fairly fast machine because the search will update live while you type. The interface uses the same search function as above, so search instructions and results are the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="n">Search</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">Max_hits</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">BoundedIntText</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">bdtns</span><span class="p">),</span>
+        <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Max hits:&#39;</span><span class="p">,</span>
+        <span class="n">continuous_update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">),</span> 
+        <span class="n">Links</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+        <span class="n">Sortby</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;provenance&#39;</span><span class="p">,</span> <span class="s1">&#39;publication&#39;</span><span class="p">]</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="search-instructions">
+<h1>11 Search Instructions<a class="headerlink" href="#search-instructions" title="Permalink to this headline">¶</a></h1>
+<p>Search for a sequence of sign values in any transliteration system recognized by <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>. Thus, sugal₇, sukkal, or luh, in upper or lower case will all return the same results.</p>
+<ul class="simple">
+<li><p>Determinatives (semantic classifiers) may be entered between curly brackets or as regular signs. Thus, gesz taskarin, gesz-taskarin, {gesz}taskarin, and {ŋeš}tug₂ will all yield the same results.</p></li>
+<li><p>Signs may be connected with spaces or hyphens.</p></li>
+<li><p>The Shin may be represented by š, c, or sz in upper or lower case; nasal g may be represented as j, ŋ, or ĝ.</p></li>
+<li><p>Sign index numbers may be represented by regular numbers or by index numbers (e₂ or e2, but not é).</p></li>
+<li><p>Compound signs (such as diri) are resolved in their component signs if the compound represents a simple sequence of signs. Thus diri is resolved as SI A, but gu₇ is resolved as |KA×GAR|.</p></li>
+<li><p>To search for a compound sign by sign name, enter it between pipes (|). The “times” sign may be represented by * (enter |UR₂×A| or |UR₂*A|, but not |URxA|).</p></li>
+<li><p>Wildcard: x or X, represents any number of signs in between (e.g. ku6-x-muszen will find all lines where HA is followed by HU with zero or more signs in between).</p></li>
+<li><p>For large numbers of hits, the clickable links to <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> editions will make display very slow. Unclick the check box to display <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> numbers only, without links. Setting the number of hits higher than 250 will change the default to no links.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_4_Data_Acquisition_BDTNS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2_4_1_Data_Acquisition_BDTNS.html" title="previous page">2.4 Data Acquision BDTNS</a>
+    <a class='right-next' id="next-link" href="2_4_3_Search_BDTNS.html" title="next page">2.4.3 Search BDTNS</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

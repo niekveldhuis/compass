@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1 Data Acquisition: ORACC &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Download ORACC JSON Files" href="2_1_0_download_ORACC-JSON.html" />
+    <link rel="prev" title="Installing Anaconda" href="../1_Preliminaries/install_packages.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-json-data-format">
+   2.1.1 The JSON Data Format
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acquiring-oracc-json">
+   2.1.2 Acquiring ORACC JSON
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-json-catalogue-json">
+   2.1.3 Parsing JSON: catalogue.json
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-an-oracc-json-text-edition-file">
+   2.1.4 Parsing an ORACC JSON Text Edition File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enhancing-parsejson">
+   2.1.5 Enhancing parsejson()
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-labels-and-line-ids">
+     2.1.5.1 Line Labels and Line IDs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#select-a-section">
+       2.1.5.2 Select a Section
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentences">
+     2.1.5.3 Sentences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-parsejson">
+     2.1.5.4 Using parsejson()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-data-types-in-text-edition-json-files">
+   2.1.6 Other Data Types in Text Edition JSON Files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phrasal-semantic-units-compound-verbs-etc">
+     2.1.6.1 Phrasal Semantic Units (Compound Verbs, etc.)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broken-lines">
+     2.1.6.2 Broken Lines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-structuring">
+   2.1.7 Data Structuring
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-spaces-and-commas-from-guide-word">
+     2.1.7.1 Remove Spaces and Commas from Guide Word
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-line-ids">
+     2.1.7.2 Create Line IDs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-lemmas">
+     2.1.7.3 Create Lemmas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrange-by-line-or-by-document">
+     2.1.7.4 Arrange by Line or by Document
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-oracc-json-files">
+   2.1.8 Other ORACC JSON files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metadata-json">
+     2.1.8.1 metadata.json
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexes-and-glossary">
+     2.1.8.2 Indexes and Glossary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-acquisition-oracc">
+<h1>2.1 Data Acquisition: <a class="reference external" href="http://oracc.org">ORACC</a><a class="headerlink" href="#data-acquisition-oracc" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. <a class="reference external" href="http://oracc.org">ORACC</a> counts several dozens of independent projects, some with one or more sub-projects. Corpus-based projects include editions and translations of cuneiform texts with linked local glossaries. <a class="reference external" href="http://oracc.org">ORACC</a> was created by Steve Tinney (University of Pennsylvania) in 2006.</p>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> data are made available as open data in JSON format under the <a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> license (public domain). JSON (JavaScript Object Notation) is a file format that is used widely for exchanging data between programs or between web sites. The file format is simple and straightforward, but allows for complex representations of data in a hierarchical format (not unlike XML). The structure of JSON files is very easy to read and parse in Python and in many other programming languages.</p>
+<p>The sections that follow explain how the <a class="reference external" href="http://oracc.org">ORACC</a> JSON is parsed and how the data can be reformatted in various ways. This is rather technical in nature and perhaps not a very interesting place to start (there are no research results to be reported or to be evaluated at the end). Proper data acquisition is foundational for all computational research. <em>What</em> data are collected (transliteration, transcription, or a series of lemmas) and in what <em>format</em> they are collected (word-by-word, line-by-line, or text-by text) depends on the research question and therefore the acquisition techniques discussed below are flexible and allow the user to adjust the code to her or his needs. The analytical chapters (Chapter 3-6) will provide the data in the required format and thus the present section is not necessary to follow along. The reader who wishes to devise her own research project - and format the data accordingly - will require a deeper understanding of the JSON format and the techniques for parsing the data.</p>
+<div class="section" id="the-json-data-format">
+<h2>2.1.1 The JSON Data Format<a class="headerlink" href="#the-json-data-format" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript Object Notation, or <a class="reference external" href="http://www.json.org">JSON</a> is recognized as a lightweight but very versatile data structure. Databases (and <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files) need a fixed number of fields; key/value combinations in JSON can be extended at will. Representation of hierarchical structures is very natural in JSON, but is complex in (relational) databases. We will see that <a class="reference external" href="http://oracc.org">ORACC</a> JSON makes extensive use of hierarchies. The two characteristics mentioned here (extensibility and hierarchical structure) are shared with XML, which is in many ways similar to JSON. Generally, JSON is considered to be lighter (smaller files) and more efficient, because the data structure is very closely aligned to data structures in common programming languages such as JavaScript, Python, and R.</p>
+<p>The contents of a valid JSON file are wrapped in curly brackets, very similar to a Python dictionary, and consist of <code class="docutils literal notranslate"><span class="pre">&quot;key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;value&quot;</span></code> pairs, as in:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;id_text&quot;</span><span class="p">:</span> <span class="s2">&quot;P334930&quot;</span><span class="p">,</span> <span class="nt">&quot;designation&quot;</span><span class="p">:</span> <span class="s2">&quot;SAA 03, 001&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In a <code class="docutils literal notranslate"><span class="pre">&quot;key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;value&quot;</span></code> pair, keys are always strings. Values may be string, number, list, boolean (true or false), or another dictionary. A list is wrapped in square brackets and may look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;ABRT 1 32&quot;</span><span class="p">,</span> <span class="s2">&quot;SAA 03, 001&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>A dictionary is wrapped in curly brackets and consists, again, of <code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">value</span></code> pairs.</p>
+<p>The following is an (abbreviated) example of a JSON file (the catalog of an imaginary <a class="reference external" href="http://oracc.org">ORACC</a> project) that illustrates the format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&quot;P334930&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nt">&quot;id_text&quot;</span><span class="p">:</span> <span class="s2">&quot;P334930&quot;</span><span class="p">,</span>
+			<span class="nt">&quot;designation&quot;</span><span class="p">:</span> <span class="s2">&quot;SAA 03, 001&quot;</span><span class="p">,</span>
+			<span class="nt">&quot;publications&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ABRT 1 32&quot;</span><span class="p">,</span> <span class="s2">&quot;SAA 03, 001&quot;</span><span class="p">]</span>
+		<span class="p">},</span>
+		<span class="nt">&quot;P334929&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nt">&quot;id_text&quot;</span><span class="p">:</span> <span class="s2">&quot;P334929&quot;</span><span class="p">,</span>
+			<span class="nt">&quot;designation&quot;</span><span class="p">:</span> <span class="s2">&quot;SAA 03, 002&quot;</span><span class="p">,</span>
+			<span class="nt">&quot;publications&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ABRT 1 29&quot;</span><span class="p">,</span> <span class="s2">&quot;SAA03, 002&quot;</span><span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The value of the key <code class="docutils literal notranslate"><span class="pre">members</span></code> is a dictionary (surrounded by curly brackets) with length of 2. The value of each key in this dictionary is again a dictionary (surrounded by curly brackets and consisting of <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> pairs). The key <code class="docutils literal notranslate"><span class="pre">publications</span></code> has a list as its value. A list is a way to associate multiple values with the same key. In <code class="docutils literal notranslate"><span class="pre">publications</span></code>  the values inside the list are strings (surrounded by quotation marks), but they may be of any data type, including lists or dictionaries. This allows for very complex trees with a minimal arsenal of data structures.</p>
+<p>For all practical purposes, a JSON object is identical in structure to a Python dictionary, but the naming conventions are slightly different. To avoid confusion, we use the Python vocabulary here (key, list, dictionary), even when talking about the JSON  structure.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>JSON</p></th>
+<th class="head"><p>Python</p></th>
+<th class="head"><p>Surrounded by</p></th>
+<th class="head"><p>Defined as</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object</p></td>
+<td><p>dictionary</p></td>
+<td><p>{}</p></td>
+<td><p>unordered sequence of name/value pairs</p></td>
+</tr>
+<tr class="row-odd"><td><p>array</p></td>
+<td><p>list</p></td>
+<td><p>[]</p></td>
+<td><p>ordered sequence of values</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>value</p></td>
+<td><p></p></td>
+<td><p>string, number, boolean, list (= array), or dictionary (= object)</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>key</p></td>
+<td><p></p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<p>For a more formal and complete description of the JSON data structure see <a class="reference external" href="http://www.json.org">http://www.json.org/</a>.</p>
+</div>
+<div class="section" id="acquiring-oracc-json">
+<h2>2.1.2 Acquiring ORACC JSON<a class="headerlink" href="#acquiring-oracc-json" title="Permalink to this headline">¶</a></h2>
+<p>Each <a class="reference external" href="http://oracc.org">ORACC</a> project has a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file can be found at <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROJECT]/json/[PROJECT].zip</span></code>, where <code class="docutils literal notranslate"><span class="pre">[PROJECT]</span></code> is to be replaced with the project abbreviation (e.g. <a class="reference external" href="http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip">http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip</a>). For sub-projects the address is <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code> (e.g. <a class="reference external" href="http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip">http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip</a>). One may download these files by hand (simply type the address in your browser), or use the notebook <a class="reference external" href="https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb">2_1_0_download_ORACC-JSON.ipynb</a>. The notebook will create a directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and copy the file to that directory - all further scripts will expect the <code class="docutils literal notranslate"><span class="pre">zip</span></code> files to reside in <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>. The same code is also available in the functions <code class="docutils literal notranslate"><span class="pre">make_dirs()</span></code> and <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in the directory  <code class="docutils literal notranslate"><span class="pre">utils</span></code>. See the notebook <a class="reference external" href="https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.ipynb">2_1_0_download_ORACC-JSON.ipynb</a> for instructions how to use the functions of the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
+<p>After downloading the JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file you may unzip it to inspect its contents. Note, however, that the scripts will always read the data directly from the <code class="docutils literal notranslate"><span class="pre">zip</span></code> file.</p>
+</div>
+<div class="section" id="parsing-json-catalogue-json">
+<h2>2.1.3 Parsing JSON: catalogue.json<a class="headerlink" href="#parsing-json-catalogue-json" title="Permalink to this headline">¶</a></h2>
+<p>Each <a class="reference external" href="http://oracc.org">ORACC</a> JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file includes a file named <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code>. Since the structure of <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file <code class="docutils literal notranslate"><span class="pre">obmc.zip</span></code> is available in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>. You may download it at <a class="reference external" href="http://oracc.museum.upenn.edu/obmc/json/obmc.zip">http://oracc.museum.upenn.edu/obmc/json/obmc.zip</a> or use the notebook/utility referenced above. The comment lines (beginning with #) show the proper naming conventions for a sub-project.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/obmc.zip&quot;</span>    
+<span class="c1"># or: file = &quot;jsonzip/dcclt-nineveh.zip&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;obmc/catalogue.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="c1"># or: st = z.read(&quot;dcclt/nineveh/catalogue.json&quot;).decode(&quot;utf-8&quot;)</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">ZipFile</span></code> from the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> library turns <code class="docutils literal notranslate"><span class="pre">obmc.zip</span></code> into a <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> object that may be manipulated with the functions available in the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> library. The <code class="docutils literal notranslate"><span class="pre">read()</span></code> command from that same package reads one particular file from the <code class="docutils literal notranslate"><span class="pre">zip</span></code>.  The <code class="docutils literal notranslate"><span class="pre">json</span></code> library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function <code class="docutils literal notranslate"><span class="pre">load()</span></code>, which comes in two versions. Regular <code class="docutils literal notranslate"><span class="pre">json.load()</span></code> takes a filename as argument and will load a JSON file. In this case, however, the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> library has produced a string (extracted from <code class="docutils literal notranslate"><span class="pre">obmc.zip</span></code>), and therefore we need the command <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, which takes a string as its argument (here represented by the variable <code class="docutils literal notranslate"><span class="pre">st</span></code>).</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">j</span></code> will now contain the entire <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> object from the <a class="reference external" href="http://oracc.org/obmc">OBMC</a> (Old Babylonian Model Contracts) project by Gabriella Spada. The variable <code class="docutils literal notranslate"><span class="pre">j</span></code> is a JSON object which we may treat as a Python dictionary. The <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> has various keys, including <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>, <code class="docutils literal notranslate"><span class="pre">license-url</span></code>, <code class="docutils literal notranslate"><span class="pre">more-info</span></code>, <code class="docutils literal notranslate"><span class="pre">UTC-timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">members</span></code>, and <code class="docutils literal notranslate"><span class="pre">summaries</span></code>. The key <code class="docutils literal notranslate"><span class="pre">members</span></code> contains the actual catalog information. The value of the key <code class="docutils literal notranslate"><span class="pre">members</span></code> is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (<code class="docutils literal notranslate"><span class="pre">primary_publication</span></code>, <code class="docutils literal notranslate"><span class="pre">provenience</span></code>, <code class="docutils literal notranslate"><span class="pre">genre</span></code>, etc.). The dictionary of dictionaries under the key <code class="docutils literal notranslate"><span class="pre">members</span></code> may be transformed into a Pandas DataFrame for ease of viewing and manipulation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>	
+<span class="n">cat</span> <span class="o">=</span> <span class="n">j</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">DataFrame.from_dict()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library takes each key as a column - in this case the keys of <code class="docutils literal notranslate"><span class="pre">cat[&quot;members&quot;]</span></code> are the P numbers (text IDs); the catalog fields have become rows. To address that issue, we need to tell the <code class="docutils literal notranslate"><span class="pre">DataFrame.from_dict()</span></code> function explicitly that each key should be a row (<code class="docutils literal notranslate"><span class="pre">orient=&quot;index&quot;</span></code>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>The table in <code class="docutils literal notranslate"><span class="pre">df</span></code> now contains all the catalog data available in <a class="reference external" href="http://oracc.org/obmc">OBMC</a>. The Pandas library allows one to manipulate and slice the DataFrame in many different ways. For instance, one may select the relevant fields by creating a new DataFrame as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;provenience&quot;</span><span class="p">,</span> <span class="s2">&quot;period&quot;</span><span class="p">,</span> <span class="s2">&quot;id_text&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Pandas is a powerful Python library – we will see some of its functionality in later sections. Various introductions to Pandas may be found on the web or in <a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">VanderPlas 2016</a> and similar overviews.</p>
+<p>The notebook <a class="reference external" href="https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.ipynb">2-1-1_parse-json-cat.ipynb</a> allows one to enter one or more project abbreviations, download the JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file(s), extract the catalog information and store that information in a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file and/or a <code class="docutils literal notranslate"><span class="pre">pickle</span></code> file.</p>
+</div>
+<div class="section" id="parsing-an-oracc-json-text-edition-file">
+<h2>2.1.4 Parsing an ORACC JSON Text Edition File<a class="headerlink" href="#parsing-an-oracc-json-text-edition-file" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> JSON text edition files include transliteration and lemmatization, as well as information on the sign level. Translation is not included. The files are found in the <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> directory of each project’s <code class="docutils literal notranslate"><span class="pre">zip</span></code> file and are named after their text ID, for instance <code class="docutils literal notranslate"><span class="pre">dcclt/corpusjson/P251867.json</span></code>, or, in the case of a sub-project, <code class="docutils literal notranslate"><span class="pre">saao/saa01/corpusjson/P224485.json</span></code>.</p>
+<p>Reading in the data works in exactly the same way as above:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/obmc.zip&quot;</span>    
+<span class="c1"># or: file = &quot;jsonzip/saao-saa01.zip&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;obmc/corpusjson/P230754.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="c1"># or: st = z.read(&quot;saao/saa01/corpusjson/P224485.json&quot;).decode(&quot;utf-8&quot;)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The structure of the JSON files for text editions, however, is much more complex, because of the hierarchical structure of textual data. A text may have one or more surfaces (obverse, reverse), each surface may have one or more columns; each column has lines; each line has words; and each word has signs.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>text object
+	surface
+		column
+			line
+				word
+					sign
+</pre></div>
+</div>
+<p>How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. In addition, a text consists of textual units, such as paragraphs, sentences, and phrases, which may or may not coincide with the physical units of surfaces and lines.</p>
+<p>The <a class="reference external" href="http://oracc.org">ORACC</a> JSON tree for a text edition consists of a hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys. The name <code class="docutils literal notranslate"><span class="pre">cdl</span></code> is based on the three main components of the nested tree: Chunks (text units), Discontinuities (physical units), and Lemmas (words). A Chunk is a chunk of text of any length: the body of the text, a sentence, a phrase, a word, etc. A Discontinuity is the text object, the obverse or reverse, the beginning of a column, a break in the text, a horizontal ruling on the tablet, or the beginning of a new line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level.</p>
+<p>The value of a <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key is a list of one or more dictionaries. Each of these dictionaries contains the key “node” which may have the values “c” (for Chunk), “d” (for Discontinuity), or “l” (for Lemma). Any “c” dictionary may contain a further <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key, which again has as its value a list of dictionaries of the “c”, “d”, or “l” type. The “c” and “d” dictionaries always have a key <code class="docutils literal notranslate"><span class="pre">type</span></code>, which may have values such as <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">discourse</span></code>, or <code class="docutils literal notranslate"><span class="pre">sentence</span></code> (for “c” nodes) or <code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">obverse</span></code>, <code class="docutils literal notranslate"><span class="pre">column-start</span></code>, <code class="docutils literal notranslate"><span class="pre">line-start</span></code> (for “d” nodes). Discontinuities (or “d” nodes”) may also have <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">:</span> <span class="pre">nonx</span></code>, recording non-textual physical features such as rulings on the tablet, or missing lines. An “l” (Lemma) dictionary, is always at the bottom of the <code class="docutils literal notranslate"><span class="pre">cdl</span></code> hierarchy. The “l” dictionary itself contains an “f” key which has as its value a dictionary that contains all the lemmatization data of a single word (transliteration, citation form, guide word, part of speech, etc.). The “f” dictionary includes a “gdl” key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some <a class="reference external" href="http://oracc.org">ORACC</a> projects the <code class="docutils literal notranslate"><span class="pre">gdl</span></code> node will include the Unicode representation of cuneiform signs themselves as well).</p>
+<p>The structure may be illustrated with the beginning of <a class="reference external" href="http://oracc.org/dcclt/P251867">P251867</a>, an Old Babylonian 3-line lentil (school text), edited in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> (beginning of the file omitted):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;subtype&quot;</span><span class="p">:</span> <span class="s2">&quot;obverse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;obverse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.o.1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discourse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;subtype&quot;</span><span class="p">:</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sentence&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U2&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o 1 - o 3&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line-start&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o 1&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;frag&quot;</span><span class="p">:</span> <span class="s2">&quot;{ŋeš}ma₂-durah-abzu&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.l1ac01&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2.1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;inst&quot;</span><span class="p">:</span> <span class="s2">&quot;Madurahabzu[1]ON&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;sig&quot;</span><span class="p">:</span> <span class="s2">&quot;@dcclt%sux:{ŋeš}ma₂-durah-abzu=Madurahabzu[1//1]ON&#39;ON$Madurahabzu/{ŋeš}ma₂-durah-abzu#~&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;f&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;lang&quot;</span><span class="p">:</span> <span class="s2">&quot;sux&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="s2">&quot;{ŋeš}ma₂-durah-abzu&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;gdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                    <span class="nt">&quot;det&quot;</span><span class="p">:</span> <span class="s2">&quot;semantic&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;pre&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;seq&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                        <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="s2">&quot;ŋeš&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2.1.0&quot;</span>
+                      <span class="p">}</span>
+                    <span class="p">]</span>
+                  <span class="p">},</span>
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a <code class="docutils literal notranslate"><span class="pre">c</span></code> node (Chunk) representing the entire text. The <code class="docutils literal notranslate"><span class="pre">c</span></code> node contains a new <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key which has a list of dictionaries as its value including two <code class="docutils literal notranslate"><span class="pre">d</span></code> (Discontinuity) nodes (<code class="docutils literal notranslate"><span class="pre">object</span></code> and <code class="docutils literal notranslate"><span class="pre">obverse</span></code>) and another <code class="docutils literal notranslate"><span class="pre">c</span></code> node that represents a discourse unit, namely the body of the text (note that Chunk <code class="docutils literal notranslate"><span class="pre">text</span></code> and Chunk <code class="docutils literal notranslate"><span class="pre">body</span></code> are identical here - but that need not be the case). Eventually, there is a node <code class="docutils literal notranslate"><span class="pre">l</span></code> that contains the transliteration and lemmatization data for the first word of this text.</p>
+<p>This hierarchy implies that a word (an “l” node) may belong to different hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.</p>
+<p>In order to pull out the lemmatization data we need to iterate through the hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys until we encounter an <code class="docutils literal notranslate"><span class="pre">l</span></code> node, containing an <code class="docutils literal notranslate"><span class="pre">f</span></code> key. The value of the <code class="docutils literal notranslate"><span class="pre">f</span></code> key is the data we want.</p>
+<p>A straightforward way of doing this is by defining a recursive function, that is, a function that calls itself to recursively inspect the value of successive layers of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys until one encounters an <code class="docutils literal notranslate"><span class="pre">f</span></code> key. The contents of the <code class="docutils literal notranslate"><span class="pre">f</span></code> key are then added to a list. In its most basic form that function looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+</div>
+<p>The function is called with the argument <code class="docutils literal notranslate"><span class="pre">text</span></code>, which contains the contents of the entire JSON file, as retrieved above. The function adds a new row of lemmatization data (one word at a time) each time it encounters an <code class="docutils literal notranslate"><span class="pre">f</span></code> key. Finally it returns the list (a list of dictionaries) with the lemmatization data. The function may be called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>By including the call to <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> in a loop, we can fill lemm_l with the lemmatization data of multiple texts.</p>
+<p>The list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> now contains all the lemmatization data of <a class="reference external" href="http://oracc.org/obmc/P230754">P230754</a> as edited in <a class="reference external" href="http://oracc.org/obmc">OBMC</a>. We can inspect the data by reading it into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lemm_l</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">words</span>
+</pre></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields “cf” (Citation Form), “gw” (Guide Word), and “pos” (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: “Not a Number”), which can be problematic in further data manipulation. The argument of the <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> function is the value to be placed in empty cells - in this case the empty string. Note that NaN and “” are of different data types: NaN belongs to a numeric data type; the empty string is a string.</p>
+<p>One may write the DataFrame directly to a <code class="docutils literal notranslate"><span class="pre">csv</span></code> (or some similar file format), but it is often more useful to structure the data a bit more (section <a class="reference external" href="#2.1.7-Data-Structuring">2.1.7</a>). Before we get to that we will first discuss several enhancements of the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function.</p>
+<p><img alt="P251867" src="http://cdli.ucla.edu/dl/tn_photo/P251867.jpg" /></p>
+</div>
+<div class="section" id="enhancing-parsejson">
+<h2>2.1.5 Enhancing parsejson()<a class="headerlink" href="#enhancing-parsejson" title="Permalink to this headline">¶</a></h2>
+<p>The basic <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are included in the JSON files. The basic <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> is good enough for a “Bag of Words” approach, which looks only at vocabulary frequency, ignoring word order. For many other types of analysis we do need to capture line numbers and text breaks. Such information is stored in “d” nodes in a level above the “l” node in the <code class="docutils literal notranslate"><span class="pre">cdl</span></code> hierarchy. Similarly, sentence identifiers (and other discourse units) are stored in “c” nodes. The <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function can easily be enhanced to capture various types of such meta-data storing them in a dictionary called <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>. This dictionary is updated whenever the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function encounters a relevant node. Each row (each word) in the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> receives the current meta-data from <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>.</p>
+<div class="section" id="line-labels-and-line-ids">
+<h3>2.1.5.1 Line Labels and Line IDs<a class="headerlink" href="#line-labels-and-line-ids" title="Permalink to this headline">¶</a></h3>
+<p>For many types of explorations one may wish to keep together words in a line and order these lines in their proper sequence. In order to do so we need to capture the  <code class="docutils literal notranslate"><span class="pre">label</span></code> of the line and the word ID of each word. The <code class="docutils literal notranslate"><span class="pre">label</span></code> is human-legible and has the traditional format to indicate obverse, reverse, column and line number or side of a prism (e.g. “o ii 7” or “a i 19’”). The field <code class="docutils literal notranslate"><span class="pre">id_word</span></code> is machine -legible and has the format TEXT_ID.LINE_ID.WORD_ID, for instance “P273880.22.1”, (the first word of the twenty-second line of <a class="reference external" href="http://oracc.org/dcclt/P273880.22.1">P273880</a>). In the data formatting stage we will use the word ID to extract the line ID (section <a class="reference external" href="#2.1.7.2-Create-Line-IDs">2.1.7.2</a>).</p>
+<p>We can capture <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">id_word</span></code> with slight adjustments to the <code class="docutils literal notranslate"><span class="pre">jsonparser()</span></code> and the code that calls that function. In the main process we create a dictionary <code class="docutils literal notranslate"><span class="pre">meta_d,</span></code> which will hold all the relevant meta data. Initially, it only contains the text ID. When the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function finds a dictionary that has the <code class="docutils literal notranslate"><span class="pre">key</span></code> “label” the <code class="docutils literal notranslate"><span class="pre">key</span></code> “label” in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> gets updated. When the process gets to the lemmatization data the <code class="docutils literal notranslate"><span class="pre">key</span></code> “label” in <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> will hold the proper line label. The word ID is found in the field “ref” in the <code class="docutils literal notranslate"><span class="pre">l</span></code> node, and is added to the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">):</span>  <span class="c1"># this version captures line labels and line IDs</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;label&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">lemma</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
+            <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;textid&quot;</span><span class="p">]</span>
+            <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+            <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;id_word&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;ref&quot;</span><span class="p">]</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+</div>
+<p>Before the new <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function can be called we need to create the empty <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> list as well as the <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> dictionary. Both wil be changed by the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function. We call <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> with the arguments <code class="docutils literal notranslate"><span class="pre">text</span></code> (as above) and <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">text</span></code> holds the JSON of text <a class="reference external" href="http://oracc.org/obmc/P230754">P230754</a> from the <a class="reference external" href="http://oracc.org/obmc">OBMC</a> project.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">meta_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span> <span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;textid&quot;</span><span class="p">:</span> <span class="s2">&quot;obmc/P230754&quot;</span><span class="p">}</span>
+<span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>When using this version of <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> in a loop (to acquire data from multiple documents), the loop must update the value of the key <code class="docutils literal notranslate"><span class="pre">textid</span></code> in the meta_d dictionary before calling <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code>.</p>
+<div class="section" id="select-a-section">
+<h4>2.1.5.2 Select a Section<a class="headerlink" href="#select-a-section" title="Permalink to this headline">¶</a></h4>
+<p>Using this same structure to select a section of a tablet for parsing, the code may be adapted as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">):</span>  <span class="c1"># this version captures the lemmatization of a partial text</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;label&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;startlabel&quot;</span><span class="p">]:</span>
+            <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;keep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;keep&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span> 
+             <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+                <span class="n">lemma</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
+                <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span>
+                <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+                <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;id_word&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;ref&quot;</span><span class="p">]</span>
+                <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemma</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;endlabel&quot;</span><span class="p">]:</span>
+            <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;keep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+</div>
+<p>In this case we will use a different example, the text <a class="reference external" href="http://oracc.org/dcclt/P273244">P273244</a> from <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>. In order to run this code the file <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code> must be downloaded and put in the <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> folder (see above, section <a class="reference external" href="#2.1.2-Acquiring-ORACC-JSON">2.1.2</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">meta_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span> <span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;startlabel&quot;</span><span class="p">:</span> <span class="s2">&quot;r 1&quot;</span><span class="p">,</span> <span class="s2">&quot;endlabel&quot;</span><span class="p">:</span> <span class="s2">&quot;r 5&quot;</span><span class="p">,</span> <span class="s2">&quot;keep&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+             <span class="s2">&quot;id_text&quot;</span><span class="p">:</span> <span class="s2">&quot;dcclt/P273244&quot;</span><span class="p">}</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/dcclt.zip&quot;</span>    
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;dcclt/corpusjson/P273244.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="n">text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;startlabel&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;keep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The text <a class="reference external" href="http://oracc.org/dcclt/P273244">P273244</a> is a small Middle Babylonian exercise from Nippur with an extract from Gilgameš on the obverse, and a list of wooden objects (doors) on the reverse. The code will constantly refresh the value of the key <code class="docutils literal notranslate"><span class="pre">label</span></code> in the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>, while comparing <code class="docutils literal notranslate"><span class="pre">label</span></code> with the value of <code class="docutils literal notranslate"><span class="pre">startlabel</span></code> and <code class="docutils literal notranslate"><span class="pre">endlabel</span></code> to decide where to start and where to stop capturing the lemmatization. In this case only the lexical lines on the reverse are captured, skipping the Gilgameš extract on the obverse.</p>
+</div>
+</div>
+<div class="section" id="sentences">
+<h3>2.1.5.3 Sentences<a class="headerlink" href="#sentences" title="Permalink to this headline">¶</a></h3>
+<p>One type of <code class="docutils literal notranslate"><span class="pre">c</span></code> nodes defines a sentence - a sequence of words that belong together in a self-contained syntactical unit. Such a JSON node may look like this (from <a class="reference external" href="http://oracc.org/etcsri/Q000376">etcsri/Q000376</a>):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+              <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sentence&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;implicit&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.U8&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;26 - 26&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line-start&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.26&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;26&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;26&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;phrase&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;phr&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.U105&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.ls00000&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.l02092&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.26.1&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;inst&quot;</span><span class="p">:</span> <span class="s2">&quot;szud[prayer]\\abs&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;sig&quot;</span><span class="p">:</span> <span class="s2">&quot;@etcsri%sux:šud₃\\abs=šud[prayer//prayer, dedication, blessing]N&#39;N$šud.ø/šud₃#N1=šud.N5=ø##N1=STEM.N5=ABS&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;f&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;lang&quot;</span><span class="p">:</span> <span class="s2">&quot;sux&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="s2">&quot;šud₃&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;delim&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;gdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                            <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="s2">&quot;šud₃&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.26.1.0&quot;</span>
+                          <span class="p">}</span>
+                        <span class="p">],</span>
+                        <span class="nt">&quot;cf&quot;</span><span class="p">:</span> <span class="s2">&quot;šud&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;gw&quot;</span><span class="p">:</span> <span class="s2">&quot;prayer&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;sense&quot;</span><span class="p">:</span> <span class="s2">&quot;prayer, dedication, blessing&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;norm&quot;</span><span class="p">:</span> <span class="s2">&quot;šud.ø&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;epos&quot;</span><span class="p">:</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;base&quot;</span><span class="p">:</span> <span class="s2">&quot;šud₃&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;morph&quot;</span><span class="p">:</span> <span class="s2">&quot;N1=šud.N5=ø&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;morph2&quot;</span><span class="p">:</span> <span class="s2">&quot;N1=STEM.N5=ABS&quot;</span>
+                      <span class="p">}</span>
+                    <span class="p">}</span>
+</pre></div>
+</div>
+<p>A subdivision of the sentence is the phrase. Phrases and sentences have their own ID. Obviously, such demarcations are only present in the JSON if the editor of the project (in this case Gábor Zólyomi of <a class="reference external" href="http://oracc.org/etcsri">ETCSRI</a>) has marked such units (sentences and phrases) in the source files. In order to enable the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function to keep track of sentences, one may simply add another <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to the code, store the sentence ID in the <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> dictionary and add that ID to each word in the list of lemmas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">):</span>  <span class="c1"># this version captures sentence IDs</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">JSONobject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;sentence&quot;</span><span class="p">:</span>
+            <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">lemma</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
+            <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;sentence_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span>
+            <span class="n">lemma</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;textid&quot;</span><span class="p">]</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span> 
+</pre></div>
+</div>
+<p>In the example we will use <a class="reference external" href="http://oracc.org/etcsri/Q000376">Q000376</a> (The Victory of Utu-hegal) from the <a class="reference external" href="http://oracc.org/etcsri">ETCSRI</a> project. In order for the code to work, place the file <code class="docutils literal notranslate"><span class="pre">etcsri.zip</span></code> in the <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> folder (see section <a class="reference external" href="#2.1.2-Acquiring-ORACC-JSON">2.1.2</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">meta_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sentence&quot;</span> <span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;textid&quot;</span><span class="p">:</span> <span class="s2">&quot;etcsri/Q000376&quot;</span><span class="p">}</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/etcsri.zip&quot;</span>    
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;etcsri/corpusjson/Q000376.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="n">text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The initial value of the key <code class="docutils literal notranslate"><span class="pre">sentence</span></code> in the <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> dictionary is <code class="docutils literal notranslate"><span class="pre">None</span></code>, but when the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function encounters a key <code class="docutils literal notranslate"><span class="pre">type</span></code> with value <code class="docutils literal notranslate"><span class="pre">sentence</span></code> it changes the value of <code class="docutils literal notranslate"><span class="pre">meta_d[&quot;sentence&quot;]</span></code> to hold the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the sentence. The value of that parameter will stay the same, and is copied into the field <code class="docutils literal notranslate"><span class="pre">sentence_id</span></code> of every row (representing a word) in <code class="docutils literal notranslate"><span class="pre">l</span></code> until the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function encounters a new <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span> <span class="pre">:</span> <span class="pre">&quot;sentence&quot;</span></code> pair.</p>
+<p>Each row (word) in the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> will now have a field <code class="docutils literal notranslate"><span class="pre">sentence_id</span></code> that can be used to identify words that belong together in a sentence - a feature that is particularly important for syntactic parsing in Natural Language Processing and building <a class="reference external" href="https://en.wikipedia.org/wiki/Treebank">treebanks</a>.</p>
+</div>
+<div class="section" id="using-parsejson">
+<h3>2.1.5.4 Using parsejson()<a class="headerlink" href="#using-parsejson" title="Permalink to this headline">¶</a></h3>
+<p>In practice, one will rarely wish to parse a single text - as in the examples above. The various <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> functions discussed above (or any that may be derived) may be embedded in code that uses a list of projects or text ID numbers (optionally provided with <code class="docutils literal notranslate"><span class="pre">startlabel</span></code> and <code class="docutils literal notranslate"><span class="pre">endlabel</span></code>) in order to parse a collection of documents or entire <a class="reference external" href="http://oracc.org">ORACC</a> projects. Example code for doing so is available in the <a class="reference external" href="https://github.com/niekveldhuis/compass">Computational Assyriology</a>  repo. The point of discussing some variants of the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function is to demonstrate its flexibility and the possibility of extracting various types of data.</p>
+<p>The output of <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> is a list of words, where each word is represented by a dictionary that includes a number of data elements, including Citation Form, Guide Word, Part of Speech, GDL (grapheme information), Form (transliteration), etc. Some data elements are always present, others are specific for Sumerian or Akkadian, or are only present if the word in question has been lemmatized. For most projects it will be necessary to select and/or manipulate the data (section <a class="reference external" href="#2.1.7-Data-Structuring">2.1.7</a>).</p>
+</div>
+</div>
+<div class="section" id="other-data-types-in-text-edition-json-files">
+<h2>2.1.6 Other Data Types in Text Edition JSON Files<a class="headerlink" href="#other-data-types-in-text-edition-json-files" title="Permalink to this headline">¶</a></h2>
+<p>The JSON files for individual text editions include other data types that may be captured by still other permutations of the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function. These data types will be discussed here briefly.</p>
+<div class="section" id="phrasal-semantic-units-compound-verbs-etc">
+<h3>2.1.6.1 Phrasal Semantic Units (Compound Verbs, etc.)<a class="headerlink" href="#phrasal-semantic-units-compound-verbs-etc" title="Permalink to this headline">¶</a></h3>
+<p>In addition to words, <a class="reference external" href="http://oracc.org">ORACC</a> recognizes Phrasal Semantic Units (<a class="reference external" href="http://oracc.museum.upenn.edu/doc/help/lemmatising/psus/index.html">PSU</a>s), including idiomatic expressions, (Sumerian) Compound Verbs, multi-word proper nouns, etc. A PSU consists of multiple words, which are each lemmatized independently but are also indexed as a compound (and listed in the glossary).</p>
+<p>In the JSON text edition files the PSUs are listed at the end under the node <code class="docutils literal notranslate"><span class="pre">linkbase</span></code> with references to where the expression appears in the text. The node <code class="docutils literal notranslate"><span class="pre">linkbase</span></code> has as its value a list of dictionaries, each dictionary represents one occurrence of a PSU. The following snippet represents <strong>gu₃ de₂-a-za</strong> (‘of your speaking’) in <a class="reference external" href="http://oracc.org/epsd2/literary/Q000616">Bau A</a> Segment C line 9 (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.4.02.1&amp;display=Crit&amp;charenc=gcirc&amp;lineid=c4021.C.5#c4021.C.9">ETCSL 4.02.1</a>):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;linkbase&quot;</span><span class="p">:</span> <span class="p">[{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linkset&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;xlink_title&quot;</span><span class="p">:</span> <span class="s2">&quot;gu de[say//to say (addressing someone),]V/t&#39;V/t&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000616.ls00009&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;xlink_type&quot;</span><span class="p">:</span> <span class="s2">&quot;extended&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;xlink_role&quot;</span><span class="p">:</span> <span class="s2">&quot;psu&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;sig&quot;</span><span class="p">:</span> <span class="s2">&quot;{gu₃ de₂-a-za = gu[voice]N de[pour]V/t += gu de[say//to say (addressing someone),]V/t&#39;V/t}::@epsd2%sux:gu₃=gu[voice//voice, cry, noise]N&#39;N$gu/gu₃#~++@epsd2%sux:de₂-a-za=de[pour//to pour]V/t&#39;V/t$de;a,zu.ak/de₂#~;a,zu.ak&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;link&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_title&quot;</span><span class="p">:</span> <span class="s2">&quot;gu&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_type&quot;</span><span class="p">:</span> <span class="s2">&quot;locator&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_href&quot;</span><span class="p">:</span> <span class="s2">&quot;#Q000616.l19760&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_role&quot;</span><span class="p">:</span> <span class="s2">&quot;elt&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;link&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_title&quot;</span><span class="p">:</span> <span class="s2">&quot;de&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_type&quot;</span><span class="p">:</span> <span class="s2">&quot;locator&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_href&quot;</span><span class="p">:</span> <span class="s2">&quot;#Q000616.l19761&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;xlink_role&quot;</span><span class="p">:</span> <span class="s2">&quot;elt&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}]}</span>
+</pre></div>
+</div>
+<p>The node <code class="docutils literal notranslate"><span class="pre">linkbase</span></code> is an element in the highest level <code class="docutils literal notranslate"><span class="pre">cdl</span></code> list, and can thus be addressed as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/epsd2-literary.zip&quot;</span>    
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;epsd2/literary/corpusjson/Q000616.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="n">text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="n">cdl</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="s1">&#39;cdl&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">cdl</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="s1">&#39;linkbase&#39;</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span> 
+		<span class="n">linkbase</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="s1">&#39;linkbase&#39;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="broken-lines">
+<h3>2.1.6.2 Broken Lines<a class="headerlink" href="#broken-lines" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> editions include information such as “10 lines broken”, or “rest of column missing”. There is a restricted vocabulary for such annotations, preserved in <code class="docutils literal notranslate"><span class="pre">d</span></code> (Discontinuity) nodes of the type <code class="docutils literal notranslate"><span class="pre">nonx</span></code> (non-textual). The information is found in four fields, named <code class="docutils literal notranslate"><span class="pre">strict</span></code>, <code class="docutils literal notranslate"><span class="pre">extent</span></code>, <code class="docutils literal notranslate"><span class="pre">scope</span></code> and <code class="docutils literal notranslate"><span class="pre">state</span></code>. The field <code class="docutils literal notranslate"><span class="pre">strict</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code> (a string) if the annotation follows the restricted vocabulary (if <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code>, it may contain all kinds of unstructured information, for instance about joins). A typical node looks like this:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+                  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nonx&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000039.732&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;strict&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;extent&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;missing&quot;</span>
+                <span class="p">},</span>
+</pre></div>
+</div>
+<p>This tells us that at this position in <a class="reference external" href="http://oracc.org/dcclt/Q000039">Q000039</a> three lines are missing. The reference number belongs to the same number sequence as the line ID numbers (see above section <a class="reference external" href="#2.1.5.1-Line-Labels-and-Line-IDs">2.1.5.1</a>) and may thus be used to keep the three missing lines in their proper position. The same mechanism is used to record single or double horizontal rulings, as in:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+                  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nonx&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P273880.718&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;strict&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;extent&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ruling&quot;</span>
+                <span class="p">},</span>
+</pre></div>
+</div>
+<p>This represents a double ruling at the end of the lexical prism <a class="reference external" href="http://oracc.org/dcclt/P273880.718">CUSAS 12, 3.1.01</a>.</p>
+<p>Such information may be captured by looking for nodes that include the key <code class="docutils literal notranslate"><span class="pre">type</span></code> with value <code class="docutils literal notranslate"><span class="pre">nonx</span></code> and add the relevant fields to the list <code class="docutils literal notranslate"><span class="pre">l</span></code> in <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code>. The code for doing so is not discussed in the present chapter, but the <a class="reference external" href="https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb">Extended JSON parser</a> in the <a class="reference external" href="https://github.com/niekveldhuis/compass">Compass</a> repo does include that functionality.</p>
+</div>
+</div>
+<div class="section" id="data-structuring">
+<h2>2.1.7 Data Structuring<a class="headerlink" href="#data-structuring" title="Permalink to this headline">¶</a></h2>
+<p>The output of <code class="docutils literal notranslate"><span class="pre">jsonparser()</span></code> is the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code>, a list of dictionaries, where each dictionary represents a single word. This list can be read into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. DataFrames can be manipulated and sliced in any number of ways and give a visual impression of the structure of the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lemm_l</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">words</span>
+</pre></div>
+</div>
+<p>For a brief discussion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> function see the end of section <a class="reference external" href="#2.1.4-Parsing-an-ORACC-JSON-Text-Edition-File">2.1.4</a>.</p>
+<div class="section" id="remove-spaces-and-commas-from-guide-word">
+<h3>2.1.7.1 Remove Spaces and Commas from Guide Word<a class="headerlink" href="#remove-spaces-and-commas-from-guide-word" title="Permalink to this headline">¶</a></h3>
+<p>The column “gw” (Guide Word) in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame just created includes bare-bones translations of individual words, such as “king” (for Sumerian lugal) or “(a kind of clamp)” for Akkadian <em>abāru</em>. Strictly speaking, Guide Words are not translations but disambiguators - disambiguating between potential homonyms. Akkadian Guide Words are derived from the first meaning in the <em>Concise Dictionary of Akkadian</em> (eds. Jeremy Black, Andrew George, and Nicholas Postgate; Harrasowitz Verlag 2000), as discussed in the manual for <a class="reference external" href="http://oracc.org/doc/help/languages/akkadian/index.html">ORACC lemmatization</a>.</p>
+<p>The presence of spaces in Guide Words may cause trouble in a variety of Natural Language Processing methods, because such methods will interpret the space as a word divider. Similarly, commas may cause trouble when saving data in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> (Comma Separated Values) file, because a comma will be interpreted as the beginning of a new field.</p>
+<p>For text analysis purposes, therefore it is useful to remove all commas and spaces from Guide Word and Sense. The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function takes as its argument a nested dictionary, in which the top-level keys specify in which column the replacements should take place. Each value is a dictionary with find (key) and replace (value) pairs.  By default, <code class="docutils literal notranslate"><span class="pre">replace()</span></code> finds and replaces a full string; we need to set <code class="docutils literal notranslate"><span class="pre">regex</span> <span class="pre">=</span> <span class="pre">True</span></code> to replace a partial string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">findreplace</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39; &#39;</span> <span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;gw&#39;</span> <span class="p">:</span> <span class="n">findreplace</span><span class="p">,</span> <span class="s1">&#39;sense&#39;</span> <span class="p">:</span> <span class="n">findreplace</span><span class="p">},</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now the Guide Word for <em>abāru</em> has become <code class="docutils literal notranslate"><span class="pre">(a-kind-of-clamp)</span></code>.</p>
+</div>
+<div class="section" id="create-line-ids">
+<h3>2.1.7.2 Create Line IDs<a class="headerlink" href="#create-line-ids" title="Permalink to this headline">¶</a></h3>
+<p>In order to arrange the data in line-by-line format we need to create a line ID that will be added as a new field to each word in the DataFrame. The <code class="docutils literal notranslate"><span class="pre">id_word</span></code> captured by the extended parser (see <a class="reference external" href="#2.1.5.1-Line-Labels-and-Line-IDs">2.1.5.1</a>) has the format <code class="docutils literal notranslate"><span class="pre">ID_TEXT.ID_LINE.ID_WORD</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">P338628.4.3</span></code>:  the third word of line 4 of <a class="reference external" href="http://oracc.org/cams/gkab/P338628.4.3">P338628</a> (an astronomical fragment edited in <a class="reference external" href="http://oracc.org/cams/gkab">GKAB</a>). Note that “4” in this case refers to the very first line of the fragment. The number “4” is not a traditional line number, but rather a reference number that is used to keep lines, breaks, rulings, etc. in their proper place. We can split the ID and keep only the middle part, using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="n">id_line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">ids</span></code> is now a list that holds the three elements; in our example above:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;P338628&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The second element (<code class="docutils literal notranslate"><span class="pre">ids[1]</span></code>) is the one we need (<code class="docutils literal notranslate"><span class="pre">'4'</span></code>). Note that this <code class="docutils literal notranslate"><span class="pre">'4'</span></code>is a string (between quotation marks), not a number. We need to change the data type into integer in order to arrange the lines properly (as string <code class="docutils literal notranslate"><span class="pre">'4'</span></code> comes between <code class="docutils literal notranslate"><span class="pre">'39'</span></code> and <code class="docutils literal notranslate"><span class="pre">'40'</span></code>). Putting all of this together we can create the proper <code class="docutils literal notranslate"><span class="pre">id_line</span></code> field with a list comprehension as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="p">[</span><span class="s1">&#39;id_line&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">wordid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">wordid</span> <span class="ow">in</span> <span class="n">words</span><span class="p">[</span><span class="s1">&#39;id_word&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>The field <code class="docutils literal notranslate"><span class="pre">id_line</span></code> will be used in section <a class="reference external" href="#2.1.7.4-Arrange-by-Line-or-by-Document">2.1.7.4</a> to arrange the data in line-by-line format.</p>
+<p>The <a class="reference external" href="https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.ipynb">Extended JSON parser</a> in the <a class="reference external" href="https://github.com/niekveldhuis/compass">Compass</a> repo captures information about broken lines and horizontal rulings (see section <a class="reference external" href="#2.1.6.2-Broken-Lines">2.1.6.2</a>. Such features have a reference in the format <code class="docutils literal notranslate"><span class="pre">ID_TEXT.ID_LINE</span></code>; that reference is copied to the field ‘id_word’.</p>
+<p>Note that it would be more straightforward to derive <code class="docutils literal notranslate"><span class="pre">id_line</span></code> from the key “ref” in a <code class="docutils literal notranslate"><span class="pre">d</span></code> node in the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code>function:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+                  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line-start&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Q000376.26&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;26&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;26&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>	<span class="k">if</span> <span class="s2">&quot;type&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span> <span class="ow">and</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;line-start&quot;</span><span class="p">:</span>
+		<span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;id_line&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;ref&quot;</span><span class="p">]</span>
+		<span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Although this works for most of the JSON files, not all <code class="docutils literal notranslate"><span class="pre">d</span></code> nodes of type “line-start” include the key “ref” and therefore the route through <code class="docutils literal notranslate"><span class="pre">id_word</span></code> is safer.</p>
+</div>
+<div class="section" id="create-lemmas">
+<h3>2.1.7.3 Create Lemmas<a class="headerlink" href="#create-lemmas" title="Permalink to this headline">¶</a></h3>
+<p>The DataFrame <code class="docutils literal notranslate"><span class="pre">words</span></code> includes all the fields that were present in the <code class="docutils literal notranslate"><span class="pre">f</span></code> keys of the JSON files we parsed, plus the extra fields (such as <code class="docutils literal notranslate"><span class="pre">id_line</span></code> or <code class="docutils literal notranslate"><span class="pre">label</span></code>) that we have added. It is not likely that we want to keep the DataFrame in this raw format. For many types of analysis one may need the lemma. A lemma, <a class="reference external" href="http://oracc.org">ORACC</a> style, combines Citation Form, Guide Word and Part of Speech into a unique reference to one particular entry in a standard dictionary, as in <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (Sumerian) or <code class="docutils literal notranslate"><span class="pre">nadānu[give]V</span></code> (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. The code below will create a new field <code class="docutils literal notranslate"><span class="pre">lemma</span></code> that has the following form:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>status</p></th>
+<th class="text-align:left head"><p>lemma</p></th>
+<th class="text-align:left head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>lemmatized</p></td>
+<td class="text-align:left"><p>CF[GW]POS</p></td>
+<td class="text-align:left"><p>lugal[king]N</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>unlemmatized</p></td>
+<td class="text-align:left"><p>Form[NA]NA</p></td>
+<td class="text-align:left"><p>i-ze₂-x[NA]NA</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span><span class="p">[</span><span class="s1">&#39;lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">words</span><span class="p">[</span><span class="s2">&quot;gw&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="o">+</span> <span class="n">words</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]</span>
+<span class="n">words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">,</span> <span class="s1">&#39;lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;[NA]NA&#39;</span>
+<span class="n">words</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="s2">&quot;form&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">words</span>
+</pre></div>
+</div>
+<p>The first line creates the new “lemma” column by concatenating Citation Form, Guide Word and POS. The second and third line take care of two special situations. If there is no Citation Form the word is not lemmatized and the <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column will contain the “form” (the transliterated form of the word) followed by “[NA]NA” (Guide Word and POS unknown). Finally, depending on the version of <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> that is used, the <code class="docutils literal notranslate"><span class="pre">words</span></code> dataframe may include rows that represent horizontal drawings or broken lines (see section <a class="reference external" href="#2.1.6.2-Broken-Lines">2.1.6.2</a>). For those entries the “form” is an empty string and the “lemma” should be empty as well.</p>
+</div>
+<div class="section" id="arrange-by-line-or-by-document">
+<h3>2.1.7.4 Arrange by Line or by Document<a class="headerlink" href="#arrange-by-line-or-by-document" title="Permalink to this headline">¶</a></h3>
+<p>The word-by-word representation in the DataFrame <code class="docutils literal notranslate"><span class="pre">words</span></code> may be useful for a “Bag of Words” approach, but for most projects we may want the data either line-by-line, or document-by-document. In <code class="docutils literal notranslate"><span class="pre">pandas</span></code> the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">agg()</span></code>(aggregate) functions are used for that purpose. The <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> function takes as its argument the field or fields by which to group the data. If multiple fields are used, they are given in a list. The <code class="docutils literal notranslate"><span class="pre">agg()</span></code> function takes a dictionary as its argument, in which one may indicate for each field how it is to be aggregated. The example below has only one such function: <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join</span></code> will join all entries that belong to the same line in the column <code class="docutils literal notranslate"><span class="pre">lemma</span></code> with a space in between. Arranging the data by document:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id_text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Arranging line-by-line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;id_line&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>If necessary, one may specify multiple aggregate functions for multiple columns, for instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;id_line&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-oracc-json-files">
+<h2>2.1.8 Other ORACC JSON files<a class="headerlink" href="#other-oracc-json-files" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://oracc.org/doc/opendata/index.html">Open Data</a> page in <a class="reference external" href="http://oracc.org">ORACC</a> explains in some detail the various other types of JSON files that are available. This section will briefly point out a few files that may be of use and that can be parsed with the techniques discussed above.</p>
+<div class="section" id="metadata-json">
+<h3>2.1.8.1 metadata.json<a class="headerlink" href="#metadata-json" title="Permalink to this headline">¶</a></h3>
+<p>The file <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> provides information about composite texts (which witnesses belong to which composite text) and about formats: <code class="docutils literal notranslate"><span class="pre">atf</span></code> (available in transliteration), <code class="docutils literal notranslate"><span class="pre">lem</span></code> (files with lemmatization) and <code class="docutils literal notranslate"><span class="pre">tr-en</span></code> (files with English translation). In projects that work with other translation languages one may find <code class="docutils literal notranslate"><span class="pre">tr-de</span></code> (for German), <code class="docutils literal notranslate"><span class="pre">tr-hun</span></code> (for Hungarian), etc. The file <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> may be useful, for instance, if you intent to parse all the files of a project that have lemmatization, but ignore those that do not. One may pull out the list <code class="docutils literal notranslate"><span class="pre">formats[&quot;lem&quot;]</span></code> to get all the relevant text IDs.</p>
+</div>
+<div class="section" id="indexes-and-glossary">
+<h3>2.1.8.2 Indexes and Glossary<a class="headerlink" href="#indexes-and-glossary" title="Permalink to this headline">¶</a></h3>
+<p>The Index and Glossary JSON files reproduce the indexes used by <a class="reference external" href="http://oracc.org/doc/search/searchingcorpora/index.html">ORACC Search</a> and the project glossaries in JSON format. Indexes and glossaries may be used, among other things, to create searches beyond the scope of a line (for instance: search for <code class="docutils literal notranslate"><span class="pre">lugal</span></code> and <code class="docutils literal notranslate"><span class="pre">dalla</span></code> in the same text), a feature that is not currently available in standard <a class="reference external" href="http://oracc.org">ORACC</a> search. How to build such a search engine is a topic not discussed in this study.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_1_Data_Acquisition_ORACC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../1_Preliminaries/install_packages.html" title="previous page">Installing Anaconda</a>
+    <a class='right-next' id="next-link" href="2_1_0_download_ORACC-JSON.html" title="next page">Download ORACC JSON Files</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

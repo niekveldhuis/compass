@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4.1 Data Acquisition BDTNS &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4 Data Acquision BDTNS" href="2_4_1_Data_Acquisition_BDTNS.html" />
+    <link rel="prev" title="Data Acquisition from CDLI" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vertical-tabs">
+     2.4.1.1 Vertical TABs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-as-dataframe">
+     2.4.1.2 Format as DataFrame
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#x-values">
+     2.4.1.3 X-values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save">
+     2.4.1.4 Save
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-sign-search">
+   2.4.2 Building Sign Search
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-bdtns">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-acquisition-bdtns">
+<h1>2.4.1 Data Acquisition BDTNS<a class="headerlink" href="#data-acquisition-bdtns" title="Permalink to this headline">¶</a></h1>
+<p>The Database of Neo-Sumerian Texts (<a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>) was created by Manuel Molina (Consejo Superior de Investigaciones Científicas). The site provides a detailed catalog of the administrative, legal, and epistolary documents from the so-called Ur III period (21st century BCE). Molina estimates that museums and private collections all over the world may hold at least 120,000 such documents, not including the holdings of the Iraq Museum, Baghdad. Currently, almost 65% of those documents are available through <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> in transliteration, and/or in photograph and line drawing.</p>
+<p>There is a considerable overlap in the data sets offered by <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> and <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>. All photographs and line drawings of Ur III tablets that are available in <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> have been imported into <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>; in addition, <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> offers its own collection of thousands of photographs, in particular of tablets now in the British Museum, London. The initial core of the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> transliterations was provided by Remco de Maaijer and Bram Jagersma (Leiden University), who prepared tens of thousands of Ur III texts and distributed those data freely. This same set of transliterations was also one of the initial data sets of <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>. Close cooperation between the two projects has led to further exchange of data. Not infrequently, therefore, misreadings or simple typos appear in the same way in both projects.</p>
+<p>Still, <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> is not simply a duplicate of the Ur III data in <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>. Most Ur III scholars today prefer <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> over <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> because the smaller focus of the Spanish project implies that there is more attention to detail and that more effort is made to update the record. One example is the book <em>Der König und sein Kreis</em> (2012)<a class="footnote-reference brackets" href="#id3" id="id1">1</a> in which Paola Paoletti studied in detail several hundred documents from the so-called treasure archive at Puzriš-Dagan. This archive reports on the manufacturing of luxury goods made of precious metals and leather and includes many rare words. Since the archive (like almost all Ur III archives) is scattered over museums all over the world, most of these texts were published as single documents or in small groups. Studying the entire group frequently allowed Paoletti to arrive at a more satisfying reading and understanding than the original editor’s. The <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> editions of these texts reflect Paoletti’s improvements, but the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> editions not (yet).</p>
+<p>The <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> data can be downloaded by hand through the <a class="reference external" href="http://bdtns.filol.csic.es/index.php?p=formulario_urIII">Search</a> option in the Catalogue &amp; Transliterations drop-down menu. One can search by a variety of criteria (including word and grapheme strings) and then download the search results by clicking on the Export button. The export page provides options for the types of information to include (various types of meta-data and/or transliterations). By searching for a blank string one may export the entire data set. The export yields two files: one for the meta-data and one for the  transliterations, both in raw text (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>) format.</p>
+<div class="section" id="vertical-tabs">
+<h2>2.4.1.1 Vertical TABs<a class="headerlink" href="#vertical-tabs" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> transliteration files use “vertical TABs”, represented by ^K, \v, or \x0b (depending on which editor is used for reading the file). These “vertical TABS” are inserted between lines that belong to the same document; the regular newline character is used to separate one document from the next. Because of those vertical tabs, the following code will lead to somewhat problematic results:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;query_text_19_03_1-210747.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span> 
+    <span class="n">bdtns</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> function does not recognize the vertical tab as a newline character. The code, therefore, will result in a list that has one entry for every document, with ^K separating the lines within a document. The issue can be circumvented by reading the entire document as a single string with the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function, and then split the string with the <code class="docutils literal notranslate"><span class="pre">splitlines()</span></code> function, as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;query_text_19_03_1-210747.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span> 
+    <span class="n">bdtns</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">splitlines()</span></code> function does recognize the vertical tabs as newline characters, and this code results in a list with each line in the original <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file as a separate element of that list.</p>
+</div>
+<div class="section" id="format-as-dataframe">
+<h2>2.4.1.2 Format as DataFrame<a class="headerlink" href="#format-as-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>In order to format this data in a DataFrame we first need to look for lines that indicate a new document. In the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> export file such lines begin with a six-digit number, for instance:</p>
+<blockquote>
+<div><p>038576	AAICAB 1/1, Ashm. 1911-146 = CDLI P142659</p>
+</div></blockquote>
+<p>We can isolate the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number (which can also be used to create a URL of the format <a class="reference external" href="http://bdtns.filol.csic.es/038576">http://bdtns.filol.csic.es/038576</a>) by selecting the first six characters of the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span> 
+	<span class="n">bdtns_no</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>All other lines are transliteration lines that may have one or more of the following:</p>
+<ul class="simple">
+<li><p>line number in the format ‘o.ii 5’ (obverse column ii line 5)</p></li>
+<li><p>transliteration</p></li>
+<li><p>editorial remarks</p></li>
+</ul>
+<p>Line numbers are separated from transliteration by five spaces. Editorial remarks (which may indicate the presence of a seal impression, an erased line, or provide an alternative reading) are introduced by the hash mark and are placed at the end of the line. A specific type of editorial remark is the sign name, which explains an x-value (see below section 2.4.1.3), a rare sign form, or a rare sign reading. These particular editorial remarks have the form (=SIGN NAME).</p>
+<p>The script replaces the five spaces with a hash mark and ‘(=’ with ‘#(=’, so that we can use the hash mark to split the line in (potentially) three elements: line number, transliteration, and editorial comment. Both types of editorial comments (sign names and true comments) end up in the third column. We then prefix each line with the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number that was isolated previously, and with a counter (<code class="docutils literal notranslate"><span class="pre">id_line</span></code>) that is set to zero for each new document. The field <code class="docutils literal notranslate"><span class="pre">id_line</span></code> is an integer that can be used to keep or to restore the proper order of the lines within a document. The full code looks as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">id_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">id_line</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">bdtns</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span> 
+        <span class="n">id_text</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+        <span class="n">id_line</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">id_line</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">li</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">li</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(=&quot;</span><span class="p">,</span> <span class="s2">&quot;#(=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;     &#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">li_l</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">li_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">bdtns_no</span><span class="p">,</span> <span class="n">id_line</span><span class="p">]</span> <span class="o">+</span> <span class="n">li_l</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">li_l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This results in a list of lists called <code class="docutils literal notranslate"><span class="pre">l</span></code> that contains the same data as the original <code class="docutils literal notranslate"><span class="pre">bdtns</span></code> list, but in a more explicit format, seperating between text and non-text. This list of lists is transformed into a five-column DataFrame with column names <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number), <code class="docutils literal notranslate"><span class="pre">id_line</span></code> (an integer, starting at 0 for each document), <code class="docutils literal notranslate"><span class="pre">label</span></code> (the traditional line number), <code class="docutils literal notranslate"><span class="pre">text</span></code> (transliteration), and <code class="docutils literal notranslate"><span class="pre">comments</span></code> (holding comments as well as sign explications).</p>
+</div>
+<div class="section" id="x-values">
+<h2>2.4.1.3 X-values<a class="headerlink" href="#x-values" title="Permalink to this headline">¶</a></h2>
+<p>A peculiarity of the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> data set is the way so-called x-values are represented. In Assyriology, x-values are sign readings that have not (yet) received a conventional index number. For instance, the (very common) word  for “to cut (reeds)” is written either with the sign <strong>zi</strong> or with the sign <strong>SIG₇</strong>. Based on the distribution of those spellings (<strong>SIG₇</strong> only in Umma, <strong>zi</strong> elsewhere), M. Molina and M. Such-Guttiérez (2004)<a class="footnote-reference brackets" href="#id4" id="id2">2</a> concluded that both spellings write the same word /<strong>zi</strong>/. On that basis the new reading <strong>/zi/</strong> for the sign <strong>SIG₇</strong> was introduced (and is now commonly accepted among Sumerologists). In such cases one may transliterate <strong>ziₓ(SIG₇)</strong> where the SIG₇ between brackets is the name of the sign transliterated as <strong>ziₓ</strong> (and thus the principle of a one-to-one mapping of a transliterated token to a cuneiform sign is maintained). In the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> export file this is represented as follows:</p>
+<blockquote>
+<div><p>o. 2     gi ziX-a 12 sar-⌈ta⌉ (=SIG7)		cut reed per 12 <em>sar</em> of field</p>
+</div></blockquote>
+<p>The index ₓ is represented by a capital X (as in ziX), and the sign name is added at the end of the line, between parens and preceded by the equal sign.</p>
+<p>In order to use this data for computational purposes (for instance computing sign frequencies) it is necessary to move the sign specification and to transform this into</p>
+<blockquote>
+<div><p>o. 2     gi ziₓ(SIG7)-a 12 sar-⌈ta⌉</p>
+</div></blockquote>
+<p>It is possible to do so with a script or regular expression, and to move the sign name to the position immediately after the capital X. Before we do so, it is useful to inspect some exceptions to the pattern. In some cases sign names are provided for rare readings, for instance:</p>
+<blockquote>
+<div><p>18 gin2 nagga mu-kuX gibil (=<a class="reference external" href="http://AN.NA">AN.NA</a>) (=DU)</p>
+</div></blockquote>
+<p>If we naively move the first sign name to the first X, we will get:</p>
+<blockquote>
+<div><p>18 gin2 nagga mu-kuX(<a class="reference external" href="http://AN.NA">AN.NA</a>) gibil  (=DU)</p>
+</div></blockquote>
+<p>(=<a class="reference external" href="http://AN.NA">AN.NA</a>), in this case, explains the rare reading <strong>nagga</strong> (tin, or some similar substance), whereas (=DU) explains <strong>kuX</strong> - but there is no obvious way for a regular expression or script to recognize that. Another type of exception is reduplicated “gurₓ-gurₓ” (to reap) which is represented thus:</p>
+<blockquote>
+<div><p>6.0.0 še ur5-ra še gurX-gurX-ta su-ga (=ŠE.KIN.ŠE.KIN)</p>
+</div></blockquote>
+<p>which, if we naively moved the sign name, would result in:</p>
+<blockquote>
+<div><p>6.0.0 še ur5-ra še gurₓ(ŠE.KIN.ŠE.KIN)-gurₓ-ta su-ga</p>
+</div></blockquote>
+<p>The issue is solved by approaching the x-values in two separate ways. First, unambiguous x-values (those that are always resolved in the same way) are replaced with the help of a dictionary that lists the x-values with their resolutions. This dictionary includes the most common x-values encountered in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>. Second, for ambiguous x-values the sign explication in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> is used. Both search-and-replace actions are performed in the function <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code>, which is applied to each row  of the DataFrame. In addition to resolving x-values, the function <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code> also replaces regular numbers (as in <strong>du3</strong>) by unicode index numbers (<strong>du₃</strong>), while leaving alone regular numbers that express quantities (<strong>7 sila4</strong> becomes <strong>7 sila₄</strong>).</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code> to run properly and efficiently, a number of translation tables, dictionaries, and compiled <a class="reference external" href="https://www.regular-expressions.info/">regular expressions</a> are defined before the function is called. A detailed explanation of how <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code> works is found in the notebook itself.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">ogsl_v</span></code> is applied to more than a million rows in a dataframe, it is necessary to keep track of progress. This is done using the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> library which is imported as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Importing <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> from the <code class="docutils literal notranslate"><span class="pre">tqdm.auto</span></code> submodule allows <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> to run either in notebook mode (with colored progress bars) or in regular mode. The expression <code class="docutils literal notranslate"><span class="pre">tqdm.pandas()</span></code> initiates the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> integration and allows the use of <code class="docutils literal notranslate"><span class="pre">progress_apply()</span></code> and <code class="docutils literal notranslate"><span class="pre">progress_map()</span></code> instead of the regular <code class="docutils literal notranslate"><span class="pre">pandas</span></code> functions <code class="docutils literal notranslate"><span class="pre">apply()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code>.</p>
+<p>The resulting DataFrame distinguishes between text data (the column <code class="docutils literal notranslate"><span class="pre">text</span></code>) and other data (line numbers, comments, text ID numbers) and follows as much as possible the specifications of the ORACC Global Sign List (<a class="reference external" href="http://oracc.org/ogsl">OGSL</a>).</p>
+</div>
+<div class="section" id="save">
+<h2>2.4.1.4 Save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
+<p>Finally, the newly created DataFrame with <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> data is saved in two ways. The <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> function of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library is used to created a pickle, a file that can be opened in a future session to recreate the DataFrame. Second, the DataFrame is saved in JSON format, a format that is more suitable for sharing with other researchers. Both files are saved in the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory.</p>
+</div>
+</div>
+<div class="section" id="building-sign-search">
+<h1>2.4.2 Building Sign Search<a class="headerlink" href="#building-sign-search" title="Permalink to this headline">¶</a></h1>
+<p>Combining the data from <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>, as prepared in the previous section, with data from the ORACC Global Sign List (<a class="reference external" href="http://oracc.org/ogsl">OGSL</a>) we can build a search engine for <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> that finds a sequence of signs, independent of the particular reading employed in the transliteration. The sign search is built here primarily as an example of the kinds of things one can do with data as produced in 2.4.1 (standardized and with proper separation between text data and non-text data).</p>
+<p>The code downloads and parses the JSON zip file that contains all the <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> data. The result is a dictionary that provides for each sign reading (key) the corresponding sign name (value). This dictionary is used to add a new column (<code class="docutils literal notranslate"><span class="pre">sign_name</span></code>) to the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> DataFrame that was created above. This new column represents the same line of text, now as a sequence of sign names, ignoring flags (such as question marks, square brackets, etc.).</p>
+<p>Thus the line</p>
+<blockquote>
+<div><p>[lu]kur-ki-ag₂ lugal</p>
+</div></blockquote>
+<p>is represented in the column <code class="docutils literal notranslate"><span class="pre">sign_name</span></code> as</p>
+<blockquote>
+<div><p>SAL ME KI |NINDA₂×NE| LUGAL</p>
+</div></blockquote>
+<p>The <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> dictionary returns |SAL.ME| for lukur and |NINDA₂×NE| for ag₂. Since |SAL.ME| represents a sign sequence that, at least in theory, could also be read as a sequence of any of the values of SAL and ME, it is represented in the <code class="docutils literal notranslate"><span class="pre">sign_name</span></code> column as the sequence SAL ME and therefore a search for lukur will also find, for instance, munus-me. Such re-analysis is not possible for |NINDA₂×NE| (the sign NE inscribed in the sign NINDA₂), and thus such compounds are not split.</p>
+<p>The same function that is used to transform a line of transliteration into a sequence of sign names is also used by the search engine for transforming the user input. User input is thus also transformed into a sequence of sign names, using the same <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> dictionary, and compound signs such as <strong>lukur</strong> are separated into their constituent signs (SAL ME). As a result, search for <strong>lukur</strong>, <strong>sal-me</strong>, or <strong>munus išib</strong> will all yield the same results.</p>
+<p>When searching for <strong>sar-ki</strong>, however, we should not find <strong>sar kin</strong>, in other words, the search should identify only full sign names. Sign names are separated from each other by spaces. By adding a space before and after each line (in the <code class="docutils literal notranslate"><span class="pre">sign_name</span></code> column) each individual sign is preceded and followed by a space, even when it appears at the beginning or the end of the line. The (transformed) search input is also put between spaces.</p>
+<blockquote>
+<div><p>A more common approach to the “whole sign” issue would be to add the regular expression \b (“word boundary”) before and after the input. However, this fails on sign names that begin and end with pipes (as in |NINDA₂×NE|), because the pipe is not considered a word character in regular expressions. It is possible to add look-behind and look-ahead regular expressions to take care of this issue. The expression would look like this: ‘(?:(?&lt;=\s)|(?&lt;=^))’+signs+’(?=\s|$’) where <code class="docutils literal notranslate"><span class="pre">signs</span></code> represents the (transformed) search input. As it turns out, this works, but since look-behind and look-ahead expressions are relatively slow, it was decided to circumvent the problem with the extra spaces.</p>
+</div></blockquote>
+<p>In the output the columns <code class="docutils literal notranslate"><span class="pre">id_text</span></code>, <code class="docutils literal notranslate"><span class="pre">label</span></code> (line number), and <code class="docutils literal notranslate"><span class="pre">text</span></code> are shown (not <code class="docutils literal notranslate"><span class="pre">sign_name</span></code>). By default, the search displays only the first 25 hits and the <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number) is used to create a link to the text in question. The Max hits box and the checkbox may be used to increase the number of displayed hits and/or to switch off the links. For larger number of hits, styling the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> output to create these links may be rather slow and so by default with Max hits larger than 250 the links are switched off.</p>
+<p>The search engine uses “widgets” (pieces of software to create a user interface) to call the search function and display the results. It creates a text box (for the search term), a numerical text box (for the maximum number of hits), a checkbox and a button, to be clicked to run the search. A drop-down menu provides the possibility to order search results in a variety of ways (note that ordering by date is done alphabetically - Amar-Sîn dates will thus come before Shulgi dates). On a fast machine one may do away with the button and have the software react immediately to user input (see Alternative Interface in the notebook).</p>
+<p>Detailed search instructions are found in the Notebook.</p>
+</div>
+<div class="section" id="search-bdtns">
+<h1>2.4.3 Search BDTNS<a class="headerlink" href="#search-bdtns" title="Permalink to this headline">¶</a></h1>
+<p>The final notebook in section 2.4 is called <code class="docutils literal notranslate"><span class="pre">2_4_3_Search_BDTNS.ipynb</span></code>. It offers the same search functionality as the search built in section 2.4.2, but it mostly hides the code and does not create the files necessary for the search - assuming they are already there. In other words, before using this notebook for the first time, first run <code class="docutils literal notranslate"><span class="pre">2_4_1_Data_Acquisition_BDTNS.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">2_4_2_Build_Sign_Search.ipynb</span></code>(in that order) to create the files <code class="docutils literal notranslate"><span class="pre">bdtns_tokenized.p</span></code>and <code class="docutils literal notranslate"><span class="pre">ogsl_dict.p</span></code> that are used by the code in <code class="docutils literal notranslate"><span class="pre">2_4_3_Search_BDTNS.ipynb</span></code>. Afterwards, you can continue to use the same files and run the search again, or you can rebuild them and capture the latest data from <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> and <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>.</p>
+<p>The code that is used by the Search is essentially the same as in <code class="docutils literal notranslate"><span class="pre">2_4_2_Build_Sign_Search.ipynb</span></code> but it calls the file <code class="docutils literal notranslate"><span class="pre">Search_BDTNS.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">py</span></code> directory, so that the code itself does not clutter the page.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Paola Paoletti, <em>Der König und sein Kreis: das staatliche Schatzarchiv der III. Dynastie von Ur</em>, Biblioteca del próximo oriente antiguo 10. Madrid: 2012.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Molina, Manuel and Such-Gutiérrez, Marcos, On Terms for Cutting Plants and Noses in Ancient Sumer: <em>Journal of Near Eastern Studies</em> 63 (2004) 1-16</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_4_Data_Acquisition_BDTNS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html" title="previous page">Data Acquisition from CDLI</a>
+    <a class='right-next' id="next-link" href="2_4_1_Data_Acquisition_BDTNS.html" title="next page">2.4 Data Acquision BDTNS</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

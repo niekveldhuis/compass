@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4 Data Acquision BDTNS &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Build Sign Search for BDTNS" href="2_4_2_Build_Sign_Search.html" />
+    <link rel="prev" title="2.4.1 Data Acquisition BDTNS" href="2_4_0_Data_Acquisition_BDTNS.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-directories">
+   Create Directories
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-catalog-data">
+   Read Catalog Data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pickle-catalog-dataframe">
+   Pickle Catalog DataFrame
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-the-transliteration-file-as-a-list">
+   Read the Transliteration File as a List
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-data-into-fields">
+   Split Data into Fields
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-dataframe">
+   Create DataFrame
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-ogsl-compliant">
+   Make OGSL compliant
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dealing-with-x-values">
+   Dealing with x-values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-unambiguous-x-values">
+   Step 1: Unambiguous x-values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-remaining-x-values">
+   Step 2: Remaining x-values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-index-numbers">
+   Step 3: Index Numbers
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helpful-variables-lists-and-dictionaries">
+   Helpful Variables, Lists, and Dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-main-function">
+   The Main Function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-the-function">
+   Apply the Function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-for-remaining-x-signs">
+   Check for Remaining X-signs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pickle-for-future-use">
+   Pickle for Future Use
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dump-in-json-format-for-distribution">
+   Dump in JSON Format for Distribution
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-acquision-bdtns">
+<h1>2.4 Data Acquision BDTNS<a class="headerlink" href="#data-acquision-bdtns" title="Permalink to this headline">¶</a></h1>
+<p>Goal of this notebook is to transform <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> data into a structured format that clearly distinguishes between text and non-text (such as line numbers) and that, for the text part, follows as much as possible the standards of the Oracc Global Sign List (<a class="reference external" href="http://oracc.org/ogsl">OGSL</a>). Adherence to the <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> standard makes it possible to transform a line of text into a sequence of sign names or Unicode codepoints. This can be used to track transliteration inconsistencies, for instance in the rendering of names (U₂-da-mi-ša-ru-um vs. U₂-ta₂-mi-ša-ru-um), to build a search engine that finds a sign sequence regardless of the actual transliteration, or to compare editions of the same text in <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a>, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>, and <a class="reference external" href="http://oracc.org/epsd2/admin/u3adm">ePSD2</a>.</p>
+<p>The search engine will be built in a separate notebook - primarily as a case study of the potential of this approach.</p>
+<p>On the <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> website, search results can be downloaded with the “Export” button in the left pane. Searching for the empty string will select all texts currently available. The export creates two files: one with transliterations and one with meta-data. The transliteration file is discussed here most extensively. The file name is “query_text_” followed by a date and an additional number. Move the file to the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory of this chapter.</p>
+<p>This notebook uses the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> integration of the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package, for showing a progress bar. This is important, because the transformation of (currently) more than 1.1 million lines of text in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> takes some time. The pandas/tqdm integration is initialized with <code class="docutils literal notranslate"><span class="pre">tqdm.pandas()</span></code>, immediately after importing <code class="docutils literal notranslate"><span class="pre">tqdm</span></code>. This allows the usage of the functions <code class="docutils literal notranslate"><span class="pre">progress_apply()</span></code> and <code class="docutils literal notranslate"><span class="pre">progress_map()</span></code> instead of the standard <code class="docutils literal notranslate"><span class="pre">apply()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> functions in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span> <span class="c1"># initiate pandas support in tqdm, allowing progress_apply() and progress_map()</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">util_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../utils&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-directories">
+<h1>Create Directories<a class="headerlink" href="#create-directories" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-catalog-data">
+<h1>Read Catalog Data<a class="headerlink" href="#read-catalog-data" title="Permalink to this headline">¶</a></h1>
+<p>Make sure to put the BDTNS data files (catalog and text files) in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory of <code class="docutils literal notranslate"><span class="pre">compass/2_4_Data_Acquisition_BDTNS</span></code> or adjust the code in the cell below to reflect the location of your downloaded <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> files. The code will identify the most recently downloaded catalog file and open that. Check that your file has all the fields (you can select the fields you want in the download process) and/or adjust the list <code class="docutils literal notranslate"><span class="pre">cols</span></code> to reflect the fields in your file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datafiles</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">catfiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">datafiles</span> <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;query_cat&#39;</span><span class="p">)]</span> <span class="c1"># select the BDTNS catalogue files</span>
+<span class="n">catfiles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">catfiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span> <span class="c1">#select the file with the most recent date in the filename</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="s1">&#39;cdli&#39;</span><span class="p">,</span> <span class="s1">&#39;publication&#39;</span><span class="p">,</span> <span class="s1">&#39;mus_no&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;collection&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;provenance&#39;</span><span class="p">,</span> <span class="s1">&#39;seal&#39;</span><span class="p">,</span> <span class="s1">&#39;object&#39;</span><span class="p">]</span>
+<span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span> <span class="n">cols</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">cat_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pickle-catalog-dataframe">
+<h1>Pickle Catalog DataFrame<a class="headerlink" href="#pickle-catalog-dataframe" title="Permalink to this headline">¶</a></h1>
+<p>The catalog DataFrame is not used further in this notebook, but will be used in the search engine, to be built in 2.4.2. For now it is saved as a file with the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickled</span> <span class="o">=</span> <span class="s2">&quot;output/bdtns_cat.p&quot;</span>
+<span class="n">cat_df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">pickled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-transliteration-file-as-a-list">
+<h1>Read the Transliteration File as a List<a class="headerlink" href="#read-the-transliteration-file-as-a-list" title="Permalink to this headline">¶</a></h1>
+<p>Your downloaded <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> text file (named <code class="docutils literal notranslate"><span class="pre">query_text</span></code> followed by a date and an additional number) should be located in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory; the code will identify the most recent file and open that.</p>
+<p><a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> uses so-called “vertical tabs” (represented by <code class="docutils literal notranslate"><span class="pre">^K</span></code>, <code class="docutils literal notranslate"><span class="pre">\v</span></code>, or <code class="docutils literal notranslate"><span class="pre">\x0b</span></code>, depending on your editor) as a new line within a single document, whereas the standard newline (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) character is used to separate one document from the next. The Python <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> function (which reads a file line-by-line, producing a list) is memory efficient, but keeps the vertical tabs and will result in a format where each document is represented as a single line. Instead, therefore, we read the entire file into memory with the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function and then split the document into lines with <code class="docutils literal notranslate"><span class="pre">splitlines()</span></code>. The function <code class="docutils literal notranslate"><span class="pre">splitlines()</span></code> takes the vertical tab (as well as the regular newline character) as a line separator; this will result in a line-by-line representation of the document in the form of a list (called <code class="docutils literal notranslate"><span class="pre">bdtns</span></code>).</p>
+<p>Empty lines (or lines filled with spaces or tabs only) will cause trouble downstream and are removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txtfiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">datafiles</span> <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;query_text&#39;</span><span class="p">)]</span>
+<span class="n">txtfiles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">txtfiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">bdtns</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="n">bdtns</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">bdtns</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># remove empty lines</span>
+<span class="n">bdtns</span><span class="p">[:</span><span class="mi">25</span><span class="p">]</span> <span class="c1"># inspect the results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-data-into-fields">
+<h1>Split Data into Fields<a class="headerlink" href="#split-data-into-fields" title="Permalink to this headline">¶</a></h1>
+<p>The code looks for lines that begin with 6 digits (as in ‘145342’). Those numbers are the <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> text ID numbers and mark the beginning of a new document. If such a line is found, the number is stored in the variable <code class="docutils literal notranslate"><span class="pre">bdtns_no</span></code>. Other data available in such lines (such as publication and <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> P-number) are omitted, because they are better derived from the meta-data file (with the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number as key).</p>
+<p>If the line does not start with 6 digits, it is a transliteration line. The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is used to separate the line into three fields: line number, transliteration text, and comments. The variables <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> number) and <code class="docutils literal notranslate"><span class="pre">id_line</span></code> are added to each line as separate fields. The field <code class="docutils literal notranslate"><span class="pre">id_line</span></code> is a running number (an integer) that starts at 1 for each document. In the current notebook the variable is not used, but it can be used to keep or restore the proper order of the lines of a document. The variable <code class="docutils literal notranslate"><span class="pre">label</span></code> is the human-readable line number in the format ‘r ii 7’ (for reverse column 2 line 7).</p>
+<p>In the <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> output line numbers are separated from transliteration text by 5 spaces. Editorial remarks are introduced by the hash-mark (#). Finally, sign names (qualifying x-values, rare signs, and, occasionally, readings with exclamation mark) are marked by ‘(=’, as in ‘(=SIG7)’. In the script, the five spaces are replaced by ‘#’ and ‘(=’ is replaced by ‘#(=’ so that we can split each line on the hash mark. The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function is done only once and <code class="docutils literal notranslate"><span class="pre">split()</span></code> is done twice, so that we end up with three columns, representing label, text, and comments (to which the <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">id_line</span></code> are added). The column <code class="docutils literal notranslate"><span class="pre">comments</span></code> will include both editorial comments and sign explications of x-values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">id_line</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">id_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">bdtns</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span> 
+        <span class="n">id_text</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+        <span class="n">id_line</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">id_line</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">li</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">li</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(=&quot;</span><span class="p">,</span> <span class="s2">&quot;#(=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;     &#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">li_l</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># split line into a list with length 3.</span>
+        <span class="n">li_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">id_text</span><span class="p">,</span> <span class="n">id_line</span><span class="p">]</span> <span class="o">+</span> <span class="n">li_l</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">li_l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-dataframe">
+<h1>Create DataFrame<a class="headerlink" href="#create-dataframe" title="Permalink to this headline">¶</a></h1>
+<p>The list <code class="docutils literal notranslate"><span class="pre">lines</span></code> is now a list of lists which can be transformed into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. The DataFrame will have <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (for ‘Not a Number’) in all cases where a field is empty. <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s are treated by Python as a numerical data type and will throw errors when trying to apply a string function. Therefore, all <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s are replaced by the empty string with the <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;id_line&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;comments&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">df</span>  <span class="c1"># inspect the results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="make-ogsl-compliant">
+<h1>Make OGSL compliant<a class="headerlink" href="#make-ogsl-compliant" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://oracc.org/ogsl">OGSL</a> is the ORACC Global Sign List, which lists for each sign its possible readings. <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> compliance opens the possibility to search or compare by sign <em>name</em> rather than sign value. For instance, one may search for the sequence “aga₃ kug-sig₁₇” (golden tiara) and find a line reading “gin₂ ku₃-GI”.</p>
+<p>The main steps towards <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> compliance are:</p>
+<ul class="simple">
+<li><p>add sign names to x-values</p></li>
+<li><p>replace regular numbers by index numbers in sign values</p></li>
+</ul>
+</div>
+<div class="section" id="dealing-with-x-values">
+<h1>Dealing with x-values<a class="headerlink" href="#dealing-with-x-values" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>, a sign reading that does not (yet) have a commonly accepted index number receives the ₓ index, followed by the sign name, as in ziₓ(IGI&#64;g). In the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> export file the subscripted ₓ is represented by a capital X and the sign name is given at the end of the line, as in</p>
+<blockquote>
+<div><p>o. 2     gi ziX-a 12 sar-⌈ta⌉ (=SIG7)</p>
+</div></blockquote>
+<p>Note that IGI&#64;g (the <em>gunû</em> form of the IGI sign, that is: IGI with extra wedges) is the standard <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> name of the same sign that is called SIG₇ in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>.</p>
+<p>In the DataFrame, the sign names are now found in the column <code class="docutils literal notranslate"><span class="pre">comments</span></code>. The most straightforward solution is to replace every capital X with an ₓ plus what is found in the comments column (minus the equal sign).</p>
+<p>In our example, this would result in:</p>
+<blockquote>
+<div><p>o. 2     gi ziₓ(SIG₇)-a 12 sar-⌈ta⌉</p>
+</div></blockquote>
+<p>In practice, however, there are quite a few exceptions to the pattern illustrated above. Examples include:</p>
+<blockquote>
+<div><p>18 gin2 nagga mu-kuX gibil (=<a class="reference external" href="http://AN.NA">AN.NA</a>) (=DU)</p>
+</div></blockquote>
+<p>Here (=<a class="reference external" href="http://AN.NA">AN.NA</a>) explains the infrequent sign “nagga”. However, since “nagga” is not followed by X the naive replacement would return</p>
+<blockquote>
+<div><p>18 gin₂ nagga mu-kuₓ(<a class="reference external" href="http://AN.NA">AN.NA</a>) gibil (=DU)</p>
+</div></blockquote>
+<p>Another exception is reduplicated <strong>gurₓ-gurₓ</strong> which is represented thus:</p>
+<blockquote>
+<div><p>6.0.0 še ur5-ra še gurX-gurX-ta su-ga (=ŠE.KIN.ŠE.KIN)</p>
+</div></blockquote>
+<p>Naive replacement would result in:</p>
+<blockquote>
+<div><p>6.0.0 še ur₅-ra še gurₓ(ŠE.KIN.ŠE.KIN)-gurₓ-ta su-ga</p>
+</div></blockquote>
+<p>Finally, a few x-values are usually not resolved this way, for instance:</p>
+<blockquote>
+<div><p>1 sila4 Ur-nigarX{gar}</p>
+</div></blockquote>
+<p>with no sign name for nigarX - presumably because it can be unambiguously resolved as U.UD.KID.</p>
+<p>For these reasons we will approach the x-values in two different ways</p>
+<ul class="simple">
+<li><p>x-values that are unambiguous are resolved with a search and replace, using a dictionary - replacing, e.g. ziX with ziₓ(IGI&#64;g). This process does not pay attention to the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> sign explication in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column (=SIG7). A special case in this category is mu-kuX (“delivery”), which is very frequent and should be resolved as mu-kuₓ(DU). However, kuX by itself may also be resolved as kuₓ(LIL) or kuₓ(KWU147) (both for the verb “to enter”).</p></li>
+<li><p>x-values that do not resolve unambiguously (muruₓ, ušurₓ, ummuₓ, and several others) are resolved by moving the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> sign name (in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column) after the X sign between brackets, as discussed above.</p></li>
+</ul>
+<p>Both of these steps are included in the function <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code>, that is applied to every row of the DataFrame. In addition, this function will replace index numbers (such as the 7 in sig7) with Unicode index numbers (sig₇), leaving alone numbers that represent quantities.</p>
+</div>
+<div class="section" id="step-1-unambiguous-x-values">
+<h1>Step 1: Unambiguous x-values<a class="headerlink" href="#step-1-unambiguous-x-values" title="Permalink to this headline">¶</a></h1>
+<p>Some x-values are always resolved in the same way. Thus, ziX is always ziₓ(IGI&#64;g), hirinX is always hirinₓ(KWU318), and gurX is always gurₓ(|ŠE.KIN|). In some cases, x-values have been assigned an index number in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a>. In those cases (nigarₓ = nigar; nemurₓ(PIRIG.TUR) = nemur₂; nagₓ(GAZ) = nag₃; and pešₓ(ŠU.PEŠ5) = peš₁₄) the appropriate index number should be added and the sign name ignored.</p>
+<p>A dictionary of such unambiguous x-values (<code class="docutils literal notranslate"><span class="pre">xvalues</span></code>) has as its key the x-value as represented in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> in lower case (‘zix’) and as its value the index ₓ plus the appropriate sign name (‘ₓ(IGI&#64;g)’) in <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> format.</p>
+<p>The substitution is done with a somewhat complex <a class="reference external" href="https://www.regular-expressions.info/">regular expression</a>, that looks as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">xv</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">xvalues</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s1">&#39;X&#39;</span><span class="p">),</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sub()</span></code> function of the <code class="docutils literal notranslate"><span class="pre">re</span></code> library has the general form <code class="docutils literal notranslate"><span class="pre">re.sub(search_pattern,</span> <span class="pre">replace,</span> <span class="pre">string)</span></code>. Instead of a replace string, one may also give a function (in this case a temporary <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function) that returns the <code class="docutils literal notranslate"><span class="pre">replace</span></code> string. In this case the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function accesses the dictionary <code class="docutils literal notranslate"><span class="pre">xvalues</span></code> to see if the match that was found in the search pattern is present among the keys. The basic format of that command is <code class="docutils literal notranslate"><span class="pre">xvalues.get(m.group())</span></code>, where <code class="docutils literal notranslate"><span class="pre">m.group()</span></code> represents the current match of the search pattern. The search pattern, <code class="docutils literal notranslate"><span class="pre">xv</span></code> (to be explained in more detail below) may match <code class="docutils literal notranslate"><span class="pre">zahX</span></code>, <code class="docutils literal notranslate"><span class="pre">NigarX</span></code>, or <code class="docutils literal notranslate"><span class="pre">[bu]lugX</span></code> - in other words, the match may include capitals (as in <code class="docutils literal notranslate"><span class="pre">NigarX</span></code>) or brackets and flags (as in <code class="docutils literal notranslate"><span class="pre">[bu]lugX</span></code>). In order to find that match in the dictionary it is lowercased and “translated”. The function <code class="docutils literal notranslate"><span class="pre">translate()</span></code> translates individual characters into other characters - according to a translation pattern in a table. In this case, the characters representing flags and brackets are all translated to <code class="docutils literal notranslate"><span class="pre">None</span></code> which means, in practice, that they are removed. The matches <code class="docutils literal notranslate"><span class="pre">zahX</span></code>, <code class="docutils literal notranslate"><span class="pre">NigarX</span></code>, and <code class="docutils literal notranslate"><span class="pre">[bu]lugX</span></code>, therefore, will be looked up in the dictionary as <code class="docutils literal notranslate"><span class="pre">zahx</span></code>, <code class="docutils literal notranslate"><span class="pre">nigarx</span></code>, and <code class="docutils literal notranslate"><span class="pre">bulugx</span></code> - and each of those are indeed keys in <code class="docutils literal notranslate"><span class="pre">xvalues</span></code>. In the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function one may optionally add a fall-back value in case the key is not found - in this case the fall-back is ‘X’.</p>
+<p>If a match is found, say <code class="docutils literal notranslate"><span class="pre">[bu]lugX</span></code>, the key <code class="docutils literal notranslate"><span class="pre">bulugx</span></code> is found in the dictionary <code class="docutils literal notranslate"><span class="pre">xvalues</span></code>, returning <code class="docutils literal notranslate"><span class="pre">ₓ(|ŠIM×KUŠU₂|)</span></code>. The return value of the lambda function is the search match (<code class="docutils literal notranslate"><span class="pre">[bu]lugX</span></code>) minus the last character (<code class="docutils literal notranslate"><span class="pre">[bu]lug</span></code>) plus the value that was returned from the dictionary (<code class="docutils literal notranslate"><span class="pre">ₓ(|ŠIM×KUŠU₂|)</span></code>), resulting in <code class="docutils literal notranslate"><span class="pre">[bu]lugₓ(|ŠIM×KUŠU₂|)</span></code>. If the search pattern returns a match that is not found in the dictionary (for instance <code class="docutils literal notranslate"><span class="pre">ušurX</span></code>), the return value of the lambda function is, again, the search match (<code class="docutils literal notranslate"><span class="pre">ušurX</span></code>), minus the last character (<code class="docutils literal notranslate"><span class="pre">ušur</span></code>) plus <code class="docutils literal notranslate"><span class="pre">X</span></code>, the fallback return of the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function, resulting in <code class="docutils literal notranslate"><span class="pre">ušurX</span></code>. In other words - in those cases the search match is replaced by itself and nothing changes.</p>
+<p>The search pattern is a compiled regex (compiled expressions are faster than expressions that need to be interpreted on the fly), <code class="docutils literal notranslate"><span class="pre">xv</span></code>, which is defined as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xv</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w&#39;</span> <span class="o">+</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;]+X&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This matches any sequence of one or more (<code class="docutils literal notranslate"><span class="pre">+</span></code>) word-characters (<code class="docutils literal notranslate"><span class="pre">\w</span></code>; this includes letters from the English alphabet as well as special characters such as š, ṣ, and ṭ, the digits 0-9, and the underscore) and/or flags (such as square brackets etc.; see below: Flags), followed by a capital X. This regex will match <code class="docutils literal notranslate"><span class="pre">ziX</span></code>, <code class="docutils literal notranslate"><span class="pre">zahX</span></code>, or <code class="docutils literal notranslate"><span class="pre">ušurX</span></code>, but also <code class="docutils literal notranslate"><span class="pre">[za]hX</span></code>, etc. It does not match ‘KA×X’, ‘ X’, or ‘x-X’, because the characters × (for ‘times’) the hyphen and the space are neither word characters nor flags.</p>
+<p>Special case: <strong>mu-kuX</strong>. There are multiple possible solutions for <strong>kuX</strong>, including kuₓ(LIL) or kuₓ(KWU147), but the very frequent form <strong>mu-kuX</strong> is always to be resolved <strong>mu-kuₓ(DU)</strong>. The regular expression <code class="docutils literal notranslate"><span class="pre">xv</span></code> in the preceding does not match hyphens and thus it will never find the key <code class="docutils literal notranslate"><span class="pre">mu-kuX</span></code> in the dictionary <code class="docutils literal notranslate"><span class="pre">xvalues</span></code>. However, this expression (meaning ‘delivery’) is so frequent that it makes sense to deal with it separately, rather than depend on the sign names in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column. The expression <strong>mu-kuX</strong> therefore, has its own line in the function.</p>
+</div>
+<div class="section" id="step-2-remaining-x-values">
+<h1>Step 2: Remaining x-values<a class="headerlink" href="#step-2-remaining-x-values" title="Permalink to this headline">¶</a></h1>
+<p>For the remaining x-values (many of them ambiguous) we will copy the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> sign name, found in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column, to the x-value. For instance, <strong>ummu₃</strong> is |A.EDIN.LAL|, but the sign complex has many variants, all rendered <strong>ummuX</strong>: <a class="reference external" href="http://EDIN.A.SU">EDIN.A.SU</a>, A.EDIN, A.EDIN.A.LAL, EDIN, etc. The code will result in ummuₓ(|A.EDIN.SU|), ummuₓ(|A.EDIN|), ummuₓ(|A.EDIN.LAL|), ummuₓ(EDIN), etc. Compound signs are put between pipes (|A.EDIN.SU|), according to <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> conventions.</p>
+<p>In this step the code will naively replace the capital X by the index ₓ, followed by the first word in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column. This will result in errors if there are more such x-values in a single line - but because we have already dealt with many such values in the preceding, that risk is not very high. The code will test that the capital X does in fact follow a sign reading (as in ziX), and is not an illegible sign (as in KA×X, or simply X). This is done with a <a class="reference external" href="https://www.regular-expressions.info/">regular expression</a> using a so-called “positive lookbehind” (?&lt;=), to see if the preceding character is a letter. The regular expression for a capital ‘X’ preceded by any letter valid in Sumerian or Akkadian, is compiled in the variable <code class="docutils literal notranslate"><span class="pre">lettersX</span></code> in order to speed up the process (see below: Letters).</p>
+</div>
+<div class="section" id="step-3-index-numbers">
+<h1>Step 3: Index Numbers<a class="headerlink" href="#step-3-index-numbers" title="Permalink to this headline">¶</a></h1>
+<p>In a third step all sign reading index numbers (as in ‘du11’) are replaced by Unicode index numbers (‘du₁₁’). Regular numbers that express quantities should not be affected. This is done with a regular expression that finds a character, valid in Sumerian or Akkadian transcription, immediately followed by one or more digits. If such a match is found, the string is translated, replacing any digit by its corresponding index number.</p>
+</div>
+<div class="section" id="errors">
+<h1>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h1>
+<p>Inevitably, each of the steps in dealing with x-values may introduce its own errors. It is likely, moreover, that there are more x-values not treated here, or that there will be more x-values in a future version of the <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> data. The dictionary of x-values below can be adjusted to deal with those situations.</p>
+</div>
+<div class="section" id="helpful-variables-lists-and-dictionaries">
+<h1>Helpful Variables, Lists, and Dictionaries<a class="headerlink" href="#helpful-variables-lists-and-dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>A number of lists, dictionaries, and variables (including compiled regular expressions) are defined before the main function is called.</p>
+<p>The list <code class="docutils literal notranslate"><span class="pre">flags</span></code> enumerates characters like square brackets, half-brackets and exclamation marks that may appear in a sign reading in  in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a>. The list is used in two ways. First, it is used in compiling the regular expression <code class="docutils literal notranslate"><span class="pre">xv</span></code> that will match any sign reading that ends in a capital X (see below). Second, it is used to create a table in which each flag corresponds to <code class="docutils literal notranslate"><span class="pre">None</span></code>. The <code class="docutils literal notranslate"><span class="pre">maketrans()</span></code> function is a specialized function that prepares a table that is understood by the <code class="docutils literal notranslate"><span class="pre">translate()</span></code> command. The command <code class="docutils literal notranslate"><span class="pre">translate(table)</span></code> is used in the function <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code> (see below) to ignore any flag.</p>
+<p>The <a class="reference external" href="https://www.regular-expressions.info/">regular expression</a> <code class="docutils literal notranslate"><span class="pre">xv</span></code> matches a sequence of one or more characters, immediately followed by a capital <code class="docutils literal notranslate"><span class="pre">X</span></code>. The characters allowed in the sequence are “word” characters (represented by <code class="docutils literal notranslate"><span class="pre">\w</span></code>), as well as the flags. Word characters are implemented slightly differently in different programs that use regular expressions. In Python it includes the English letters of the alphabet, as well as special characters such as ṭ, ṣ, and š, but also digits (0-9) and the underscore. The <code class="docutils literal notranslate"><span class="pre">escape()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">re</span></code> library supplies the proper escape character for characters in the <code class="docutils literal notranslate"><span class="pre">flags</span></code> variable that otherwise have a special function in regular expressions. For instance, the question mark, which is included in the flags, means ‘zero or one time’ in a regular expression. In order to match the literal question mark it should be represented as <code class="docutils literal notranslate"><span class="pre">\?</span></code> - the <code class="docutils literal notranslate"><span class="pre">escape()</span></code> funcion takes care of that.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">letters</span></code> is a string that includes all letters that are valid in Sumerian or Akkadian, to be used in regular expressions. The variable <code class="docutils literal notranslate"><span class="pre">lettersX</span></code> is a compiled regular expression that represents a capital <code class="docutils literal notranslate"><span class="pre">X</span></code> preceded by any character in <code class="docutils literal notranslate"><span class="pre">letters</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">lettersX</span></code>is a so-called look-behind expression so that the match consists only of the capital X. Similarly, the variable <code class="docutils literal notranslate"><span class="pre">lettersNo</span></code> is a compiled regular expression that represents a sequence of one or more digits (represented by <code class="docutils literal notranslate"><span class="pre">\d+</span></code>) or capital <code class="docutils literal notranslate"><span class="pre">X</span></code> preceded by any character in <code class="docutils literal notranslate"><span class="pre">letters</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">lettersno</span></code>, however, does not use the lookbehind function (which is relatively slow) because the translation affects only the digits, other characters are left unchanged.</p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">xvalues</span></code> provides the unambiguous x-values in <a class="reference external" href="http://bdtns.filol.csic.es">BDTNS</a> as keys with their resolution according to <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> standards.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flags</span> <span class="o">=</span> <span class="s2">&quot;][!?&lt;&gt;⸢⸣⌈⌉*/&quot;</span>
+<span class="n">table</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">flags</span><span class="p">))</span>
+<span class="n">xv</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;[\w</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span><span class="si">}</span><span class="s1">]+X&#39;</span><span class="p">)</span> <span class="c1">#this matches a sequence of word signs (letters) and/or flags, followed by capital X</span>
+
+<span class="n">letters</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;a-zḫĝŋṣšṭA-ZḪĜŊṢŠṬ&#39;</span>
+<span class="n">lettersX</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;(?&lt;=[</span><span class="si">{</span><span class="n">letters</span><span class="si">}</span><span class="s1">])X&#39;</span><span class="p">)</span> <span class="c1"># capital X preceded by a letter</span>
+<span class="n">lettersNo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">letters</span><span class="si">}</span><span class="s1">](\d+|X)&#39;</span><span class="p">)</span> <span class="c1"># any sequence of digits, or X, preceded by a letter</span>
+
+<span class="n">ascind</span><span class="p">,</span> <span class="n">uniind</span> <span class="o">=</span> <span class="s1">&#39;0123456789x&#39;</span><span class="p">,</span> <span class="s1">&#39;₀₁₂₃₄₅₆₇₈₉ₓ&#39;</span>
+<span class="n">transind</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">ascind</span><span class="p">,</span> <span class="n">uniind</span><span class="p">)</span> <span class="c1"># translation table for index numbers</span>
+
+<span class="n">xvalues</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nagx&#39;</span> <span class="p">:</span> <span class="s1">&#39;₃&#39;</span><span class="p">,</span> <span class="s1">&#39;nigarx&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;nemurx&#39;</span> <span class="p">:</span> <span class="s1">&#39;₂&#39;</span><span class="p">,</span> <span class="s1">&#39;pešx&#39;</span> <span class="p">:</span> <span class="s1">&#39;₁₄&#39;</span><span class="p">,</span> <span class="s1">&#39;urubx&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;tubax&#39;</span> <span class="p">:</span> <span class="s1">&#39;₄&#39;</span><span class="p">,</span> <span class="s1">&#39;niginx&#39;</span> <span class="p">:</span> <span class="s1">&#39;₈&#39;</span><span class="p">,</span> <span class="s1">&#39;šux&#39;</span> <span class="p">:</span> <span class="s1">&#39;₁₄&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;alx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|NUN.LAGAR|)&#39;</span> <span class="p">,</span> <span class="s1">&#39;bulugx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|ŠIM×KUŠU₂|)&#39;</span><span class="p">,</span> <span class="s1">&#39;dagx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(KWU844)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;durux&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|IGI.DIB|)&#39;</span><span class="p">,</span> <span class="s1">&#39;durunx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|KU.KU)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;gigirx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|LAGAB×MU|)&#39;</span><span class="p">,</span> <span class="s1">&#39;giparx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(KISAL)&#39;</span><span class="p">,</span> <span class="s1">&#39;girx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(GI)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;gišbunx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|KI.BI|)&#39;</span><span class="p">,</span> <span class="s1">&#39;gurx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|ŠE.KIN|)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;hirinx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(KWU318)&#39;</span><span class="p">,</span> <span class="s1">&#39;kurunx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|DIN.BI|)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mu-kux&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(DU)&#39;</span><span class="p">,</span> <span class="s1">&#39;munsubx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|PA.GU₂×NUN|)&#39;</span><span class="p">,</span>  
+        <span class="s1">&#39;sagx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|ŠE.KIN|)&#39;</span><span class="p">,</span> <span class="s1">&#39;subx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|DU.DU|)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;sullimx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(EN)&#39;</span><span class="p">,</span> <span class="s1">&#39;šaganx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|GA×AN.GAN|)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;ulušinx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|BI.ZIZ₂|)&#39;</span><span class="p">,</span> <span class="s1">&#39;zabalamx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|MUŠ₃.TE.AB@g|)&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;zahx&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(ŠEŠ)&#39;</span><span class="p">,</span> <span class="s1">&#39;zahdax&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(|DUN.NE.TUR|)&#39;</span><span class="p">,</span>  
+        <span class="s1">&#39;zix&#39;</span> <span class="p">:</span> <span class="s1">&#39;ₓ(IGI@g)&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-main-function">
+<h1>The Main Function<a class="headerlink" href="#the-main-function" title="Permalink to this headline">¶</a></h1>
+<p>The function <code class="docutils literal notranslate"><span class="pre">ogsl_v()</span></code> takes one row of the DataFrame at the time and goes through three separate steps. First, it treats the unambiguous x-values by adding the signs name, found in the dictionary <code class="docutils literal notranslate"><span class="pre">xvalues</span></code>.</p>
+<p>Second, if the line still contains x-values, it will try to find the sign name in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column. If the sign name as found is a compound sign (contains the characters <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">ₓ</span></code>, or <code class="docutils literal notranslate"><span class="pre">+</span></code>) the sign name is surrounded by pipes accoridng to <a class="reference external" href="http://oracc.org/ogsl">OGSL</a> conventions.</p>
+<p>Third, the function will replace all sign index numbers by their Unicode equivalents.</p>
+<p>In each of these steps the function uses one or more of the tables, dictionaries, and compiled regular expressions created above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ogsl_v</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="c1"># 1. deal with unambiguous x-values, listed in the dictionary xvalues.</span>
+    <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">xv</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">xvalues</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s1">&#39;X&#39;</span><span class="p">),</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="s1">&#39;mu-kuX&#39;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">):</span> 
+        <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">[</span><span class="s1">&#39;mu-kux&#39;</span><span class="p">])</span>
+    <span class="c1"># 2. deal with remaining x-values</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;comments&quot;</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;(=&quot;</span><span class="p">:</span> 
+        <span class="n">sign_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;comments&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># remove (=  from (=SIG7)</span>
+        <span class="n">sign_name</span> <span class="o">=</span> <span class="n">sign_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#remove ) and anything following</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\.|×|\+&#39;</span><span class="p">,</span> <span class="n">sign_name</span><span class="p">):</span> <span class="c1"># if sign_name contains either . or × or +</span>
+            <span class="n">sign_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;ₓ(|</span><span class="si">{</span><span class="n">sign_name</span><span class="si">}</span><span class="s1">|)&#39;</span>  <span class="c1"># add pipes</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">sign_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;ₓ(</span><span class="si">{</span><span class="n">sign_name</span><span class="si">}</span><span class="s1">)&#39;</span>
+        <span class="n">ogsl_valid</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">lettersX</span><span class="p">,</span> <span class="n">sign_name</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span> <span class="c1"># find sequence of letters followed by X; </span>
+                                                              <span class="c1">#replace X by ₓ followed by sign name between brackets.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ogsl_valid</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>    
+    <span class="c1"># 3 deal with index numbers</span>
+    <span class="n">ogsl_valid</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">lettersNo</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">transind</span><span class="p">),</span> <span class="n">ogsl_valid</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ogsl_valid</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="apply-the-function">
+<h1>Apply the Function<a class="headerlink" href="#apply-the-function" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ogsl_v</span></code> function is now applied to each row (<code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code>) in the DataFrame. The DataFrame currently has more than 1.1 million rows (lines) and the function may take a few minutes. For that reason a progress bar has been added. The progress bar is part of the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> library.</p>
+<p>In the first cell of this notebook we initiated the use of tqdm with pandas with the line <code class="docutils literal notranslate"><span class="pre">tqdm.pandas()</span></code>. Instead of the regular <code class="docutils literal notranslate"><span class="pre">apply()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library we may now use <code class="docutils literal notranslate"><span class="pre">progress_apply()</span></code> to do the same thing as <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, but with a progress bar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">progress_apply</span><span class="p">(</span><span class="n">ogsl_v</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-for-remaining-x-signs">
+<h1>Check for Remaining X-signs<a class="headerlink" href="#check-for-remaining-x-signs" title="Permalink to this headline">¶</a></h1>
+<p>Any remaining capital X should indicate an illegible sign - or else the script has run into an inconsistency. Such errors may be caused by</p>
+<ul class="simple">
+<li><p>square brackets occuring immediately before X (as in gari[g]X).</p></li>
+<li><p>X-values that are not explained in the <code class="docutils literal notranslate"><span class="pre">comments</span></code> column.</p></li>
+<li><p>other irregularities in transcription and/or comments.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pickle-for-future-use">
+<h1>Pickle for Future Use<a class="headerlink" href="#pickle-for-future-use" title="Permalink to this headline">¶</a></h1>
+<p>Pickle the DataFrame for future use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickled</span> <span class="o">=</span> <span class="s2">&quot;output/bdtns.p&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">pickled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dump-in-json-format-for-distribution">
+<h1>Dump in JSON Format for Distribution<a class="headerlink" href="#dump-in-json-format-for-distribution" title="Permalink to this headline">¶</a></h1>
+<p>And/or dump the DataFrame in <a class="reference external" href="https://www.json.org/">JSON</a> format to share the data with others.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">json</span> <span class="o">=</span> <span class="s1">&#39;bdtns.json&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;output/</span><span class="si">{</span><span class="n">json</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">w</span><span class="p">:</span> 
+    <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">,</span> <span class="n">force_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_4_Data_Acquisition_BDTNS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2_4_0_Data_Acquisition_BDTNS.html" title="previous page">2.4.1 Data Acquisition BDTNS</a>
+    <a class='right-next' id="next-link" href="2_4_2_Build_Sign_Search.html" title="next page">Build Sign Search for BDTNS</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

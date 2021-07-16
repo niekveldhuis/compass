@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing Anaconda" href="install_packages.html" />
+    <link rel="prev" title="Welcome to Computational Assyriology" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="install_packages.html">
+   Installing Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+   2.1 Data Acquisition: ORACC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+   Download ORACC JSON Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+   Retrieve Catalog Data from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     catalogue.json
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+   Extract Lemmatization from JSON: Extended Parser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+   2.2 Data Acquisition: ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+   Parsing ETCSL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+   2.3 Data Acquisition: CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+   Data Acquisition from CDLI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+   2.4.1 Data Acquisition BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+   2.4 Data Acquision BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+   Build Sign Search for BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+   2.4.3 Search BDTNS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/1_Preliminaries/1_Introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assyriology-and-data-science">
+   1.1 Assyriology and Data Science
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#digital-assyriology">
+     1.1.1 Digital Assyriology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-science">
+     1.1.2 Data Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compass">
+     1.1.3 Compass
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-software">
+   1.2 The Software
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.2.1 Compass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anaconda-python-and-jupyter">
+     1.2.2 Anaconda, Python, and Jupyter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-the-jupyter-lab-ipywidgets-extension">
+       1.2.2.1 Installing the Jupyter Lab ipywidgets extension
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-python-packages">
+     1.2.3 Additional Python Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-vs-mac-os-x-unicode-and-utf-8">
+     1.2.4 Windows vs. Mac OS X: Unicode and UTF-8
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-practice-of-computational-assyriology">
+   1.3 The Practice of Computational Assyriology
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility">
+     1.3.1 Reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-data">
+     1.3.2 Open Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-source">
+     1.3.3 Open Source
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-computational-assyriology">
+   1.4 Why Computational Assyriology?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalability">
+     1.4.1 Scalability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessibility">
+     1.4.2 Accessibility
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This book project attempts to bring together two recent trends: the digital turn in Assyriology, and the rise of Data Science. Although Assyriologists had actively used databases since the nineteen sixties, such data sets were available only to a small circle - important examples include Miguel Civil’s Nippur Corpus (a group of Sumerian literary texts, now largely available on <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>) and Simo Parpola’s database of Neo-Assyrian texts, subsequently published in  print in the State Archives of Assyria series and now available online in <a class="reference external" href="http://oracc.org/saao">SAAo</a> . With the advent of the Internet, it became possible to give public access to data in the form of transliterations, translations, photographs, and glossaries. This development began in earnest in 1996 with the appearance of the Electronic Text Corpus of Sumerian Literature (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>), and continues to the present day. Data Science is an interdisciplinary field that draws its techniques from Statistics and Computer Science and (essentially) involves a third field, a domain discipline. Although “Data Science” is a relatively recent coinage, its roots go back well into the twentieth century. In recent years many universities have created institutes or departments for Data Science and/or for Digital Humanities, and have developed undergraduate and graduate programs in such fields. The eco-system for applying Data Science methods to Assyriological data, therefore, is much better today than it was even five years ago.</p>
+<p>This Introduction will briefly discuss the history of the digital turn in Assyriology and some relevant aspects of developments in Data Science (1.1). Next we will discuss software and installing software (1.2), with a brief discussion of differences between Windows and Mac. Section 1.3 is devoted to principles of Data Science in Assyriology: open data, open source, and reproducibility.</p>
+<div class="section" id="assyriology-and-data-science">
+<h2>1.1 Assyriology and Data Science<a class="headerlink" href="#assyriology-and-data-science" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="digital-assyriology">
+<h3>1.1.1 Digital Assyriology<a class="headerlink" href="#digital-assyriology" title="Permalink to this headline">¶</a></h3>
+<p>The turn towards publicly available electronic data is due in no small part to the initiative by Jeremy Black (Oxford University) to develop the Electronic Text Corpus of Sumerian Literature (<a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>), which started in 1996 and remained active until 2006, when it became archival. Initially <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> offered composite editions (transliterations) of Sumerian literary texts with translations. In version 2, using tools developed by Steve Tinney, the entire corpus was lemmatized, which allowed for the addition of glossaries and other tools for search and research.</p>
+<p><a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> was quickly followed by the Cuneiform Digital Library Inititative (<a class="reference external" href="http://cdli.ucla.edu">CDLI</a>), created by Bob Englund, UCLA. This project provides access to metadata, photographs, line drawings, and transliterations (occasionally also translations) of cuneiform documents of all periods and genres. Importantly, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> assigns unique ID numbers to cuneiform objects. Initially, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> focused on administrative and legal documents from the fourth and third millennium BCE, but today one may find a broad variety of text genres from all periods of cuneiform. In 2006 (after several precursors) the Open Richly Annotated Cuneiform Corpus (<a class="reference external" href="http://oracc.org">ORACC</a>) was built by Steve Tinney (University of Pennsylvania), who had previously been involved in the development of both <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> and <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>. <a class="reference external" href="http://oracc.org">ORACC</a> works with semi-independent projects, where project directors have broad leeway in the definition of the scope of their project, but follow shared editorial principles in terms of transliteration and lemmatization.</p>
+<p>These three projects together fundamentally changed research and teaching in Assyriology and many Assyriologists today depend in one way or another on these and other digital resources. Together, these three make available large amounts of searchable data and make those data freely accessible to other scholars. All three projects use explicit standards, and reuse data where possible, setting a fairly high standard for digital Assyriology. Many other larger and smaller projects were created in their wake, among the most important are the Database of Neo-Sumerian Texts (<a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a>; currently comprising almost 100,000 documents in transliteration); Sources of Early Akkadian Literature (<a class="reference external" href="https://www.seal.uni-leipzig.de/">SEAL</a>; several hundred literary texts in Akkadian from the third and second millennium BCE) and Archives Babyloniennes (<a class="reference external" href="http://www.archibab.fr">ARCHIBAB</a>; a collection of thousands of Old Babylonian letters, and legal, and administrative documents)[Charpin2014].  The <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> data set is freely available (transliterations and metadata). <a class="reference external" href="http://www.archibab.fr">ARCHIBAB</a> and <a class="reference external" href="https://www.seal.uni-leipzig.de/">SEAL</a> both make their data available in the form of PDFs and restrict usage to non derivatives, making the data of these projects unavailable for computational analysis.</p>
+<p>Reflecting on this (very abbreviated) history one may note that scholars working in Sumerian have been the driving force behind almost all the major projects (exceptions are <a class="reference external" href="http://www.archibab.fr">ARCHIBAB</a> and <a class="reference external" href="https://www.seal.uni-leipzig.de/">SEAL</a>). The main reason for this situation is that the (traditional) tool set for reading Sumerian is far behind - there is no comprehensive (printed) Sumerian dictionary<a class="footnote-reference brackets" href="#id5" id="id1">2</a> and no generally accepted Sumerian grammar. In other words: the need for creating such (digital) tools and the opportunities afforded by the development of the digital landscape were felt much more acutely by scholars working in Sumerian.</p>
+</div>
+<div class="section" id="data-science">
+<h3>1.1.2 Data Science<a class="headerlink" href="#data-science" title="Permalink to this headline">¶</a></h3>
+<p>Data Science developed in response to the quantitative explosion in data collected and produced by cell phones, personal computers, tablets, and web-connected utilities. Most relevant for the current project are  developments in Natural Language Processing (NLP), in software tools, and in institutional eco-systems. Natural Language Processing, which may be considered one branch of Data Science, has taken advantage of the huge amounts of textual data available on the web - either originally produced for the web, or in the form of scanned documents. Equally important were developments in computer language recognition (speech recognition and Optical Character Recognition). Search engines need efficient ways to determine which pages are likely to be relevant in response to a user’s search entry. This led, for example, to concepts such as <a class="reference external" href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> (Text Frequency - Inverse Document Frequency), a family of statistical measures that indicate the importance of a word (or token) in a document in a particular corpus, expressed by a number between 0 and 1. A word that is frequent in a particular document, but relatively infrequent across all the documents in the corpus, will have a high TF-IDF value in that document. TF-IDF is now widely used not only in search engines, but in all kinds of research projects that deal with natural language. Similarly, research teams at Google (<a class="reference external" href="https://nlp.stanford.edu/projects/glove/">GloVe</a>) and Facebook (<a class="reference external" href="https://fasttext.cc/">fastText</a>) have contributed significantly to the development of so-called word-embeddings (word vectors), which allow one to express the semantic distance between two words as a vector or as a number between 0 and 1. Word embeddings, which are based on neural network architecture, are now routinely used in a wide variety of NLP tasks. Typically, such developments are initially driven by commercial interests, but yield tools that are useful for research purposes in a wide variety of disciplines.</p>
+<p>On the software side, the introduction of the <a class="reference external" href="http://jupyter.org">Jupyter Notebook</a> (developed by Fernando Pérez, UC Berkeley) fundamentally changed research and teaching in Data Science. <a class="reference external" href="http://jupyter.org">Jupyter</a> is an application that allows one to run Python (or one of many other programming languages) in a local page of a web browser. The <a class="reference external" href="http://jupyter.org">Jupyter Notebook</a> mixes interactive code with narrative text, and shows the results of its computations (including visualizations) on that same page. <a class="reference external" href="http://jupyter.org">Jupyter Notebooks</a> can easily be transformed into HTML for web publication (where they can be displayed for explanatory purposes, but cannot be run) and can be rendered by <a class="reference external" href="http://github.com">Github</a> (a popular software development platform). All the coding for the present project is done in <a class="reference external" href="http://jupyter.org">Jupyter Notebooks</a> and made available on the Github pages of <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a>.</p>
+<p>In terms of institutional embedding, many universities now have an institute for Data Science, a Department of Digital Humanities, or some type of technical support or training for humanities scholars and social scientists. Although the specifics are very different from one university to the next, such initiatives may create exciting venues for interaction between disciplines, working on very different data with similar computational tools. Where such programs exist students (graduate and undergraduate) may need real-world research projects where they can display and apply their often very considerable data-analytic skills.</p>
+<p>Taken together, the developments in (digital) Assyriology and in Data Science provide an exciting opportunity and form the background against which this project was made possible. Initially, Assyriological web projects were used almost exclusively as a cheap and convenient alternative to book publications, where search capabilities were perceived as the main added value. An early exception was <em>Analysing Literary Sumerian. Corpus Based Approaches</em> (edited by Jarle Ebeling and Graham Cunningham; 2007), which attempted to utilize the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> data set for a corpus-linguistic approach to Sumerian. The volume contains some excellent articles, but did not start a new trend.</p>
+<p>With input from Data Science, Assyriological data sets enable the search for patterns, not immediately visible to the naked eye (or latent variables, in Data Science speak). Few projects so far have attempted to do so. Saana Svärd and her team (Helsinki University) have worked on word embeddings, using Akkadian data derived from <a class="reference external" href="http://oracc.org">ORACC</a>. The Machine Translation and Automated Analysis of Cuneiform Languages (<a class="reference external" href="https://cdli-gh.github.io/mtaac/">MTAAC</a>) team (including Emilie Pagé-Peron, Toronto and Bob Englund, UCLA) has received a major grant (2017) to train a neural network in order to translate the 67,000 Ur III documents now available on <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>. Both projects presented initial results in V B Jouloux , A R Gansell &amp; A di Ludovico (eds) , <a class="reference external" href="https://doi.org/10.1163/9789004375086"><em>CyberResearch on the Ancient Near East and Neighboring Regions</em></a> Brill , Leiden 2018.</p>
+</div>
+<div class="section" id="compass">
+<h3>1.1.3 Compass<a class="headerlink" href="#compass" title="Permalink to this headline">¶</a></h3>
+<p>The present project, <a class="reference external" href="http://github.com/niekveldhuis/compass">Computational Assyriology</a>,  is intended as an introduction to some of the things one can do computationally with cuneiform text data. Three projects of increasing complexity will be discussed.</p>
+<p>Chapter 3 will ask: what is the overlap between the Sumerian vocabulary of Old Babylonian (ca. 1,800 BCE) lexical texts and the corpus of contemporary literary texts. Old Babylonian lexical texts (lists of words) were used to introduce scribal pupils to reading and writing Sumerian (a dead language by this time). In a more advanced stage of their education, pupils started to copy Sumerian literary texts. It stands to reason, therefore, to see the lexical corpus as a kind of dictionary or concordance, that might have helped pupils to master the literary material. It has long been known, however, that the relationship between literary and lexical vocabulary is not that straightforward - is it possible to express that intuition computationally? And once we are at it, can we dig deeper and see which lexical texts and which literary texts contribute particularly to the overlap - or to the lack of overlap?</p>
+<p>Chapter 4 will focus on the Treasure Archive, a group of administrative texts in Sumerian from the so-called Ur III period (last century of the third millennium). This hroup of documents has been studied in great detail by Paola Paoletti in her book <em>Der König und sein Kreis</em>. Goal of the scripts in Chapter 4 will be to create a social network out of the text data and to create interactive visualizations of that network. We will identify various ways to identify the most central actors in that network.</p>
+<p>Chapter 5 will discuss word embeddings for Sumerian. Various types of word embeddings and various ways of representing Sumerian text will be explored. We will use word embeddings to explore the semantics of words for animals.</p>
+<p>Chapter 6, finally, by way of conclusion will reflect on the advantages and disadvantages of a computational approach to Assyriology.</p>
+<p>Before any of this can be done, however, it is necessary to gain access to data. Chapter 2, therefore, deals with data acquisition, with separate discussions of the various online projects (<a class="reference external" href="http://oracc.org">ORACC</a>, <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a>, <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a>, and <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>).</p>
+<p>Each of the chapters will discuss and explain code. More detailed explanations of the code will be found in the <a class="reference external" href="http://jupyter.org">Jupyter Notebooks</a> that accompany each chapter and that are available on the <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> github pages. Chapter 2 (Data Acquisition) is more technical than any of the other chapters. Data acquisition, data formatting, and data cleaning are fundamental to any computational project and often take considerably more time than the data analysis. The goal of Chapter 2 (and the accompanying notebooks) is not just to prepare the data for the chapters 3-5, but also to provide the reader with technical means for exploring her own research questions. For an initial exploration of this book one may well skip Chapter 2 and go along with the analyses in the Chapters 3-5. In order to devise your own project, it will be necessary to gain a deeper understanding of how data is acquired and formatted and the (many) options that you have.</p>
+<p>This study, finally, is not an introduction to Python. The chapters and notebooks contain code explanation, but for the fundamentals one would need to consult one of the many excellent introductions to Python, to scripting languages in general, or to data science that are available on the Web or in paper<a class="footnote-reference brackets" href="#id6" id="id2">3</a>.</p>
+</div>
+</div>
+<div class="section" id="the-software">
+<h2>1.2 The Software<a class="headerlink" href="#the-software" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1.2.1 Compass<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>In order to download the scripts and other files go to <a class="reference external" href="http://github.com/niekveldhuis/compass">http://github.com/niekveldhuis/compass</a> and click the green “Clone or Download” button. Now click “Download Zip” to acquire all the files that belong to the <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> project. Unzip the files in a convenient place.</p>
+<p><strong>Recommended usage</strong>: after installing <a class="reference external" href="http://www.anaconda.com">Anaconda</a> (section 1.2.2) open Anaconda Prompt (Windows) or the Terminal (Mac OS X) and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>. Navigate to the place where you unzipped the <a class="reference external" href="http://github.com/niekveldhuis/compass">compass</a> files and open the Notebook file (extension <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>) that you wish to run.</p>
+</div>
+<div class="section" id="anaconda-python-and-jupyter">
+<h3>1.2.2 Anaconda, Python, and Jupyter<a class="headerlink" href="#anaconda-python-and-jupyter" title="Permalink to this headline">¶</a></h3>
+<p>In order to run the scripts in <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> it is necessary to first install Python and Jupyter/Jupyter Lab. The easiest way to do so is by installing the <a class="reference external" href="http://www.anaconda.com">Anaconda Distribution</a>, a data science platform that includes a host of useful tools. It is important to choose the <a class="reference external" href="http://www.anaconda.com">Anaconda</a> version with Python 3.7 or higher (if you happen to have 3.6, that should work, too). <a class="reference external" href="http://www.anaconda.com">Anaconda</a> is available for Windows, Mac OS X, and Linux.</p>
+<p>By installing <a class="reference external" href="http://www.anaconda.com">Anaconda</a> you will have access to a number of programs and tools, including:</p>
+<ul class="simple">
+<li><p><strong>Python 3.x</strong>. This is the programming language used in <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a>. Note that the <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> scripts will not work with Python 2.x and will run into errors with so-called formatted strings in Python 3.5 or lower.</p></li>
+<li><p><strong>Python Packages</strong>. With <a class="reference external" href="http://www.anaconda.com">Anaconda</a> you install a host of useful packages such <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (for creating and manipulating tables or dataframes), <code class="docutils literal notranslate"><span class="pre">requests</span></code> (for communicating with a server over the internet), or <code class="docutils literal notranslate"><span class="pre">re</span></code> (for using <a class="reference external" href="https://www.regular-expressions.info/">regular expressions</a>). A package is a collection of functions, expanding Python’s core functionality. <a class="reference external" href="http://www.anaconda.com">Anaconda</a> installs many such packages for you, but occasionally we will need to install additional ones (see 1.2.3).</p></li>
+<li><p><strong>Anaconda Navigator</strong>. This is the environment in which you can open Jupyter Notebook, Jupyter Lab, and various other programs by clicking on their icon. Anaconda Navigator is quite slow to start and most of the tools available there are not used in <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a>. It is recommended to start Jupyter Notebook or Jupyter Lab through a terminal (see below).</p></li>
+<li><p><strong>Jupyter Notebook</strong>. Jupter Notebook is an environment in which you can run Python (or any of a host of other programming languages), mixed with explanatory text (in Markdown) and rich output, including graphs. Jupyter Notebook runs on a local web page in your browser. You can start Jupyter Notebook from within Anaconda Navigator, or you can open Anaconda Prompt (Windows) or the Terminal (OS X) and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. Either way, starting Jupyter Notebook will open a directory listing - navigate to the place where you saved the <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> files and open any file with the <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> extension. For more details see the instructions for <a class="reference external" href="http://jupyter.org/install">installing</a> and <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">running</a> notebooks on the <a class="reference external" href="http://jupyter.org">Jupyter</a> web site.</p></li>
+<li><p><strong>Jupyter Lab</strong>. Jupyter Lab is an environment in which you can run Jupyter Notebooks and various other tools, including a Markdown reader and editor. Jupyter Lab is considered the successor to the classical Jupyter Notebook and it is therefore recommended to use Jupyter Lab instead of Jupyter Notebook. You can open Jupyter Lab from within Anaconda Navigator, or you can open Anaconda Prompt (Windows) or the Terminal (OS X) and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>. Either way, starting Jupyter Lab will open a directory listing - navigate to the place where you saved the <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> files and open any file with the <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> extension to run a notebook. You may also right click on any file with a <code class="docutils literal notranslate"><span class="pre">md</span></code> extension, select <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">with</span></code> and choose “Markdown Preview”. This will open a text document like the present one. If you choose to use Jupyter Lab, it will be necessary to install a Jupyter Lab extension; see below 1.2.2.1. For more information about Jupyter Lab, see their <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">website</a>. Jupyter Lab version 3.0 and higher does not require installation of <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> or the Jupyter widgets extension anymore (see 1.2.2.1). You can tell the Jupyter Lab version by opening Anaconda Navigator. The icon for Jupyter Lab includes a version number.</p></li>
+<li><p><strong>Anaconda Prompt</strong> (Windows). Anaconda Prompt is the Windows command prompt, to which are added a number of PATHs, so that you have access to all the Anaconda and conda commands. For Windows users it is recommended to use Anaconda Prompt to start Jupyter Lab (or Jupyter Notebook) by typing <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. Mac OS X users can use the standard Terminal with the same commands.</p></li>
+</ul>
+<div class="section" id="installing-the-jupyter-lab-ipywidgets-extension">
+<h4>1.2.2.1 Installing the Jupyter Lab ipywidgets extension<a class="headerlink" href="#installing-the-jupyter-lab-ipywidgets-extension" title="Permalink to this headline">¶</a></h4>
+<p>If you are running Jupyter Lab 3.0 or higher you may skip this step. Check the version number by opening Anaconda Navigator and inspect the icon for Jupyter Lab.</p>
+<p>Jupyter Lab is designed as an extensible environment; for <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> to run under earlier versions of Jupyter Lab (&lt;3.0) we will need at least one such <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">extension</a> in order to run a pretty progress bar with <a class="reference external" href="https://tqdm.github.io/">tqdm</a>, and use interactive tools. Before extensions can be installed we need to install <code class="docutils literal notranslate"><span class="pre">nodejs</span></code>.</p>
+<p>Open the Anaconda Prompt (Windows) or Terminal (OS X) and copy the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install nodejs
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+</pre></div>
+</div>
+<p>For more information about installing the jupyter widgets for Jupyter Lab see the instructions <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension">here</a>.</p>
+</div>
+</div>
+<div class="section" id="additional-python-packages">
+<h3>1.2.3 Additional Python Packages<a class="headerlink" href="#additional-python-packages" title="Permalink to this headline">¶</a></h3>
+<p>Python libraries or packages are extensions of the Python core that provide useful functionality. A package needs to be <em>installed</em> once (after which it may be updated occasionally) but must be <em>imported</em> each time a script that uses the package is run. Each script, therefore, starts with a number of import statements that look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>   <span class="c1"># a library for communicating with servers over the internet</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># data analytics</span>
+<span class="kn">from</span> <span class="nn">gensim.models.fasttext</span> <span class="kn">import</span> <span class="n">FastText</span> <span class="k">as</span> <span class="n">FT_gensim</span> <span class="c1"># word embeddings</span>
+</pre></div>
+</div>
+<p>Installing packages can be challenging, in particular if your computer happens to have multiple instances of Python (which is not uncommon). Luckily, many important packages belong to the <a class="reference external" href="http://www.anaconda.com">Anaconda Distribution</a> and are properly installed with <a class="reference external" href="http://www.anaconda.com">Anaconda</a>. Installing additional packages can be done from within a <a class="reference external" href="http://jupyter.org">Jupyter</a> notebook with the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">package</span> <span class="n">name</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>or from the Anaconda Prompt (Windows)/Terminal (Mac OS X) with the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="o">[</span>package name<span class="o">]</span>
+</pre></div>
+</div>
+<p>Installing from the terminal, however may not always work properly and when you try to <code class="docutils literal notranslate"><span class="pre">import</span></code> the package you may get an error. The notebook <code class="docutils literal notranslate"><span class="pre">install_packages.ipynb</span></code> in the directory <code class="docutils literal notranslate"><span class="pre">1_Preliminaries</span></code> of <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a>  provides a more robust way of installing packages, based on a <a class="reference external" href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">blog</a> by Jake VanderPlas.</p>
+</div>
+<div class="section" id="windows-vs-mac-os-x-unicode-and-utf-8">
+<h3>1.2.4 Windows vs. Mac OS X: Unicode and UTF-8<a class="headerlink" href="#windows-vs-mac-os-x-unicode-and-utf-8" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://jupyter.org">Jupyter</a> notebooks and Python are largely platform independent and the notebooks in this project are tested for both Windows and Mac OS X. There is one issue that one may encounter with some frequency and that is reading and writing files. Python 3 by default stores any string as Unicode, using the UTF-8 encoding (an encoding is a way to represent a Unicode code point as a set of bytes in memory). Internally, however, Windows uses another kind of encoding (usually CP-1252), which means that in reading and writing files the option <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">=</span> <span class="pre">&quot;utf-8&quot;</span></code> needs to be added explicitly. The option is superfluous in Mac OS X (or in Unix) where <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> is the default, but is added in the notebooks at every place appropriate to ensure interoperability, as in the following examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;equivalencies/equivalencies.json&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1"># reading</span>
+    <span class="n">eq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output/alltexts.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">w</span><span class="p">:</span> <span class="c1"># writing</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In developing your own code, it is advisable to do so (even if things work fine without the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> option on your computer), to ensure that your code will run for others, too.</p>
+<p>To complicate matters further, the popular spreadsheet program Excel expects files to be encoded in <code class="docutils literal notranslate"><span class="pre">utf-16</span></code>. Many computers will open <code class="docutils literal notranslate"><span class="pre">.csv</span></code>  files automatically in Excel. Excel will scramble special characters (such as š) unless you tell it explicitly that your file is in <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>. To get around this issue there are three options:</p>
+<ul class="simple">
+<li><p><strong>Recommended</strong>: instead of Excel use Google Sheets, which by default uses the <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding. Keep all files in <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>.</p></li>
+<li><p>Import the file in Excel, following instructions <a class="reference external" href="https://www.itg.ias.edu/content/how-import-csv-file-uses-utf-8-character-encoding-0">here</a> for Excel 2007. This option also allows you to keep all files in <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>.</p></li>
+<li><p>In writing output files, meant to be read in Excel, use <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">=</span> <span class="pre">'utf-16'</span></code> and open the output file directly in Excel. This option is recommended only if Excel is your end station. If you ever wish to use the file in a Notebook again, you would need to remember its encoding.</p></li>
+</ul>
+<p>Binary files (such as <code class="docutils literal notranslate"><span class="pre">ZIP</span></code> files, pickled files, or image files) have no encoding since they do not represent characters. They should be opened with the option <code class="docutils literal notranslate"><span class="pre">rb</span></code> (read binary) or <code class="docutils literal notranslate"><span class="pre">wb</span></code> (write binary), which does not allow an <code class="docutils literal notranslate"><span class="pre">encoding</span></code> parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;zipfiles/obmc.zip&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-practice-of-computational-assyriology">
+<h2>1.3 The Practice of Computational Assyriology<a class="headerlink" href="#the-practice-of-computational-assyriology" title="Permalink to this headline">¶</a></h2>
+<p>Computational Assyriology will have to develop a new set of values and practices, combining practices from Assyriology and from Data Science. Data Science commonly embraces three core principles: open data, open code, and reproducibility. How can the practice of Computational Assyriology incorporate these principles?</p>
+<div class="section" id="reproducibility">
+<h3>1.3.1 Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h3>
+<p>The discipline of Assyriology evolved over more than 150 years, inheriting some of its practices from other ancient philologies such as Classics and Biblical studies. The common practice of Assyriology builds upon an infrastructure that is rarely questioned or discussed and that includes footnotes, standardized lists of abbreviations, and well-stocked research libraries. Thus, a footnote saying “CT 20 41 K 4432 i 6’” leads a researcher to the hand drawing of a particular cuneiform tablet from Nineveh with omens that is kept in the British Museum and was published by Wallis Budge in 1904 in the series <em>Cuneiform Texts from Babylonian Tablets in the British Museum</em> Vol. 20. Column 1 line 6’  presumably supports the author’s statement and any Assyriologist can go ahead and see for herself. This, one might say, represents reproducibility in traditional Assyriology and the often very considerable number of footnotes in Assyriological articles and books shows how seriously this is taken (in a more ignominious perspective one might see the flood of footnotes and esoteric abbreviations as effective border markers that keep out the non-initiated). A bottleneck in this approach to reproducibility is the well-stocked library. Researchers who work at smaller institutions or in areas of the world with little tradition in the field of cuneiform studies are essentially left out of the conversation - a problem that is increasingly alleviated by making publications available online.</p>
+<p>In Data Science reproducibility is a core value as well as a core problem<a class="footnote-reference brackets" href="#id7" id="id4">4</a>. Ideally, reproducibility means that research is published in such a way that any researcher can access the data and run the same code to arrive at the same result. In practice, this ideal is rarely fully realized for a number of reasons. First, the original researcher may not own the data (copyright issues), or the data may be sensitive (for instance, privacy concerns). More relevant for Assyriology, the data may be constantly changing. Currently active projects such as <a class="reference external" href="http://oracc.org">ORACC</a>, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>, and <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> make their data available as time capsules, but do not give easy access to all the previous stages. In practice that means that an analysis based on, say, the <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> transliterations of Drehem texts will yield different results when run at different times. This issue could be resolved by including the full data set, as used by the researcher, in the research publication, or in a repository created for that purpose. This may well be how this should be done in the (near) future, but for now, Assyriological journals do not offer such facilities and the data sets easily grow out of proportion for a site like <a class="reference external" href="http://github.com">Github</a> to offer a real solution.</p>
+<p>More problematic for the present project are the practical limitations in reproducing and rerunning code. Standard Python libraries (such as <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> or <code class="docutils literal notranslate"><span class="pre">requests</span></code>) are usually unproblematic to install and use. Others, such as <code class="docutils literal notranslate"><span class="pre">fastText</span></code> may require some wrangling, the installation of separate software, or the use of more arcane options in a package management system. This, by itself, does not make it impossible to reproduce the analysis, but does put considerable obstacles in the way and may discourage many. Where possible, therefore, Compass will use widely used and robustly supported modules - in Chapter 6 we will not use the original <code class="docutils literal notranslate"><span class="pre">fasttext</span></code> package, but rather the implementation in <code class="docutils literal notranslate"><span class="pre">gensim</span></code>, exactly for that reason. More problematic even are issues of versioning and compatibility. Most Python libraries are under constant development, and so is Python itself. Some developers consistently try to make their software backwards compatible, so that earlier code will run smoothly on later versions - but this is not always the case. A particularly bad example is <code class="docutils literal notranslate"><span class="pre">folium</span></code>, a Python wrapper around <code class="docutils literal notranslate"><span class="pre">leaflet</span></code>, which is a Java Script package for creating interactive maps. Each version of <code class="docutils literal notranslate"><span class="pre">folium</span></code> seems to have its own set of function names, updating <code class="docutils literal notranslate"><span class="pre">leaflet</span></code> is likely to make earlier scripts invalid. It is important, therefore, to mention the version of each library used. In some cases it may be necessary to update or maintain the code (adapt it to new versions of the packages used) - but at the same time such updates will undermine the ideal of reproducibility in that the reader will see a version of the code that was not used in the original research.</p>
+<p>Not all of these problems have a straightforward solution and we may thus conclude that Computational Assyriology should strive for maximal reproducibility, in the awareness that full reproducibility may not be achievable.</p>
+</div>
+<div class="section" id="open-data">
+<h3>1.3.2 Open Data<a class="headerlink" href="#open-data" title="Permalink to this headline">¶</a></h3>
+<p>Historically, Assyriologists have been rather protective of their data, guarding data until final publication. All Assyriologists know examples of projects that, in the end, never arrived at that final stage. The bar for print publication was high, and scholars needed time to put their data in the best shape possible.</p>
+<p>This has changed, to some extent, with the arrival of digital publication. Digital publication is not as final as print is, one can publish provisional data sets, in the hope that it is useful to someone, even if it is not perfect. Digital cuneiform data, moreover, are usually a group effort, not as immediately related to a particular author as a print publication is. Digital data, therefore, tend to be perceived as of lesser quality than print data - even if that judgment may frequently be unfair. Most major digital cuneiform projects today have embraced the principle of open data (exceptions are <a class="reference external" href="https://www.seal.uni-leipzig.de/">SEAL</a> and <a class="reference external" href="http://www.archibab.fr">ArchiBab</a>) and make their data sets available for free.</p>
+<p>Data, however, not only need to be free, they also need to be findable and re-usable. Data Science, fond of acronyms, has introduced the <a class="reference external" href="https://www.force11.org/group/fairgroup/fairprinciples">FAIR</a> principle (or rather a set of FAIR principles): Findable, Accessible, Interoperable, Re-Usable. The <em>Findable</em> principle refers primarily to the availability of metadata and persistent identifiers. Cuneiform studies is in the lucky circumstance of having identifiers in the form of P and S numbers (for cuneiform object and seals, respectively; assigned by <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>) and Q numbers (for composite texts; assigned by <a class="reference external" href="http://oracc.org">ORACC</a>). As of January 2020, <a class="reference external" href="http://oracc.org/epsd2">epsd2</a> is assigning object identifiers to Sumerian words. Ideally, we would also have persistent identifiers for places, persons, etc. Identifiers for places are currently assigned by <a class="reference external" href="https://pleiades.stoa.org/">Pleiades</a>, a gazetteer of ancient place names.  The project started with place names from the ancient Greek and Roman world, but is now also expanding into Ancient Near Eastern place names and is actively used by the <a class="reference external" href="https://www.armep.gwi.uni-muenchen.de/">ARMEP</a> project for drawing digital maps, showing where cuneiform objects were found. Identifiers for persons and for Akkadian words currently do not exist.</p>
+<p>The <em>Accessible</em> principle essentially says that data should be made available in a way that it can always be obtained by humans and machines, without requiring unusual software or techniques. In general, this is not an issue for the cuneiform projects under discussion here. Data can be downloaded over the web directly from the project server or from [Github][github] in a way that is straightforward and intuitive. Machine accessibility is available for <a class="reference external" href="http://oracc.org">ORACC</a> and <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>, but currently not for <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a>.</p>
+<p>The <em>Interoperable</em> principle requires data and meta-data to be machine-actionable. Here, digital cuneiform does not fare so well, in particular because concepts used in meta-data are not always well-defined or linked to established ontologies.</p>
+<p>Finally the <em>Re-usable</em> principle implies that (meta)-data are labeled and described explicitly, so that the data can be used not only by a close colleague, but by anyone who may develop an interest in that data. Here, again, digital Assyriology is not fully compliant.</p>
+<p>The FAIR principles are designed to develop a metric, indicating whether a particular data set is more or less FAIR. Clearly, data sets available through <a class="reference external" href="http://oracc.org">ORACC</a>, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>, or <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> will not receive the maximum score in this metric. A large step forward will be the implementation of unique identifiers for Akkadian words and persons. On the whole, however, keeping in mind that FAIR principles were developed with, for instance, medical data in mind, Assyriology is not doing badly.</p>
+</div>
+<div class="section" id="open-source">
+<h3>1.3.3 Open Source<a class="headerlink" href="#open-source" title="Permalink to this headline">¶</a></h3>
+<p>Open Source generally refers to large projects such Python or Linux, which are carried by communities of volunteers who contribute code. Packages in Python and R are developed that way and Jupyter is another example of a successful open source project.</p>
+<p>For <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> open source simply means that the scripts for data acquisition, formatting, cleaning, and analysis are made available through [Github][github], at the address <a class="reference external" href="http://github.com/niekveldhuis/compass">http://github.com/niekveldhuis/compass</a>. Github was founded in 2008 and has grown to host the code of millions of users, including <a class="reference external" href="https://github.com/oracc/">ORACC</a>, and <a class="reference external" href="https://github.com/cdli-gh">CDLI</a>; the CDLI repository includes the code of the <em>Machine Translation and Automated Analysis of Cuneiform Languages</em> project <a class="reference external" href="https://cdli-gh.github.io/mtaac/">MTAAC</a>. [Github][github] is thus part of the eco-system that makes Computational Assyriology possible.</p>
+</div>
+</div>
+<div class="section" id="why-computational-assyriology">
+<h2>1.4 Why Computational Assyriology?<a class="headerlink" href="#why-computational-assyriology" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scalability">
+<h3>1.4.1 Scalability<a class="headerlink" href="#scalability" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="accessibility">
+<h3>1.4.2 Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h3>
+<p>[Charpin2014]</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>For literary Sumerian we now have the excellent <em>Glossaire sumérien-français</em> by Pascal Attinger (2021).</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dd><p>See, for instance, Melanie Walsh, <em>Introduction to Cultural Analytics &amp; Python</em>, Version 1 (2021), <a class="reference external" href="https://doi.org/10.5281/zenodo.4411250">https://doi.org/10.5281/zenodo.4411250</a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Justin Kitzes, Daniel Turek, Fatma Deniz (eds); <em>The Practice of Reproducible Research: Case Studies and Lessons from the Data-Intensive Sciences</em> 2017. <a class="reference external" href="https://www.practicereproducibleresearch.org/">online version</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./1_Preliminaries"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Welcome to Computational Assyriology</a>
+    <a class='right-next' id="next-link" href="install_packages.html" title="next page">Installing Anaconda</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
