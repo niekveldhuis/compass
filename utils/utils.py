@@ -2,30 +2,16 @@
 import requests
 from tqdm.auto import tqdm
 import os
-import errno
 import zipfile
 import json
 import pandas as pd
 
-def make_dirs(x):
-    """Check for existence of directories
-    create those if they do not exist
-    otherwise do nothing. Parameter is a list
-    with directory names"""
-    for dir in x:
-        try:
-            os.mkdir(dir)
-        except OSError as exc:
-            if exc.errno != errno.EEXIST:
-                raise
-            pass
+def format_project_list(projects):
+    project_list = projects.lower().strip().split(',')
+    project_list = [project.strip() for project in project_list]
+    return(project_list)
 
-def format_project_list(x):
-    p = x.lower().strip().split(',')
-    p = [x.strip() for x in p]
-    return(p)
-
-def oracc_download(p, server = 'penn'):
+def oracc_download(project_list, server = 'penn'):
     """Downloads ZIP with JSON files from
     ORACC servers. First parameter is a list
     with ORACC project names,
@@ -36,9 +22,13 @@ def oracc_download(p, server = 'penn'):
     (default: first try Penn server)."""
     
     CHUNK = 1024
-    p = list(set(p)) #remove duplicates
-    projects = p.copy()
-    for project in p:
+    project_list = list(set(project_list)) #remove duplicates
+    projects = project_list.copy()
+    # the list projects will be changed by the for loop,
+    # removing non-existing project names (and then returned).
+    # Therefore, it has to be different from project_list, 
+    # which is iterated over in the loop.
+    for project in project_list:
         proj = project.replace('/', '-')
         build = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
         oracc = f"http://oracc.org/{project}/json/{proj}.zip"
@@ -104,10 +94,10 @@ def parsejson(text, meta_d):
             l.append(lemma)
     return l
 
-def get_lemmas(p):
+def get_lemmas(project_list):
     lemm_l = []
     meta_d = {"label": None, "id_text": None}
-    for project in p:
+    for project in project_list:
         file = f"jsonzip/{project.replace('/', '-')}.zip"
         try:
             z = zipfile.ZipFile(file) 
@@ -140,13 +130,14 @@ def dataformat(lemm_list):
     words_df['id_line'] = [int(wordid.split('.')[1]) for wordid in words_df['id_word']] 
     return(words_df)
 
-def get_data(x):
-    make_dirs(["jsonzip", "output"])
-    p = format_project_list(x)
+def get_data(projects):
+    os.makedirs("jsonzip", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
+    project_list = format_project_list(projects)
     print("Downloading JSON")
-    p = oracc_download(p)
+    project_list = oracc_download(project_list)
     print("Parsing JSON")
-    lemm_list = get_lemmas(p)
+    lemm_list = get_lemmas(project_list)
     words_df = dataformat(lemm_list)
     return(words_df)
     
