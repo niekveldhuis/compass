@@ -83,14 +83,16 @@ For purposes of data acquisition these entities need to be resolved, because XML
 The key `ampersands` in the file `equivalencies.json` has as its value a dictionary, listing all the HTML entities that appear in the [ETCSL][] files with their Unicode counterparts:
 
 ```json
-{'&C;': 'Š',
- '&Ccedil;': 'Ç',
- '&Eacute;': 'É',
- '&G;': 'Ŋ',
- '&H;': 'H',
- '&Imacr;': 'Î',
- '&X;': 'X',
- '&aacute;': 'á',}
+{ 
+ "&C;": "Š",
+ "&Ccedil;": "Ç",
+ "&Eacute;": "É",
+ "&G;": "Ŋ",
+ "&H;": "H",
+ "&Imacr;": "Î",
+ "&X;" : "X",
+ "&aacute;": "á"
+}
 ```
 etc.
 
