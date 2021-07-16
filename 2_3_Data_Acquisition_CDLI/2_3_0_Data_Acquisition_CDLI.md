@@ -1,6 +1,6 @@
-## 2.3 Data Acquisition: CDLI
+# 2.3 Data Acquisition: CDLI
 
-### 2.3.1 CDLI Data
+## 2.3.1 CDLI Data
 
 The [Cuneiform Digital Library Initiative](http://cdli.ucla.edu), created by [Bob Englund](https://cdli.ucla.edu/?q=robert-k-englund) (UCLA) in the early two thousands, is a central repository for meta-data, images, and transliterations of cuneiform objects (translations are offered only for a small minority of texts). Today more than 335,000 objects are listed in the [CDLI](http://cdli.ucla.edu) catalog, with tens of thousands of photographs and line drawings. Each object in [CDLI](http://cdli.ucla.edu) receives a unique ID number, and these numbers are widely used today in print and in on-line projects. Initially, [CDLI](http://cdli.ucla.edu) focused primarily on administrative texts from the third millennium, and this is still the area of its greatest strength. Currently, approximately 121,000 texts are available in transliteration in [CDLI](http://cdli.ucla.edu). Part of this corpus was produced by the [CDLI](http://cdli.ucla.edu) team at UCLA, others were contributed by partners or were imported from other projects such as [ETCSL](https://etcsl.orinst.ox.ac.uk/) (for Sumerian literary texts), [DCCLT](http://oracc.org/dcclt) (for lexical texts), or [BDTNS](http://bdtns.filol.csic.es/) (for Ur III administrative texts). The photographs on [CDLI](http://cdli.ucla.edu) were largely produced in cooperative projects with museums all over the world, where [CDLI](http://cdli.ucla.edu) staff or partners would go to scan an entire collection or major parts of a collection. These images are copyright of the museum where the object is held and there is no wholesale downloading of the entire image set.
 
@@ -14,7 +14,7 @@ For Akkadian the variation in reading conventions plays a much smaller role; for
 
 Since [CDLI](http://cdli.ucla.edu) does not offer lemmatization, searching for words on this site is much more popular (and more useful) for Sumerian than it is for Akkadian. Sumerian words usually include the root of the word (written logographically) with prefixes and/or suffixes attached. Although spelling variations exist (e.g. **dag-si**, **da-ag-ši-um**, and **da-ag-zi-um**, all representing the same word for saddle hook or saddle bag), such variation plays a much smaller role in Sumerian than in Akkadian.
 
-### 2.3.2 Downloading
+## 2.3.2 Downloading
 
 There are various ways in which one can acquire [CDLI](http://cdli.ucla.edu) data. The website includes a [Downloads](https://cdli.ucla.edu/?q=downloads) page where one can get access to a daily clone of the catalog and the entire set of transliterations. Alternatively, one can perform a search on the [CDLI](http://cdli.ucla.edu) search page and request a download of the data (transliteration or catalog and transliteration data) by pushing a button. This works well for a few or several dozens of texts, but not for very large data sets.
 
@@ -22,7 +22,7 @@ Furthermore, the daily data dump is available from [Github](http://github.com) a
 
 The script for downloading these files (2_3_Data_Acquisition_CDLI.ipynb) essentially follows the same patterns as the script for downloading [ORACC](http://oracc.org) files, discussed in section 2.1. The script uses [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) from the `bs4` module to scrape the filenames from the [Github](https://github.com/cdli-gh/data/raw/master/) page.
 
-### 2.3.3 Manipulating
+## 2.3.3 Manipulating
 
 After downloading and concatenating the catalog files, the data may be ingested in a `pandas` DataFrame for further manipulation. 
 
