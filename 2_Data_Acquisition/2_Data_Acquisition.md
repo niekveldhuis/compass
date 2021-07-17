@@ -1,0 +1,13 @@
+# 2 Data Acquisition
+
+In this chapter we will discuss data acquisition and data formatting for four online Assyriological projects: [ORACC](http://oracc.org) (2.1), [ETCSL](https://etcsl.orinst.ox.ac.uk/), (2.2) [CDLI](http://cdli.ucla.edu) (2.3) and [BDTNS](http://bdtns.filol.csic.es/) (2.4). 
+
+The data in [CDLI](http://cdli.ucla.edu) and [BDTNS](http://bdtns.filol.csic.es/) are made available in raw-text format, for instance:
+
+
+
+This data format is easy to read for humans (those humans who know Sumerian), but less so for computers. It is necessary to tell the software what data elements belong to the text and what does not (for instance, line numbers and surface indicators). The data in [ORACC](http://oracc.org) and [ETCSL][https://etcsl.orinst.ox.ac.uk/] are made available in [JSON](http://json.org) and [XML](http://xml.org), respectively. Those formats are very explicit and atomistic. They are not easy to read for humans, but are very flexible for computational usage and allow for multiple levels of annotation at the same time. The data in [ORACC](http://oracc.org) and [ETCSL][https://etcsl.orinst.ox.ac.uk/] includes lemmatization, [CDLI](http://cdli.ucla.edu) and [BDTNS](http://bdtns.filol.csic.es/) provide transliteration only.
+
+The Compass project mostly deals with [ORACC](http://oracc.org) data, and much of this chapter will provide code and explanations for how to deal with various types of information that is included in the JSON files. The parsing of the [ETCSL](https://etcsl.orinst.ox.ac.uk/ data ) XML files is, to some extent, redundant, because all the [ETCSL](https://etcsl.orinst.ox.ac.uk/) data have been incorporated into [ORACC/epsd2](http://oracc.org/epsd2/literary) and can be parsed with the tools for regular [ORACC](http://oracc.org) projects.  Section 2.3 ([BDTNS](http://bdtns.filol.csic.es/)) demonstrates code for constructing a search engine that ignores sign values - that is, searching for `luh` will also find `sukkal`, etc. The code uses both [BDTNS](http://bdtns.filol.csic.es/) data and the [ORACC Global Sign List](http://orac.org/ogsl), showing how data from different projects can be mashed into a single tool.
+
+The Chapter 3-6 of Compass will work with [ORACC](http://oracc.org) data and will parse that data with the tools demonstrated and explained in section 2.1. Chapter 2 is not needed, however, to follow along in those chapters. The present chapter is primarily meant for researchers who wish to pursue their own computational projects and need a deeper understanding of how the data is acquired and formatted.
