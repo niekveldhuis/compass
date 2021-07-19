@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing Anaconda" href="install_packages.html" />
+    <link rel="next" title="2 Data Acquisition" href="../2_Data_Acquisition/2_Data_Acquisition.html" />
     <link rel="prev" title="Welcome to Computational Assyriology" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,8 +95,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="install_packages.html">
-   Installing Anaconda
+  <a class="reference internal" href="../2_Data_Acquisition/2_Data_Acquisition.html">
+   2 Data Acquisition
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,7 +136,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
-   Parsing ETCSL
+   2.2 Parsing ETCSL
   </a>
  </li>
  <li class="toctree-l1">
@@ -245,9 +245,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/1_Preliminaries/1_Introduction.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/1_Preliminaries/1_Introduction.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -264,6 +264,28 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/1_Preliminaries/1_Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/1_Preliminaries/1_Introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -315,6 +337,11 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#installing-the-jupyter-lab-ipywidgets-extension">
        1.2.2.1 Installing the Jupyter Lab ipywidgets extension
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-trouble-shooting">
+       1.2.2.2 Some Trouble Shooting
       </a>
      </li>
     </ul>
@@ -435,14 +462,67 @@
 </ul>
 <div class="section" id="installing-the-jupyter-lab-ipywidgets-extension">
 <h4>1.2.2.1 Installing the Jupyter Lab ipywidgets extension<a class="headerlink" href="#installing-the-jupyter-lab-ipywidgets-extension" title="Permalink to this headline">¶</a></h4>
-<p>If you are running Jupyter Lab 3.0 or higher you may skip this step. Check the version number by opening Anaconda Navigator and inspect the icon for Jupyter Lab.</p>
-<p>Jupyter Lab is designed as an extensible environment; for <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> to run under earlier versions of Jupyter Lab (&lt;3.0) we will need at least one such <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">extension</a> in order to run a pretty progress bar with <a class="reference external" href="https://tqdm.github.io/">tqdm</a>, and use interactive tools. Before extensions can be installed we need to install <code class="docutils literal notranslate"><span class="pre">nodejs</span></code>.</p>
-<p>Open the Anaconda Prompt (Windows) or Terminal (OS X) and copy the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install nodejs
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
+<p>If you are running Jupyter Lab 3.0 or higher you may skip this step. Check the version number by opening Anaconda Navigator and inspect the icon for Jupyter Lab or run the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter lab --version
 </pre></div>
 </div>
-<p>For more information about installing the jupyter widgets for Jupyter Lab see the instructions <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension">here</a>.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>If your Jupyter Lab version is higher than 3.0 you may skip the rest of section 1.2.2.1. If not, you can update Jupyter Lab with the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">conda</span> update jupyterlab
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jupyter Lab is designed as an extensible environment; for <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a> to run under earlier versions of Jupyter Lab (&lt;3.0) one will need at least one such <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">extension</a> in order to run a pretty progress bar with <a class="reference external" href="https://tqdm.github.io/">tqdm</a>, and use interactive tools. Before extensions can be installed we need to install <code class="docutils literal notranslate"><span class="pre">nodejs</span></code>. Installing <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> and the extension can be done with running the following cell. For more information about installing the jupyter widgets for Jupyter Lab see the instructions <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">conda</span> install nodejs
+<span class="o">%</span><span class="k">conda</span> install ipywidgets
+<span class="o">!</span>jupyter labextension install @jupyter-widgets/jupyterlab-manager
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may need to close Jupyter Lab and open it again for the widgets extension to take effect. For more information about installing  and activating widgets see the overview <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-into-jupyterlab-1-or-2">here</a>.</p>
+</div>
+<div class="section" id="some-trouble-shooting">
+<h4>1.2.2.2 Some Trouble Shooting<a class="headerlink" href="#some-trouble-shooting" title="Permalink to this headline">¶</a></h4>
+<p>If you just installed Anaconda and are new to working in Python or Jupyter, the instructions in 1.2.2 should get you going. If you worked with Python, Jupyter Notebooks or Jupyter Lab before, you may need to update one or more of the components.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">%conda</span></code> lines in 1.2.2.1 above do not work, this means that you have an older version of IPython (the Python version that runs in Jupyter Notebooks). Commands that begin with the percentage sign belong to the IPython <code class="docutils literal notranslate"><span class="pre">magic</span></code> functions, expanding on the functionality of standard IPython. In this notebook we will use <code class="docutils literal notranslate"><span class="pre">%conda</span></code> to call the package manager (alternatively, you may use <code class="docutils literal notranslate"><span class="pre">%pip</span></code>). The %conda and %pip functions were introduced in IPython version 7.3. To check the IPython version on your machine, open the terminal (Mac OS X) or the Anaconda Prompt (Windows) and type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython --version
+</pre></div>
+</div>
+<p>If necessary, update Ipython with the following cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!</span>conda upgrade --yes --prefix <span class="o">{</span>sys.prefix<span class="o">}</span> ipython
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other  issues may arise if you have (older) versions of Jupyter Notebook, Jupyter Lab or Jupyter Widgets that are not compatible with each other. Check for compatability by following the instructions <a class="reference external" href="https://pypi.org/project/jupyterlab/">here</a>. Recommended are Jupyter Lab version 3.0 or higher; Jupyter Notebook version 6.0 or higher and Jupyter Widgets version 7.5 or higher. These recommendations, however, may quickly become obsolete as new functionality is developed. To check the versions on your machine you may run the following lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span>
+<span class="o">!</span>jupyter lab --version
+<span class="o">!</span>jupyter notebook --version
+<span class="n">ipywidgets</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you need to update any of these, refer to the section below (Installing and Updating Python Packages).</p>
 </div>
 </div>
 <div class="section" id="additional-python-packages">
@@ -453,15 +533,30 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 <span class="kn">from</span> <span class="nn">gensim.models.fasttext</span> <span class="kn">import</span> <span class="n">FastText</span> <span class="k">as</span> <span class="n">FT_gensim</span> <span class="c1"># word embeddings</span>
 </pre></div>
 </div>
-<p>Installing packages can be challenging, in particular if your computer happens to have multiple instances of Python (which is not uncommon). Luckily, many important packages belong to the <a class="reference external" href="http://www.anaconda.com">Anaconda Distribution</a> and are properly installed with <a class="reference external" href="http://www.anaconda.com">Anaconda</a>. Installing additional packages can be done from within a <a class="reference external" href="http://jupyter.org">Jupyter</a> notebook with the command</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">package</span> <span class="n">name</span><span class="p">]</span>
+<p>Anaconda includes a treasure trove of important Python packages, including <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> (for data manipulation), <code class="docutils literal notranslate"><span class="pre">bokeh</span></code> (interactive visualisations), <code class="docutils literal notranslate"><span class="pre">requests</span></code> (for communicating with web sites), <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (machine learning), etc. - those packages are already installed.</p>
+<p>Inevitably, we will be using packages not included in the standard Anaconda distribution. Before they can be imported in a Python script such packages need to be installed. An example of a package that will need to be installed is <code class="docutils literal notranslate"><span class="pre">pyldavis</span></code>, a visualization tool for topic modeling, which we will use in Chapter 5.</p>
+<p>The code for installing a package is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="p">[</span><span class="n">package</span> <span class="n">name</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>or from the Anaconda Prompt (Windows)/Terminal (Mac OS X) with the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="o">[</span>package name<span class="o">]</span>
+<p>For upgrading a package to the latest version you may use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="p">[</span><span class="n">package</span> <span class="n">name</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Installing from the terminal, however may not always work properly and when you try to <code class="docutils literal notranslate"><span class="pre">import</span></code> the package you may get an error. The notebook <code class="docutils literal notranslate"><span class="pre">install_packages.ipynb</span></code> in the directory <code class="docutils literal notranslate"><span class="pre">1_Preliminaries</span></code> of <a class="reference external" href="http://github.com/niekveldhuis/compass">Compass</a>  provides a more robust way of installing packages, based on a <a class="reference external" href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">blog</a> by Jake VanderPlas.</p>
+<p>With pip, upgrading is done as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">package</span> <span class="n">name</span><span class="p">]</span> <span class="o">--</span><span class="n">upgrade</span>
+</pre></div>
+</div>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">conda</span> <span class="n">upgrade</span> <span class="n">jupyterlab</span>
+<span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="n">nodejs</span>
+<span class="o">%</span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyldavis</span>
+<span class="o">%</span><span class="n">conda</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">ipywidgets</span>
+<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">lexicalrichness</span> <span class="o">--</span><span class="n">upgrade</span>
+</pre></div>
+</div>
+<p>Note that in some cases installing and upgrading may take a (very) long time and may result in the installation, removal, upgrading, or downgrading of a host of other packages. This is the case because conda will check for dependencies and for the compatibility of the newly installed software with other available packages. Under some circumstances conda may become entirely unusable. In such cases it may be advisable to install packages with pip.</p>
+<p>Installing packages can be a rather frustrating experience. The issue is that a computer may have more than one instance of Python installed (this is not unusual). In order to use Python packages within a Jupyter Notebook, they need to be associated with the so-called Python <em>kernel</em> that runs in the background of the notebook. For a more technical description of the issue and a solution see the <a class="reference external" href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">article</a> by Jake VanderPlas in his <a class="reference external" href="https://jakevdp.github.io/">Pythonic Preambulations</a> blog. The solution by VanderPlas is implemented in the IPython “magic” functions <code class="docutils literal notranslate"><span class="pre">%conda</span></code> and <code class="docutils literal notranslate"><span class="pre">%pip</span></code>.</p>
 </div>
 <div class="section" id="windows-vs-mac-os-x-unicode-and-utf-8">
 <h3>1.2.4 Windows vs. Mac OS X: Unicode and UTF-8<a class="headerlink" href="#windows-vs-mac-os-x-unicode-and-utf-8" title="Permalink to this headline">¶</a></h3>
@@ -562,7 +657,7 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Welcome to Computational Assyriology</a>
-    <a class='right-next' id="next-link" href="install_packages.html" title="next page">Installing Anaconda</a>
+    <a class='right-next' id="next-link" href="../2_Data_Acquisition/2_Data_Acquisition.html" title="next page">2 Data Acquisition</a>
 
         </div>
         

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Parsing ETCSL
-# ## 1. Introduction
+# # 2.2 Parsing ETCSL
+# ## 2.2.1. Introduction
 # 
 # The Electronic Text Corpus of Sumerian Literature ([ETCSL](http://etcsl.orinst.ox.ac.uk); 1998-2006) provides editions and translations of 394 Sumerian literary compositions. Goal of this Notebook is to format the [ETCSL] data in such a way that the (lemmatized) texts are made available for computational text analysis. The [ETCSL](http://etcsl.orinst.ox.ac.uk) lemmatizations are made compatible with [ORACC] standards (see [ePSD2](http://oracc.org/epsd2/sux)), so that [ETCSL](http://etcsl.orinst.ox.ac.uk) and [ORACC](http://oracc.org) data can be mixed and matched for text analysis purposes.
 # 
@@ -14,23 +14,12 @@
 # 
 # The [manual](http://etcsl.orinst.ox.ac.uk/edition2/etcslmanual.php) of the [ETCSL](http://etcsl.orinst.ox.ac.uk) project explains in full detail the editorial principles and technical details. 
 
-# ### 1.1 Authorship and License
-# This notebook was written by Niek Veldhuis in the context of the Computational Assyriology project.
-# 
-# This notebook and the associated files may be freely copied; the user is encouraged to adapt the code to suit her research goals (Creative Commons 0). 
-# <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
-#   <a rel="license"
-#      href="http://creativecommons.org/publicdomain/zero/1.0/">
-#     <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
-#   </a>
-#  </p>
-
-# ### 1.2 XML, Xpath, and lxml
+# ### 2.2.1.1 XML, Xpath, and lxml
 # The [ETCSL](http://etcsl.orinst.ox.ac.uk) files as distributed by the [Oxford Text Archive](http://ota.ox.ac.uk/desc/2518) are encoded in the `TEI` (Text Encoding Initiative) dialect of `XML` (Extensible Markup Language). 
 # 
 # The `XML`tree is parsed in `Xpath`, a language that defines ways in which one can move through an `XML` file and identify particular nodes, sub-nodes, attributes, and elements. The module `etree`of the library [`lxml`](https://lxml.de/) provides a full implementation of `Xpath 1.0` and is largely compatible with more widely-used libraries such as `ElementTree` and its counterpart `cElementTree`.
 
-# ### 1.3 Input and Output
+# ### 2.2.1.2 Input and Output
 # 
 # This scraper expects the following files and directories:
 # 
@@ -39,10 +28,10 @@
 # 2. Directory `Equivalencies`  
 #    `equivalencies.json`: a set of equivalence dictionaries used at various places in the parser.  
 # 
-# The output is saved in the `Output` directory as a single `.csv` file.
+# The output is saved in the `output` directory as a single `.csv` file.
 
-# ## 2. Setting Up
-# ### 2.1 Load Libraries
+# ## 2.2.2 Setting Up
+# ### 2.2.2.1 Load Libraries
 # Before running this cell you may need to install the packages `lxml` (for parsing `XML`) and  `tqdm` (for displaying a progress bar). For proper installation of libraries for a Jupyter Notebook see [install_packages.ipynb](../1_Preliminaries/install_packages.ipynb).
 
 # In[ ]:
@@ -57,7 +46,7 @@ from tqdm.auto import tqdm
 os.makedirs('output', exist_ok = True)
 
 
-# ### 2.2 Load Equivalencies 
+# ### 2.2.2.2 Load Equivalencies 
 # The file `equivalencies.json` contains a number of dictionaries that will be used to search and replace at various places in this notebook. The dictionaries are:
 # - `suxwords`: Sumerian words (Citation Form, GuideWord, and Part of Speech) in [ETCSL](http://etcsl.orinst.ox.ac.uk) format and their [ORACC](http://oracc.org) counterparts.
 # - `emesalwords`: idem for Emesal words
@@ -77,7 +66,7 @@ equiv.update(eq["emesalwords"])
 equiv.update(eq["propernouns"])
 
 
-# ## 3. Preprocessing: HTML-entities
+# ## 2.2.3 Preprocessing: HTML-entities
 # The [ETCSL](http://etcsl.orinst.ox.ac.uk) `TEI XML` files are written in ASCII and represent special characters (such as š or ī) by a sequence of characters that begins with & and ends with ; (e.g. `&c;` represents `š`). The `lxml` library cannot deal with these entities and thus we have to replace them with the actual (Unicode) character that they represent before feeding the data to `etree` module.
 # 
 # The function `ampersands()` uses the dictionary `ampersands` for a search-replace action. The dictionary `ampersands` is included in the file `equivalencies.json`, which was loaded above (section 2).
@@ -93,7 +82,7 @@ def ampersands(string):
     return string
 
 
-# ## 4. Marking 'Secondary Text' and/or 'Additional Text'
+# ## 2.2.4 Marking 'Secondary Text' and/or 'Additional Text'
 # 
 # The [ETCSL](http://etcsl.orinst.ox.ac.uk) web pages include variants, indicated as '(1 ms. has instead: )', with the variant text enclosed in curly brackets. Two types of variants are distinguished: 'additional text' and 'secondary text'. 'Additional text' refers to a line that appears in a minority of sources (often in only one) in addition to the majority text. 'Secondary text' refers to variant words or variant lines that are found in a minority of sources, replacing the text of the majority sources. The function `mark_extra()` marks each word of 'secondary text' or 'additional text' by adding the attribute `status` with the value "additional" or "secondary". 
 # 
@@ -109,7 +98,7 @@ def mark_extra(tree, which):
     return tree
 
 
-# ## 5. Transliteration Conventions
+# ## 2.2.5 Transliteration Conventions
 # 
 # Transliteration of Sumerian text in [ETCSL](http://etcsl.orinst.ox.ac.uk) `TEI XML` files uses **c** for **š**, **j** for **ŋ** and regular numbers for index numbers. The function `tounicode()` replaces each of those. For example **cag4** is replaced by **šag₄**. This function is called in the function `getword()` to format `Citation Forms` and `Forms` (transliteration). The function `tounicode()` uses the translation tables `transind` (for index numbers) and `transcj` (for c and j), defined in the main process. The `translate()` function replaces individual characters from a string, according to the table.
 # 
@@ -124,7 +113,7 @@ def tounicode(string):
     return string
 
 
-# ## 6. Replace [ETCSL](http://etcsl.orinst.ox.ac.uk) by [ORACC](http://oracc.org) Lemmatization
+# ## 2.2.6 Replace [ETCSL](http://etcsl.orinst.ox.ac.uk) by [ORACC](http://oracc.org) Lemmatization
 # For every word, once `cf` (Citation Form), `gw` (Guide Word), and `pos` (Part of Speech) have been pulled out of the [ETCSL](http://etcsl.orinst.ox.ac.uk) `XML` file, they are combined into a lemma and run through the etcsl/oracc equivalence lists to match it with the [ORACC](http://oracc.org)/[ePSD2](http://oracc.org/epsd2) standards. The equivalence lists are stored in the file `equivalencies.json`, which was loaded above (section 2).
 # 
 # The function `etcsl_to_oracc()` is called by the function `getword()`.
@@ -150,7 +139,7 @@ def etcsl_to_oracc(word):
     return
 
 
-# ## 7. Formatting Words
+# ## 2.2.7 Formatting Words
 # 
 # A word in the [ETCSL](http://etcsl.orinst.ox.ac.uk) files is represented by a `<w>` node in the `XML` tree with a number of attributes that identify the `form` (transliteration), `citation form`, `guide word`, `part of speech`, etc. The function `getword()` formats the word as closely as possible to the [ORACC](http://oracc.org) conventions. Three different types of words are treated in three different ways: Proper Nouns, Sumerian words and Emesal words.
 # 
@@ -215,7 +204,7 @@ def getword(node):
     return
 
 
-# ## 8. Formatting Lines
+# ## 2.2.8 Formatting Lines
 # 
 # A line may either be an actual line (in Sumerian and/or Akkadian) or a gap (a portion of text lost). Both receive a line reference. A line reference is an integer that is used to keep lines (and gaps) in their proper order.
 # 
@@ -238,7 +227,7 @@ def getline(lnode):
     return
 
 
-# ## 9. Sections
+# ## 2.2.9 Sections
 # 
 # Some [ETCSL](http://etcsl.orinst.ox.ac.uk) compositions are divided into **sections**. That is the case, in particular, when a composition has gaps of unknown length. 
 # 
@@ -268,7 +257,7 @@ def getsection(tree):
     return
 
 
-# ## 10. Versions
+# ## 2.2.10 Versions
 # 
 # In some cases an [ETCSL](http://etcsl.orinst.ox.ac.uk) file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to distinguish between numerous tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL](http://etcsl.orinst.ox.ac.uk) c.6.2.1 - c.6.2.5).
 # 
@@ -293,7 +282,7 @@ def getversion(tree):
     return
 
 
-# ## 11. Parse a Text
+# ## 2.2.11 Parse a Text
 # 
 # The function `parsetext()` takes one xml file (a composition in [ETCSL](http://etcsl.orinst.ox.ac.uk)) and parses it, calling a variety of functions defined above. 
 # 
@@ -322,7 +311,7 @@ def parsetext(file):
     return
 
 
-# ## 12. Main Process
+# ## 2.2.12 Main Process
 # 
 # The list `alltexts` is created as an empty list. It will be filled with dictionaries, each dictionary representing one word form.
 # 
@@ -337,8 +326,6 @@ def parsetext(file):
 
 textlist = os.listdir('etcsl/transliterations')
 textlist.sort()
-if not os.path.exists('Output'):
-    os.mkdir('Output')
 
 amp = re.compile(r'&[^;]+;') #regex for HTML entities, used in ampersands()
 
@@ -366,7 +353,7 @@ df = pd.DataFrame(alltexts).fillna('')
 df
 
 
-# ## 14 Save as CSV
+# ## 2.2.13 Save as CSV
 # The DataFrame is saved as a `CSV` file named `alltexts.csv` in the directory `output`.
 
 # In[ ]:
