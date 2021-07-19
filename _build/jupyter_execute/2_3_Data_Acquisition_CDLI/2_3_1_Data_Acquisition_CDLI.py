@@ -7,7 +7,7 @@
 
 # # 0 Import Packages
 
-# In[ ]:
+# In[1]:
 
 
 import requests
@@ -23,7 +23,7 @@ import shutil
 # # 1. Create Download Directory
 # Create a directory called `cdlidata`. If the directory already exists, do nothing. 
 
-# In[ ]:
+# In[2]:
 
 
 os.makedirs('cdlidata', exist_ok = True)
@@ -32,7 +32,7 @@ os.makedirs('cdlidata', exist_ok = True)
 # # 2. Retrieve File Names
 # We first need to retrieve the names of the files that are offered for download on the CDLI [download](https://github.com/cdli-gh/data) page on GitHub. The script requests the HTML of the download page and uses [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) (a package for web scraping) to retrieve all the links from the page. This includes the file names, but also all kinds of other links.
 
-# In[ ]:
+# In[3]:
 
 
 download_page = "https://github.com/cdli-gh/data"
