@@ -7,7 +7,7 @@
 # 
 # ```{figure} ../images/mocci_banner.jpg
 # :scale: 50%
-# :fig-class: margin
+# :figclass: margin
 # ```
 # 
 # Some [ORACC](http://oracc.org) projects are maintained in Munich by the Munich Open-access Cuneiform Corpus Initiative ([MOCCI](https://www.en.ag.geschichte.uni-muenchen.de/research/mocci/index.html)). This includes, for example, State Archives of Assyria ([SAAO](http://oracc.org/saao)), the Royal Inscriptions of the Neo-Assyrian Period ([RINAP](http://oracc.org/rinap)) and various other projects and sub-projects. In theory, project data are copied from the Munich server to the Philadelphia ORACC server (and vv.), but in order to acquire the most recent data set it is sometimes advisable to request the `zip` files of the Munich projects from the Munich server. The address is `http://oracc.ub.uni-muenchen.de/[PROJECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip`. The function `oracc_download()` in the `utils` module in the directory `utils` will try the various servers to find the project of your choice.
