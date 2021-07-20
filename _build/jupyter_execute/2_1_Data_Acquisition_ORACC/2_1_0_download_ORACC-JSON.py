@@ -1,7 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Download ORACC JSON Files
+# # 2.1.0 Download ORACC JSON Files
+# 
+# Each public [ORACC](http://oracc.org) project has a `zip` file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The `zip` file can be found at `http://oracc.museum.upenn.edu/[PROJECT]/json/[PROJECT].zip`, where `[PROJECT]` is to be replaced with the project abbreviation (e.g. http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip). For sub-projects the address is `http://oracc.museum.upenn.edu/[PROECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip` (e.g. http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip). One may download these files by hand (simply type the address in your browser), or use the notebook [2_1_0_download_ORACC-JSON.ipynb](./2_1_0_download_ORACC-JSON.ipynb). The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`. The same code is also available in the function `oracc_download()` in the `utils` module in the directory  `utils`. See the notebook [2_1_0_download_ORACC-JSON.ipynb](./2_1_0_download_ORACC-JSON.ipynb) for instructions how to use the functions of the `utils` module.
+# 
+# ```{figure} ../images/mocci_banner.jpg
+# :scale: 50%
+# :fig-class: margin
+# ```
+# 
+# Some [ORACC](http://oracc.org) projects are maintained in Munich by the Munich Open-access Cuneiform Corpus Initiative ([MOCCI](https://www.en.ag.geschichte.uni-muenchen.de/research/mocci/index.html)). This includes, for example, State Archives of Assyria ([SAAO](http://oracc.org/saao)), the Royal Inscriptions of the Neo-Assyrian Period ([RINAP](http://oracc.org/rinap)) and various other projects and sub-projects. In theory, project data are copied from the Munich server to the Philadelphia ORACC server (and vv.), but in order to acquire the most recent data set it is sometimes advisable to request the `zip` files of the Munich projects from the Munich server. The address is `http://oracc.ub.uni-muenchen.de/[PROJECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip`. The function `oracc_download()` in the `utils` module in the directory `utils` will try the various servers to find the project of your choice.
+# 
+# After downloading the JSON `zip` file you may unzip it to inspect its contents. Note, however, that for larger projects this may result in hundreds or even thousands of files and that the scripts will always read the data directly from the `zip` file.
+
 # This script downloads open data from the Open Richly Annotated Cuneiform Corpus ([ORACC](http://oracc.org)) in `json` format. The JSON files are made available in a ZIP file. For a description of the various JSON files included in the ZIP see the [open data](http://oracc.org/doc/opendata) page on [ORACC](http://oracc.org). 
 # 
 # The code in this notebook is also available in the module `utils` in the directory `utils` and can be called as follows: 
@@ -19,40 +31,47 @@
 
 # # 0. Import Packages
 
-# In[5]:
+# In[1]:
 
 
 import requests
-from tqdm.notebook import tqdm
+from tqdm.auto import tqdm
 import os
+import ipywidgets as widgets
 
 
 # # 1. Create Download Directory
 # Create a directory called `jsonzip`. If the directory already exists, do nothing.
 
-# In[6]:
+# In[2]:
 
 
 os.makedirs("jsonzip", exist_ok = True)
 
 
 # # 2.1 Input a List of Project Abbreviations
-# Enter one or more project abbreviations to download their JSON zip files. The project names are separated by commas. Note that the subprojects must be given explicitly, they are not automatically included in the main project. For instance: 
+# Enter one or more project abbreviations to download their JSON zip files. The project names are separated by commas. Note that subprojects must be given explicitly, they are not automatically included in the main project. For instance: 
 # * saao/saa01, aemw/alalakh/idrimi, rimanum
 
-# In[7]:
+# In[3]:
 
 
-projects = input('Project(s): ').lower().strip() # lowercase user input and strip accidental spaces
+projects = widgets.Textarea(
+    placeholder='Type project names, separated by commas',
+    description='Projects:',
+    disabled=False
+)
+projects
 
 
+# 
 # # 2.2 Split the List of Projects
 # Split the list of projects and create a list of project names.
 
-# In[8]:
+# In[4]:
 
 
-project_list = projects.split(',')   # split at each comma and make a list called `p`
+project_list = projects.value.split(',')   # split at each comma and make a list called `project_list`
 project_list = [project.strip() for project in project_list]        # strip spaces left and right of each entry
 
 
@@ -67,13 +86,13 @@ project_list = [project.strip() for project in project_list]        # strip spac
 # 
 # In order to show a progress bar (with `tqdm`) we need to know how large the file to be downloaded is (this value is is then fed to the `total` parameter). The http protocol provides a key `content-length` in the headers (a dictionary). Not all servers provide this field, therefore it is accessed with the `get()` function, which allows for a fall-back value in case a key is not found. This fall-back value is 0. With the `total` value of 0 `tqdm` will show a bar and will count the number of chunks received, but it will not indicate the degree of progress.
 
-# In[9]:
+# In[5]:
 
 
 CHUNK = 1024
 for project in project_list:
     proj = project.replace('/', '-')
-    url = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
+    url = f"http://oracc.museum.upenn.edu/json/{proj}.zip"
     file = f'jsonzip/{proj}.zip'
     with requests.get(url, stream=True) as r:
         if r.status_code == 200:
