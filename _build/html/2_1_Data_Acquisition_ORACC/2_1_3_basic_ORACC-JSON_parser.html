@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extract Lemmatization from ORACC JSON: Basic Parser &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extract Lemmatization from JSON: Extended Parser" href="2_1_4_extended_ORACC-JSON_parser.html" />
+    <link rel="prev" title="Retrieve Catalog Data from catalogue.json" href="2_1_2_parse-json-cat.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../2_Data_Acquisition/2_Data_Acquisition.html">
+   2 Data Acquisition
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="2_1_Data_Acquisition.html">
+     2.1 Data Acquisition: ORACC
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_0_download_ORACC-JSON.html">
+       2.1.0 Download ORACC JSON Files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_1_JSON.html">
+       2.1.1 The JSON Data Format
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_2_parse-json-cat.html">
+       Retrieve Catalog Data from
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         catalogue.json
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Extract Lemmatization from ORACC JSON: Basic Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_4_extended_ORACC-JSON_parser.html">
+       Extract Lemmatization from JSON: Extended Parser
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
+     2.2 Data Acquisition: ETCSL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_1_Data_Acquisition_ETCSL.html">
+     2.2 Parsing ETCSL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
+     2.3 Data Acquisition: CDLI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
+     Data Acquisition from CDLI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+     2.4.1 Data Acquisition BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+     2.4 Data Acquision BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+     Build Sign Search for BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+     2.4.3 Search BDTNS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Extract Lemmatization from ORACC JSON: Basic Parser
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-directories-if-necessary">
+     0 Create Directories, if Necessary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-project-names">
+     1.1 Input Project Names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-zip-files">
+     1.2 Download the ZIP files.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-name-head21-a-2-1-the-parsejson-function">
+     <a name="head21">
+     </a>
+     2.1 The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       parsejson()
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#call-the-parsejson-function-for-every-json-file">
+     2.2 Call the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       parsejson()
+      </span>
+     </code>
+     function for every
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       JSON
+      </span>
+     </code>
+     file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-structuring">
+     3 Data Structuring
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#transform-the-data-into-a-dataframe">
+       3.1 Transform the Data into a DataFrame
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-spaces-and-commas-from-guide-word-and-sense">
+     3.1 Remove Spaces and Commas from Guide Word and Sense
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-lemma-column">
+     3.2 Create a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       lemma
+      </span>
+     </code>
+     column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-by-textid">
+     3.3 Group by Textid
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-results">
+   4 Save the Results
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-results-in-csv-file">
+     4.1 Save Results in CSV file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pickle">
+     4.2 Pickle
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="extract-lemmatization-from-oracc-json-basic-parser">
+<h1>Extract Lemmatization from ORACC JSON: Basic Parser<a class="headerlink" href="#extract-lemmatization-from-oracc-json-basic-parser" title="Permalink to this headline">¶</a></h1>
+<p>The code in this notebook will parse <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files to extract lemmatization data for one or more projects. The resulting <code class="docutils literal notranslate"><span class="pre">csv</span></code> (Comma Separated Values) file is named <code class="docutils literal notranslate"><span class="pre">parsed.csv</span></code> and has two fields: a Text ID (e.g. <code class="docutils literal notranslate"><span class="pre">dcclt/Q000039</span></code>) and a string of lemmas in the format <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (or <code class="docutils literal notranslate"><span class="pre">šarru[king]N</span></code> for Akkadian texts).</p>
+<p>The output of the Basic Parser contains <em>only</em> text IDs and lemmas. This format is useful for so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag of words</a> techniques such as word clouds or <a class="reference external" href="https://en.wikipedia.org/wiki/Topic_model">topic modeling</a>. The <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files, however, contain a wealth of other data, including language (Sumerian, Akkadian, Emesal, etc.), orthographic form, morphology (currently only for Sumerian and Emesal), line numbers, breakage, etc. The extended JSON parser notebook, building upon the techniques demonstrated here, will show how to extract any type of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">util_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../utils&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-directories-if-necessary">
+<h2>0 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
+<p>The two directories needed for this script are <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>. The directories are created with the function <code class="docutils literal notranslate"><span class="pre">make_dirs()</span></code> from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;jsonzip&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input-project-names">
+<h2>1.1 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
+<p>Provide a list of one or more project names, separated by commas. Note that subprojects must be listed separately, they are not included in the main project. For instance:</p>
+<p><code class="docutils literal notranslate"><span class="pre">saao/saa01,saao/saa02,blms</span></code></p>
+<p>The input is split into a proper list that python can iterate over using the <code class="docutils literal notranslate"><span class="pre">format_project_list()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module. The code of this function is discussed in more detail in 2.1.0. Download ORACC JSON Files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Project(s): &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">format_project_list</span><span class="p">(</span><span class="n">projects</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-the-zip-files">
+<h2>1.2 Download the ZIP files.<a class="headerlink" href="#download-the-zip-files" title="Permalink to this headline">¶</a></h2>
+<p>Download the zipped JSON files using the <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module. The code of this function is discussed in more detail in 2.1.0. Download ORACC JSON Files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-name-head21-a-2-1-the-parsejson-function">
+<h2><a name="head21"></a>2.1 The <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function<a class="headerlink" href="#a-name-head21-a-2-1-the-parsejson-function" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function will “dig into” the <code class="docutils literal notranslate"><span class="pre">json</span></code> file (transformed into a dictionary) until it finds the relevant data. The <code class="docutils literal notranslate"><span class="pre">json</span></code> file consists of a hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> nodes; only the lowest nodes contain lemmatization data. The function goes down this hierarchy by calling itself when another <code class="docutils literal notranslate"><span class="pre">cdl</span></code> node is encountered. For more information about the data hierarchy in the <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">json</span></code> files, see <a class="reference external" href="http://oracc.org/doc/opendata/index.html">ORACC Open Data</a>.</p>
+<p>The first argument of the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function is a <code class="docutils literal notranslate"><span class="pre">JSON</span></code> object, essentially a Python dictionary that initially contains the entire contents of the original JSON file. The code takes the key <code class="docutils literal notranslate"><span class="pre">cdl</span></code> the value of which is a list of <code class="docutils literal notranslate"><span class="pre">JSON</span></code> dictionaries. Iterating through these dictionaries, if a dictionary contains another <code class="docutils literal notranslate"><span class="pre">cdl</span></code> node, the function calls itself with this lower-level dictionary as argument. This way the function digs deeper and deeper into the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> tree, until it does not encounter a <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key anymore. Here we are at the level of individual words. The code checks for a key <code class="docutils literal notranslate"><span class="pre">f</span></code>, if it exists the value of that key (another dictionary) is appended to the list <code class="docutils literal notranslate"><span class="pre">l</span></code>. The list <code class="docutils literal notranslate"><span class="pre">l</span></code> will become a list of dictionaries, where each dictionary represents a single word and the list represents the vocabulary of a single text with the words in their original order.</p>
+<p>The second argument of the function, <code class="docutils literal notranslate"><span class="pre">id_text</span></code>, consists of a project abbreviation, such as <code class="docutils literal notranslate"><span class="pre">blms</span></code> or <code class="docutils literal notranslate"><span class="pre">cams/gkab</span></code> plus a text ID, in the format <code class="docutils literal notranslate"><span class="pre">cams/gkab/P338616</span></code> or <code class="docutils literal notranslate"><span class="pre">dcclt/Q000039</span></code>. This ID is added to the lemmatization data of every word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">id_text</span><span class="p">):</span>
+    <span class="n">lemmas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">lemmas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">lemm</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
+            <span class="n">lemm</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_text</span>
+            <span class="n">lemmas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemm</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lemmas</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="call-the-parsejson-function-for-every-json-file">
+<h2>2.2 Call the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function for every <code class="docutils literal notranslate"><span class="pre">JSON</span></code> file<a class="headerlink" href="#call-the-parsejson-function-for-every-json-file" title="Permalink to this headline">¶</a></h2>
+<p>The code in this cell will iterate through the list of projects entered above (1.1). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file is located in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>, named PROJECT.zip. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file contains a directory that is called <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> that contains a JSON file for every text that is available in that corpus. The files are called after their text IDs in the pattern <code class="docutils literal notranslate"><span class="pre">P######.json</span></code> (or <code class="docutils literal notranslate"><span class="pre">Q######.json</span></code> or <code class="docutils literal notranslate"><span class="pre">X######.json</span></code>).</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">namelist()</span></code> of the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> package is used to create a list of the names of all the files in the ZIP. From this list we select all the file names in the <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> directory with extension <code class="docutils literal notranslate"><span class="pre">.json</span></code> (this way we exclude the name of the directory itself).</p>
+<p>Each of these files is read from the <code class="docutils literal notranslate"><span class="pre">zip</span></code> file and loaded with the command <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, which transforms the string into a proper JSON object.</p>
+<p>This JSON object (essentially a Python dictionary), which is called <code class="docutils literal notranslate"><span class="pre">data_json</span></code> is now sent to the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function. The function returns a list of lemmata (each lemma represented by a dictionary). The <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method is used to add this list to the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code>, one document at the time. In the end, <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> will contain as many list elements as there are words in all the texts in the projects requested.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># initiate the list that will hold all the lemmatization data of all texts in all requested projects</span>
+<span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">project_list</span><span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;jsonzip/</span><span class="si">{</span><span class="n">project</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">zip_file</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>       <span class="c1"># create a Zipfile object</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span> <span class="c1"># get error information</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># and print it</span>
+        <span class="k">continue</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span>     <span class="c1"># list of all the files in the ZIP</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="s2">&quot;corpusjson&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">]</span>                                                                                                  <span class="c1">#that holds all the P, Q, and X numbers.</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">project</span><span class="p">):</span>                            <span class="c1">#iterate over the file names</span>
+        <span class="n">id_text</span> <span class="o">=</span> <span class="n">project</span> <span class="o">+</span> <span class="n">filename</span><span class="p">[</span><span class="o">-</span><span class="mi">13</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># id_text is, for instance, blms/P414332</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>         <span class="c1">#read and decode the json file of one particular text</span>
+            <span class="n">data_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>                <span class="c1"># make it into a json object (essentially a dictionary)</span>
+            <span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">data_json</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>               <span class="c1"># and send to the parsejson() function</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span> <span class="c1"># get error information</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># and print it</span>
+    <span class="n">zip_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-structuring">
+<h2>3 Data Structuring<a class="headerlink" href="#data-structuring" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transform-the-data-into-a-dataframe">
+<h3>3.1 Transform the Data into a DataFrame<a class="headerlink" href="#transform-the-data-into-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<p>The list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> is transformed into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe (<code class="docutils literal notranslate"><span class="pre">word_df</span></code>) for further manipulation. The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">fillna('')</span></code> fills gaps in the dataframe. If a particular data field is not available for a particular row, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will fill that cell with NaN (“Not a Number”). The data type of NaN is numeric, which creates problems in string manipulation further down the road (for instance in creating a Lemma column, section 3.2). The function <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> will fill all empty cells with the argument it is given - in this case the empty string.</p>
+<p>For various reasons not all JSON files will have all data types that potentially exist in an <a class="reference external" href="http://oracc.org">ORACC</a> lemmatization. For instance, only Sumerian words have a <code class="docutils literal notranslate"><span class="pre">base</span></code>, so if your data set has no Sumerian, this column will not exist in the DataFrame. Where such fields are referenced below, the code may fail and you may need to adjust some lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lemm_l</span><span class="p">)</span>
+<span class="n">word_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>      <span class="c1"># replace NaN (Not a Number) with empty string</span>
+<span class="n">word_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-spaces-and-commas-from-guide-word-and-sense">
+<h2>3.1 Remove Spaces and Commas from Guide Word and Sense<a class="headerlink" href="#remove-spaces-and-commas-from-guide-word-and-sense" title="Permalink to this headline">¶</a></h2>
+<p>Spaces and commas in Guide Word and Sense may cause trouble in computational methods in tokenization, or when saved in Comma Separated Values format. All spaces and commas are replaced by hyphens and nothing (empty string), respectively. By default the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will match the entire string (that is, “lugal” matches “lugal” but there is no match between “l” and “lugal”). In order to match partial strings the parameter <code class="docutils literal notranslate"><span class="pre">regex</span></code> must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function takes a nested dictionary as argument. The top-level keys identify the columns on which the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function should operate (in this case ‘gw’ and ‘sense’). The value of each key is another dictionary with the search string as key and the replace string as value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findreplace</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39; &#39;</span> <span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">word_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;gw&#39;</span> <span class="p">:</span> <span class="n">findreplace</span><span class="p">,</span> <span class="s1">&#39;sense&#39;</span> <span class="p">:</span> <span class="n">findreplace</span><span class="p">},</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-lemma-column">
+<h2>3.2 Create a <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column<a class="headerlink" href="#create-a-lemma-column" title="Permalink to this headline">¶</a></h2>
+<p>A lemma, <a class="reference external" href="http://oracc.org">ORACC</a> style, combines Citation Form, GuideWord and POS into a unique reference to one particular lemma in a standard dictionary, as in <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (Sumerian) or <code class="docutils literal notranslate"><span class="pre">šarru[king]N</span></code> (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. Unlemmatized and unlemmatizable words will receive a place-holder lemmatization that consists of the transliteration of the word (instead of the Citation Form), with <code class="docutils literal notranslate"><span class="pre">NA</span></code> as GuideWord and <code class="docutils literal notranslate"><span class="pre">NA</span></code> as POS, as in <code class="docutils literal notranslate"><span class="pre">i-bu-x[NA]NA</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">NA</span></code> is a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;gw&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="o">+</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]</span>
+<span class="n">word_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">,</span> <span class="s1">&#39;lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_df</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;[NA]NA&#39;</span>
+<span class="n">word_df</span><span class="p">[[</span><span class="s1">&#39;id_text&#39;</span><span class="p">,</span> <span class="s1">&#39;lemma&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="group-by-textid">
+<h2>3.3 Group by Textid<a class="headerlink" href="#group-by-textid" title="Permalink to this headline">¶</a></h2>
+<p>Get all the lemmas that belong to a single text in one row (one row = one document). The <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (aggregate) function, which works on the result of a <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> process aggregates columns of the original dataframe. The aggregate function takes a dictionary in which the keys are column names and the values are functions to be used in the aggregation process. The example below has only one such function (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join</span></code> will join all entries in the colum <code class="docutils literal notranslate"><span class="pre">lemma</span></code> with a space in between); one may specify (the same or different) functions for different columns, for instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;textid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The process will create a compound index. It is useful to flatten the index with a reset (<code class="docutils literal notranslate"><span class="pre">reset_index()</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id_text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
+<span class="n">doc_df</span> <span class="o">=</span> <span class="n">doc_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">doc_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="save-the-results">
+<h1>4 Save the Results<a class="headerlink" href="#save-the-results" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="save-results-in-csv-file">
+<h2>4.1 Save Results in CSV file<a class="headerlink" href="#save-results-in-csv-file" title="Permalink to this headline">¶</a></h2>
+<p>The output file is called <code class="docutils literal notranslate"><span class="pre">parsed.csv</span></code> and is placed in the directory <code class="docutils literal notranslate"><span class="pre">output</span></code>. In most cases, <code class="docutils literal notranslate"><span class="pre">csv</span></code> files open automatically in Excel. This program does not deal well with <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding. If you intend to use the file in Excel, change <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">='utf-8'</span></code> to <code class="docutils literal notranslate"><span class="pre">encoding='utf-16'</span></code>. For usage in computational text analysis applications <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> is usually preferred. The option <code class="docutils literal notranslate"><span class="pre">index=False</span></code> excludes the (numerical) index from the saved <code class="docutils literal notranslate"><span class="pre">csv</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savefile</span> <span class="o">=</span>  <span class="s1">&#39;parsed.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;output/</span><span class="si">{</span><span class="n">savefile</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">w</span><span class="p">:</span>
+    <span class="n">doc_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pickle">
+<h2>4.2 Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h2>
+<p>The Pandas function <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> writes a binary file that can be opened in a later phase of the project with the <code class="docutils literal notranslate"><span class="pre">read_pickle()</span></code> command and will reproduce exactly the same DataFrame. The resulting file cannot be used in other programs but preserves the data structure of the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickled</span> <span class="o">=</span> <span class="s2">&quot;output/parsed.p&quot;</span>
+<span class="n">doc_df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">pickled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_1_Data_Acquisition_ORACC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2_1_2_parse-json-cat.html" title="previous page">Retrieve Catalog Data from <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code></a>
+    <a class='right-next' id="next-link" href="2_1_4_extended_ORACC-JSON_parser.html" title="next page">Extract Lemmatization from JSON: Extended Parser</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
