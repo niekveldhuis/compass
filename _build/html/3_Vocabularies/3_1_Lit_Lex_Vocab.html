@@ -120,7 +120,12 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_JSON.html">
+       2.1.1 The JSON Data Format
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_parse-json-cat.html">
        Retrieve Catalog Data from
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -130,12 +135,12 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.html">
        Extract Lemmatization from ORACC JSON: Basic Parser
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html">
        Extract Lemmatization from JSON: Extended Parser
       </a>
      </li>
@@ -451,7 +456,7 @@
 </div>
 <div class="section" id="read-lexical-and-literary-data">
 <h4>3.1.0.1 Read Lexical and Literary Data<a class="headerlink" href="#read-lexical-and-literary-data" title="Permalink to this headline">¶</a></h4>
-<p>The module <code class="docutils literal notranslate"><span class="pre">utils</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> directory of Compass includes the function <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> which essentially runs the same code as the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html"><span class="doc std std-doc">Extended ORACC Parser</span></a> (see there for explanation of the code). Its only parameter is a string with <a class="reference external" href="http://oracc.org">ORACC</a> project names, separated by commas. It returns a Pandas DataFrame in which each word is represented by a row.</p>
+<p>The module <code class="docutils literal notranslate"><span class="pre">utils</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> directory of Compass includes the function <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> which essentially runs the same code as the <span class="xref myst">Extended ORACC Parser</span> (see there for explanation of the code). Its only parameter is a string with <a class="reference external" href="http://oracc.org">ORACC</a> project names, separated by commas. It returns a Pandas DataFrame in which each word is represented by a row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="s2">&quot;dcclt, dcclt/nineveh, dcclt/signlists, dcclt/ebla, epsd2/literary, dsst&quot;</span>
@@ -511,7 +516,7 @@
 <h4>3.1.0.4 Select Old Babylonian Lexical Texts<a class="headerlink" href="#select-old-babylonian-lexical-texts" title="Permalink to this headline">¶</a></h4>
 <p>The compositions in <a class="reference external" href="http://oracc.org/epsd2/literary">epsd2/literary</a> are from the Old Babylonian period. We will use the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> catalog to select only those lexical texts that come from that same period.</p>
 <p>The catalog is included as a separate <code class="docutils literal notranslate"><span class="pre">json</span></code> file in <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code>. Since we parsed the <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> text editions earlier in this script, the file <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code> should still be in the <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> directory, we do not have to download it.</p>
-<p>For more information about handling the file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> see the notebook <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html"><span class="doc std std-doc">2_1_1_parse-json-cat.ipynb</span></a>.</p>
+<p>For more information about handling the file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> see the notebook <span class="xref myst">2_1_1_parse-json-cat.ipynb</span>.</p>
 <p>The resulting dataframe is reduced to just two columns: <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">period</span></code> so that we can select the ones that have “Old Babylonian” in the <code class="docutils literal notranslate"><span class="pre">period</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -660,7 +665,7 @@
 </tr>
 </tbody>
 </table>
-<p>In order to do this we use the Pandas functions <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (for aggregate). For a brief explanation of these functions see the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html"><span class="doc std std-doc">Basic ORACC Parser</span></a> (in particular section 3.3: Group by TextID). The <code class="docutils literal notranslate"><span class="pre">to_pickle</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package saves the resulting DataFrame for use in the next notebook.</p>
+<p>In order to do this we use the Pandas functions <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (for aggregate). For a brief explanation of these functions see the <span class="xref myst">Basic ORACC Parser</span> (in particular section 3.3: Group by TextID). The <code class="docutils literal notranslate"><span class="pre">to_pickle</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package saves the resulting DataFrame for use in the next notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lex_lines</span> <span class="o">=</span> <span class="n">lex_words</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">lex_words</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">],</span> <span class="n">lex_words</span><span class="p">[</span><span class="s1">&#39;id_line&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>

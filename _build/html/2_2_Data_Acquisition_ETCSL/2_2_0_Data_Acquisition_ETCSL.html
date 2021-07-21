@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.2 Parsing ETCSL" href="2_2_1_Data_Acquisition_ETCSL.html" />
-    <link rel="prev" title="Extract Lemmatization from JSON: Extended Parser" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html" />
+    <link rel="prev" title="Extract Lemmatization from JSON: Extended Parser" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -120,7 +120,12 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_JSON.html">
+       2.1.1 The JSON Data Format
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_parse-json-cat.html">
        Retrieve Catalog Data from
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -130,12 +135,12 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.html">
        Extract Lemmatization from ORACC JSON: Basic Parser
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html">
        Extract Lemmatization from JSON: Extended Parser
       </a>
      </li>
@@ -681,7 +686,7 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
 </div>
 <div class="section" id="post-processing">
 <h2>2.2.14 Post-processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
-<p>The DataFrame that is the result of the notebook is saved as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file named <code class="docutils literal notranslate"><span class="pre">alltexts.csv</span></code>, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove “additional” and/or “secondary” text - etc.). Such transformations can be done most easily in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. The code for doing so is essentially the same as the code for structuring <a class="reference external" href="http://oracc.org">ORACC</a> data discussed in Chapter 2.1: Data Acquisition ORACC (see the <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_basic_ORACC-JSON_parser.html"><span class="doc std std-doc">Basic ORACC-JSON Parser</span></a>).</p>
+<p>The DataFrame that is the result of the notebook is saved as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file named <code class="docutils literal notranslate"><span class="pre">alltexts.csv</span></code>, where each word form occupies a single row. In many cases, however, we may want to represent the data in a line-by-line or composition-by-composition format and/or filter out certain words (for instance: use only lemmatized words, remove Akkadian words, remove “additional” and/or “secondary” text - etc.). Such transformations can be done most easily in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. The code for doing so is essentially the same as the code for structuring <a class="reference external" href="http://oracc.org">ORACC</a> data discussed in Chapter 2.1: Data Acquisition ORACC (see the <span class="xref myst">Basic ORACC-JSON Parser</span>).</p>
 </div>
 </div>
 
@@ -710,7 +715,7 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../2_1_Data_Acquisition_ORACC/2_1_3_extended_ORACC-JSON_parser.html" title="previous page">Extract Lemmatization from JSON: Extended Parser</a>
+    <a class='left-prev' id="prev-link" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html" title="previous page">Extract Lemmatization from JSON: Extended Parser</a>
     <a class='right-next' id="next-link" href="2_2_1_Data_Acquisition_ETCSL.html" title="next page">2.2 Parsing ETCSL</a>
 
         </div>
