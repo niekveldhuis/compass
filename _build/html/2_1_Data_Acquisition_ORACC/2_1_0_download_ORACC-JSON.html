@@ -104,35 +104,42 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="2_1_Data_Acquisition.html">
      2.1 Data Acquisition: ORACC
     </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     2.1.0 Download ORACC JSON Files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_1_1_parse-json-cat.html">
-     Retrieve Catalog Data from
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       catalogue.json
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_1_2_basic_ORACC-JSON_parser.html">
-     Extract Lemmatization from ORACC JSON: Basic Parser
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_1_3_extended_ORACC-JSON_parser.html">
-     Extract Lemmatization from JSON: Extended Parser
-    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       2.1.0 Download ORACC JSON Files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_1_parse-json-cat.html">
+       Retrieve Catalog Data from
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         catalogue.json
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_2_basic_ORACC-JSON_parser.html">
+       Extract Lemmatization from ORACC JSON: Basic Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_1_3_extended_ORACC-JSON_parser.html">
+       Extract Lemmatization from JSON: Extended Parser
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_0_Data_Acquisition_ETCSL.html">
@@ -304,37 +311,30 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2.1.0 Download ORACC JSON Files
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-packages">
-   0. Import Packages
+   2.1.0.0. Import Packages
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-download-directory">
-   1. Create Download Directory
+   2.1.0.1. Create Download Directory
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#input-a-list-of-project-abbreviations">
-   2.1 Input a List of Project Abbreviations
+   2.1.0.2 Input a List of Project Abbreviations
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#split-the-list-of-projects">
-   2.2 Split the List of Projects
+   2.1.0.3 Split the List of Projects
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#download-the-zip-files">
-     Download the ZIP files
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-the-zip-files">
+   2.1.0.4 Download the ZIP files
+  </a>
  </li>
 </ul>
 
@@ -349,13 +349,25 @@
                 
   <div class="section" id="download-oracc-json-files">
 <h1>2.1.0 Download ORACC JSON Files<a class="headerlink" href="#download-oracc-json-files" title="Permalink to this headline">¶</a></h1>
-<p>Each public <a class="reference external" href="http://oracc.org">ORACC</a> project has a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file can be found at <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROJECT]/json/[PROJECT].zip</span></code>, where <code class="docutils literal notranslate"><span class="pre">[PROJECT]</span></code> is to be replaced with the project abbreviation (e.g. <a class="reference external" href="http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip">http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip</a>). For sub-projects the address is <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code> (e.g. <a class="reference external" href="http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip">http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip</a>). One may download these files by hand (simply type the address in your browser), or use the notebook <a class="reference internal" href="#"><span class="doc std std-doc">2_1_0_download_ORACC-JSON.ipynb</span></a>. The notebook will create a directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and copy the file to that directory - all further scripts will expect the <code class="docutils literal notranslate"><span class="pre">zip</span></code> files to reside in <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>. The same code is also available in the function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in the directory  <code class="docutils literal notranslate"><span class="pre">utils</span></code>. See the notebook <a class="reference internal" href="#"><span class="doc std std-doc">2_1_0_download_ORACC-JSON.ipynb</span></a> for instructions how to use the functions of the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
+<p>Each public <a class="reference external" href="http://oracc.org">ORACC</a> project has a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file that contains a collection of JSON files, which provide data on lemmatizations, transliterations, catalog data, indexes, etc. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file can be found at <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROJECT]/json/[PROJECT].zip</span></code>, where <code class="docutils literal notranslate"><span class="pre">[PROJECT]</span></code> is to be replaced with the project abbreviation. For sub-projects the address is <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For instance <a class="reference external" href="http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip">http://oracc.museum.upenn.edu/etcsri/json/etcsri.zip</a> or, for a subproject <a class="reference external" href="http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip">http://oracc.museum.upenn.edu/cams/gkab/json/cams-gkab.zip</a>.</p>
+</div>
+<p>One may download these files by hand (simply type the address in your browser), or use the code in the current notebook. The notebook will create a directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and copy the file to that directory - all further scripts will expect the <code class="docutils literal notranslate"><span class="pre">zip</span></code> files to reside in <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One may also use the function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module. See below for instructions how to use the functions of the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
+</div>
 <div class="margin figure align-default">
 <a class="reference internal image-reference" href="../_images/mocci_banner.jpg"><img alt="../_images/mocci_banner.jpg" src="../_images/mocci_banner.jpg" style="width: 560.0px; height: 111.0px;" /></a>
 </div>
-<p>Some <a class="reference external" href="http://oracc.org">ORACC</a> projects are maintained in Munich by the Munich Open-access Cuneiform Corpus Initiative (<a class="reference external" href="https://www.en.ag.geschichte.uni-muenchen.de/research/mocci/index.html">MOCCI</a>). This includes, for example, State Archives of Assyria (<a class="reference external" href="http://oracc.org/saao">SAAO</a>), the Royal Inscriptions of the Neo-Assyrian Period (<a class="reference external" href="http://oracc.org/rinap">RINAP</a>) and various other projects and sub-projects. In theory, project data are copied from the Munich server to the Philadelphia ORACC server (and vv.), but in order to acquire the most recent data set it is sometimes advisable to request the <code class="docutils literal notranslate"><span class="pre">zip</span></code> files of the Munich projects from the Munich server. The address is <code class="docutils literal notranslate"><span class="pre">http://oracc.ub.uni-muenchen.de/[PROJECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code>. The function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in the directory <code class="docutils literal notranslate"><span class="pre">utils</span></code> will try the various servers to find the project of your choice.</p>
+<p>Some <a class="reference external" href="http://oracc.org">ORACC</a> projects are maintained in Munich by the Munich Open-access Cuneiform Corpus Initiative (<a class="reference external" href="https://www.en.ag.geschichte.uni-muenchen.de/research/mocci/index.html">MOCCI</a>). This includes, for example, State Archives of Assyria (<a class="reference external" href="http://oracc.org/saao">SAAO</a>), the Royal Inscriptions of the Neo-Assyrian Period (<a class="reference external" href="http://oracc.org/rinap">RINAP</a>) and various other projects and sub-projects. In theory, project data are copied from the Munich server to the Philadelphia ORACC server (and v.v.), but in order to acquire the most recent data set it is sometimes advisable to request the <code class="docutils literal notranslate"><span class="pre">zip</span></code> files directly from the Munich server. The address is <code class="docutils literal notranslate"><span class="pre">http://oracc.ub.uni-muenchen.de/[PROJECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module will try the various servers to find the project(s) of your choice.</p>
+</div>
 <p>After downloading the JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file you may unzip it to inspect its contents. Note, however, that for larger projects this may result in hundreds or even thousands of files and that the scripts will always read the data directly from the <code class="docutils literal notranslate"><span class="pre">zip</span></code> file.</p>
-<p>This script downloads open data from the Open Richly Annotated Cuneiform Corpus (<a class="reference external" href="http://oracc.org">ORACC</a>) in <code class="docutils literal notranslate"><span class="pre">json</span></code> format. The JSON files are made available in a ZIP file. For a description of the various JSON files included in the ZIP see the <a class="reference external" href="http://oracc.org/doc/opendata">open data</a> page on <a class="reference external" href="http://oracc.org">ORACC</a>.</p>
 <p>The code in this notebook is also available in the module <code class="docutils literal notranslate"><span class="pre">utils</span></code> in the directory <code class="docutils literal notranslate"><span class="pre">utils</span></code> and can be called as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -368,9 +380,8 @@
 <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">projects</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="import-packages">
-<h1>0. Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h1>
+<h2>2.1.0.0. Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -383,7 +394,7 @@
 </div>
 </div>
 <div class="section" id="create-download-directory">
-<h1>1. Create Download Directory<a class="headerlink" href="#create-download-directory" title="Permalink to this headline">¶</a></h1>
+<h2>2.1.0.1. Create Download Directory<a class="headerlink" href="#create-download-directory" title="Permalink to this headline">¶</a></h2>
 <p>Create a directory called <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>. If the directory already exists, do nothing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -394,7 +405,7 @@
 </div>
 </div>
 <div class="section" id="input-a-list-of-project-abbreviations">
-<h1>2.1 Input a List of Project Abbreviations<a class="headerlink" href="#input-a-list-of-project-abbreviations" title="Permalink to this headline">¶</a></h1>
+<h2>2.1.0.2 Input a List of Project Abbreviations<a class="headerlink" href="#input-a-list-of-project-abbreviations" title="Permalink to this headline">¶</a></h2>
 <p>Enter one or more project abbreviations to download their JSON zip files. The project names are separated by commas. Note that subprojects must be given explicitly, they are not automatically included in the main project. For instance:</p>
 <ul class="simple">
 <li><p>saao/saa01, aemw/alalakh/idrimi, rimanum</p></li>
@@ -404,7 +415,6 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Textarea</span><span class="p">(</span>
     <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Type project names, separated by commas&#39;</span><span class="p">,</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Projects:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">projects</span>
 </pre></div>
@@ -412,29 +422,30 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "be421d9d445348a481f96429405f673c", "version_major": 2, "version_minor": 0}
+{"model_id": "0964e33427f446d495be73abfb034abe", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
 <div class="section" id="split-the-list-of-projects">
-<h1>2.2 Split the List of Projects<a class="headerlink" href="#split-the-list-of-projects" title="Permalink to this headline">¶</a></h1>
+<h2>2.1.0.3 Split the List of Projects<a class="headerlink" href="#split-the-list-of-projects" title="Permalink to this headline">¶</a></h2>
 <p>Split the list of projects and create a list of project names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">projects</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>   <span class="c1"># split at each comma and make a list called `project_list`</span>
-<span class="n">project_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">project</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">project_list</span><span class="p">]</span>        <span class="c1"># strip spaces left and right of each entry</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">projects</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>   <span class="c1"># split at each comma and make a list called `project_list`</span>
+<span class="n">project_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">project</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">project_list</span><span class="p">]</span>  <span class="c1"># strip spaces left and right of each entry</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="download-the-zip-files">
-<h2>Download the ZIP files<a class="headerlink" href="#download-the-zip-files" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.0.4 Download the ZIP files<a class="headerlink" href="#download-the-zip-files" title="Permalink to this headline">¶</a></h2>
 <p>For each project from which files are to be processed download the entire project (all the json files) from <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/PROJECT/json/</span></code>. The file is called <code class="docutils literal notranslate"><span class="pre">PROJECT.zip</span></code> (for instance: <code class="docutils literal notranslate"><span class="pre">dcclt.zip</span></code>). For subprojects the file is called <code class="docutils literal notranslate"><span class="pre">PROJECT-SUBPROJECT.zip</span></code> (for instance <code class="docutils literal notranslate"><span class="pre">cams-gkab.zip</span></code>).</p>
 <p>For larger projects (such as <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a>) the <code class="docutils literal notranslate"><span class="pre">zip</span></code> file may be 25Mb or more. Downloading may take some time and it may be necessary to chunk the downloading process. The <code class="docutils literal notranslate"><span class="pre">iter_content()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library takes care of that.</p>
 <p>This code is also available as the function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> in the module <code class="docutils literal notranslate"><span class="pre">utils/utils.py</span></code>, which is used by some of the other scripts in Compass. The function <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> takes a list of projects as its only argument (e.g. <code class="docutils literal notranslate"><span class="pre">['dcclt',</span> <span class="pre">'hbtin',</span> <span class="pre">'saao/saa01']</span></code> and will download those, omitting duplicates and invalid project names.</p>
 <p><a class="reference external" href="http://oracc.org">ORACC</a> JSON files may be downloaded from three different servers: the build server at Penn, the public <a class="reference external" href="http://oracc.org">ORACC</a> server and the server at <a class="reference external" href="http://oracc.ub.uni-muenchen.de/">LMU</a> (Munich). The current code will only check the build server and may therefore not work with projects maintained at <a class="reference external" href="http://oracc.ub.uni-muenchen.de/">LMU</a>. The <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> function in <code class="docutils literal notranslate"><span class="pre">utils</span></code> will check all three servers, in the order build, penn, lmu.</p>
 <p>In order to show a progress bar (with <code class="docutils literal notranslate"><span class="pre">tqdm</span></code>) we need to know how large the file to be downloaded is (this value is is then fed to the <code class="docutils literal notranslate"><span class="pre">total</span></code> parameter). The http protocol provides a key <code class="docutils literal notranslate"><span class="pre">content-length</span></code> in the headers (a dictionary). Not all servers provide this field, therefore it is accessed with the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function, which allows for a fall-back value in case a key is not found. This fall-back value is 0. With the <code class="docutils literal notranslate"><span class="pre">total</span></code> value of 0 <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> will show a bar and will count the number of chunks received, but it will not indicate the degree of progress.</p>
-<div class="cell tag_remove_output docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CHUNK</span> <span class="o">=</span> <span class="mi">1024</span>
 <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">project_list</span><span class="p">:</span>
