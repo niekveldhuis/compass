@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retrieve Catalog Data from catalogue.json &#8212; Computational Assyriology</title>
+    <title>2.1.2 Retrieve ORACC Catalog Data &#8212; Computational Assyriology</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -126,12 +126,7 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Retrieve Catalog Data from
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         catalogue.json
-        </span>
-       </code>
+       2.1.2 Retrieve ORACC Catalog Data
       </a>
      </li>
      <li class="toctree-l3">
@@ -317,23 +312,28 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-packages">
+   2.1.2.0 Load Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-directories-if-necessary">
-   0 Create Directories, if Necessary
+   2.1.2.1 Create Directories, if Necessary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#input-project-names">
-   1.1 Input Project Names
+   2.1.2.2 Input Project Names
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#split-the-list-of-projects-and-download-the-zip-files">
-   1.2 Split the List of Projects and Download the ZIP files.
+   2.1.2.3 Split the List of Projects and Download the ZIP files.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#extract-catalogue-data-from-json-files">
-   2 Extract Catalogue Data from
+   2.1.2.4 Extract Catalogue Data from
    <code class="docutils literal notranslate">
     <span class="pre">
      JSON
@@ -344,22 +344,22 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clean-the-dataframe">
-   3. Clean the Dataframe
+   2.1.2.5 Clean the Dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-relevant-fields">
-   4 Select Relevant Fields
+   2.1.2.6 Select Relevant Fields
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#save-as-csv">
-   5.1 Save as CSV
+   2.1.2.7 Save as CSV
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#save-with-pickle">
-   5.2 Save with Pickle
+   2.1.2.7 Save with Pickle
   </a>
  </li>
 </ul>
@@ -373,13 +373,29 @@
         
               <div>
                 
-  <div class="section" id="retrieve-catalog-data-from-catalogue-json">
-<h1>Retrieve Catalog Data from <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code><a class="headerlink" href="#retrieve-catalog-data-from-catalogue-json" title="Permalink to this headline">¶</a></h1>
-<p>The file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> contains all the catalog data for an <a class="reference external" href="http://oracc.org">ORACC</a> project (for general information, see the <a class="reference external" href="http://oracc.org/doc/opendata">Oracc Open Data</a> page). The <code class="docutils literal notranslate"><span class="pre">zip</span></code> that contains all JSON files of a particular project can be found at <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROJECT]/json/[PROJECT].zip</span></code>. In the URL replace [PROJECT] with your project name (e.g. <code class="docutils literal notranslate"><span class="pre">dcclt</span></code>). For sub-projects the URL pattern is <code class="docutils literal notranslate"><span class="pre">http://oracc.museum.upenn.edu/[PROJECT]/[SUBPROJECT]/json/[PROJECT]-[SUBPROJECT].zip</span></code>.</p>
-<p>The main key in a <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> file is called <code class="docutils literal notranslate"><span class="pre">members</span></code>. The value of this key contains the information of all the fields and all the entries in the project catalog. This information is put in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame.</p>
+  <div class="section" id="retrieve-oracc-catalog-data">
+<h1>2.1.2 Retrieve ORACC Catalog Data<a class="headerlink" href="#retrieve-oracc-catalog-data" title="Permalink to this headline">¶</a></h1>
+<p>Each <a class="reference external" href="http://oracc.org">ORACC</a> JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file includes a file named <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code>. Since the structure of <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>For general information, see the <a class="reference external" href="http://oracc.org/doc/opendata">Oracc Open Data</a> page.</p>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> contains all the catalog data for an <a class="reference external" href="http://oracc.org">ORACC</a> project. We will transform the JSON into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p>
+<div class="section" id="load-packages">
+<h2>2.1.2.0 Load Packages<a class="headerlink" href="#load-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>pandas: data analysis and manipulation; dataframes</p></li>
+<li><p>ipywidgets: user interface (enter project names)</p></li>
+<li><p>zipfile: read data from a ziped file</p></li>
+<li><p>json: read a json object</p></li>
+<li><p>os: basic Operating System tasks (such as creating a dictionary)</p></li>
+<li><p>sys: change system parameters</p></li>
+<li><p>utils: compass-specific utilities (download files from ORACC, etc.)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">import</span> <span class="nn">zipfile</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -391,8 +407,9 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="create-directories-if-necessary">
-<h2>0 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.2.1 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
 <p>The two directories needed for this script are <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -404,34 +421,71 @@
 </div>
 </div>
 <div class="section" id="input-project-names">
-<h2>1.1 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.2.2 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
 <p>We can download and manipulate multiple <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">zip</span></code> files at the same time. Note, however that different <a class="reference external" href="http://oracc.org">ORACC</a> projects use different fields in their catalogs; not all catalogs are mutually compatible.</p>
 <p>Provide project abbreviations, separated by a comma. Note that subprojects must be processed separately, they are not included in the main project. A subproject is named <code class="docutils literal notranslate"><span class="pre">[PROJECT]/[SUBPROJECT]</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">saao/saa01</span></code>.</p>
-<p>Split the list of projects and create a list of project names, using the <code class="docutils literal notranslate"><span class="pre">format_project_list()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Project(s): &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># lowercase user input and strip accidental spaces</span>
-<span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">format_project_list</span><span class="p">(</span><span class="n">projects</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Textarea</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;obmc&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Type project names, separated by commas&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Projects:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">projects</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b62c818ffa404774a8cd87937a9ec0a7", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </div>
 <div class="section" id="split-the-list-of-projects-and-download-the-zip-files">
-<h2>1.2 Split the List of Projects and Download the ZIP files.<a class="headerlink" href="#split-the-list-of-projects-and-download-the-zip-files" title="Permalink to this headline">¶</a></h2>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module to download the requested projects. The code of this function is discussed in more detail in 2.1.0. Download ORACC JSON Files. The function returns a new version of the project list, with duplicates and non-existing projects removed.</p>
-<div class="cell docutils container">
+<h2>2.1.2.3 Split the List of Projects and Download the ZIP files.<a class="headerlink" href="#split-the-list-of-projects-and-download-the-zip-files" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">format_project_list()</span></code> and <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> functions from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module to download the requested projects. The code of these function is discussed in more detail in 2.1.0. Download ORACC JSON Files. The function returns a new version of the project list, with duplicates and non-existing projects removed.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">format_project_list</span><span class="p">(</span><span class="n">projects</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="extract-catalogue-data-from-json-files">
-<h2>2 Extract Catalogue Data from <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files<a class="headerlink" href="#extract-catalogue-data-from-json-files" title="Permalink to this headline">¶</a></h2>
-<p>The code in this cell will iterate through the list of projects entered above (1.1). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file, named <code class="docutils literal notranslate"><span class="pre">[PROJECT].zip</span></code> has been downloaded in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> (1.2). Each of these <code class="docutils literal notranslate"><span class="pre">zip</span></code> files includes a file called <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code>. This file is read in and loaded with the command <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, which transforms a string into a JSON object - a sequence of names and values.</p>
-<p>The JSON object is transformed into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Dataframe. By default, when reading in a dictionary, the <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> function will take the top-level keys (in this case the text IDs) as columns. The dataframe needs to be transposed (<code class="docutils literal notranslate"><span class="pre">.T</span></code>), so that the P, Q, and X numbers become indexes or row names, and each column represents a field in the catalog.  The individual dataframes (one for each project requested) are concatenated. Since individual <a class="reference external" href="http://oracc.org">ORACC</a> project catalogs may have different fields, the dataframes may have different column names. By default <code class="docutils literal notranslate"><span class="pre">pandas</span></code> concatenation uses an <code class="docutils literal notranslate"><span class="pre">outer</span> <span class="pre">join</span></code> so that all column names of all the catalogs are preserved.</p>
+<h2>2.1.2.4 Extract Catalogue Data from <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files<a class="headerlink" href="#extract-catalogue-data-from-json-files" title="Permalink to this headline">¶</a></h2>
+<p>The process begins by turning a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file (for instance <code class="docutils literal notranslate"><span class="pre">obmc.zip</span></code>) into a <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> object that may be manipulated with the functions available in the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> library. This is done with the <code class="docutils literal notranslate"><span class="pre">zipfile.Zipfile()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;jsonzip/obmc.zip&quot;</span>    
+<span class="c1"># or: file = &quot;jsonzip/dcclt-nineveh.zip&quot;</span>
+<span class="n">zipfile_object</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">read()</span></code> function from that same <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> package reads one particular file from the <code class="docutils literal notranslate"><span class="pre">zip</span></code> and turns it into a string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string_object</span> <span class="o">=</span> <span class="n">zipfile_object</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;obmc/catalogue.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> 
+<span class="c1"># or: string_object = zipfile_object.read(&quot;dcclt/nineveh/catalogue.json&quot;).decode(&quot;utf-8&quot;)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">json</span></code> library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function <code class="docutils literal notranslate"><span class="pre">load()</span></code>, which comes in two versions. Regular <code class="docutils literal notranslate"><span class="pre">json.load()</span></code> takes a filename as argument and will load a JSON file. In this case, however, the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> library has produced a string (extracted from <code class="docutils literal notranslate"><span class="pre">obmc.zip</span></code>), and therefore we need the command <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, which takes a string as its argument:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">json_object</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">string_object</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> will now contain all the data in the <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> file from the <a class="reference external" href="http://oracc.org/obmc">OBMC</a> (Old Babylonian Model Contracts) project by Gabriella Spada. We may treat the variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> as a Python dictionary. The <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> has various keys, including <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>, <code class="docutils literal notranslate"><span class="pre">license-url</span></code>, <code class="docutils literal notranslate"><span class="pre">more-info</span></code>, <code class="docutils literal notranslate"><span class="pre">UTC-timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">members</span></code>, and <code class="docutils literal notranslate"><span class="pre">summaries</span></code>. The key <code class="docutils literal notranslate"><span class="pre">members</span></code> is the only one that concerns us here, since it contains the actual catalog information. The value of the key <code class="docutils literal notranslate"><span class="pre">members</span></code> is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (<code class="docutils literal notranslate"><span class="pre">primary_publication</span></code>, <code class="docutils literal notranslate"><span class="pre">provenience</span></code>, <code class="docutils literal notranslate"><span class="pre">genre</span></code>, etc.). The dictionary of dictionaries under the key <code class="docutils literal notranslate"><span class="pre">members</span></code> may be transformed into a Pandas DataFrame for ease of viewing and manipulation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>	
+<span class="n">cat</span> <span class="o">=</span> <span class="n">json_object</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">DataFrame.from_dict()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library takes each key as a column - in this case the keys of <code class="docutils literal notranslate"><span class="pre">cat</span></code> are the P numbers (text IDs); the catalog fields will become rows. To address that issue, we need to tell the <code class="docutils literal notranslate"><span class="pre">DataFrame.from_dict()</span></code> function explicitly that each key should be a row (<code class="docutils literal notranslate"><span class="pre">orient=&quot;index&quot;</span></code>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>We can put the code discussed above in a loop that will iterate through the list of projects entered above (2.1.2.2). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file, named <code class="docutils literal notranslate"><span class="pre">[PROJECT].zip</span></code> has been downloaded in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>.</p>
+<p>In the last step of the loop, the individual dataframes (one for each project requested) are concatenated. Since individual <a class="reference external" href="http://oracc.org">ORACC</a> project catalogs may have different fields, the dataframes may have different column names. By default <code class="docutils literal notranslate"><span class="pre">pandas</span></code> concatenation uses an <code class="docutils literal notranslate"><span class="pre">outer</span> <span class="pre">join</span></code> so that all column names of all the catalogs are preserved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span> <span class="c1"># create an empty dataframe</span>
@@ -453,18 +507,328 @@
     <span class="n">zip_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">cat</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_cat_string</span><span class="p">)</span>
     <span class="n">cat</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;members&#39;</span><span class="p">]</span>  <span class="c1"># select the &#39;members&#39; node </span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="n">item</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">project</span> <span class="c1"># add project name as separate field</span>
     <span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+    <span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">project</span>  <span class="c1"># add project name as separate field</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">cat_df</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># sort=True is necessary in case catalogs have a different set of fields</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>accession_no</th>
+      <th>author</th>
+      <th>citation</th>
+      <th>collection</th>
+      <th>designation</th>
+      <th>electronic_publication</th>
+      <th>excavation_no</th>
+      <th>findspot_square</th>
+      <th>genre</th>
+      <th>id_text</th>
+      <th>...</th>
+      <th>publication_date</th>
+      <th>publication_history</th>
+      <th>subgenre</th>
+      <th>subgenre_remarks</th>
+      <th>supergenre</th>
+      <th>surface_preservation</th>
+      <th>text_remarks</th>
+      <th>trans</th>
+      <th>uri</th>
+      <th>xproject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P200931</th>
+      <td>NaN</td>
+      <td>Limet, Henri</td>
+      <td>NaN</td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 015 O.118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P200931</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA (1925) 047</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev. unreadable</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>http://cdli.ucla.edu/P200931</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P200932</th>
+      <td>NaN</td>
+      <td>Limet, Henri</td>
+      <td>NaN</td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 015 O.119</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P200932</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA (1925) 049</td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P200932</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P200933</th>
+      <td>NaN</td>
+      <td>Limet, Henri</td>
+      <td>NaN</td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 016 O.120</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P200933</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA 045</td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P200933</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P227953</th>
+      <td>NaN</td>
+      <td>Chiera, Edward</td>
+      <td>NaN</td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>OIP 011, 105 + 109 + 148</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P227953</td>
+      <td>...</td>
+      <td>1929</td>
+      <td>MSL 12, 029 L + 031 Y'; MSL 05, 169 (on OIP 01...</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev: OB Nippur Lu</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Sale of a field</td>
+      <td>NaN</td>
+      <td>http://cdli.ucla.edu/P227953</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P227955</th>
+      <td>NaN</td>
+      <td>Chiera, Edward</td>
+      <td>NaN</td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>OIP 011, 030</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P227955</td>
+      <td>...</td>
+      <td>1929</td>
+      <td>MSL 13, 092 B</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev: Nigga</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Silver loans</td>
+      <td>NaN</td>
+      <td>http://cdli.ucla.edu/P227955</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>X000013</th>
+      <td>NaN</td>
+      <td>Bodine, Walter R.</td>
+      <td>NaN</td>
+      <td>Yale Babylonian Collection, New Haven</td>
+      <td>YBC 12074</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>X000013</td>
+      <td>...</td>
+      <td>2015</td>
+      <td>NaN</td>
+      <td>Type III Tablet</td>
+      <td>Model court case</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Public announcement of a lost seal (cf. NBC 07...</td>
+      <td>[en]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>X000014</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Oriental Institute, University of Chicago, Chi...</td>
+      <td>OIM A33295</td>
+      <td>NaN</td>
+      <td>3N-T0910f</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>X000014</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>model contract</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>P255081</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>UM 29-15-617</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P255081</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Type I or II Tablet</td>
+      <td>Obv: model contracts; rev: not preserved</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Manumission of a female slave; cf. TMH 11, 01,...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P255081</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P276764</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>N 1640</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>P276764</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Model contracts</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Sales of real estates</td>
+      <td>NaN</td>
+      <td>http://cdli.ucla.edu/P276764</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>X000007</th>
+      <td>NaN</td>
+      <td>Isma'el, Khalid Salim</td>
+      <td>NaN</td>
+      <td>National Museum of Iraq, Baghdad</td>
+      <td>Edubba 9 29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>School</td>
+      <td>X000007</td>
+      <td>...</td>
+      <td>2007</td>
+      <td>NaN</td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td>NaN</td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>340 rows × 33 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="clean-the-dataframe">
-<h2>3. Clean the Dataframe<a class="headerlink" href="#clean-the-dataframe" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.2.5 Clean the Dataframe<a class="headerlink" href="#clean-the-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">fillna('')</span></code> will put a blank (instead of <code class="docutils literal notranslate"><span class="pre">NaN</span></code>) in all fields that have no entry.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,11 +837,326 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>accession_no</th>
+      <th>author</th>
+      <th>citation</th>
+      <th>collection</th>
+      <th>designation</th>
+      <th>electronic_publication</th>
+      <th>excavation_no</th>
+      <th>findspot_square</th>
+      <th>genre</th>
+      <th>id_text</th>
+      <th>...</th>
+      <th>publication_date</th>
+      <th>publication_history</th>
+      <th>subgenre</th>
+      <th>subgenre_remarks</th>
+      <th>supergenre</th>
+      <th>surface_preservation</th>
+      <th>text_remarks</th>
+      <th>trans</th>
+      <th>uri</th>
+      <th>xproject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P200931</th>
+      <td></td>
+      <td>Limet, Henri</td>
+      <td></td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 015 O.118</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P200931</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA (1925) 047</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev. unreadable</td>
+      <td>LIT</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>http://cdli.ucla.edu/P200931</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P200932</th>
+      <td></td>
+      <td>Limet, Henri</td>
+      <td></td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 015 O.119</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P200932</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA (1925) 049</td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P200932</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P200933</th>
+      <td></td>
+      <td>Limet, Henri</td>
+      <td></td>
+      <td>Musées royaux d'Art et d'Histoire, Brussels, B...</td>
+      <td>Akkadica 117 016 O.120</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P200933</td>
+      <td>...</td>
+      <td>2000</td>
+      <td>Speleers, Louis, RIAA 045</td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P200933</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P227953</th>
+      <td></td>
+      <td>Chiera, Edward</td>
+      <td></td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>OIP 011, 105 + 109 + 148</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P227953</td>
+      <td>...</td>
+      <td>1929</td>
+      <td>MSL 12, 029 L + 031 Y'; MSL 05, 169 (on OIP 01...</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev: OB Nippur Lu</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Sale of a field</td>
+      <td></td>
+      <td>http://cdli.ucla.edu/P227953</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P227955</th>
+      <td></td>
+      <td>Chiera, Edward</td>
+      <td></td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>OIP 011, 030</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P227955</td>
+      <td>...</td>
+      <td>1929</td>
+      <td>MSL 13, 092 B</td>
+      <td>Type II Tablet</td>
+      <td>Obv: model contract; rev: Nigga</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Silver loans</td>
+      <td></td>
+      <td>http://cdli.ucla.edu/P227955</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>X000013</th>
+      <td></td>
+      <td>Bodine, Walter R.</td>
+      <td></td>
+      <td>Yale Babylonian Collection, New Haven</td>
+      <td>YBC 12074</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>X000013</td>
+      <td>...</td>
+      <td>2015</td>
+      <td></td>
+      <td>Type III Tablet</td>
+      <td>Model court case</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Public announcement of a lost seal (cf. NBC 07...</td>
+      <td>[en]</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>X000014</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Oriental Institute, University of Chicago, Chi...</td>
+      <td>OIM A33295</td>
+      <td></td>
+      <td>3N-T0910f</td>
+      <td></td>
+      <td>School</td>
+      <td>X000014</td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>model contract</td>
+      <td>LIT</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P255081</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>UM 29-15-617</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P255081</td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Type I or II Tablet</td>
+      <td>Obv: model contracts; rev: not preserved</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Manumission of a female slave; cf. TMH 11, 01,...</td>
+      <td>[en]</td>
+      <td>http://cdli.ucla.edu/P255081</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>P276764</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>University of Pennsylvania Museum of Archaeolo...</td>
+      <td>N 1640</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>P276764</td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Model contracts</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Sales of real estates</td>
+      <td></td>
+      <td>http://cdli.ucla.edu/P276764</td>
+      <td>CDLI</td>
+    </tr>
+    <tr>
+      <th>X000007</th>
+      <td></td>
+      <td>Isma'el, Khalid Salim</td>
+      <td></td>
+      <td>National Museum of Iraq, Baghdad</td>
+      <td>Edubba 9 29</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>School</td>
+      <td>X000007</td>
+      <td>...</td>
+      <td>2007</td>
+      <td></td>
+      <td>Type III Tablet</td>
+      <td>Model contract</td>
+      <td>LIT</td>
+      <td></td>
+      <td>Manumission of a male slave; cf. Akkadica 117 ...</td>
+      <td>[en]</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>340 rows × 33 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="select-relevant-fields">
-<h2>4 Select Relevant Fields<a class="headerlink" href="#select-relevant-fields" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://oracc.org">ORACC</a> catalogs may have custom fields, the only fields that are obligatory are <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number that identifies the text, for instance “P243546”) and <code class="docutils literal notranslate"><span class="pre">designation</span></code> (the human-readable reference, for instance “VS 17, 012”). The example code below works with field names that are available in (almost) every catalog. Adjust the code to your data and your needs.</p>
+<h2>2.1.2.6 Select Relevant Fields<a class="headerlink" href="#select-relevant-fields" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Various introductions to Pandas may be found on the web or in <a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">VanderPlas 2016</a> and similar overviews.</p>
+</div>
+<p>The Pandas library allows one to manipulate and slice a dataframe in many different ways. For instance, one may select the relevant fields by creating a new dataframe. <a class="reference external" href="http://oracc.org">ORACC</a> catalogs may have custom fields, the only fields that are obligatory are <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number that identifies the text, for instance “P243546”) and <code class="docutils literal notranslate"><span class="pre">designation</span></code> (the human-readable reference, for instance “VS 17, 012”). The example code below works with field names that are available in (almost) every catalog. Adjust the code to your data and your needs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;designation&#39;</span><span class="p">,</span> <span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="s1">&#39;provenience&#39;</span><span class="p">,</span>
@@ -486,11 +1165,146 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>designation</th>
+      <th>period</th>
+      <th>provenience</th>
+      <th>museum_no</th>
+      <th>project</th>
+      <th>id_text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P200931</th>
+      <td>Akkadica 117 015 O.118</td>
+      <td>Old Babylonian</td>
+      <td>uncertain</td>
+      <td>MRAH O.0118</td>
+      <td>obmc</td>
+      <td>P200931</td>
+    </tr>
+    <tr>
+      <th>P200932</th>
+      <td>Akkadica 117 015 O.119</td>
+      <td>Old Babylonian</td>
+      <td>uncertain</td>
+      <td>MRAH O.0119</td>
+      <td>obmc</td>
+      <td>P200932</td>
+    </tr>
+    <tr>
+      <th>P200933</th>
+      <td>Akkadica 117 016 O.120</td>
+      <td>Old Babylonian</td>
+      <td>uncertain</td>
+      <td>MRAH O.120</td>
+      <td>obmc</td>
+      <td>P200933</td>
+    </tr>
+    <tr>
+      <th>P227953</th>
+      <td>OIP 011, 105 + 109 + 148</td>
+      <td>Old Babylonian</td>
+      <td>Nippur</td>
+      <td>CBS 04803 + CBS 06591 + CBS 05962</td>
+      <td>obmc</td>
+      <td>P227953</td>
+    </tr>
+    <tr>
+      <th>P227955</th>
+      <td>OIP 011, 030</td>
+      <td>Old Babylonian</td>
+      <td>Nippur</td>
+      <td>CBS 04805</td>
+      <td>obmc</td>
+      <td>P227955</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>X000013</th>
+      <td>YBC 12074</td>
+      <td>Old Babylonian</td>
+      <td>uncertain</td>
+      <td>YBC 12074</td>
+      <td>obmc</td>
+      <td>X000013</td>
+    </tr>
+    <tr>
+      <th>X000014</th>
+      <td>OIM A33295</td>
+      <td>Old Babylonian</td>
+      <td>unclear</td>
+      <td>OIM A33295</td>
+      <td>obmc</td>
+      <td>X000014</td>
+    </tr>
+    <tr>
+      <th>P255081</th>
+      <td>UM 29-15-617</td>
+      <td>Old Babylonian</td>
+      <td>Nippur</td>
+      <td>UM 29-15-617</td>
+      <td>obmc</td>
+      <td>P255081</td>
+    </tr>
+    <tr>
+      <th>P276764</th>
+      <td>N 1640</td>
+      <td>Old Babylonian</td>
+      <td>Nippur</td>
+      <td>N 1640</td>
+      <td>obmc</td>
+      <td>P276764</td>
+    </tr>
+    <tr>
+      <th>X000007</th>
+      <td>Edubba 9 29</td>
+      <td>Old Babylonian</td>
+      <td>Tulul Khattab</td>
+      <td>IM 092207</td>
+      <td>obmc</td>
+      <td>X000007</td>
+    </tr>
+  </tbody>
+</table>
+<p>340 rows × 6 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="save-as-csv">
-<h2>5.1 Save as CSV<a class="headerlink" href="#save-as-csv" title="Permalink to this headline">¶</a></h2>
-<p>Save the resulting data set as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file. <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> encoding is the encoding with the widest support in text analysis (and also the encoding used by <a class="reference external" href="http://oracc.org">ORACC</a>). If you intend to use the catalog file in Excel, however, it is better to use <code class="docutils literal notranslate"><span class="pre">utf-16</span></code> encoding.</p>
+<h2>2.1.2.7 Save as CSV<a class="headerlink" href="#save-as-csv" title="Permalink to this headline">¶</a></h2>
+<p>Save the resulting data set as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file. <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> encoding is the encoding with the widest support in text analysis and the standard encoding in Python. It is also  the encoding used by <a class="reference external" href="http://oracc.org">ORACC</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you intend to use the catalog file in Excel, it is better to use <code class="docutils literal notranslate"><span class="pre">utf-16</span></code> encoding.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;output/catalog.csv&#39;</span>
@@ -501,11 +1315,15 @@
 </div>
 </div>
 <div class="section" id="save-with-pickle">
-<h2>5.2 Save with Pickle<a class="headerlink" href="#save-with-pickle" title="Permalink to this headline">¶</a></h2>
-<p>One may pickle a file either with the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> library or directly from within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> with the <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> function. A pickled file preserves the data structure of the dataframe, which is an advantage over saving as <code class="docutils literal notranslate"><span class="pre">csv</span></code>. The pickle file is a binary file, so we must open the file with the <code class="docutils literal notranslate"><span class="pre">wb</span></code> (write binary) option and we cannot give an encoding. To open the pickled file one may use the <code class="docutils literal notranslate"><span class="pre">read_pickle()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library, as in:</p>
+<h2>2.1.2.7 Save with Pickle<a class="headerlink" href="#save-with-pickle" title="Permalink to this headline">¶</a></h2>
+<p>One may pickle a file either with the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> library or directly from within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library with the <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> function. A pickled file preserves the data structure of the dataframe, which is an advantage over saving as <code class="docutils literal notranslate"><span class="pre">csv</span></code>. The pickle file is a binary file, so we must open the file with the <code class="docutils literal notranslate"><span class="pre">wb</span></code> (write binary) option and we cannot give an encoding.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To open the pickled file again:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
