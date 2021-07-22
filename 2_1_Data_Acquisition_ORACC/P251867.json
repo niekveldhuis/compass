@@ -1,0 +1,303 @@
+{
+  "type": "cdl",
+  "project": "dcclt",
+  "source": "http://oracc.org/dcclt",
+  "license": "This data is released under the CC0 license",
+  "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "more-info": "http://oracc.org/doc/opendata/",
+  "UTC-timestamp": "2021-06-19T00:53:51",
+  "textid": "P251867",
+  "cdl": [
+    {
+      "node": "c",
+      "type": "text",
+      "id": "P251867.U0",
+      "cdl": [
+        {
+          "node": "d",
+          "type": "object",
+          "ref": ""
+        },
+        {
+          "node": "d",
+          "subtype": "obverse",
+          "type": "surface",
+          "ref": "P251867.o.1",
+          "label": "o"
+        },
+        {
+          "node": "c",
+          "type": "discourse",
+          "subtype": "body",
+          "id": "P251867.U1",
+          "cdl": [
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "id": "P251867.U2",
+              "label": "o 1",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P251867.2",
+                  "n": "1",
+                  "label": "o 1"
+                },
+                {
+                  "node": "l",
+                  "frag": "{ŋeš}ma₂-durah-abzu",
+                  "id": "P251867.l1cd5e",
+                  "ref": "P251867.2.1",
+                  "inst": "Madurahabzu[1]ON",
+                  "exosig": "@dcclt%sux:{ŋeš}ma₂-durah-abzu=Madurahabzu[1//1]ON'ON$Madurahabzu/{ŋeš}ma₂-durah-abzu#~",
+                  "exoprj": "epsd2/names",
+                  "exolng": "sux",
+                  "f": {
+                    "lang": "sux",
+                    "form": "{ŋeš}ma₂-durah-abzu",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "ŋeš",
+                            "id": "P251867.2.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ma₂",
+                        "id": "P251867.2.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "durah",
+                        "id": "P251867.2.1.2",
+                        "queried": "1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "abzu",
+                        "id": "P251867.2.1.3"
+                      }
+                    ],
+                    "cf": "Madurahabzu",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm0": "Madurahabzu",
+                    "pos": "ON",
+                    "epos": "ON",
+                    "base": "{ŋeš}ma₂-durah-abzu",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "P251867.2.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "P251867.2.1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "tag": "#auto",
+              "id": "P251867.U4",
+              "label": "o 2",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P251867.3",
+                  "n": "2",
+                  "label": "o 2"
+                },
+                {
+                  "node": "l",
+                  "frag": "{ŋeš}ma₂-aš-te",
+                  "id": "P251867.l1cd5f",
+                  "ref": "P251867.3.1",
+                  "inst": "Maʾašte[1]ON",
+                  "exosig": "@dcclt%sux:{ŋeš}ma₂-aš-te=Maʾašte[1//1]ON'ON$Maʾašte/{ŋeš}ma₂-aš-te#~",
+                  "exoprj": "epsd2/names",
+                  "exolng": "sux",
+                  "f": {
+                    "lang": "sux",
+                    "form": "{ŋeš}ma₂-aš-te",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "ŋeš",
+                            "id": "P251867.3.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ma₂",
+                        "id": "P251867.3.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "aš",
+                        "id": "P251867.3.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "te",
+                        "id": "P251867.3.1.3"
+                      }
+                    ],
+                    "cf": "Maʾašte",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm0": "Maʾašte",
+                    "pos": "ON",
+                    "epos": "ON",
+                    "base": "{ŋeš}ma₂-aš-te",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "P251867.3.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "P251867.3.1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "node": "c",
+              "type": "sentence",
+              "implicit": "yes",
+              "tag": "#auto",
+              "id": "P251867.U6",
+              "label": "o 3",
+              "cdl": [
+                {
+                  "node": "d",
+                  "type": "line-start",
+                  "ref": "P251867.4",
+                  "n": "3",
+                  "label": "o 3"
+                },
+                {
+                  "node": "l",
+                  "frag": "{ŋeš}ma₂-kar-nam-nun-ta-⸢e₃-a⸣",
+                  "id": "P251867.l1cd60",
+                  "ref": "P251867.4.1",
+                  "inst": "Makarnuntaʾea[]",
+                  "exosig": "@dcclt%sux:{ŋeš}ma₂-kar-nam-nun-ta-e₃-a=Makarnuntaʾea[1//1]ON'ON$Makarnuntaʾea/{ŋeš}ma₂-kar-nam-nun-ta-e₃-a#~",
+                  "exoprj": "epsd2/names",
+                  "exolng": "sux",
+                  "f": {
+                    "lang": "sux",
+                    "form": "{ŋeš}ma₂-kar-nam-nun-ta-e₃-a",
+                    "gdl": [
+                      {
+                        "det": "semantic",
+                        "pos": "pre",
+                        "seq": [
+                          {
+                            "v": "ŋeš",
+                            "id": "P251867.4.1.0"
+                          }
+                        ]
+                      },
+                      {
+                        "v": "ma₂",
+                        "id": "P251867.4.1.1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "kar",
+                        "id": "P251867.4.1.2",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nam",
+                        "id": "P251867.4.1.3",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "nun",
+                        "id": "P251867.4.1.4",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "ta",
+                        "id": "P251867.4.1.5",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "e₃",
+                        "id": "P251867.4.1.6",
+                        "break": "damaged",
+                        "ho": "1",
+                        "delim": "-"
+                      },
+                      {
+                        "v": "a",
+                        "id": "P251867.4.1.7",
+                        "break": "damaged",
+                        "hc": "1"
+                      }
+                    ],
+                    "cf": "Makarnuntaʾea",
+                    "gw": "1",
+                    "sense": "1",
+                    "norm0": "Makarnuntaʾea",
+                    "pos": "ON",
+                    "epos": "ON",
+                    "base": "{ŋeš}ma₂-kar-nam-nun-ta-e₃-a",
+                    "morph": "~"
+                  },
+                  "props": [
+                    {
+                      "name": "field",
+                      "group": "env",
+                      "ngram": "-1",
+                      "ref": "P251867.4.1"
+                    },
+                    {
+                      "name": "discourse",
+                      "group": "env",
+                      "value": "body",
+                      "ngram": "-1",
+                      "ref": "P251867.4.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
