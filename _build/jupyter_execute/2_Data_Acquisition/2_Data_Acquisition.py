@@ -7,7 +7,7 @@
 # 
 # The data in [CDLI](http://cdli.ucla.edu) and [BDTNS](http://bdtns.filol.csic.es/) are made available in raw-text format, with transliteration only. For instance:
 
-# In[2]:
+# In[1]:
 
 
 import json
@@ -30,7 +30,7 @@ atf
 
 with open('P100001.json', 'r', encoding='utf8') as p:
     P100001 = json.load(p)
-json_object = pn.pane.JSON(P100001, name='P100001', depth=5, height=300, width=500, theme = 'light')
+json_object = pn.pane.JSON(P100001, name='P100001', depth=1, height=300, width=500, theme = 'light')
 json_object
 
 

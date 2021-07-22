@@ -5,7 +5,7 @@
 # 
 # This book project attempts to bring together two recent trends: the digital turn in Assyriology, and the rise of Data Science. Although Assyriologists had actively used databases since the nineteen sixties, such data sets were available only to a small circle - important examples include Miguel Civil's Nippur Corpus (a group of Sumerian literary texts, now largely available on [ETCSL](https://etcsl.orinst.ox.ac.uk/) and Simo Parpola's database of Neo-Assyrian texts, subsequently published in  print in the State Archives of Assyria series and now available online in [SAAo](http://oracc.org/saao) . With the advent of the Internet, it became possible to give public access to data in the form of transliterations, translations, photographs, and glossaries. This development began in earnest in 1996 with the appearance of the Electronic Text Corpus of Sumerian Literature ([ETCSL](https://etcsl.orinst.ox.ac.uk/)), and continues to the present day. Data Science is an interdisciplinary field that draws its techniques from Statistics and Computer Science and (essentially) involves a third field, a domain discipline. Although "Data Science" is a relatively recent coinage, its roots go back well into the twentieth century. In recent years many universities have created institutes or departments for Data Science and/or for Digital Humanities, and have developed undergraduate and graduate programs in such fields. The eco-system for applying Data Science methods to Assyriological data, therefore, is much better today than it was even five years ago. 
 # 
-# This Introduction will briefly discuss the history of the digital turn in Assyriology and some relevant aspects of developments in Data Science (1.1). Next we will discuss software and installing software (1.2), with a brief discussion of differences between Windows and Mac. Section 1.3 is devoted to principles of Data Science in Assyriology: open data, open source, and reproducibility.
+# This Introduction will briefly discuss the history of the digital turn in Assyriology and some relevant aspects of developments in Data Science (1.1).  Section 1.2 is devoted to principles of Data Science in Assyriology: open data, open source, and reproducibility. Section 1.3 will ask the "why" question, focussing on scalability and accessibility. Finally we will discuss software and installing software (1.4), with a brief discussion of differences between Windows and Mac.
 # 
 # ## 1.1 Assyriology and Data Science
 # 
@@ -112,9 +112,17 @@
 # 
 # ### 1.4.1 Compass
 # 
-# In order to download the scripts and other files go to http://github.com/niekveldhuis/compass and click the green "Clone or Download" button. Now click "Download Zip" to acquire all the files that belong to the [Compass](http://github.com/niekveldhuis/compass) project. Unzip the files in a convenient place.
+# The top right corner of each page of the Compassbook has three symbols: a rocket (run the script on Google Colab or in Binder), a Full Screen symbol, and a Download symbol. Each individual file can be downloaded as an .ipynb file, which can be opened in Jupyter Notebook or Jupyter Lab.
 # 
-# **Recommended usage**: after installing [Anaconda](http://www.anaconda.com) (section 1.2.2) open Anaconda Prompt (Windows) or the Terminal (Mac OS X) and type `jupyter lab`. Navigate to the place where you unzipped the [Compass](http://github.com/niekveldhuis/compass) files and open the Notebook file (extension `ipynb`) that you wish to run.
+# :::{note}
+# Double clicking an .ipynb file does not open it properly. Follow the instructions below for opening Jupyter Lab and open the .ipynb file from within Jupyter Lab.
+# :::
+# 
+# In order to download the entire set of scripts and other files go to http://github.com/niekveldhuis/compass and click the green "Clone or Download" button. Now click "Download Zip" to acquire all the files that belong to the [Compass](http://github.com/niekveldhuis/compass) project. Unzip the files in a convenient place.
+# 
+# :::{note}
+# After installing [Anaconda](http://www.anaconda.com) (section 1.4.2) open Anaconda Prompt (Windows) or the Terminal (Mac OS X) and type `jupyter lab`. Navigate to the place where you unzipped the [Compass](http://github.com/niekveldhuis/compass) files and open the Notebook file (extension `ipynb`) that you wish to run.
+# :::
 # 
 # ### 1.4.2 Anaconda, Python, and Jupyter
 # 
@@ -122,10 +130,10 @@
 # 
 # By installing [Anaconda](http://www.anaconda.com) you will have access to a number of programs and tools, including:
 # - **Python 3.x**. This is the programming language used in [Compass](http://github.com/niekveldhuis/compass). Note that the [Compass](http://github.com/niekveldhuis/compass) scripts will not work with Python 2.x and will run into errors with so-called formatted strings in Python 3.5 or lower.
-# - **Python Packages**. With [Anaconda](http://www.anaconda.com) you install a host of useful packages such `pandas` (for creating and manipulating tables or dataframes), `requests` (for communicating with a server over the internet), or `re` (for using [regular expressions](https://www.regular-expressions.info/)). A package is a collection of functions, expanding Python's core functionality. [Anaconda](http://www.anaconda.com) installs many such packages for you, but occasionally we will need to install additional ones (see 1.2.3).
+# - **Python Packages**. With [Anaconda](http://www.anaconda.com) you install a host of useful packages such `pandas` (for creating and manipulating tables or dataframes), `requests` (for communicating with a server over the internet), or `re` (for using [regular expressions](https://www.regular-expressions.info/)). A package is a collection of functions, expanding Python's core functionality. [Anaconda](http://www.anaconda.com) installs many such packages for you, but occasionally we will need to install additional ones (see 1.4.3).
 # - **Anaconda Navigator**. This is the environment in which you can open Jupyter Notebook, Jupyter Lab, and various other programs by clicking on their icon. Anaconda Navigator is quite slow to start and most of the tools available there are not used in [Compass](http://github.com/niekveldhuis/compass). It is recommended to start Jupyter Notebook or Jupyter Lab through a terminal (see below).
 # - **Jupyter Notebook**. Jupter Notebook is an environment in which you can run Python (or any of a host of other programming languages), mixed with explanatory text (in Markdown) and rich output, including graphs. Jupyter Notebook runs on a local web page in your browser. You can start Jupyter Notebook from within Anaconda Navigator, or you can open Anaconda Prompt (Windows) or the Terminal (OS X) and type `jupyter notebook`. Either way, starting Jupyter Notebook will open a directory listing - navigate to the place where you saved the [Compass](http://github.com/niekveldhuis/compass) files and open any file with the `ipynb` extension. For more details see the instructions for [installing](http://jupyter.org/install) and [running](https://jupyter.readthedocs.io/en/latest/running.html) notebooks on the [Jupyter](http://jupyter.org) web site.
-# - **Jupyter Lab**. Jupyter Lab is an environment in which you can run Jupyter Notebooks and various other tools, including a Markdown reader and editor. Jupyter Lab is considered the successor to the classical Jupyter Notebook and it is therefore recommended to use Jupyter Lab instead of Jupyter Notebook. You can open Jupyter Lab from within Anaconda Navigator, or you can open Anaconda Prompt (Windows) or the Terminal (OS X) and type `jupyter lab`. Either way, starting Jupyter Lab will open a directory listing - navigate to the place where you saved the [Compass](http://github.com/niekveldhuis/compass) files and open any file with the `ipynb` extension to run a notebook. You may also right click on any file with a `md` extension, select `open with` and choose "Markdown Preview". This will open a text document like the present one. If you choose to use Jupyter Lab, it will be necessary to install a Jupyter Lab extension; see below 1.2.2.1. For more information about Jupyter Lab, see their [website](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html). Jupyter Lab version 3.0 and higher does not require installation of `nodejs` or the Jupyter widgets extension anymore (see 1.2.2.1). You can tell the Jupyter Lab version by opening Anaconda Navigator. The icon for Jupyter Lab includes a version number.
+# - **Jupyter Lab**. Jupyter Lab is an environment in which you can run Jupyter Notebooks and various other tools, including a Markdown reader and editor. Jupyter Lab is considered the successor to the classical Jupyter Notebook and it is therefore recommended to use Jupyter Lab instead of Jupyter Notebook. You can open Jupyter Lab from within Anaconda Navigator, or you can open Anaconda Prompt (Windows) or the Terminal (OS X) and type `jupyter lab`. Either way, starting Jupyter Lab will open a directory listing - navigate to the place where you saved the [Compass](http://github.com/niekveldhuis/compass) files and open any file with the `ipynb` extension to run a notebook. You may also right click on any file with a `md` extension, select `open with` and choose "Markdown Preview". This will open a text document. For more information about Jupyter Lab, see their [website](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html). Jupyter Lab version 3.0 and higher does not require installation of `nodejs` or the Jupyter widgets extension anymore (see 1.4.2.1). You can tell the Jupyter Lab version by opening Anaconda Navigator. The icon for Jupyter Lab includes a version number.
 # - **Anaconda Prompt** (Windows). Anaconda Prompt is the Windows command prompt, to which are added a number of PATHs, so that you have access to all the Anaconda and conda commands. For Windows users it is recommended to use Anaconda Prompt to start Jupyter Lab (or Jupyter Notebook) by typing `jupyter lab` or `jupyter notebook`. Mac OS X users can use the standard Terminal with the same commands.
 # 
 # #### 1.4.2.1 Installing the Jupyter Lab ipywidgets extension
@@ -137,7 +145,7 @@
 get_ipython().system('jupyter lab --version')
 
 
-# If your Jupyter Lab version is higher than 3.0 you may skip the rest of section 1.2.2.1. If not, you can update Jupyter Lab with the following command: 
+# If your Jupyter Lab version is higher than 3.0 you may skip the rest of section 1.4.2.1. If not, you can update Jupyter Lab with the following command: 
 
 # In[ ]:
 
@@ -145,7 +153,7 @@ get_ipython().system('jupyter lab --version')
 get_ipython().run_line_magic('conda', 'update jupyterlab')
 
 
-# Jupyter Lab is designed as an extensible environment; for [Compass](http://github.com/niekveldhuis/compass) to run under earlier versions of Jupyter Lab (<3.0) one will need at least one such [extension](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html) in order to run a pretty progress bar with [tqdm](https://tqdm.github.io/), and use interactive tools. Before extensions can be installed we need to install `nodejs`. Installing `nodejs` and the extension can be done with running the following cell. For more information about installing the jupyter widgets for Jupyter Lab see the instructions [here](https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension).
+# Jupyter Lab is designed as an extensible environment; for [Compass](http://github.com/niekveldhuis/compass) to run under earlier versions of Jupyter Lab (<3.0) one will need at least one such [extension](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html) in order to run a pretty progress bar with [tqdm](https://tqdm.github.io/), and use interactive widgets. Before extensions can be installed we need to install `nodejs`. Installing `nodejs` and the extension can be done with running the following cell. For more information about installing the jupyter widgets for Jupyter Lab see the instructions [here](https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension).
 
 # In[ ]:
 
@@ -159,9 +167,9 @@ get_ipython().system('jupyter labextension install @jupyter-widgets/jupyterlab-m
 
 # #### 1.4.2.2 Some Trouble Shooting
 # 
-# If you just installed Anaconda and are new to working in Python or Jupyter, the instructions in 1.2.2 should get you going. If you worked with Python, Jupyter Notebooks or Jupyter Lab before, you may need to update one or more of the components.
+# If you just installed Anaconda and are new to working in Python or Jupyter, the instructions in 1.4.2 should get you going. If you worked with Python, Jupyter Notebooks or Jupyter Lab before, you may need to update one or more of the components.
 # 
-# If the `%conda` lines in 1.2.2.1 above do not work, this means that you have an older version of IPython (the Python version that runs in Jupyter Notebooks). Commands that begin with the percentage sign belong to the IPython `magic` functions, expanding on the functionality of standard IPython. In this notebook we will use `%conda` to call the package manager (alternatively, you may use `%pip`). The %conda and %pip functions were introduced in IPython version 7.3. To check the IPython version on your machine, open the terminal (Mac OS X) or the Anaconda Prompt (Windows) and type 
+# If the `%conda` lines in 1.4.2.1 above do not work, this means that you have an older version of IPython (the Python version that runs in Jupyter Notebooks). Commands that begin with the percentage sign belong to the IPython `magic` functions, expanding on the functionality of standard IPython. In this notebook we will use `%conda` to call the package manager (alternatively, you may use `%pip`). The %conda and %pip functions were introduced in IPython version 7.3. To check the IPython version on your machine, open the terminal (Mac OS X) or the Anaconda Prompt (Windows) and type 
 # ```bash
 # ipython --version
 # ```
@@ -185,7 +193,7 @@ get_ipython().system('jupyter notebook --version')
 ipywidgets.__version__
 
 
-# If you need to update any of these, refer to the section below (Installing and Updating Python Packages).
+# If you need to update any of these, refer to section 1.4.3 below (Installing and Updating Python Packages).
 
 # ### 1.4.3 Additional Python Packages
 # 
@@ -222,13 +230,15 @@ ipywidgets.__version__
 # %pip install lexicalrichness --upgrade
 # ```
 # 
-# Note that in some cases installing and upgrading may take a (very) long time and may result in the installation, removal, upgrading, or downgrading of a host of other packages. This is the case because conda will check for dependencies and for the compatibility of the newly installed software with other available packages. Under some circumstances conda may become entirely unusable. In such cases it may be advisable to install packages with pip.
+# :::{note}
+# In some cases installing and upgrading may take a (very) long time and may result in the installation, removal, upgrading, or downgrading of a host of other packages. This is the case because conda will check for dependencies and for the compatibility of the newly installed software with other available packages. Under some circumstances conda may become entirely unusable. In such cases it may be advisable to install packages with pip.
+# :::
 # 
 # Installing packages can be a rather frustrating experience. The issue is that a computer may have more than one instance of Python installed (this is not unusual). In order to use Python packages within a Jupyter Notebook, they need to be associated with the so-called Python *kernel* that runs in the background of the notebook. For a more technical description of the issue and a solution see the [article](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/) by Jake VanderPlas in his [Pythonic Preambulations](https://jakevdp.github.io/) blog. The solution by VanderPlas is implemented in the IPython "magic" functions `%conda` and `%pip`.
 
 # ### 1.4.4 Windows vs. Mac OS X: Unicode and UTF-8
 # 
-# [Jupyter](http://jupyter.org) notebooks and Python are largely platform independent and the notebooks in this project are tested for both Windows and Mac OS X. There is one issue that one may encounter with some frequency and that is reading and writing files. Python 3 by default stores any string as Unicode, using the UTF-8 encoding (an encoding is a way to represent a Unicode code point as a set of bytes in memory). Internally, however, Windows uses another kind of encoding (usually CP-1252), which means that in reading and writing files the option `encoding = "utf-8"` needs to be added explicitly. The option is superfluous in Mac OS X (or in Unix) where `utf-8` is the default, but is added in the notebooks at every place appropriate to ensure interoperability, as in the following examples:  
+# [Jupyter](http://jupyter.org) notebooks and Python are largely platform independent and the notebooks in this project are tested for both Windows and Mac OS X. There is one issue that one may encounter with some frequency and that is reading and writing files. Python 3 by default stores any string as Unicode, using the UTF-8 encoding (an encoding is a way to represent a Unicode code point as a set of bytes in memory). Internally, however, Windows uses another kind of encoding (CP-1252), which means that in reading and writing files the option `encoding = "utf-8"` needs to be added explicitly. The option is superfluous in Mac OS X (or in Unix) where `utf-8` is the default, but is added in the notebooks at every place appropriate to ensure interoperability, as in the following examples:  
 # 
 # ```python
 # with open("equivalencies/equivalencies.json", 'r', encoding="utf-8") as f: # reading

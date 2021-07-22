@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Extract Lemmatization from ORACC JSON: Basic Parser" href="2_1_3_basic_ORACC-JSON_parser.html" />
+    <link rel="next" title="2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser" href="2_1_3_basic_ORACC-JSON_parser.html" />
     <link rel="prev" title="2.1.1 The JSON Data Format" href="2_1_1_JSON.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -131,7 +131,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="2_1_3_basic_ORACC-JSON_parser.html">
-       Extract Lemmatization from ORACC JSON: Basic Parser
+       2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser
       </a>
      </li>
      <li class="toctree-l3">
@@ -359,7 +359,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#save-with-pickle">
-   2.1.2.7 Save with Pickle
+   2.1.2.8 Save with Pickle
   </a>
  </li>
 </ul>
@@ -375,20 +375,24 @@
                 
   <div class="section" id="retrieve-oracc-catalog-data">
 <h1>2.1.2 Retrieve ORACC Catalog Data<a class="headerlink" href="#retrieve-oracc-catalog-data" title="Permalink to this headline">¶</a></h1>
-<p>Each <a class="reference external" href="http://oracc.org">ORACC</a> JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file includes a file named <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code>. Since the structure of <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines.</p>
+<p>In this section we will download one or more <a class="reference external" href="http://oracc.org">ORACC</a> projects, select the catalog data and display the catalog in a table. Each <a class="reference external" href="http://oracc.org">ORACC</a> JSON <code class="docutils literal notranslate"><span class="pre">zip</span></code> file includes a file named <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>For general information, see the <a class="reference external" href="http://oracc.org/doc/opendata">Oracc Open Data</a> page.</p>
 </div>
 <p>The file <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> contains all the catalog data for an <a class="reference external" href="http://oracc.org">ORACC</a> project. We will transform the JSON into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A dataframe is, essentially, a table in which each row represents an observation (in our case: a document) and each column represents an attribute (publication, museum number, etc.).</p>
+</div>
 <div class="section" id="load-packages">
 <h2>2.1.2.0 Load Packages<a class="headerlink" href="#load-packages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>pandas: data analysis and manipulation; dataframes</p></li>
 <li><p>ipywidgets: user interface (enter project names)</p></li>
-<li><p>zipfile: read data from a ziped file</p></li>
+<li><p>zipfile: read data from a zipped file</p></li>
 <li><p>json: read a json object</p></li>
-<li><p>os: basic Operating System tasks (such as creating a dictionary)</p></li>
+<li><p>os: basic Operating System tasks (such as creating a directory)</p></li>
 <li><p>sys: change system parameters</p></li>
 <li><p>utils: compass-specific utilities (download files from ORACC, etc.)</p></li>
 </ul>
@@ -422,8 +426,11 @@
 </div>
 <div class="section" id="input-project-names">
 <h2>2.1.2.2 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
-<p>We can download and manipulate multiple <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">zip</span></code> files at the same time. Note, however that different <a class="reference external" href="http://oracc.org">ORACC</a> projects use different fields in their catalogs; not all catalogs are mutually compatible.</p>
-<p>Provide project abbreviations, separated by a comma. Note that subprojects must be processed separately, they are not included in the main project. A subproject is named <code class="docutils literal notranslate"><span class="pre">[PROJECT]/[SUBPROJECT]</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">saao/saa01</span></code>.</p>
+<p>We can download and manipulate multiple <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">zip</span></code> files at the same time. The <code class="docutils literal notranslate"><span class="pre">Textarea</span></code> widget provides a space for typing project abbreviations, separated by a comma. The widget is assigned to the variable <code class="docutils literal notranslate"><span class="pre">projects</span></code>. The text entered in the <code class="docutils literal notranslate"><span class="pre">Textarea</span></code> widget can be retrieved as <code class="docutils literal notranslate"><span class="pre">projects.value</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Subprojects must be listed separately, they are not included in the main project. A subproject is named <code class="docutils literal notranslate"><span class="pre">[PROJECT]/[SUBPROJECT]</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">saao/saa01</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Textarea</span><span class="p">(</span>
@@ -437,7 +444,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "b62c818ffa404774a8cd87937a9ec0a7", "version_major": 2, "version_minor": 0}
+{"model_id": "1fd82fbbc3774d7ab5f7c2e68b13432e", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
@@ -472,8 +479,8 @@
 <span class="n">json_object</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">string_object</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> will now contain all the data in the <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> file from the <a class="reference external" href="http://oracc.org/obmc">OBMC</a> (Old Babylonian Model Contracts) project by Gabriella Spada. We may treat the variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> as a Python dictionary. The <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> has various keys, including <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>, <code class="docutils literal notranslate"><span class="pre">license-url</span></code>, <code class="docutils literal notranslate"><span class="pre">more-info</span></code>, <code class="docutils literal notranslate"><span class="pre">UTC-timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">members</span></code>, and <code class="docutils literal notranslate"><span class="pre">summaries</span></code>. The key <code class="docutils literal notranslate"><span class="pre">members</span></code> is the only one that concerns us here, since it contains the actual catalog information. The value of the key <code class="docutils literal notranslate"><span class="pre">members</span></code> is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (<code class="docutils literal notranslate"><span class="pre">primary_publication</span></code>, <code class="docutils literal notranslate"><span class="pre">provenience</span></code>, <code class="docutils literal notranslate"><span class="pre">genre</span></code>, etc.). The dictionary of dictionaries under the key <code class="docutils literal notranslate"><span class="pre">members</span></code> may be transformed into a Pandas DataFrame for ease of viewing and manipulation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>	
+<p>The variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> will now contain all the data in the <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> file from the <a class="reference external" href="http://oracc.org/obmc">OBMC</a> (Old Babylonian Model Contracts) project by Gabriella Spada. We may treat the variable <code class="docutils literal notranslate"><span class="pre">json_object</span></code> as a Python dictionary. The <code class="docutils literal notranslate"><span class="pre">catalogue.json</span></code> has various keys, including <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>, <code class="docutils literal notranslate"><span class="pre">license-url</span></code>, <code class="docutils literal notranslate"><span class="pre">more-info</span></code>, <code class="docutils literal notranslate"><span class="pre">UTC-timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">members</span></code>, and <code class="docutils literal notranslate"><span class="pre">summaries</span></code>. The key <code class="docutils literal notranslate"><span class="pre">members</span></code> is the only one that concerns us here, since it contains the actual catalog information. The value of the key <code class="docutils literal notranslate"><span class="pre">members</span></code> is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (<code class="docutils literal notranslate"><span class="pre">primary_publication</span></code>, <code class="docutils literal notranslate"><span class="pre">provenience</span></code>, <code class="docutils literal notranslate"><span class="pre">genre</span></code>, etc.). The dictionary of dictionaries under the key <code class="docutils literal notranslate"><span class="pre">members</span></code> may be transformed into a Pandas dataframe for ease of viewing and manipulation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">cat</span> <span class="o">=</span> <span class="n">json_object</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
 <span class="n">df</span>
@@ -484,8 +491,12 @@
 <span class="n">df</span>
 </pre></div>
 </div>
-<p>We can put the code discussed above in a loop that will iterate through the list of projects entered above (2.1.2.2). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file, named <code class="docutils literal notranslate"><span class="pre">[PROJECT].zip</span></code> has been downloaded in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>.</p>
+<p>We can put the code discussed above in a loop that will iterate through the list of projects entered in 2.1.2.2. For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file, named <code class="docutils literal notranslate"><span class="pre">[PROJECT].zip</span></code> has been downloaded in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>.</p>
 <p>In the last step of the loop, the individual dataframes (one for each project requested) are concatenated. Since individual <a class="reference external" href="http://oracc.org">ORACC</a> project catalogs may have different fields, the dataframes may have different column names. By default <code class="docutils literal notranslate"><span class="pre">pandas</span></code> concatenation uses an <code class="docutils literal notranslate"><span class="pre">outer</span> <span class="pre">join</span></code> so that all column names of all the catalogs are preserved.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> catalogs have two obligatory fields: <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number that identifies the text, for instance “P243546”) and <code class="docutils literal notranslate"><span class="pre">designation</span></code> (the human-readable reference, for instance “MEE 04, 020”). Many projects use catalog fields that are derived from <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>, such as <code class="docutils literal notranslate"><span class="pre">museum_no</span></code>, <code class="docutils literal notranslate"><span class="pre">primary_publication</span></code>, etc., but there is no uniformity. If you build a catalog from multiple projects you may need to manipulate the resulting dataframe to align the catalogs.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span> <span class="c1"># create an empty dataframe</span>
@@ -509,7 +520,7 @@
     <span class="n">cat</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;members&#39;</span><span class="p">]</span>  <span class="c1"># select the &#39;members&#39; node </span>
     <span class="n">cat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
     <span class="n">cat_df</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">project</span>  <span class="c1"># add project name as separate field</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">cat_df</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># sort=True is necessary in case catalogs have a different set of fields</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">cat_df</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># sort=True is necessary in case catalogs have different sets of fields</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -830,6 +841,10 @@
 <div class="section" id="clean-the-dataframe">
 <h2>2.1.2.5 Clean the Dataframe<a class="headerlink" href="#clean-the-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">fillna('')</span></code> will put a blank (instead of <code class="docutils literal notranslate"><span class="pre">NaN</span></code>) in all fields that have no entry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NaN means “Not a Number” and is used for missing values. NaN is a special data type (it is not equivalent to the string “NaN”!) and may cause a number of issues in manipulating the dataframe.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -1156,11 +1171,12 @@
 <p class="sidebar-title"></p>
 <p>Various introductions to Pandas may be found on the web or in <a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">VanderPlas 2016</a> and similar overviews.</p>
 </div>
-<p>The Pandas library allows one to manipulate and slice a dataframe in many different ways. For instance, one may select the relevant fields by creating a new dataframe. <a class="reference external" href="http://oracc.org">ORACC</a> catalogs may have custom fields, the only fields that are obligatory are <code class="docutils literal notranslate"><span class="pre">id_text</span></code> (the P, Q, or X number that identifies the text, for instance “P243546”) and <code class="docutils literal notranslate"><span class="pre">designation</span></code> (the human-readable reference, for instance “VS 17, 012”). The example code below works with field names that are available in (almost) every catalog. Adjust the code to your data and your needs.</p>
+<p>The Pandas library allows one to manipulate and slice a dataframe in many different ways. The example code below assigns to the variable <code class="docutils literal notranslate"><span class="pre">keep</span></code> a list of the most relevant fields (these are field names that are available in (almost) every <a class="reference external" href="http://oracc.org">ORACC</a> catalog). The list <code class="docutils literal notranslate"><span class="pre">keep</span></code> is used to create a new dataframe, with only the relevant fields. Adjust the code to your data and your needs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;designation&#39;</span><span class="p">,</span> <span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="s1">&#39;provenience&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;museum_no&#39;</span><span class="p">,</span> <span class="s1">&#39;project&#39;</span><span class="p">,</span> <span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keep</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;designation&#39;</span><span class="p">,</span> <span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="s1">&#39;provenience&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;museum_no&#39;</span><span class="p">,</span> <span class="s1">&#39;project&#39;</span><span class="p">,</span> <span class="s1">&#39;id_text&#39;</span><span class="p">]</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
 <span class="n">df1</span>
 </pre></div>
 </div>
@@ -1300,7 +1316,11 @@
 </div>
 <div class="section" id="save-as-csv">
 <h2>2.1.2.7 Save as CSV<a class="headerlink" href="#save-as-csv" title="Permalink to this headline">¶</a></h2>
-<p>Save the resulting data set as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file. <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> encoding is the encoding with the widest support in text analysis and the standard encoding in Python. It is also  the encoding used by <a class="reference external" href="http://oracc.org">ORACC</a>).</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Character encoding is primarily relevant when reading from or writing to disk. See section 1.4.4.</p>
+</div>
+<p>Save the resulting data set as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file. <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> encoding is the encoding with the widest support in text analysis and the standard encoding in Python. It is also the encoding used by <a class="reference external" href="http://oracc.org">ORACC</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you intend to use the catalog file in Excel, it is better to use <code class="docutils literal notranslate"><span class="pre">utf-16</span></code> encoding.</p>
@@ -1315,7 +1335,7 @@
 </div>
 </div>
 <div class="section" id="save-with-pickle">
-<h2>2.1.2.7 Save with Pickle<a class="headerlink" href="#save-with-pickle" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.2.8 Save with Pickle<a class="headerlink" href="#save-with-pickle" title="Permalink to this headline">¶</a></h2>
 <p>One may pickle a file either with the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> library or directly from within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library with the <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> function. A pickled file preserves the data structure of the dataframe, which is an advantage over saving as <code class="docutils literal notranslate"><span class="pre">csv</span></code>. The pickle file is a binary file, so we must open the file with the <code class="docutils literal notranslate"><span class="pre">wb</span></code> (write binary) option and we cannot give an encoding.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1362,7 +1382,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="2_1_1_JSON.html" title="previous page">2.1.1 The JSON Data Format</a>
-    <a class='right-next' id="next-link" href="2_1_3_basic_ORACC-JSON_parser.html" title="next page">Extract Lemmatization from ORACC JSON: Basic Parser</a>
+    <a class='right-next' id="next-link" href="2_1_3_basic_ORACC-JSON_parser.html" title="next page">2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser</a>
 
         </div>
         

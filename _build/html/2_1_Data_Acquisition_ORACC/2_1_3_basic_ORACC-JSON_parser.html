@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Extract Lemmatization from ORACC JSON: Basic Parser &#8212; Computational Assyriology</title>
+    <title>2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser &#8212; Computational Assyriology</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -131,7 +131,7 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Extract Lemmatization from ORACC JSON: Basic Parser
+       2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser
       </a>
      </li>
      <li class="toctree-l3">
@@ -311,107 +311,94 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Extract Lemmatization from ORACC JSON: Basic Parser
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   2.1.3.0 Import Packages
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-directories-if-necessary">
-     0 Create Directories, if Necessary
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-project-names">
-     1.1 Input Project Names
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#download-the-zip-files">
-     1.2 Download the ZIP files.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-name-head21-a-2-1-the-parsejson-function">
-     <a name="head21">
-     </a>
-     2.1 The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       parsejson()
-      </span>
-     </code>
-     function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#call-the-parsejson-function-for-every-json-file">
-     2.2 Call the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       parsejson()
-      </span>
-     </code>
-     function for every
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       JSON
-      </span>
-     </code>
-     file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-structuring">
-     3 Data Structuring
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transform-the-data-into-a-dataframe">
-       3.1 Transform the Data into a DataFrame
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remove-spaces-and-commas-from-guide-word-and-sense">
-     3.1 Remove Spaces and Commas from Guide Word and Sense
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-lemma-column">
-     3.2 Create a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       lemma
-      </span>
-     </code>
-     column
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#group-by-textid">
-     3.3 Group by Textid
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#save-the-results">
-   4 Save the Results
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-directories-if-necessary">
+   2.1.3.1 Create Directories, if Necessary
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#save-results-in-csv-file">
-     4.1 Save Results in CSV file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pickle">
-     4.2 Pickle
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-project-names">
+   2.1.3.2 Input Project Names
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-the-list-of-projects-and-download-the-zip-files">
+   2.1.3.3 Split the List of Projects and Download the ZIP files.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oracc-json-the-cdl-structure">
+   2.1.3.4 ORACC JSON: the CDL Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-parse-text-json-function">
+   2.1.3.5 The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     parse_text_json()
+    </span>
+   </code>
+   function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#call-the-parse-text-json-function-for-every-json-file">
+   2.1.3.6 Call the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     parse_text_json()
+    </span>
+   </code>
+   function for every
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JSON
+    </span>
+   </code>
+   file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-structuring">
+   2.1.3.7 Data Structuring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remove-spaces-and-commas-from-guide-word-and-sense">
+   2.1.3.8 Remove Spaces and Commas from Guide Word and Sense
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-lemma-column">
+   2.1.3.9 Create a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lemma
+    </span>
+   </code>
+   column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-textid">
+   2.1.3.10 Group by Textid
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-results-csv">
+   2.1.3.11 Save the Results: CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-results-pickle">
+   2.1.3.12 Save the Results: Pickle
+  </a>
  </li>
 </ul>
 
@@ -425,13 +412,28 @@
               <div>
                 
   <div class="section" id="extract-lemmatization-from-oracc-json-basic-parser">
-<h1>Extract Lemmatization from ORACC JSON: Basic Parser<a class="headerlink" href="#extract-lemmatization-from-oracc-json-basic-parser" title="Permalink to this headline">¶</a></h1>
+<h1>2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser<a class="headerlink" href="#extract-lemmatization-from-oracc-json-basic-parser" title="Permalink to this headline">¶</a></h1>
 <p>The code in this notebook will parse <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files to extract lemmatization data for one or more projects. The resulting <code class="docutils literal notranslate"><span class="pre">csv</span></code> (Comma Separated Values) file is named <code class="docutils literal notranslate"><span class="pre">parsed.csv</span></code> and has two fields: a Text ID (e.g. <code class="docutils literal notranslate"><span class="pre">dcclt/Q000039</span></code>) and a string of lemmas in the format <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (or <code class="docutils literal notranslate"><span class="pre">šarru[king]N</span></code> for Akkadian texts).</p>
-<p>The output of the Basic Parser contains <em>only</em> text IDs and lemmas. This format is useful for so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag of words</a> techniques such as word clouds or <a class="reference external" href="https://en.wikipedia.org/wiki/Topic_model">topic modeling</a>. The <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files, however, contain a wealth of other data, including language (Sumerian, Akkadian, Emesal, etc.), orthographic form, morphology (currently only for Sumerian and Emesal), line numbers, breakage, etc. The extended JSON parser notebook, building upon the techniques demonstrated here, will show how to extract any type of data.</p>
+<p>The output of the Basic Parser contains <em>only</em> text IDs and lemmas. This format is useful for so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag of words</a> techniques such as word clouds or <a class="reference external" href="https://en.wikipedia.org/wiki/Topic_model">topic modeling</a>. The <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files, however, contain a wealth of other data, including language (Sumerian, Akkadian, Emesal, etc.), orthographic form, morphology (currently only for Sumerian and Emesal), line numbers, breakage, etc. The extended JSON parser notebook (2.1.4), building upon the techniques demonstrated here, will show how to extract any type of data.</p>
+<div class="section" id="import-packages">
+<h2>2.1.3.0 Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>pandas: data analysis and manipulation; dataframes</p></li>
+<li><p>ipywidgets: user interface (enter project names)</p></li>
+<li><p>panel: another set of widget tools (here used for displaying a JSON file)</p></li>
+<li><p>zipfile: read data from a zipped file</p></li>
+<li><p>json: read a json object</p></li>
+<li><p>tqdm: progress bar</p></li>
+<li><p>os: basic Operating System tasks (such as creating a directory)</p></li>
+<li><p>sys: change system parameters</p></li>
+<li><p>utils: compass-specific utilities (download files from ORACC, etc.)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -439,13 +441,407 @@
 <span class="n">util_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../utils&#39;</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_dir</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">utils</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'paths': {'tabulator': 'https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator'}});
+      require([], function() {
+      })
+    }
+    if (((window['tabulator'] !== undefined) && (!(window['tabulator'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.js', 'https://unpkg.com/moment@2.27.0/moment.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) { on_load(); continue; }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) { on_load(); continue; }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.js", "https://unpkg.com/moment@2.27.0/moment.js", "https://cdn.bokeh.org/bokeh/release/bokeh-2.3.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.1.min.js", "https://unpkg.com/@holoviz/panel@^0.11.3/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator_simple.min.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/alerts.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.11.3/dist/css/dataframe.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\")\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
 </div>
 <div class="section" id="create-directories-if-necessary">
-<h2>0 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
-<p>The two directories needed for this script are <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>. The directories are created with the function <code class="docutils literal notranslate"><span class="pre">make_dirs()</span></code> from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module.</p>
+<h2>2.1.3.1 Create Directories, if Necessary<a class="headerlink" href="#create-directories-if-necessary" title="Permalink to this headline">¶</a></h2>
+<p>The two directories needed for this script are <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;jsonzip&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -456,42 +852,160 @@
 </div>
 </div>
 <div class="section" id="input-project-names">
-<h2>1.1 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
-<p>Provide a list of one or more project names, separated by commas. Note that subprojects must be listed separately, they are not included in the main project. For instance:</p>
-<p><code class="docutils literal notranslate"><span class="pre">saao/saa01,saao/saa02,blms</span></code></p>
-<p>The input is split into a proper list that python can iterate over using the <code class="docutils literal notranslate"><span class="pre">format_project_list()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module. The code of this function is discussed in more detail in 2.1.0. Download ORACC JSON Files.</p>
+<h2>2.1.3.2 Input Project Names<a class="headerlink" href="#input-project-names" title="Permalink to this headline">¶</a></h2>
+<p>We can download and manipulate multiple <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">zip</span></code> files at the same time. The <code class="docutils literal notranslate"><span class="pre">Textarea</span></code> widget provides a space for typing project abbreviations, separated by a comma. The widget is assigned to the variable <code class="docutils literal notranslate"><span class="pre">projects</span></code>. The text entered in the <code class="docutils literal notranslate"><span class="pre">Textarea</span></code> widget can be retrieved as <code class="docutils literal notranslate"><span class="pre">projects.value</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Subprojects must be listed separately, they are not included in the main project. A subproject is named <code class="docutils literal notranslate"><span class="pre">[PROJECT]/[SUBPROJECT]</span></code>, for instance <code class="docutils literal notranslate"><span class="pre">saao/saa01</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Project(s): &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">format_project_list</span><span class="p">(</span><span class="n">projects</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projects</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Textarea</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;obmc&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Type project names, separated by commas&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Projects:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">projects</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ca3066f47a664eed8897ea3e3f2512e9", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="split-the-list-of-projects-and-download-the-zip-files">
+<h2>2.1.3.3 Split the List of Projects and Download the ZIP files.<a class="headerlink" href="#split-the-list-of-projects-and-download-the-zip-files" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">format_project_list()</span></code> and <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> functions from the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module to download the requested projects. The code of these function is discussed in more detail in 2.1.0. Download ORACC JSON Files. The function returns a new version of the project list, with duplicates and non-existing projects removed.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">format_project_list</span><span class="p">(</span><span class="n">projects</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="download-the-zip-files">
-<h2>1.2 Download the ZIP files.<a class="headerlink" href="#download-the-zip-files" title="Permalink to this headline">¶</a></h2>
-<p>Download the zipped JSON files using the <code class="docutils literal notranslate"><span class="pre">oracc_download()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module. The code of this function is discussed in more detail in 2.1.0. Download ORACC JSON Files.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project_list</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">oracc_download</span><span class="p">(</span><span class="n">project_list</span><span class="p">)</span>
+<div class="section" id="oracc-json-the-cdl-structure">
+<h2>2.1.3.4 ORACC JSON: the CDL Structure<a class="headerlink" href="#oracc-json-the-cdl-structure" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">zip</span></code> files contain JSON files for each individual text (exemplar or composite) that is part of that project. These files are found in the directory <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> and are named after the text ID (for instance <code class="docutils literal notranslate"><span class="pre">P200931.json</span></code>). The <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> function (2.1.3.5) extracts basic lemmatization data from each of those files. In the next section (2.1.4) we will review techniques to extract other types of information from these same files.</p>
+<p>The structure of the JSON files for text editions is fairly complex, because of the hierarchical structure of textual data. A text may have one or more surfaces (obverse, reverse), each surface may have one or more columns; each column has lines; each line has words; and each word has signs.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>text object
+	surface
+		column
+			line
+				word
+					sign
 </pre></div>
 </div>
+<p>How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. In addition, a text consists of textual units, such as paragraphs, sentences, phrases and words, which form a separate hierarchy.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>text
+	paragraph
+		sentence
+			phrase
+				word
+</pre></div>
 </div>
+<p>These two hierarchies, which do not necessarily coincide, are simultaneously represented in the JSON tree. The object-oriented hierarchy is represented by d (Discontinuity) nodes, the discourse-oriented hierarchy is represented by c (Chunk) nodes.</p>
+<p>The <a class="reference external" href="http://oracc.org">ORACC</a> JSON tree for a text edition consists of a hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys. The name <code class="docutils literal notranslate"><span class="pre">cdl</span></code> is based on the three main components of the nested tree: Chunks (text units), Discontinuities (physical units), and Lemmas (words). A Chunk is a chunk of text of any length: the body of the text, a sentence, a phrase, a word, etc. A Discontinuity is the text object, the obverse or reverse, the beginning of a column, a break in the text, a horizontal ruling on the tablet, or the beginning of a new line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level.</p>
+<p>The value of a <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key is a list of one or more dictionaries. Each of these dictionaries contains the key “node” which may have the values “c” (for Chunk), “d” (for Discontinuity), or “l” (for Lemma). Any “c” dictionary may contain a further <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key, which again has as its value a list of dictionaries of the “c”, “d”, or “l” type. The “c” and “d” dictionaries always have a key <code class="docutils literal notranslate"><span class="pre">type</span></code>, which may have values such as <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">discourse</span></code>, or <code class="docutils literal notranslate"><span class="pre">sentence</span></code> (for “c” nodes) or <code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">obverse</span></code>, <code class="docutils literal notranslate"><span class="pre">column-start</span></code>, <code class="docutils literal notranslate"><span class="pre">line-start</span></code> (for “d” nodes). Discontinuities (or “d” nodes”) may also have <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">:</span> <span class="pre">nonx</span></code>, recording non-textual physical features such as rulings on the tablet, or missing lines. An “l” (Lemma) dictionary, is always at the bottom of the <code class="docutils literal notranslate"><span class="pre">cdl</span></code> hierarchy. The “l” dictionary itself contains an “f” key which has as its value a dictionary that contains all the lemmatization data of a single word (transliteration, citation form, guide word, part of speech, etc.). The “f” dictionary includes a “gdl” key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some <a class="reference external" href="http://oracc.org">ORACC</a> projects the <code class="docutils literal notranslate"><span class="pre">gdl</span></code> node will also include the actual glyphs of the cuneiform signs.</p>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note that the JSON display in the cell below utilizes the JSON vocabulary for the various data structures: array (instead of list) and object (instead of dictionary). See section 2.1.1.</p>
 </div>
-<div class="section" id="a-name-head21-a-2-1-the-parsejson-function">
-<h2><a name="head21"></a>2.1 The <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function<a class="headerlink" href="#a-name-head21-a-2-1-the-parsejson-function" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function will “dig into” the <code class="docutils literal notranslate"><span class="pre">json</span></code> file (transformed into a dictionary) until it finds the relevant data. The <code class="docutils literal notranslate"><span class="pre">json</span></code> file consists of a hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> nodes; only the lowest nodes contain lemmatization data. The function goes down this hierarchy by calling itself when another <code class="docutils literal notranslate"><span class="pre">cdl</span></code> node is encountered. For more information about the data hierarchy in the <a class="reference external" href="http://oracc.org">ORACC</a> <code class="docutils literal notranslate"><span class="pre">json</span></code> files, see <a class="reference external" href="http://oracc.org/doc/opendata/index.html">ORACC Open Data</a>.</p>
-<p>The first argument of the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function is a <code class="docutils literal notranslate"><span class="pre">JSON</span></code> object, essentially a Python dictionary that initially contains the entire contents of the original JSON file. The code takes the key <code class="docutils literal notranslate"><span class="pre">cdl</span></code> the value of which is a list of <code class="docutils literal notranslate"><span class="pre">JSON</span></code> dictionaries. Iterating through these dictionaries, if a dictionary contains another <code class="docutils literal notranslate"><span class="pre">cdl</span></code> node, the function calls itself with this lower-level dictionary as argument. This way the function digs deeper and deeper into the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> tree, until it does not encounter a <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key anymore. Here we are at the level of individual words. The code checks for a key <code class="docutils literal notranslate"><span class="pre">f</span></code>, if it exists the value of that key (another dictionary) is appended to the list <code class="docutils literal notranslate"><span class="pre">l</span></code>. The list <code class="docutils literal notranslate"><span class="pre">l</span></code> will become a list of dictionaries, where each dictionary represents a single word and the list represents the vocabulary of a single text with the words in their original order.</p>
-<p>The second argument of the function, <code class="docutils literal notranslate"><span class="pre">id_text</span></code>, consists of a project abbreviation, such as <code class="docutils literal notranslate"><span class="pre">blms</span></code> or <code class="docutils literal notranslate"><span class="pre">cams/gkab</span></code> plus a text ID, in the format <code class="docutils literal notranslate"><span class="pre">cams/gkab/P338616</span></code> or <code class="docutils literal notranslate"><span class="pre">dcclt/Q000039</span></code>. This ID is added to the lemmatization data of every word.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsejson</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">id_text</span><span class="p">):</span>
+<p>The structure may be illustrated with the beginning of <a class="reference external" href="http://oracc.org/dcclt/P251867">P251867</a>, an Old Babylonian 3-line lentil (school text), edited in <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> (beginning of the file omitted):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;subtype&quot;</span><span class="p">:</span> <span class="s2">&quot;obverse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;obverse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.o.1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discourse&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;subtype&quot;</span><span class="p">:</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sentence&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.U2&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o 1 - o 3&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line-start&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;o 1&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;frag&quot;</span><span class="p">:</span> <span class="s2">&quot;{ŋeš}ma₂-durah-abzu&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.l1ac01&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2.1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;inst&quot;</span><span class="p">:</span> <span class="s2">&quot;Madurahabzu[1]ON&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;sig&quot;</span><span class="p">:</span> <span class="s2">&quot;@dcclt%sux:{ŋeš}ma₂-durah-abzu=Madurahabzu[1//1]ON&#39;ON$Madurahabzu/{ŋeš}ma₂-durah-abzu#~&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;f&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;lang&quot;</span><span class="p">:</span> <span class="s2">&quot;sux&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="s2">&quot;{ŋeš}ma₂-durah-abzu&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;gdl&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                    <span class="nt">&quot;det&quot;</span><span class="p">:</span> <span class="s2">&quot;semantic&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;pre&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;seq&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                        <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="s2">&quot;ŋeš&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P251867.2.1.0&quot;</span>
+                      <span class="p">}</span>
+                    <span class="p">]</span>
+                  <span class="p">},</span>
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a <code class="docutils literal notranslate"><span class="pre">c</span></code> node (Chunk) representing the entire text. The <code class="docutils literal notranslate"><span class="pre">c</span></code> node contains a new <code class="docutils literal notranslate"><span class="pre">cdl</span></code> key which has a list of dictionaries as its value including two <code class="docutils literal notranslate"><span class="pre">d</span></code> (Discontinuity) nodes (<code class="docutils literal notranslate"><span class="pre">object</span></code> and <code class="docutils literal notranslate"><span class="pre">obverse</span></code>) and another <code class="docutils literal notranslate"><span class="pre">c</span></code> node that represents a discourse unit, namely the body of the text (note that Chunk <code class="docutils literal notranslate"><span class="pre">text</span></code> and Chunk <code class="docutils literal notranslate"><span class="pre">body</span></code> are identical here - but that need not be the case). Eventually, there is a node <code class="docutils literal notranslate"><span class="pre">l</span></code> that contains the transliteration and lemmatization data for the first word of this text.</p>
+<p>This hierarchy implies that a word (an “l” node) may belong to different hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.</p>
+<p>In order to pull out the lemmatization data we need to iterate through the hierarchy of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys until we encounter an <code class="docutils literal notranslate"><span class="pre">l</span></code> node, containing an <code class="docutils literal notranslate"><span class="pre">f</span></code> key. The value of the <code class="docutils literal notranslate"><span class="pre">f</span></code> key is the data we want.</p>
+</div>
+<div class="section" id="the-parse-text-json-function">
+<h2>2.1.3.5 The <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> function<a class="headerlink" href="#the-parse-text-json-function" title="Permalink to this headline">¶</a></h2>
+<p>A straightforward way of extracting the lemmatization data out of an <a class="reference external" href="http://oracc.org">ORACC</a> JSON file is by defining a recursive function, that is, a function that calls itself to recursively inspect the value of successive layers of <code class="docutils literal notranslate"><span class="pre">cdl</span></code> keys until one encounters an <code class="docutils literal notranslate"><span class="pre">f</span></code> key. The contents of the <code class="docutils literal notranslate"><span class="pre">f</span></code> key are then added to a list. In its most basic form that function looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_text_json</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="n">lemmas</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
         <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
-            <span class="n">lemmas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>
+            <span class="n">lemmas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parse_text_json</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
+            <span class="n">lemmas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">lemmas</span>
+</pre></div>
+</div>
+<p>The function is called with the argument <code class="docutils literal notranslate"><span class="pre">text</span></code>, which contains the contents of the entire JSON file. The function adds a new dictionary of lemmatization data (one word at a time) each time it encounters an <code class="docutils literal notranslate"><span class="pre">f</span></code> key to the list <code class="docutils literal notranslate"><span class="pre">lemmas</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> we will use here adds one thing to the basic function discussed above. It will add the project name and text ID in the format <code class="docutils literal notranslate"><span class="pre">cams/gkab/P338616</span></code> or <code class="docutils literal notranslate"><span class="pre">dcclt/Q000039</span></code> to the lemmatization data of each word. If we parse data from multiple projects this additional field will allow us to trace back to the original data.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> function thus takes two arguments: the JSON object that is being parsed (and that contains the information of one text as edited in <a class="reference external" href="http://oracc.org">ORACC</a>) and a text identifier. The function returns a list of dictionaries (<code class="docutils literal notranslate"><span class="pre">lemmas</span></code>) where each element in the list represents the lemmatization data of one word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_text_json</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">id_text</span><span class="p">):</span>
+    <span class="n">lemmas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">JSONobject</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="s2">&quot;cdl&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;cdl&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span> 
+            <span class="n">lemmas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parse_text_json</span><span class="p">(</span><span class="n">JSONobject</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>
         <span class="k">if</span> <span class="s2">&quot;f&quot;</span> <span class="ow">in</span> <span class="n">JSONobject</span><span class="p">:</span>
             <span class="n">lemm</span> <span class="o">=</span> <span class="n">JSONobject</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">]</span>
             <span class="n">lemm</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_text</span>
@@ -502,12 +1016,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="call-the-parsejson-function-for-every-json-file">
-<h2>2.2 Call the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function for every <code class="docutils literal notranslate"><span class="pre">JSON</span></code> file<a class="headerlink" href="#call-the-parsejson-function-for-every-json-file" title="Permalink to this headline">¶</a></h2>
-<p>The code in this cell will iterate through the list of projects entered above (1.1). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file is located in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>, named PROJECT.zip. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file contains a directory that is called <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> that contains a JSON file for every text that is available in that corpus. The files are called after their text IDs in the pattern <code class="docutils literal notranslate"><span class="pre">P######.json</span></code> (or <code class="docutils literal notranslate"><span class="pre">Q######.json</span></code> or <code class="docutils literal notranslate"><span class="pre">X######.json</span></code>).</p>
+<div class="section" id="call-the-parse-text-json-function-for-every-json-file">
+<h2>2.1.3.6 Call the <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> function for every <code class="docutils literal notranslate"><span class="pre">JSON</span></code> file<a class="headerlink" href="#call-the-parse-text-json-function-for-every-json-file" title="Permalink to this headline">¶</a></h2>
+<p>The code in this cell will iterate through the list of projects entered above (2.1.3.2). For each project the <code class="docutils literal notranslate"><span class="pre">JSON</span></code> zip file is located in the directory <code class="docutils literal notranslate"><span class="pre">jsonzip</span></code>, named PROJECT.zip. The <code class="docutils literal notranslate"><span class="pre">zip</span></code> file contains a directory that is called <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> that contains a JSON file for every text that is available in that corpus. The files are called after their text IDs in the pattern <code class="docutils literal notranslate"><span class="pre">P######.json</span></code> (or <code class="docutils literal notranslate"><span class="pre">Q######.json</span></code> or <code class="docutils literal notranslate"><span class="pre">X######.json</span></code>).</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">namelist()</span></code> of the <code class="docutils literal notranslate"><span class="pre">zipfile</span></code> package is used to create a list of the names of all the files in the ZIP. From this list we select all the file names in the <code class="docutils literal notranslate"><span class="pre">corpusjson</span></code> directory with extension <code class="docutils literal notranslate"><span class="pre">.json</span></code> (this way we exclude the name of the directory itself).</p>
 <p>Each of these files is read from the <code class="docutils literal notranslate"><span class="pre">zip</span></code> file and loaded with the command <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, which transforms the string into a proper JSON object.</p>
-<p>This JSON object (essentially a Python dictionary), which is called <code class="docutils literal notranslate"><span class="pre">data_json</span></code> is now sent to the <code class="docutils literal notranslate"><span class="pre">parsejson()</span></code> function. The function returns a list of lemmata (each lemma represented by a dictionary). The <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method is used to add this list to the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code>, one document at the time. In the end, <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> will contain as many list elements as there are words in all the texts in the projects requested.</p>
+<p>This JSON object (essentially a Python dictionary), which is called <code class="docutils literal notranslate"><span class="pre">data_json</span></code> is now sent to the <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> function. The function returns a list of lemmata (each lemma represented by a dictionary). The <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method is used to add this list to the list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code>, one document at the time. In the end, <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> will contain as many list elements as there are words in all the texts in the projects requested.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lemm_l</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># initiate the list that will hold all the lemmatization data of all texts in all requested projects</span>
@@ -519,14 +1033,16 @@
         <span class="n">errors</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span> <span class="c1"># get error information</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># and print it</span>
         <span class="k">continue</span>
+        
     <span class="n">files</span> <span class="o">=</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span>     <span class="c1"># list of all the files in the ZIP</span>
     <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="s2">&quot;corpusjson&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">]</span>                                                                                                  <span class="c1">#that holds all the P, Q, and X numbers.</span>
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">project</span><span class="p">):</span>                            <span class="c1">#iterate over the file names</span>
+
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">project</span><span class="p">):</span>  <span class="c1">#iterate over the file names</span>
         <span class="n">id_text</span> <span class="o">=</span> <span class="n">project</span> <span class="o">+</span> <span class="n">filename</span><span class="p">[</span><span class="o">-</span><span class="mi">13</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># id_text is, for instance, blms/P414332</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">text</span> <span class="o">=</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>         <span class="c1">#read and decode the json file of one particular text</span>
             <span class="n">data_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>                <span class="c1"># make it into a json object (essentially a dictionary)</span>
-            <span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parsejson</span><span class="p">(</span><span class="n">data_json</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>               <span class="c1"># and send to the parsejson() function</span>
+            <span class="n">lemm_l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parse_text_json</span><span class="p">(</span><span class="n">data_json</span><span class="p">,</span> <span class="n">id_text</span><span class="p">))</span>               <span class="c1"># and send to the parsejson() function</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="n">errors</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span> <span class="c1"># get error information</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">print</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># and print it</span>
@@ -534,27 +1050,291 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "229281ba76c24ed3ab68854cd781baf1", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </div>
 <div class="section" id="data-structuring">
-<h2>3 Data Structuring<a class="headerlink" href="#data-structuring" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="transform-the-data-into-a-dataframe">
-<h3>3.1 Transform the Data into a DataFrame<a class="headerlink" href="#transform-the-data-into-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<h2>2.1.3.7 Data Structuring<a class="headerlink" href="#data-structuring" title="Permalink to this headline">¶</a></h2>
 <p>The list <code class="docutils literal notranslate"><span class="pre">lemm_l</span></code> is transformed into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe (<code class="docutils literal notranslate"><span class="pre">word_df</span></code>) for further manipulation. The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">fillna('')</span></code> fills gaps in the dataframe. If a particular data field is not available for a particular row, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will fill that cell with NaN (“Not a Number”). The data type of NaN is numeric, which creates problems in string manipulation further down the road (for instance in creating a Lemma column, section 3.2). The function <code class="docutils literal notranslate"><span class="pre">fillna()</span></code> will fill all empty cells with the argument it is given - in this case the empty string.</p>
 <p>For various reasons not all JSON files will have all data types that potentially exist in an <a class="reference external" href="http://oracc.org">ORACC</a> lemmatization. For instance, only Sumerian words have a <code class="docutils literal notranslate"><span class="pre">base</span></code>, so if your data set has no Sumerian, this column will not exist in the DataFrame. Where such fields are referenced below, the code may fail and you may need to adjust some lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lemm_l</span><span class="p">)</span>
-<span class="n">word_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>      <span class="c1"># replace NaN (Not a Number) with empty string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lemm_l</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># replace NaN (Not a Number) with empty string</span>
 <span class="n">word_df</span>
 </pre></div>
 </div>
 </div>
-</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lang</th>
+      <th>form</th>
+      <th>delim</th>
+      <th>gdl</th>
+      <th>cf</th>
+      <th>gw</th>
+      <th>sense</th>
+      <th>norm0</th>
+      <th>pos</th>
+      <th>epos</th>
+      <th>base</th>
+      <th>morph</th>
+      <th>id_text</th>
+      <th>cont</th>
+      <th>norm</th>
+      <th>headform</th>
+      <th>contrefs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sux</td>
+      <td>{iti}šu-numun-a-ka</td>
+      <td></td>
+      <td>[{'det': 'semantic', 'pos': 'pre', 'seq': [{'v...</td>
+      <td>Šunumuna</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Šunumuna,ak.a</td>
+      <td>MN</td>
+      <td>MN</td>
+      <td>{iti}šu-numun-a</td>
+      <td>~,ak.a</td>
+      <td>obmc/P230634</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sux</td>
+      <td>šum₂-mu-dam</td>
+      <td></td>
+      <td>[{'v': 'šum₂', 'id': 'P230634.4.2.0', 'break':...</td>
+      <td>šum</td>
+      <td>give</td>
+      <td>to give</td>
+      <td>šum;ed.am</td>
+      <td>V/t</td>
+      <td>V/t</td>
+      <td>šum₂</td>
+      <td>~;ed.am</td>
+      <td>obmc/P230634</td>
+      <td>-mu=m.u</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sux</td>
+      <td>n+2(aš)</td>
+      <td></td>
+      <td>[{'gg': 'ligature', 'gdl_type': 'ligature', 'g...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>obmc/P230634</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sux</td>
+      <td>še</td>
+      <td></td>
+      <td>[{'v': 'še', 'id': 'P230634.6.2.0'}]</td>
+      <td>še</td>
+      <td>barley</td>
+      <td>barley</td>
+      <td>še</td>
+      <td>N</td>
+      <td>N</td>
+      <td>še</td>
+      <td>~</td>
+      <td>obmc/P230634</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>sux</td>
+      <td>gur</td>
+      <td></td>
+      <td>[{'v': 'gur', 'id': 'P230634.6.3.0', 'break': ...</td>
+      <td>gur</td>
+      <td>unit</td>
+      <td>unit of capacity</td>
+      <td>gur</td>
+      <td>N</td>
+      <td>N</td>
+      <td>gur</td>
+      <td>~</td>
+      <td>obmc/P230634</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10219</th>
+      <td>sux</td>
+      <td>x</td>
+      <td></td>
+      <td>[{'x': 'ellipsis', 'id': 'P230725.6.2.0', 'bre...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>u</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>obmc/P230725</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10220</th>
+      <td>sux</td>
+      <td>{m}lu₂-x</td>
+      <td></td>
+      <td>[{'det': 'semantic', 'pos': 'pre', 'seq': [{'v...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>u</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>obmc/P230725</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10221</th>
+      <td>sux</td>
+      <td>dam-a-ni</td>
+      <td></td>
+      <td>[{'v': 'dam', 'id': 'P230725.10.1.0', 'delim':...</td>
+      <td>dam</td>
+      <td>spouse</td>
+      <td>spouse</td>
+      <td>dam,ani</td>
+      <td>N</td>
+      <td>N</td>
+      <td>dam</td>
+      <td>~,ani</td>
+      <td>obmc/P230725</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10222</th>
+      <td>sux</td>
+      <td>in-na-x-x</td>
+      <td></td>
+      <td>[{'v': 'in', 'id': 'P230725.11.1.0', 'delim': ...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>u</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>obmc/P230725</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10223</th>
+      <td>sux</td>
+      <td>tukum-bi</td>
+      <td></td>
+      <td>[{'v': 'tukum', 'id': 'P230725.12.1.0', 'break...</td>
+      <td>tukumbi</td>
+      <td>if</td>
+      <td>if</td>
+      <td>tukumbi</td>
+      <td>CNJ</td>
+      <td>CNJ</td>
+      <td>tukum-bi</td>
+      <td>~</td>
+      <td>obmc/P230725</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>10224 rows × 17 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="remove-spaces-and-commas-from-guide-word-and-sense">
-<h2>3.1 Remove Spaces and Commas from Guide Word and Sense<a class="headerlink" href="#remove-spaces-and-commas-from-guide-word-and-sense" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.3.8 Remove Spaces and Commas from Guide Word and Sense<a class="headerlink" href="#remove-spaces-and-commas-from-guide-word-and-sense" title="Permalink to this headline">¶</a></h2>
 <p>Spaces and commas in Guide Word and Sense may cause trouble in computational methods in tokenization, or when saved in Comma Separated Values format. All spaces and commas are replaced by hyphens and nothing (empty string), respectively. By default the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will match the entire string (that is, “lugal” matches “lugal” but there is no match between “l” and “lugal”). In order to match partial strings the parameter <code class="docutils literal notranslate"><span class="pre">regex</span></code> must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function takes a nested dictionary as argument. The top-level keys identify the columns on which the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> function should operate (in this case ‘gw’ and ‘sense’). The value of each key is another dictionary with the search string as key and the replace string as value.</p>
 <div class="cell docutils container">
@@ -567,8 +1347,12 @@
 </div>
 </div>
 <div class="section" id="create-a-lemma-column">
-<h2>3.2 Create a <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column<a class="headerlink" href="#create-a-lemma-column" title="Permalink to this headline">¶</a></h2>
-<p>A lemma, <a class="reference external" href="http://oracc.org">ORACC</a> style, combines Citation Form, GuideWord and POS into a unique reference to one particular lemma in a standard dictionary, as in <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (Sumerian) or <code class="docutils literal notranslate"><span class="pre">šarru[king]N</span></code> (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. Unlemmatized and unlemmatizable words will receive a place-holder lemmatization that consists of the transliteration of the word (instead of the Citation Form), with <code class="docutils literal notranslate"><span class="pre">NA</span></code> as GuideWord and <code class="docutils literal notranslate"><span class="pre">NA</span></code> as POS, as in <code class="docutils literal notranslate"><span class="pre">i-bu-x[NA]NA</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">NA</span></code> is a string.</p>
+<h2>2.1.3.9 Create a <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column<a class="headerlink" href="#create-a-lemma-column" title="Permalink to this headline">¶</a></h2>
+<p>A lemma, <a class="reference external" href="http://oracc.org">ORACC</a> style, combines Citation Form, GuideWord and POS into a unique reference to one particular lemma in a standard dictionary, as in <code class="docutils literal notranslate"><span class="pre">lugal[king]N</span></code> (Sumerian) or <code class="docutils literal notranslate"><span class="pre">šarru[king]N</span></code> (Akkadian). Usually, not all words in a text are lemmatized, because a word may be (partly) broken and/or unknown. Unlemmatized and unlemmatizable words will receive a place-holder lemmatization that consists of the transliteration of the word (instead of the Citation Form), with <code class="docutils literal notranslate"><span class="pre">NA</span></code> as GuideWord and <code class="docutils literal notranslate"><span class="pre">NA</span></code> as POS, as in <code class="docutils literal notranslate"><span class="pre">i-bu-x[NA]NA</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">NA</span></code> is a string and does not equal the missing value symbol NaN.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;lemma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;cf&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;gw&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="o">+</span> <span class="n">word_df</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]</span>
@@ -577,15 +1361,103 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_text</th>
+      <th>lemma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>obmc/P230634</td>
+      <td>Šunumuna[1]MN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>obmc/P230634</td>
+      <td>šum[give]V/t</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>obmc/P230634</td>
+      <td>n+2(aš)[NA]NA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>obmc/P230634</td>
+      <td>še[barley]N</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>obmc/P230634</td>
+      <td>gur[unit]N</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10219</th>
+      <td>obmc/P230725</td>
+      <td>x[NA]NA</td>
+    </tr>
+    <tr>
+      <th>10220</th>
+      <td>obmc/P230725</td>
+      <td>{m}lu₂-x[NA]NA</td>
+    </tr>
+    <tr>
+      <th>10221</th>
+      <td>obmc/P230725</td>
+      <td>dam[spouse]N</td>
+    </tr>
+    <tr>
+      <th>10222</th>
+      <td>obmc/P230725</td>
+      <td>in-na-x-x[NA]NA</td>
+    </tr>
+    <tr>
+      <th>10223</th>
+      <td>obmc/P230725</td>
+      <td>tukumbi[if]CNJ</td>
+    </tr>
+  </tbody>
+</table>
+<p>10224 rows × 2 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="group-by-textid">
-<h2>3.3 Group by Textid<a class="headerlink" href="#group-by-textid" title="Permalink to this headline">¶</a></h2>
-<p>Get all the lemmas that belong to a single text in one row (one row = one document). The <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (aggregate) function, which works on the result of a <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> process aggregates columns of the original dataframe. The aggregate function takes a dictionary in which the keys are column names and the values are functions to be used in the aggregation process. The example below has only one such function (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join</span></code> will join all entries in the colum <code class="docutils literal notranslate"><span class="pre">lemma</span></code> with a space in between); one may specify (the same or different) functions for different columns, for instance:</p>
+<h2>2.1.3.10 Group by Textid<a class="headerlink" href="#group-by-textid" title="Permalink to this headline">¶</a></h2>
+<p>Get all the lemmas that belong to a single text in one row (one row = one document). The <code class="docutils literal notranslate"><span class="pre">agg()</span></code> (aggregate) function, which works on the result of a <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> process, aggregates data of the original dataframe. The aggregate function takes a dictionary in which the keys are column names and the values are functions to be used in the aggregation process. The example below has only one such function (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join</span></code> will join all entries in the colum <code class="docutils literal notranslate"><span class="pre">lemma</span></code> with a space in between); one may specify (the same or different) functions for different columns, for instance:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;textid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>The process will create a compound index. It is useful to flatten the index with a reset (<code class="docutils literal notranslate"><span class="pre">reset_index()</span></code>).</p>
+<p>The result is a dataframe with two columns: <code class="docutils literal notranslate"><span class="pre">id_text</span></code> and <code class="docutils literal notranslate"><span class="pre">lemma</span></code>. The <code class="docutils literal notranslate"><span class="pre">lemma</span></code> column has a sequence of all the lemmas in that text (in the original order).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is just one example of how the output of the <code class="docutils literal notranslate"><span class="pre">parse_text_json()</span></code> may be structured in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe. How to structure the data depends on the research project.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc_df</span> <span class="o">=</span> <span class="n">word_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id_text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;lemma&quot;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">})</span>
@@ -594,13 +1466,93 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_text</th>
+      <th>lemma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>obmc/P200932</td>
+      <td>1[NA]NA saŋnita[man]N Antalu[1]PN mu[name]N ar...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>obmc/P200933</td>
+      <td>Aham-arši[1]PN 1[NA]NA saŋnita[man]N Antalu[1]...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>obmc/P227962</td>
+      <td>tum[bring]V/t x[NA]NA še[barley]N gur[unit]N š...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>obmc/P227972</td>
+      <td>us₂.a.DU[border]N x[NA]NA ašag[field]N Lu-Ešum...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>obmc/P227988</td>
+      <td>šu[hand]N teŋ[approach]V/i Šunumuna[1]MN gur[t...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>obmc/X000007</td>
+      <td>1[NA]NA saŋnita[man]N Antalu[1]PN mu[name]N ar...</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>obmc/X000008</td>
+      <td>1[NA]NA saŋnita[man]N Iluni[1]PN mu[name]N ki[...</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>obmc/X000011</td>
+      <td>ki[place]N Ilum-bani[1]PN Ilum-ide[1]PN šu[han...</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>obmc/X000012</td>
+      <td>15[NA]NA 1/2[NA]NA giŋ[unit]N kugbabbar[silver...</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>obmc/X000013</td>
+      <td>kišib[seal]N sar[write]V/t Urdun[1]PN damgar[m...</td>
+    </tr>
+  </tbody>
+</table>
+<p>170 rows × 2 columns</p>
+</div></div></div>
 </div>
 </div>
-</div>
-<div class="section" id="save-the-results">
-<h1>4 Save the Results<a class="headerlink" href="#save-the-results" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="save-results-in-csv-file">
-<h2>4.1 Save Results in CSV file<a class="headerlink" href="#save-results-in-csv-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="save-the-results-csv">
+<h2>2.1.3.11 Save the Results: CSV<a class="headerlink" href="#save-the-results-csv" title="Permalink to this headline">¶</a></h2>
 <p>The output file is called <code class="docutils literal notranslate"><span class="pre">parsed.csv</span></code> and is placed in the directory <code class="docutils literal notranslate"><span class="pre">output</span></code>. In most cases, <code class="docutils literal notranslate"><span class="pre">csv</span></code> files open automatically in Excel. This program does not deal well with <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding. If you intend to use the file in Excel, change <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">='utf-8'</span></code> to <code class="docutils literal notranslate"><span class="pre">encoding='utf-16'</span></code>. For usage in computational text analysis applications <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> is usually preferred. The option <code class="docutils literal notranslate"><span class="pre">index=False</span></code> excludes the (numerical) index from the saved <code class="docutils literal notranslate"><span class="pre">csv</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,9 +1564,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="pickle">
-<h2>4.2 Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h2>
-<p>The Pandas function <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> writes a binary file that can be opened in a later phase of the project with the <code class="docutils literal notranslate"><span class="pre">read_pickle()</span></code> command and will reproduce exactly the same DataFrame. The resulting file cannot be used in other programs but preserves the data structure of the DataFrame.</p>
+<div class="section" id="save-the-results-pickle">
+<h2>2.1.3.12 Save the Results: Pickle<a class="headerlink" href="#save-the-results-pickle" title="Permalink to this headline">¶</a></h2>
+<p>The Pandas function <code class="docutils literal notranslate"><span class="pre">to_pickle()</span></code> writes a binary file that can be opened in a later phase of the project with the <code class="docutils literal notranslate"><span class="pre">read_pickle()</span></code> command, reproducing exactly the same DataFrame. The resulting file cannot be used in other programs but preserves the data structure of the DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickled</span> <span class="o">=</span> <span class="s2">&quot;output/parsed.p&quot;</span>
