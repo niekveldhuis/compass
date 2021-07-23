@@ -54,12 +54,12 @@ def oracc_download(project_list, server = 'penn'):
                         projects.remove(project)
     return projects
 
-def parsejson(text, meta_d):
+def parse_text_json(text, meta_d):
     l = []
     capture_field = False
     for JSONobject in text["cdl"]:
         if "cdl" in JSONobject: 
-            l.extend(parsejson(JSONobject, meta_d))
+            l.extend(parse_text_json(JSONobject, meta_d))
         
         meta_d["label"] = JSONobject.get('label')
        # if "type" in JSONobject and JSONobject["type"] == "field-start": # this is for sign lists, identifying fields such as
@@ -104,7 +104,6 @@ def get_lemmas(project_list):
         except:
             e = sys.exc_info() # get error information
             print(file), print(e[0]), print(e[1]) # and print it
-            #print(f"{file} does not exist or is not a proper ZIP file")
             continue
         files = z.namelist()
         files = [name for name in files if "corpusjson" in name and name[-5:] == '.json'] 
@@ -114,11 +113,10 @@ def get_lemmas(project_list):
             try:
                 st = z.read(filename).decode('utf-8')
                 data_json = json.loads(st)           
-                lemm_l.extend(parsejson(data_json, meta_d))
+                lemm_l.extend(parse_text_json(data_json, meta_d))
             except:
                 e = sys.exc_info() # get error information
                 print(filename), print(e[0]), print(e[1]) # and print it
-                #print(f'{id_text} is not available or not complete')
         z.close()
     return(lemm_l)
 
