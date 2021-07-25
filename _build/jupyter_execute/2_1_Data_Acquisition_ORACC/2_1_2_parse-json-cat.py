@@ -186,6 +186,7 @@ df1
 # :::{margin}
 # Character encoding is primarily relevant when reading from or writing to disk. See section 1.4.4.
 # :::
+# 
 # Save the resulting data set as a `csv` file. `UTF-8` encoding is the encoding with the widest support in text analysis and the standard encoding in Python. It is also the encoding used by [ORACC](http://oracc.org). 
 # 
 # :::{note}
@@ -206,7 +207,7 @@ df1.to_csv(filename, index=False, encoding='utf-8')
 # To open the pickled file again:
 # ```python
 # import pandas as pd
-# df = pd.read_pickle(o)
+# df = pd.read_pickle('output/catalog.p)
 # ```
 # :::
 

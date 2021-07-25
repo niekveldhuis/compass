@@ -25,7 +25,7 @@ atf
 # 
 # The data in [ORACC](http://oracc.org) and [ETCSL](https://etcsl.orinst.ox.ac.uk/) are made available in [JSON](http://json.org) and [XML](http://xml.org), respectively. Those formats are very explicit and atomistic. They are not easy to read for humans, but are very flexible for computational usage and allow for multiple levels of annotation (with e.g. lexical, morphological, and  graphemic information) at the same time. The data in [ORACC](http://oracc.org) and [ETCSL](https://etcsl.orinst.ox.ac.uk/) includes lemmatization, linking each word to an entry in a glossary. The following is an example of a JSON file, one may click on any of the lines with an arrow to expose more or less of the hierarchical structure. The usage of JSON and XML files will be discussed in sections 2.1 and 2.2.
 
-# In[3]:
+# In[2]:
 
 
 with open('P100001.json', 'r', encoding='utf8') as p:
