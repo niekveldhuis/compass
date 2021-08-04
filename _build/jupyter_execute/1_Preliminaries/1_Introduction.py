@@ -108,6 +108,7 @@
 # 
 # ### 1.3.2 Accessibility
 
+# (1.4.1)=
 # ## 1.4 The Software
 # 
 # ### 1.4.1 Compass
@@ -195,6 +196,7 @@ ipywidgets.__version__
 
 # If you need to update any of these, refer to section 1.4.3 below (Installing and Updating Python Packages).
 
+# (1.4.3)=
 # ### 1.4.3 Additional Python Packages
 # 
 # Python libraries or packages are extensions of the Python core that provide useful functionality. A package needs to be *installed* once (after which it may be updated occasionally) but must be *imported* each time a script that uses the package is run. Each script, therefore, starts with a number of import statements that look like: 

@@ -166,6 +166,7 @@ df = df.fillna('')
 df
 
 
+# (2.1.2.6)=
 # ## 2.1.2.6 Select Relevant Fields
 # :::{margin}
 # Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.

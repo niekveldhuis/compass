@@ -311,6 +311,7 @@ word_df.loc[word_df["pos"] == "n", 'lemma'] = word_df['form'] + '[]NU'
 word_df[['id_text', 'lemma']]
 
 
+# (2.1.3.8)=
 # ## 2.1.3.8 Group by Textid
 # Get all the lemmas that belong to a single text in one row (one row = one document). The `agg()` (aggregate) function, which works on the result of a `groupby()` process, aggregates data of the original dataframe. The aggregate function takes a dictionary in which the keys are column names and the values are functions to be used in the aggregation process. The example below has only one such function (`' '.join` will join all entries in the colum `lemma` with a space in between); one may specify (the same or different) functions for different columns, for instance:
 # ```python

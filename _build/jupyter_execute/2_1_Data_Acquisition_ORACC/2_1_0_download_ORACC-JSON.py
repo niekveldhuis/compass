@@ -12,7 +12,7 @@
 # One may download these files by hand (simply type the address in your browser), or use the code in the current notebook. The notebook will create a directory `jsonzip` and copy the file to that directory - all further scripts will expect the `zip` files to reside in `jsonzip`. 
 # 
 # :::{note}
-# One may also use the function `oracc_download()` in the `utils` module. See below (2.1.0.5) for instructions on how to use the `utils` module.
+# One may also use the function `oracc_download()` in the `utils` module. See below ([2.1.0.5](2.1.0.5)) for instructions on how to use the `utils` module.
 # :::
 # 
 # ```{figure} ../images/mocci_banner.jpg
@@ -105,6 +105,7 @@ for project in project_list:
             tqdm.write(f"WARNING: {url} does not exist.")
 
 
+# (2.1.0.5)=
 # ## 2.1.0.5 Downloading with the utils Module
 # In the chapters 3-6, downloading of [ORACC](http://oracc.org) data will be done with the `oracc_download()` function in the module `utils` that can be found in the `utils` directory. The following code illustrates how to use that function. 
 # 
