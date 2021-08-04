@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 2.2 Parsing ETCSL
+# # 2.2 Data Acquisition ETCSL
 # ## 2.2.1. Introduction
 # 
-# :::{figure} ../images/JeremyBlack.jpg
-# ---
-# :figclass: margin
-# 
-# Jeremy Allen Black 1951-2004.
-# ---
-# :::
 # The Electronic Text Corpus of Sumerian Literature ([ETCSL](http://etcsl.orinst.ox.ac.uk)) provides editions and translations of almost 400 Sumerian literary texts, mostly from the Old Babylonian period (around 1800 BCE). The project was founded by Jeremy Black (Oxford University), who sadly passed away in 2004; it was active from 1998 to 2006, when it was archived. Information about the project, its stages, products and collaborators may be found in the project's [About](http://etcsl.orinst.ox.ac.uk/edition2/general.php) page. By the time of its inception [ETCSL](http://etcsl.orinst.ox.ac.uk) was a pioneering effort - the first large digital project in Assyriology, using well-structured data according to the standards and best practices of the time. [ETCSL](http://etcsl.orinst.ox.ac.uk) allows for various kinds of searches in Sumerian and in English translation and provides lemmatization for each individual word. Numerous scholars contributed data sets to the [ETCSL](http://etcsl.orinst.ox.ac.uk) project (see [Acknowledgements](http://etcsl.orinst.ox.ac.uk/edition2/credits.php#ack)). The availability of [ETCSL](http://etcsl.orinst.ox.ac.uk) has fundamentally altered the study of Sumerian literature and has made this literature available for undergraduate teaching.
+# 
+# ```{figure} ../images/JeremyBlack.jpg
+# :figclass: margin
+# [Jeremy Black](https://cdli.ox.ac.uk/wiki/doku.php?id=black_jeremy_allen) 1951-2004
+# ```
 # 
 # The original [ETCSL](http://etcsl.orinst.ox.ac.uk) files in TEI XML are stored in the [Oxford Text Archive](http://hdl.handle.net/20.500.12024/2518) from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License ([by-nc-sa 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.
 # 
