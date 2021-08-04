@@ -1,3 +1,4 @@
+(2.1)=
 # 2.1 Data Acquisition: [ORACC](http://oracc.org)
 [ORACC](http://oracc.org) (the Open Richly Annotated Cuneiform Corpus) is an umbrella project for the online publication of cuneiform texts. [ORACC](http://oracc.org) counts several dozens of independent projects, some with one or more sub-projects. Corpus-based projects include editions and translations of cuneiform texts with linked local glossaries. [ORACC](http://oracc.org) was created by Steve Tinney (University of Pennsylvania) in 2006.
 
