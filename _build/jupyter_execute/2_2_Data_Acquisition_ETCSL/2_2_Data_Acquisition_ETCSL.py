@@ -23,6 +23,7 @@
 # - the [ETCSL](http://etcsl.orinst.ox.ac.uk) corpus is extensive - but does not cover all of Sumerian literature known today
 # 
 # ```{figure} ../images/P346466.jpg
+# :scale: 50%
 # Sumerian literary fragment: [UET 6, 427](http://oracc.org/epsd2/P346466) with a few lines of [Inana's Descent to the Netherworld](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;display=Crit&amp;amp;amp;charenc=gcirc#)
 # ```
 # 
@@ -442,8 +443,8 @@ def etcsl_to_oracc(word):
 # 
 # If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form ('cf') is found in the attribute `lemma`; the Guide Word ('gw') is found in the attribute `label`; and the Part of Speech ('pos') in the attribute `pos`.
 # 
-# :::{toggle} Sumerian word in ETCSL XML
-# 
+# :::{note} Sumerian word in ETCSL XML
+# :class: dropdown
 # ```XML
 # <w form="i-im-jen" lemma="jen" pos="V" label="to go">i-im-jen</w>
 # ```
@@ -456,8 +457,8 @@ def etcsl_to_oracc(word):
 # 
 # * **Emesal words** in [ETCSL](http://etcsl.orinst.ox.ac.uk) use their Sumerian equivalents as `citation form` (attribute `lemma`), adding a separate attribute (`emesal`) for the Emesal form proper. This Emesal form is the one that is used as `citation form` in the output.
 # 
-# :::{toggle} Emesal word in ETCSL XML
-# 
+# :::{note} Emesal word in ETCSL XML
+# :class: dropdown
 # ```xml
 # <w form="e-ne-ej3" lemma="inim" pos="N" label="word" emesal="e-ne-ej3">e-ne-ej3</w> 
 # ```
@@ -466,7 +467,8 @@ def etcsl_to_oracc(word):
 # 
 # * **Proper Nouns**: in [ETCSL](https://etcsl.orinst.ox.ac.uk/) proper nouns are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC](http://oracc.org/) a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL](https://etcsl.orinst.ox.ac.uk/) becomes `pos` in [ORACC](http://oracc.org/). [ORACC](http://oracc.org/) proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL](https://etcsl.orinst.ox.ac.uk/) guide words (`label`) for names come pretty close to [ORACC](http://oracc.org/) citation forms. Proper nouns are therefore formatted differently from other nouns.
 # 
-# :::{toggle} Proper Noun in ETCSL XML
+# :::{note} Proper Noun in ETCSL XML
+# :class: dropdown
 # Tthe temple name Eana
 # 
 # ```xml
@@ -553,7 +555,8 @@ def getword(node, meta_d):
 # ```
 # If getline() receives a gap node it copies all the meta data in the dictionary `meta_d` into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the gap node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. A row in `alltexts`, therefore, usually represents a word, but may also represent a textual gap.
 # 
-# :::{toggle} Dealing with gaps: ORACC vs ETCSL
+# :::{note} Dealing with gaps: ORACC vs ETCSL
+# :class: dropdown
 # 
 # In [ORACC](http://oracc.org) gaps are described with the fields `extent` (a number, or 'n' for unknown),  and `scope` (line, column, obverse, etc.) . [ORACC](http://oracc.org) uses a restricted vocabulary for these fields, but [ETCSL](https://etcsl.orinst.ox.ac.uk/) does not. The code currently does not try to make the [ETCSL](https://etcsl.orinst.ox.ac.uk/) encoding of gaps compatible with the [ORACC](http://oracc.org) encoding.
 # 
@@ -584,7 +587,8 @@ def getline(lnode, meta_d):
 # 
 # Sections are indicated in the XML with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap` (where "|" is the "or" operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d` dictionary is updated with a (human-legible) line number (or section + line number, if the text is divided into sections). This line number, which is a string, is stored in the key "label" in order to achieve consistency with [ORACC](http://oracc.org/) naming conventions. The function then calls `getline()`. The first argument of `getline()` is the part of the XML tree that belongs to a single line or gap; the second argument is `meta_d`.
 # 
-# :::{toggle} ORACC label vs ETCSL label
+# :::{note} ORACC label vs ETCSL label
+# :class: dropdown
 # 
 # In ETCSL 'label' is used for the general translation of a lemma (Guide Word in ORACC). In ORACC 'label' is reserved for human-legible references to lines, columns, obverse, reverse, etc. such o ii 15 (obverse column 2 line 15).
 # 
@@ -619,7 +623,8 @@ def getsection(tree, meta_d):
 # In some cases an [ETCSL](http://etcsl.orinst.ox.ac.uk) file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to identify tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL](http://etcsl.orinst.ox.ac.uk) c.6.2.1 - c.6.2.5).
 # 
 # ```{figure} ../images/P346317.jpg
-# [UET 6/2 239](http://oracc.org/epsd2/P346317]: lentil from Ur with a [proverb](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.2.3&display=Crit&charenc=gcirc).
+# :scale: 50%
+# [UET 6/2 239](http://oracc.org/epsd2/P346317): lentil from Ur with a [proverb](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.2.3&display=Crit&charenc=gcirc).
 # ```
 # 
 # The function `getversion()` is called by the function `parsetext()` and receives two arguments: `tree` (the `etree` object) and `meta_d` (the dictionary of meta data). In the XML tree versions are marked by a node `body` with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of that version and then calls the `getsection()` function. The first argument is the portion of the tree that represents the version that is being parsed, the second argument is `meta_d`. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name in `meta_d` is the empty string.
