@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.3 Data Acquisition: CDLI" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html" />
+    <link rel="next" title="2.3 Data Acquisition from CDLI" href="../2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.html" />
     <link rel="prev" title="2.1.4 ORACC JSON: Extended Parser" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -147,13 +147,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html">
-     2.3 Data Acquisition: CDLI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_1_Data_Acquisition_CDLI.html">
-     Data Acquisition from CDLI
+    <a class="reference internal" href="../2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.html">
+     2.3 Data Acquisition from CDLI
     </a>
    </li>
    <li class="toctree-l2">
@@ -649,7 +644,7 @@ The output is saved in the <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <p>etc.</p>
-<p>This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in the entire corpus.</p>
+<p>This dictionary is used to replace each HTML entity with its unicode counterpart in the entire corpus.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>The regular expression <code class="docutils literal notranslate"><span class="pre">[^;]+</span></code> means: a sequence of one or more (<code class="docutils literal notranslate"><span class="pre">+</span></code>) characters, except the semicolon. The symbol <code class="docutils literal notranslate"><span class="pre">^</span></code> is the negation symbol in regular expressions. The expression <code class="docutils literal notranslate"><span class="pre">&amp;[^;]+;</span></code> therefore captures a sequence of any length that begins with an ampersand and ends with a semicolon. There are many introductions for regular expressions on the web, for instance <a class="reference external" href="https://www.regular-expressions.info/">regular-expressions.info</a>, or <a class="reference external" href="https://www.oreilly.com/content/an-introduction-to-regular-expressions/">An Introduction to Regular Expressions</a> by Thomas Nield.</p>
@@ -658,7 +653,7 @@ The output is saved in the <code class="docutils literal notranslate"><span clas
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&amp;[^;]+;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">replace_with</span></code> argument is a temporary <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function that uses the <code class="docutils literal notranslate"><span class="pre">ampersands</span></code> dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function (m.group(0) represents the match of the regular expression <code class="docutils literal notranslate"><span class="pre">amp</span></code>). The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace_with</span></code> argument is a temporary <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function that uses the <code class="docutils literal notranslate"><span class="pre">ampersands</span></code> dictionary to find the Unicode counterpart of the HTML entity. The dictionary is queried with the <code class="docutils literal notranslate"><span class="pre">get()</span></code> function (m.group(0) represents the match of the regular expression <code class="docutils literal notranslate"><span class="pre">amp</span></code>). The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ampersands</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>    
@@ -1109,7 +1104,7 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "aebe062e542e4c20b8e08419b61bb8b1", "version_major": 2, "version_minor": 0}
+{"model_id": "aac9992e616a48f2bd79535e89185638", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1367,7 +1362,7 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html" title="previous page">2.1.4 ORACC JSON: Extended Parser</a>
-    <a class='right-next' id="next-link" href="../2_3_Data_Acquisition_CDLI/2_3_0_Data_Acquisition_CDLI.html" title="next page">2.3 Data Acquisition: CDLI</a>
+    <a class='right-next' id="next-link" href="../2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.html" title="next page">2.3 Data Acquisition from CDLI</a>
 
         </div>
         

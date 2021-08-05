@@ -245,7 +245,7 @@ equiv.update(eq["propernouns"])
 # 
 # etc.
 # 
-# This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in the entire corpus.
+# This dictionary is used to replace each HTML entity with its unicode counterpart in the entire corpus.
 # 
 # :::{margin}
 # The regular expression `[^;]+` means: a sequence of one or more (`+`) characters, except the semicolon. The symbol `^` is the negation symbol in regular expressions. The expression `&[^;]+;` therefore captures a sequence of any length that begins with an ampersand and ends with a semicolon. There are many introductions for regular expressions on the web, for instance [regular-expressions.info](https://www.regular-expressions.info/), or [An Introduction to Regular Expressions](https://www.oreilly.com/content/an-introduction-to-regular-expressions/) by Thomas Nield.
@@ -257,7 +257,7 @@ equiv.update(eq["propernouns"])
 # amp = re.compile(r'&[^;]+;')
 # ```
 # 
-# The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
+# The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the Unicode counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
 
 # In[3]:
 
