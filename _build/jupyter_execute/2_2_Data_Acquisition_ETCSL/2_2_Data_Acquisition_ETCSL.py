@@ -447,6 +447,7 @@ def etcsl_to_oracc(word):
 # 
 # :::{admonition} Sumerian word in ETCSL XML
 # :class: tip, dropdown
+# Sumerian [ŋen](http://oracc.org/epsd2/o0029256) "to go," in the form i-im-ŋen: 
 # ```XML
 # <w form="i-im-jen" lemma="jen" pos="V" label="to go">i-im-jen</w>
 # ```
@@ -461,6 +462,8 @@ def etcsl_to_oracc(word):
 # 
 # :::{admonition} Emesal word in ETCSL XML
 # :class: tip, dropdown
+# Sumerian [inim](http://oracc.org/epsd2/o0031116) ("word") in the Emesal form e-ne-eŋ₃:
+# 
 # ```xml
 # <w form="e-ne-ej3" lemma="inim" pos="N" label="word" emesal="e-ne-ej3">e-ne-ej3</w> 
 # ```
@@ -647,6 +650,7 @@ def getsegment(tree, meta_d):
 # 
 # :::{margin}
 # This lentil is edited in the collection [Proverbs from Urim](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.2.3&display=Crit&charenc=gcirc) "If bread is left over, the mongoose eats it. If I have bread left over, a stranger consumes it." (translation [ETCSL](http://etcsl.orinst.ox.ac.uk)).
+# :::
 # 
 # ```{figure} ../images/P346317.jpg
 # :scale: 25%
