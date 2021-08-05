@@ -24,7 +24,7 @@
 # 
 # ```{figure} ../images/P346466.jpg
 # :scale: 50%
-# Sumerian literary fragment: [UET 6, 427](http://oracc.org/epsd2/P346466) with a few lines of [Inana's Descent to the Netherworld](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;display=Crit&amp;amp;amp;charenc=gcirc#)
+# Sumerian literary fragment: [UET 6, 427](http://cdli.ucla.edu/P346466) with a few lines of [Inana's Descent to the Netherworld](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;display=Crit&amp;amp;amp;charenc=gcirc#)
 # ```
 # 
 # In terms of data acquisition, one way to deal with these limitations is to make the [ETCSL](http://etcsl.orinst.ox.ac.uk) data as much as possible compatible with the data standards of the Open Richly Annotated Cuneiform Corpus ([ORACC](http://oracc.org)). [ORACC](http://oracc.org) is an active project where new or updated editions can be produced. If compatible, if [ETCSL](http://etcsl.orinst.ox.ac.uk) and [ORACC](http://oracc.org) data may be freely mixed and matched, then the [ETCSL](http://etcsl.orinst.ox.ac.uk) data set can effectively be updated and expanded.
@@ -47,6 +47,7 @@
 # The `form` attribute is the full form of the word, including morphology, but omitting flags (such as question marks), indication of breakage, or glosses. The `lemma` attribute is the form minus morphology (similar to `Citation Form` in [ORACC](http://oracc.org). Some lemmas may be spelled in more than one way in Sumerian; the `lemma` attribute will use a standard spelling (note, for instance, that the `lemma` of "ti-a" is "te"). The `lemma` in [ETCSL](http://etcsl.orinst.ox.ac.uk) (unlike `Citation Form` in [ORACC](http://oracc.org)) uses actual transliteration with hyphens and sign index numbers (as in `lemma = "e2-jar8"`, where the corresponding [ORACC](http://oracc.org) `Citation Form` is [egar](http://oracc.org/epsd2/o0026723).
 # 
 # :::{note} ETCSL vs ORACC: terminology and conventions
+# :class: dropdown
 # 
 # | Data Type  | ETCSL term | ETCSL example  | ORACC term    | ORACC example |
 # | --- | --- | --- | --- | ---- |
@@ -344,7 +345,7 @@ def mark_extra(tree, which):
 # transind = str.maketrans(ascind, uniind)
 # ```
 # 
-# :::{note}
+# :::{margin}
 # 
 # In this case it is not necessary to define a so-called look-behind in the regular expression `ind`. The match of `ind` includes the letter that precedes the index number, but since the translation table only has digits, this letter is returned unchanged.
 # 
@@ -443,7 +444,7 @@ def etcsl_to_oracc(word):
 # 
 # If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form ('cf') is found in the attribute `lemma`; the Guide Word ('gw') is found in the attribute `label`; and the Part of Speech ('pos') in the attribute `pos`.
 # 
-# :::{note} Sumerian word in ETCSL XML
+# :::{admonition} Sumerian word in ETCSL XML
 # :class: dropdown
 # ```XML
 # <w form="i-im-jen" lemma="jen" pos="V" label="to go">i-im-jen</w>
@@ -457,7 +458,7 @@ def etcsl_to_oracc(word):
 # 
 # * **Emesal words** in [ETCSL](http://etcsl.orinst.ox.ac.uk) use their Sumerian equivalents as `citation form` (attribute `lemma`), adding a separate attribute (`emesal`) for the Emesal form proper. This Emesal form is the one that is used as `citation form` in the output.
 # 
-# :::{note} Emesal word in ETCSL XML
+# :::{admonition} Emesal word in ETCSL XML
 # :class: dropdown
 # ```xml
 # <w form="e-ne-ej3" lemma="inim" pos="N" label="word" emesal="e-ne-ej3">e-ne-ej3</w> 
@@ -467,7 +468,7 @@ def etcsl_to_oracc(word):
 # 
 # * **Proper Nouns**: in [ETCSL](https://etcsl.orinst.ox.ac.uk/) proper nouns are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC](http://oracc.org/) a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL](https://etcsl.orinst.ox.ac.uk/) becomes `pos` in [ORACC](http://oracc.org/). [ORACC](http://oracc.org/) proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL](https://etcsl.orinst.ox.ac.uk/) guide words (`label`) for names come pretty close to [ORACC](http://oracc.org/) citation forms. Proper nouns are therefore formatted differently from other nouns.
 # 
-# :::{note} Proper Noun in ETCSL XML
+# :::{admonition} Proper Noun in ETCSL XML
 # :class: dropdown
 # Tthe temple name Eana
 # 
@@ -555,14 +556,14 @@ def getword(node, meta_d):
 # ```
 # If getline() receives a gap node it copies all the meta data in the dictionary `meta_d` into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the gap node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. A row in `alltexts`, therefore, usually represents a word, but may also represent a textual gap.
 # 
-# :::{note} Dealing with gaps: ORACC vs ETCSL
+# :::{admonition} Dealing with gaps: ORACC vs ETCSL
 # :class: dropdown
 # 
 # In [ORACC](http://oracc.org) gaps are described with the fields `extent` (a number, or 'n' for unknown),  and `scope` (line, column, obverse, etc.) . [ORACC](http://oracc.org) uses a restricted vocabulary for these fields, but [ETCSL](https://etcsl.orinst.ox.ac.uk/) does not. The code currently does not try to make the [ETCSL](https://etcsl.orinst.ox.ac.uk/) encoding of gaps compatible with the [ORACC](http://oracc.org) encoding.
 # 
 # :::
 
-# In[8]:
+# In[15]:
 
 
 def getline(lnode, meta_d):
@@ -587,14 +588,14 @@ def getline(lnode, meta_d):
 # 
 # Sections are indicated in the XML with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap` (where "|" is the "or" operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d` dictionary is updated with a (human-legible) line number (or section + line number, if the text is divided into sections). This line number, which is a string, is stored in the key "label" in order to achieve consistency with [ORACC](http://oracc.org/) naming conventions. The function then calls `getline()`. The first argument of `getline()` is the part of the XML tree that belongs to a single line or gap; the second argument is `meta_d`.
 # 
-# :::{note} ORACC label vs ETCSL label
+# :::{admonition} ORACC label vs ETCSL label
 # :class: dropdown
 # 
 # In ETCSL 'label' is used for the general translation of a lemma (Guide Word in ORACC). In ORACC 'label' is reserved for human-legible references to lines, columns, obverse, reverse, etc. such o ii 15 (obverse column 2 line 15).
 # 
 # :::
 
-# In[9]:
+# In[16]:
 
 
 def getsection(tree, meta_d):
