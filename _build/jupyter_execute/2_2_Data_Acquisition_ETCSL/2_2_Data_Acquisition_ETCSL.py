@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (2.2)=
 # # 2.2 Data Acquisition ETCSL
 # ## 2.2.1. Introduction
 # 
@@ -47,7 +48,7 @@
 # The `form` attribute is the full form of the word, including morphology, but omitting flags (such as question marks), indication of breakage, or glosses. The `lemma` attribute is the form minus morphology (similar to `Citation Form` in [ORACC](http://oracc.org). Some lemmas may be spelled in more than one way in Sumerian; the `lemma` attribute will use a standard spelling (note, for instance, that the `lemma` of "ti-a" is "te"). The `lemma` in [ETCSL](http://etcsl.orinst.ox.ac.uk) (unlike `Citation Form` in [ORACC](http://oracc.org)) uses actual transliteration with hyphens and sign index numbers (as in `lemma = "e2-jar8"`, where the corresponding [ORACC](http://oracc.org) `Citation Form` is [egar](http://oracc.org/epsd2/o0026723).
 # 
 # :::{note} ETCSL vs ORACC: terminology and conventions
-# :class: dropdown
+# :class: tip, dropdown
 # 
 # | Data Type  | ETCSL term | ETCSL example  | ORACC term    | ORACC example |
 # | --- | --- | --- | --- | ---- |
@@ -108,17 +109,17 @@
 # corpus									main process
 # 	text								parsetext()
 # 		version							getversion()
-# 			section						getsection()
+# 			segment						getsegment()
 # 				line					getline()
 # 					word				getword()
 # 						format			etcsl_to_oracc()
 # ```
 # 
-# Each of these functions divides the XML tree into smaller parts (versions, sections, lines, words) and sends one such smaller part of the tree to the next function. The functions do not return anything. Instead, they modify the dictionary `meta_d` by adding or changing keys that hold meta-data such as version name, line number, etc. Once arrived at the word level (the most basic level of this tree) the dictionary `meta_d` will hold accurate information about the composition name, the version name, the line number, etc. for this particular word. The function `getword()` will gather lemmatization information (form, citation form, part of speech, etc.) from the attributes of the `w` node, and meta-data from `meta_d`.
+# Each of these functions divides the XML tree into smaller parts (versions, segments, lines, words) and sends one such smaller part of the tree to the next function. The functions do not return anything. Instead, they modify the dictionary `meta_d` by adding or changing keys that hold meta-data such as version name, line number, etc. Once arrived at the word level (the most basic level of this tree) the dictionary `meta_d` will hold accurate information about the composition name, the version name, the line number, etc. for this particular word. The function `getword()` will gather lemmatization information (form, citation form, part of speech, etc.) from the attributes of the `w` node, and meta-data from `meta_d`.
 # 
 # The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL](https://etcsl.orinst.ox.ac.uk/) style lemma into a [ORACC](http://oracc.org/) style lemma and appends the resulting dictionary data to a list (a list of dictionaries). In the end, each word in the entire [ETCSL](https://etcsl.orinst.ox.ac.uk/) corpus will have its own entry in this list.
 # 
-# The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in the original XML file: 
+# The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, segment A line 115, looks as follows in the original XML file: 
 # 
 # ```xml
 # <w form="cej6-ja2" lemma="cej6" pos="V" label="to be hot">cej6-ja2</w>
@@ -445,7 +446,7 @@ def etcsl_to_oracc(word):
 # If `getword()` receives a `w` node (a word) it will assign different attributes of that node to different fields in the `word` dictionary. The Citation Form ('cf') is found in the attribute `lemma`; the Guide Word ('gw') is found in the attribute `label`; and the Part of Speech ('pos') in the attribute `pos`.
 # 
 # :::{admonition} Sumerian word in ETCSL XML
-# :class: dropdown
+# :class: tip, dropdown
 # ```XML
 # <w form="i-im-jen" lemma="jen" pos="V" label="to go">i-im-jen</w>
 # ```
@@ -459,7 +460,7 @@ def etcsl_to_oracc(word):
 # * **Emesal words** in [ETCSL](http://etcsl.orinst.ox.ac.uk) use their Sumerian equivalents as `citation form` (attribute `lemma`), adding a separate attribute (`emesal`) for the Emesal form proper. This Emesal form is the one that is used as `citation form` in the output.
 # 
 # :::{admonition} Emesal word in ETCSL XML
-# :class: dropdown
+# :class: tip, dropdown
 # ```xml
 # <w form="e-ne-ej3" lemma="inim" pos="N" label="word" emesal="e-ne-ej3">e-ne-ej3</w> 
 # ```
@@ -469,8 +470,8 @@ def etcsl_to_oracc(word):
 # * **Proper Nouns**: in [ETCSL](https://etcsl.orinst.ox.ac.uk/) proper nouns are nouns (`pos` = "N"), which are qualified by an additional attribute `type` (Divine Name, Personal Name, Geographical Name, etc.; abbreviated as DN, PN, GN, etc.). In [ORACC](http://oracc.org/) a word has a single `pos`; for proper nouns this is DN, PN, GN, etc. - so what is `type` in [ETCSL](https://etcsl.orinst.ox.ac.uk/) becomes `pos` in [ORACC](http://oracc.org/). [ORACC](http://oracc.org/) proper nouns usually do not have a guide word (only a number to enable disambiguation of namesakes). The [ETCSL](https://etcsl.orinst.ox.ac.uk/) guide words (`label`) for names come pretty close to [ORACC](http://oracc.org/) citation forms. Proper nouns are therefore formatted differently from other nouns.
 # 
 # :::{admonition} Proper Noun in ETCSL XML
-# :class: dropdown
-# Tthe temple name Eana
+# :class: tip, dropdown
+# The temple name Eana:
 # 
 # ```xml
 # <w form="e2-an-na-ju10" lemma="e2-an-na" pos="N" type="TN" label="E-ana">e2-an-na-ju10</w>
@@ -541,7 +542,7 @@ def getword(node, meta_d):
 
 # ## 2.2.8 Formatting Lines
 # 
-# The function `getline()` is called by `getsection()`. It first updates the field `id_line` in `meta_d`, increasing it by 1. The data type of `id_line` is integer - it is used to keep lines and gaps in correct order.
+# The function `getline()` is called by `getsegment()`. It first updates the field `id_line` in `meta_d`, increasing it by 1. The data type of `id_line` is integer - it is used to keep lines and gaps in correct order.
 # 
 # A line may either be an actual line (in Sumerian and/or Akkadian) or a gap (a portion of text lost). Both receive a line reference (`id_line`).
 # 
@@ -554,16 +555,16 @@ def getword(node, meta_d):
 # ```xml
 # <gap extent="8 lines missing"/>
 # ```
-# If getline() receives a gap node it copies all the meta data in the dictionary `meta_d` into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the gap node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. A row in `alltexts`, therefore, usually represents a word, but may also represent a textual gap.
+# If getline() receives a gap node it copies all the meta data in the dictionary `meta_d` into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the gap node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsegment()`. A row in `alltexts`, therefore, usually represents a word, but may also represent a textual gap.
 # 
 # :::{admonition} Dealing with gaps: ORACC vs ETCSL
-# :class: dropdown
+# :class: tip, dropdown
 # 
-# In [ORACC](http://oracc.org) gaps are described with the fields `extent` (a number, or 'n' for unknown),  and `scope` (line, column, obverse, etc.) . [ORACC](http://oracc.org) uses a restricted vocabulary for these fields, but [ETCSL](https://etcsl.orinst.ox.ac.uk/) does not. The code currently does not try to make the [ETCSL](https://etcsl.orinst.ox.ac.uk/) encoding of gaps compatible with the [ORACC](http://oracc.org) encoding.
+# In [ORACC](http://oracc.org), gaps are described with the fields `extent` (a number, or 'n' for unknown),  and `scope` (line, column, obverse, etc.). [ORACC](http://oracc.org) uses a restricted vocabulary for these fields, but [ETCSL](https://etcsl.orinst.ox.ac.uk/) does not. The code currently does not try to make the [ETCSL](https://etcsl.orinst.ox.ac.uk/) encoding of gaps compatible with the [ORACC](http://oracc.org) encoding.
 # 
 # :::
 
-# In[15]:
+# In[8]:
 
 
 def getline(lnode, meta_d):
@@ -580,33 +581,54 @@ def getline(lnode, meta_d):
     return
 
 
-# ## 2.2.9 Sections
+# ## 2.2.9 Segments
 # 
-# Some compositions in [ETCSL](http://etcsl.orinst.ox.ac.uk) are divided into sections. That is the case, in particular, when a composition has gaps of unknown length. Section B supposedly follows section A, but how much text is missing between them cannot be reconstructed.
+# Some compositions in [ETCSL](http://etcsl.orinst.ox.ac.uk) are divided into segments. That is the case, in particular, when a composition has gaps of unknown length. Segment B supposedly follows segment A, but how much text is missing between them cannot be reconstructed. This is the case, for instance, in [The Death of Gilgameš](https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.8.1.3&display=Crit&charenc=gcirc#), which is rather fragmentarily preserved.
 # 
-# The function `getsection()` is called by `getversion()` and receives the arguments `tree` (the `etree` object representing one version of the composition) and `meta_d` (the dictionary of meta data). The function `getsection()` checks to see whether a sub-division into sections is present. 
+# ```{figure} ../images/P264388.jpg
+# :scale: 25%
+# [UM 29-16-086](http://cdli.ucla.edu/P264388): fragments of the [Death of Gilgameš: Nippur version](https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.8.1.3&display=Crit&charenc=gcirc#).
+# ```
 # 
-# Sections are indicated in the XML with a node `div1`. Section names (usually a capital letter) are found in an attribute of `div1` called `n`.  The function will now collect all `l` (line) *and* `gap` nodes that belong to a single section. The Xpath expression that is used for that is `.//l|.//gap` (where "|" is the "or" operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d` dictionary is updated with a (human-legible) line number (or section + line number, if the text is divided into sections). This line number, which is a string, is stored in the key "label" in order to achieve consistency with [ORACC](http://oracc.org/) naming conventions. The function then calls `getline()`. The first argument of `getline()` is the part of the XML tree that belongs to a single line or gap; the second argument is `meta_d`.
+# The function `getsegment()` is called by `getversion()` and receives the arguments `tree` (the `etree` object representing one version of the composition) and `meta_d` (the dictionary of meta data). The function `getsegment()` first checks to see whether a sub-division into segments is present. 
 # 
-# :::{admonition} ORACC label vs ETCSL label
-# :class: dropdown
+# Segments are indicated in the XML with a node `div1` with the attribute `type="segment"`. Segment names (usually a capital letter) are found in an attribute of `div1` called `n`.  
 # 
-# In ETCSL 'label' is used for the general translation of a lemma (Guide Word in ORACC). In ORACC 'label' is reserved for human-legible references to lines, columns, obverse, reverse, etc. such o ii 15 (obverse column 2 line 15).
+# :::{admonition} ETCSL XML: version, segment, gap
+# :class: tip, dropdown
+# 
+# From the beginning of [The Death of Gilgameš](https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.8.1.3&display=Crit&charenc=gcirc#). The text is known in multiple versions (from Nippur, from Meturan), and the versions themselves are subdivided into segments, with unknown numbers of lines missing in between.
+# 
+# ```xml
+# <body>
+# <head lang="eng">A version from Nibru</head>
+# <div1 type="segment" n="A">
+# <gap extent="unknown no. of lines missing"/>
+# ```
+# 
+# :::
+# 
+# The function will collect all `l` (line) *and* `gap` nodes that belong to a single segment. The Xpath expression that is used for that is `.//l|.//gap` (where "|" is the "or" operator). In some regards gaps are treated as lines - they need to be placed after the last extant line and before the first line after the break. Iterating over this list, if the node is an `l` node the `meta_d` dictionary is updated with a (human-legible) line number (or segment + line number, if the text is divided into segments). This line number, which is a string, is stored in the key "label" in order to achieve consistency with [ORACC](http://oracc.org/) naming conventions. The function then calls `getline()`. The first argument of `getline()` is the part of the XML tree that belongs to a single line or gap; the second argument is `meta_d`.
+# 
+# :::{admonition} Terminology: ORACC label vs ETCSL label
+# :class: tip, dropdown
+# 
+# In ETCSL 'label' is used for the general translation of a lemma (Guide Word in ORACC). In ORACC 'label' is reserved for human-legible references to lines, columns, obverse, reverse, etc. such as o ii 15 (obverse column 2 line 15).
 # 
 # :::
 
-# In[16]:
+# In[9]:
 
 
-def getsection(tree, meta_d):
-    sections = tree.xpath('.//div1')
+def getsegment(tree, meta_d):
+    segments = tree.xpath('.//div1[@type="segment"]')
     
-    if sections: # if the text is not divided into sections - skip to else:
-        for snode in sections:
-            section = snode.xpath('string(@n)')
+    if segments: # if the text is not divided into segments - skip to else:
+        for snode in segments:
+            segment = snode.xpath('string(@n)')
             for lnode in snode.xpath('.//l|.//gap'):
                 if lnode.tag == 'l':
-                    line = section + lnode.xpath('string(@n)')
+                    line = segment + lnode.xpath('string(@n)')
                     meta_d["label"] = line   # "label" is the human-legible line number
                 getline(lnode, meta_d)
 
@@ -621,16 +643,19 @@ def getsection(tree, meta_d):
 
 # ## 2.2.10 Versions
 # 
-# In some cases an [ETCSL](http://etcsl.orinst.ox.ac.uk) file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to identify tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Susa," "Proverbs from Nibru," etc. ([ETCSL](http://etcsl.orinst.ox.ac.uk) c.6.2.1 - c.6.2.5).
+# In some cases an [ETCSL](http://etcsl.orinst.ox.ac.uk) file contains different versions of the same composition. The versions may be distinguished as 'Version A' vs. 'Version B' or may indicate the provenance of the version ('A version from Urim' vs. 'A version from Nibru'). In the edition of the proverbs the same mechanism is used to identify tablets (often lentils) that contain just one proverb, or a few, and are collected in the files "Proverbs from Urim," "Proverbs from Nibru," etc. ([ETCSL](http://etcsl.orinst.ox.ac.uk) c.6.2.1 - c.6.2.5).
+# 
+# :::{margin}
+# This lentil is edited in the collection [Proverbs from Urim](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.2.3&display=Crit&charenc=gcirc) "If bread is left over, the mongoose eats it. If I have bread left over, a stranger consumes it." (translation [ETCSL](http://etcsl.orinst.ox.ac.uk)).
 # 
 # ```{figure} ../images/P346317.jpg
-# :scale: 50%
+# :scale: 25%
 # [UET 6/2 239](http://oracc.org/epsd2/P346317): lentil from Ur with a [proverb](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.6.2.3&display=Crit&charenc=gcirc).
 # ```
 # 
-# The function `getversion()` is called by the function `parsetext()` and receives two arguments: `tree` (the `etree` object) and `meta_d` (the dictionary of meta data). In the XML tree versions are marked by a node `body` with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of that version and then calls the `getsection()` function. The first argument is the portion of the tree that represents the version that is being parsed, the second argument is `meta_d`. If a composition is not divided into versions the entire tree is passed to `getsection()` and the version name in `meta_d` is the empty string.
+# The function `getversion()` is called by the function `parsetext()` and receives two arguments: `tree` (the `etree` object) and `meta_d` (the dictionary of meta data). In the XML tree versions are marked by a node `body` with a child `head`. The node `head` contains the name of the version. Iterating through the versions, the function updates the key "version" in `meta_d` with the name of that version and then calls the `getsegment()` function. The first argument is the portion of the tree that represents the version that is being parsed, the second argument is `meta_d`. If a composition is not divided into versions the entire tree is passed to `getsegment()` and the version name in `meta_d` is the empty string.
 # 
-# In some cases version names are very long and somewhat unwieldy. The equivalency list `versions` (in `equivalencies/equivalencies.json`; see [2.2.2.2](2.2.2.2)) is used to adjust version names.
+# In some cases version names are very long and somewhat unwieldy. For instance, [The Cursing of Agade](https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.5&display=Crit&charenc=gcirc#) has a version that is called "Fragments of an earlier version from Nibru, dating to the Ur III period." This version name is abbreviated to "Ur III". The equivalency list `versions` (in `equivalencies/equivalencies.json`; see [2.2.2.2](2.2.2.2)) is used to adjust version names.
 
 # In[10]:
 
@@ -643,11 +668,11 @@ def getversion(tree, meta_d):
             version = vnode.xpath('string(head)')
             version = eq["versions"].get(version, version)
             meta_d["version"] = version
-            getsection(vnode, meta_d)
+            getsegment(vnode, meta_d)
 
     else:
         meta_d["version"] = ''
-        getsection(tree, meta_d)
+        getsegment(tree, meta_d)
     return
 
 
