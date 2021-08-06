@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.3 Data Acquisition from CDLI &#8212; Computational Assyriology</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4.1 Data Acquisition BDTNS" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html" />
+    <link rel="prev" title="2.2 Data Acquisition ETCSL" href="../2_2_Data_Acquisition_ETCSL/2_2_Data_Acquisition_ETCSL.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Assyriology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to Computational Assyriology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_Preliminaries/1_Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../2_Data_Acquisition/2_Data_Acquisition.html">
+   2 Data Acquisition
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_Data_Acquisition.html">
+     2.1 Data Acquisition: ORACC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html">
+       2.1.0 Download ORACC JSON Files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_JSON.html">
+       2.1.1 The JSON Data Format
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_2_parse-json-cat.html">
+       2.1.2 Retrieve ORACC Catalog Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_3_basic_ORACC-JSON_parser.html">
+       2.1.3 Extract Lemmatization from ORACC JSON: Basic Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_4_extended_ORACC-JSON_parser.html">
+       2.1.4 ORACC JSON: Extended Parser
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_2_Data_Acquisition_ETCSL/2_2_Data_Acquisition_ETCSL.html">
+     2.2 Data Acquisition ETCSL
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3 Data Acquisition from CDLI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
+     2.4.1 Data Acquisition BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
+     2.4 Data Acquision BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_2_Build_Sign_Search.html">
+     Build Sign Search for BDTNS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_3_Search_BDTNS.html">
+     2.4.3 Search BDTNS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_Lexical_and_Literary_Vocabularies.html">
+   3. Lexical and Literary Vocabularies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_1_Lit_Lex_Vocab.html">
+   3 Overlap in Lexical and Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_2_Lit_Lex.html">
+   3.2 Overlap in Lexical and Literary Vocabulary: Digging Deeper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_3_Lex-Lit.html">
+   3.3 Lexical Texts and their Relation to Literary Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Vocabularies/3_4_Admin_Lex_Vocab.html">
+   3.4 Overlap in Lexical and Admin Vocabulary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_1_Build-Treasure-network.html">
+   Social Network: The Treasure And Shoe Archive from Drehem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Networking_Treasure_Archive/4_2_Analyze_Visualize.html">
+   Visualization Functions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/niekveldhuis/compass/master?urlpath=tree/2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/niekveldhuis/compass/blob/master/2_3_Data_Acquisition_CDLI/2_3_Data_Acquisition_CDLI.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-cdli-data">
+   2.3.1 Introduction: CDLI data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-cdli-data">
+   2.3.2 Downloading CDLI data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-packages">
+     2.3.2.0 Import Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-download-directory">
+     2.3.2.1 Create Download Directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retrieve-file-names">
+     2.3.2.2 Retrieve File Names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download">
+     2.3.2.3 Download
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenate-the-catalogue-files">
+     2.3.2.4. Concatenate the Catalogue Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-in-a-pandas-data-frame">
+     2.3.2.4 Load in a Pandas data frame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-catalog-to-select-transliterations">
+   2.3.3 Use the Catalog to Select Transliterations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-data-frame-with-the-selected-texts">
+   2.3.4 Create a Data Frame with the Selected Texts
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-acquisition-from-cdli">
+<h1>2.3 Data Acquisition from CDLI<a class="headerlink" href="#data-acquisition-from-cdli" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-cdli-data">
+<h2>2.3.1 Introduction: CDLI data<a class="headerlink" href="#introduction-cdli-data" title="Permalink to this headline">¶</a></h2>
+<div class="margin figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/Robert+Englund.jpg"><img alt="../_images/Robert+Englund.jpg" src="../_images/Robert+Englund.jpg" style="width: 252.75px; height: 300.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><a class="reference external" href="https://cdli.ucla.edu/?q=news/obituary-robert-k-englund">Bob Englund</a> 1952-2020</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <a class="reference external" href="http://cdli.ucla.edu">Cuneiform Digital Library Initiative</a>, created by <a class="reference external" href="https://cdli.ucla.edu/?q=robert-k-englund">Bob Englund</a> (UCLA) in the early two thousands, is a central repository for meta-data, images, and transliterations of cuneiform objects (translations are offered only for a small minority of texts). Today more than 335,000 objects are listed in the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> catalog, with tens of thousands of photographs and line drawings. Each object in <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> receives a unique ID number (the so-called P-number), and these numbers are widely used today in print and in on-line projects. Initially, <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> focused primarily on administrative texts from the third millennium, and this is still the area of its greatest strength. Currently, approximately 121,000 texts are available in transliteration in <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>. Part of this corpus was produced by the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> team at UCLA, others were contributed by partners or were imported from other projects such as <a class="reference external" href="https://etcsl.orinst.ox.ac.uk/">ETCSL</a> (for Sumerian literary texts), <a class="reference external" href="http://oracc.org/dcclt">DCCLT</a> (for lexical texts), or <a class="reference external" href="http://bdtns.filol.csic.es/">BDTNS</a> (for Ur III administrative texts). The photographs on <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> were largely produced in cooperative projects with museums all over the world, where <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> staff or partners would go to scan an entire collection or major parts of a collection. These images are copyright of the museum where the object is held and there is no wholesale downloading of the entire image set.</p>
+<div class="margin figure align-default">
+<a class="reference internal image-reference" href="../_images/cdli_logo.gif"><img alt="../_images/cdli_logo.gif" src="../_images/cdli_logo.gif" style="width: 173.5px; height: 109.0px;" /></a>
+</div>
+<p>The <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> project transformed the practice of Assyriology in multiple ways. The availability of large numbers of photographs made it possible to collate problematic passages in texts only published in transliteration and/or hand drawing. Issuing ID numbers made it easier to refer to a particular tablet unambiguously, while avoiding the confusion of obscure publication abbreviations and museum numbers. The spread of all this information on the web made it available to everyone with an internet connection.</p>
+<p>For each cuneiform object the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> catalog provides information about where it was published (and by whom), in which collection it is kept, where it was excavated, to which period it belongs, what textual genre it represents, etc. In addition, an object may be represented by one or more images (photographs and/or hand drawings) and by a transliteration. Several of the fields in the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> catalog either use a restricted vocabulary (period, genre) or have been standardized (provenance, author’s name, owner, museum number), greatly facilitating search.</p>
+<p>The issue of standardization is much more difficult for linguistic data in transliteration. Here, Sumerian and Akkadian pose rather different challenges. For Sumerian, there are two main issues. First, Sumerologists tend to use different sets of conventions for representing Sumerian words in the Latin alphabet. The word for “to give” is read <a class="reference external" href="http://oracc.org/epsd2/o0039914"><strong>šum₂</strong></a> by some, but <strong>sum</strong> by others. Similarly, the word for “ox” is read either <a class="reference external" href="http://oracc.org/epsd2/o0028670"><strong>gud</strong></a> or <strong>gu₄</strong>. These readings (<strong>šum₂</strong> vs <strong>sum</strong> or <strong>gud</strong> vs. <strong>gu₄</strong>) represent the same word and render the same cuneiform sign - they simply differ in modern transliteration conventions. Variation in such conventions has grown recently by the introduction of a new set of readings by P. Attinger (Bern), which has received wide following, in particular in Germany. Such variation in sign readings is based on the one hand on differing interpretations of the data from <a class="reference external" href="http://oracc.org/dcclt/signlists">ancient sign lists</a> (which provide transcriptions of Sumerian words in Akkadian) and on the other hand on the definition of what an ideal transliteration should achieve (whether it should represent the abstract lexeme, or rather its concrete pronunciation, or something in between). For the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> search engine, which is based on a FileMaker database, such variation presents a problem when searching for (Sumerian) words. The solution has been to strictly impose a set of <a class="reference external" href="https://cdli.ucla.edu/methods/sign_reading.html">preferred sign readings</a>, a policy that has been carried out with admirable consistency.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Attinger readings</p>
+<p>For the readings introduced by P. Attinger, see the introduction to his <a class="reference external" href="https://www.harrassowitz-verlag.de/isbn_9783447116169.ahtml">Glossaire sumérien–français</a> (2021).</p>
+</div>
+<p>Second, Sumerologists today have no good standard for word segmentation. In the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> data set one may find the word <a class="reference external" href="http://oracc.org/epsd2/o0036259"><strong>ninda-i₃-de₂-a</strong></a> (a pastry) transliterated as <strong>ninda-i₃-de₂-a</strong>, <strong>ninda i₃-de₂-a</strong>, <strong>ninda i₃ de₂-a</strong>, <strong>nig₂-i₃-de₂-a</strong>, <strong>nig₂ i₃ de₂-a</strong>, etcetera (<strong>nig₂</strong> and <strong>ninda</strong> are two different words, written by the same sign and there is no full agreement which of these is to be used in this particular expression). None of these various renderings is necessarily “wrong,” because we know fairly little about the formation and segmentation of Sumerian nouns. For computational approaches this variation poses an important challenge.</p>
+<p>For Akkadian the variation in reading conventions plays a much smaller role; for most dialects of Akkadian (with the exception of Old Akkadian) scholars generally agree on transliteration conventions; word segmentation is hardly ever a problem. For search engines, however, Akkadian transliteration is much more difficult to deal with because the same word may be spelled in many different ways. Without lemmatization, there is no way a machine can tell that <em><strong>ša-ar-ru-um</strong></em>, <em><strong>ša-ar-ri-im</strong></em>, <em><strong>ša-ar-ra-am</strong></em>, <em><strong>šar-ru</strong></em>, <em><strong>šar-ri</strong></em>, <em><strong>šar-ra</strong></em>, <strong>LUGAL</strong>, and <strong>MAN</strong> all represent forms of the same word for “king” in syllabic and logographic writing. The rich morphology of Akkadian, with prefixes, suffixes, and infixes and various vowel patterns to be applied to different forms of a single verb further complicates this issue.</p>
+<p>Since <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> does not offer lemmatization, searching for words on this site is much more popular (and more useful) for Sumerian than it is for Akkadian. Sumerian words usually include the root of the word (written logographically) with prefixes and/or suffixes attached. Although spelling variations exist (e.g. <strong>dag-si</strong>, <strong>da-ag-si</strong>, <strong>da-ag-ši-um</strong>, and <strong>da-ag-zi-um</strong>, all representing variants of the word <a class="reference external" href="http://oracc.org/epsd2/o0025593">dagsi</a> for saddle hook or saddle bag), such variation plays a much smaller role in Sumerian than in Akkadian.</p>
+</div>
+<div class="section" id="downloading-cdli-data">
+<h2>2.3.2 Downloading CDLI data<a class="headerlink" href="#downloading-cdli-data" title="Permalink to this headline">¶</a></h2>
+<p>There are various ways in which one can acquire <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> data. The website includes a <a class="reference external" href="https://cdli.ucla.edu/?q=downloads">Downloads</a> page where one can get access to a daily clone of the catalog and the entire set of transliterations. Alternatively, one can perform a search on the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> search page and request a download of the data (transliteration only or catalog and transliteration data) by pushing a button. This works well for a few or several dozens of texts, but not for very large data sets. The present notebook will download the <a class="reference external" href="http://cdli.ucla.edu">CDLI</a> files from the daily clone on <a class="reference external" href="https://github.com/cdli-gh/data">Github</a>.</p>
+<p>Currently, the set of transliterations is offered in one big file, named <code class="docutils literal notranslate"><span class="pre">cdliatf_unblocked.atf</span> </code>. The catalog is split into two files because of file-size limitations at <a class="reference external" href="http://github.com">Github</a>; they are named <code class="docutils literal notranslate"><span class="pre">cdli_catalogue_1of2.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">cdli_catalogue_2of2.csv</span></code>, respectively. The files need to be concatenated before they can be used.</p>
+<div class="section" id="import-packages">
+<h3>2.3.2.0 Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>requests: for communicating with a server over the internet</p></li>
+<li><p>tqdm: for creating progress bars</p></li>
+<li><p>pandas: data analysis and manipulation; dataframes</p></li>
+<li><p>BeautifulSoup: web scraping</p></li>
+<li><p>os: for basic Operating System operations (such as creating a directory)</p></li>
+<li><p>shutil: file operations (such as concatenating files)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-download-directory">
+<h3>2.3.2.1 Create Download Directory<a class="headerlink" href="#create-download-directory" title="Permalink to this headline">¶</a></h3>
+<p>Create a directory called <code class="docutils literal notranslate"><span class="pre">cdlidata</span></code>. If the directory already exists, do nothing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;cdlidata&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="retrieve-file-names">
+<h3>2.3.2.2 Retrieve File Names<a class="headerlink" href="#retrieve-file-names" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>For BeautifulSoup, see chapter 4 <a class="reference external" href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/Data-Collection/Web-Scraping-Part1.html#beautifulsoup">Data Collection</a> in Melanie Walsh’s <a class="reference external" href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html">Introduction to Cultural Analytics and Python</a>.</p>
+</div>
+<p>The code first retrieves the names of the files that are offered for download on the CDLI <a class="reference external" href="https://github.com/cdli-gh/data">download</a> page on GitHub. The script requests the HTML of the download page and uses <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> (a package for web scraping) to retrieve all the links from the page. This includes the file names, but also all kinds of other links.</p>
+<p>Scraping the file names (rather than simply listing them) is useful, because in the future the data may have to be split in more than two files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_page</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdli-gh/data&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">download_page</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>       <span class="c1"># retrieve all html anchors, which define links</span>
+<span class="n">files</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>        <span class="c1"># from the anchors, retrieve the URLs</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="s1">&#39;master/cdli&#39;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">}</span>  <span class="c1"># filter out the relevant URLs</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">}</span> <span class="c1"># only keep the file names (without the path)</span>
+<span class="n">files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;cdli_catalogue_1of2.csv&#39;, &#39;cdli_catalogue_2of2.csv&#39;, &#39;cdliatf_unblocked.atf&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download">
+<h3>2.3.2.3 Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>The download code in this cell is essentially identical with the code in section <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html#id1"><span class="std std-ref">2.1.0</span></a>: Download ORACC JSON. Because of the size of the files, and depending on the speed of your computer and internet connection the downloading process can take some time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CHUNK</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://raw.github.com/cdli-gh/data/master/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;cdlidata/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">total_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Saving </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1"> as cdlidata/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">=</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total_size</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="n">file</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">CHUNK</span><span class="p">):</span>
+                    <span class="n">t</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving https://raw.github.com/cdli-gh/data/master/cdli_catalogue_2of2.csv as cdlidata/cdli_catalogue_2of2.csv
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ffb98cb6e6204c6ea1fda783bfdada67", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving https://raw.github.com/cdli-gh/data/master/cdli_catalogue_1of2.csv as cdlidata/cdli_catalogue_1of2.csv
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "bccc57b2e87c4dde8c786e99b804787e", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving https://raw.github.com/cdli-gh/data/master/cdliatf_unblocked.atf as cdlidata/cdliatf_unblocked.atf
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "e7f2c5b4317b4eb2899e8bfd6e683f57", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="concatenate-the-catalogue-files">
+<h3>2.3.2.4. Concatenate the Catalogue Files<a class="headerlink" href="#concatenate-the-catalogue-files" title="Permalink to this headline">¶</a></h3>
+<p>The catalogue files are concatenated, using a utility from the <code class="docutils literal notranslate"><span class="pre">shutil</span></code> package. The new, concatenated, file is called <code class="docutils literal notranslate"><span class="pre">catalogue.csv</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="s2">&quot;cdli_catalogue&quot;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+<span class="n">filenames</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># to make sure we read cdli_catalogue_1of2.csv first.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cdlidata/catalogue.csv&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">concatenated_file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cdlidata/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">one_file</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">one_file</span><span class="p">,</span> <span class="n">concatenated_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-in-a-pandas-data-frame">
+<h3>2.3.2.4 Load in a Pandas data frame<a class="headerlink" href="#load-in-a-pandas-data-frame" title="Permalink to this headline">¶</a></h3>
+<p>The field <code class="docutils literal notranslate"><span class="pre">id_text</span></code> holds the text ID number as a string, without the preceding “P” and without padding zeroes to the left. The text ID “P001023” is thus represented as 1023. When reading the data into <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, chances are that the data type of <code class="docutils literal notranslate"><span class="pre">id_text</span></code> is interpreted as integer. The function <code class="docutils literal notranslate"><span class="pre">zfill()</span></code> adds the padding zeros to create a six-digit number as a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cdlidata/catalogue.csv&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="n">error_bad_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">cat</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;P&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">no</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">no</span> <span class="ow">in</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;id_text&#39;</span><span class="p">]]</span>
+<span class="n">cat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>accession_no</th>
+      <th>accounting_period</th>
+      <th>acquisition_history</th>
+      <th>alternative_years</th>
+      <th>ark_number</th>
+      <th>atf_source</th>
+      <th>atf_up</th>
+      <th>author</th>
+      <th>author_remarks</th>
+      <th>cdli_collation</th>
+      <th>...</th>
+      <th>seal_information</th>
+      <th>stratigraphic_level</th>
+      <th>subgenre</th>
+      <th>subgenre_remarks</th>
+      <th>surface_preservation</th>
+      <th>text_remarks</th>
+      <th>thickness</th>
+      <th>translation_source</th>
+      <th>width</th>
+      <th>object_remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>21198/zz001q0dtm</td>
+      <td>Englund, Robert K.</td>
+      <td></td>
+      <td>CDLI</td>
+      <td>31x61x18; Lú A 14-16.30-32.48-50; M XVIII, auf...</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Archaic Lu2 A (witness)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>18</td>
+      <td>no translation</td>
+      <td>61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>21198/zz001q0dv4</td>
+      <td>Englund, Robert K.</td>
+      <td></td>
+      <td>CDLI</td>
+      <td>30x48x13; Lú A 13-15.23-25.?; Fundstelle wie W...</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Archaic Lu2 A (witness)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>13</td>
+      <td>no translation</td>
+      <td>48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>21198/zz001q0dwn</td>
+      <td>Englund, Robert K.</td>
+      <td></td>
+      <td>Englund, Robert K. &amp; Nissen, Hans J.</td>
+      <td>42x53x19; Vocabulary 9; Qa XVI,2, unter der Ab...</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Archaic Vocabulary (witness)</td>
+      <td>Text category: 15-09; Foreign ID: LVO 9</td>
+      <td></td>
+      <td></td>
+      <td>19</td>
+      <td>no translation</td>
+      <td>53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>21198/zz001q0dx5</td>
+      <td>Englund, Robert K.</td>
+      <td></td>
+      <td>CDLI</td>
+      <td>26x23x23; Lú A 9-10.?.?; Fundstelle wie W 9123...</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Archaic Lu2 A (witness)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>23</td>
+      <td>no translation</td>
+      <td>23</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>21198/zz001q0dzp</td>
+      <td>Englund, Robert K.</td>
+      <td></td>
+      <td>CDLI</td>
+      <td>29x36x20; Lú A Vorläufer; Qa XVI,2, unter der ...</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td>Archaic Lu2 A (witness)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>20</td>
+      <td>no translation</td>
+      <td>36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>344796</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Jagersma, Bram</td>
+      <td></td>
+      <td>Langdon, Stephen H.</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no translation</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>344797</th>
+      <td>00109</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Jagersma, Bram</td>
+      <td></td>
+      <td>Goetze, Albrecht</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no translation</td>
+      <td></td>
+      <td>unopened envelope</td>
+    </tr>
+    <tr>
+      <th>344798</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no atf</td>
+      <td></td>
+      <td>Janssen, Caroline</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no translation</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>344799</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no atf</td>
+      <td></td>
+      <td>Janssen, Caroline</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no translation</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>344800</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no atf</td>
+      <td></td>
+      <td>Fish, Thomas</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>no translation</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>344801 rows × 64 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="use-the-catalog-to-select-transliterations">
+<h2>2.3.3 Use the Catalog to Select Transliterations<a class="headerlink" href="#use-the-catalog-to-select-transliterations" title="Permalink to this headline">¶</a></h2>
+<p>In the example code in the following cell the catalog is used to select from the transliteration file all texts from the Early Dynastic IIIa period. The field “period” is used to select those catalog entries that have “ED IIIa” in that field.</p>
+<p>In the transliteration file, a new text is introduced by a line that begins with an ampersand (&amp;) followed by a P number, followed by a publication reference (journal or book) using a commonly used set of abbreviations, as in:</p>
+<blockquote>
+<div><p>&amp;P212416 = AAICAB 1/1, pl. 008, 19282-439</p>
+</div></blockquote>
+<p>The set of transliterations in the file <code class="docutils literal notranslate"><span class="pre">cdliatf_unblocked.atf</span></code> is read into a list, one line at a time, with the <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> method. The code iterates through that list of lines. The flag <code class="docutils literal notranslate"><span class="pre">keep</span></code> (which initially is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>) is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> if the code encounters a P number that is present in the list <code class="docutils literal notranslate"><span class="pre">pnos</span></code>. As long as <code class="docutils literal notranslate"><span class="pre">keep</span> <span class="pre">=</span> <span class="pre">True</span></code> subsequent lines are added to the list <code class="docutils literal notranslate"><span class="pre">ed3a_atf</span></code>. When the script encounters a P-number that is not in <code class="docutils literal notranslate"><span class="pre">pnos</span></code>, the flag <code class="docutils literal notranslate"><span class="pre">keep</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The result is a of list lines with all the transliteration data of the Early Dynastic IIIa texts in <a class="reference external" href="http://cdli.ucla.edu">CDLI</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed3a</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cat</span><span class="p">[</span><span class="s2">&quot;period&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ED IIIa&quot;</span><span class="p">]</span>
+<span class="n">pnos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ed3a</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">])</span>
+<span class="c1">#pnos = [&quot;P&quot; + str(no).zfill(6) for no in pnos]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;cdlidata/cdliatf_unblocked.atf&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span> 
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">keep</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">ed3a_atf</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="ow">in</span> <span class="n">pnos</span><span class="p">:</span> 
+            <span class="n">keep</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">keep</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">keep</span><span class="p">:</span> 
+        <span class="n">ed3a_atf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "87c0e1ea6c7b4b9c937e4985e6355744", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="create-a-data-frame-with-the-selected-texts">
+<h2>2.3.4 Create a Data Frame with the Selected Texts<a class="headerlink" href="#create-a-data-frame-with-the-selected-texts" title="Permalink to this headline">¶</a></h2>
+<p>The following code will transform the list <code class="docutils literal notranslate"><span class="pre">ed3a_atf</span></code> into a format where each text is a row in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data frame, with the text ID in column 1, and the transliteration in column 2 (as a single string, without line numbers or line demarcations). This is, of course, just one example of how the data may be selected and formatted - we can use all the power of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library to slice and manipulated the data.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/P212416.jpg"><img alt="../_images/P212416.jpg" src="../_images/P212416.jpg" style="width: 167.5px; height: 173.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><a class="reference external" href="http://cdli.ucla.edu/P212416">P212416</a>, an ED IIIa administrative document from Kish</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The lines are read in reverse order, so that when the script encounters an ‘&amp;P’ line (as in ‘&amp;P212416 = AAICAB 1/1, pl. 008, 19282-439’), this signals that all the lines of a text have been read and that the document can be added to the list <code class="docutils literal notranslate"><span class="pre">docs</span></code>. (When reading the lines in regular order - taking the ‘&amp;P’ line as signaling the end of the previous document - one needs to separately save the last document, because there is no ‘&amp;P’ line anymore to indicate that the text is complete).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">document</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">id_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">ed3a_atf</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ed3a_atf</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>  <span class="c1"># remove empty lines, which cause trouble</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">ed3a_atf</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">:</span>  <span class="c1"># line beginning with &amp; marks the beginning of a document</span>
+        <span class="n">id_text</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># retrieve the P number</span>
+        <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">id_text</span><span class="p">,</span> <span class="n">document</span><span class="p">])</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>   <span class="c1"># after appending the data to docs, reset the variable `document`.</span>
+        <span class="k">continue</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;@&quot;</span><span class="p">]:</span>  <span class="c1"># skip all non-transliteration lines</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># split line at first space (after the line number)</span>
+            <span class="n">document</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">document</span><span class="si">}</span><span class="s1">&#39;</span> <span class="c1"># add the new line in front</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span>   <span class="c1"># malformed lines (no proper separation between line number and text) are skipped</span>
+<span class="n">ed3a_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="n">ed3a_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">,</span> <span class="s2">&quot;transliteration&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "543b6a272982415d922cd0fce21bfe84", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed3a_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_text</th>
+      <th>transliteration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>P306736</td>
+      <td>[x e2] sar [n] ku3 ma-na sa10#-bi 1(u@c) ku3 g...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>P010800</td>
+      <td>1(asz@c) HUL?-x 1(asz@c)#? ESZ#-ga-x? 1(asz@c)...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P010644</td>
+      <td>LAK358-nu-ru gir2 AB si urin am6-dar sza3 ku3-...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P519406</td>
+      <td>1(u@c) ku3 luh-ha gin2 sa10 e2 2(asz@c) e2-bi ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P519401</td>
+      <td>[...] x [...] [...] x [...] x-gal# [...] tu7(|...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1008</th>
+      <td>P010012</td>
+      <td>1(esze3@c) GAN2 ur-{d}nin-PA-ke4 lugal-USZ-MUS...</td>
+    </tr>
+    <tr>
+      <th>1009</th>
+      <td>P010011</td>
+      <td>6(asz@c) uruda ma-na sa10 GAN2 4(iku@c) GAN2-b...</td>
+    </tr>
+    <tr>
+      <th>1010</th>
+      <td>P010009</td>
+      <td>[6(asz@c)] uruda ma-na sa10 GAN2 4(iku@c) GAN2...</td>
+    </tr>
+    <tr>
+      <th>1011</th>
+      <td>P010008</td>
+      <td>4(iku@c) GAN2 DUR2-HAR sar 1(u@c) uruda &lt;a&gt;-ru...</td>
+    </tr>
+    <tr>
+      <th>1012</th>
+      <td>P005984</td>
+      <td>[n] 4(bur3@c) _GAN2_ E2#? HA? GU4? x in ur-sa6...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1013 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_3_Data_Acquisition_CDLI"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../2_2_Data_Acquisition_ETCSL/2_2_Data_Acquisition_ETCSL.html" title="previous page">2.2 Data Acquisition ETCSL</a>
+    <a class='right-next' id="next-link" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html" title="next page">2.4.1 Data Acquisition BDTNS</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niek Veldhuis<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
