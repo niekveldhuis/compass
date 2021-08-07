@@ -152,11 +152,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_0_Data_Acquisition_BDTNS.html">
-     2.4.1 Data Acquisition BDTNS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../2_4_Data_Acquisition_BDTNS/2_4_1_Data_Acquisition_BDTNS.html">
      2.4 Data Acquision BDTNS
     </a>
@@ -334,8 +329,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-equivalencies">
-     2.2.2.2 Load Equivalencies
+    <a class="reference internal nav-link" href="#download-etcsl-and-equivalencies-files">
+     2.2.2.2 Download ETCSL and Equivalencies Files
     </a>
    </li>
   </ul>
@@ -586,6 +581,8 @@ The output is saved in the <code class="docutils literal notranslate"><span clas
 <li><p>json: for reading the equivalency dictionaries in JSON format</p></li>
 <li><p>pandas: data analysis and manipulation; dataframes</p></li>
 <li><p>tqdm: progress bar</p></li>
+<li><p>requests: for communicating with a server over the internet</p></li>
+<li><p>zipfile: read data from a zipped file</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,15 +592,19 @@ The output is saved in the <code class="docutils literal notranslate"><span clas
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;etcsl&#39;</span><span class="p">,</span> <span class="n">exist_ok</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="load-equivalencies">
-<span id="id2"></span><h3>2.2.2.2 Load Equivalencies<a class="headerlink" href="#load-equivalencies" title="Permalink to this headline">¶</a></h3>
-<p>The file <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code> contains a number of dictionaries that will be used to search and replace at various places in this notebook. The dictionaries are:</p>
+<div class="section" id="download-etcsl-and-equivalencies-files">
+<span id="id2"></span><h3>2.2.2.2 Download ETCSL and Equivalencies Files<a class="headerlink" href="#download-etcsl-and-equivalencies-files" title="Permalink to this headline">¶</a></h3>
+<p>The ETCSL files are downloaded in a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file from the <a class="reference external" href="http://hdl.handle.net/20.500.12024/2518">Oxford Text Archive</a>. For the code, see section <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_0_download_ORACC-JSON.html#id1"><span class="std std-ref">2.1.0</span></a>.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code> is found in the <a class="reference external" href="https://github.com/niekveldhuis/compass">Compass</a> project on GitHub. It contains a number of dictionaries that will be used to search and replace at various places in this notebook. The dictionaries are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">suxwords</span></code>: Sumerian words (Citation Form, GuideWord, and Part of Speech) in <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> format and their <a class="reference external" href="http://oracc.org">ORACC</a> counterparts.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">emesalwords</span></code>: idem for Emesal words</p></li>
@@ -614,8 +615,39 @@ The output is saved in the <code class="docutils literal notranslate"><span clas
 <p>The <code class="docutils literal notranslate"><span class="pre">equivalencies.json</span></code> file is loaded with the <code class="docutils literal notranslate"><span class="pre">json</span></code> library (for JSON and the <code class="docutils literal notranslate"><span class="pre">json</span></code> library, see section <a class="reference internal" href="../2_1_Data_Acquisition_ORACC/2_1_1_JSON.html#id1"><span class="std std-ref">2.1.1</span></a>). The dictionaries <code class="docutils literal notranslate"><span class="pre">suxwords</span></code>, <code class="docutils literal notranslate"><span class="pre">emesalwords</span></code> and <code class="docutils literal notranslate"><span class="pre">propernouns</span></code> (which, together, contain the entire <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> vocabulary) are concatenated into a single dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;equivalencies/equivalencies.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">eq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CHUNK</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ota.bodleian.ox.ac.uk/repository/xmlui/bitstream/handle/20.500.12024/2518/etcsl.zip&quot;</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;etcsl/etcsl.zip&quot;</span>
+<span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>   <span class="c1"># meaning that the file exists</span>
+        <span class="n">total_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Saving </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1"> as </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">=</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total_size</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;ETCSL&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">CHUNK</span><span class="p">):</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WARNING: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving https://ota.bodleian.ox.ac.uk/repository/xmlui/bitstream/handle/20.500.12024/2518/etcsl.zip as etcsl/etcsl.zip
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "a8a2fd062e25495fbea6e27e13919547", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/niekveldhuis/compass/master/2_2_Data_Acquisition_ETCSL/Equivalencies/equivalencies.json&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">equivalencies</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="c1">#with open(&quot;equivalencies/equivalencies.json&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+<span class="c1">#    eq = json.load(f)</span>
 <span class="n">equiv</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="s2">&quot;suxwords&quot;</span><span class="p">]</span>
 <span class="n">equiv</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s2">&quot;emesalwords&quot;</span><span class="p">])</span>
 <span class="n">equiv</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s2">&quot;propernouns&quot;</span><span class="p">])</span>
@@ -1041,14 +1073,14 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
 <span id="id7"></span><h2>2.2.11 Parse a Text<a class="headerlink" href="#parse-a-text" title="Permalink to this headline">¶</a></h2>
 <p>The main process iterates through the list of XML files (one for each composition in <a class="reference external" href="https://etcsl.orinst.ox.ac.uk/">ETCSL</a>) and calls for each of them the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code>. After opening the XML file <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code> first calls the function <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> in order to replace HTML entities by their unicode counterparts (<a class="reference internal" href="#id3"><span class="std std-ref">2.2.3</span></a>). The module <code class="docutils literal notranslate"><span class="pre">etree</span></code> from the <code class="docutils literal notranslate"><span class="pre">lxml</span></code> library is used to read the XML tree. Since <code class="docutils literal notranslate"><span class="pre">etree</span></code> does not read the XML directly from file, but rather reads the output of the <code class="docutils literal notranslate"><span class="pre">ampersands()</span></code> function, we need the function <code class="docutils literal notranslate"><span class="pre">fromstring()</span></code>:</p>
 <p>After creating the tree, the function <code class="docutils literal notranslate"><span class="pre">mark_extra()</span></code> (<a class="reference internal" href="#id4"><span class="std std-ref">2.2.4</span></a>) is called in order to explicitly mark “additional” and “secondary” words.  The composition name is found in the node <code class="docutils literal notranslate"><span class="pre">title</span></code>. This name is slightly adjusted in two ways. First, all <a class="reference external" href="https://etcsl.orinst.ox.ac.uk/">ETCSL</a> text names include the phrase ” – a composite transliteration”. This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which may create problems when data are saved in <code class="docutils literal notranslate"><span class="pre">cvs</span></code> format. These two elements are removed from the title.</p>
-<p>The dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the <a class="reference external" href="https://etcsl.orinst.ox.ac.uk/">ETCSL</a> text number, for instance c.1.4.1 for Inana’s Descent) and the text name. Finally, the line reference count is set to 0. This line reference is updated every time the function <code class="docutils literal notranslate"><span class="pre">getline()</span></code> is called.</p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is updated with the name of the composition (for instance “Inana’s descent to the nether world”) and the line reference count is set to 0. This line reference is updated every time the function <code class="docutils literal notranslate"><span class="pre">getline()</span></code> is called.</p>
 <p>The XML tree is now forwarded to the function <code class="docutils literal notranslate"><span class="pre">getversion()</span></code> together with the dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parsetext</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;etcsl/transliterations/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">xmltext</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">xmltext</span> <span class="o">=</span> <span class="n">ampersands</span><span class="p">(</span><span class="n">xmltext</span><span class="p">)</span>          <span class="c1">#replace HTML entities by Unicode equivalents</span>
+    <span class="c1">#with open(f&#39;etcsl/transliterations/{file}&#39;) as f:</span>
+    <span class="c1">#    xmltext = f.read()</span>
+    <span class="n">xmltext</span> <span class="o">=</span> <span class="n">ampersands</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>          <span class="c1">#replace HTML entities by Unicode equivalents</span>
     
     <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xmltext</span><span class="p">)</span>
     
@@ -1057,7 +1089,6 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;string(//title)&#39;</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; -- a composite transliteration&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;id_text&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">file</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
     <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;text_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="n">meta_d</span><span class="p">[</span><span class="s2">&quot;id_line&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">getversion</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">)</span>
@@ -1071,42 +1102,10 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
 <div class="section" id="main-process">
 <span id="id8"></span><h2>2.2.12 Main Process<a class="headerlink" href="#main-process" title="Permalink to this headline">¶</a></h2>
 <p>The list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> is created as an empty list. It will be filled with dictionaries, each dictionary representing one word form.</p>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">textlist</span></code> is a list of all the XML files with <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> compositions in the directory <code class="docutils literal notranslate"><span class="pre">etcsl/transliterations</span></code>. Iterating through this list, each file  is sent as an argument to the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code>.</p>
-<p>The dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is created as an empty dictionary. On each level of analysis the dictionary is updated with meta-data, such as text ID, version name, line number, etc.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">textlist</span></code> is a list of all the XML files with <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> compositions in the directory <code class="docutils literal notranslate"><span class="pre">etcsl/transliterations</span></code> in the file <code class="docutils literal notranslate"><span class="pre">etcsl.zip</span></code>. Iterating through this list, each file is unzipped and sent as an argument to the function <code class="docutils literal notranslate"><span class="pre">parsetext()</span></code>.</p>
+<p>The dictionary <code class="docutils literal notranslate"><span class="pre">meta_d</span></code> is created with a single key, <code class="docutils literal notranslate"><span class="pre">id_text</span></code>. This key holds the <a class="reference external" href="http://etcsl.orinst.ox.ac.uk">ETCSL</a> composition number (for instance “c.1.4.1” for Inana’s Descent). On each level of analysis the dictionary is updated with meta-data, such as text name, version name, line number, etc.</p>
 <p>The main process also defines a number of variables (compiled regular expressions and translation tables) that are used later on in the process for adjusting transliteration conventions in the function <code class="docutils literal notranslate"><span class="pre">tounicode()</span></code> (see <a class="reference internal" href="#id5"><span class="std std-ref">2.2.5</span></a>)</p>
 <p>After the loop has gone through all the file names (this may take a few minutes) the list <code class="docutils literal notranslate"><span class="pre">alltexts</span></code> is transformed into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame. The progress bar should indicate that 394 files have been processed and the resulting dataframe should have 12 columns and 170,856 rows, each row representing a single word or a gap. All missing values (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) are replaced by empty strings.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">textlist</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;etcsl/transliterations&#39;</span><span class="p">)</span>
-<span class="n">textlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">textlist</span> <span class="k">if</span> <span class="n">file</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;.xml&#39;</span><span class="p">]</span>
-<span class="n">textlist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-
-<span class="n">amp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&amp;[^;]+;&#39;</span><span class="p">)</span> <span class="c1">#regex for HTML entities, used in ampersands()</span>
-
-<span class="n">asccj</span><span class="p">,</span> <span class="n">unicj</span> <span class="o">=</span> <span class="s1">&#39;cjCJ&#39;</span><span class="p">,</span> <span class="s1">&#39;šŋŠŊ&#39;</span>
-<span class="n">transcj</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">asccj</span><span class="p">,</span> <span class="n">unicj</span><span class="p">)</span> <span class="c1"># translation table for c &gt; š and j &gt; ŋ</span>
-
-<span class="n">ind</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}&#39;</span><span class="p">)</span> <span class="c1">#regex for sign index nos preceded by a letter</span>
-<span class="n">ascind</span><span class="p">,</span> <span class="n">uniind</span> <span class="o">=</span> <span class="s1">&#39;0123456789x&#39;</span><span class="p">,</span> <span class="s1">&#39;₀₁₂₃₄₅₆₇₈₉ₓ&#39;</span>
-<span class="n">transind</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">ascind</span><span class="p">,</span> <span class="n">uniind</span><span class="p">)</span> <span class="c1"># translation table for index numbers</span>
-<span class="c1"># regex ind and the translation tables transind and transcj are used in tounicode()</span>
-
-<span class="n">alltexts</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">files</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">textlist</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="n">files</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ETCSL </span><span class="si">{</span><span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">meta_d</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">parsetext</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">meta_d</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">alltexts</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "aac9992e616a48f2bd79535e89185638", "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -1142,82 +1141,82 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
       <th>pos</th>
       <th>form</th>
       <th>lang</th>
-      <th>extent</th>
       <th>status</th>
+      <th>extent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>c.0.1.1</td>
-      <td>Ur III catalogue from Nibru (N1)</td>
+      <td>c.2.5.5.4</td>
+      <td>An adab to Ninurta for Lipit-Eštar (Lipit-Ešta...</td>
       <td>1</td>
       <td></td>
       <td>1</td>
-      <td>dubsaŋ</td>
-      <td>first</td>
-      <td>AJ</td>
-      <td>dub-saŋ-ta</td>
+      <td>ursaŋ</td>
+      <td>hero</td>
+      <td>N</td>
+      <td>ur-saŋ</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>1</th>
-      <td>c.0.1.1</td>
-      <td>Ur III catalogue from Nibru (N1)</td>
-      <td>2</td>
-      <td></td>
-      <td>2</td>
-      <td>Enki</td>
+      <td>c.2.5.5.4</td>
+      <td>An adab to Ninurta for Lipit-Eštar (Lipit-Ešta...</td>
       <td>1</td>
-      <td>DN</td>
-      <td>{d}en-ki</td>
+      <td></td>
+      <td>1</td>
+      <td>aŋal</td>
+      <td>strong</td>
+      <td>AJ</td>
+      <td>a₂-ŋal₂</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>2</th>
-      <td>c.0.1.1</td>
-      <td>Ur III catalogue from Nibru (N1)</td>
-      <td>2</td>
+      <td>c.2.5.5.4</td>
+      <td>An adab to Ninurta for Lipit-Eštar (Lipit-Ešta...</td>
+      <td>1</td>
       <td></td>
-      <td>2</td>
-      <td>unu</td>
-      <td>dwelling</td>
-      <td>N</td>
-      <td>unu₂</td>
+      <td>1</td>
+      <td>Anunak</td>
+      <td>1</td>
+      <td>DN</td>
+      <td>{d}a-nun-na-ke₄-ne</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>3</th>
-      <td>c.0.1.1</td>
-      <td>Ur III catalogue from Nibru (N1)</td>
-      <td>2</td>
+      <td>c.2.5.5.4</td>
+      <td>An adab to Ninurta for Lipit-Eštar (Lipit-Ešta...</td>
+      <td>1</td>
       <td></td>
-      <td>2</td>
-      <td>gal</td>
-      <td>big</td>
-      <td>V/i</td>
-      <td>gal</td>
+      <td>1</td>
+      <td>Ekur</td>
+      <td>1</td>
+      <td>TN</td>
+      <td>e₂-kur-ta</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>4</th>
-      <td>c.0.1.1</td>
-      <td>Ur III catalogue from Nibru (N1)</td>
-      <td>2</td>
+      <td>c.2.5.5.4</td>
+      <td>An adab to Ninurta for Lipit-Eštar (Lipit-Ešta...</td>
+      <td>1</td>
       <td></td>
-      <td>2</td>
-      <td>ed</td>
-      <td>ascend</td>
+      <td>1</td>
+      <td>e</td>
+      <td>leave</td>
       <td>V/i</td>
-      <td>im-ed₃</td>
+      <td>e₃-a</td>
       <td>sux</td>
       <td></td>
       <td></td>
@@ -1239,75 +1238,75 @@ In the <code class="docutils literal notranslate"><span class="pre">equiv</span>
     </tr>
     <tr>
       <th>170851</th>
-      <td>c.6.2.5</td>
-      <td>Proverbs: of unknown provenance</td>
-      <td>211</td>
-      <td>YBC 9912</td>
-      <td>1</td>
-      <td>haš</td>
-      <td>thigh</td>
-      <td>N</td>
-      <td>haš₂</td>
+      <td>c.4.08.13</td>
+      <td>A šir-namšub to Inana (Dumuzid-Inana M)</td>
+      <td>15</td>
+      <td></td>
+      <td>B4</td>
+      <td>X</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>X</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>170852</th>
-      <td>c.6.2.5</td>
-      <td>Proverbs: of unknown provenance</td>
-      <td>211</td>
-      <td>YBC 9912</td>
-      <td>1</td>
-      <td>gid</td>
-      <td>long</td>
-      <td>V/i</td>
-      <td>ba-ra-an-gid₂-nam</td>
+      <td>c.4.08.13</td>
+      <td>A šir-namšub to Inana (Dumuzid-Inana M)</td>
+      <td>15</td>
+      <td></td>
+      <td>B4</td>
+      <td>X</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>X</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>170853</th>
-      <td>c.6.2.5</td>
-      <td>Proverbs: of unknown provenance</td>
-      <td>211</td>
-      <td>YBC 9912</td>
-      <td>1</td>
-      <td>lu</td>
-      <td>person</td>
+      <td>c.4.08.13</td>
+      <td>A šir-namšub to Inana (Dumuzid-Inana M)</td>
+      <td>16</td>
+      <td></td>
+      <td>B5</td>
+      <td>širnamšubak</td>
+      <td>subscript</td>
       <td>N</td>
-      <td>lu₂</td>
+      <td>šir₃-nam-šub-ba-kam</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>170854</th>
-      <td>c.6.2.5</td>
-      <td>Proverbs: of unknown provenance</td>
-      <td>211</td>
-      <td>YBC 9912</td>
-      <td>1</td>
-      <td>ŋeši</td>
-      <td>sesame</td>
+      <td>c.4.08.13</td>
+      <td>A šir-namšub to Inana (Dumuzid-Inana M)</td>
+      <td>17</td>
+      <td></td>
+      <td>B6</td>
+      <td>širnamšubak</td>
+      <td>subscript</td>
       <td>N</td>
-      <td>še-ŋiš-i₃</td>
+      <td>šir₃-nam-šub</td>
       <td>sux</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <th>170855</th>
-      <td>c.6.2.5</td>
-      <td>Proverbs: of unknown provenance</td>
-      <td>211</td>
-      <td>YBC 9912</td>
-      <td>1</td>
-      <td>il</td>
-      <td>raise</td>
-      <td>V/t</td>
-      <td>bi₂-ib₂-il₂-il₂</td>
+      <td>c.4.08.13</td>
+      <td>A šir-namšub to Inana (Dumuzid-Inana M)</td>
+      <td>17</td>
+      <td></td>
+      <td>B6</td>
+      <td>X</td>
+      <td>NA</td>
+      <td>NA</td>
+      <td>X</td>
       <td>sux</td>
       <td></td>
       <td></td>

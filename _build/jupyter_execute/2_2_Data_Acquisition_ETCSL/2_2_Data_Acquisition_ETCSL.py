@@ -186,6 +186,8 @@
 # * json: for reading the equivalency dictionaries in JSON format
 # * pandas: data analysis and manipulation; dataframes
 # * tqdm: progress bar
+# * requests: for communicating with a server over the internet
+# * zipfile: read data from a zipped file
 
 # In[1]:
 
@@ -196,12 +198,17 @@ import os
 import json
 import pandas as pd
 from tqdm.auto import tqdm
+import requests
+import zipfile
 os.makedirs('output', exist_ok = True)
+os.makedirs('etcsl', exist_ok = True)
 
 
 # (2.2.2.2)=
-# ### 2.2.2.2 Load Equivalencies 
-# The file `equivalencies.json` contains a number of dictionaries that will be used to search and replace at various places in this notebook. The dictionaries are:
+# ### 2.2.2.2 Download ETCSL and Equivalencies Files
+# The ETCSL files are downloaded in a `zip` file from the [Oxford Text Archive](http://hdl.handle.net/20.500.12024/2518). For the code, see section [2.1.0](2.1.0).
+# 
+# The file `equivalencies.json` is found in the [Compass](https://github.com/niekveldhuis/compass) project on GitHub. It contains a number of dictionaries that will be used to search and replace at various places in this notebook. The dictionaries are:
 # - `suxwords`: Sumerian words (Citation Form, GuideWord, and Part of Speech) in [ETCSL](http://etcsl.orinst.ox.ac.uk) format and their [ORACC](http://oracc.org) counterparts.
 # - `emesalwords`: idem for Emesal words
 # - `propernouns`: idem for proper nouns
@@ -213,8 +220,31 @@ os.makedirs('output', exist_ok = True)
 # In[2]:
 
 
-with open("equivalencies/equivalencies.json", encoding="utf-8") as f:
-    eq = json.load(f)
+CHUNK = 1024
+url = "https://ota.bodleian.ox.ac.uk/repository/xmlui/bitstream/handle/20.500.12024/2518/etcsl.zip"
+file = "etcsl/etcsl.zip"
+with requests.get(url, stream=True) as request:
+    if request.status_code == 200:   # meaning that the file exists
+        total_size = int(request.headers.get('content-length', 0))
+        tqdm.write(f'Saving {url} as {file}')
+        t=tqdm(total=total_size, unit='B', unit_scale=True, desc = "ETCSL")
+        with open(file, 'wb') as f:
+            for c in request.iter_content(chunk_size=CHUNK):
+                t.update(len(c))
+                f.write(c)
+    else:
+        tqdm.write(f"WARNING: {url} does not exist.")
+
+
+# In[3]:
+
+
+url = "https://raw.githubusercontent.com/niekveldhuis/compass/master/2_2_Data_Acquisition_ETCSL/Equivalencies/equivalencies.json"
+r = requests.get(url)
+equivalencies = r.content
+eq = json.loads(equivalencies)
+#with open("equivalencies/equivalencies.json", encoding="utf-8") as f:
+#    eq = json.load(f)
 equiv = eq["suxwords"]
 equiv.update(eq["emesalwords"])
 equiv.update(eq["propernouns"])
@@ -259,7 +289,7 @@ equiv.update(eq["propernouns"])
 # 
 # The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the Unicode counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group(0) represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
 
-# In[3]:
+# In[4]:
 
 
 def ampersands(string):    
@@ -325,7 +355,7 @@ def ampersands(string):
 # 
 # The function `mark_extra()` is called twice by the function `parsetext()` (see below, section [2.2.11](2.2.11)), once for "additional" and once for "secondary" text, indicated by the `which` argument. 
 
-# In[4]:
+# In[5]:
 
 
 def mark_extra(tree, which):
@@ -362,7 +392,7 @@ def mark_extra(tree, which):
 # 
 # ```
 
-# In[5]:
+# In[6]:
 
 
 def tounicode(string):
@@ -408,7 +438,7 @@ def tounicode(string):
 # 
 # If the lemma is not found in the `equiv` list the `word` dictionary is left unchanged and appended to the list `alltexts`.
 
-# In[6]:
+# In[7]:
 
 
 def etcsl_to_oracc(word):
@@ -488,7 +518,7 @@ def etcsl_to_oracc(word):
 # 
 # The function `getword()`, finally sends the `word` dictionary to `etcsl_to_oracc()` (section [2.2.6](2.2.6)) for final formatting of these data elements and to add the the data to the list `alltexts`.
 
-# In[7]:
+# In[8]:
 
 
 def getword(node, meta_d):
@@ -567,7 +597,7 @@ def getword(node, meta_d):
 # 
 # :::
 
-# In[8]:
+# In[9]:
 
 
 def getline(lnode, meta_d):
@@ -620,7 +650,7 @@ def getline(lnode, meta_d):
 # 
 # :::
 
-# In[9]:
+# In[10]:
 
 
 def getsegment(tree, meta_d):
@@ -661,7 +691,7 @@ def getsegment(tree, meta_d):
 # 
 # In some cases version names are very long and somewhat unwieldy. For instance, [The Cursing of Agade](https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.2.1.5&display=Crit&charenc=gcirc#) has a version that is called "Fragments of an earlier version from Nibru, dating to the Ur III period." This version name is abbreviated to "Ur III". The equivalency list `versions` (in `equivalencies/equivalencies.json`; see [2.2.2.2](2.2.2.2)) is used to adjust version names.
 
-# In[10]:
+# In[11]:
 
 
 def getversion(tree, meta_d):
@@ -687,17 +717,17 @@ def getversion(tree, meta_d):
 # 
 # After creating the tree, the function `mark_extra()` ([2.2.4](2.2.4)) is called in order to explicitly mark "additional" and "secondary" words.  The composition name is found in the node `title`. This name is slightly adjusted in two ways. First, all [ETCSL](https://etcsl.orinst.ox.ac.uk/) text names include the phrase " -- a composite transliteration". This is useful for online presentation, but not for computational text analysis. Second, some titles include commas, which may create problems when data are saved in `cvs` format. These two elements are removed from the title.
 # 
-# The dictionary `meta_d`, which was created as an empty dictionary in the main process, is now filled with meta data on the composition level: the text ID (the [ETCSL](https://etcsl.orinst.ox.ac.uk/) text number, for instance c.1.4.1 for Inana's Descent) and the text name. Finally, the line reference count is set to 0. This line reference is updated every time the function `getline()` is called.
+# The dictionary `meta_d` is updated with the name of the composition (for instance "Inana's descent to the nether world") and the line reference count is set to 0. This line reference is updated every time the function `getline()` is called.
 # 
 # The XML tree is now forwarded to the function `getversion()` together with the dictionary `meta_d`.
 
-# In[11]:
+# In[12]:
 
 
 def parsetext(file, meta_d):
-    with open(f'etcsl/transliterations/{file}') as f:
-        xmltext = f.read()
-    xmltext = ampersands(xmltext)          #replace HTML entities by Unicode equivalents
+    #with open(f'etcsl/transliterations/{file}') as f:
+    #    xmltext = f.read()
+    xmltext = ampersands(file)          #replace HTML entities by Unicode equivalents
     
     tree = etree.fromstring(xmltext)
     
@@ -706,7 +736,6 @@ def parsetext(file, meta_d):
     name = tree.xpath('string(//title)')
     name = name.replace(' -- a composite transliteration', '')
     name = name.replace(',', '')
-    meta_d["id_text"] =  file[:-4]
     meta_d["text_name"] = name
     meta_d["id_line"] = 0
     getversion(tree, meta_d)
@@ -719,21 +748,13 @@ def parsetext(file, meta_d):
 # 
 # The list `alltexts` is created as an empty list. It will be filled with dictionaries, each dictionary representing one word form.
 # 
-# The variable `textlist` is a list of all the XML files with [ETCSL](http://etcsl.orinst.ox.ac.uk) compositions in the directory `etcsl/transliterations`. Iterating through this list, each file  is sent as an argument to the function `parsetext()`. 
+# The variable `textlist` is a list of all the XML files with [ETCSL](http://etcsl.orinst.ox.ac.uk) compositions in the directory `etcsl/transliterations` in the file `etcsl.zip`. Iterating through this list, each file is unzipped and sent as an argument to the function `parsetext()`. 
 # 
-# The dictionary `meta_d` is created as an empty dictionary. On each level of analysis the dictionary is updated with meta-data, such as text ID, version name, line number, etc.
+# The dictionary `meta_d` is created with a single key, `id_text`. This key holds the [ETCSL](http://etcsl.orinst.ox.ac.uk) composition number (for instance "c.1.4.1" for Inana's Descent). On each level of analysis the dictionary is updated with meta-data, such as text name, version name, line number, etc.
 # 
 # The main process also defines a number of variables (compiled regular expressions and translation tables) that are used later on in the process for adjusting transliteration conventions in the function `tounicode()` (see [2.2.5](2.2.5))
 # 
 # After the loop has gone through all the file names (this may take a few minutes) the list `alltexts` is transformed into a `pandas` DataFrame. The progress bar should indicate that 394 files have been processed and the resulting dataframe should have 12 columns and 170,856 rows, each row representing a single word or a gap. All missing values (`NaN`) are replaced by empty strings. 
-
-# In[12]:
-
-
-textlist = os.listdir('etcsl/transliterations')
-textlist = [file for file in textlist if file[-4:] == '.xml']
-textlist.sort()
-
 amp = re.compile(r'&[^;]+;') #regex for HTML entities, used in ampersands()
 
 asccj, unicj = 'cjCJ', 'šŋŠŊ'
@@ -744,17 +765,22 @@ ascind, uniind = '0123456789x', '₀₁₂₃₄₅₆₇₈₉ₓ'
 transind = str.maketrans(ascind, uniind) # translation table for index numbers
 # regex ind and the translation tables transind and transcj are used in tounicode()
 
+zip_file = zipfile.ZipFile("etcsl/etcsl.zip")       # create a Zipfile object
+filelist = zip_file.namelist()     # list of all the files in the ZIP
+textlist = [name for name in filelist if "transliterations" in name and name[-4:] == '.xml']  
+textlist.sort()
+
 alltexts = []
 files = tqdm(textlist)
-for file in files:
-    files.set_description(f'ETCSL {file[2:-4]}')
-    meta_d = {}
+for filename in files:
+    file = zip_file.read(filename).decode('utf-8')   
+    textid = filename[23:-4]
+    files.set_description(f'ETCSL {textid}')
+    meta_d = {"id_text" : textid}
     parsetext(file, meta_d)
 
 df = pd.DataFrame(alltexts).fillna('')
-
-
-# In[13]:
+# In[17]:
 
 
 df
@@ -770,7 +796,7 @@ df
 # 
 # :::
 
-# In[14]:
+# In[15]:
 
 
 with open('output/alltexts.csv', 'w', encoding="utf-8") as w:
