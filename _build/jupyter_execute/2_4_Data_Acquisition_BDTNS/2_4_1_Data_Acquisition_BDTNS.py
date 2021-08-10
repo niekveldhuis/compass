@@ -1,51 +1,22 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 2.4 Data Acquision BDTNS
+# (2.4.1)=
+# # 2.4.1 Data Acquision BDTNS
 # 
-# Goal of this notebook is to transform [BDTNS](http://bdtns.filol.csic.es/) data into a structured format that clearly distinguishes between text and non-text (such as line numbers) and that, for the text part, follows as much as possible the standards of the Oracc Global Sign List ([OGSL](http://oracc.org/ogsl)). We will use this structured data to build a search engine that is independent of sign readings (that is, searching for **sukkal**, **sugal₇** or **luh** will all yield the same results). The search engine will serve as an example of the potential power of mashing two independent projects.
+# Goal of this notebook is to transform [BDTNS](http://bdtns.filol.csic.es/) data into a structured format that clearly distinguishes between text and non-text (such as line numbers) and that, for the text part, follows as much as possible the standards of the Oracc Global Sign List ([OGSL](http://oracc.org/ogsl)). In section [2.4.2](2.4.2) we will use this structured data to build a search engine that is independent of sign readings (that is, searching for **sukkal**, **sugal₇** or **luh** will all yield the same results). The search engine will serve as an example of the potential power of mashing two independent projects.
 # 
 # ```{margin}
 # A similar search engine was developed by Marc Endesfelder for his [Writing Sumerian](https://corpus.writing-sumerian.assyriologie.uni-muenchen.de/) project.
 # ```
-# 
-# ## 2.4.1 BDTNS
-# 
-# ```{margin}
-# For the numbers, see the BDTNS [about](http://bdtns.filol.csic.es/index.php?p=about) page. The [map](http://bdtns.filol.csic.es/mapa.php?modo=colecciones) gives an impression of the distribution of this corpus in libraries and collections in Europe, the Middle East, North America, China, Japan, and Australia.
-# ```
-# 
-# The Database of Neo-Sumerian Texts ([BDTNS](http://bdtns.filol.csic.es)) was created by Manuel Molina (Consejo Superior de Investigaciones Científicas). The site provides a detailed catalog of the administrative, legal, and epistolary documents from the so-called Ur III period (21st century BCE). Molina estimates that museums and private collections all over the world may hold at least 120,000 such documents, not including the holdings of the Iraq Museum, Baghdad. Currently, almost 65% of those documents are available through [BDTNS](http://bdtns.filol.csic.es) in transliteration, and/or in photograph and line drawing. 
-# 
-# ```{figure} ../images/logo_BDTNS.gif
-# :figclass: margin
-# [BDTNS](http://bdtns.filol.csic.es) logo.
-# ``` 
-# 
-# There is a considerable overlap in the data sets offered by [CDLI](http://cdli.ucla.edu) and [BDTNS](http://bdtns.filol.csic.es). All photographs and line drawings of Ur III tablets that are available in [CDLI](http://cdli.ucla.edu) have been imported into [BDTNS](http://bdtns.filol.csic.es); in addition, [BDTNS](http://bdtns.filol.csic.es) offers its own collection of thousands of photographs, in particular of tablets now in the British Museum, London. The initial core of the [BDTNS](http://bdtns.filol.csic.es) transliterations was provided by Remco de Maaijer and Bram Jagersma (Leiden University), who prepared tens of thousands of Ur III texts and distributed those data freely. This same set of transliterations was also one of the initial data sets of [CDLI](http://cdli.ucla.edu). Close cooperation between the two projects has led to further exchange of data. Not infrequently, therefore, misreadings or simple typos appear in the same way in both projects.
-# 
-# ```{margin}
-# Paola Paoletti, *Der König und sein Kreis: das staatliche Schatzarchiv der III. Dynastie von Ur*, Biblioteca del próximo oriente antiguo 10. Madrid: 2012.
-# ```
-# 
-# Still, [BDTNS](http://bdtns.filol.csic.es) is not simply a duplicate of the Ur III data in [CDLI](http://cdli.ucla.edu). Most Ur III scholars today prefer [BDTNS](http://bdtns.filol.csic.es) over [CDLI](http://cdli.ucla.edu) because the smaller focus of the Spanish project implies that there is more attention to detail and that more effort is made to update the record. One example is the book *Der König und sein Kreis* (2012) in which Paola Paoletti studied in detail several hundreds of documents from the so-called treasure archive at Puzriš-Dagan (see also Chapter 4). This archive reports on the manufacturing of luxury goods made of precious metals and leather and includes many rare words. Since the archive (like almost all Ur III archives) is scattered over museums all over the world, most of these texts were published as single documents or in small groups. Studying the entire group frequently allowed Paoletti to arrive at a more satisfying reading and understanding than the original editor's. The [BDTNS](http://bdtns.filol.csic.es) editions of these texts reflect Paoletti's improvements, but the [CDLI](http://cdli.ucla.edu) editions not (yet).
-# 
-# The [BDTNS](http://bdtns.filol.csic.es) data can be downloaded by hand through the [Search](http://bdtns.filol.csic.es/index.php?p=formulario_urIII) option in the Catalogue & Transliterations drop-down menu. One can search by a variety of criteria (including word and grapheme strings) and then download the search results by clicking on the Export button. The export page provides options for the types of information to include (various types of meta-data and/or transliterations). By searching for a blank string one may export the entire data set. The export yields two files: one for the meta-data and one for the  transliterations, both in raw text (`.txt`) format.
-# 
-# ```{admonition} BDTNS Download function Broken
-# :class: dropdown, warning
-# Currently, the export option in [BDTNS](http://bdtns.filol.csic.es) does not work. The code below will grap a version of the data set, made available by Manuel Molina, from the Compass project site at Github. There is no guarantee that this is the most recent version.
-# ```
 
-# ## 2.4.2 BDTNS Data
-# ### 2.4.2.0 Import Packages and create directory
+# ## 2.4.1.0 Import Packages and create directory
 # * requests: for communicating with a server over the internet
 # * pandas: data analysis and manipulation; dataframes
 # * re: Regular Expressions
 # * tqdm: progress bar
 # * os: basic Operating System tasks (such as creating a directory)
 # * sys: change system parameters
-# * utils: compass-specific utilities (download files from ORACC, etc.)
 # * pickle: save data for future use
 # * zipfile: read data from a zipped file
 
@@ -65,7 +36,7 @@ from io import StringIO
 os.makedirs('output', exist_ok = True)
 
 
-# ### 2.4.2.1 Get BDTNS Data Files
+# ## 2.4.1.1 Get BDTNS Data Files
 # For the time being, the data are downloaded in Zipped format from the [Compass](https://github.com/niekveldhuis/compass) repository.
 
 # In[2]:
@@ -88,8 +59,7 @@ with requests.get(url, stream=True) as request:
         tqdm.write(f"WARNING: {url} does not exist.")
 
 
-# ## 2.4.3 BDTNS Catalog
-# ### 2.4.3.1 Extract BDTNS files
+# ## 2.4.1.2 BDTNS Catalog
 # Extract the files from the ZIP and transform the catalog file into a Pandas data frame.
 # 
 # ```{tip}
@@ -109,8 +79,7 @@ cat_df = pd.read_csv(cat, sep = '\t', names= cols, dtype='string', header=None, 
 cat_df
 
 
-# ### 2.4.3.2 Pickle Catalog DataFrame
-# The catalog DataFrame is not used further in this notebook, but will be used in the search engine, to be built in 2.4.2. For now it is saved as a file with the `pickle` package.
+# The catalog DataFrame is not used further in this notebook, but will be used in the search engine in [2.4.2](2.4.2). For now it is saved as a file with the `pickle` package.
 
 # In[4]:
 
@@ -119,8 +88,8 @@ pickled = "output/bdtns_cat.p"
 cat_df.to_pickle(pickled)
 
 
-# ## 2.4.4 BDTNS Transliterations
-# ### 2.4.4.1 Read the Transliteration File as a List
+# ## 2.4.1.3 BDTNS Transliterations
+# ### 2.4.1.3.1 Read the Transliteration File as a List
 # The transliteration file is already extracted from the file BDTNS.zip and is located in the directory `../BDTNS_data/`.
 # 
 # :::{admonition} utf-8, utf-8-sig, vertical tabs
@@ -152,7 +121,7 @@ bdtns = [line for line in bdtns if line.replace('=', '').strip()] # remove empty
 bdtns[:25] # inspect the results
 
 
-# ### 2.4.4.2 Split Data into Fields
+# ### 2.4.1.3.2 Split Data into Fields
 # Each data type (text ID, line number, comments, etc.) is made into a separate column of a data frame. Each row of that data frame represents one line in an Ur III document.
 # 
 # First, the code looks for lines that begin with 6 digits, for instance:
@@ -171,7 +140,7 @@ bdtns[:25] # inspect the results
 # 
 # > o. 4     --- Lu2-Ib-gal dumu Ur-⌈x⌉-[...] # (1 nu-dib erased)
 # 
-# Line numbers are separated from transliteration by five spaces. Editorial remarks (which may indicate the presence of a seal impression, an erased line, or provide an alternative reading) are introduced by the hash mark and are placed at the end of the line. A specific type of editorial remark is the sign name, which explains an x-value (see below section [2.4.4.4.1](2.4.4.4.1)), a rare sign form, or a rare sign reading. These particular editorial remarks have the form (=SIGN NAME), for instance:
+# Line numbers are separated from transliteration by five spaces. Editorial remarks (which may indicate the presence of a seal impression, an erased line, or provide an alternative reading) are introduced by the hash mark and are placed at the end of the line. A specific type of editorial remark is the sign name, which explains an x-value (see below section [2.4.1.4.1](2.4.1.4.1)), a rare sign form, or a rare sign reading. These particular editorial remarks have the form (=SIGN NAME), for instance:
 # 
 # > o. 2     gi ziX-a 12 sar-⌈ta⌉ (=SIG7)
 # 
@@ -197,7 +166,7 @@ for line in tqdm(bdtns):
         lines.append(li_l)
 
 
-# ### 2.4.4.3 Create DataFrame
+# ### 2.4.1.3.3 Create DataFrame
 # The list `lines` is now a list of lists which can be transformed into a `pandas` DataFrame. The DataFrame will have `NaN` (for 'Not a Number') in all cases where a field is empty. `NaN`s are treated by Python as a numerical data type and will throw errors when trying to apply a string function. Therefore, all `NaN`s are replaced by the empty string with the `fillna()` method.
 
 # In[7]:
@@ -208,7 +177,7 @@ df = pd.DataFrame(lines, columns=columns).fillna("")
 df  # inspect the results
 
 
-# ### 2.4.4.4 Make OGSL compliant
+# ## 2.4.1.4 Make OGSL compliant
 # [OGSL](http://oracc.org/ogsl) is the ORACC Global Sign List, which lists for each sign its possible readings. [OGSL](http://oracc.org/ogsl) compliance opens the possibility to search or compare by sign *name* rather than sign value. For instance, one may search for the sequence "aga₃ kug-sig₁₇" (golden tiara) and find a line reading "gin₂ ku₃-GI".
 # 
 # The main steps towards [OGSL](http://oracc.org/ogsl) compliance are: 
@@ -216,8 +185,8 @@ df  # inspect the results
 # - add sign names to x-values
 # - replace regular numbers by index numbers in sign values
 
-# (2.4.4.4.1)=
-# #### 2.4.4.4.1 Dealing with x-values
+# (2.4.1.4.1)=
+# ### 2.4.1.4.1 Dealing with x-values
 # 
 # ```{margin}
 # Molina, Manuel and Such-Gutiérrez, Marcos, On Terms for Cutting Plants and Noses in Ancient Sumer: *Journal of Near Eastern Studies* 63 (2004) 1-16
@@ -256,7 +225,7 @@ df  # inspect the results
 # 
 # For `ogsl_v()` to run properly and efficiently, a number of translation tables, dictionaries, and compiled [regular expressions](https://www.regular-expressions.info/) are defined before the function is called.
 
-# #### 2.4.4.4.2 Step 1: Unambiguous x-values
+# ### 2.4.1.4.2 Step 1: Unambiguous x-values
 # 
 # Some x-values are always resolved in the same way. Thus, ziX is always ziₓ(IGI@g), hirinX is always hirinₓ(KWU318), and gurX is always gurₓ(|ŠE.KIN|). In some cases, x-values have been assigned an index number in [OGSL](http://oracc.org/ogsl). In those cases (nigarₓ = nigar; nemurₓ(PIRIG.TUR) = nemur₂; nagₓ(GAZ) = nag₃; and pešₓ(ŠU.PEŠ5) = peš₁₄) the appropriate index number should be added and the sign name ignored.
 # 
@@ -284,18 +253,18 @@ df  # inspect the results
 # 
 # Special case: **mu-kuX**. There are multiple possible solutions for **kuX**, including kuₓ(LIL) or kuₓ(KWU147), but the very frequent form **mu-kuX** is always to be resolved **mu-kuₓ(DU)**. The regular expression `xv` in the preceding does not match hyphens and thus it will never find the key `mu-kuX` in the dictionary `xvalues`. However, this expression (meaning 'delivery') is so frequent that it makes sense to deal with it separately, rather than depend on the sign names in the `comments` column. The expression **mu-kuX** therefore, has its own line in the function.
 
-# #### 2.4.4.4.3 Step 2: Remaining x-values
+# ### 2.4.1.4.3 Step 2: Remaining x-values
 # For the remaining x-values (many of them ambiguous) we will copy the [BDTNS](http://bdtns.filol.csic.es) sign name, found in the `comments` column, to the x-value. For instance, **ummu₃** is |A.EDIN.LAL|, but the sign complex has many variants, all rendered **ummuX**: EDIN.A.SU, A.EDIN, A.EDIN.A.LAL, EDIN, etc. The code will result in ummuₓ(|A.EDIN.SU|), ummuₓ(|A.EDIN|), ummuₓ(|A.EDIN.LAL|), ummuₓ(EDIN), etc. Compound signs are put between pipes (|A.EDIN.SU|), according to [OGSL](http://oracc.org/ogsl) conventions.
 # 
 # In this step the code will naively replace the capital X by the index ₓ, followed by the first word in the `comments` column. This will result in errors if there are more such x-values in a single line - but because we have already dealt with many such values in the preceding, that risk is not very high. The code will test that the capital X does in fact follow a sign reading (as in ziX), and is not an illegible sign (as in KA×X, or simply X). This is done with a [regular expression](https://www.regular-expressions.info/) using a so-called "positive lookbehind" (?<=), to see if the preceding character is a letter. The regular expression for a capital 'X' preceded by any letter valid in Sumerian or Akkadian, is compiled in the variable `lettersX` in order to speed up the process (see below: Letters).
 
-# #### 2.4.4.4.4 Step 3: Index Numbers
+# ### 2.4.1.4.4 Step 3: Index Numbers
 # In a third step all sign reading index numbers (as in 'du11') are replaced by Unicode index numbers ('du₁₁'). Regular numbers that express quantities should not be affected. This is done with a regular expression that finds a character, valid in Sumerian or Akkadian transcription, immediately followed by one or more digits. If such a match is found, the string is translated, replacing any digit by its corresponding index number.
 
-# #### 2.4.4.4.5 Errors
+# ### 2.4.1.4.5 Errors
 # Inevitably, each of the steps in dealing with x-values may introduce its own errors. It is likely, moreover, that there are more x-values not treated here, or that there will be more x-values in a future version of the [BDTNS](http://bdtns.filol.csic.es) data. The dictionary of x-values below can be adjusted to deal with those situations. 
 
-# #### 2.4.4.4.6 Helpful Variables, Lists, and Dictionaries
+# ### 2.4.1.4.6 Helpful Variables, Lists, and Dictionaries
 # A number of lists, dictionaries, and variables (including compiled regular expressions) are defined before the main function is called.
 # 
 # The list `flags` enumerates characters like square brackets, half-brackets and exclamation marks that may appear in a sign reading in  in [BDTNS](http://bdtns.filol.csic.es). The list is used in two ways. First, it is used in compiling the regular expression `xv` that will match any sign reading that ends in a capital X (see below). Second, it is used to create a table in which each flag corresponds to `None`. The `maketrans()` function is a specialized function that prepares a table that is understood by the `translate()` command. The command `translate(table)` is used in the function `ogsl_v()` (see below) to ignore any flag.
@@ -335,7 +304,7 @@ xvalues = {'nagx' : '₃', 'nigarx' : '', 'nemurx' : '₂', 'pešx' : '₁₄', 
         'zix' : 'ₓ(IGI@g)'}
 
 
-# #### 2.4.4.4.7 The Main Function
+# ### 2.4.1.4.7 The Main Function
 # The function `ogsl_v()` takes one row of the DataFrame at the time and goes through three separate steps, as discussed above (unambiguous x-values, other x-values, sign index numbers).
 # 
 # In each of these steps the function uses one or more of the tables, dictionaries, and compiled regular expressions created above.
@@ -365,7 +334,7 @@ def ogsl_v(row):
     return ogsl_valid
 
 
-# #### 2.4.4.4.8 Apply the Function
+# ### 2.4.1.4.8 Apply the Function
 # The `ogsl_v` function is now applied to each row (`axis = 1`) in the DataFrame. Since the DataFrame currently has more than 1.1 million rows (lines) the function may take a few minutes and a progress bar from the `tqdm` library is added.
 # 
 # In the first cell of this notebook we initiated the use of tqdm with pandas with the line `tqdm.pandas()`. Instead of the regular `apply()` method from the `pandas` library we may now use `progress_apply()` to do the same thing as `apply()`, but with a progress bar.
@@ -376,7 +345,7 @@ def ogsl_v(row):
 df["text"] = df.progress_apply(ogsl_v, axis = 1) 
 
 
-# #### 2.4.4.4.9 Check for Remaining X-signs
+# ### 2.4.1.4.9 Check for Remaining X-signs
 # Any remaining capital X should indicate an illegible sign - or else the script has run into an inconsistency. Such errors may be caused by
 # - square brackets occuring immediately before X (as in gari[g]X).
 # - X-values that are not explained in the `comments` column.
@@ -388,9 +357,11 @@ df["text"] = df.progress_apply(ogsl_v, axis = 1)
 df[df.text.str.contains('X')]
 
 
-# ### 2.4.4.5 Save
+# ## 2.4.1.5 Save
 # Finally, the newly created DataFrame with [BDTNS](http://bdtns.filol.csic.es) data is saved in two ways. The `to_pickle()` function of the `pandas` library is used to created a pickle, a file that can be opened in a future session to recreate the DataFrame. Second, the DataFrame is saved in JSON format, a format that is more suitable for sharing with other researchers. Both files are saved in the `output` directory.
-# #### 2.4.4.5.1 Pickle for Future Use
+# 
+# (2.4.1.5.1)=
+# ### 2.4.1.5.1 Pickle for Future Use
 # Pickle the DataFrame for future use.
 
 # In[12]:
@@ -400,7 +371,7 @@ pickled = "output/bdtns.p"
 df.to_pickle(pickled)
 
 
-# #### 2.4.4.5.2 Dump in JSON Format for Distribution
+# ### 2.4.1.5.2 Dump in JSON Format for Distribution
 # And/or dump the DataFrame in [JSON](https://www.json.org/) format to share the data with others.
 
 # In[13]:
