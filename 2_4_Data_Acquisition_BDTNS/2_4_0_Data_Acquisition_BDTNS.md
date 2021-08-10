@@ -23,5 +23,5 @@ The [BDTNS](http://bdtns.filol.csic.es) data can be downloaded by hand through t
 
 ```{admonition} BDTNS Download function Broken
 :class: dropdown, warning
-Currently, the export option in [BDTNS](http://bdtns.filol.csic.es) does not work. The code below will grap a version of the data set, made available by Manuel Molina, from the Compass project site at Github. There is no guarantee that this is the most recent version.
+Currently, the export option in [BDTNS](http://bdtns.filol.csic.es) does not work. The code in 2.4.1 will grab a version of the data set, made available by Manuel Molina, from the Compass project site at Github. There is no guarantee that this is the most recent version.
 ```
