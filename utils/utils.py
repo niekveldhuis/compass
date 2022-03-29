@@ -30,13 +30,13 @@ def oracc_download(project_list, server = 'penn'):
     # which is iterated over in the loop.
     for project in project_list:
         proj = project.replace('/', '-')
-        build = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
+        #build = f"http://build-oracc.museum.upenn.edu/json/{proj}.zip"
         oracc = f"http://oracc.org/{project}/json/{proj}.zip"
         lmu = f"http://oracc.ub.uni-muenchen.de/{project}/json/{proj}.zip"
         file = f"jsonzip/{proj}.zip"
-        servers = [build, oracc, lmu]
+        servers = [oracc, lmu]
         if server == 'lmu':
-            servers = [lmu, build, oracc]
+            servers = [lmu, oracc]
         for url in servers:
             with requests.get(url, stream=True) as r:
                 if r.status_code == 200:
