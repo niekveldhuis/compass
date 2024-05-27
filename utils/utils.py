@@ -4,6 +4,7 @@ from tqdm.auto import tqdm
 import os
 import zipfile
 import json
+import sys
 import pandas as pd
 
 def format_project_list(projects):
@@ -38,7 +39,7 @@ def oracc_download(project_list, server = 'penn'):
         if server == 'lmu':
             servers = [lmu, oracc]
         for url in servers:
-            with requests.get(url, stream=True) as r:
+            with requests.get(url, stream=True, verify=False) as r:
                 if r.status_code == 200:
                     tqdm.write(f"Saving {url} as {file}.")
                     total_size = int(r.headers.get('content-length', 0))
@@ -121,7 +122,6 @@ def get_lemmas(project_list):
                 #print(f'{id_text} is not available or not complete')
         z.close()
     return(lemm_l)
-
 
 def dataformat(lemm_list):
     words_df = pd.DataFrame(lemm_list).fillna('')
