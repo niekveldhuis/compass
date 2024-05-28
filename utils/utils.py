@@ -2,9 +2,12 @@
 import requests
 from tqdm.auto import tqdm
 import os
+import sys
 import zipfile
 import json
 import pandas as pd
+import warnings
+warnings.filterwarnings("ignore", message="Unverified HTTPS request is being made to host")
 
 def format_project_list(projects):
     project_list = projects.lower().strip().split(',')
@@ -38,7 +41,7 @@ def oracc_download(project_list, server = 'penn'):
         if server == 'lmu':
             servers = [lmu, oracc]
         for url in servers:
-            with requests.get(url, stream=True) as r:
+            with requests.get(url, stream=True, verify=False) as r:
                 if r.status_code == 200:
                     tqdm.write(f"Saving {url} as {file}.")
                     total_size = int(r.headers.get('content-length', 0))
