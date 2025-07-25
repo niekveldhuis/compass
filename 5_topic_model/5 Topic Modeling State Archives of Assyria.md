@@ -21,7 +21,7 @@ Each topic (indicated here with the numbers 0 to 4) is characterized by a number
 
 The process is unsupervised and language agnostic - it is the task of the researcher to make some sense of the results. The visualizations (section 5.3) are designed to help with that process.
 
-The most commonly used topic modeling technique is called LDA, or Latent Dirichlet Allocation. LDA takes each document in a corpus as a so-called Bag of Words, that is, it abstracts from word order, and syntax, taking into account only the frequencies of  words in that document. Usually, LDA is performed on a corpus that is lemmatized or stemmed, so that it also abstracts from morphology.
+The most commonly used topic modeling technique is called LDA, or Latent Dirichlet Allocation. LDA takes each document in a corpus as a so-called Bag of Words, that is, it abstracts from word order and syntax, taking into account only the frequencies of  words in that document. Usually, LDA is performed on a corpus that is lemmatized or stemmed, so that it also abstracts from morphology.
 
 Prior to running the LDA process one has to estimate a reasonable number of topics. This is a somewhat arbitrary aspect of topic modeling. A low number of topics will likely result in strange mixtures of words that may represent multiple topics. A high number of topics may result in some very clear topics, with high-ranking words that clearly cohere around a theme, and then a good number of other topics that seem to collect random words.
 
