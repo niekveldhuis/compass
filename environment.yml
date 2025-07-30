@@ -1,14 +1,21 @@
 name: compass
 channels:
-        - damianavila82
-        - defaults
+  - conda-forge
+  - defaults
 dependencies:
-        - python=3.6
-        - jupyter
-        - matplotlib
-        - json
-        - pandas
-        - ipywidgets
-        - rise
-        - pip:
-            - tqdm
+  - python=3.12
+  - matplotlib
+  - numpy
+  - pandas
+  - requests
+  - bokeh
+  - jupyterlab
+  - lxml
+  - panel
+  - tqdm
+  - ipykernel
+  - ipywidgets
+  - pip
+  - pip:
+      - pyldavis
+
