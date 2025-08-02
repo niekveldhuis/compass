@@ -9,9 +9,9 @@
 :::
 The Electronic Text Corpus of Sumerian Literature ([ETCSL](https://etcsl.orinst.ox.ac.uk/)) provides editions and translations of almost 400 Sumerian literary texts, mostly from the Old Babylonian period (around 1800 BCE). The project was led by Jeremy Black (Oxford University) and was active from 1997 to 2006, when it was archived. Information about the project, its stages, products and collaborators may be found in the project's [About](http://etcsl.orinst.ox.ac.uk/edition2/general.php) page. By the time of its inception [ETCSL](https://etcsl.orinst.ox.ac.uk/) was a pioneering effort - the first large digital project in Assyriology, using well-structured data according to the standards and best practices of the time. [ETCSL](https://etcsl.orinst.ox.ac.uk/) allows for various kinds of searches in Sumerian and in English translation and provides lemmatization for each individual word. Numerous scholars contributed data sets to the [ETCSL](https://etcsl.orinst.ox.ac.uk/) project (see [Acknowledgements](http://etcsl.orinst.ox.ac.uk/edition2/credits.php#ack)). The availability of [ETCSL](https://etcsl.orinst.ox.ac.uk/) has fundamentally altered the study of Sumerian literature and has made this literature available for undergraduate teaching.
 
-The original [ETCSL](https://etcsl.orinst.ox.ac.uk/) files in TEI XML are stored in the [Oxford Text Archive](http://hdl.handle.net/20.500.12024/2518) from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License ([by-nc-sa 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.
+The original [ETCSL](https://etcsl.orinst.ox.ac.uk/) files in TEI XML are stored in the [Oxford Text Archive](http://hdl.handle.net/20.500.14106/2518) from where they can be downloaded as a ZIP file under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License ([by-nc-sa 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). The copyright holders are Jeremy Black, Graham Cunningham, Jarle Ebeling, Esther Flückiger-Hawker, Eleanor Robson, Jon Taylor, and Gábor Zólyomi.
 
-The [Oxford Text Archive](http://hdl.handle.net/20.500.12024/2518) page offers the following description:
+The [Oxford Text Archive](http://hdl.handle.net/20.500.14106/2518) page offers the following description:
 
 > The Electronic Text Corpus of Sumerian Literature (ETCSL) comprises transliterations and English translations of 394 compositions attested on sources dating to the period from approximately 2100 to 1700 BCE. The compositions are divided into seven categories: ancient literary catalogues; narrative compositions; royal praise poetry and hymns to deities on behalf of rulers; literary letters and letter-prayers; divine and temple hymns; proverbs and proverb collections; and a more general category including compositions such as debates, dialogues and riddles. The numbering of the compositions within the corpus follows Miguel Civil's unpublished catalogue of Sumerian literature (etcslfullcat.html).Files with an initial c are composite transliterations (a reconstructed text editorially assembled from the extant exemplars but including substantive variants) in which the cuneiform signs are represented in the Roman alphabet. Files with an initial t are translations. The composite files include full references for the cuneiform sources and author-date references for the secondary sources (detailed in bibliography.xml). The composite and translation files are in XML and have been annotated according to the TEI guidelines. In terms of linguistic information, each word form in the composite transliterations has been assigned to a lexeme which is specified by a citation form, word class information and basic English translation.
 
@@ -30,7 +30,7 @@ In order to achieve compatability between [ETCSL](https://etcsl.orinst.ox.ac.uk/
 
 ## 2.2.1 TEI XML format
 
-The [ETCSL](https://etcsl.orinst.ox.ac.uk/) files as distributed by the [Oxford Text Archive](http://ota.ox.ac.uk/desc/2518) are encoded in a dialect of `XML` (Extensible Markup Language) that is referred to as `TEI` (Text Encoding Initiative). In this encoding each word (in transliteration) is an *element* that is surrounded by `<w>` and `</w>` tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs, as in the following random examples:
+The [ETCSL](https://etcsl.orinst.ox.ac.uk/) files as distributed by the [Oxford Text Archive](http://hdl.handle.net/20.500.14106/2518) are encoded in a dialect of `XML` (Extensible Markup Language) that is referred to as `TEI` (Text Encoding Initiative). In this encoding each word (in transliteration) is an *element* that is surrounded by `<w>` and `</w>` tags. Inside the start-tag the word may receive several attributes, encoded as name/value pairs, as in the following random examples:
 
 ```xml
 <w form="ti-a" lemma="te" pos="V" label="to approach">ti-a</w>
@@ -103,7 +103,7 @@ The key `ampersands` in the file `equivalencies.json` has as its value a diction
 ```
 etc.
 
-This dictionary is used to replace each HTML entity with its unicode (UTF-8) counterpart in each of the data files (the original files are, of course, left untouched). The function `ampersands()` is called in the function `parsetext()` immediately after opening the file of one of the compositions in [ETCSL](https://etcsl.orinst.ox.ac.uk/).  
+This dictionary is used to replace each HTML entity with its unicode counterpart in each of the data files (the original files are, of course, left untouched). The function `ampersands()` is called in the function `parsetext()` immediately after opening the file of one of the compositions in [ETCSL](https://etcsl.orinst.ox.ac.uk/).  
 
 ```python
 import json
@@ -120,7 +120,7 @@ def ampersands(x):
 xmltext = ampersands(xmltext)
 ```
 
-The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with a semicolon (;). The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the utf-8 counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group() represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
+The function `ampersands()` uses the `sub()` function from the `re` (Regular Expressions) module. The arguments of this function are `sub(find_what, replace_with, text)`. In this case, the `find_what` is the compiled regular expression `amp`, matching all character sequences that begin with & and end with a semicolon (;). The `replace_with` argument is a temporary `lambda` function that uses the `ampersands` dictionary to find the Unicode counterpart of the HTML entity. The dictionary is queried with the `get()` function (m.group() represents the match of the regular expression `amp`). The `get()` function allows a fall-back argument, to be returned in case the dictionary does not have the key that was requested. This second argument is the actual regular expression match, so that in those cases where the dictionary does not contain the match it is replaced by itself.
 
 ## 2.2.4 Pre-Processing: Additional Text and Secondary Text
 
@@ -213,7 +213,7 @@ corpus									main process
 
 Each of these functions divides the XML tree into smaller parts (versions, sections, lines, words) and sends one such smaller part of the tree to the next function. The functions do not return anything. Instead, they modify the dictionary `meta_d` by adding or changing keys that hold meta-data such as version name, line number, etc. Once arrived at the word level (the most basic level of this tree) the dictionary `meta_d` will hold accurate information about the composition name, the version name, the line number, etc. for this particular word. The function `getword()` will create a new dictionary (called `word`) that holds the lemmatization information (form, citation form, part of speech, etc.) and the meta-data taken from `meta_d`. The dictionary `word` is then appended to the list `alltexts` which, eventually, will hold all words from all compositions.
 
-The main process iterates over the list of compositions, sending one [ETCSL](https://etcsl.orinst.ox.ac.uk/) composition at the time to the function `parsetext()`. The function `parsetext()` calls the pre-processing functions discussed in section [2.2.3](#2.2.3-Pre-processing:-HTML-entities) and [2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text) and and modifies the keys "id_text" and "text_name" in the dictionary `meta_d`. Then it forwards the entire XML tree to `getversion()`. The function `getversion()` checks whether the composition that is being parsed is divided into versions.  This is done with the line
+The main process iterates over the list of compositions, sending one [ETCSL](https://etcsl.orinst.ox.ac.uk/) composition at the time to the function `parsetext()`. The function `parsetext()` calls the pre-processing functions discussed in section [2.2.3](#2.2.3-Pre-processing:-HTML-entities) and [2.2.4](#2.2.4-Pre-Processing:-Additional-Text-and-Secondary-Text) and modifies the keys "id_text" and "text_name" in the dictionary `meta_d`. Then it forwards the entire XML tree to `getversion()`. The function `getversion()` checks whether the composition that is being parsed is divided into versions.  This is done with the line
 
 ```python
 versions = tree.xpath('.//body[child::head]')
@@ -221,7 +221,7 @@ versions = tree.xpath('.//body[child::head]')
 
 This results in a list (`versions`), in which the entire XML tree is cut into parts, each element of the list representing one version. If the length of the list is 0, then there are no versions, and the key "version" in `meta_d` is set to '' (the empty string). If there are versions, the code iterates through the list `versions` and detects for each the name of that version (e.g. "Version A"). The key "version" in `meta_d` is updated with that name and then the next function (`getsection()`) is called with as argument the part of the XML tree that represents that version. The other functions in this hierarchy work in similar fashion, each adding or modifying a key in `meta_d` while digging deeper into the XML tree. 
 
-The function `getword()` not only retrieves and formats a lemma, but also adds to this lemma the meta data that was collected in `meta_d`: line number, section, version, text name, etc. The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL](https://etcsl.orinst.ox.ac.uk/) style lemma into a [ORACC](http://oracc.org/) style lemma and appends the resulting dictionary `word` to the list `alltexts` (which was created as an empty list in the main process).
+The function `getword()` not only retrieves and formats a lemma, but also adds to this lemma the meta-data that was collected in `meta_d`: line number, section, version, text name, etc. The function `etcsl_to_oracc()`, the last one in the hierarchy, transforms the [ETCSL](https://etcsl.orinst.ox.ac.uk/) style lemma into a [ORACC](http://oracc.org/) style lemma and appends the resulting dictionary `word` to the list `alltexts` (which was created as an empty list in the main process).
 
 The word `šeŋ₆-ŋa₂` in the file `c.1.2.2.xml` ([Enlil and Sud](http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.2.2&display=Crit&charenc=gcirc#)), in Version A, section A line 115, looks as follows in the original XML file: 
 
@@ -281,7 +281,7 @@ The function `getsection()` works essentially in the same way as `getversion()`.
 
 The function `getline()`first updates the field `id_line` in `meta_d`, increasing it by 1. The data type  of`id_line` is integer - it is used to keep lines and gaps in correct order.
 
-If `getline()` receives a `gap` node it copies all the meta data in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. Each row, therefore, in `alltexts` will represent either a word or a gap.
+If `getline()` receives a `gap` node it copies all the meta-data in the dictionary meta_d into the dictionary `line` and adds a field `extent` (the length of the gap). This data is found in the attribute `extent` of the `gap` node. This dictionary is then appended to the list `alltexts` and control is returned to the function `getsection()`. Each row, therefore, in `alltexts` will represent either a word or a gap.
 
 If `getline()` receives an `l` node it will collect `w` nodes (words) and `gloss` nodes with the language attribute `akk`. The Xpath expression looks as follows: './/w|.//gloss[@lang="akk"]'. This will find both Sumerian and Akkadian words in the text.
 
@@ -375,5 +375,5 @@ The DataFrame that is the result of the notebook is saved as a `csv` file named 
 [epsd2]:                               http://oracc.org/epsd2
 [epsd2/literary]: http://oracc.museum.upenn.edu/epsd2/literary
 [Inana's Descent to the Netherworld]: http://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=c.1.4.1&amp;amp;amp;amp;amp;display=Crit&amp;amp;amp;amp;amp;charenc=gcirc#
-[Oxford Text Archive]:       http://ota.ox.ac.uk/desc/2518
+[Oxford Text Archive]:       http://hdl.handle.net/20.500.14106/2518
 [COMPASS]:	https://github.com/niekveldhuis/compass

@@ -19,7 +19,7 @@ char2 = '   šŋŋ×'
 index = str.maketrans(digi, inde)
 char = str.maketrans(char1, char2)
 ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}') 
-anchor = '<a href="http://bdtns.filol.csic.es/{}", target="_blank">{}</a>'
+anchor = '<a href="http://bdtns.cesga.es/{}", target="_blank">{}</a>'
 separators2 = ['.', '+', '|']  # used in compound signs
 
 def search(s): 

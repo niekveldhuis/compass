@@ -8,6 +8,8 @@ Still, [BDTNS][] is not simply a duplicate of the Ur III data in [CDLI][]. Most 
 
 The [BDTNS][] data can be downloaded by hand through the [Search](http://bdtns.filol.csic.es/index.php?p=formulario_urIII) option in the Catalogue & Transliterations drop-down menu. One can search by a variety of criteria (including word and grapheme strings) and then download the search results by clicking on the Export button. The export page provides options for the types of information to include (various types of meta-data and/or transliterations). By searching for a blank string one may export the entire data set. The export yields two files: one for the meta-data and one for the  transliterations, both in raw text (`.txt`) format.
 
+NOTE: At this point in time (August 2025), the EXPORT button of [BDTNS][] is no longer available. The present chapter, therefore, will work with a legacy data set that is dated 2021.
+
 ## 2.4.1.1 Vertical TABs
 
 The [BDTNS][] transliteration files use "vertical TABs", represented by ^K, \v, or \x0b (depending on which editor is used for reading the file). These "vertical TABS" are inserted between lines that belong to the same document; the regular newline character is used to separate one document from the next. Because of those vertical tabs, the following code will lead to somewhat problematic results:
@@ -32,7 +34,7 @@ In order to format this data in a DataFrame we first need to look for lines that
 
 > 	038576	AAICAB 1/1, Ashm. 1911-146 = CDLI P142659
 
-We can isolate the [BDTNS][] number (which can also be used to create a URL of the format http://bdtns.filol.csic.es/038576) by selecting the first six characters of the line:
+We can isolate the [BDTNS][] number (which can also be used to create a URL of the format http://bdtns.cesga.es/038576) by selecting the first six characters of the line:
 
 ```python
 if line[:6].isdigit(): 
@@ -71,7 +73,7 @@ This results in a list of lists called `l` that contains the same data as the or
 
 ## 2.4.1.3 X-values
 
-A peculiarity of the [BDTNS][] data set is the way so-called x-values are represented. In Assyriology, x-values are sign readings that have not (yet) received a conventional index number. For instance, the (very common) word  for "to cut (reeds)" is written either with the sign **zi** or with the sign **SIG₇**. Based on the distribution of those spellings (**SIG₇** only in Umma, **zi** elsewhere), M. Molina and M. Such-Guttiérez (2004)[^2] concluded that both spellings write the same word /**zi**/. On that basis the new reading **/zi/** for the sign **SIG₇** was introduced (and is now commonly accepted among Sumerologists). In such cases one may transliterate **ziₓ(SIG₇)** where the SIG₇ between brackets is the name of the sign transliterated as **ziₓ** (and thus the principle of a one-to-one mapping of a transliterated token to a cuneiform sign is maintained). In the [BDTNS][] export file this is represented as follows: 
+A peculiarity of the [BDTNS][] data set is the way so-called x-values are represented. In Assyriology, x-values are sign readings that have not (yet) received a conventional index number. For instance, the (very common) word  for "to cut (reeds)" is written either with the sign **zi** or with the sign **SIG₇**. Based on the distribution of those spellings (**SIG₇** only in Umma, **zi** elsewhere), M. Molina and M. Such-Guttiérez (2004)[^2] concluded that both spellings write the same word [/**zi**/](http://oracc.org/epsd2/o0042679). On that basis the new reading **/zi/** for the sign **SIG₇** was introduced (and is now commonly accepted among Sumerologists). In such cases one may transliterate **ziₓ(SIG₇)** where the SIG₇ between brackets is the name of the sign transliterated as **ziₓ** (and thus the principle of a one-to-one mapping of a transliterated token to a cuneiform sign is maintained). In the [BDTNS][] export file this is represented as follows: 
 
 > 	o. 2     gi ziX-a 12 sar-⌈ta⌉ (=SIG7)		cut reed per 12 *sar* of field
 
@@ -89,7 +91,7 @@ If we naively move the first sign name to the first X, we will get:
 
 > 	18 gin2 nagga mu-kuX(AN.NA) gibil  (=DU)
 
-(=AN.NA), in this case, explains the rare reading **nagga** (tin, or some similar substance), whereas (=DU) explains **kuX** - but there is no obvious way for a regular expression or script to recognize that. Another type of exception is reduplicated "gurₓ-gurₓ" (to reap) which is represented thus:
+(=AN.NA), in this case, explains the rare reading [**nagga**](http://oracc.org/epsd2/o0024215) (tin, or some similar substance), whereas (=DU) explains **kuX** - but there is no obvious way for a regular expression or script to recognize that. Another type of exception is reduplicated "gurₓ-gurₓ" (to reap) which is represented thus:
 
 > 6.0.0 še ur5-ra še gurX-gurX-ta su-ga (=ŠE.KIN.ŠE.KIN)
 
@@ -152,6 +154,6 @@ The code that is used by the Search is essentially the same as in `2_4_2_Build_S
 
 [^2]: Molina, Manuel and Such-Gutiérrez, Marcos, On Terms for Cutting Plants and Noses in Ancient Sumer: *Journal of Near Eastern Studies* 63 (2004) 1-16
 
-[BDTNS]: http://bdtns.filol.csic.es
+[BDTNS]: http://bdtns.cesga.es/
 [CDLI]: http://cdli.ucla.edu
 [OGSL]: http://oracc.org/ogsl
