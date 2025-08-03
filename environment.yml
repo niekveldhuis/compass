@@ -4,18 +4,21 @@ channels:
   - defaults
 dependencies:
   - python=3.12
-  - matplotlib
-  - numpy
-  - pandas
-  - requests
   - bokeh
-  - jupyterlab
-  - lxml
-  - panel
-  - tqdm
+  - gensim
   - ipykernel
   - ipywidgets
+  - jupyterlab
+  - lxml
+  - matplotlib
+  - matplotlib-venn
+  - nltk
+  - numpy
+  - pandas
+  - panel
   - pip
+  - requests
+  - tqdm
+  - umap-learn
   - pip:
       - pyldavis
-
