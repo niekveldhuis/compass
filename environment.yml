@@ -19,6 +19,8 @@ dependencies:
   - pip
   - pyldavis
   - requests
+  - scipy=1.12
+  # gensim 4.3.2 is incompatible with scipy 1.13 or higher
   - tqdm
   - umap-learn
 

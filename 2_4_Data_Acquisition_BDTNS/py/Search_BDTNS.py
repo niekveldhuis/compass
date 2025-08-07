@@ -9,7 +9,7 @@ from ipywidgets import interact, interact_manual
 import ipywidgets as widgets
 from IPython.display import display, clear_output
 
-with open('output/ogsl_dict.p', 'rb') as p:
+with open('output/osl_dict.p', 'rb') as p:
     d2 = pickle.load(p)
 bdtns = pd.read_pickle('output/bdtns_tokenized.p')
 digi = '0123456789x'
@@ -22,7 +22,7 @@ ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}')
 anchor = '<a href="http://bdtns.cesga.es/{}", target="_blank">{}</a>'
 separators2 = ['.', '+', '|']  # used in compound signs
 
-def search(s): 
+def search(s, Maxh=25, Links=True, Sortby = 'id_text'): 
     s = s.lower().replace('sz', 'š').translate(char).strip()
     s = re.sub(ind, lambda m: m.group().translate(index), s)
     s_l = s.split()
@@ -51,16 +51,16 @@ def search(s):
     show = ['id_text', 'label', 'text', 'date', 'provenance', 'publication']
     results = bdtns.loc[bdtns['sign_names'].str.contains(signs_esc, regex=True), show].copy()
     hits = len(results)
-    maxh = maxhits.value
-    if maxh > hits:
-        maxh = hits
+    Maxh = maxhits.value
+    if Maxh > hits:
+        Maxh = hits
     if hits == 1:
         pl = ''
     else:
         pl = 's'
-    print(signnames), print(f"{str(hits)} hit{pl}; {str(maxh)} displayed.")
-    results = results.sort_values(by = sortby.value)[:maxh]
-    if links.value:
+    print(signnames), print(f"{str(hits)} hit{pl}; {str(Maxh)} displayed.")
+    results = results.sort_values(by = sortby.value)[:Maxh]
+    if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
         results = results.style.hide(axis="index").set_properties(subset=['publication'], **{'width': '200px'})
     return results
