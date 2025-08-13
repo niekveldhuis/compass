@@ -1,0 +1,170 @@
+<TEI.2 id="c.2.5.4.b">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A hymn to Enki for I&c;me-Dagan -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b478">Tinney 1996</xref><biblScope type="page">71</biblScope><biblScope type="contents">score transliteration</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">N3544</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>12.ix.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>typing, standardisation</item></change>
+<change><date>28.ix.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>04.x.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>08.xii.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>26.x.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<gap extent="unknown no. of lines missing"/>
+<l n="1" id="c254b.1" corresp="t254b.p1">
+<damage/>
+<w form="ambar-bi" lemma="ambar" pos="N" label="marsh">ambar<damageEnd/>-bi</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c254b.2" corresp="t254b.p1">
+<damage/>
+<w form="a-gar3" lemma="a-gar3" pos="N" label="meadow">a<damageEnd/>-gar3</w>
+<damage/>
+<w form="gal-gal" lemma="gal" pos="V" label="to be big" form-type="RR">gal<damageEnd/>-gal</w>
+<w form="gan2-ne2" lemma="gana2" pos="N" label="field">gan2-ne2</w>
+<damage/>
+<w form="E" lemma="E" label="E">E</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c254b.3" corresp="t254b.p1">
+<w form="pu2-&jic;kiri6" lemma="pu2-kiri6" pos="N" label="orchard" det="&jic;">pu2-&jic;kiri6</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="il2" lemma="il2" pos="V" label="to raise">il2</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c254b.4" corresp="t254b.p1">
+<w form="u2-gu7" lemma="u2-gu7" pos="N" label="food">u2-gu7</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<damage/>
+<w form="naj" lemma="naj" pos="V" label="to drink">naj</w>
+<damageEnd/>
+<w form="&d;a-nun-ke4-ne" lemma="a-nun-na" pos="N" type="DN" label="Anuna" det="&d;">&d;a-nun-ke4-<supplied/>ne<suppliedEnd/></w>
+<supplied/>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">X)</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c254b.5" corresp="t254b.p1">
+<w form="a-a" lemma="a-a" pos="N" label="father">a-a</w>
+<w form="&d;en-lil2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2</w>
+<w form="ama" lemma="ama" pos="N" label="mother">ama</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="&d;nin-lil2-bi" lemma="nin-lil2" pos="N" type="DN" label="Ninlil" det="&d;">&d;nin-lil2-<supplied/>bi<suppliedEnd/></w>
+<w form="saj-e-ec" lemma="saj" pos="N" label="head">saj-e-ec</w>
+<w form="mu-ni-rig7-ec" lemma="rig7" pos="V" label="to bestow">mu-ni-rig7-<supplied/>ec</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c254b.6" corresp="t254b.p2">
+<w form="nibru&ki;" lemma="nibru" pos="N" type="SN" label="Nibru" det="&ki;">nibru&ki;</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="nin-zu-gin7" lemma="nin" pos="N" label="lady">nin-zu-gin7</w>
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<damage/>
+<w form="na-me" lemma="na-me" pos="PD" type="indefinite" label="any">na<damageEnd/>-<supplied/>me</w>
+<w form="nu-dib2" lemma="dib" pos="V" label="to pass">nu-dib2</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c254b.7" corresp="t254b.p2">
+<w form="e-ne-e-ne" lemma="e-ne" pos="PD" type="personal" label="he, she">e-ne-e-ne</w>
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="er9-me-ec" lemma="er9" pos="V" label="to be mighty">er9-me-ec</w>
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<w form="pa" lemma="pa" pos="N" label="branch">pa</w>
+<supplied/>
+<w form="e3-me-ec" lemma="e3" pos="V" label="to go out or in">e3-me-ec</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c254b.8" corresp="t254b.p2">
+<w form="&d;en-lil2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2</w>
+<w form="&d;nin-lil2-gin7" lemma="nin-lil2" pos="N" type="DN" label="Ninlil" det="&d;">&d;nin-lil2-gin7</w>
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<w form="na-me" lemma="na-me" pos="PD" type="indefinite" label="any">na-me</w>
+<damage/>
+<w form="nu-dib2" lemma="dib" pos="V" label="to pass">nu<damageEnd/>-<supplied/>dib2</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c254b.9" corresp="t254b.p2">
+<w form="e-ne-e-ne" lemma="e-ne" pos="PD" type="personal" label="he, she">e-ne-e-ne</w>
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="er9-me-ec" lemma="er9" pos="V" label="to be mighty">er9-me-ec</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<supplied/>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="tar-re-me-ec" lemma="tar" pos="V" label="to cut">tar-re-me-ec</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c254b.10" corresp="t254b.p2">
+<damage/>
+<w form="cag4-zu-a" lemma="cag4" pos="N" label="heart">cag4<damageEnd/>-zu-a</w>
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="&d;en-ki-ra" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;<damage/>en-ki-ra<damageEnd/></w>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="mu-na-ni-cum2-mu-uc" lemma="cum2" pos="V" label="to give">mu-na-ni-<supplied/>cum2-mu-uc</w>
+<suppliedEnd/>
+</l>
+<l n="11" id="c254b.11" corresp="t254b.p2">
+<w form="nibru&ki;" lemma="nibru" pos="N" type="SN" label="Nibru" det="&ki;">nibru&ki;</w>
+<w form="cir3" lemma="cir3" pos="N" label="song">cir3</w>
+<w form="kug-zu" lemma="kug" pos="AJ" label="shining">kug-zu</w>
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="kal-kal" lemma="kal" pos="V" label="to be rare" form-type="RR">kal-kal</w>
+<supplied/>
+<w form="a-re-ec-ce3" lemma="ar2" pos="N" label="praise">a-re-ec-ce3</w>
+<w form="dib2-am3" lemma="dib" pos="V" label="to pass">dib2-am3</w>
+<suppliedEnd/>
+</l>
+<l n="12" id="c254b.12" corresp="t254b.p2">
+<w form="&d;ic-me-&d;da-gan-me-en" lemma="ic-me-da-gan" pos="N" type="RN" label="I&c;me-Dagan" npart="DN:Dagan" det="&d;">&d;ic-me-&d;da-gan-me-en</w>
+<w form="du-ri2-ce3" lemma="du-ri2" pos="N" label="eternity">du-ri2-ce3</w>
+<supplied/>
+<w form="ka-ga14" lemma="ka" pos="N" label="mouth">ka-ga14</w>
+<w form="mu-ni-jar" lemma="jar" pos="V" label="to place">mu-ni-jar</w>
+<suppliedEnd/>
+</l>
+</body>
+</text>
+</TEI.2>

@@ -1,0 +1,413 @@
+<TEI.2 id="c.6.1.28">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>Proverbs: collection 28 -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Senior Editor</resp></respStmt>
+<respStmt><name>Jon Taylor</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2003</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b83">Alster 1997a</xref><biblScope type="page">285-286, 459</biblScope><biblScope type="contents">translation, score transliteration, commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">UET 6/2 336</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>27.i.2002</date><respStmt><name>JT</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>26.iii.2002</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>16.xii.2002</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>20.vi.2003</date><respStmt><name>JE</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<div1 type="segment" n="A">
+<lg id="c.6.1.28.1" type="proverb" n="28.1">
+<note lang="eng">cf. <xref doc="c.6.1.03" from="c.6.1.03.84">6.1.03.84</xref></note>
+<l n="1" id="c6128.A.28.1.1" corresp="t6128.p1">
+<damage/>
+<w form="&jic;tukul" lemma="tukul" pos="N" label="weapon" det="&jic;">&jic;<damageEnd/><unclear cert="cor">tukul</unclear></w>
+<w form="mu-ni" lemma="mu" pos="N" label="name">mu-ni</w>
+<w form="nu-pad3-da" lemma="pad3" pos="V" label="to find">nu-pad3-da</w>
+<w form="su-ni" lemma="su" pos="N" label="flesh">su-ni</w>
+<w form="i3-pad3-da" lemma="pad3" pos="V" label="to find">i3-pad3-da</w>
+</l>
+</lg>
+<lg id="c.6.1.28.2" type="proverb" n="28.2">
+<l n="2" id="c6128.A.28.2.2" corresp="t6128.p2">
+<w form="iri&ki;" lemma="iri" pos="N" label="town" det="&ki;">iri&ki;</w>
+<w form="mu" lemma="mu" pos="N" label="name">mu</w>
+<w form="hu-mu-kur2-kur2" lemma="kur2" pos="V" label="to be different" form-type="RR">hu-mu-kur2-kur2</w>
+<w form="mu-ju10" lemma="mu" pos="N" label="name">mu-ju10</w>
+<w form="hu-mu-gen6-na" lemma="gen6" pos="V" label="to be firm">hu-mu-<damage/>gen6<damageEnd/>-na</w>
+</l>
+</lg>
+<lg id="c.6.1.28.3" type="proverb" n="28.3">
+<l n="3" id="c6128.A.28.3.3" corresp="t6128.p3">
+<w form="&d;nin-kilim" lemma="nin-kilim" pos="N" label="mongoose" det="&d;">&d;nin-kilim</w>
+<w form="ni2" lemma="ni2" pos="N" label="fear(someness)">ni2</w>
+<w form="dijir-ra" lemma="dijir" pos="N" label="deity">dijir-<damage/>ra</w>
+<damageEnd/>
+<w form="nu-zu" lemma="zu" pos="V" label="to know">nu-zu</w>
+</l>
+</lg>
+<lg id="c.6.1.28.4" type="proverb" n="28.4">
+<note lang="eng">cf. <xref doc="c.6.1.01" from="c.6.1.01.145">6.1.01.145</xref>, <xref doc="c.6.1.19" from="c.6.1.19.c3">6.1.19.c3</xref>, <xref doc="c.6.1.22" from="c.6.1.22.87">6.1.22: ll. 87-88</xref></note>
+<l n="4" id="c6128.A.28.4.4" corresp="t6128.p4">
+<w form="jic-cub" lemma="jic-cub-ba" pos="N" label="lot">jic-cub</w>
+<w form="us2-sa" lemma="us2" pos="V" label="to be adjacent">us2-sa</w>
+<w form="ama-zu" lemma="ama" pos="N" label="mother">ama-zu</w>
+<w form="hul2-la" lemma="hul2" pos="V" label="to be happy">hul2-<damage/>la</w>
+<damageEnd/>
+</l>
+<l n="5" id="c6128.A.28.4.5" corresp="t6128.p4">
+<w form="kac4" lemma="kac4" pos="V" label="to run">kac4</w>
+<w form="tuku-ma" lemma="tuku" pos="V" label="to have">tuku-ma</w>
+<w form="dijir-zu" lemma="dijir" pos="N" label="deity">dijir-zu</w>
+<w form="hul2-la" lemma="hul2" pos="V" label="to be happy">hul2-<damage/>la</w>
+<damageEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.5" type="proverb" n="28.5">
+<l n="6" id="c6128.A.28.5.6" corresp="t6128.p5">
+<damage/>
+<w form="te8&mucen;" lemma="te8" pos="N" label="bird of prey" det="&mucen;">te8&mucen;</w>
+<w form="ka" lemma="ka" pos="N" label="mouth">ka</w>
+<w form="lu2-kam" lemma="lu2" pos="N" label="person"><unclear cert="qry">lu2</unclear><damageEnd/>-kam</w>
+<w form="ba-an-kur9" lemma="kur9" pos="V" label="to enter">ba-an-<damage/>kur9</w>
+<damageEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.6" type="proverb" n="28.6">
+<l n="7" id="c6128.A.28.6.7" corresp="t6128.p6">
+<w form="nim" lemma="nim" pos="N" label="flying insect">nim</w>
+<w form="kur9-ra-am3" lemma="kur9" pos="V" label="to enter">kur9-ra-am3</w>
+<w form="ka-zu" lemma="ka" pos="N" label="mouth">ka-zu</w>
+<w form="ba-nim-am3" lemma="nim" pos="V" label="to buzz">ba-<damage/>nim<damageEnd/>-am3</w>
+</l>
+</lg>
+<lg id="c.6.1.28.7" type="proverb" n="28.7">
+<note lang="eng">cf. <xref doc="c.6.1.15" from="c.6.1.15.c2">6.1.15.c2</xref>, <xref doc="c.6.1.26" from="c.6.1.26.b3">6.1.26.b3</xref></note>
+<l n="8" id="c6128.A.28.7.8" corresp="t6128.p7">
+<w form="&jic;jidru" lemma="jidru" pos="N" label="sceptre" det="&jic;">&jic;jidru</w>
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<w form="ha-pa-gaz" lemma="gaz" pos="V" label="to strike (dead)">ha-pa-gaz</w>
+<w form="&kuc;a2-si" lemma="a2-si" pos="N" label="strap" det="&kuc;">&kuc;a2-si</w>
+<w form="udu" lemma="udu" pos="N" label="sheep">udu</w>
+<w form="ha-pa-cum2" lemma="cum2" pos="V" label="to give">ha-pa-cum2</w>
+</l>
+<l n="9" id="c6128.A.28.7.9" corresp="t6128.p7">
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="saj-ki" lemma="saj-ki" pos="N" label="forehead">saj-ki</w>
+<w form="nu-jal2-ta" lemma="jal2" pos="V" label="to be (located)">nu-jal2-ta</w>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="nu-dib2" lemma="dib" pos="V" label="to pass">nu-dib2</w>
+<w form="e-ne" lemma="e-ne" pos="PD" type="personal" label="he, she">e-ne</w>
+<w form="sukkal-a" lemma="sukkal" pos="N" label="minister">sukkal-a</w>
+</l>
+</lg>
+<lg id="c.6.1.28.8" type="proverb" n="28.8">
+<note lang="eng">cf. <xref doc="c.6.1.01" from="c.6.1.01.104">6.1.01.104</xref>, <xref doc="c.6.1.11" from="c.6.1.11.54">6.1.11.54</xref>, <xref doc="c.6.1.15" from="c.6.1.15.c3">6.1.15.c3</xref>, <xref doc="c.6.1.26" from="c.6.1.26.b4">6.1.26.b4</xref></note>
+<l n="10" id="c6128.A.28.8.10" corresp="t6128.p8">
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="&jic;jidru-kam" lemma="jidru" pos="N" label="sceptre" bound="L,ak.am" det="&jic;">&jic;jidru-kam</w>
+<w form="i3" lemma="i3" pos="N" label="fatty substance">i3</w>
+<w form="he2-en-de2" lemma="de2" pos="V" label="to pour">he2-en-de2</w>
+</l>
+</lg>
+<lg id="c.6.1.28.9" type="proverb" n="28.9">
+<l n="11" id="c6128.A.28.9.11" corresp="t6128.p9">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="dijir-ra-a-ni" lemma="dijir" pos="N" label="deity">dijir-ra-a-ni</w>
+<w form="nu-mu-un-kal-kal" lemma="kal" pos="V" label="to be rare" form-type="RR">nu-mu-un-kal-kal</w>
+<w form="lu2-bi" lemma="lu2" pos="N" label="person">lu2-bi</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="nu-tum3" lemma="de6" pos="V" label="to carry">nu-tum3</w>
+</l>
+<l n="12" id="c6128.A.28.9.12" corresp="t6128.p9">
+<w form="ibila-a-ni" lemma="ibila" pos="N" label="heir">ibila-a-ni</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="nu-de2" lemma="de2" pos="V" label="to pour">nu-de2</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<damage/>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<damageEnd/>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-ke4" lemma="X" label="X">X<suppliedEnd/>-<damage/><unclear cert="qry">ke4</unclear></w>
+<damageEnd/>
+</l>
+<l n="13" id="c6128.A.28.9.13" corresp="t6128.p9">
+<w form="ha-ma-da-gub-be2" lemma="gub" pos="V" label="to stand">ha-ma-da-gub-be2</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+</lg>
+<lg id="c.6.1.28.10" type="proverb" n="28.10">
+<l n="14" id="c6128.A.28.10.14" corresp="t6128.p10">
+<w form="er2" lemma="er2" pos="N" label="tear">er2</w>
+<w form="geme2-kam" lemma="geme2" pos="N" label="female slave">geme2-kam</w>
+<w form="U8" lemma="U8" label="U&s8;">U8</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="15" id="c6128.A.28.10.15" corresp="t6128.p10">
+<w form="dumu" lemma="dumu" pos="N" label="child">dumu</w>
+<w form="geme2-kam" lemma="geme2" pos="N" label="female slave">geme2-kam</w>
+<damage/>
+<w form="dam" lemma="dam" pos="N" label="spouse">dam</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="16" id="c6128.A.28.10.16" corresp="t6128.p10">
+<w form="ambar-a-ni" lemma="ambar" pos="N" label="marsh">ambar-a-ni</w>
+<w form="ma2" lemma="ma2" pos="N" label="boat">ma2</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="17" id="c6128.A.28.10.17" corresp="t6128.p10">
+<w form="gu2" lemma="gu2" pos="N" label="neck">gu2</w>
+<w form="ambar-a-ni" lemma="ambar" pos="N" label="marsh">ambar-a-ni</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="18" id="c6128.A.28.10.18" corresp="t6128.p10">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="BU" lemma="BU" label="BU">BU</w>
+<w form="IGI" lemma="IGI" label="IGI">IGI</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="19" id="c6128.A.28.10.19" corresp="t6128.p10">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+</lg>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="B">
+<lg id="c.6.1.28.16" type="proverb" n="28.16">
+<l n="20" id="c6128.B.28.16.20" corresp="t6128.p11">
+<w form="X" lemma="X" label="X">X</w>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.17" type="proverb" n="28.17">
+<note lang="eng">cf. <xref doc="c.6.1.01" from="c.6.1.01.151">6.1.01.151</xref>, <xref doc="c.6.1.14" from="c.6.1.14.40">6.1.14.40</xref></note>
+<l n="21" id="c6128.B.28.17.21" corresp="t6128.p12">
+<damage/>
+<w form="dam" lemma="dam" pos="N" label="spouse">dam</w>
+<damageEnd/>
+<w form="nu-jar-ra" lemma="nu-jar-ra" pos="AJ" label="malicious">nu-jar-ra</w>
+<w form="tu-ku-a-ju10-ne" lemma="tuku" pos="V" label="to have">tu-<supplied/>ku-a-ju10-ne</w>
+<suppliedEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.18" type="proverb" n="28.18">
+<l n="22" id="c6128.B.28.18.22" corresp="t6128.p13">
+<w form="tur5-ra" lemma="tur5" pos="V" label="to be ill">tur5-ra</w>
+<damage/>
+<w form="cag4-ga" lemma="cag4" pos="N" label="heart"><unclear cert="qry">cag4</unclear>-ga</w>
+<damageEnd/>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.19" type="proverb" n="28.19">
+<l n="23" id="c6128.B.28.19.23" corresp="t6128.p14">
+<w form="u4-ma" lemma="u2-ma-am" pos="N" label="beast">u4-ma</w>
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="nu-tuku" lemma="tuku" pos="V" label="to have">nu-tuku</w>
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<damage/>
+<w form="de2-a" lemma="de2" pos="V" label="to pour"><unclear cert="qry">de2</unclear>-a</w>
+<damageEnd/>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+</lg>
+<lg id="c.6.1.28.20" type="proverb" n="28.20">
+<l n="24" id="c6128.B.28.20.24" corresp="t6128.p15">
+<w form="utul2" lemma="utul2" pos="N" label="tureen">utul2</w>
+<w form="tu-KA" lemma="tu-KA" label="tu-KA">tu-KA</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="bar" lemma="bar" pos="V" label="to set aside">bar</w>
+<w form="jal2" lemma="jal2" pos="V" label="to be (located)">jal2</w>
+<w form="sahar" lemma="sahar" pos="N" label="earth"><unclear cert="qry">sahar</unclear></w>
+<w form="nu-ci-X" lemma="X" label="X">nu-<damage/>ci<damageEnd/>-<supplied/>X</w>
+<suppliedEnd/>
+<w form="nij2-gig" lemma="nij2-gig" pos="N" label="abomination">nij2-gig</w>
+<w form="&d;utu-kam" lemma="utu" pos="N" type="DN" label="Utu" det="&d;">&d;utu-kam</w>
+</l>
+</lg>
+<lg id="c.6.1.28.21" type="proverb" n="28.21">
+<l n="25" id="c6128.B.28.21.25" corresp="t6128.p16">
+<w form="nitah" lemma="nitah" pos="N" label="male">nitah</w>
+<w form="du-du" lemma="jen" pos="V" label="to go" form-type="RR-isg">du-du</w>
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="pad3-da" lemma="pad3" pos="V" label="to find">pad3-da</w>
+</l>
+<l n="26" id="c6128.B.28.21.26" corresp="t6128.p16">
+<w form="munus" lemma="munus" pos="N" label="woman">munus</w>
+<w form="du-du" lemma="jen" pos="V" label="to go" form-type="RR-isg">du-du</w>
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<phr type="VP" lemma="u2-gu de2" label="to lose">
+<w form="ugu" lemma="u2-gu" pos="N" label="noun part of multiword verb"><corr sic="GUL">ugu</corr></w>
+<w form="bi2-ib-de2" lemma="de2" pos="V" label="to pour">bi2-ib-de2</w>
+</phr>
+</l>
+</lg>
+<lg id="c.6.1.28.22" type="proverb" n="28.22">
+<l n="27" id="c6128.B.28.22.27" corresp="t6128.p17">
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<w form="huj" lemma="huj" pos="V" label="to hire">huj</w>
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="sa-ra" lemma="sa" pos="V" label="to roast">sa-ra</w>
+<w form="ha-bi2-ib-gi4" lemma="gi4" pos="V" label="to return">ha-bi2-ib-gi4</w>
+</l>
+</lg>
+<lg id="c.6.1.28.23" type="proverb" n="28.23">
+<l n="28" id="c6128.B.28.23.28" corresp="t6128.p18">
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="i-bi2" lemma="i-bi2" pos="N" label="smoke">i-bi2</w>
+<w form="dug4-ga" lemma="dug4" pos="V" label="to say">dug4-ga</w>
+</l>
+</lg>
+<lg id="c.6.1.28.24" type="proverb" n="28.24">
+<note lang="eng">cf. <xref doc="c.6.1.02" from="c.6.1.02.155">6.1.02.155</xref>, <xref doc="c.6.2.3" from="c623.26.1">6.2.3: UET 6/2 209 ll. 1-3</xref>, <xref doc="c.1.8.1.5" from="c1815.193">1.8.1.5: ll. 193-199</xref></note>
+<l n="29" id="c6128.B.28.24.29" corresp="t6128.p19">
+<w form="e2-gal" lemma="e2-gal" pos="N" label="palace">e2-gal</w>
+<w form="&jic;tir-ra-am3" lemma="tir" pos="N" label="forest" bound="L,a.am" det="&jic;">&jic;tir-<unclear cert="cor">ra</unclear>-am3</w>
+</l>
+<l n="30" id="c6128.B.28.24.30" corresp="t6128.p19">
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="ur-mah-e" lemma="ur-mah" pos="N" label="lion">ur-mah-e</w>
+<w form="&d;nun-gal" lemma="nun-gal" pos="N" type="DN" label="Nungal" det="&d;">&d;nun-<damage/>gal<damageEnd/></w>
+<w form="&jic;sa-uc-gal" lemma="cu2-uc-gal" pos="N" label="type of net" det="&jic;">&jic;sa-uc-<unclear cert="cor">gal</unclear></w>
+<w form="juruc-e" lemma="juruc" pos="N" label="young man">juruc-e</w>
+<w form="gam-gam" lemma="gam" pos="V" label="to bow down" form-type="RR"><unclear cert="qry">gam</unclear>-<unclear cert="qry">gam</unclear></w>
+</l>
+</lg>
+<lg id="c.6.1.28.25" type="proverb" n="28.25">
+<note lang="eng">cf. <xref doc="c.6.1.03" from="c.6.1.03.41">6.1.03.41</xref>, <xref doc="c.6.1.19" from="c.6.1.19.d9">6.1.19.d9</xref></note>
+<l n="31" id="c6128.B.28.25.31" corresp="t6128.p20">
+<w form="e2-ta" lemma="e2" pos="N" label="house(hold)">e2-ta</w>
+<w form="e3" lemma="e3" pos="V" label="to go out or in">e3</w>
+<w form="sila-ta" lemma="sila" pos="N" label="street">sila-ta</w>
+<w form="kur9-ra" lemma="kur9" pos="V" label="to enter">kur9-ra</w>
+<w form="geme2" lemma="geme2" pos="N" label="female slave">geme2</w>
+<w form="nin-a-ni-ta" lemma="nin" pos="N" label="lady">nin-a-ni-ta</w>
+<w form="jicbun-ni" lemma="jicbun" pos="N" label="(cult) meal">jicbun-ni</w>
+<w form="bi2-in-jar" lemma="jar" pos="V" label="to place">bi2-in-jar</w>
+</l>
+</lg>
+<lg id="c.6.1.28.26" type="proverb" n="28.26">
+<note lang="eng">cf. <xref doc="c.6.1.03" from="c.6.1.03.106">6.1.03.106</xref></note>
+<l n="32" id="c6128.B.28.26.32" corresp="t6128.p21">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="nu-jal2" lemma="jal2" pos="V" label="to be (located)">nu-jal2</w>
+<w form="cu" lemma="cu" pos="N" label="hand"><unclear cert="qry">cu</unclear></w>
+<w form="iri&ki;-kam" lemma="iri" pos="N" label="town" bound="L,ak.am" det="&ki;">iri&ki;-kam</w>
+</l>
+<l n="33" id="c6128.B.28.26.33" corresp="t6128.p21">
+<w form="gi" lemma="gi" pos="N" label="reed">gi</w>
+<supplied/>
+<w form="nu-jal2" lemma="jal2" pos="V" label="to be (located)">nu<suppliedEnd/>-<damage/>jal2</w>
+<damageEnd/>
+<w form="nam-ukur3" lemma="nam-ukur3" pos="N" label="poverty">nam-<corr sic="&qryb;USAR&qrye;">ukur3</corr></w>
+<w form="nam-ukur3" lemma="nam-ukur3" pos="N" label="poverty">nam-<term id="c6128.t1"><corr sic="USAR">ukur3</corr></term><gloss lang="sux" target="c6128.t1">ur2</gloss></w>
+<w form="dirig-ga" lemma="dirig" pos="V" label="to be superior">dirig-ga</w>
+</l>
+</lg>
+<lg id="c.6.1.28.27" type="proverb" n="28.27">
+<note lang="eng">cf. <xref doc="c.6.1.03" from="c.6.1.03.148">6.1.03.148</xref>, <xref doc="c.6.1.22" from="c.6.1.22.191">6.1.22: ll. 191-193</xref></note>
+<l n="34" id="c6128.B.28.27.34" corresp="t6128.p22">
+<w form="hu-su" lemma="hac2" pos="N" label="thigh">hu-su</w>
+<w form="ga-me-en" lemma="gam" pos="V" label="to bow down">ga-me-en</w>
+<w form="acgab-e-ne" lemma="acgab" pos="N" label="leatherworker"><corr sic="LU2">acgab</corr>-e-ne</w>
+</l>
+<l n="35" id="c6128.B.28.27.35" corresp="t6128.p22">
+<w form="zi" lemma="zi" pos="N" label="life (breath)">zi</w>
+<w form="&d;en-ki-a" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-ki-a</w>
+<w form="u2" lemma="ud" pos="N" label="day(light)"><unclear cert="cor">u2</unclear></w>
+<w form="za3-le" lemma="zal" pos="V" label="to pass">za3-le</w>
+<w form="&lu2;azlag2-e-ne" lemma="azlag2" pos="N" label="fuller" bound="L,ene" det="&lu2;">&lu2;azlag2-e-ne</w>
+</l>
+</lg>
+<lg id="c.6.1.28.28" type="proverb" n="28.28">
+<note lang="eng">cf. <xref doc="c.6.1.03" from="c.6.1.03.112">6.1.03.112</xref>, <xref doc="c.6.1.22" from="c.6.1.22.19">6.1.22: ll. 19-20</xref>, <xref doc="c.6.2.3" from="c623.31.4">6.2.3: UET 6/2 311 ll. 4-5</xref></note>
+<l n="36" id="c6128.B.28.28.36" corresp="t6128.p23">
+<w form="ku6" lemma="ku6" pos="N" label="fish">ku6</w>
+<w form="al-cej6-ja2" lemma="cej6" pos="V" label="to be hot">al-cej6-ja2</w>
+<w form="ha-ra-ab-sed6-sed6-de3" lemma="sed4" pos="V" label="to be cold" form-type="RR">ha-ra-<corr sic="BA">ab</corr>-sed6-sed6-de3</w>
+</l>
+<l n="37" id="c6128.B.28.28.37" corresp="t6128.p23">
+<supplied/>
+<w form="jiri3-pax-ra2" lemma="jiri3-pax-ra2" pos="N" label="bone">jiri3<suppliedEnd/>-<damage/>pax(PAD)<damageEnd/>-ra2</w>
+<w form="de5-de5-ga" lemma="de5" pos="V" label="to collect" form-type="RR">de5-de5-ga</w>
+</l>
+<l n="38" id="c6128.B.28.28.38" corresp="t6128.p23">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="nam-ba-DU" lemma="DU" pos="V" label="DU"><unclear cert="qry">nam</unclear>-ba-DU</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-hul2-le-e" lemma="hul2" pos="V" label="to be happy">X<suppliedEnd/>-<damage/><unclear cert="qry">hul2</unclear><damageEnd/>-le-e</w>
+</l>
+</lg>
+</div1>
+</body>
+</text>
+</TEI.2>

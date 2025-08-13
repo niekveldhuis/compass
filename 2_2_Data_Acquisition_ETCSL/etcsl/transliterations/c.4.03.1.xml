@@ -1,0 +1,311 @@
+<TEI.2 id="c.4.03.1">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">&c;ir-&c;ag-&h;ula</foreign> to Damgalnuna (Damgalnuna A) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b307">Krecher 1996</xref><biblScope type="contents">score transliteration</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b10">Green 1975</xref><biblScope type="page">86-89</biblScope><biblScope type="contents">score transliteration, translation</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">Ni 2776 (SLTN 65)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>31.vii.2000-01.viii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>29.viii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>04.ix.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>29.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>29.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<div1 type="segment" n="A">
+<gap extent="unknown no. of lines missing"/>
+<l n="1" id="c4031.A.1" corresp="t4031.p1">
+<damage/>
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<damageEnd/>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="&d;en-ki" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-ki</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="NE" lemma="NE" label="NE">NE</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="mu-ri2-in-dug4" lemma="dug4" pos="V" label="to say">mu-ri2-in-<supplied/>dug4</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4031.A.2" corresp="t4031.p1">
+<w form="e2-gi4-a" lemma="e2-gi4-a" pos="N" label="daughter-in-law">e2-gi4-a</w>
+<distinct type="emesal">
+<w form="&d;am-an-ki" lemma="en-ki" pos="N" type="DN" label="Enki" emesal="am-an-ki" det="&d;">&d;am-an-ki</w>
+</distinct>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="zid-de3-ec" lemma="zid" pos="AJ" label="right">zid-de3-ec</w>
+<w form="tar-re" lemma="tar" pos="V" label="to cut">tar-re</w>
+</l>
+<l n="3" id="c4031.A.3" corresp="t4031.p1">
+<w form="sumun2" lemma="sumun2" pos="N" label="wild cow">sumun2</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="ulutim2-bi" lemma="ulutim2" pos="N" label="form">ulutim2-bi</w>
+<w form="dirig-ga" lemma="dirig" pos="V" label="to be superior">dirig-ga</w>
+<w form="nij2-ul-e-ec" lemma="nij2-ul" pos="N" label="distant time">nij2-<unclear cert="cor">ul</unclear>-e-ec</w>
+<w form="rib-ba" lemma="rib" pos="V" label="to be outstanding"><unclear cert="qry">rib</unclear>-ba</w>
+</l>
+<l n="4" id="c4031.A.4" corresp="t4031.p1">
+<w form="nitalam-zu" lemma="nitalam" pos="N" label="spouse">nitalam-zu</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="&d;nu-dim2-mud" lemma="nu-dim2-mud" pos="N" type="DN" label="Nudimmud" det="&d;">&d;nu-dim2-mud</w>
+<w form="zag" lemma="zag" pos="N" label="side">zag</w>
+<w form="kalam-ma" lemma="kalam" pos="N" label="the Land">kalam-ma</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="du7" lemma="du7" pos="V" label="to be perfect">du7</w>
+</l>
+<l n="5" id="c4031.A.5" corresp="t4031.p1">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="igi-jal2-la" lemma="igi-jal2" pos="AJ" label="wise">igi-jal2-la</w>
+<w form="an" lemma="an" pos="N" type="DN" label="An">an</w>
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<w form="cum2-mu" lemma="cum2" pos="V" label="to give">cum2-mu</w>
+<w form="ad" lemma="ad" pos="N" label="voice">ad</w>
+<w form="gi4-gi4" lemma="gi4" pos="V" label="to return" form-type="RR">gi4-gi4</w>
+<w form="gal-zu" lemma="gal-zu" pos="AJ" label="skilful">gal-zu</w>
+</l>
+<l n="6" id="c4031.A.6" corresp="t4031.p1">
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="gal-an-zu" lemma="gal-an-zu" pos="AJ" label="wise">gal-an-zu</w>
+<w form="dug4-ga-ni" lemma="dug4" pos="V" label="to say">dug4-ga-ni</w>
+<w form="saj-ba" lemma="saj" pos="N" label="head">saj-ba</w>
+<w form="du" lemma="jen" pos="V" label="to go" form-type="isg">du</w>
+<w form="kug-zu" lemma="kug-zu" pos="AJ" label="wise">kug-zu</w>
+<w form="nij2-nam-ma-kam" lemma="nij2-nam" pos="PD" type="indefinite" label="anything">nij2-nam-ma-kam</w>
+</l>
+<l n="7" id="c4031.A.7" corresp="t4031.p1">
+<w form="mas-su" lemma="mas-su" pos="N" label="leader">mas-su</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="&d;en-lil2-la2-ka" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-la2-ka</w>
+<w form="sig10-ge5" lemma="sig10" pos="V" label="to place">sig10-ge5</w>
+<w form="me-bi" lemma="me" pos="N" label="essence">me-bi</w>
+<w form="sag2" lemma="sag2" pos="V" label="to scatter">sag2</w>
+<supplied/>
+<w form="nu-di" lemma="dug4" pos="V" label="to say" form-type="nfi">nu<suppliedEnd/>-di</w>
+</l>
+<l n="8" id="c4031.A.8" corresp="t4031.p1">
+<damage/>
+<w form="jectug2" lemma="jectug2" pos="N" label="ear">jectug2</w>
+<damageEnd/>
+<w form="dajal" lemma="dajal" pos="V" label="to be wide">dajal</w>
+<w form="mu" lemma="mu" pos="N" label="name">mu</w>
+<w form="dug3-ga" lemma="dug3" pos="V" label="to be good">dug3-ga</w>
+<damage/>
+<w form="sa4-a" lemma="sa4" pos="V" label="to call">sa4<damageEnd/>-a</w>
+<w form="ec-bar-e" lemma="ec-bar" pos="N" label="decision">ec-bar-e</w>
+<w form="cum2-X" lemma="cum2" pos="V" label="to give">cum2-<supplied/>X</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c4031.A.9" corresp="t4031.p1">
+<supplied/>
+<w form="u3-tud-da" lemma="tud" pos="V" label="to give birth">u3<suppliedEnd/>-tud-da</w>
+<w form="zu" lemma="zu" pos="V" label="to know">zu</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="B">
+<l n="1" id="c4031.B.1" corresp="t4031.p2">
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<damage/>
+<w form="lugal" lemma="lugal" pos="N" label="king">lugal</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4031.B.2" corresp="t4031.p2">
+<w form="u3-sumun2" lemma="u3-sumun2" pos="N" label="wild cow?">u3-sumun2</w>
+<damage/>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4031.B.3" corresp="t4031.p2">
+<w form="zi" lemma="zi" pos="N" label="life (breath)">zi</w>
+<w form="nam-til3" lemma="nam-til3" pos="N" label="life">nam-<damage/>til3</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4031.B.4" corresp="t4031.p2">
+<w form="lu2-ulu3-bi" lemma="lu2-ulu3" pos="N" label="person">lu2-ulu3-bi</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c4031.B.5" corresp="t4031.p2">
+<w form="ne-saj" lemma="nesaj" pos="N" label="(first-fruit) offering">ne-saj</w>
+<w form="jar-ra" lemma="jar" pos="V" label="to place">jar-ra</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c4031.B.6" corresp="t4031.p2">
+<w form="ur5" lemma="ur5" pos="N" label="liver">ur5</w>
+<w form="sag9-ge" lemma="sag9" pos="V" label="to be good">sag9-ge</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c4031.B.7" corresp="t4031.p2">
+<w form="nam-til3" lemma="nam-til3" pos="N" label="life">nam-til3</w>
+<w form="zi" lemma="zi" pos="N" label="life (breath)">zi</w>
+<damage/>
+<w form="sud" lemma="sud" pos="V" label="to be distant">sud</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c4031.B.8" corresp="t4031.p2">
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="kac" lemma="kac" pos="N" label="beer">kac</w>
+<w form="de2-a" lemma="de2" pos="V" label="to pour">de2-a</w>
+<w form="A" lemma="A" label="A">A</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="i3" lemma="i3" pos="N" label="fatty substance">i3</w>
+<w form="&jic;erin-na" lemma="erin" pos="N" label="cedar" bound="L,ak" det="&jic;">&jic;erin-<damage/>na</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="C">
+<l n="1" id="c4031.C.1" corresp="t4031.p3">
+<w form="&dug;cakir3" lemma="cakir3" pos="N" label="churn" det="&dug;">&dug;<unclear cert="qry">cakir3</unclear></w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4031.C.2" corresp="t4031.p3">
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="&d;en-ki" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-<supplied/>ki<suppliedEnd/></w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4031.C.3" corresp="t4031.p3">
+<damage/>
+<w form="e2" lemma="e2" pos="N" label="house(hold)"><unclear cert="qry">e2</unclear></w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="D">
+<l n="1" id="c4031.D.1" corresp="t4031.p4">
+<damage/>
+<w form="abzu" lemma="abzu" pos="N" label="underground water">abzu</w>
+<damageEnd/>
+<w form="me-bi" lemma="me" pos="N" label="essence">me-bi</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4031.D.2" corresp="t4031.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<damage/>
+<w form="lu2" lemma="lu2" pos="N" label="person">lu2</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4031.D.3" corresp="t4031.p4">
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="il2" lemma="il2" pos="V" label="to raise">il2</w>
+<w form="nam-nin-a" lemma="nam-nin" pos="N" label="ladyship">nam-nin-a</w>
+<w form="za3-mi2-zu" lemma="za3-mi2" pos="N" label="praise">za3-mi2-<unclear cert="qry">zu</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="4" id="c4031.D.4" corresp="t4031.p4">
+<w form="eridug&ki;" lemma="eridug" pos="N" type="SN" label="Eridug" det="&ki;">eridug&ki;</w>
+<w form="kur" lemma="kur" pos="N" label="(mountain) land">kur</w>
+<w form="he2-jal2-la-zu" lemma="he2-jal2" pos="N" label="plenty">he2-jal2-la-zu</w>
+<w form="dam-bi" lemma="dam" pos="N" label="spouse">dam-bi</w>
+<w form="nu-til-e" lemma="til" pos="V" label="to complete">nu-til-e</w>
+</l>
+<l n="5" id="c4031.D.5" corresp="t4031.p4">
+<w form="dijir" lemma="dijir" pos="N" label="deity">dijir</w>
+<damage/>
+<w form="gal-gal-e-ne" lemma="gal" pos="V" label="to be big" form-type="RR">gal<damageEnd/>-gal-e-ne</w>
+<w form="u3-tud-bi" lemma="tud" pos="V" label="to give birth">u3-tud-bi</w>
+<w form="he2-a" lemma="me" pos="V" label="to be">he2-a</w>
+<w form="dijir-bi" lemma="dijir" pos="N" label="deity">dijir-bi</w>
+<w form="he2-em" lemma="me" pos="V" label="to be">he2-em</w>
+</l>
+<trailer place="subscript" type="cir-caghula">
+<l n="6" id="c4031.D.6" corresp="t4031.p5">
+<w form="cir3-cag4-hul2-la" lemma="cir3-cag4-hul2-la" pos="N" label="type of composition">cir3-cag4-hul2-la</w>
+<w form="&d;dam-gal-nun-na-kam" lemma="dam-gal-nun-na" pos="N" type="DN" label="Damgalnuna" det="&d;">&d;dam-gal-<damage/>nun<damageEnd/>-<supplied/>na-kam<suppliedEnd/></w>
+</l>
+</trailer>
+</div1>
+</body>
+</text>
+</TEI.2>

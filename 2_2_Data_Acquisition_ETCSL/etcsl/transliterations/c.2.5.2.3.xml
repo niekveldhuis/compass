@@ -1,0 +1,89 @@
+<TEI.2 id="c.2.5.2.3">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>An <foreign lang="sux">adab</foreign> for &C;u-il&imacr;&c;u (&C;u-il&imacr;&c;u C) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b453">Tinney 1998mmm</xref><biblScope type="contents">composite text</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">N 1329</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>25.i.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>16.vi.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>16.vi.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>30.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>23.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<lg n="A" type="uru">
+<gap extent="unknown no. of lines missing"/>
+<l n="1" id="c2523.A.1" corresp="t2523.p1">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c2523.A.2" corresp="t2523.p1">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="&d;cu-i3-li2-cu" lemma="cu-i3-li2-cu" pos="N" type="RN" label="&C;u-il&imacr;&c;u" det="&d;">&d;cu-i3-li2-cu</w>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="ud" lemma="ud" pos="N" label="day(light)">ud</w>
+<w form="ha-ba-ni-X-su3-ud" lemma="sud" pos="V" label="to be distant">ha-ba-ni-X-<supplied/>su3-ud</w>
+<suppliedEnd/>
+</l>
+<trailer place="rubric" type="uru">
+<l n="3" id="c2523.A.3" corresp="t2523.p2">
+<supplied/>
+<w form="u18-ru12-bi-im" lemma="u18-ru" pos="N" label="composition-division">u18<suppliedEnd/>-<damage/>ru12<damageEnd/>-bi-im</w>
+</l>
+</trailer>
+</lg>
+<trailer place="subscript" type="adab">
+<l n="4" id="c2523.A.4" corresp="t2523.p3">
+<w form="a-da-ab" lemma="a-da-ab" pos="N" label="type of drum and composition">a-da-ab</w>
+<w form="&d;&X;" lemma="X" pos="N" type="DN" label="unclear" det="&d;">&d;<supplied/>&X;<suppliedEnd/></w>
+<note id="c2523.n1" lang="eng" target="c2523.A.4">lines 3 and 4 are written as one line in source</note>
+</l>
+</trailer>
+</body>
+</text>
+</TEI.2>

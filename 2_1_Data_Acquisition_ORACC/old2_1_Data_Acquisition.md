@@ -1,3 +1,187 @@
+
+
+
+
+## 2.1.3 Parsing JSON: catalogue.json
+
+Each [ORACC](http://oracc.org) JSON `zip` file includes a file named `catalogue.json`. Since the structure of `catalogue.json` is simple and there is relatively little depth in its hierarchy, it can be parsed in just a few lines. The example code assumes that the file `obmc.zip` is available in the directory `jsonzip`. You may download it at http://oracc.museum.upenn.edu/obmc/json/obmc.zip or use the notebook/utility referenced above. The comment lines (beginning with #) show the proper naming conventions for a sub-project.
+
+```python
+import zipfile
+import json
+file = "jsonzip/obmc.zip"    
+# or: file = "jsonzip/dcclt-nineveh.zip"
+z = zipfile.ZipFile(file)
+st = z.read("obmc/catalogue.json").decode("utf-8") 
+# or: st = z.read("dcclt/nineveh/catalogue.json").decode("utf-8")
+j = json.loads(st)
+```
+
+The command `ZipFile` from the `zipfile` library turns `obmc.zip` into a `zipfile` object that may be manipulated with the functions available in the `zipfile` library. The `read()` command from that same package reads one particular file from the `zip`.  The `json` library provides functions for reading (loading) or producing (dumping) a JSON file. Reading is done with the function `load()`, which comes in two versions. Regular `json.load()` takes a filename as argument and will load a JSON file. In this case, however, the `read()` function from the `zipfile` library has produced a string (extracted from `obmc.zip`), and therefore we need the command `json.loads()`, which takes a string as its argument (here represented by the variable `st`).  
+
+The variable `j` will now contain the entire `catalogue.json` object from the [OBMC](http://oracc.org/obmc) (Old Babylonian Model Contracts) project by Gabriella Spada. The variable `j` is a JSON object which we may treat as a Python dictionary. The `catalogue.json` has various keys, including `type`, `project`, `source`, `license`, `license-url`, `more-info`, `UTC-timestamp`, `members`, and `summaries`. The key `members` contains the actual catalog information. The value of the key `members` is itself a dictionary of dictionaries. Each of the keys in the top-level dictionary is a P, Q, or X-number (a text ID). The value of each of these keys is still another dictionary; each key in that dictionary is a field in the original catalog (`primary_publication`, `provenience`, `genre`, etc.). The dictionary of dictionaries under the key `members` may be transformed into a Pandas DataFrame for ease of viewing and manipulation.
+
+``` python
+import pandas as pd	
+cat = j["members"]
+df = pd.DataFrame.from_dict(cat)
+df
+```
+
+By default, the `DataFrame.from_dict()` function in the `pandas` library takes each key as a column - in this case the keys of `cat["members"]` are the P numbers (text IDs); the catalog fields have become rows. To address that issue, we need to tell the `DataFrame.from_dict()` function explicitly that each key should be a row (`orient="index"`) 
+
+```python
+df = pd.DataFrame.from_dict(cat, orient="index")
+df
+```
+
+The table in `df` now contains all the catalog data available in [OBMC](http://oracc.org/obmc). The Pandas library allows one to manipulate and slice the DataFrame in many different ways. For instance, one may select the relevant fields by creating a new DataFrame as follows:
+
+```python
+df1 = df[["provenience", "period", "id_text"]]
+```
+
+Pandas is a powerful Python library – we will see some of its functionality in later sections. Various introductions to Pandas may be found on the web or in [VanderPlas 2016](https://github.com/jakevdp/PythonDataScienceHandbook) and similar overviews.
+
+The notebook [2-1-1_parse-json-cat.ipynb](https://github.com/niekveldhuis/compass/blob/master/2_1_Data_Acquisition_ORACC/2_1_1_parse-json-cat.ipynb) allows one to enter one or more project abbreviations, download the JSON `zip` file(s), extract the catalog information and store that information in a `csv` file and/or a `pickle` file.
+
+## 2.1.4 Parsing an ORACC JSON Text Edition File
+
+[ORACC](http://oracc.org) JSON text edition files include transliteration and lemmatization, as well as information on the sign level. Translation is not included. The files are found in the `corpusjson` directory of each project's `zip` file and are named after their text ID, for instance `dcclt/corpusjson/P251867.json`, or, in the case of a sub-project, `saao/saa01/corpusjson/P224485.json`.
+
+Reading in the data works in exactly the same way as above:
+
+```python
+import zipfile
+import json
+file = "jsonzip/obmc.zip"    
+# or: file = "jsonzip/saao-saa01.zip"
+z = zipfile.ZipFile(file)
+st = z.read("obmc/corpusjson/P230754.json").decode("utf-8") 
+# or: st = z.read("saao/saa01/corpusjson/P224485.json").decode("utf-8")
+text = json.loads(st)
+```
+
+The structure of the JSON files for text editions, however, is much more complex, because of the hierarchical structure of textual data. A text may have one or more surfaces (obverse, reverse), each surface may have one or more columns; each column has lines; each line has words; and each word has signs.
+
+	text object
+		surface
+			column
+				line
+					word
+						sign
+
+How many of those layers are present in a particular text is impossible to predict. Some tablets have columns, others do not; most surfaces have text, but not all surfaces do. In addition, a text consists of textual units, such as paragraphs, sentences, and phrases, which may or may not coincide with the physical units of surfaces and lines.
+
+The [ORACC](http://oracc.org) JSON tree for a text edition consists of a hierarchy of `cdl` keys. The name `cdl` is based on the three main components of the nested tree: Chunks (text units), Discontinuities (physical units), and Lemmas (words). A Chunk is a chunk of text of any length: the body of the text, a sentence, a phrase, a word, etc. A Discontinuity is the text object, the obverse or reverse, the beginning of a column, a break in the text, a horizontal ruling on the tablet, or the beginning of a new line. A Lemma is the lemmatization of a single word in the text, including the information on the sign level. 
+
+The value of a `cdl` key is a list of one or more dictionaries. Each of these dictionaries contains the key "node" which may have the values "c" (for Chunk), "d" (for Discontinuity), or "l" (for Lemma). Any "c" dictionary may contain a further `cdl` key, which again has as its value a list of dictionaries of the "c", "d", or "l" type. The "c" and "d" dictionaries always have a key `type`, which may have values such as `text`, `discourse`, or `sentence` (for "c" nodes) or `object`, `obverse`, `column-start`, `line-start` (for "d" nodes). Discontinuities (or "d" nodes") may also have `type : nonx`, recording non-textual physical features such as rulings on the tablet, or missing lines. An "l" (Lemma) dictionary, is always at the bottom of the `cdl` hierarchy. The "l" dictionary itself contains an "f" key which has as its value a dictionary that contains all the lemmatization data of a single word (transliteration, citation form, guide word, part of speech, etc.). The "f" dictionary includes a "gdl" key (for Grapheme Description Language), which identifies the graphemes (cuneiform signs) of which the word is composed, with information on the reading and the function (syllabogram, logogram, determinative, etc.) of those graphemes (in some [ORACC](http://oracc.org) projects the `gdl` node will include the Unicode representation of cuneiform signs themselves as well).
+
+The structure may be illustrated with the beginning of [P251867](http://oracc.org/dcclt/P251867), an Old Babylonian 3-line lentil (school text), edited in [DCCLT](http://oracc.org/dcclt) (beginning of the file omitted): 
+
+```json
+{"cdl": [
+{
+  "node": "c",
+  "type": "text",
+  "id": "P251867.U0",
+  "cdl": [
+    {
+      "node": "d",
+      "type": "object",
+      "ref": ""
+    },
+    {
+      "node": "d",
+      "subtype": "obverse",
+      "type": "obverse",
+      "ref": "P251867.o.1",
+      "label": "o"
+    },
+    {
+      "node": "c",
+      "type": "discourse",
+      "subtype": "body",
+      "id": "P251867.U1",
+      "cdl": [
+        {
+          "node": "c",
+          "type": "sentence",
+          "id": "P251867.U2",
+          "label": "o 1 - o 3",
+          "cdl": [
+            {
+              "node": "d",
+              "type": "line-start",
+              "ref": "P251867.2",
+              "n": "1",
+              "label": "o 1"
+            },
+            {
+              "node": "l",
+              "frag": "{ŋeš}ma₂-durah-abzu",
+              "id": "P251867.l1ac01",
+              "ref": "P251867.2.1",
+              "inst": "Madurahabzu[1]ON",
+              "sig": "@dcclt%sux:{ŋeš}ma₂-durah-abzu=Madurahabzu[1//1]ON'ON$Madurahabzu/{ŋeš}ma₂-durah-abzu#~",
+              "f": {
+                "lang": "sux",
+                "form": "{ŋeš}ma₂-durah-abzu",
+                "gdl": [
+                  {
+                    "det": "semantic",
+                    "pos": "pre",
+                    "seq": [
+                      {
+                        "v": "ŋeš",
+                        "id": "P251867.2.1.0"
+                      }
+                    ]
+                  },
+```
+
+The first `cdl` key contains a list that has a single element, a dictionary (the ending square bracket of this list is not included in the snippet). This dictionary is a `c` node (Chunk) representing the entire text. The `c` node contains a new `cdl` key which has a list of dictionaries as its value including two `d` (Discontinuity) nodes (`object` and `obverse`) and another `c` node that represents a discourse unit, namely the body of the text (note that Chunk `text` and Chunk `body` are identical here - but that need not be the case). Eventually, there is a node `l` that contains the transliteration and lemmatization data for the first word of this text.
+
+This hierarchy implies that a word (an "l" node) may belong to different hierarchies that do not necessarily align. For instance, a word may belong to a sentence (a Chunk) that continues from the obverse to the reverse (Discontinuities) of a tablet. The JSON structure allows to express (and to retrieve) those facts simultaneously.
+
+In order to pull out the lemmatization data we need to iterate through the hierarchy of `cdl` keys until we encounter an `l` node, containing an `f` key. The value of the `f` key is the data we want.
+
+A straightforward way of doing this is by defining a recursive function, that is, a function that calls itself to recursively inspect the value of successive layers of `cdl` keys until one encounters an `f` key. The contents of the `f` key are then added to a list. In its most basic form that function looks like this:
+
+```python
+def parsejson(text):
+    l = []
+    for JSONobject in text["cdl"]:
+        if "cdl" in JSONobject: 
+            l.extend(parsejson(JSONobject))
+        if "f" in JSONobject:
+            l.append(JSONobject["f"])
+    return l
+```
+
+The function is called with the argument `text`, which contains the contents of the entire JSON file, as retrieved above. The function adds a new row of lemmatization data (one word at a time) each time it encounters an `f` key. Finally it returns the list (a list of dictionaries) with the lemmatization data. The function may be called as follows:
+
+```python
+lemm_l = []
+lemm_l.extend(parsejson(text))
+```
+By including the call to `parsejson()` in a loop, we can fill lemm_l with the lemmatization data of multiple texts.
+
+The list `lemm_l` now contains all the lemmatization data of [P230754](http://oracc.org/obmc/P230754) as edited in [OBMC](http://oracc.org/obmc). We can inspect the data by reading it into a `pandas` DataFrame. 
+
+```python
+import pandas as pd
+words = pd.DataFrame(lemm_l).fillna("")
+words
+```
+The function `fillna()` from the `pandas` library fills holes in the DataFrame where no data are available. For instance, a word that has not been lemmatized has no data in the fields "cf" (Citation Form), "gw" (Guide Word), and "pos" (Part of Speech). Without this function empty slots in the DataFrame will have the value NaN (or: "Not a Number"), which can be problematic in further data manipulation. The argument of the `fillna()` function is the value to be placed in empty cells - in this case the empty string. Note that NaN and "" are of different data types: NaN belongs to a numeric data type; the empty string is a string.
+
+One may write the DataFrame directly to a `csv` (or some similar file format), but it is often more useful to structure the data a bit more (section [2.1.7](#2.1.7-Data-Structuring)). Before we get to that we will first discuss several enhancements of the `parsejson()` function.
+
+![P251867](http://cdli.ucla.edu/dl/tn_photo/P251867.jpg)
+
+
+
 ## 2.1.5 Enhancing parsejson()
 
 The basic `parsejson()` captures only lemmatization data, it ignores line numbers, text breaks, and other types of information that are included in the JSON files. The basic `parsejson()` is good enough for a "Bag of Words" approach, which looks only at vocabulary frequency, ignoring word order. For many other types of analysis we do need to capture line numbers and text breaks. Such information is stored in "d" nodes in a level above the "l" node in the `cdl` hierarchy. Similarly, sentence identifiers (and other discourse units) are stored in "c" nodes. The `parsejson()` function can easily be enhanced to capture various types of such meta-data storing them in a dictionary called `meta_d`. This dictionary is updated whenever the `parsejson()` function encounters a relevant node. Each row (each word) in the list `lemm_l` receives the current meta-data from `meta_d`. 

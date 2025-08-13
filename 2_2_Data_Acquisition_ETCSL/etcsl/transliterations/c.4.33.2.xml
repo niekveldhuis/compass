@@ -1,0 +1,353 @@
+<TEI.2 id="c.4.33.2">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A hymn to Kusu (Kusu A) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b715">Michalowski 1993</xref><biblScope type="contents">score transliteration, translation, photograph, handcopy, commentary</biblScope><note>ms. D</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">YBC 9860 (Hallo Fs. p.161)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>05.ix.2000-06.ix.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>07.x.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>14.xi.2000</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>25.xi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>25.xi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c4332.1" corresp="t4332.p1">
+<w form="am" lemma="am" pos="N" label="wild bull">am</w>
+<damage/>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<damageEnd/>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="du7-du7" lemma="du7" pos="V" label="to push" form-type="RR">du7-du7</w>
+<damage/>
+<w form="gi-izi-la2" lemma="gi-izi-la2" pos="N" label="torch">gi<damageEnd/>-<supplied/>izi-la2</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4332.2" corresp="t4332.p1">
+<w form="am" lemma="am" pos="N" label="wild bull">am</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="&d;en-ki-ke4" lemma="en-ki" pos="N" type="DN" label="Enki" det="&d;">&d;en-ki-ke4</w>
+<w form="u3-na" lemma="u3-na" pos="N" label="aggression">u3-<damage/>na</w>
+<damageEnd/>
+<supplied/>
+<w form="gub-bu" lemma="gub" pos="V" label="to stand">gub-bu</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4332.3" corresp="t4332.p1">
+<w form="abzu" lemma="abzu" pos="N" label="underground water">abzu</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="sikil-ta" lemma="sikil" pos="V" label="to be pure">sikil-ta</w>
+<damage/>
+<w form="e3-a" lemma="e3" pos="V" label="to go out or in">e3<damageEnd/>-<supplied/>a</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4332.4" corresp="t4332.p1">
+<w form="&d;gibil6" lemma="gibil6" pos="N" type="DN" label="Gibil" det="&d;">&d;gibil6</w>
+<w form="e2-gal" lemma="e2-gal" pos="N" label="palace">e2-gal</w>
+<damage/>
+<w form="unu2" lemma="unu2" pos="N" label="(dining) hall">unu2</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c4332.5" corresp="t4332.p1">
+<w form="ni2" lemma="ni2" pos="N" label="fear(someness)">ni2</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="gur3-ru-na" lemma="guru3" pos="V" label="to bear">gur3-ru-na</w>
+<w form="muc3" lemma="muc3" pos="N" label="face">muc3</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c4332.6" corresp="t4332.p1">
+<w form="&d;nun-bar-an-na" lemma="nun-bar-an-na" pos="N" type="DN" label="Nun-bar-ana" det="&d;">&d;nun-bar-an-na</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="jar" lemma="jar" pos="V" label="to place">jar</w>
+<w form="huc" lemma="huc" pos="V" label="to be reddish">huc</w>
+<supplied/>
+<w form="&X;-la" lemma="&X;" label="&X;">&X;<suppliedEnd/>-<damage/>la</w>
+<damageEnd/>
+</l>
+<l n="7" id="c4332.7" corresp="t4332.p1">
+<w form="gi-izi-la2" lemma="gi-izi-la2" pos="N" label="torch">gi-izi-la2</w>
+<w form="gal" lemma="gal" pos="V" label="to be big">gal</w>
+<w form="abzu-ta" lemma="abzu" pos="N" label="underground water">abzu-ta</w>
+<damage/>
+<w form="e3-a" lemma="e3" pos="V" label="to go out or in">e3<damageEnd/>-a</w>
+</l>
+<l n="8" id="c4332.8" corresp="t4332.p1">
+<w form="me" lemma="me" pos="N" label="essence">me</w>
+<w form="nun-na" lemma="nun" pos="N" label="prince">nun-na</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="il2" lemma="il2" pos="V" label="to raise">il2</w>
+</l>
+<l n="9" id="c4332.9" corresp="t4332.p2">
+<w form="&jic;erin" lemma="erin" pos="N" label="cedar" det="&jic;">&jic;erin</w>
+<w form="&jic;cu-ur2-men5" lemma="cu-ur2-men2" pos="N" label="type of cypress" det="&jic;">&jic;cu-ur2-men5</w>
+<w form="&jic;za-ba-lum" lemma="za-ba-lum" pos="N" label="juniper" det="&jic;">&jic;za-ba-lum</w>
+<w form="&jic;tackarin" lemma="tackarin" pos="N" label="box tree" det="&jic;">&jic;tackarin</w>
+</l>
+<l n="10" id="c4332.10" corresp="t4332.p2">
+<w form="siki" lemma="siki" pos="N" label="hair">siki</w>
+<w form="babbar" lemma="babbar" pos="AJ" label="white">babbar</w>
+<w form="siki" lemma="siki" pos="N" label="hair">siki</w>
+<w form="gig2" lemma="gig2" pos="V" label="to be black">gig2</w>
+<w form="jic-kin2" lemma="jic-gana2" pos="N" label="birch?">jic-kin2</w>
+<w form="babbar" lemma="babbar" pos="AJ" label="white">babbar</w>
+<w form="jic-kin2" lemma="jic-gana2" pos="N" label="birch?">jic-kin2</w>
+<w form="gig2" lemma="gig2" pos="V" label="to be black"><corr sic="babbar">gig2</corr></w>
+</l>
+<l n="11" id="c4332.11" corresp="t4332.p2">
+<w form="&jic;hachur" lemma="hachur" pos="N" label="apple (tree)" det="&jic;">&jic;hachur</w>
+<w form="ce-er-gum" lemma="ce-er-gum" pos="N" label="string (of fruit)">ce-er-gum</w>
+<w form="&jic;pec3" lemma="pec3" pos="N" label="fig (tree)" det="&jic;">&jic;pec3</w>
+<w form="ce-er-gum" lemma="ce-er-gum" pos="N" label="string (of fruit)">ce-er-<corr resp="scrOm"/>gum</w>
+<corrEnd/>
+<w form="gid2-da" lemma="gid2" pos="V" label="to be long">gid2-da</w>
+<w form="la2-a" lemma="la2" pos="V" label="to hang">la2-a</w>
+</l>
+<l n="12" id="c4332.12" corresp="t4332.p2">
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="tarah" lemma="tarah" pos="N" label="wild goat">tarah</w>
+<w form="mac2" lemma="mac2" pos="N" label="(kid) goat">mac2</w>
+<w form="hur-saj-ja2" lemma="hur-saj" pos="N" label="mountain (range)">hur-saj-ja2</w>
+</l>
+<l n="13" id="c4332.13" corresp="t4332.p2">
+<w form="i3" lemma="i3" pos="N" label="fatty substance">i3</w>
+<w form="tur3" lemma="tur3" pos="N" label="animal stall">tur3</w>
+<w form="amac" lemma="amac" pos="N" label="sheepfold">amac</w>
+<w form="kug-ta" lemma="kug" pos="AJ" label="shining">kug-ta</w>
+<damage/>
+<w form="de2-a" lemma="de2" pos="V" label="to pour">de2<damageEnd/>-a</w>
+</l>
+<l n="14" id="c4332.14" corresp="t4332.p2">
+<supplied/>
+<w form="&im;cu-rin-na-ta" lemma="cu-rin-na" pos="N" label="oven" bound="L,ak.ta" det="&im;">&im;cu<suppliedEnd/>-<damage/>rin<damageEnd/>-na-ta</w>
+<w form="X-a" lemma="X" label="X">X-a</w>
+</l>
+<l n="15" id="c4332.15" corresp="t4332.p2">
+<supplied/>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+<w form="gi-izi-la2-ta" lemma="gi-izi-la2" pos="N" label="torch">gi<suppliedEnd/>-<damage/>izi<damageEnd/>-la2-ta</w>
+<w form="na" lemma="na" pos="N" label="smoke?">na</w>
+<w form="de5-ga" lemma="de5" pos="V" label="to collect">de5-ga</w>
+</l>
+<l n="16" id="c4332.16" corresp="t4332.p2">
+<supplied/>
+<w form="X-ta" lemma="X" label="X">X<suppliedEnd/>-<damage/>ta</w>
+<damageEnd/>
+<w form="gi" lemma="gi" pos="N" label="reed">gi</w>
+<w form="im-ma-ra-kece2" lemma="kece2" pos="V" label="to bind">im-ma-ra-kece2</w>
+</l>
+<l n="17" id="c4332.17" corresp="t4332.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-ta" lemma="X" label="X">X<suppliedEnd/>-<damage/>ta</w>
+<damageEnd/>
+<w form="izi" lemma="izi" pos="N" label="fire">izi</w>
+<w form="im-ma-ra-la2" lemma="la2" pos="V" label="to hang">im-ma-ra-la2</w>
+</l>
+<l n="18" id="c4332.18" corresp="t4332.p2">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="im-ta-DU.DU" lemma="DU" pos="V" label="DU">im-ta-DU.DU</w>
+</l>
+<l n="19" id="c4332.19" corresp="t4332.p2">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="im-ta-du7-du7" lemma="du7" pos="V" label="to be perfect" form-type="RR">im-ta-du7-du7</w>
+</l>
+<l n="20" id="c4332.20" corresp="t4332.p3">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X-ba" lemma="X" label="X">X-ba</w>
+<w form="&d;ku3-su13" lemma="ku3-su3" pos="N" type="DN" label="Kusu" det="&d;">&d;ku3-su13</w>
+</l>
+<l n="21" id="c4332.21" corresp="t4332.p3">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="mu-un-kug" lemma="kug" pos="V" label="to be shining">mu-un<suppliedEnd/>-kug</w>
+<w form="gir4" lemma="gir4" pos="N" label="oven">gir4</w>
+<w form="mu-un-sikil" lemma="sikil" pos="V" label="to be pure">mu-un-sikil</w>
+</l>
+<l n="22" id="c4332.22" corresp="t4332.p3">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="im-mi-in-si" lemma="si" pos="V" label="to fill">im<suppliedEnd/>-mi-in-si</w>
+<w form="na" lemma="na" pos="N" label="smoke?">na</w>
+<w form="de5" lemma="de5" pos="V" label="to collect">de5</w>
+<w form="sig9-ga" lemma="sig9" pos="V" label="to put">sig9-ga</w>
+</l>
+<l n="23" id="c4332.23" corresp="t4332.p3">
+<supplied/>
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<suppliedEnd/>
+<damage/>
+<w form="car2" lemma="car2" pos="V" label="to be numerous">car2</w>
+<damageEnd/>
+<w form="udu" lemma="udu" pos="N" label="sheep">udu</w>
+<w form="car2-da" lemma="car2" pos="V" label="to be numerous">car2-da</w>
+<w form="&d;ku3-su13" lemma="ku3-su3" pos="N" type="DN" label="Kusu" det="&d;">&d;ku3-su13</w>
+</l>
+<l n="24" id="c4332.24" corresp="t4332.p3">
+<damage/>
+<w form="gir4" lemma="gir4" pos="N" label="oven">gir4</w>
+<w form="gal-e" lemma="gal" pos="V" label="to be big">gal-e</w>
+<damageEnd/>
+<w form="he2-em-ma-da-an-ku4-ku4" lemma="kur9" pos="V" label="to enter" form-type="rr">he2-em-ma-da-an-ku4-ku4</w>
+</l>
+<l n="25" id="c4332.25" corresp="t4332.p3">
+<damage/>
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<damageEnd/>
+<w form="car2" lemma="car2" pos="V" label="to be numerous">car2</w>
+<w form="ninda" lemma="ninda" pos="N" label="bread">ninda</w>
+<w form="car2-da" lemma="car2" pos="V" label="to be numerous">car2-da</w>
+<w form="&d;ku3-su13" lemma="ku3-su3" pos="N" type="DN" label="Kusu" det="&d;">&d;ku3-su13</w>
+</l>
+<l n="26" id="c4332.26" corresp="t4332.p3">
+<w form="gir4" lemma="gir4" pos="N" label="oven">gir4</w>
+<w form="gal-e" lemma="gal" pos="V" label="to be big">gal-e</w>
+<w form="he2-em-ma-da-ku4-ku4" lemma="kur9" pos="V" label="to enter" form-type="rr">he2-em-ma-da-ku4-ku4</w>
+</l>
+<l n="27" id="c4332.27" corresp="t4332.p4">
+<w form="nam-tar" lemma="nam-tar" pos="N" label="destiny">nam-<corr resp="scrOm"/>tar</w>
+<corrEnd/>
+<w form="nam-he2" lemma="nam-he2" pos="N" label="abundance">nam-<corr resp="scrOm"/>he2</w>
+<corrEnd/>
+<w form="jic" lemma="jic" pos="N" label="tree">jic</w>
+<w form="nam-tar" lemma="nam-tar" pos="N" label="destiny">nam-tar</w>
+<w form="jic" lemma="jic" pos="N" label="tree">jic</w>
+<w form="nam-he2" lemma="nam-he2" pos="N" label="abundance">nam-he2</w>
+</l>
+<l n="28" id="c4332.28" corresp="t4332.p4">
+<w form="gi" lemma="gi" pos="N" label="reed">gi</w>
+<w form="nam-tar" lemma="nam-tar" pos="N" label="destiny">nam-tar</w>
+<w form="gi" lemma="gi" pos="N" label="reed">gi</w>
+<w form="nam-he2" lemma="nam-he2" pos="N" label="abundance">nam-he2</w>
+</l>
+<l n="29" id="c4332.29" corresp="t4332.p4">
+<w form="tur3" lemma="tur3" pos="N" label="animal stall">tur3</w>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="ba-ra-ab-du7" lemma="du7" pos="V" label="to be perfect">ba-ra-ab-du7</w>
+</l>
+<l n="30" id="c4332.30" corresp="t4332.p4">
+<w form="siki" lemma="siki" pos="N" label="hair">siki</w>
+<w form="sila4" lemma="sila4" pos="N" label="lamb">sila4</w>
+<w form="sig7-ga-ta" lemma="sig7" pos="V" label="to be green">sig7-ga-ta</w>
+<w form="siki" lemma="siki" pos="N" label="hair">siki</w>
+<w form="mac2" lemma="mac2" pos="N" label="(kid) goat">mac2</w>
+<w form="sig7-ga-ta" lemma="sig7" pos="V" label="to be green">sig7-ga-ta</w>
+</l>
+<l n="31" id="c4332.31" corresp="t4332.p4">
+<w form="&d;gibil6" lemma="gibil6" pos="N" type="DN" label="Gibil" det="&d;">&d;gibil6</w>
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="a2" lemma="a2" pos="N" label="arm">a2</w>
+<w form="zid-da" lemma="zid" pos="AJ" label="right">zid-da</w>
+</l>
+<l n="32" id="c4332.32" corresp="t4332.p4">
+<w form="saj" lemma="saj" pos="N" label="head">saj</w>
+<w form="an-ce3" lemma="an" pos="N" label="heaven">an-ce3</w>
+<damage/>
+<w form="il2-la-a-ta" lemma="il2" pos="V" label="to raise">il2-la<damageEnd/>-a-ta</w>
+</l>
+<l n="33" id="c4332.33" corresp="t4332.p4">
+<w form="ubur" lemma="ubur" pos="N" label="breast">ubur</w>
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="an-na-ta" lemma="an" pos="N" label="heaven">an-na-ta</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="im-ta-dab5" lemma="dab5" pos="V" label="to seize">im-ta-dab5</w>
+</l>
+<l n="34" id="c4332.34" corresp="t4332.p5">
+<w form="a-bi" lemma="a" pos="N" label="water">a-bi</w>
+<w form="an" lemma="an" pos="N" label="heaven">an</w>
+<w form="im-kug" lemma="kug" pos="V" label="to be shining">im-kug</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="im-sikil" lemma="sikil" pos="V" label="to be pure">im-sikil</w>
+</l>
+<l n="35" id="c4332.35" corresp="t4332.p5">
+<w form="gud" lemma="gud" pos="N" label="bull">gud</w>
+<w form="tur3-bi-a" lemma="tur3" pos="N" label="animal stall">tur3-bi-a</w>
+<w form="mi-ni-in-sikil" lemma="sikil" pos="V" label="to be pure">mi-<damage/>ni-in<damageEnd/>-sikil</w>
+</l>
+<l n="36" id="c4332.36" corresp="t4332.p5">
+<w form="udu" lemma="udu" pos="N" label="sheep">udu</w>
+<w form="amac-bi-a" lemma="amac" pos="N" label="sheepfold">amac-<damage/>bi-a</w>
+<damageEnd/>
+<w form="mi-ni-in-sikil" lemma="sikil" pos="V" label="to be pure">mi-<damage/>ni-in<damageEnd/>-sikil</w>
+</l>
+<l n="37" id="c4332.37" corresp="t4332.p5">
+<w form="&d;utu" lemma="utu" pos="N" type="DN" label="Utu" det="&d;">&d;utu</w>
+<w form="an-ur2-ra" lemma="an-ur2" pos="N" label="horizon">an-ur2-<damage/>ra</w>
+<damageEnd/>
+<w form="mi-ni-in-sikil" lemma="sikil" pos="V" label="to be pure">mi-ni-<supplied/>in<suppliedEnd/>-sikil</w>
+</l>
+<l n="38" id="c4332.38" corresp="t4332.p5">
+<w form="&d;nanna" lemma="nanna" pos="N" type="DN" label="Nanna" det="&d;">&d;nanna</w>
+<w form="an-pa-a" lemma="an-pa" pos="N" label="zenith">an-pa-a</w>
+<w form="mi-ni-in-sikil" lemma="sikil" pos="V" label="to be pure">mi-<damage/>ni-in<damageEnd/>-sikil</w>
+</l>
+<l n="39" id="c4332.39" corresp="t4332.p5">
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good"><unclear cert="qry">sag9</unclear>-ga</w>
+<w form="e2-a" lemma="e2" pos="N" label="house(hold)">e2-a</w>
+<w form="he2-em-ta-dadag" lemma="dadag" pos="V" label="to be bright" form-type="RR">he2-em-<unclear cert="qry">ta</unclear>-<damage/>dadag</w>
+<damageEnd/>
+<w form="he2-em-ta-dadag" lemma="dadag" pos="V" label="to be bright" form-type="RR">he2-em-<corr resp="scrOm"/>ta-dadag</w>
+<corrEnd/>
+</l>
+<l n="40" id="c4332.40" corresp="t4332.p6">
+<w form="nun" lemma="nun" pos="N" label="prince">nun</w>
+<w form="abzu" lemma="abzu" pos="N" label="underground water">abzu</w>
+<damage/>
+<w form="kug-ga" lemma="kug" pos="AJ" label="shining">kug<damageEnd/>-ga</w>
+<w form="e2" lemma="e2" pos="N" label="house(hold)">e2</w>
+<w form="sila" lemma="sila" pos="N" label="street">sila</w>
+<w form="kug-ga" lemma="kug" pos="AJ" label="shining">kug-ga</w>
+</l>
+<l n="41" id="c4332.41" corresp="t4332.p6">
+<w form="eridug&ki;-ta" lemma="eridug" pos="N" type="SN" label="Eridug" det="&ki;"><unclear cert="qry">eridug</unclear><unclear cert="qry">&ki;</unclear>-ta</w>
+<w form="en" lemma="en" pos="N" label="lord">en</w>
+<w form="&d;ku3-su13" lemma="ku3-su3" pos="N" type="DN" label="Kusu" det="&d;">&d;ku3-su13</w>
+<w form="za3-mi2" lemma="za3-mi2" pos="N" label="praise">za3-mi2</w>
+</l>
+</body>
+</text>
+</TEI.2>

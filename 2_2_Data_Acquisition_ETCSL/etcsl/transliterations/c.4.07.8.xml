@@ -1,0 +1,531 @@
+<TEI.2 id="c.4.07.8">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> to Inana as Nanaya (Inana H) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<notesStmt><note>Sigla follow Sj&ouml;berg's 1977 edition: Version A = mss. a, b and c (using the line numbering of b, the only non-fragmentary ms.), Version B = ms. d. Lines 11-13, 27-29 and 31 of Version A have some similarities to the surviving lines of Version B.</note></notesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b546">Sj&ouml;berg 1977</xref><biblScope type="page">16-27, 39-43</biblScope><biblScope type="contents">score transliteration, translation, photograph, handcopy, commentary</biblScope></bibl>
+<bibl><xref from="b749">Tinney 1999</xref><biblScope type="page">35-36</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">CBS 7932 + CBS 8530 (JCS 29 39)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">CBS 13915 (JCS 29 43)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">UM 29-15-560 (JCS 29 43)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">ROM 721 (JCS 29 41, photo 42)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>12.iv.2000-27.iv.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>25.vii.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>27.vii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>29.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>29.ix.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<group>
+<text n="1">
+<body>
+<head lang="eng">Version A</head>
+<l n="1" id="c4078.1.1" corresp="t4078.p1">
+<w form="an-na" lemma="an" pos="N" type="DN" label="An">an-na</w>
+<w form="tum2-ma" lemma="tum2" pos="V" label="to be suitable">tum2-ma</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4078.1.2" corresp="t4078.p1">
+<w form="X" lemma="X" label="X">X</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="nam-nin-e" lemma="nam-nin" pos="N" label="ladyship">nam-nin-e</w>
+<damage/>
+<w form="dib" lemma="dib" pos="V" label="to pass"><unclear cert="qry">dib</unclear></w>
+<damageEnd/>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4078.1.3" corresp="t4078.p1">
+<w form="&jic;gu-za" lemma="gu-za" pos="N" label="chair" det="&jic;">&jic;gu-za</w>
+<w form="nitah" lemma="nitah" pos="N" label="male">nitah</w>
+<w form="e2-a" lemma="e2" pos="N" label="house(hold)">e2-a</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4078.1.4" corresp="t4078.p1">
+<w form="&jic;gu-za" lemma="gu-za" pos="N" label="chair" det="&jic;">&jic;gu-za</w>
+<w form="munus" lemma="munus" pos="N" label="woman">munus</w>
+<w form="pa-pah" lemma="pa-pah" pos="N" label="type of shrine">pa-pah</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c4078.1.5" corresp="t4078.p1">
+<w form="jic-MUNUS.BUR2" lemma="jic-MUNUS.BUR2" pos="N" label="dress ornament">jic-MUNUS.BUR2</w>
+<w form="kug-sig17" lemma="kug-sig17" pos="N" label="gold">kug-sig17</w>
+<w form="tug2-ga" lemma="tug2" pos="N" label="garment">tug2-ga</w>
+<damage/>
+<w form="DU" lemma="DU" label="DU">DU</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c4078.1.6" corresp="t4078.p1">
+<w form="&jic;dala2" lemma="dala2" pos="N" label="type of pointed object" det="&jic;">&jic;dala2</w>
+<w form="HA-i-zi" lemma="HA-izi" pos="N" label="meaning unknown">HA-i-zi</w>
+<w form="&tug2;nij2-lam2" lemma="nij2-lam2" pos="N" label="type of garment" det="&tug2;">&tug2;nij2-lam2</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c4078.1.7" corresp="t4078.p2">
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="ZA" lemma="ZA" label="ZA">ZA</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="GA" lemma="GA" label="GA">GA</w>
+<w form="aj2" lemma="aj2" pos="V" label="to measure">aj2</w>
+<w form="ga-&X;" lemma="&X;" label="&X;">ga-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c4078.1.8" corresp="t4078.p2">
+<w form="&d;na-na-a" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;">&d;na-<supplied/>na-a<suppliedEnd/></w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X-bi" lemma="X" label="X">X-bi</w>
+<w form="dug3-ga-am3" lemma="dug3" pos="V" label="to be good">dug3-ga-<damage/>am3</w>
+<damageEnd/>
+</l>
+<l n="9" id="c4078.1.9" corresp="t4078.p2">
+<w form="gaba-za" lemma="gaba" pos="N" label="chest">gaba-za</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="10" id="c4078.1.10" corresp="t4078.p2">
+<w form="&d;na-na-a" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;"><supplied/>&d;<suppliedEnd/>na-na-a</w>
+<w form="zid2-kukkuc-bi" lemma="zid2-kukkuc" pos="N" label="type of cheap flour">zid2-kukkuc-bi</w>
+<w form="ku7-ku7-da" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">ku7-ku7-da</w>
+</l>
+<l n="11" id="c4078.1.11" corresp="t4078.p2">
+<w form="en3-dur-za" lemma="en3-dur" pos="N" label="navel">en3-dur-za</w>
+<w form="HA-izi" lemma="HA-izi" pos="N" label="meaning unknown">HA-izi</w>
+<w form="ga-ba-ni-ib-sig10" lemma="sig10" pos="V" label="to place">ga-ba-ni-ib-sig10</w>
+</l>
+<l n="12" id="c4078.1.12" corresp="t4078.p2">
+<w form="&d;na-na-a" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;">&d;na-na-a</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="GA" lemma="GA" label="GA">GA</w>
+<w form="GUL-am3" lemma="GUL" label="GUL"><unclear cert="qry">GUL</unclear>-am3</w>
+</l>
+<l n="13" id="c4078.1.13" corresp="t4078.p2">
+<w form="jen-ma-da" lemma="jen" pos="V" label="to go">jen-ma-da</w>
+<w form="nin-ju10" lemma="nin" pos="N" label="lady">nin-ju10</w>
+<w form="jen-ma-da" lemma="jen" pos="V" label="to go">jen-ma-da</w>
+</l>
+<l n="14" id="c4078.1.14" corresp="t4078.p2">
+<w form="ka" lemma="ka" pos="N" label="mouth">ka</w>
+<w form="pa-pah-a-ta" lemma="pa-pah" pos="N" label="type of shrine">pa-pah-a-ta</w>
+<w form="jen-ma-da" lemma="jen" pos="V" label="to go">jen-ma-da</w>
+</l>
+<l n="15" id="c4078.1.15" corresp="t4078.p2">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="du3" lemma="du3" pos="V" label="to erect">du3</w>
+<w form="ha-ba-ra-ab-TU-X" lemma="TU" label="TU">ha-ba-ra-ab-<unclear cert="qry">TU</unclear>-X</w>
+<w form="X" lemma="X" label="X">X</w>
+<note id="c4078.n2" lang="eng" target="c4078.1.15">ms. a omits l. 15</note>
+</l>
+<addSpan to="c4078.v1" type="additional"/>
+<note id="c4078.n3" lang="eng" target="c4078.v1">ms. c adds 1 line:</note>
+<l n="15A" id="c4078.1.15A" corresp="t4078.p2">
+<w form="jen" lemma="jen" pos="V" label="to go">jen</w>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="aj2-ju10" lemma="aj2" pos="V" label="to measure">aj2-ju10</w>
+<w form="cag4-ju10" lemma="cag4" pos="N" label="heart">cag4-ju10</w>
+<w form="he2-em-hul2-le" lemma="hul2" pos="V" label="to be happy">he2-em-hul2-le</w>
+</l>
+<anchor id="c4078.v1"/>
+<l n="16" id="c4078.1.16" corresp="t4078.p3">
+<w form="cu-zu" lemma="cu" pos="N" label="hand">cu-zu</w>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+<w form="jiri3-zu" lemma="jiri3" pos="N" label="foot">jiri3-zu</w>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+<note id="c4078.n4" lang="eng" target="c4078.1.16">ms. a omits l. 16</note>
+</l>
+<l n="17" id="c4078.1.17" corresp="t4078.p3">
+<w form="inim" lemma="inim" pos="N" label="word">inim</w>
+<w form="lu2-da" lemma="lu2" pos="N" label="person">lu2-da</w>
+<w form="bal-e-zu" lemma="bal" pos="V" label="to turn over">bal-e-zu</w>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+</l>
+<l n="18" id="c4078.1.18" corresp="t4078.p3">
+<w form="igi" lemma="igi" pos="N" label="eye">igi</w>
+<w form="lu2-ra" lemma="lu2" pos="N" label="person">lu2-ra</w>
+<w form="bar-re-zu" lemma="bar" pos="V" label="to set aside">bar-re-zu</w>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+</l>
+<addSpan to="c4078.v2" type="additional"/>
+<note id="c4078.n5" lang="eng" target="c4078.v2">ms. c adds 4 lines:</note>
+<l n="18A" id="c4078.1.18A" corresp="t4078.p3">
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="lu2-ra" lemma="lu2" pos="N" label="person">lu2-ra</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X-zu" lemma="X" label="X">X-zu</w>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+</l>
+<l n="18B" id="c4078.1.18B" corresp="t4078.p3">
+<w form="jiri3" lemma="jiri3" pos="N" label="foot">jiri3</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="munus-am3" lemma="munus" pos="N" label="woman">munus-am3</w>
+</l>
+<l n="18C" id="c4078.1.18C" corresp="t4078.p3">
+<w form="a2-dic-kuc3" lemma="a2-dic-kuc3" pos="N" label="forearm">a2-dic-<damage/>kuc3</w>
+<damageEnd/>
+<supplied/>
+<w form="X-zu" lemma="X" label="X">X<suppliedEnd/>-zu</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="im-hul2-le" lemma="hul2" pos="V" label="to be happy">im-hul2-le</w>
+</l>
+<l n="18D" id="c4078.1.18D" corresp="t4078.p3">
+<w form="jiri3" lemma="jiri3" pos="N" label="foot">jiri3</w>
+<w form="GAG" lemma="GAG" label="GAG">GAG</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X-zu" lemma="X" label="X">X<suppliedEnd/>-zu</w>
+<w form="ur5" lemma="ur5" pos="N" label="liver">ur5</w>
+<w form="im-mi-in-sag9" lemma="sag9" pos="V" label="to be good">im-mi-in-sag9</w>
+</l>
+<anchor id="c4078.v2"/>
+<l n="19" id="c4078.1.19" corresp="t4078.p3">
+<w form="zag" lemma="zag" pos="N" label="side">zag</w>
+<w form="e2-jar8-da" lemma="e2-jar8" pos="N" label="wall">e2-jar8-da</w>
+<w form="gub-bu" lemma="gub" pos="V" label="to stand">gub-bu</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="sud-zu" lemma="sud" pos="V" label="to be distant">sud-zu</w>
+<w form="i3-sag9" lemma="sag9" pos="V" label="to be good">i3-sag9</w>
+</l>
+<l n="20" id="c4078.1.20" corresp="t4078.p3">
+<w form="gam-e-de3" lemma="gam" pos="V" label="to bow down">gam-e-de3</w>
+<w form="ib2-ib2" lemma="ib2" pos="N" label="hip" form-type="RR">ib2-ib2</w>
+<w form="i3-sag9-sag9" lemma="sag9" pos="V" label="to be good" form-type="RR">i3-sag9-sag9</w>
+<note id="c4078.n6" lang="eng" target="c4078.1.20">ms. c transposes lines 19 and 20</note>
+</l>
+<addSpan to="c4078.v3" type="additional"/>
+<note id="c4078.n7" lang="eng" target="c4078.v3">mss. a and c add 2 lines:</note>
+<l n="20A" id="c4078.1.20A" corresp="t4078.p4">
+<w form="e2-jar8-da" lemma="e2-jar8" pos="N" label="wall">e2-jar8-da</w>
+<w form="gub-bu-ju10" lemma="gub" pos="V" label="to stand">gub-bu-ju10</w>
+<w form="1" lemma="1" pos="NU" type="cardinal" label="1">1(DIC)</w>
+<w form="sila4-am3" lemma="sila4" pos="N" label="lamb">sila4-am3</w>
+</l>
+<l n="20B" id="c4078.1.20B" corresp="t4078.p4">
+<w form="gam-e-ju10" lemma="gam" pos="V" label="to bow down">gam-e-ju10</w>
+<w form="1" lemma="1" pos="NU" type="cardinal" label="1">1</w>
+<w form="1/2" lemma="1/2" pos="NU" type="fraction" label="1/2">1/2</w>
+<w form="gij4-am3" lemma="gij4" pos="N" label="weight measure">gij4-am3</w>
+</l>
+<anchor id="c4078.v3"/>
+<l n="21" id="c4078.1.21" corresp="t4078.p4">
+<w form="id2" lemma="id2" pos="N" label="watercourse">id2</w>
+<w form="na-an-ba-al-le" lemma="ba-al" pos="V" label="to dig">na-an-ba-al-le</w>
+<w form="id2-zu" lemma="id2" pos="N" label="watercourse">id2-zu</w>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+</l>
+<l n="22" id="c4078.1.22" corresp="t4078.p4">
+<w form="a-cag4" lemma="a-cag4" pos="N" label="field">a-cag4</w>
+<w form="na-an-ur11-ru" lemma="ur11-ru" pos="V" label="to plough">na-an-ur11-ru</w>
+<w form="a-cag4-zu" lemma="a-cag4" pos="N" label="field">a-cag4-zu</w>
+<w form="he2-me-en" lemma="me" pos="V" label="to be">he2-me-en</w>
+</l>
+<l n="23" id="c4078.1.23" corresp="t4078.p4">
+<distinct type="emesal">
+<w form="mu-un-gar3" lemma="engar" pos="N" label="farmer" emesal="mu-un-gar3">mu-un-gar3</w>
+</distinct>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="duru5" lemma="duru5" pos="V" label="to be wet">duru5</w>
+<w form="na-an-kij2-kij2-e" lemma="kij2" pos="V" label="to seek" form-type="RR">na-an-kij2-kij2-e</w>
+</l>
+<l n="24" id="c4078.1.24" corresp="t4078.p4">
+<distinct type="emesal">
+<supplied/>
+<w form="ze2-ba" lemma="dug3" pos="V" label="to be good" emesal="ze2-eb">ze2<suppliedEnd/>-<damage/>ba</w>
+<damageEnd/>
+</distinct>
+<w form="kal-la-ju10" lemma="kal" pos="V" label="to be rare">kal-la-ju10</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="duru5-zu" lemma="duru5" pos="V" label="to be wet">duru5-zu</w>
+<w form="he2-am3" lemma="me" pos="V" label="to be">he2-am3</w>
+</l>
+<l n="25" id="c4078.1.25" corresp="t4078.p4">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="Xbr-e" lemma="Xbr" label="Xbr">(X)<suppliedEnd/>-e</w>
+<w form="ab-sin2-zu" lemma="absin3" pos="N" label="furrow">ab-sin2-zu</w>
+<w form="he2-am3" lemma="me" pos="V" label="to be">he2-am3</w>
+</l>
+<l n="26" id="c4078.1.26" corresp="t4078.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="tur-tur-me" lemma="tur" pos="V" label="to be small" form-type="RR">tur-tur-me</w>
+<w form="ac2-zu" lemma="a2-ac2" pos="N" label="requirement">ac2-zu</w>
+<w form="he2-am3" lemma="me" pos="V" label="to be">he2-am3</w>
+</l>
+<l n="27" id="c4078.1.27" corresp="t4078.p4">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="UN" lemma="UN" label="UN">UN</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="zur-zur-re" lemma="zur-zur" pos="V" label="to honour" form-type="RR">zur-zur-re</w>
+</l>
+<l n="28" id="c4078.1.28" corresp="t4078.p4">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<w form="ki-gub" lemma="ki-gub" pos="N" label="location">ki-gub</w>
+<w form="ba-du-un" lemma="jen" pos="V" label="to go" form-type="isg">ba-du-un</w>
+</l>
+<l n="29" id="c4078.1.29" corresp="t4078.p4">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="UN" lemma="UN" label="UN">UN</w>
+<w form="ninda" lemma="ninda" pos="N" label="bread">ninda</w>
+<w form="jectin-da" lemma="jectin" pos="N" label="grape (wine)">jectin-da</w>
+<w form="ba-da-du-du-un" lemma="jen" pos="V" label="to go" form-type="RR-isg">ba-da-du-du-un</w>
+</l>
+<l n="30" id="c4078.1.30" corresp="t4078.p5">
+<w form="ninda" lemma="ninda" pos="N" label="bread">ninda</w>
+<w form="jectin-da" lemma="jectin" pos="N" label="grape (wine)">jectin-da</w>
+<w form="ma-da-du-du-nam" lemma="jen" pos="V" label="to go" form-type="RR-isg">ma-da-du-du-nam</w>
+</l>
+<l n="31" id="c4078.1.31" corresp="t4078.p5">
+<w form="jen" lemma="jen" pos="V" label="to go">jen</w>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<w form="aj2-ju10" lemma="aj2" pos="V" label="to measure">aj2-ju10</w>
+<w form="cag4-bi" lemma="cag4" pos="N" label="heart">cag4-bi</w>
+<w form="ga-am3-mi-ib-X" lemma="X" label="X">ga-am3-mi-ib-X</w>
+</l>
+<l n="32" id="c4078.1.32" corresp="t4078.p5">
+<w form="&d;na-na-a" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;">&d;na-na-a</w>
+<phr type="VP" lemma="ne su-ub" label="to kiss">
+<w form="ne" lemma="ne" pos="N" label="noun part of multiword verb">ne</w>
+<w form="ge4-su-ub" lemma="su-ub" pos="V" label="to rub">ge4-su-ub</w>
+</phr>
+</l>
+<trailer place="subscript" type="balbale">
+<l n="33" id="c4078.1.33" corresp="t4078.p6">
+<w form="bal-bal-e" lemma="bal-bal-e" pos="N" label="type of composition" form-type="RR">bal-bal-e</w>
+<addSpan to="c4078.v4" type="primary"/>
+<w form="&d;na-na-a-kam" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;">&d;na-na-a-kam</w>
+<anchor id="c4078.v4"/>
+<addSpan to="c4078.v5" type="secondary"/>
+<note id="c4078.n8" lang="eng" target="c4078.v4">ms. a has instead:</note>
+<w form="&d;inana-Xbr-X" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-<supplied/>(X)-X<suppliedEnd/></w>
+<anchor id="c4078.v5"/>
+</l>
+<altGrp><alt targType="addSpan" targets="c4078.v4 c4078.v5"/></altGrp></trailer>
+</body>
+</text>
+<text n="2">
+<body>
+<head lang="eng">Version B</head>
+<div1 type="segment" n="A">
+<gap extent="unknown no. of lines missing"/>
+<l n="1" id="c4078.2.A.1" corresp="t4078.p7">
+<supplied/>
+<w form="en3-dur-za" lemma="en3-dur" pos="N" label="navel">en3<suppliedEnd/>-<damage/>dur<damageEnd/>-za</w>
+<w form="HA-izi" lemma="HA-izi" pos="N" label="meaning unknown">HA-<supplied/>izi</w>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4078.2.A.2" corresp="t4078.p7">
+<damage/>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<damageEnd/>
+<w form="e" lemma="e5" pos="AJ" label="princely">e</w>
+<distinct type="emesal">
+<w form="ze2-ba-ju10" lemma="dug3" pos="V" label="to be good" emesal="ze2-eb">ze2-ba-ju10</w>
+</distinct>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4078.2.A.3" corresp="t4078.p7">
+<w form="murgu-za" lemma="murgu" pos="N" label="back">murgu-za</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="MU" lemma="MU" label="MU">MU</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4078.2.A.4" corresp="t4078.p7">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="e-ju10" lemma="e5" pos="AJ" label="princely">e-ju10</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c4078.2.A.5" corresp="t4078.p7">
+<w form="gal4-la-za" lemma="gal4-la" pos="N" label="female genitals">gal4-la-za</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c4078.2.A.6" corresp="t4078.p7">
+<w form="&d;na-na-a" lemma="na-na-a" pos="N" type="DN" label="Nanaya" det="&d;">&d;na-na-a</w>
+<damage/>
+<w form="LI" lemma="LI" label="LI"><unclear cert="qry">LI</unclear></w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c4078.2.A.7" corresp="t4078.p7">
+<w form="gu-du-za" lemma="gu-du" pos="N" label="buttocks">gu-du-za</w>
+<w form="a-cag4" lemma="a-cag4" pos="N" label="field">a-cag4</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="8" id="c4078.2.A.8" corresp="t4078.p7">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="e-ju10" lemma="e5" pos="AJ" label="princely">e-ju10</w>
+<w form="bur3" lemma="bur3" pos="N" label="area measure">bur3</w>
+<damage/>
+<w form="gana2" lemma="gana2" pos="N" label="field">gana2</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="9" id="c4078.2.A.9" corresp="t4078.p7">
+<damage/>
+<w form="jen-ma-da" lemma="jen" pos="V" label="to go">jen-ma<damageEnd/>-da</w>
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="B">
+<l n="1" id="c4078.2.B.1" corresp="t4078.p8">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c4078.2.B.2" corresp="t4078.p8">
+<w form="jen" lemma="jen" pos="V" label="to go">jen</w>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="ki" lemma="ki" pos="N" label="place">ki</w>
+<damage/>
+<w form="aj2-ju10" lemma="aj2" pos="V" label="to measure">aj2<damageEnd/>-<supplied/>ju10</w>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c4078.2.B.3" corresp="t4078.p8">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c4078.2.B.4" corresp="t4078.p8">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<damage/>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c4078.2.B.5" corresp="t4078.p8">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<damage/>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c4078.2.B.6" corresp="t4078.p8">
+<w form="a-na" lemma="a-na" pos="PD" type="interrogative" label="what">a-na</w>
+<w form="KA" lemma="KA" label="KA">KA</w>
+<damage/>
+<w form="nam" lemma="nam" pos="N" label="destiny">nam</w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c4078.2.B.7" corresp="t4078.p8">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+</body>
+</text>
+</group>
+</text>
+</TEI.2>

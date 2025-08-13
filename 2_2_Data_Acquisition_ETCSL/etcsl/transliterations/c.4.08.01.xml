@@ -1,0 +1,492 @@
+<TEI.2 id="c.4.08.01">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A <foreign lang="sux">balbale</foreign> to Inana (Dumuzid-Inana A) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b244">Sefati 1998</xref><biblScope type="page">120-127</biblScope><biblScope type="plate">I, II, XV, XVI</biblScope><biblScope type="contents">score transliteration, translation, commentary, photograph, handcopy</biblScope></bibl>
+<bibl><xref from="b236">van Dijk 1953</xref><biblScope type="page">65-85</biblScope><biblScope type="contents">composite text, translation, commentary</biblScope><note>edition based on one source only</note></bibl>
+<bibl><xref from="b348">Falkenstein 1954</xref><biblScope type="page">51-52</biblScope><biblScope type="contents">translation</biblScope><note>translation of lines 19-25, 41-53</note></bibl>
+<bibl><xref from="b49">Kramer 1969</xref><biblScope type="page">68-70</biblScope><biblScope type="contents">translation</biblScope><note>translation of lines 3-53</note></bibl>
+<bibl><xref from="b177">Alster 1972</xref><biblScope type="page">108</biblScope><biblScope type="contents">commentary</biblScope><note>ll. 34-42</note></bibl>
+<bibl><xref from="b52">Jacobsen 1976</xref><biblScope type="page">30-32</biblScope><biblScope type="contents">translation</biblScope><note>translation of ll. 1-18, 41-54</note></bibl>
+<bibl><xref from="b11">Jacobsen 1987</xref><biblScope type="page">13-15</biblScope><biblScope type="contents">translation</biblScope><note>translation of lines 1-18, 41-54</note></bibl>
+<bibl><xref from="b53">Alster 1993</xref><biblScope type="page">23</biblScope><biblScope type="contents">commentary</biblScope><note>no. 13/2 (ll. 49-54); note 21 (l. 5)</note></bibl>
+<bibl><xref from="b464">Krecher 1998j</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b605">Sefati 1999</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">CBS 8085</biblScope></bibl>
+<bibl><biblScope type="museumNumber">CBS 10465 (PBS 1/1 6; BE 30 4, photo pl. 3f.)</biblScope></bibl>
+<bibl><biblScope type="museumNumber">N 4305 i (PAPS 107 521)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>17.ix.1998-22.ix.1998</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>30.xi.1998</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>05.viii.1999</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>minor corrections</item></change>
+<change><date>16.x.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>29.x.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c40801.1" corresp="t40801.p1">
+<w form="cec-e" lemma="cec" pos="N" label="brother">cec-e</w>
+<w form="nin9-ra" lemma="nin9" pos="N" label="sister">nin9-ra</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="na-mu-e" lemma="dug4" pos="V" label="to say" form-type="ppli">na-mu-e</w>
+</l>
+<l n="2" id="c40801.2" corresp="t40801.p1">
+<w form="&d;utu" lemma="utu" pos="N" type="DN" label="Utu" det="&d;">&d;utu</w>
+<w form="nin9-ra" lemma="nin9" pos="N" label="sister">nin9-ra</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="na-mu-e" lemma="dug4" pos="V" label="to say" form-type="ppli">na-mu-e</w>
+</l>
+<l n="3" id="c40801.3" corresp="t40801.p1">
+<w form="kug" lemma="kug" pos="AJ" label="shining">kug</w>
+<w form="&d;inana-ra" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-ra</w>
+<w form="mi2" lemma="mi2" pos="N" label="(loving) care">mi2</w>
+<w form="zid" lemma="zid" pos="AJ" label="right">zid</w>
+<w form="na-mu-e" lemma="dug4" pos="V" label="to say" form-type="ppli">na-<damage/>mu<damageEnd/>-<supplied/>e</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c40801.4" corresp="t40801.p1">
+<w form="in-nin9" lemma="in-nin" pos="N" label="mistress">in-nin9</w>
+<w form="gu" lemma="gu" pos="N" label="(flax) thread">gu</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="gur3-ru" lemma="guru3" pos="V" label="to bear">gur3-ru</w>
+</l>
+<l n="5" id="c40801.5" corresp="t40801.p1">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="gu" lemma="gu" pos="N" label="(flax) thread">gu</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="gur3-ru" lemma="guru3" pos="V" label="to bear">gur3-ru</w>
+</l>
+<l n="6" id="c40801.6" corresp="t40801.p1">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="ab-sin2-na" lemma="absin3" pos="N" label="furrow">ab-sin2-na</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="ma-az" lemma="ma-az" pos="V" label="to swell">ma-az</w>
+<w form="dirig-ga" lemma="dirig" pos="V" label="to be superior">dirig-ga</w>
+</l>
+<l n="7" id="c40801.7" corresp="t40801.p1">
+<addSpan to="c40801.v1" type="primary"/>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<anchor id="c40801.v1"/>
+<addSpan to="c40801.v2" type="secondary"/>
+<note id="c40801.n1" lang="eng" target="c40801.v1">1 ms. has instead:</note>
+<w form="in-nin9" lemma="in-nin" pos="N" label="mistress">in-nin9</w>
+<anchor id="c40801.v2"/>
+<w form="gada" lemma="gada" pos="N" label="linen (fibre)">gada</w>
+<w form="mah-e" lemma="mah" pos="V" label="to be majestic">mah-e</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="ba-e-te-a" lemma="te" pos="V" label="to approach"><unclear cert="qry">ba</unclear>-<unclear cert="qry">e</unclear>-<damage/>te-a</w>
+<damageEnd/>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v1 c40801.v2"/></altGrp>
+<l n="8" id="c40801.8" corresp="t40801.p1">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="gada" lemma="gada" pos="N" label="linen (fibre)">gada</w>
+<w form="mah-e" lemma="mah" pos="V" label="to be majestic">mah-e</w>
+<w form="hi-li" lemma="hi-li" pos="N" label="attractiveness">hi-li</w>
+<w form="ba-e-te-a" lemma="te" pos="V" label="to approach"><unclear cert="qry">ba</unclear>-<unclear cert="qry">e</unclear>-te-a</w>
+</l>
+<l n="9" id="c40801.9" corresp="t40801.p1">
+<term id="c40801.t1">
+<w form="al" lemma="al" pos="N" label="hoe">al</w>
+<w form="ga-mu-ra-ab-ak" lemma="ak" pos="V" label="to do">ga-mu-ra-ab-ak</w>
+<w form="SAR" lemma="SAR" label="SAR">SAR</w>
+<w form="ga-mu-ra-ab-cum2" lemma="cum2" pos="V" label="to give">ga-mu-ra-ab-cum2</w>
+</term>
+<gloss lang="akk" target="c40801.t1">
+lu-ur-<damage/>pi<damageEnd/>-<supplied/>iq<suppliedEnd/>-ki
+lu-um-hu-<damage/>ra<damageEnd/>-<supplied/>ki
+<suppliedEnd/>
+</gloss>
+</l>
+<l n="10" id="c40801.10" corresp="t40801.p1">
+<addSpan to="c40801.v3" type="primary"/>
+<w form="in-nin9" lemma="in-nin" pos="N" label="mistress">in-nin9</w>
+<anchor id="c40801.v3"/>
+<addSpan to="c40801.v4" type="secondary"/>
+<note id="c40801.n2" lang="eng" target="c40801.v3">1 ms. has instead:</note>
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<anchor id="c40801.v4"/>
+<w form="gu" lemma="gu" pos="N" label="(flax) thread">gu</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v3 c40801.v4"/></altGrp>
+<l n="11" id="c40801.11" corresp="t40801.p1">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="gu" lemma="gu" pos="N" label="(flax) thread">gu</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="12" id="c40801.12" corresp="t40801.p2">
+<addSpan to="c40801.v5" type="primary"/>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<anchor id="c40801.v5"/>
+<addSpan to="c40801.v6" type="secondary"/>
+<note id="c40801.n3" lang="eng" target="c40801.v5">1 ms. has instead:</note>
+<w form="cec-ju10" lemma="cec" pos="N" label="brother">cec-ju10</w>
+<anchor id="c40801.v6"/>
+<w form="gu" lemma="gu" pos="N" label="(flax) thread">gu</w>
+<w form="sar-ra" lemma="sar" pos="N" label="garden plot">sar-ra</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-ra-ta</w>
+</distinct>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v5 c40801.v6"/></altGrp>
+<l n="13" id="c40801.13" corresp="t40801.p2">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-e-ri" lemma="ri" pos="V" label="to direct">ma-e-ri</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-e-ri" lemma="ri" pos="V" label="to direct">ma-e-ri</w>
+</l>
+<l n="14" id="c40801.14" corresp="t40801.p2">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-<supplied/>ba<suppliedEnd/>-a</w>
+<w form="ma-e-ri" lemma="ri" pos="V" label="to direct">ma-e-ri</w>
+</l>
+<l n="15" id="c40801.15" corresp="t40801.p3">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="ri-a-bi" lemma="ri" pos="V" label="to direct">ri-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-<damage/>de6</w>
+<damageEnd/>
+</l>
+<l n="16" id="c40801.16" corresp="t40801.p3">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="ri-a-bi" lemma="ri" pos="V" label="to direct">ri-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="17" id="c40801.17" corresp="t40801.p4">
+<addSpan to="c40801.v7" type="primary"/>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<anchor id="c40801.v7"/>
+<addSpan to="c40801.v8" type="secondary"/>
+<note id="c40801.n4" lang="eng" target="c40801.v7">1 ms. has instead:</note>
+<w form="cec-ju10" lemma="cec" pos="N" label="brother">cec-ju10</w>
+<anchor id="c40801.v8"/>
+<w form="ri-a-bi" lemma="ri" pos="V" label="to direct">ri-a-bi</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-<supplied/>ra-ta</w>
+<suppliedEnd/>
+</distinct>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v7 c40801.v8"/></altGrp>
+<l n="18" id="c40801.18" corresp="t40801.p4">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-NU-NU" lemma="NU" pos="V" label="to spin (thread)" form-type="rr">ma-ab-NU-NU</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-NU-NU" lemma="NU" pos="V" label="to spin (thread)" form-type="rr">ma-ab-NU-NU</w>
+</l>
+<l n="19" id="c40801.19" corresp="t40801.p4">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-NU-NU" lemma="NU" pos="V" label="to spin (thread)" form-type="rr">ma-ab-NU-NU</w>
+</l>
+<l n="20" id="c40801.20" corresp="t40801.p5">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="NU-a-bi" lemma="NU" pos="V" label="to spin (thread)">NU-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="21" id="c40801.21" corresp="t40801.p5">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="NU-a-bi" lemma="NU" pos="V" label="to spin (thread)">NU-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="22" id="c40801.22" corresp="t40801.p6">
+<addSpan to="c40801.v9" type="primary"/>
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<anchor id="c40801.v9"/>
+<addSpan to="c40801.v10" type="secondary"/>
+<note id="c40801.n5" lang="eng" target="c40801.v9">1 ms. has instead:</note>
+<w form="cec-ju10" lemma="cec" pos="N" label="brother">cec-ju10</w>
+<anchor id="c40801.v10"/>
+<w form="NU-a-bi" lemma="NU" pos="V" label="to spin (thread)">NU-a-bi</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-ra-ta</w>
+</distinct>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v9 c40801.v10"/></altGrp>
+<l n="23" id="c40801.23" corresp="t40801.p6">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-tab-be2" lemma="tab" pos="V" label="to be parallel">ma-ab-tab-be2</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-tab-be2" lemma="tab" pos="V" label="to be parallel">ma-ab-tab-be2</w>
+</l>
+<l n="24" id="c40801.24" corresp="t40801.p6">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-tab-be2" lemma="tab" pos="V" label="to be parallel">ma-ab-tab-be2</w>
+</l>
+<l n="25" id="c40801.25" corresp="t40801.p7">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="tab-ba-bi" lemma="tab" pos="V" label="to be parallel">tab-ba-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="26" id="c40801.26" corresp="t40801.p7">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="tab-ba-bi" lemma="tab" pos="V" label="to be parallel">tab-ba-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="27" id="c40801.27" corresp="t40801.p8">
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<w form="tab-ba-bi" lemma="tab" pos="V" label="to be parallel">tab-ba-bi</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-ra-ta</w>
+</distinct>
+</l>
+<l n="28" id="c40801.28" corresp="t40801.p8">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<distinct type="emesal">
+<w form="ma-ab-ze2-ze2" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2" form-type="rr">ma-ab-ze2-ze2</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<distinct type="emesal">
+<w form="ma-ab-ze2-ze2" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2" form-type="rr">ma-ab-ze2-ze2</w>
+</distinct>
+</l>
+<l n="29" id="c40801.29" corresp="t40801.p8">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<distinct type="emesal">
+<w form="ma-ab-ze2-ze2" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2" form-type="rr">ma-ab-ze2-ze2</w>
+</distinct>
+</l>
+<l n="30" id="c40801.30" corresp="t40801.p9">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<distinct type="emesal">
+<w form="ze2-a-bi" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2">ze2-a-bi</w>
+</distinct>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="31" id="c40801.31" corresp="t40801.p9">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<distinct type="emesal">
+<w form="ze2-a-bi" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2">ze2-a-bi</w>
+</distinct>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="32" id="c40801.32" corresp="t40801.p10">
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<distinct type="emesal">
+<w form="ze2-a-bi" lemma="dun" pos="V" label="to warp (wool)" emesal="ze2">ze2-a-bi</w>
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-ra-ta</w>
+</distinct>
+</l>
+<l n="33" id="c40801.33" corresp="t40801.p10">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-TUKU5-TUKU5" lemma="tuku5" pos="V" label="to weave" form-type="rr">ma-ab-TUKU5-TUKU5</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-TUKU5-TUKU5" lemma="tuku5" pos="V" label="to weave" form-type="rr">ma-<corr resp="scrOm"/>ab<corrEnd/>-TUKU5-TUKU5</w>
+</l>
+<l n="34" id="c40801.34" corresp="t40801.p10">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-ab-TUKU5-TUKU5" lemma="tuku5" pos="V" label="to weave" form-type="rr">ma-<corr resp="scrOm"/>ab<corrEnd/>-TUKU5-TUKU5</w>
+</l>
+<l n="35" id="c40801.35" corresp="t40801.p11">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="tuku5-a-bi" lemma="tuku5" pos="V" label="to weave">tuku5-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="36" id="c40801.36" corresp="t40801.p11">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="tuku5-a-bi" lemma="tuku5" pos="V" label="to weave">tuku5-a-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="37" id="c40801.37" corresp="t40801.p12">
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<w form="tuku5-a-bi" lemma="tuku5" pos="V" label="to weave">tuku5-a-bi</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-ma-i-ra-ta</w>
+</distinct>
+</l>
+<l n="38" id="c40801.38" corresp="t40801.p12">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-DAN3-DAN3" lemma="dan3" pos="V" label="to be clean" form-type="rr">ma-DAN3-DAN3</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-DAN3-DAN3" lemma="dan3" pos="V" label="to be clean" form-type="rr">ma-DAN3-DAN3</w>
+</l>
+<l n="39" id="c40801.39" corresp="t40801.p12">
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="ma-DAN3-DAN3" lemma="dan3" pos="V" label="to be clean" form-type="rr">ma-DAN3-DAN3</w>
+</l>
+<l n="40" id="c40801.40" corresp="t40801.p13">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="dan3-na-bi" lemma="dan3" pos="V" label="to be clean">dan3-na-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="41" id="c40801.41" corresp="t40801.p13">
+<w form="&d;inana" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana</w>
+<w form="dan3-na-bi" lemma="dan3" pos="V" label="to be clean">dan3-na-bi</w>
+<w form="ga-mu-ra-de6" lemma="de6" pos="V" label="to carry">ga-mu-ra-de6</w>
+</l>
+<l n="42" id="c40801.42" corresp="t40801.p14">
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<w form="dan3-na-bi" lemma="dan3" pos="V" label="to be clean">dan3-na-bi</w>
+<distinct type="emesal">
+<w form="a-ma-i-ra-ta" lemma="de6" pos="V" label="to carry" emesal="ir">a-<damage/>ma<damageEnd/>-i-ra-ta</w>
+</distinct>
+</l>
+<l n="43" id="c40801.43" corresp="t40801.p14">
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="mu-da-an-nu2" lemma="nu2" pos="V" label="to lie down">mu-da-an-nu2</w>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="mu-da-an-nu2" lemma="nu2" pos="V" label="to lie down">mu-da-an-nu2</w>
+</l>
+<l n="44" id="c40801.44" corresp="t40801.p14">
+<supplied/>
+<w form="gu-bi" lemma="gu" pos="N" label="(flax) thread">gu<suppliedEnd/>-<damage/>bi</w>
+<damageEnd/>
+<distinct type="emesal">
+<w form="ma-a-ra" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-ra</w>
+</distinct>
+<w form="a-ba-a" lemma="a-ba" pos="PD" type="interrogative" label="who">a-ba-a</w>
+<w form="mu-da-an-nu2" lemma="nu2" pos="V" label="to lie down"><corr sic="&damb;he2&dame;">mu</corr>-<supplied/>da-an-nu2</w>
+<suppliedEnd/>
+</l>
+<l n="45" id="c40801.45" corresp="t40801.p15">
+<w form="za-ra" lemma="za" pos="PD" type="personal" label="you (sg.)">za-ra</w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="46" id="c40801.46" corresp="t40801.p15">
+<w form="za-ra" lemma="za" pos="PD" type="personal" label="you (sg.)">za-ra</w>
+<w form="nitalam-zu" lemma="nitalam" pos="N" label="spouse">nitalam-<supplied/>zu</w>
+<suppliedEnd/>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="47" id="c40801.47" corresp="t40801.p15">
+<w form="&d;ama-ucumgal-an-na" lemma="ama-ucumgal-an-na" pos="N" type="DN" label="Ama-u&c;umgal-ana" det="&d;">&d;ama-ucumgal-an-<supplied/>na<suppliedEnd/></w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="48" id="c40801.48" corresp="t40801.p15">
+<w form="gu5-li" lemma="gu5-li" pos="N" label="friend">gu5-li</w>
+<w form="&d;en-lil2-la2" lemma="en-lil2" pos="N" type="DN" label="Enlil" det="&d;">&d;en-lil2-la2</w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="49" id="c40801.49" corresp="t40801.p15">
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="zid-ta" lemma="zid" pos="AJ" label="right">zid-ta</w>
+<w form="e3-a" lemma="e3" pos="V" label="to go out or in">e3-a</w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="50" id="c40801.50" corresp="t40801.p15">
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="barag-ga" lemma="barag" pos="N" label="dais">barag-ga</w>
+<w form="ri-a" lemma="ri" pos="V" label="to direct">ri-a</w>
+<w form="he2-da-an-nu2" lemma="nu2" pos="V" label="to lie down">he2-da-an-nu2</w>
+</l>
+<l n="51" id="c40801.51" corresp="t40801.p16">
+<w form="i3-ge4-en" lemma="i3-ge-en" pos="AV" label="really">i3-ge4-en</w>
+<distinct type="emesal">
+<w form="mu-lu" lemma="lu2" pos="N" label="person" emesal="mu-lu">mu-lu</w>
+<w form="ca3-ab-ja2-kam" lemma="cag4" pos="N" label="heart" emesal="ca3-ab">ca3-ab-ja2-kam</w>
+<w form="mu-lu" lemma="lu2" pos="N" label="person" emesal="mu-lu">mu-lu</w>
+<w form="ca3-ab-ja2-kam" lemma="cag4" pos="N" label="heart" emesal="ca3-ab">ca3-ab-ja2-kam</w>
+</distinct>
+</l>
+<l n="52" id="c40801.52" corresp="t40801.p16">
+<w form="cec" lemma="cec" pos="N" label="brother">cec</w>
+<distinct type="emesal">
+<w form="mu-lu" lemma="lu2" pos="N" label="person" emesal="mu-lu">mu-lu</w>
+<w form="ca3-ab-ju10" lemma="cag4" pos="N" label="heart" emesal="ca3-ab">ca3-ab-ju10</w>
+</distinct>
+<w form="im-mi-in-dug4-ga-am3" lemma="dug4" pos="V" label="to say">im-mi-in-dug4-ga-am3</w>
+</l>
+<l n="53" id="c40801.53" corresp="t40801.p16">
+<w form="al" lemma="al" pos="N" label="hoe">al</w>
+<w form="nu-ak-am3" lemma="ak" pos="V" label="to do">nu-ak-am3</w>
+<w form="guru7" lemma="guru7" pos="N" label="(grain) heap">guru7</w>
+<w form="dub-dub-ba-am3" lemma="dub" pos="V" label="to heap up" form-type="RR">dub-dub-ba-am3</w>
+</l>
+<l n="54" id="c40801.54" corresp="t40801.p16">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="ja2-nun-e" lemma="ja2-nun" pos="N" label="storehouse">ja2-nun-e</w>
+<w form="sa2" lemma="sa2" pos="V" label="to equal">sa2</w>
+<w form="dug4-dug4-ga-am3" lemma="dug4" pos="V" label="to say" form-type="RR">dug4-dug4-ga-am3</w>
+</l>
+<l n="55" id="c40801.55" corresp="t40801.p16">
+<distinct type="emesal">
+<w form="mu-un-gar3" lemma="engar" pos="N" label="farmer" emesal="mu-un-gar3">mu-un-gar3</w>
+</distinct>
+<addSpan to="c40801.v11" type="primary"/>
+<w form="ce-ni" lemma="ce" pos="N" label="barley">ce-ni</w>
+<anchor id="c40801.v11"/>
+<addSpan to="c40801.v12" type="secondary"/>
+<note id="c40801.n6" lang="eng" target="c40801.v11">1 ms. has instead:</note>
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="mah" lemma="mah" pos="V" label="to be majestic">mah</w>
+<anchor id="c40801.v12"/>
+<w form="guru7" lemma="guru7" pos="N" label="(grain) heap">guru7</w>
+<w form="car2-ra-kam" lemma="car2" pos="V" label="to be numerous">car2-ra-kam</w>
+</l>
+<altGrp><alt targType="addSpan" targets="c40801.v11 c40801.v12"/></altGrp>
+<l n="56" id="c40801.56" corresp="t40801.p16">
+<w form="sipad" lemma="sipad" pos="N" label="shepherd">sipad</w>
+<distinct type="emesal">
+<w form="e-ze2-ni" lemma="udu" pos="N" label="sheep" emesal="e-ze2">e-ze2-<damage/>ni</w>
+<damageEnd/>
+</distinct>
+<w form="siki" lemma="siki" pos="N" label="hair">siki</w>
+<w form="sug4-sug4-ga-am3" lemma="sug4" pos="V" label="to be full" form-type="RR">sug4-sug4-ga-am3</w>
+</l>
+<trailer place="subscript" type="balbale">
+<l n="57" id="c40801.57" corresp="t40801.p17">
+<w form="bal-bal-e" lemma="bal-bal-e" pos="N" label="type of composition" form-type="RR">bal-bal-e</w>
+<w form="&d;inana-kam" lemma="inana" pos="N" type="DN" label="Inana" det="&d;">&d;inana-kam</w>
+</l>
+</trailer>
+</body>
+</text>
+</TEI.2>

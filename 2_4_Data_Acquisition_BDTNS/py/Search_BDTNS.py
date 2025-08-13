@@ -9,7 +9,7 @@ from ipywidgets import interact, interact_manual
 import ipywidgets as widgets
 from IPython.display import display, clear_output
 
-with open('output/ogsl_dict.p', 'rb') as p:
+with open('output/osl_dict.p', 'rb') as p:
     d2 = pickle.load(p)
 bdtns = pd.read_pickle('output/bdtns_tokenized.p')
 digi = '0123456789x'
@@ -19,10 +19,10 @@ char2 = '   šŋŋ×'
 index = str.maketrans(digi, inde)
 char = str.maketrans(char1, char2)
 ind = re.compile(r'[a-zŋḫṣšṭA-ZŊḪṢŠṬ][0-9x]{1,2}') 
-anchor = '<a href="http://bdtns.filol.csic.es/{}", target="_blank">{}</a>'
+anchor = '<a href="http://bdtns.cesga.es/{}", target="_blank">{}</a>'
 separators2 = ['.', '+', '|']  # used in compound signs
 
-def search(s): 
+def search(s, Maxh=25, Links=True, Sortby = 'id_text'): 
     s = s.lower().replace('sz', 'š').translate(char).strip()
     s = re.sub(ind, lambda m: m.group().translate(index), s)
     s_l = s.split()
@@ -44,46 +44,70 @@ def search(s):
         sign = d2.get(sign, sign) 
         signnames_l.append(sign)
     signnames = f" {' '.join(signnames_l).upper()} "
-    signs_esc = re.escape(signnames)
-    signs_esc = signs_esc.replace('\ X\ ', '(?:\ [^ ]+)*\ ')
+    signnames_wildcard = signnames.replace(' X ', r'(?: [^ ]+)* ')
+    signs_esc = re.escape(signnames_wildcard)
+    signs_esc = signs_esc.replace(re.escape(r'(?: [^ ]+)* '), r'(?: [^ ]+)* ')
+    #signs_esc = signs_esc.replace('\ X\ ', r'(?:\ [^ ]+)*\ ')
     show = ['id_text', 'label', 'text', 'date', 'provenance', 'publication']
     results = bdtns.loc[bdtns['sign_names'].str.contains(signs_esc, regex=True), show].copy()
     hits = len(results)
-    maxh = maxhits.value
-    if maxh > hits:
-        maxh = hits
+    Maxh = maxhits.value
+    if Maxh > hits:
+        Maxh = hits
     if hits == 1:
         pl = ''
     else:
         pl = 's'
-    print(signnames), print(f"{str(hits)} hit{pl}; {str(maxh)} displayed.")
-    results = results.sort_values(by = sortby.value)[:maxh]
-    if links.value:
+    print(signnames), print(f"{str(hits)} hit{pl}; {str(Maxh)} displayed.")
+    results = results.sort_values(by = sortby.value)[:Maxh]
+    if links:
         results['id_text'] = [anchor.format(val,val) for val in results['id_text']]
-        results = results.style.hide_index().set_properties(subset=['publication'], **{'width': '200px'})
+        results = results.style.hide(axis="index").set_properties(subset=['publication'], **{'width': '200px'})
     return results
 
 # create User Interface with widgets
+# Create widgets
 button = widgets.Button(description='Search')
-text = widgets.Text(
-       value='',
-       description='', )
+text = widgets.Text(value='', description='')
+text.continuous_update = False  # only update when editing is done
+
 maxhits = widgets.BoundedIntText(
-        value=25,
-        min=0,
-        max=len(bdtns),
-        step=1,
-        description='Max hits:',
-        continuous_update = True)
-links = widgets.Checkbox(
-    value=True,
-    indent = False,
-    description='Display Links')
+    value=25,
+    min=0,
+    max=len(bdtns),
+    step=1,
+    description='Max hits:',
+    continuous_update=True)
+
+links = widgets.Checkbox(value=True, indent=False, description='Display Links')
+
 sortby = widgets.Dropdown(
-    options = ['id_text', 'text', 'date', 'provenance', 'publication'],
-    value = 'id_text',
-    description = 'Sort By: ')
+    options=['id_text', 'text', 'date', 'provenance', 'publication'],
+    value='id_text',
+    description='Sort By: ')
+
 out = widgets.Output()
+
+def submit_search(change):
+    with out:
+        clear_output()
+        display(search(text.value, maxhits.value, links.value, sortby.value))
+
+def update_maxhits(change):
+    links.value = maxhits.value < 250
+    submit_search(change)
+
+button.on_click(submit_search)
+text.observe(submit_search, names='value')  # replaces deprecated on_submit
+sortby.observe(submit_search, names='value')
+maxhits.observe(update_maxhits, names='value')
+
+# Layout
+col1 = widgets.VBox([text, links, button])
+col2 = widgets.VBox([maxhits, sortby])
+box = widgets.HBox([col1, col2])
+widgets.VBox([box, out])
+
 def submit_search(change):
       # "linking function with output"
         with out:
@@ -96,7 +120,6 @@ def update_maxhits(change):
     submit_search(change)
 # linking button and function together using a button's method
 button.on_click(submit_search)
-text.on_submit(submit_search)
 sortby.observe(submit_search, 'value')
 maxhits.observe(update_maxhits, 'value')
 #links.observe(submit_search, 'value')

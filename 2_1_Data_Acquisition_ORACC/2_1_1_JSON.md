@@ -1,5 +1,4 @@
-(2.1.1)=
-# 2.1.1 The JSON Data Format
+## 2.1.1 The JSON Data Format
 
 :::{margin}
 See http://oracc.org/doc/opendata/json/index.html for a description of the ORACC JSON files.

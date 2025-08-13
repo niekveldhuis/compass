@@ -1,0 +1,550 @@
+<TEI.2 id="c.2.4.2.26">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A love song of &C;ulgi (&C;ulgi Z) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>2000</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b308">Krecher 1996a</xref><biblScope type="contents">composite text, translation</biblScope><note>electronic source</note></bibl>
+<bibl><xref from="b623">Kramer 1969d</xref><biblScope type="contents">commentary, handcopy, composite text, translation</biblScope><note>(= ISET 1 82 Ni. 4171)</note></bibl>
+<bibl><xref from="b209">Klein 1981</xref><biblScope type="page">43 n. 84</biblScope><biblScope type="contents">commentary</biblScope></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">Ni 4171 (ISET 1 24; Iraq 31 pl. 4)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>02.ii.2000-07.ii.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>16.vi.2000</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>16.vi.2000</date><respStmt><name>GC</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>30.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>23.vi.2000</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<div1 type="segment" n="A">
+<l n="1" id="c24226.A.1" corresp="t24226.p1">
+<damage/>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<damageEnd/>
+<supplied/>
+<w form="nu-mu-e-de3-RI-RI-X" lemma="RI-RI" pos="V" label="RI-RI" form-type="RR">nu<suppliedEnd/>-mu-e-de3-<supplied/>RI-RI-X</w>
+<suppliedEnd/>
+<note lang="eng">Cited in <xref doc="c.0.2.06" from="0206.4">OB catalogue from Nibru (N3), 0.2.06, line 4</xref></note>
+</l>
+<l n="2" id="c24226.A.2" corresp="t24226.p1">
+<damage/>
+<w form="cec-ju10" lemma="cec" pos="N" label="brother">cec<damageEnd/>-<supplied/>ju10</w>
+<suppliedEnd/>
+<damage/>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<damageEnd/>
+<w form="nu-mu-e-de3-RI-RI-X" lemma="RI-RI" pos="V" label="RI-RI" form-type="RR">nu-<damage/>mu<damageEnd/>-<supplied/>e<suppliedEnd/>-de3-RI-RI-<supplied/>X</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c24226.A.3" corresp="t24226.p1">
+<w form="gi-ru" lemma="gi-ru" pos="N" label="term of endearment">gi-ru</w>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<w form="nu-mu-e-de3-RI-RI-X" lemma="RI-RI" pos="V" label="RI-RI" form-type="RR">nu-mu-<supplied/>e<suppliedEnd/>-de3-RI-RI-<supplied/>X</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c24226.A.4" corresp="t24226.p1">
+<distinct type="emesal">
+<w form="ki-ga" lemma="ki" pos="N" label="place" emesal="ki-ig">ki-ga</w>
+</distinct>
+<w form="aj2-ju10" lemma="aj2" pos="V" label="to measure">aj2-ju10</w>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<damage/>
+<w form="nu-mu-e-de3-RI-RI" lemma="RI-RI" pos="V" label="RI-RI" form-type="RR">nu-mu<damageEnd/>-e-de3-<supplied/>RI<suppliedEnd/>-<damage/>RI</w>
+<damageEnd/>
+</l>
+<l n="5" id="c24226.A.5" corresp="t24226.p1">
+<distinct type="emesal">
+<w form="i-bi2" lemma="igi" pos="N" label="eye" emesal="i-bi2">i-bi2</w>
+</distinct>
+<w form="sag9-sag9-ju10" lemma="sag9" pos="V" label="to be good" form-type="RR">sag9-sag9-<supplied/>ju10</w>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<suppliedEnd/>
+<w form="nu-mu-e-de3-RI-RI" lemma="RI-RI" pos="V" label="RI-RI" form-type="RR"><term id="c24226.t1"><supplied/>nu-mu-e<suppliedEnd/>-de3-<damage/>RI-RI<damageEnd/></term><gloss lang="sux" target="c24226.t1">la-X-X-e</gloss></w>
+</l>
+<l n="6" id="c24226.A.6" corresp="t24226.p1">
+<w form="an-bi" lemma="an" pos="N" label="heaven">an-bi</w>
+<w form="cu-ja2" lemma="cu" pos="N" label="hand">cu-ja2</w>
+<w form="nu-mu-e-de3-ja2-ja2" lemma="jar" pos="V" label="to place" form-type="rr">nu-mu-<supplied/>e-de3<suppliedEnd/>-<damage/>ja2<damageEnd/>-ja2</w>
+</l>
+<l n="7" id="c24226.A.7" corresp="t24226.p1">
+<w form="garadin3-bi" lemma="garadin3" pos="N" label="sheaf">garadin3-bi</w>
+<distinct type="emesal">
+<damage/>
+<w form="ma-a-ar" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma<damageEnd/>-a-ar</w>
+</distinct>
+<w form="A" lemma="A" label="A">A</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="8" id="c24226.A.8" corresp="t24226.p1">
+<w form="X-bi" lemma="X" label="X">X-bi</w>
+<distinct type="emesal">
+<w form="ma-a-ar" lemma="je26" pos="PD" type="personal" label="I" emesal="me">ma-a-<supplied/>ar</w>
+<suppliedEnd/>
+</distinct>
+<damage/>
+<w form="A" lemma="A" label="A">A</w>
+<damageEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="nu-ku7-ku7-X" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">nu<suppliedEnd/>-ku7-ku7-X</w>
+</l>
+<l n="9" id="c24226.A.9" corresp="t24226.p1">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="guru7" lemma="guru7" pos="N" label="(grain) heap"><unclear cert="qry">guru7</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="MA" lemma="MA" label="MA">MA</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="10" id="c24226.A.10" corresp="t24226.p2">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<damage/>
+<w form="gana2-ju10-ce3" lemma="gana2" pos="N" label="field">gana2<damageEnd/>-<supplied/>ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga<suppliedEnd/>-<damage/>ba<damageEnd/>-e-de3-jen</w>
+</l>
+<l n="11" id="c24226.A.11" corresp="t24226.p2">
+<w form="nin9" lemma="nin9" pos="N" label="sister"><unclear cert="cor">nin9</unclear></w>
+<supplied/>
+<w form="sag9-ga-ju10" lemma="sag9" pos="V" label="to be good">sag9-ga-ju10</w>
+<w form="gana2-ju10-ce3" lemma="gana2" pos="N" label="field">gana2-ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3<suppliedEnd/>-<damage/>jen</w>
+<damageEnd/>
+</l>
+<l n="12" id="c24226.A.12" corresp="t24226.p2">
+<w form="gana2" lemma="gana2" pos="N" label="field">gana2</w>
+<w form="gal-ju10-ce3" lemma="gal" pos="V" label="to be big">gal-<supplied/>ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+<suppliedEnd/>
+</l>
+<l n="13" id="c24226.A.13" corresp="t24226.p2">
+<w form="gana2" lemma="gana2" pos="N" label="field">gana2</w>
+<w form="tur-ju10-ce3" lemma="tur" pos="V" label="to be small">tur-<supplied/>ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+<suppliedEnd/>
+</l>
+<l n="14" id="c24226.A.14" corresp="t24226.p2">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="nim" lemma="nim" pos="AJ" label="early">nim</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="cu-nim-bi" lemma="cu-nim" pos="AJ" label="early">cu-nim-<supplied/>bi</w>
+<suppliedEnd/>
+<damage/>
+<w form="dug4-ga-ju10-ce3" lemma="dug4" pos="V" label="to say">dug4<damageEnd/>-<supplied/>ga<suppliedEnd/>-ju10-ce3</w>
+</l>
+<l n="15" id="c24226.A.15" corresp="t24226.p2">
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="sig" lemma="sig" pos="V" label="to be low">sig</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="sig-bi" lemma="sig" pos="V" label="to be low">sig-bi</w>
+<w form="dug4-ga-ju10-ce3" lemma="dug4" pos="V" label="to say">dug4-ga-ju10-ce3</w>
+</l>
+<l n="16" id="c24226.A.16" corresp="t24226.p2">
+<w form="ce-bi" lemma="ce" pos="N" label="barley">ce-bi</w>
+<w form="a" lemma="a" pos="N" label="water">a</w>
+<w form="gurun-na" lemma="gurun" pos="N" label="fruit"><unclear cert="qry">gurun</unclear>-na</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="17" id="c24226.A.17" corresp="t24226.p2">
+<w form="garadin3-bi" lemma="garadin3" pos="N" label="sheaf">garadin3-<damage/>bi</w>
+<damageEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="NI" lemma="NI" label="NI">NI</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="18" id="c24226.A.18" corresp="t24226.p3">
+<supplied/>
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<suppliedEnd/>
+<damage/>
+<w form="gana2-ju10-ce3" lemma="gana2" pos="N" label="field">gana2<damageEnd/>-ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<supplied/>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga<suppliedEnd/>-<damage/>ba<damageEnd/>-e-de3-<supplied/>jen</w>
+<suppliedEnd/>
+</l>
+<l n="19" id="c24226.A.19" corresp="t24226.p3">
+<supplied/>
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<suppliedEnd/>
+<damage/>
+<w form="sag9-ga-ju10" lemma="sag9" pos="V" label="to be good">sag9<damageEnd/>-ga-ju10</w>
+<w form="gana2-ju10-ce3" lemma="gana2" pos="N" label="field">gana2-ju10-<damage/>ce3</w>
+<damageEnd/>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<supplied/>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+<suppliedEnd/>
+</l>
+<l n="20" id="c24226.A.20" corresp="t24226.p3">
+<w form="gana2" lemma="gana2" pos="N" label="field">gana2</w>
+<damage/>
+<w form="gal-gal" lemma="gal" pos="V" label="to be big" form-type="RR">gal<damageEnd/>-gal</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="UD-UD" lemma="UD" label="UD" form-type="RR">UD-UD</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="21" id="c24226.A.21" corresp="t24226.p3">
+<damage/>
+<w form="gana2" lemma="gana2" pos="N" label="field">gana2</w>
+<damageEnd/>
+<w form="tur-ja2" lemma="tur" pos="V" label="to be small">tur-ja2</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="22" id="c24226.A.22" corresp="t24226.p3">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="U3" lemma="U3" label="U&s3;"><unclear cert="qry">U3</unclear></w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="23" id="c24226.A.23" corresp="t24226.p3">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</div1>
+<div1 type="segment" n="B">
+<l n="1" id="c24226.B.1" corresp="t24226.p4">
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="2" id="c24226.B.2" corresp="t24226.p4">
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-da-ka" lemma="X" label="X">X-da<suppliedEnd/>-ka</w>
+<damage/>
+<w form="ba-hul" lemma="hul" pos="V" label="to be bad">ba-<unclear cert="qry">hul</unclear></w>
+<damageEnd/>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="3" id="c24226.B.3" corresp="t24226.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="garadin3-na-ka" lemma="garadin3" pos="N" label="sheaf">garadin3-na-ka</w>
+<w form="AN" lemma="AN" label="heaven">AN</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="4" id="c24226.B.4" corresp="t24226.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-da-ka" lemma="X" label="X">X-da-ka</w>
+<w form="ba-hul" lemma="hul" pos="V" label="to be bad">ba-<unclear cert="qry">hul</unclear></w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="5" id="c24226.B.5" corresp="t24226.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="garadin3-na-ka" lemma="garadin3" pos="N" label="sheaf">garadin3-na-ka</w>
+<w form="AN" lemma="AN" label="AN">AN</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+</l>
+<l n="6" id="c24226.B.6" corresp="t24226.p4">
+<distinct type="emesal">
+<w form="mu-un-gar3" lemma="engar" pos="N" label="farmer" emesal="mu-un-gar3">mu-un-gar3</w>
+</distinct>
+<w form="a-cag4" lemma="a-cag4" pos="N" label="field">a-cag4</w>
+<w form="ur11-ru" lemma="ur11-ru" pos="V" label="to plough">ur11-ru</w>
+<w form="mu-X" lemma="X" label="X">mu-<supplied/>X</w>
+<suppliedEnd/>
+<w form="jar-ra" lemma="jar" pos="V" label="to place">jar-<supplied/>ra</w>
+<suppliedEnd/>
+</l>
+<l n="7" id="c24226.B.7" corresp="t24226.p4">
+<distinct type="emesal">
+<damage/>
+<w form="u3-mu-un" lemma="en" pos="N" label="lord" emesal="u3-mu-un">u3<damageEnd/>-mu-un</w>
+</distinct>
+<w form="cul-gi-ra" lemma="cul-gi" pos="N" type="RN" label="&C;ulgi">cul-gi-ra</w>
+<w form="MU" lemma="MU" label="MU">MU</w>
+<w form="ce" lemma="ce" pos="N" label="barley">ce</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="8" id="c24226.B.8" corresp="t24226.p4">
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-ir" lemma="X" label="X">X-ir</w>
+<w form="a-cag4" lemma="a-cag4" pos="N" label="field">a-cag4</w>
+<w form="ur11-ru" lemma="ur11-ru" pos="V" label="to plough">ur11-ru</w>
+<w form="mu-X" lemma="X" label="X">mu-X</w>
+<w form="jar-ra" lemma="jar" pos="V" label="to place">jar-ra</w>
+</l>
+<l n="9" id="c24226.B.9" corresp="t24226.p4">
+<w form="AN" lemma="AN" label="AN">AN</w>
+<w form="X-bi" lemma="X" label="X">X-bi</w>
+<w form="gur" lemma="gur" pos="V" label="to turn">gur</w>
+<w form="ab-ba-ce3" lemma="ab-ba" pos="N" label="father"><term id="c24226.t2">ab-ba-ce3</term><gloss lang="sux" target="c24226.t2">ab-ba-ju10</gloss></w>
+<damage/>
+<w form="sa2-dug4" lemma="sa2-dug4" pos="N" label="regular offering"><unclear cert="qry">sa2</unclear><damageEnd/>-dug4</w>
+<w form="cu" lemma="cu" pos="N" label="hand">cu</w>
+<w form="ha-ra-an-il2" lemma="il2" pos="V" label="to raise">ha-<damage/>ra<damageEnd/>-an-il2</w>
+</l>
+<l n="10" id="c24226.B.10" corresp="t24226.p5">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-<unclear cert="cor">ju10</unclear></w>
+<supplied/>
+<w form="&jic;kiri6-ju10-ce3" lemma="kiri6" pos="N" label="orchard" bound="L,ju.ece" det="&jic;">&jic;<suppliedEnd/>kiri6-ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+</l>
+<l n="11" id="c24226.B.11" corresp="t24226.p5">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="sag9-ga-ju10" lemma="sag9" pos="V" label="to be good">sag9-<supplied/>ga<suppliedEnd/>-ju10</w>
+<w form="&jic;kiri6-ju10-ce3" lemma="kiri6" pos="N" label="orchard" bound="L,ju.ece" det="&jic;">&jic;kiri6-ju10-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+</l>
+<l n="12" id="c24226.B.12" corresp="t24226.p5">
+<damage/>
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9<damageEnd/>-ju10</w>
+<w form="&jic;kiri6-ju10-ce3" lemma="kiri6" pos="N" label="orchard" bound="L,ju.ece" det="&jic;">&jic;<supplied/>kiri6<suppliedEnd/>-<damage/>ju10<damageEnd/>-ce3</w>
+<w form="je26-e" lemma="je26" pos="PD" type="personal" label="I">je26-e</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-<corr resp="scrOm"/>e<corrEnd/>-de3-jen</w>
+</l>
+<l n="13" id="c24226.B.13" corresp="t24226.p5">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="&jic;kiri6-ju10" lemma="kiri6" pos="N" label="orchard" bound="L,ju" det="&jic;">&jic;<damage/>kiri6<damageEnd/>-<supplied/>ju10</w>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-mu-ci-ib" lemma="X" label="X">X-mu-ci-ib</w>
+</l>
+<l n="14" id="c24226.B.14" corresp="t24226.p5">
+<w form="&jic;ildag2" lemma="ildag2" pos="N" label="poplar" det="&jic;">&jic;ildag2</w>
+<w form="SAR" lemma="SAR" label="SAR">SAR</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="15" id="c24226.B.15" corresp="t24226.p5">
+<w form="cita3" lemma="cita3" pos="N" label="water channel"><term id="c24226.t3">cita3</term><gloss lang="sux" target="c24226.t3"><unclear cert="qry">ta</unclear></gloss></w>
+<note lang="eng">Sumerian gloss: ki-en-DU</note>
+<damage/>
+<w form="&jic;ildag2-ju10-ce3" lemma="ildag2" pos="N" label="poplar" bound="L,ju.ece" det="&jic;">&jic;ildag2<damageEnd/>-<supplied/>ju10<suppliedEnd/>-<damage/>ce3</w>
+<damageEnd/>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-<damage/>de3<damageEnd/>-jen</w>
+</l>
+<l n="16" id="c24226.B.16" corresp="t24226.p5">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="&jic;hachur-ju10-ce3" lemma="hachur" pos="N" label="apple (tree)" bound="L,ju.ece" det="&jic;">&jic;<damage/>hachur-ju10-ce3</w>
+<damageEnd/>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+</l>
+<l n="17" id="c24226.B.17" corresp="t24226.p5">
+<w form="DU8-a" lemma="DU8" label="DU&s8;">DU8-a</w>
+<w form="&jic;hachur" lemma="hachur" pos="N" label="apple (tree)" det="&jic;">&jic;hachur</w>
+<supplied/>
+<w form="X" lemma="X" label="X">X</w>
+<suppliedEnd/>
+<w form="cu-ja2" lemma="cu" pos="N" label="hand">cu-<term id="c24226.t4">ja2</term></w>
+<gloss lang="akk" target="c24226.t4">
+i-na
+</gloss>
+<w form="he2-jal2" lemma="jal2" pos="V" label="to be (located)">he2-jal2</w>
+</l>
+<l n="18" id="c24226.B.18" corresp="t24226.p5">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="&jic;nu-ur2-ma-ju10-ce3" lemma="nu-ur2-ma" pos="N" label="pomegranate" bound="L,ju.ece" det="&jic;">&jic;nu-ur2-<damage/>ma-ju10<damageEnd/>-ce3</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+</l>
+<l n="19" id="c24226.B.19" corresp="t24226.p5">
+<w form="lal3-e" lemma="lal3" pos="N" label="syrup">lal3-e</w>
+<w form="dar-ra" lemma="dar" pos="V" label="to split">dar-ra</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X-ku7" lemma="ku7-ku7" pos="V" label="to be sweet" form-type="RR">X-ku7</w>
+<w form="in-ga-ba-ni-ib-DU" lemma="DU" pos="V" label="DU">in-ga-ba-ni-ib-DU</w>
+</l>
+<l n="20" id="c24226.B.20" corresp="t24226.p6">
+<w form="nin9-ju10" lemma="nin9" pos="N" label="sister">nin9-ju10</w>
+<w form="&jic;kiri6-ju10-ce3" lemma="kiri6" pos="N" label="orchard" bound="L,ju.ece" det="&jic;">&jic;kiri6-<damage/>ju10<damageEnd/>-<supplied/>ce3</w>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga<suppliedEnd/>-<damage/>ba-e-de3-jen</w>
+<damageEnd/>
+</l>
+<l n="21" id="c24226.B.21" corresp="t24226.p6">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<w form="&jic;kiri6-ju10-ce3" lemma="kiri6" pos="N" label="orchard" bound="L,ju.ece" det="&jic;">&jic;<damage/>kiri6<damageEnd/>-ju10-ce3</w>
+<supplied/>
+<w form="ga-ba-e-de3-jen" lemma="jen" pos="V" label="to go">ga-ba-e-de3-jen</w>
+<suppliedEnd/>
+</l>
+<l n="22" id="c24226.B.22" corresp="t24226.p6">
+<w form="nisig" lemma="nisig" pos="N" label="greenery">nisig</w>
+<w form="ki-en-DU-na-gin7" lemma="ki-en-DU" pos="N" label="watercourse">ki-en-DU-na-gin7</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="23" id="c24226.B.23" corresp="t24226.p6">
+<term id="c24226.t5">
+<w form="MA" lemma="MA" label="MA">MA</w>
+<w form="LA" lemma="LA" label="LA">LA</w>
+<w form="KUM" lemma="KUM" label="KUM">KUM</w>
+<w form="NA" lemma="NA" label="NA"><unclear cert="qry">NA</unclear></w>
+</term>
+<gloss lang="uncertain" target="c24226.t5">
+<damage/>
+<unclear cert="qry">TA</unclear>
+<damageEnd/>
+KA
+<unclear cert="qry">BI</unclear>
+X
+</gloss>
+<w form="A" lemma="A" label="A">A</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="24" id="c24226.B.24" corresp="t24226.p6">
+<w form="hi-iz" lemma="hi-iz" pos="N" label="lettuce">hi-iz</w>
+<damage/>
+<w form="gakkul" lemma="gakkul" pos="N" label="(plant) heart">gakkul</w>
+<w form="dug4-ga" lemma="dug4" pos="V" label="to say">dug4<damageEnd/>-ga</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+</l>
+<l n="25" id="c24226.B.25" corresp="t24226.p6">
+<w form="nij2" lemma="nij2" pos="N" label="thing">nij2</w>
+<w form="X-la2&sar;" lemma="X" pos="N" label="type of plant" det="&sar;">X-la2&sar;</w>
+<w form="ga-ba-&X;" lemma="&X;" label="&X;">ga-<damage/>ba<damageEnd/>-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="26" id="c24226.B.26" corresp="t24226.p6">
+<supplied/>
+<w form="&X;&sar;" lemma="X" pos="N" label="type of plant" det="&sar;">&X;<suppliedEnd/>&sar;</w>
+<w form="ga-ba-&X;" lemma="&X;" label="&X;">ga-<damage/>ba<damageEnd/>-<supplied/>&X;</w>
+<suppliedEnd/>
+</l>
+<l n="27" id="c24226.B.27" corresp="t24226.p6">
+<damage/>
+<w form="guru7-za" lemma="guru7" pos="N" label="(grain) heap">guru7-<unclear cert="qry">za</unclear></w>
+<damageEnd/>
+<w form="X" lemma="X" label="X">X</w>
+<w form="A" lemma="A" label="A">A</w>
+<w form="NU" lemma="NU" label="NU">NU</w>
+<w form="X" lemma="X" label="X">X</w>
+<damage/>
+<w form="ga-mu-ra-ab-X" lemma="X" label="X"><unclear cert="qry">ga</unclear>-<unclear cert="qry">mu</unclear>-ra<damageEnd/>-ab-X</w>
+</l>
+<l n="28" id="c24226.B.28" corresp="t24226.p6">
+<w form="KU7" lemma="KU7" label="KU&s7;">KU7</w>
+<w form="GA" lemma="GA" label="GA"><unclear cert="qry">GA</unclear></w>
+<w form="MU" lemma="MU" label="MU">MU</w>
+<w form="U8" lemma="U8" label="U&s8;"><unclear cert="qry">U8</unclear></w>
+<w form="KA-KA" lemma="KA" label="KA" form-type="RR">KA-KA</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="X" lemma="X" label="X">X</w>
+<supplied/>
+<w form="&X;" lemma="&X;" label="&X;">&X;</w>
+<suppliedEnd/>
+<w form="X" lemma="X" label="X">X</w>
+</l>
+<l n="29" id="c24226.B.29" corresp="t24226.p6">
+<w form="nin9" lemma="nin9" pos="N" label="sister">nin9</w>
+<w form="sag9-ga" lemma="sag9" pos="V" label="to be good">sag9-ga</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="hi-li-e-a" lemma="hi-li" pos="N" label="attractiveness">hi-li-<unclear cert="qry">e</unclear>-a</w>
+<supplied/>
+<w form="&X;br" lemma="&X;br" label="&X;br">(&X;)</w>
+<suppliedEnd/>
+</l>
+<l n="30" id="c24226.B.30" corresp="t24226.p6">
+<w form="an-na" lemma="an" pos="N" label="heaven">an-na</w>
+<w form="cu-ja2" lemma="cu" pos="N" label="hand">cu-ja2</w>
+<w form="LA" lemma="LA" label="LA">LA</w>
+<w form="X" lemma="X" label="X">X</w>
+<w form="za-ra" lemma="za" pos="PD" type="personal" label="you (sg.)"><unclear cert="qry">za</unclear>-ra</w>
+<w form="ga-mu-X-X-da-zu-X" lemma="X" label="X">ga-mu-<supplied/>X-X<suppliedEnd/>-da-zu-<supplied/>X</w>
+<w form="Xbr" lemma="Xbr" label="Xbr">(X)</w>
+<suppliedEnd/>
+</l>
+</div1>
+</body>
+</text>
+</TEI.2>

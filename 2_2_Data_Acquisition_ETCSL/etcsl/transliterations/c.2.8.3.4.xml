@@ -1,0 +1,61 @@
+<TEI.2 id="c.2.8.3.4">
+<teiHeader lang="eng">
+<fileDesc>
+<titleStmt>
+<title>A prayer for Samsu-iluna (Samsu-iluna D) -- a composite transliteration</title>
+<respStmt><name>Jeremy Black</name><resp>Project Director and Editor</resp></respStmt>
+<respStmt><name>G&aacute;bor Z&oacute;lyomi</name><resp>Editor</resp></respStmt>
+<respStmt><name>Graham Cunningham</name><resp>Editor</resp></respStmt>
+<respStmt><name>Eleanor Robson</name><resp>Technical Developer</resp></respStmt>
+<respStmt><name>Jarle Ebeling</name><resp>Technical Developer</resp></respStmt>
+</titleStmt>
+<publicationStmt>
+<distributor>The Electronic Text Corpus of Sumerian Literature
+</distributor><address><addrLine>The Oriental Institute, University of Oxford, Pusey Lane, Oxford OX1 2LE, UK, email etcsl&commat;orinst.ox.ac.uk, http://etcsl.orinst.ox.ac.uk</addrLine></address>
+<date>1999</date>
+</publicationStmt>
+<seriesStmt><p>The Electronic Text Corpus of Sumerian Literature aims to make accessible over 400 literary works composed in the Sumerian language in ancient Mesopotamia during the late third and early second millennia BC. The works are in Sumerian composite transliteration and English prose translation with bibliographical information on each composition.</p></seriesStmt>
+<sourceDesc>
+<listBibl type="secondary">
+<bibl><xref from="b369">Tinney 1998j</xref><biblScope type="contents">composite text</biblScope><note>electronic source</note></bibl>
+</listBibl>
+<listBibl type="tablets">
+<bibl><biblScope type="museumNumber">AO 6703 (see 2.8.3.3)</biblScope></bibl>
+</listBibl>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<change><date>26.iii.1999-29.iii.1999</date><respStmt><name>JAB</name><resp>editor</resp></respStmt>
+<item>standardisation</item></change>
+<change><date>06.v.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>proofreading</item></change>
+<change><date>08.vi.1999</date><respStmt><name>GZ</name><resp>editor</resp></respStmt>
+<item>SGML tagging</item></change>
+<change><date>11.vi.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>proofreading SGML</item></change>
+<change><date>20.xii.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>minor correction from J. Krecher in line 1</item></change>
+<change><date>11.vi.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>web publication</item></change>
+<change><date>23.xii.1999</date><respStmt><name>ER</name><resp>editor</resp></respStmt>
+<item>minor corrections to line 1</item></change>
+<change><date>01.vi.2003</date><respStmt><name>GC/JE</name><resp>editor/technical developer</resp></respStmt>
+<item>XML/TEI conversion</item></change>
+<change><date>30.iii.2005</date><respStmt><name>GC/JE</name><resp>senior editor/technical developer</resp></respStmt>
+<item>lemmatised version published</item></change>
+</revisionDesc>
+</teiHeader>
+<text lang="sux">
+<body>
+<l n="1" id="c2834.1" corresp="t2834.p1">
+<w form="pa" lemma="pa" pos="N" label="branch">pa</w>
+<w form="e3" lemma="e3" pos="V" label="to go out or in"><unclear cert="cor">e3</unclear></w>
+<w form="nam-ak-e" lemma="ak" pos="V" label="to do">nam-<damage/>ak<damageEnd/>-e</w>
+<w form="cag4" lemma="cag4" pos="N" label="heart">cag4</w>
+<w form="kug-ta" lemma="kug" pos="AJ" label="shining">kug-ta</w>
+<w form="an-na-TAR" lemma="TAR" pos="V" label="TAR">an-na-TAR</w>
+</l>
+<gap extent="unknown no. of lines missing"/>
+</body>
+</text>
+</TEI.2>
