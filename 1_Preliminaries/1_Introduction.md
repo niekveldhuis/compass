@@ -37,7 +37,24 @@ The file `environment.yml` contains the name of the environment (compass) plus a
 conda activate compass
 ```
 
+The name of the active environment (`compass`) will become part of your prompt.
 
+## 1.1.3 Errors and Trouble Shooting
+
+Inevitably, at some point Compass scripts will run into errors, which will bring the script to a halt. Such errors may have multiple causes, including
+
+* You forgot to activate the `compass`environment.
+
+
+* errors in the original script.
+
+* errors introduced by the user.
+
+* compatibility errors.
+
+Even though all scripts have been tested multiple times with different data sets, errors may still be there. If you adapted the code (which you are very much encouraged to do) you may have introduced errors yourself. Finally, developments in Python and/or in one or more of the packages that are used in the 
+
+  ​
 
 ## 1.2 Assyriology and Data Science
 
