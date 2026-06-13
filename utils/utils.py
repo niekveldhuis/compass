@@ -40,7 +40,7 @@ def oracc_download(project_list, server = 'penn'):
         # if server == 'lmu':
         #    servers = [lmu, oracc, build]
         for url in servers:
-            with requests.get(url, stream=True, verify=False) as r:
+            with requests.get(url, stream=True) as r:
                 if r.status_code == 200:
                     tqdm.write(f"Saving {url} as {file}.")
                     total_size = int(r.headers.get('content-length', 0))
